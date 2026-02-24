@@ -5,6 +5,7 @@
 import { Router } from "express"
 import { deleteId, readAll, readAlSearch, readId, verifyBody } from "../../controller";
 import { addSite, updateSite } from "./controller";
+import { executeSql, executeSqlValues } from "../../db";
 
 export const sitesRoutes = Router();
 
@@ -28,6 +29,16 @@ export const sitesRoutes = Router();
       return await readId("sites",  +req.params.id).then((site: any) => {
         return site.length > 0 
         ? res.status(200).json(site[0])
+        : res.status(404).json({"code":404,"error":"Not Found"});
+      }).catch (error => {
+        return res.status(404).json({"error": error.detail});
+      });
+    });  
+
+    sitesRoutes.get("/sites/search/:name", async (req, res)  => {
+      return await executeSqlValues(`SELECT nom FROM sites WHERE UPPER(nom) LIKE '%${req.params.name.toUpperCase()}%'`).then((sites: any) => {
+        return sites.length > 0 
+        ? res.status(200).json(sites)
         : res.status(404).json({"code":404,"error":"Not Found"});
       }).catch (error => {
         return res.status(404).json({"error": error.detail});

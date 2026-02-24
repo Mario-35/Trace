@@ -51,7 +51,21 @@ export class List extends CoreHtmlView {
         <div class="content" id="right-pane">
 			<div class="card">
 				<div class="card-header row">
-					<div class="col-6">
+					<div class="col-1">
+						<span class="input-group-text">Par page</span>
+					</div>
+					<div class="col-1">
+						<div class="input-group">
+							<select id="perPageSelect" class="form-control">
+								<option selected>25</option>
+								<option >50</option>
+								<option>100</option>
+								<option>250</option>
+								<option>500</option>
+							</select>
+						</div>
+					</div>
+					<div class="col-10">
 						<div class="input-group">
 							<span class="input-group-text">Echantillons</span>
 							<div id="blockAjouter">
@@ -64,16 +78,8 @@ export class List extends CoreHtmlView {
                                 data-multiple-caption="{count} files selected" multiple />
                             	<label id="fileonelabel" for="fileone" class="icon_download"> Fichier excel</label>
 							</div>` :''}
-						</div>
-					</div>
-					<div class="col-3">
-						<div class="input-group">
 							<span class="input-group-text" id="globalSearchIcon">🔎 Search</span>
 							<input id="globalSearch" type="text" class="form-control" placeholder="Recherche dans tous les champs">
-						</div>
-					</div>
-					<div class="col-3">
-						<div id="perPageSelect" class="input-group">
 						</div>
 					</div>
 				</div>
@@ -85,7 +91,6 @@ export class List extends CoreHtmlView {
 					</table>
 				</div>
 				<div class="card-footer">
-					<div class="dataTable-info" id="infos"></div>
 					<nav>
 						<ul id="pagination" class="pagination justify-content-end"></ul>
 					</nav>

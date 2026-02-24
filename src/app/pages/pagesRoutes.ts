@@ -72,7 +72,6 @@ pagesRoutes.get("/print/:type/:id", async (req, res) => {
             });               
         case 'identification':   
             return await executeSql(`SELECT * FROM echantillons WHERE identification LIKE '${req.params.id.slice(0,12)}%'`).then(async (all: any) => {
-                console.log(all)
                     const html = new Print("echantillon", all);
                     res.set('Content-Type', 'text/html').send(html.toString())
             }).catch (error => {

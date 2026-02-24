@@ -3,6 +3,7 @@ document.getElementById("left-pane").innerHTML = `
 <nav role="navigation">
     <ul>
         <li><a href="./echantillons.html">Echantillons</a></li>
+        <li><a href="./selections.html">Séléctions</a></li>
         <li><a href="./passeports.html">Passeports</a></li>
         <li><a href="./sites.html">Sites</a></li>
         <li><a href="./configuration.html">Configuration</a></li>
@@ -286,7 +287,6 @@ function start() {
     'Utilisation des codes barres',
     'Un outil dévellopé par ADAM Mario',
     'Pour l\'UMR SAS de rennes en 2026',
-    'Arreter de lire ce stupide message allez travailler',
     'Arreter de lire ce stupide message',
     'allez travailler',
     ]

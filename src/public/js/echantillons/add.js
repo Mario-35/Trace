@@ -44,6 +44,20 @@ function validateStep1() {
     if (validateNumber('numero', 998) === false) isValid = false;
     if (validateNumber('nombre', 999) === false) isValid = false;    
     if (validateDate('prelevement') === false) isValid = false;    
+    if (mode("new")) {
+        const ToDate = new Date();
+        if (new Date(getElement('prelevement').value).getTime() < ToDate.getTime()) {
+            showModalError("La date ne peut être inferieur a celle du jour");
+            return false;
+        }
+    }
+
+
+
+
+
+
+
     if (validateSelect('type') === false) isValid = false;    
     if (validateDate('peremption') === false) {
         if(document.getElementById("prelevement").value) { 
@@ -51,6 +65,12 @@ function validateStep1() {
             document.getElementById("peremption").value = `${+dates[0] + 5}-${dates[1]}-${dates[2]}`;
         }        
     };
+    if (mode("new")) {
+        if (isValid === true && document.getElementById("prelevement").value >= document.getElementById("peremption").value) {
+            showModalError("La date de péremption doit être supérieure la date de prélévemnt");
+            isValid = false;  
+        }
+    }
     return isValid;
 };
 
@@ -64,7 +84,7 @@ function validateStep2() {
     }
 
     if(type.value === "Sol cultivé") {
-        if (["edit", "edits", "add"].includes(_MODE)) return isValid;
+        if (mode(["edit", "edits", "add"])) return isValid;
         // The only way to test if in edit passport and not to be confused with view passport
         if (getElement("region").value !== _CONFIGURATION.region) {
             if (getElement('passeportNom-error')) {
@@ -97,11 +117,9 @@ nextButtons.forEach((button, index) => {
         if (isValid) {
             currentStep++;
             showStep(currentStep);
-            
-            // Populate review section when moving to step 4
-            if (currentStep === 3) {
-                
-                //
+            // to preseve change mask
+            if (currentStep === 1) {
+                setReadOnly([ "type"]);
             }
         }
     });

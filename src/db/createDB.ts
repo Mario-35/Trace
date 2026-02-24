@@ -1,6 +1,7 @@
 import { admin, createDetaultDatas, executeSql } from ".";
 import { dataBase } from "./base";
 import { asyncForEach } from "../helpers/asyncForEach";
+import { populate } from "./populate";
 
 
 export async function createDB(adminPass: string): Promise<Record<string, string>> {
@@ -52,5 +53,7 @@ export async function createDB(adminPass: string): Promise<Record<string, string
     })
   });
   
+  await populate();
+
   return result; 
 }

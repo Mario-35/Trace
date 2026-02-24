@@ -12,7 +12,7 @@ async function start() {
     if (id > 0) {
         const datas = await getDatas(window.location.origin + "/passeport/" + id);
         loadDatas(datas[0]);
-        document.getElementById("title").innerText = "Modification d'un passeport phytosanitaire";
+        changeTitle("Modification d'un passeport phytosanitaire");
         document.getElementById("btn-creer").innerText = "Modifier"; 
         setReadOnly(["annee", "tracabilite", "origine", "image"]);
         createHTMLviewPasseport(datas[0]);

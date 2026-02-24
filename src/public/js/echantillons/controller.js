@@ -124,6 +124,7 @@ async function start() {
         document.getElementsByTagName("id").value = +id;
         // get echantillon with the API
         const datas = await getDatas(window.location.origin + "/echantillon/" + id);
+        console.log(datas);
         if (datas.codes) {
             rpgReferences = JSON.parse(`{${datas.codes.join()}}`);
             delete datas.codes;

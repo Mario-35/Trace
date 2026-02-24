@@ -78,3 +78,7 @@ export async function updateEchantillon(values: any, id: number) {
       })
 
 };
+
+export async function readEchantillonFromIdentification(identification: string) {
+      return await executeSql(`SELECT id, programme, site, responsable, prelevement, identification, etat FROM echantillons WHERE identification = '${ identification }'`);
+};

@@ -353,6 +353,12 @@ input[type="range"] {
   cursor: pointer;
 }
 
+.dateLabel:hover, 
+.date:hover, 
+.sticker .sticker0:hover {
+  cursor: not-allowed;
+}
+
 .container-center {
   padding-top: 5px;
   border-radius: 0.5em;

@@ -84,11 +84,6 @@ function validateNumber(name, max) {
 
 function validateDate(name) {
     const element = getElement(name);
-    var ToDate = new Date();
-    if (new Date(element.value).getTime() < ToDate.getTime()) {
-          alert("La date ne peut être inferieur a celle du jour");
-          return false;
-     }
     const elementError = getElement(name + '-error');
     if (!element.value) {
         elementError.style.display = 'block';

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion de échantillons</title>
+    <link rel="stylesheet" href="./css/splitter.css">
+    <link rel="stylesheet" href="./css/echantillons.css">
+    <link rel="stylesheet" href="./css/bootstrap.css">
+</head>
+
+<body>
+	<header id="splitter-nav-site" class="splitter-nav-site"></header>
+    <main class="main-view">
+        <div class="splitter-nav-view" id="left-pane">
+        </div>
+        <div class="v-drag" id="separator"></div>
+        <div class="content" id="right-pane">
+			<div class="card">
+				<div class="card-header row">
+					<div class="col-6">
+						<div class="input-group">
+							<span class="input-group-text">Echantillons</span>
+							<div id="blockAjouter">
+								<a class="btn btn-primary" id="ajouter" href="./addEchantillon.html" target="_self">Ajouter</a>								
+							</div>
+							<span class="input-group-text">Importer</span>
+							<div class="btn btn-success field">
+                            	<input type="file" name="file" id="fileone" class="inputfile inputfile-1" accept=".xls,.xlsx"
+                                data-multiple-caption="{count} files selected" multiple />
+                            	<label id="fileonelabel" for="fileone"></label>
+							</div>
+						</div>
+					</div>
+					<div class="col-3">
+						<div class="input-group">
+							<span class="input-group-text" id="globalSearchIcon"></span>
+							<input id="globalSearch" type="text" class="form-control" placeholder="Recherche dans tous les champs">
+						</div>
+					</div>
+				</div>
+				<div class="table-responsive">
+					<table id="jsonTable" class="table">
+						<thead></thead>
+						<tbody></tbody>
+						<tfoot></tfoot>
+					</table>
+				</div>
+				<div class="card-footer">
+					<nav>
+						<ul id="pagination" class="pagination justify-content-end"></ul>
+					</nav>
+				</div>
+			</div>
+        </div>
+    </main>
+</body> 
+<script>"@DATAS@"</script>
+<!-- awlays first -->
+<script src="./js/configuration.js"></script>
+<script src="./js/constants.js"></script>
+<script src="./js/all.js"></script>
+<script src="./js/api.js"></script>
+<script src="./js/common/splitter.js"></script>
+<script src="./js/common/menu.js"></script>  
+<script src="./js/common/dataTables.js"></script>
+<script src="./js/echantillons/init.js"></script>    
+<script src="./js/libs/xlsx.full.min.js"></script>    
+</html>

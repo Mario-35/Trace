@@ -99,3 +99,9 @@ getElement("pointy").addEventListener("change", function() {
     getElement("cultures").value= JSON.stringify({});
 });
 
+getElement("searchSite").addEventListener("keyup", async function() {
+    getElement('sitesData').innerHTML = "";
+     const temp = await getDatas(`${window.location.origin}/sites/search/${searchSite.value}`);
+     if (temp) 
+         addToOption(getElement('sitesData'), temp);
+});

@@ -1,7 +1,7 @@
 import { Router } from "express"
 import { deleteId, readId } from "../../controller"
 import { executeSqlValues, sql } from "../../db"
-import { addEchantillon, readEchantillons, updateEchantillon } from "./controller";
+import { addEchantillon, readEchantillonFromIdentification, readEchantillons, updateEchantillon } from "./controller";
 
 
 export const echantillonsRoutes = Router();
@@ -27,6 +27,14 @@ echantillonsRoutes.get("/echantillon/:id", async (req, res) => {
             echantillon.codes = await executeSqlValues(`SELECT CONCAT('"', code, '" : "',valeur, '"') FROM rpg WHERE code IN ('${Array.from(new Set(Object.values(echantillon.cultures).map(item => item))).join("','")}')`);
         }
         return res.status(200).json(echantillon);
+    }).catch (error => {
+        return res.status(404).json({"error": error.detail});
+    });
+})
+// Get one echantillon from identification
+echantillonsRoutes.get("/echantillon/identification/:id", async (req, res) => {
+    return await readEchantillonFromIdentification(req.params.id).then((echantillon: any) => {
+        return res.status(200).json(echantillon[0]);
     }).catch (error => {
         return res.status(404).json({"error": error.detail});
     });

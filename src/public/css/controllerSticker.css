@@ -1,4 +1,4 @@
-.sticker .sticker1:hover,
+/* .sticker .sticker1:hover,
 .sticker .sticker2:hover,
 .sticker .sticker3:hover,
 .sticker .sticker4:hover,
@@ -6,3 +6,9 @@
   background-color: aqua;
   cursor: pointer;
 }
+
+.dateLabel:hover, 
+.date:hover, 
+.sticker .sticker0:hover {
+  cursor: not-allowed;
+} */

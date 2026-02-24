@@ -169,9 +169,9 @@ const handleFormSubmit = event => {
   // ...this is where we’d actually do something with the form data...
   if (!_DATAS["etat"]) _DATAS["etat"] = "Créer";
 
-  console.log(_DATAS)
-};
+  localStorage.setItem('_datas', JSON.stringify(_DATAS));
 
+}
 
 /*
  * This is where things actually get started. We find the form element using

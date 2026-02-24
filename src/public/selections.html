@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion de échantillons</title>
+    <link rel="stylesheet" href="./css/splitter.css">
+    <link rel="stylesheet" href="./css/bootstrap.css">
+</head>
+<body>
+	<header id="splitter-nav-site" class="splitter-nav-site"></header>
+    <main class="main-view">
+        <div class="splitter-nav-view" id="left-pane">
+        </div>
+        <div class="v-drag" id="separator"></div>
+        <div class="content" id="right-pane">
+			<div class="card">
+				<div class="card-header row">
+					<div class="col-1">
+						<span class="input-group-text">Par page</span>
+					</div>
+					<div class="col-1">
+						<div class="input-group">
+							<select id="perPageSelect" class="form-control">
+								<option selected>25</option>
+								<option >50</option>
+								<option>100</option>
+								<option>250</option>
+								<option>500</option>
+							</select>
+						</div>
+					</div>
+					<div class="col-10">
+						<div class="input-group">
+							<span class="input-group-text">Echantillons</span>
+							<input id="addSample" type="text" class="form-control" placeholder="Ajouter ou scannez un échantillon">
+						</div>
+					</div>
+				</div>
+				<div class="table-responsive">
+					<table id="jsonTable" class="table">
+						<thead></thead>
+						<tbody></tbody>
+						<tfoot></tfoot>
+					</table>
+				</div>
+				<div class="card-footer">
+					<nav>
+						<ul id="pagination" class="pagination justify-content-end"></ul>
+					</nav>
+				</div>
+			</div>
+        </div>
+    </main>
+</body> 
+<script>const structure = [{"key":"programme","title":"Nom du programme","searchType":"text"},{"key":"site","title":"Site de prélévement","searchType":"text"},{"key":"responsable","title":"Résponsable","searchType":"text"},{"key":"identification","title":"Pdentification","searchType":"text"},{"key":"etat","title":"Etat du prélévement","searchType":"text"}]</script>
+<script>"@DATAS@"</script>
+<script src="./js/configuration.js"></script>
+<script src="./js/constants.js"></script>
+<script src="./js/all.js"></script>
+<script src="./js/common/splitter.js"></script>
+<script src="./js/common/menu.js"></script>  
+<script src="./js/dataTables.js"></script>    
+<script src="./js/selections/list.js"></script>    
+
+</html>

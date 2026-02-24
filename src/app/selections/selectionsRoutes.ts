@@ -1,5 +1,5 @@
 import { Router } from "express"
-import { addExcel, readId, readIds } from "../../controller";
+import { readId, readIds } from "../../controller";
 import { addSelection } from "./controller";
 
 

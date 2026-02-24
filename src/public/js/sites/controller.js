@@ -54,7 +54,7 @@ async function start() {
         const datas = await getDatas(window.location.origin + "/site/" + id);
         loadDatas(datas);
         loadDatas(_COLUMNS);
-        document.getElementById("title").innerText = "Modification d'un site";
+        changeTitle("Modification d'un site");
         document.getElementById("btn-creer").innerText = "Modifier";
         _MODE = "add";
     } else _MODE = "new";  

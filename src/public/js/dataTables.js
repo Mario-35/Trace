@@ -4,6 +4,7 @@ class JsonTable {
 	mariol = [];
 	constructor(options) {
 		this.jsonUrl = options.jsonUrl || "";
+		this.addUrl = options.addUrl || "";
 		this.seeUrl  = options.seeUrl || "";
 		this.editUrl = options.editUrl || undefined;
 		this.printUrl = options.printUrl || undefined; // printUrl icon 
@@ -66,9 +67,38 @@ class JsonTable {
 		return await response.text();
 	}
 
+	async addData(element) {
+		try {
+			const response = await fetch(this.addUrl + element.value);
+			const data = await response.json();
+			this.data.push(data);
+			this.filteredData = [...this.data];	
+			this.renderTable();
+			element.value = "";
+		} catch (error) {
+			console.error("Error fetching JSON data:", error);
+		}
+	}
+
 	async fetchData() {
 		if (this.jsonUrl.trim() === "") {
-			this.filteredData = [...this.data];
+			this.filteredData = [...this.data];			
+			if (!this.addUrl ||this.addUrl.trim() == "") return;
+
+						// change region value
+			if (getElement('addSample'))
+				getElement('addSample').addEventListener('keydown', async (event) => {
+					// if return and france
+					if(event.keyCode == 13) {
+						await this.addData(event.target);
+					}
+				});
+			
+			// change region value
+			// getElement('addSample').addEventListener('change', async (event) => {
+			// 	await this.addData(event.target.value);
+			// });
+
 			return;
 		}
 		try {
@@ -80,39 +110,40 @@ class JsonTable {
 		}
 	}
 
-	async postDatas(url, datas) {
-		try {
-			const response = await fetch(encodeURI(url), {
-				method: 'POST',
-				headers: {
-					"Content-Type": "application/json",
-				},
-				body: JSON.stringify(datas),
-			});
-			return await response.json();		
-		} catch (error) {
-			log(error);
-			return undefined
-		}
-	}
+	// async post_Datas(url, datas) {
+	// 	try {
+	// 		const response = await fetch(encodeURI(url), {
+	// 			method: 'POST',
+	// 			headers: {
+	// 				"Content-Type": "application/json",
+	// 			},
+	// 			body: JSON.stringify(datas),
+	// 		});
+	// 		return await response.json();		
+	// 	} catch (error) {
+	// 		log(error);
+	// 		return undefined
+	// 	}
+	// }
 
         // Per Page Select
     createPerPageSelect() {
-            perPageSelect.innerHTML = "";
-            var select = document.createElement("select");
-			select.className ="form-control";
-			[25, 50, 100, 500, 1000].forEach(val => {
-				var opt = document.createElement('option');
-				opt.value = val;
-				opt.innerHTML = val;
-				if (val === this.currentPage)
-					opt.setAttribute("selected", "selected");
-				select.appendChild(opt);
-			});
+            // perPageSelect.innerHTML = "";
+            // var select = document.createElement("select");
+			// select.className ="form-control";
+			// select.id ="essai";
+			// [25, 50, 100, 500, 1000].forEach(val => {
+			// 	var opt = document.createElement('option');
+			// 	opt.value = val;
+			// 	opt.innerHTML = val;
+			// 	if (getElement("essai") && val === essai.value)
+			// 		opt.setAttribute("selected", "selected");
+			// 	select.appendChild(opt);
+			// });
 			
-			perPageSelect.appendChild(select);
+			// perPageSelect.appendChild(select);
 
-			select.addEventListener("change", (e) => {
+			perPageSelect.addEventListener("change", (e) => {
 				this.rowsPerPage = e.target.value;
 				this.renderTable();
 			});
@@ -127,16 +158,13 @@ class JsonTable {
 		} else {
 			this.renderRows();
 			this.renderPagination();
+			this.createPerPageSelect();
 		}
-		infos.innerHTML = `${this.filteredData.length} sur ${this.data.length} total`
+		// infos.innerHTML = `${this.filteredData.length} sur ${this.data.length} total`
 	}
 
 	headerAttribute() {
 		return 'white-space: nowrap; width: 1%; font-weight: lighter;font-size: 14px;';
-	}
-
-	hedaerStype() {
-		
 	}
 
 	renderHeader() {
@@ -240,7 +268,6 @@ class JsonTable {
 		tableBody.innerHTML = "";
 		const start = (this.currentPage - 1) * this.rowsPerPage;
 		const end = start + this.rowsPerPage;
-
 		let rows = [...this.filteredData];
 
 		// // Sorting

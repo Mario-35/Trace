@@ -22,10 +22,12 @@ function start() {
   // Action de changement de la séléction d'un élément d'étiquette
   getElement('element').addEventListener("change", function(event) {
       event.preventDefault();
-      if (document.title === "Configuration") {
-          changeValueInJson("etiquette", [getElement("elementLabel").innerText, "key"], getElement("element").value);
+      changeValueInJson("etiquette", [getElement("elementLabel").innerText, "key"], getElement("element").value);
+      if (document.title === "Configuration") 
           getElement(getElement("elementLabel").innerText).innerText = _CONFIGURATION.stickerElements[getElement("element").value];
-      }
+        else 
+          getElement(getElement("elementLabel").innerText).innerText = getElement(getElement("element").value).value;
+        
   });
 
   // Align select change

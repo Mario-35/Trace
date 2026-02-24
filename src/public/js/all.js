@@ -1,6 +1,5 @@
 // global form datas
 let _COLUMNS = [];
-var _STORE = {}; 
 
 
 

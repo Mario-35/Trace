@@ -1,4 +1,4 @@
-document.getElementById('uploadForm').addEventListener('submit', async function(event) {
+getElement('uploadForm').addEventListener('submit', async function(event) {
     event.preventDefault();
     const formData = new FormData(this);
     const response = await fetch('http://localhost:3000/upload', {
@@ -13,13 +13,13 @@ document.getElementById('uploadForm').addEventListener('submit', async function(
     }
 });
 
-document.getElementById('retrieveButton').addEventListener('click', async function() {
-    const id = document.getElementById('imageId').value;
+getElement('retrieveButton').addEventListener('click', async function() {
+    const id = getElement('imageId').value;
     const response = await fetch(`http://localhost:5000/image/${id}`);
     if (response.ok) {
         const blob = await response.blob();
         const url = URL.createObjectURL(blob);
-        const imagePreview = document.getElementById('imagePreview');
+        const imagePreview = getElement('imagePreview');
         imagePreview.src = url;
         imagePreview.style.display = 'block';
     } else {

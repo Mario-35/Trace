@@ -56,11 +56,7 @@
   place-content: center;
 }
 
-.dateLabel:hover, 
-.date:hover, 
-.sticker .sticker0:hover {
-  cursor: not-allowed;
-}
+
 
 .sticker .rightCB {
   grid-column: 3;
