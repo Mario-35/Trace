@@ -6,18 +6,18 @@ function selectElement(name) {
     getElement("elementLabel").innerText = name;
     getElement("textAlign").value = tmp.align || "center";  
     getElement("textSize").value = tmp.size || "10px";   
-    multiRemoveDisabled(["element", "elementLabel", 'texte',"textAlign", "textSize"]);
+    multiRemoveDisabled(["element", "elementLabel", "texte", "textAlign", "textSize"]);
 };
 
-function start() {
+function sticker_start(values) {;
     // create gabarit
-    createEtiquette(getElement("gabaritEtiquette"), getTemplateSticker());
+    createEtiquette(getElement("gabaritEtiquette"), getTemplateSticker(values));
     // disabled formats
     multiSetDisabled(["element", "elementLabel", 'texte', "textAlign", "textSize"]);
     // create events
     for (let i = 1; i < Object.keys(_CONFIGURATION.etiquette).length; i++) 
-      getElement('sticker' + i).addEventListener('click', function() { selectElement("sticker" + i)});
-
+      if (getElement('sticker' + i))
+        getElement('sticker' + i).addEventListener('click', function() { selectElement("sticker" + i)});
 
   // Action de changement de la séléction d'un élément d'étiquette
   getElement('element').addEventListener("change", function(event) {
@@ -66,13 +66,14 @@ function start() {
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify(getTemplateSticker()),
+            body: JSON.stringify(getTemplateSticker(values)),
         }).then(async response => {
             if (response.status === 201) {
-                open(window.location.origin + '/print/' + "echantillon", self);   
+			if (temp) open(window.location.origin + '/print/' + "echantillon", "Imprimer", _PARAMPRINT);
+
             }
         });
     });
 }
 
-start();
+// start();

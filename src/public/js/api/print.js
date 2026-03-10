@@ -21,6 +21,12 @@ function genrateBarCode(element, data) {
 }
 
 function createEtiquette(element, values) {
+    // special combo
+    values["dossier-numero"] = String(values["dossier"]).padStart(4, '0') + '-' + values["identification"].slice(-4);
+    // for passeport to have inormation on trace 
+    const isPassport = +values["passeport"] > 0;
+    if(isPassport) values["passeport"] = `${values["prelevement"].slice(0, 4)}-${String(values["passeport"]).padStart(4, "0")}`;        
+
     const vals = JSON.parse(JSON.stringify(values.etiquette));
     const etiquette =  document.createElement('div');
     etiquette.className = "sticker";
@@ -42,7 +48,7 @@ function createEtiquette(element, values) {
     etiquette.appendChild(rightCB);      
     Object.keys(vals).filter(e => e != "sticker0").forEach(stick => {
         const key = vals[stick].key;
-        etiquette.appendChild(createSticker(stick, vals[stick], ["prelevement","peremption"].includes(key) ? formatDate(values[key]) : values[key]));        
+        etiquette.appendChild(createSticker(stick === "sticker2" && isPassport ? "stickerPasseport": stick, vals[stick], values[key]));        
     });
     element.appendChild(etiquette);
 };
@@ -75,5 +81,6 @@ function start() {
     window.addEventListener("afterprint", (event) => {
         window.close();
     });
+    // if (_CONFIGURATION.debug === false) window.print();
     window.print();
 }

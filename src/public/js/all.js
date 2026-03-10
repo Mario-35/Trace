@@ -2,47 +2,97 @@
 let _COLUMNS = [];
 
 
+// get element by id or name with test
 
 function getElement(name) {
   if (typeof name === "string") {
     element = document.getElementById(name);
     if (element) return element;
-    console.log("element not found ========> " + name);
+    console.log("element not found 🡺 " + name);
   } else return name;
 }
 
+// change title of the page
 function changeTitle(title) {
   getElement("formTitle").innerText = title;
   document.title = title;
 }
 
-function hide(element) {
-    element = getElement(element);
-    if(element) {
-      element.classList.remove("visible");
-      element.classList.add("invisible");
-    }
+// =======================> Vidible
+function setInvisible(element) {
+  element = getElement(element);
+  if(element) {
+    element.classList.remove("visible");
+    element.classList.add("invisible");
+  }
 }
 
-function show(element) {
-    element = getElement(element);
-    if (element) {
-      element.classList.remove("invisible");
-      element.classList.add("visible");
-    }
+function removeInvisible(element) {
+  element = getElement(element);
+  if (element) {
+    element.classList.remove("invisible");
+    element.classList.add("visible");
+  }
 }
+
+function visible(element, test) {
+  if (test) 
+    removeInvisible(element);
+  else
+    setInvisible(element);
+}
+
+function multiplesetInvisible(names) {
+    if(typeof names === "string") names = [names];
+    names.forEach(name => {
+        const elem = document.getElementById(name);
+        if(elem)
+          setInvisible(elem.parentNode.closest('.form-group'));
+      });
+}
+
+function multipleremoveInvisible(names) {
+    if (typeof names === "string") names = [names];
+    names.forEach(name => {
+        const elem = document.getElementById(name);
+        if(elem) 
+          removeInvisible(elem.parentNode.closest('.form-group'));
+      });
+}
+
+function setVisible(list, visible) {
+    list.forEach(name => {
+      const elem = document.getElementById(name);
+      if (name == visible ) 
+        removeInvisible(elem);
+      else 
+        setInvisible(elem)
+    });
+}
+
+// =======================> Parent Class
+
 
 function showParentClass(elementName, className) {
-    const elem = document.getElementById(elementName);
-      if(elem)
-        show(elem.parentNode.closest('.' + className));
+  const elem = document.getElementById(elementName);
+  if(elem)
+    removeInvisible(elem.parentNode.closest('.' + className));
 }
 
 function hideParentClass(elementName, className) {
     const elem = document.getElementById(elementName);
       if(elem)
-        hide(elem.parentNode.closest('.' + className));
+        setInvisible(elem.parentNode.closest('.' + className));
 }
+
+function parentClass(elementName, className, test) {
+  if (test)
+    showParentClass(elementName, className);
+  else 
+    hideParentClass(elementName, className);
+}
+
+// =======================> Readonly
 
 function setReadOnly(names) {
     if (typeof names === "string") names = [names];
@@ -66,6 +116,15 @@ function removeReadOnly(names) {
       });
 }
 
+function readOnly(test, element) {
+    if (test)
+            removeReadOnly(element);
+        else 
+            setReadOnly(element);
+};
+
+// =======================> Disable
+
 function setDisabled(element) {
     elem = getElement(element);
     if(elem) 
@@ -78,6 +137,13 @@ function removeDisabled(element) {
        elem.removeAttribute("disabled");
 }
 
+function disabled(element, test) {
+  if (test)
+    setDisabled(element)
+  else
+    removeDisabled(element);
+}
+
 function multiSetDisabled(names) {
     if(typeof names === "string") names = [names];
     names.forEach(name => setDisabled(name));
@@ -88,44 +154,6 @@ function multiRemoveDisabled(names) {
     names.forEach(name => removeDisabled(name));
 }
 
-function multipleHide(names) {
-    if(typeof names === "string") names = [names];
-    names.forEach(name => {
-        const elem = document.getElementById(name);
-        if(elem)
-          hide(elem.parentNode.closest('.form-group'));
-      });
-}
-
-function multipleShow(names) {
-    if (typeof names === "string") names = [names];
-    names.forEach(name => {
-        const elem = document.getElementById(name);
-        if(elem) 
-          show(elem.parentNode.closest('.form-group'));
-      });
-}
-
-function setVisible(list, visible) {
-    list.forEach(name => {
-      const elem = document.getElementById(name);
-      if (name == visible ) 
-        show(elem);
-      else 
-        hide(elem)
-    });
-}
-
-
 // version date
-  console.log("version : 13/06/2025 ADAM Mario");
+console.log("version : 06/03/2026 ADAM Mario");
 
-  function checkFree(e){
-  if(e.target.value == 3 ){
-    var tb = document.querySelector(".DropDownInputOverride");
-    tb.style.display ="inline-block";
-  }else{
-    var tb = document.querySelector(".DropDownInputOverride");
-    tb.style.display ="none";
-  }
-}

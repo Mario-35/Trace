@@ -7,6 +7,8 @@ export const HELMET = {
 
 
 
+export const _TYPES = ["Boues", "Eau", "Invertébrés", "Sol cultivé", "Sol forestier", "Prairie", "Sol"];
+
 export const CORS = {
     origin: '*',
     methods: ['GET', 'PUT', 'POST', 'DELETE', 'OPTIONS'],

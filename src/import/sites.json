@@ -1,0 +1,588 @@
+{
+    "sites": [
+        {
+            "id": 1,
+            "nom": "WINNEZEELE [12]",
+            "pays": "France",
+            "region": "region",
+            "latitude": "50.86118",
+            "longitude": "2.54968"
+        },
+        {
+            "id": 2,
+            "nom": "SAINT-MARTIN-BOULOGNE [16]",
+            "pays": "France",
+            "region": "region",
+            "latitude": "50.71192",
+            "longitude": "1.65712"
+        },
+        {
+            "id": 3,
+            "nom": "BOUVIGNIES [41]",
+            "pays": "France",
+            "region": "region",
+            "latitude": "50.42749",
+            "longitude": "3.22130"
+        },
+        {
+            "id": 4,
+            "nom": "SAINT-PIERRE-EN-VAL [76]",
+            "pays": "France",
+            "region": "Normandie",
+            "latitude": "49.99688",
+            "longitude": "1.43146"
+        },
+        {
+            "id": 5,
+            "nom": "MARCELCAVE [104]",
+            "pays": "France",
+            "region": "region",
+            "latitude": "49.85574",
+            "longitude": "2.54489"
+        },
+        {
+            "id": 6,
+            "nom": "LABERLIERE [162]",
+            "pays": "France",
+            "region": "region",
+            "latitude": "49.56871",
+            "longitude": "2.76462"
+        },
+        {
+            "id": 7,
+            "nom": "BOULAY-MOSELLE [257]",
+            "pays": "France",
+            "region": "region",
+            "latitude": "49.20967",
+            "longitude": "6.49406"
+        },
+        {
+            "id": 8,
+            "nom": "LEUTENHEIM [359]",
+            "pays": "France",
+            "region": "region",
+            "latitude": "48.85970",
+            "longitude": "7.99380"
+        },
+        {
+            "id": 9,
+            "nom": "JOSSIGNY [393]",
+            "pays": "France",
+            "region": "region",
+            "latitude": "48.84780",
+            "longitude": "2.75973"
+        },
+        {
+            "id": 10,
+            "nom": "RAMBERVILLERS [590]",
+            "pays": "France",
+            "region": "region",
+            "latitude": "48.34078",
+            "longitude": "6.64137"
+        },
+        {
+            "id": 11,
+            "nom": "TOUILLON [861]",
+            "pays": "France",
+            "region": "region",
+            "latitude": "47.68034",
+            "longitude": "4.45473"
+        },
+        {
+            "id": 12,
+            "nom": "LAMARGELLE [915]",
+            "pays": "France",
+            "region": "region",
+            "latitude": "47.52741",
+            "longitude": "4.87384"
+        },
+        {
+            "id": 13,
+            "nom": "COURCELLES [959]",
+            "pays": "France",
+            "region": "region",
+            "latitude": "47.40449",
+            "longitude": "3.38711"
+        },
+        {
+            "id": 14,
+            "nom": "GERMIGNEY [969]",
+            "pays": "France",
+            "region": "region",
+            "latitude": "47.37097",
+            "longitude": "5.50235"
+        },
+        {
+            "id": 15,
+            "nom": "ARZEMBOUY [1004]",
+            "pays": "France",
+            "region": "region",
+            "latitude": "47.26281",
+            "longitude": "3.38085"
+        },
+        {
+            "id": 16,
+            "nom": "ANNOIX [1089]",
+            "pays": "France",
+            "region": "Centre-Val de Loire",
+            "latitude": "46.98040",
+            "longitude": "2.53428"
+        },
+        {
+            "id": 17,
+            "nom": "LAIVES [1185]",
+            "pays": "France",
+            "region": "Bourgogne-Franche-Comté",
+            "latitude": "46.66479",
+            "longitude": "4.83215"
+        },
+        {
+            "id": 18,
+            "nom": "TOUR-D'AUVERGNE [1504]",
+            "pays": "France",
+            "region": "region",
+            "latitude": "45.53866",
+            "longitude": "2.73463"
+        },
+        {
+            "id": 19,
+            "nom": "USSON-EN-FOREZ [1552]",
+            "pays": "France",
+            "region": "Auvergne-Rhône-Alpes",
+            "latitude": "45.38447",
+            "longitude": "3.95813"
+        },
+        {
+            "id": 20,
+            "nom": "LAMBACH [10304]",
+            "pays": "France",
+            "region": "region",
+            "latitude": "49.02969",
+            "longitude": "7.34894"
+        },
+        {
+            "id": 21,
+            "nom": "DOMMARTIN-VARIMONT [10344]",
+            "pays": "France",
+            "region": "region",
+            "latitude": "48.97250",
+            "longitude": "4.72502"
+        },
+        {
+            "id": 22,
+            "nom": "SAINT-AUBIN [11099]",
+            "pays": "France",
+            "region": "Bourgogne-Franche-Comté",
+            "latitude": "46.95696",
+            "longitude": "4.71613"
+        },
+        {
+            "id": 23,
+            "nom": "ARBOIS [11104]",
+            "pays": "France",
+            "region": "Bourgogne-Franche-Comté",
+            "latitude": "46.90971",
+            "longitude": "5.77890"
+        },
+        {
+            "id": 24,
+            "nom": "RONNO [11390]",
+            "pays": "France",
+            "region": "region",
+            "latitude": "45.95380",
+            "longitude": "4.38754"
+        },
+        {
+            "id": 25,
+            "nom": "SAINT-GERMAIN-SUR-AY [220]",
+            "pays": "France",
+            "region": "region",
+            "latitude": "49.21671",
+            "longitude": "-1.62805"
+        },
+        {
+            "id": 26,
+            "nom": "CORNY [234]",
+            "pays": "France",
+            "region": "Normandie",
+            "latitude": "49.27749",
+            "longitude": "1.44366"
+        },
+        {
+            "id": 27,
+            "nom": "VALLANGOUJARD [280]",
+            "pays": "France",
+            "region": "region",
+            "latitude": "49.13785",
+            "longitude": "2.10433"
+        },
+        {
+            "id": 28,
+            "nom": "GLISOLLES [327]",
+            "pays": "France",
+            "region": "Normandie",
+            "latitude": "48.98702",
+            "longitude": "1.01159"
+        },
+        {
+            "id": 29,
+            "nom": "LANTIC [428]",
+            "pays": "France",
+            "region": "Bretagne",
+            "latitude": "48.59179",
+            "longitude": "-2.88438"
+        },
+        {
+            "id": 30,
+            "nom": "ROUPERROUX [501]",
+            "pays": "France",
+            "region": "Normandie",
+            "latitude": "48.53894",
+            "longitude": "-0.05899"
+        },
+        {
+            "id": 31,
+            "nom": "PLEYBEN [541]",
+            "pays": "France",
+            "region": "Bretagne",
+            "latitude": "48.25256",
+            "longitude": "-3.93373"
+        },
+        {
+            "id": 32,
+            "nom": "SAINT-GERMAIN-LE-GAILLARD [565]",
+            "pays": "France",
+            "region": "Centre-Val de Loire",
+            "latitude": "48.41352",
+            "longitude": "1.24193"
+        },
+        {
+            "id": 33,
+            "nom": "PONT-SCORFF [717]",
+            "pays": "France",
+            "region": "Bretagne",
+            "latitude": "47.84461",
+            "longitude": "-3.45230"
+        },
+        {
+            "id": 34,
+            "nom": "RUFFIGNE [781]",
+            "pays": "France",
+            "region": "region",
+            "latitude": "47.79157",
+            "longitude": "-1.52557"
+        },
+        {
+            "id": 35,
+            "nom": "RUILLE-SUR-LOIR [791]",
+            "pays": "France",
+            "region": "Pays de la Loire",
+            "latitude": "47.83113",
+            "longitude": "0.61364"
+        },
+        {
+            "id": 36,
+            "nom": "FREIGNE [887]",
+            "pays": "France",
+            "region": "Pays de la Loire",
+            "latitude": "47.50940",
+            "longitude": "-1.07767"
+        },
+        {
+            "id": 37,
+            "nom": "SERMAISE [891]",
+            "pays": "France",
+            "region": "Pays de la Loire",
+            "latitude": "47.52553",
+            "longitude": "-0.22567"
+        },
+        {
+            "id": 38,
+            "nom": "SAINT-ANDRE-DES-EAUX [932]",
+            "pays": "France",
+            "region": "Bourgogne-Franche-Comté",
+            "latitude": "47.31386",
+            "longitude": "-2.32460"
+        },
+        {
+            "id": 39,
+            "nom": "BELLEVILLE-SUR-VIE [1114]",
+            "pays": "France",
+            "region": "Pays de la Loire",
+            "latitude": "46.77398",
+            "longitude": "-1.45318"
+        },
+        {
+            "id": 40,
+            "nom": "TESSONNIERE [1120]",
+            "pays": "France",
+            "region": "Nouvelle-Aquitaine",
+            "latitude": "46.80617",
+            "longitude": "-0.19029"
+        },
+        {
+            "id": 41,
+            "nom": "CHOUPPES [1122]",
+            "pays": "France",
+            "region": "Nouvelle-Aquitaine",
+            "latitude": "46.81606",
+            "longitude": "0.23028"
+        },
+        {
+            "id": 42,
+            "nom": "VILLEDIEU-SUR-INDRE [1128]",
+            "pays": "France",
+            "region": "Centre-Val de Loire",
+            "latitude": "46.83230",
+            "longitude": "1.48303"
+        },
+        {
+            "id": 43,
+            "nom": "ARTHON [1170]",
+            "pays": "France",
+            "region": "region",
+            "latitude": "46.69021",
+            "longitude": "1.69447"
+        },
+        {
+            "id": 44,
+            "nom": "CHATEAU-GARNIER [1288]",
+            "pays": "France",
+            "region": "Nouvelle-Aquitaine",
+            "latitude": "46.23730",
+            "longitude": "0.45651"
+        },
+        {
+            "id": 45,
+            "nom": "MONTAIGUT-LE-BLANC [1335]",
+            "pays": "France",
+            "region": "region",
+            "latitude": "46.11434",
+            "longitude": "1.70240"
+        },
+        {
+            "id": 46,
+            "nom": "CHALAGNAC [1619]",
+            "pays": "France",
+            "region": "region",
+            "latitude": "45.09670",
+            "longitude": "0.69529"
+        },
+        {
+            "id": 47,
+            "nom": "BERNOS-BEAULAC [1824]",
+            "pays": "France",
+            "region": "region",
+            "latitude": "44.35818",
+            "longitude": "-0.28255"
+        },
+        {
+            "id": 48,
+            "nom": "PANAZOL [11416]",
+            "pays": "France",
+            "region": "region",
+            "latitude": "45.82190",
+            "longitude": "1.30093"
+        },
+        {
+            "id": 49,
+            "nom": "APREMONT [1313]",
+            "pays": "France",
+            "region": "Auvergne-Rhône-Alpes",
+            "latitude": "46.21196",
+            "longitude": "5.64218"
+        },
+        {
+            "id": 50,
+            "nom": "SEEZ [1483]",
+            "pays": "France",
+            "region": "region",
+            "latitude": "45.59379",
+            "longitude": "6.83709"
+        },
+        {
+            "id": 51,
+            "nom": "BRAMANS [1608]",
+            "pays": "France",
+            "region": "region",
+            "latitude": "45.16199",
+            "longitude": "6.81400"
+        },
+        {
+            "id": 52,
+            "nom": "TEISSIERES-DE-CORNET [1668]",
+            "pays": "France",
+            "region": "region",
+            "latitude": "44.96460",
+            "longitude": "2.32438"
+        },
+        {
+            "id": 53,
+            "nom": "CLAVIERES [1673]",
+            "pays": "France",
+            "region": "region",
+            "latitude": "44.96006",
+            "longitude": "3.33753"
+        },
+        {
+            "id": 54,
+            "nom": "CRAYSSAC [1790]",
+            "pays": "France",
+            "region": "region",
+            "latitude": "44.52827",
+            "longitude": "1.31769"
+        },
+        {
+            "id": 55,
+            "nom": "SISTERON [1898]",
+            "pays": "France",
+            "region": "Provence-Alpes-Côte d''Azur",
+            "latitude": "44.18702",
+            "longitude": "5.92473"
+        },
+        {
+            "id": 56,
+            "nom": "TREVIEN [1925]",
+            "pays": "France",
+            "region": "Occitanie",
+            "latitude": "44.10169",
+            "longitude": "2.12386"
+        },
+        {
+            "id": 57,
+            "nom": "SAINT-ANDRE-LES-ALPES [1947]",
+            "pays": "France",
+            "region": "region",
+            "latitude": "44.02108",
+            "longitude": "6.51251"
+        },
+        {
+            "id": 58,
+            "nom": "ARRE [1979]",
+            "pays": "France",
+            "region": "Occitanie",
+            "latitude": "43.95078",
+            "longitude": "3.51886"
+        },
+        {
+            "id": 59,
+            "nom": "ROUSSILLON [1988]",
+            "pays": "France",
+            "region": "region",
+            "latitude": "43.91690",
+            "longitude": "5.30942"
+        },
+        {
+            "id": 60,
+            "nom": "CAMPLONG [2069]",
+            "pays": "France",
+            "region": "Occitanie",
+            "latitude": "43.66696",
+            "longitude": "3.11955"
+        },
+        {
+            "id": 61,
+            "nom": "SAINT-PIERRE-D'IRUBE [2092]",
+            "pays": "France",
+            "region": "region",
+            "latitude": "43.45987",
+            "longitude": "-1.42916"
+        },
+        {
+            "id": 62,
+            "nom": "SAIGUEDE [2105]",
+            "pays": "France",
+            "region": "Occitanie",
+            "latitude": "43.51950",
+            "longitude": "1.13859"
+        },
+        {
+            "id": 63,
+            "nom": "ROQUEBRUNE-SUR-ARGENS [2133]",
+            "pays": "France",
+            "region": "Provence-Alpes-Côte d''Azur",
+            "latitude": "43.43963",
+            "longitude": "6.66375"
+        },
+        {
+            "id": 64,
+            "nom": "AURAGNE [2152]",
+            "pays": "France",
+            "region": "Occitanie",
+            "latitude": "43.37931",
+            "longitude": "1.53565"
+        },
+        {
+            "id": 65,
+            "nom": "PORT-SAINT-LOUIS-DU-RHONE [2166]",
+            "pays": "France",
+            "region": "region",
+            "latitude": "43.35459",
+            "longitude": "4.88169"
+        },
+        {
+            "id": 66,
+            "nom": "LARRAU [2213]",
+            "pays": "France",
+            "region": "region",
+            "latitude": "43.04288",
+            "longitude": "-1.00755"
+        },
+        {
+            "id": 67,
+            "nom": "SARRANCE [2215]",
+            "pays": "France",
+            "region": "region",
+            "latitude": "43.05386",
+            "longitude": "-0.61644"
+        },
+        {
+            "id": 68,
+            "nom": "MAS-D'AZIL [2225]",
+            "pays": "France",
+            "region": "Occitanie",
+            "latitude": "43.09071",
+            "longitude": "1.34270"
+        },
+        {
+            "id": 69,
+            "nom": "HYERES [2238]",
+            "pays": "France",
+            "region": "region",
+            "latitude": "43.02248",
+            "longitude": "6.44485"
+        },
+        {
+            "id": 70,
+            "nom": "SOST [2249]",
+            "pays": "France",
+            "region": "Occitanie",
+            "latitude": "42.93622",
+            "longitude": "0.56423"
+        },
+        {
+            "id": 71,
+            "nom": "ONNION [11317]",
+            "pays": "France",
+            "region": "region",
+            "latitude": "46.18570",
+            "longitude": "6.46829"
+        },
+        {
+            "id": 72,
+            "nom": "FEUILLA [12261]",
+            "pays": "France",
+            "region": "Occitanie",
+            "latitude": "42.94235",
+            "longitude": "2.90624"
+        },
+        {
+            "id": 73,
+            "nom": "LML Bourcefranc-le-Chapus",
+            "pays": "France",
+            "region": "Nouvelle-Aquitaine",
+            "latitude": "45.846574110331",
+            "longitude": "-1.155195236206"
+        }
+    ]
+}

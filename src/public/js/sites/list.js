@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
 	const table = new JsonTable({
 		jsonUrl: window.location.origin + "/sites",
-		editUrl: "/addSite.html",
+		editUrl: "/Site-add.html",
 		printUrl: undefined,
 		container: "#jsonTable",
 		globalSearch: "#globalSearch",

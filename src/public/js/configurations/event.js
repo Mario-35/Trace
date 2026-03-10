@@ -1,6 +1,6 @@
 getElement('btn-creer').addEventListener('click', function() {
-    head('btn-save');
     _DATAS = formDatas();
+    const ctx = getContext();
     fetch(window.location.origin + `/configuration`, {
         method: "POST",
         headers: {
@@ -21,9 +21,7 @@ getElement('btn-creer').addEventListener('click', function() {
 
 getElement("excelSelect").addEventListener('mousedown', function(event) {
     event.preventDefault();
-    const pipo = getElement("excelSelect");
     var originalScrollTop = getElement("excelSelect").scrollTop;
-    console.log(event.target.getAttribute('selected'));
     if (event.target.getAttribute('selected') === null)
         event.target.setAttribute("selected", true);
     else event.target.removeAttribute("selected");

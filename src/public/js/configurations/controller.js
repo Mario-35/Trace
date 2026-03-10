@@ -69,14 +69,9 @@ function addKey(event) {
 }
 
 // get the list on the actual step
-function getNameList() { return  currentStep === 1 ? listStockages : listEtats};
+function getNameList() { return  currentStep === 1 ? stockages : listEtats};
 function getNameElement() { return  currentStep === 1 ? stockages : etats };
 
-
-  // return {
-  //   list : currentStep === 1 ? listStockages : listEtats,
-  //   element : currentStep === 1 ? "stockages" : "etats",
-  // }
 
 // update values on the hidden form value
 function updateValue() {
@@ -87,26 +82,17 @@ function updateValue() {
 
 // we start here
 function start() {
-  site.value = "UMR Sas Rennes";
-  pays.value = "France";
-  region.value = "Bretagne";
-  pointx.value = "48.11256463781973",
-  pointy.value = "-1.6567440482485551",
-  code.value="FR";
-  identifiant.value ="BR13551";
+  site.value = _CONFIGURATION.site || "UMR Sas Rennes";
+  pays.value =  _CONFIGURATION.pays || "France";
+  region.value =  _CONFIGURATION.region || "Bretagne";
+  latitude.value =  _CONFIGURATION.latitude || "48.11256463781973",
+  longitude.value =  _CONFIGURATION.longitude || "-1.6567440482485551",
+  code.value = _CONFIGURATION.code || "FR";
+  identifiant.value = _CONFIGURATION.identifiant || "BR13551";
 
   // create draggable lists
-  MakeList("listStockages");
-  MakeList("listEtats");
-
-  // add event key
-  document.getElementById('addCleStockage').addEventListener('keydown', function(event) {
-    if(event.keyCode == 13) addElement(getElement("listStockages"), addCleStockage.value, getElement("stockages").value.split(',').length + 1);
-  });
-  // add event key<
-  document.getElementById('addCleEtat').addEventListener('keydown', function(event) {
-    if(event.keyCode == 13) addElement(getElement("listEtats"), addCleEtat.value, getElement("etats").value.split(',').length + 1);
-  });
+  // MakeList("listStockages");
+  // MakeList("listEtats");
   
   // get default sticker config 
   getElement("etiquette").value = JSON.stringify(_CONFIGURATION.etiquette);
@@ -115,6 +101,10 @@ function start() {
   getElement('excelSelect').innerHTML =  excelColumns.map(e => `<option title="${e}">${e}</option>`);
   addToOption(getElement('element'), Object.keys(_CONFIGURATION.stickerElements));
   
+  new editingList(getElement("stockagesList"), "Mots clés pour le stockage", "Ajouter une clé", _CONFIGURATION["stockages"]);  
+  new editingList(getElement("etatsList"), "Mots clés pour les différents états", "Ajouter un état", _CONFIGURATION["etats"]);
+  
+  sticker_start(_CONFIGURATION.stickerElements);
 }   
 
 start();

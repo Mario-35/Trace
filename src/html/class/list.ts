@@ -7,7 +7,6 @@
  */
 
 import { EConstant } from "../../constant";
-import { getColumns } from "../../db";
 import { dataBase } from "../../db/base";
 import { CoreHtmlView } from "./core";
 
@@ -38,7 +37,9 @@ export class List extends CoreHtmlView {
     <title>Gestion des ${plural}s</title>
     <link rel="stylesheet" href="./css/bootstrap.css">
     <link rel="stylesheet" href="./css/icons.css">
+    <link rel="stylesheet" href="./css/context-menu.css">
     ${excel ? '<link rel="stylesheet" href="./css/import.css">' : ''}
+    <link rel="stylesheet" href="./css/modal.css">
     <link rel="stylesheet" href="./css/splitter.css">
 </head>
 
@@ -67,9 +68,9 @@ export class List extends CoreHtmlView {
 					</div>
 					<div class="col-10">
 						<div class="input-group">
-							<span class="input-group-text">Echantillons</span>
+							<span class="input-group-text">${name}</span>
 							<div id="blockAjouter">
-								<a class="btn btn-primary icon_plus" id="ajouter" href="./add${name}.html" target="_self"> Ajouter</a>								
+								<a class="btn btn-primary icon_plus" id="ajouter" href="./${name}-add.html"> Ajouter</a>								
 							</div>
                             ${ excel ? `
 							<span class="input-group-text">Importer</span>
@@ -78,7 +79,7 @@ export class List extends CoreHtmlView {
                                 data-multiple-caption="{count} files selected" multiple />
                             	<label id="fileonelabel" for="fileone" class="icon_download"> Fichier excel</label>
 							</div>` :''}
-							<span class="input-group-text" id="globalSearchIcon">🔎 Search</span>
+							<span class="input-group-text" id="globalSearchIcon">🔎 Cherche</span>
 							<input id="globalSearch" type="text" class="form-control" placeholder="Recherche dans tous les champs">
 						</div>
 					</div>
@@ -97,12 +98,21 @@ export class List extends CoreHtmlView {
 				</div>
 			</div>
         </div>
+		
+<div class="context-menu">
+  <ul id = "contextMenu" class="context-menu-options">
+  </ul>
+</div>
+
+		<div id="modal"></div>  
     </main>
 </body> 
+<script src="./js/api.js"></script>
 <script>const structure = ${JSON.stringify(listCols)}</script>
 <script src="./js/configuration.js"></script>
 <script src="./js/constants.js"></script>
 <script src="./js/all.js"></script>
+<script src="./js/common/modal.js"></script>
 <script src="./js/common/splitter.js"></script>
 <script src="./js/common/menu.js"></script>  
 <script src="./js/dataTables.js"></script>

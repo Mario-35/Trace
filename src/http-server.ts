@@ -6,7 +6,7 @@ import compression from "compression";
 import path from "path";
 import { logger } from "@infra/logger";
 import {  HELMET } from "./constant";
-import { createDB, createDetaultDatas, executeSql, executeSqlValues, sql } from "./db";;
+import { createDB, createDetaultDatas, executeSql, executeSqlValues, sql, writeDB } from "./db";;
 import { echantillonsRoutes, excelsRoutes, pagesRoutes, passeportsRoutes, selectionsRoutes, sitesRoutes, rpgsRoutes } from "./app";
 import { configRoutes } from "@app/configuration/configRoutes";
 
@@ -63,6 +63,10 @@ export default class HttpServer {
         // Get test
     this.app.get("/init/:password", async (_req: Request, res: Response) => {
       res.status(200).json(await createDB(_req.params["password" as keyof object]));
+    })
+
+    this.app.get("/export", async (_req: Request, res: Response) => {
+      res.status(200).json(await writeDB());
     })
 
     // ########################################################

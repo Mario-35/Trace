@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajout d'échantillon(s)</title>
+    <link rel="stylesheet" href="./css/print.css">
+    <link rel="stylesheet" href="./css/echantillon.css">
+    <link rel="stylesheet" href="./css/passeport.css">
+    <link rel="stylesheet" href="./css/form/main.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/modal.css">
+    <link rel="stylesheet" href="./css/editingList.css">
+    <link rel="stylesheet" href="./css/splitter.css">
+
+</head>
+
+<body>
+	<header id="splitter-nav-site" class="splitter-nav-site"></header>
+    <form id="actionForm" class="formData" enctype="multipart/form-data" method="POST">
+        <input type="hidden" id="ctx" name="ctx" value="0" />
+        <main class="main-view">
+            <div class="splitter-nav-view" id="left-pane">
+            </div>
+            <div class="v-drag" id="separator"></div>
+            <div class="content" id="right-pane">
+                <div class="container">
+                    <div class="header">
+                        <h1 id="formTitle"></h1>
+                    </div>
+                    <!-- Steps Headers-->            
+                    <div class="progress-bar">
+                        <div class="progress-bar-line" id="progress-line"></div>
+                        <div class="step" id="step-1">
+                            <span>1</span>
+                            <span class="step-label">Prélevement</span>
+                        </div>
+                        <div class="step" id="step-2">
+                            <span>2</span>
+                            <span class="step-label">Localisation</span>
+                        </div>
+                        <div class="step" id="step-3">
+                            <span>3</span>
+                            <span class="step-label">Analyses</span>
+                        </div>
+                        <div class="step" id="step-4">
+                            <span>4</span>
+                            <span class="step-label">Stockage</span>
+                        </div>
+                        <div class="step" id="step-5">
+                            <span>5</span>
+                            <span class="step-label">Etiquettes</span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-container">
+                        <!-- Step 1: Prélevement -->
+                        <div class="form-step active" id="form-step-1">
+                            <input type="hidden" id="creation" name="creation" value="" />
+
+                            <div class="form-row">
+                                <div class="form-group row-2">
+                                    <label for="type" class=".label-standard">
+                                        <span tooltip="Type de prélèvement" flow="right">Type</span>
+                                    </label>
+                                    <select class="form-control" id="type" name="type" maxlength="15" canedit="notNull">
+                                        <option selected="selected">---- Aucun ----</option>
+                                        <option>Boues</option>
+                                        <option>Eau</option>
+                                        <option>Invertébrés</option>
+                                        <option>Sol cultivé</option>
+                                        <option>Sol Forestier</option>
+                                    </select>
+                                    <div class="error-message" id="type-error">Type de prélèvement obligatoire</div>
+                                </div>
+                                
+                                <div class="form-group row-2">
+                                        <input type="checkbox" id="pedagogique" name="pedagogique">
+                                        <label for="pedagogique"><span class="pipo" tooltip="Programme concerné par le prélèvement coché la case en cas de programme pédagogique">Programme</span></label>
+                                    <input type="text" id="programme" name="programme" class="form-control" maxlength="25" placeholder="Nom du programme" />                              
+                                    <div class="error-message" id="programme-error">Nom du programme obligatoire</div>
+                                </div>
+                            </div>                
+                            
+                            <div class="form-row">
+                                <div class="form-group row-2">
+                                    <label for="site">
+                                        <span tooltip="Site géographique du prélèvement" flow="right">Site</span>
+                                    </label>
+                                    <input type="text" id="site" name="site" class="form-control" maxlength="25" placeholder="Site de prelevement" />                           
+                                    <div class="error-message" id="site-error">Nom du site de prélèvement obligatoire</div>
+                                </div>
+                                
+                                <div class="form-group row-2">
+                                    <label for="responsable">
+                                        <span tooltip="Personne responsable du programme / prélèvement">Responsable</span>
+                                    </label>
+                                    <input type="text" id="responsable" name="responsable" class="form-control" maxlength="25" placeholder="Nom du responsable" /> 
+                                    <div class="error-message" id="responsable-error">Nom du responsable obligatoire</div>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group row-1 invisible">
+                                    <label for="parent">
+                                        <span tooltip="Identification de l'échantillon parent">Parent</span>
+                                    </label>
+                                    <input type="text" id="parent" name="parent" class="form-control" maxlength="16" canedit="never" readonly>
+                                </div>
+                                <div class="form-group row-1">
+                                    <label for="identification">
+                                        <span tooltip="Identification (Généré automatiquement)">Identification</span>
+                                    </label>
+                                    <input type="text" id="identification" name="identification" class="form-control" maxlength="16" canedit="never" readonly>
+                                </div>
+                                
+                                <div class="form-group row-1">
+                                    <label for="dossier">
+                                        <span tooltip="Numéro de dossier interne">N° de dossier</span>
+                                    </label>
+                                    <input type="number" id="dossier" name="dossier" class="form-control"  min="0" max = "9998" maxlength="4" value="0"/>
+                                </div>
+                                <div class="form-group row-1 invisible">
+                                    <label class="form-check-label" for="etat">
+                                        <span tooltip="Etat du prélèvement">Etat</span>
+                                    </label>
+                                    <select class="form-control" id="etat" name="etat" maxlength="10" canedit="true"> </select>
+                                </div>
+                                
+                                <div class="form-group row-1 invisible">
+                                    <label for="numero">
+                                        <span tooltip="Numéro de départ de la numérotation des échantillons">N° de départ</span>
+                                    </label>
+                                    <input type="number" id="numero" name="numero" class="form-control" min="1" max = "9998" value="1"/>
+                                    <div class="error-message" id="numero-error">Compris entre 1 et 9998</div>
+                                </div>
+
+                                <div class="form-group row-1 invisible"> 
+                                    <input type="hidden" id="analysesNombre" name="analysesNombre" value="" />
+                                        <input type="checkbox" id="nombreOuAnalyses" name="nombreOuAnalyses" checked>
+                                        <label for="nombreOuAnalyses"><span tooltip="Nombre de prélevement(s) à créer / ou à créer depuis la liste des analyses">Nombre / Analyses</span></label>
+                                    <input type="number" id="nombre" name="nombre" class="form-control"  min="1" max = "9998" value="1"/>
+                                    <div class="error-message" id="nombre-error">Compris entre 1 et 9998</div>
+                                </div>
+
+                                <div class="form-group row-1 invisible">
+                                    <label for="echantillon">
+                                        <span tooltip="Numéro d'échantillon présent dans le fichier d'importation">N° échantillon</span>
+                                    </label>
+                                    <input type="text" id="echantillon" name="echantillon" class="form-control" placeholder="Numéro d'échantillon" />
+                                    <div class="error-message" id="responsable-error">Numéro d'échantillon obligatoire</div>
+                                </div>
+                            </div>                            
+
+                            <div class="form-row">
+
+                                <div class="form-group row-1">
+                                    <label for="prelevement">
+                                        <span tooltip="Date du prélèvement au format JJ/MM/AAAA">Date du prélevement</span>
+                                    </label>
+                                    <input id="prelevement" name="prelevement" class="form-control" type="date" canedit="etat:Créer" />
+                                    <div class="error-message" id="prelevement-error">Date prélevement obligatoire</div>
+                                </div>
+                                
+                                <div class="form-group row-1">
+                                    <label for="peremption">
+                                        <span tooltip="Date de péremption au format JJ/MM/AAAA">Date de péremption</span>
+                                    </label>
+                                    <input id="peremption" name="peremption" class="form-control" type="date" canedit="true" />
+                                    <div class="error-message" id="peremption-error">Sera fixé a 5 ans</div>
+                                </div>
+
+                                <div class="form-group row-2">
+                                    <label for="condition">
+                                        <span tooltip="Condition de prélèvement">Condition</span>
+                                    </label>
+                                    <input type="text" id="condition" name="condition" class="form-control" maxlength="25" placeholder="Condition de prélèvement" canedit="true"/>                           
+                                    <div class="error-message" id="condition-error">Condition de prélèvement obligatoire</div>
+                                </div>
+                           
+                            </div>
+
+                            <div class="form-row">
+
+                                <div class="form-group row-2">
+                                    <label for="libre">
+                                        <span tooltip="Infos libre sélectionnable lors de l'impression des étiquettes">Infos libre</span>
+                                    </label>
+                                    <input type="text" id="libre" name="libre" class="form-control" maxlength="30" placeholder="Infos libre" canedit="true"/>
+                                </div>                                 
+                            </div>                            
+
+
+                            <div class="form-row">                     
+                                <div class="fillFull" id="rowLines" > </div>
+                            </div>  
+                            <div class="form-row">                       
+                                <div class="form-group row-1 invisible">
+                                    <label for="row" id="rowNumber"> </label>
+                                </div>
+                            </div>
+                            
+                            <div id="blockDemo" class="form-row">
+                                <div class="form-group row-1">                                
+                                    <label for="demos">Données de démonstration</label>
+                                    <select class="form-control" id="demos"></select>                
+                                </div> 
+                            </div>  
+                            
+                            <div class="btn-group">                        
+                                <button class="btn btn-aliquote" id="btn-aliquote" disabled>⬅ Créer une aliquote</button>
+                                <button class="btn btn-next" id="next-1">Suivant ➡</button>
+                            </div>
+                        </div>
+                        
+                        <!-- Step 2: Localisation -->
+                        <div class="form-step" id="form-step-2">
+                            <div class="form-row">
+                                <div class="error-message" id="site-create-error">Le site </div>
+                                <div class="form-group row-1">
+                                    <label for="nomSite">Nom du site</label>
+                                    <input type="text" id="nomSite" name="nomSite" class="form-control" maxlength="25" disabled placeholder="Nom du site">
+                                    <div class="error-message" id="pays-error">Indiquer le nom du site</div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group row-1">
+                                    <label for="pays">
+                                        <span tooltip="longitudeen degré décimal au format WGS84">Longitude</span>
+                                    </label>
+                                    <input type="text" id="pays" name="pays" class="form-control" maxlength="25" placeholder="Pays">
+                                    <div class="error-message" id="pays-error">Indiquer le pays</div>
+                                </div>
+                                
+                                <div class="form-group row-1">
+                                    <label for="region">
+                                        <span tooltip="Saisissez le code postal sur 2 ou 5 chiffres pour effectuer une recherche">Région</span>
+                                    </label>
+                                    <input type="text" id="region" name="region" class="form-control" maxlength="30" placeholder="Region">
+                                    <div class="error-message" id="region-error">Indiquer la région</div>
+                                </div>
+                                <div class="form-group row-1">
+                                    <label for="latitude">
+                                        <span tooltip="Latitude en degré décimal au format WGS84">Latitude</span>
+                                    </label>
+                                    <input type="text" id="latitude" name="latitude" class="form-control" maxlength="15" placeholder="Point X">
+                                    <div class="error-message" id="latitude-error">Indiquer la Latitude au format WGS84</div>
+                                </div>
+                                <div class="form-group row-1">
+                                    <label for="longitude">
+                                        <span tooltip="Longitude en degré décimal au format WGS84">Longitude</span>
+                                    </label>
+                                    <input type="text" id="longitude" name="longitude" class="form-control" maxlength="15" placeholder="Point Y">
+                                    <div class="error-message" id="longitude-error">Indiquer la Longitude au format WGS84</div>
+                                </div>
+                                <div class="form-group row-1" >
+                                    <label for="btnApiRpg">
+                                        <span tooltip="Interroger Registre Parcellaire Graphique">Interroger</span>
+                                    </label>
+                                    <button class="btn btn-api form-group float-end" id="btnApiRpg" title="Interroger Registre Parcellaire Graphique">🌍 RPG</button>
+                                </div>
+                                <div class="form-group row-1" >
+                                    <label for="btnAddSite">
+                                        <span tooltip="Création du site">Créer le site</span>
+                                    </label>
+                                    <button class="btn btn-add form-group float-end" id="btnAddSite" title="Créer le site">Créer</button>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group row-1" id="rpgTab"></div>  
+                            </div>
+
+                            <div id="SOLSCULTIVÉ">
+
+                                <div id="blockPasseport" class="form-row"></div>                                
+                                
+
+                                <input id="risqueRpg" name="risqueRpg" type="hidden" value="-1" />
+                                <input id="passeport" name="passeport" type="hidden" value="0" />   
+                            </div>
+                            
+                            <div class="btn-group">
+                                <button class="btn btn-prev" id="prev-2">⬅ Précédent</button>
+                                <button class="btn btn-next" id="next-2">Suivant ➡</button>
+                            </div>
+                            <textarea id="cultures" class="form-control invisible" name="cultures"></textarea>
+                        </div>
+                        
+                        <!-- Step 3: Analyses -->
+                        <div class="form-step" id="form-step-3">                          
+                            <div class="form-row container-center">
+                                <input type="hidden" id="analyses" name="analyses" class="form-control">
+                                <div id="analysesList" class="liste form-control"></div>
+                            </div> 
+
+                            <div class="btn-group">
+                                <button class="btn btn-prev" id="prev-3">⬅ Précédent</button>
+                                <button class="btn btn-next" id="next-3">Suivant ➡</button>
+                            </div>
+                        </div>
+                        <!-- Step 3: Stockage -->
+                        <div class="form-step" id="form-step-4">                          
+                            <div class="form-row">
+                                <div class="form-group row-1">
+                                    <label for="cle" id="cleLabel">
+                                        <span tooltip="Clé ou nom spécifiant l'endroit ou le lieu">Clé</span>
+                                    </label>
+                                    <select id="cle" class="form-control"></select>
+                                </div>
+                                <div class="form-group row-1">
+                                    <label for="valeur">
+                                        <span tooltip="Valeur associé à cette clé une valeur nulle effacera la clé">Valeur</span>
+                                    </label>
+                                    <input type="text" id="valeur" class="form-control" maxlength="25" placeholder="Valeur">
+                                </div>  
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group row-1">
+                                    <div id="stockageTab"></div>  
+                                </div> 
+                            </div> 
+                            <div class="btn-group">
+                                <button class="btn btn-prev" id="prev-3">⬅ Précédent</button>
+                                <button class="btn btn-next" id="next-3">Suivant ➡</button>
+                            </div>                    
+                            <textarea id="stockage" class="form-control invisible" name="stockage"></textarea>
+                        </div>
+                        
+                        <!-- Step 4: Etiquettes -->
+                        <div class="form-step" id="form-step-5">                        
+                            <!-- <div class="form-row">
+                                <div class="form-group row-1">
+                                    <label for="element" id="elementLabel">Element
+                                        <span tooltip="LONG">NOM</span>
+                                    </label>
+                                    <select id="element" class="form-control" > </select>
+                                </div>
+                                <div class="form-group row-1">
+                                    <label for="texte">Texte Libre
+                                        <span tooltip="LONG">NOM</span>
+                                    </label>
+                                    <input type="text" id="texte" class="form-control" maxlength="50" placeholder="Texte Libre">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="btn-group">
+                                    <label>Format :&nbsp;<br>Texte
+                                        <span tooltip="LONG">NOM</span>
+                                    </label>
+                                    <select id="textSize">
+                                        <option >8px</option>
+                                        <option selected>10px</option>
+                                        <option>12px</option>
+                                        <option>14px</option>
+                                        <option>16px</option>
+                                    </select>                                    
+                                </div>                         
+                            </div>
+                            <div class="form-row">
+                                <div class="sticker">
+                                    <div class="sticker0" id="sticker0">
+                                        <img width="100%" height="75%" src="./assets/barreCode.png">
+                                    </div>
+                                    <div class="sticker01">Prélevement</div>
+                                    <div class="sticker1" id="sticker1">element1</div>
+                                    <div class="sticker02">Pélevement</div>
+                                    <div class="sticker2" id="sticker2">element2</div>
+                                    <div class="sticker3" id="sticker3">element3</div>
+                                    <div class="sticker4" id="sticker4">element4</div>
+                                    <div class="sticker5" id="sticker5">element5</div>
+                                    <div class="sticker6" id="sticker6">element6</div>
+                                    <div class="sticker7" id="sticker7">element7</div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                 <div class="form-group row-1"></div>
+                            </div> -->
+   
+                            <div class="form-row">
+                                <div class="form-group row-2">
+                                    <label for="element" id="elementLabel">Element
+                                        <span tooltip="LONG">NOM</span>
+                                    </label>
+                                    <select id="element" class="form-control"> </select>
+                                </div>
+                                <div class="form-group row-3">
+                                    <label for="texte">Texte Libre
+                                        <span tooltip="LONG">NOM</span>
+                                    </label>
+                                    <input type="text" id="texte" class="form-control" maxlength="50" placeholder="Texte Libre">
+                                </div>
+                                <div class="form-group row-1">
+                                    <label>Taille
+                                        <span tooltip="LONG">NOM</span>
+                                    </label>
+                                    <select id="textSize" class="form-control">
+                                        <option >8px</option>
+                                        <option selected>10px</option>
+                                        <option>12px</option>
+                                        <option>14px</option>
+                                        <option>16px</option>
+                                    </select> 
+                                </div>                                   
+                                <div class="form-group row-1">                                    
+                                    <label>Alignement
+                                        <span tooltip="LONG">NOM</span>
+                                    </label>
+                                    <select id="textAlign" class="form-control">
+                                        <option value="left">Gauche</option>
+                                        <option value="center" selected>Centre</option>
+                                        <option value="right">Droite</option>
+                                    </select> 
+                                </div>                         
+                            </div>                            
+                            <div class="form-row">
+                                <div class="form-group row-1">
+                                    <button class="btn btn-test" id="printEtiquette">Imprimer</button>
+                                </div>                            
+                                <div class="form-group row-3">
+                                    <div id="gabaritEtiquette"></div>
+                                </div>
+                            </div>  
+
+                            <div class="btn-group">
+                                <button class="btn btn-prev" id="prev-4">⬅ Précédent</button>
+                                <button class="btn btn-next" id="btn-creer">✔️️ Créer</button>
+                            </div>  
+                            <textarea id="etiquette" class="form-control invisible" name="etiquette"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main> 
+    </form>
+    <div id="modal"></div>  
+</body> 
+
+    <!-- awlays first -->
+    <script src="./js/configuration.js"></script>
+    <script src="./js/constants.js"></script>
+    <script src="./js/all.js"></script>
+    <script src="./js/common/splitter.js"></script>
+    <script src="./js/common/menu.js"></script>
+    <script src="./js/form.js"></script>
+    <script src="./js/api.js"></script>
+    <script src="./js/api/rpg.js"></script>
+    <script src="./js/helper.js"></script>
+    <script src="./js/common/modal.js"></script>
+    <script src="./js/echantillons/demo.js"></script>
+    <script src="./js/libs/JsBarcode.all.min.js"></script>
+    <script src="./js/api/print.js"></script>
+    <script src="./js/common/regions.js"></script>    
+    <script src="./js/common/editingList.js"></script>
+    <script src="./js/echantillons/add.js"></script>
+    <script src="./js/echantillons/event.js"></script>    
+    <script src="./js/echantillons/controller.js"></script>
+    <script src="./js/stickers/controller.js"></script>
+    <script src="./js/echantillons/specific/passeports-phyto-sanitaires.js"></script>
+</html>

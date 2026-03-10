@@ -7,7 +7,7 @@ export async function addPasseport(values: any) {
       return executeSql(`SELECT max(tracabilite) FROM passeports WHERE annee = '${values["annee"]}'`).then(async res => {
             const tmp:string = res[0 as keyof object]["max" as keyof object];
             values["tracabilite" as keyof object] = isNaN(+tmp) ? 1 : +tmp + 1;
-            const datas = cols.map(e => isNaN(values[e]) ? escapeSimpleQuotes(values[e]) : values[e]);  
+            // const datas = cols.filter(e => values[e]).map(e => isNaN(values[e]) ? escapeSimpleQuotes(values[e]) : values[e]);  
             return await executeSql(`INSERT INTO passeports (${cols.map(e => `"${e}"`).join()}) VALUES (${createPgValues("passeports", values)}) RETURNING id`);
       });
 };

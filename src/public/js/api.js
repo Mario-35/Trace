@@ -14,7 +14,7 @@ getDatas = async (url, text) => {
 	}
 }
 
-posttDatas = async (url, datas) => {
+postDatas = async (url, datas) => {
 	try {
 		const response = await fetch(encodeURI(url), {
 			method: 'POST',

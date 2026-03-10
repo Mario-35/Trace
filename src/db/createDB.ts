@@ -2,6 +2,7 @@ import { admin, createDetaultDatas, executeSql } from ".";
 import { dataBase } from "./base";
 import { asyncForEach } from "../helpers/asyncForEach";
 import { populate } from "./populate";
+import { _TYPES } from "../constant";
 
 
 export async function createDB(adminPass: string): Promise<Record<string, string>> {
@@ -41,13 +42,13 @@ export async function createDB(adminPass: string): Promise<Record<string, string
   
   await executeSql(query).then(async res => {
     result["CREATE Tables"] = "Ok";
-    await createDetaultDatas();
-    result["CREATE Default datas"] = "Ok";
+    // await createDetaultDatas();
+    // result["CREATE Default datas"] = "Ok";
   }).catch(error => {
     result["CREATE Tables"] = "Error";
   });
 
-  await asyncForEach(["Boues", "Eau", "Invertébrés", "Sol cultivé"], async (name) => {
+  await asyncForEach(_TYPES, async (name) => {
     await executeSql(`CREATE TABLE IF NOT EXISTS "echantillon_${name.replaceAll(" ","").toLowerCase()}" PARTITION OF echantillons FOR VALUES IN ('${name}');`).then(() => {
       result["CREATE TABLE partitionned " + name] = "Ok";
     })

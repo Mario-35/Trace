@@ -12,6 +12,16 @@
 	z-index: 1001;
 }
 
+.modal-control
+ {
+    width: 100%;
+  height: 100%;
+    border: 2px solid #e0e0e0;
+    border-radius: var(--radius);
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
 .modal__content {
   height: 250px;
   min-width: 300px;
@@ -25,8 +35,18 @@
   box-shadow: 0px 0px 22px -1px rgba(0, 0, 0, 0.85);
 }
 
+
+/* .modal__content . {
+  height: 550px;
+} */
+
 .modal__ok {
   background-color: #75a175;
+}
+.modal__list {
+  height: 465px;
+  min-width: 600px;
+  background-color: #bbbfbb;
 }
 
 .modal__error {
@@ -77,14 +97,82 @@
   float: right;
 }
 
-.modal__action--ok {
-    /* float: right; */
+.scrollable-modal {
+    border-radius: 10px;
+    border: solid 5px var(--bs-secondary);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-25%, -25%);
+    background: #ffffff;
 }
 
-html {
-  box-sizing: border-box;
+.list-header {
+    background: var(--bs-primary-bg-subtle);
+    border-radius: 10px 10px 0 0;
+    display: flex;
+    border-bottom: 1px solid #ccc;
 }
 
-*, *:before, *:after {
-  box-sizing: inherit;
+.list-header span {
+    flex-basis: 50%;
+    padding: 10px 0;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+}
+.list-header span:first-child {
+    border-right: 1px solid #ccc;
+}
+
+.list-container {
+    min-height: 100px;
+    max-height: 33vh;
+    overflow: auto;
+}
+
+.list-container::-webkit-scrollbar {
+    display: none;
+}
+
+.list-container .list {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    overflow: hidden;
+}
+
+.list ul.options:first-child {
+    border-right: 1px solid #ddd;
+}
+
+ul.options {
+    list-style: none;
+    flex-basis: 75%;
+}
+
+ul.options li {
+    padding: 3px 5px;
+    white-space:nowrap;
+    display: block;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+ul.options li:nth-child(odd) {
+    background: #fafafa;
+}
+
+ul.options li:hover,
+ul.options li:focus {
+    background: #b2e0e5;
+}
+
+ul.options li.selected {
+    background: teal;
+    color: #fff;
+}
+
+.errorList {
+    color: var(--bs-danger);
 }

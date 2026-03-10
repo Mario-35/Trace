@@ -9,9 +9,9 @@ const executeSqlOneValues = async (query: string): Promise<object> => {
             .then((res: object) => {
                 resolve(res);
             })
-            .catch((err: Error) => {
-                console.log(err);
-                reject(err);
+            .catch((error: Error) => {
+                console.log(error);
+                reject(error);
             });
     });
 };
@@ -28,9 +28,9 @@ const executeSqlMultiValues = async (queries: string[]): Promise<object> => {
             .then((res: object) => {
                 resolve(res);
             })
-            .catch((err: Error) => {
-                console.log(err);
-                reject(err);
+            .catch((error: Error) => {
+                console.log(error);
+                reject(error);
             });
     });
 };

@@ -1,11 +1,14 @@
 // create identification with date time (without seconds) and echantillon number
 function createIdentification(nb) {
-    return `${ new Date(getElement("prelevement").value || new Date()).toLocaleDateString()}${new Date().toLocaleTimeString()}`.replace(/\D/g, "").slice(0,12) + (nb || getElement("echantillon").value || getElement("numero").value).padStart(4, '0');
+    if (isContextMode(['new',"aliquote"])) {
+        if(!_DATE) _DATE = new Date();
+        creation.value = _DATE.toISOString();
+        return `${ _DATE.toLocaleDateString()}${ _DATE.toLocaleTimeString()}`.replace(/\D/g, "").slice(0,12) + (nb || getElement("echantillon").value || getElement("numero").value).padStart(4, '0');
+    }
 }
 
+// refresh type that fixe mask
 function refreshType() {
-    head('refresh Type');
-
     const names = [];
     for (var j = 0; j < getElement("type").options.length; j++) {
         if (getElement("type").options[j].value !== _AUCUN) 
@@ -13,27 +16,21 @@ function refreshType() {
     }
     const key = getElement("type").value.replace(/\s/g, '').toUpperCase();
     setVisible(names, key);
-
-    
-    switch (key) {
-        case "SOLCULTIVÉ":
-            refreshsolcultive();
-            break;
-        default:
-            return;
-    }
 }
 
+function valueIfChecked(element, elementTest, text, textChecked) {
+    element.innerText = `${text}${elementTest.checked ? ` ${textChecked}` : ""}`
+}
+
+// Refresh screen information
 function refresh() {
-    head('refresh');
-
-    refreshType(); 
-    
+    head('refresh');  
     // create identification
-    if(!getElement("identification").value) {
-        getElement("identification").value = createIdentification();
+    if(!identification.value) {
+        identification.value = createIdentification();
     }
-
+    // identification reaonly
+    // setReadOnly("identification");
     // peremption date
     if(!getElement("peremption").value) { 
         if(getElement("prelevement").value) { 
@@ -50,15 +47,9 @@ function refresh() {
                 <tr> 
                     <th>&nbsp;Clé&nbsp;</th> 
                     <th>&nbsp;Valeur&nbsp;</th> 
-                    <th style="width:10px">op</th> 
                 </tr> 
             </thead> 
             <tbody> ${Object.keys(tmp).map((e,i) => `<tr><td>${e}</td><td>${tmp[e]}</td>
-                    <td>
-                        ${(i >= 0 && i < Object.keys(tmp).length - 1) ? `<a><i class="fas fa-arrow-down"></i></a>`:`&nbsp;`}
-                        ${(i != 0 && i < Object.keys(tmp).length) ? `<a><i class="fas fa-arrow-up"></i></a>`:`&nbsp;`}
-                        <a><i class="fas fa-trash"></i></a>
-                    </td>
                 </tr>`).join("")} 
             </tbody> 
         </table>` 
@@ -66,27 +57,18 @@ function refresh() {
     } catch (error) {    
         log(error);
     } 
-
-    if (getElement("etiquette").value) {
-        const tmp = toJson("etiquette");
-        Object.keys(tmp).forEach(e => {
-            if (e !== "sticker0") {
-                const elem = getElement(e);
-                if (elem) {
-                    elem.innerText = tmp[e].value ? tmp[e].value : ["prelevement","peremption"].includes(tmp[e].key) ? formatDate(getElement(tmp[e].key).value) : getElement(tmp[e].key).value || 'A definir';
-                    elem.align = tmp[e].align;
-                }
-            }
-        });
-    }    
     
-    if(_DEBUG === false) {
-        hide("stockage");
-        hide("etiquette");
-        hide("cultures");
-    }    
+    if(_CONFIGURATION.debug === false) {
+        setInvisible("stockage");
+        setInvisible("etiquette");
+        setInvisible("cultures");
+    }  
+    
+    valueIfChecked(pedagogique.nextSibling.nextSibling, pedagogique, "Programme", " pédagogique")
+    
 }
 
+// load line from importation store
 function loadEchantillonLine(index) {
     if(Array.isArray(_STORE.columns)) {
         loadValues( _STORE.datas[index]);
@@ -99,52 +81,104 @@ function loadEchantillonLine(index) {
     getElement("rowNumber").innerText = 'Ligne : ' + index + ' sur ' + _STORE.datas.length ; 
 };
 
-async function start() {
-    if (_DEBUG === false) getElement("blockDemo").remove();
-    _PASSPORT = undefined;
-    _MODE = "none";
-    // init id
-    let id = 0;
-    // get default sticker config 
-    getElement("etiquette").value = JSON.stringify(_CONFIGURATION.etiquette);   
-    getElement("stockage").value = JSON.stringify({});   
-    getElement("cultures").value = JSON.stringify({});   
-    // init select for sticker
-    addToOption(getElement('element'), Object.keys(_CONFIGURATION.stickerElements));  
-       
-    addToOption(getElement('cle'), _CONFIGURATION.stockages);   
-    addToOption(getElement('demos'), Object.keys(_DEMOS));   
-    addToOption(getElement('etat'), _CONFIGURATION.etats, "Créer");        
-    // if id in params get the id 
-    if(isKeyInUrl('id'))
-        id = getNumberFromUrl("id") ;
-    // if id to load
-    if(id > 0) {  // Edit mode
-        // set id 
-        document.getElementsByTagName("id").value = +id;
-        // get echantillon with the API
-        const datas = await getDatas(window.location.origin + "/echantillon/" + id);
-        console.log(datas);
-        if (datas.codes) {
-            rpgReferences = JSON.parse(`{${datas.codes.join()}}`);
-            delete datas.codes;
+function refreshCultures() {    
+    head('refresh Cultures');
+    showRpgInfos({
+        cultures : toJson("cultures"),
+        rpgReferences: rpgReferences           
+    },  getElement("rpgTab"));
+}
+
+// Create new site from location tab
+async function createSite() {
+    	const temp = await postDatas(`${window.location.origin}/site`, {
+            "nom": nomSite.value,
+            "pays": pays.value,
+            "region": region.value,
+            "latitude": latitude.value,
+            "longitude": longitude.value,
+        });
+		if (temp) {
+            showModalOk("Site Créer");
+            setSite();
+            removeDisabled("next-2");
         }
 
-        // load datas
-        loadDatas(datas);
-        //  change somes
-        showParentClass("etat",'form-group'); 
-        getElement("btn-creer").innerText = "Modifier";
-        getElement("btnApiRpg").innerText = "MAJ données du RPG";
-        setReadOnly([ "type", "prelevement", "pays", "region", "pointx", "pointy"]);
+}
+
+// get information site
+async function setSite() {
+    head("setSite");
+    const temp = await getDatas(`${window.location.origin}/sites/search/${site.value}`);
+    if (temp) {
+        if (temp.length === 1) {
+            nomSite.value = temp[0].nom;
+            site.value = temp[0].nom;
+            pays.value = temp[0].pays;
+            region.value = temp[0].region;
+            latitude.value = temp[0].latitude;
+            longitude.value = temp[0].longitude;
+            setReadOnly(["nomSite", "pays", "region", "latitude","longitude"]);
+            hideParentClass("btnAddSite",'form-group'); 
+            removeDisabled("next-2");
+            if (type.value.startsWith("Sol ")) {
+                showParentClass("btnApiRpg",'form-group'); 
+                refreshCultures();
+                if ( _CONFIGURATION.passeport === true) setPasseport();
+            } else hideParentClass("btnApiRpg",'form-group'); 
+        }
+    } else {
+        // Create site
+        nomSite.value = site.value;
+        removeReadOnly(["nomSite", "pays", "region", "latitude","longitude"]);
+        hideParentClass("btnApiRpg",'form-group'); 
+        showParentClass("btnAddSite",'form-group');
+        setDisabled("next-2");
+     }
+
+    
+}
+
+// start of echantillon
+async function start() {
+    if (_CONFIGURATION.debug === false) getElement("blockDemo").remove();
+    _DATE = new Date();
+    // get default sticker config 
+    getElement("etiquette").value = JSON.stringify(_CONFIGURATION.etiquette);   
+    // init select for sticker
+    addToOption(getElement('element'), Object.keys(_CONFIGURATION.stickerElements));  
+    // init select for stockage keys       
+    addToOption(getElement('cle'), _CONFIGURATION.stockages);   
+    // init select for etats keys       
+    addToOption(getElement('etat'), _CONFIGURATION.etats, "Créer");
+    // add demos if debug
+    if(_CONFIGURATION.debug) addToOption(getElement('demos'), Object.keys(_DEMOS));   
+    // set and get context
+    const ctx = createContext();
+    // action son mode
+    if (ctx.mode === "id") {  // Edit mode
+        // get echantillon with the API
+        const datas = await getDatas(window.location.origin + "/echantillon/" + ctx.id);
+        // rpg codes
+        if (datas) {
+            if (datas && datas.codes) {
+                rpgReferences = JSON.parse(`{${datas.codes.join()}}`);
+                delete datas.codes;
+            }
+            
+            // load datas
+            loadDatas(datas);
+            updateReadOnly(ctx);
+        }
+        // change somes
+        showParentClass('etat', 'form-group'); 
         hideParentClass( "btnApiRpg", "row-1");
-        changeTitle("Modification d'un échantillon");
-        _MODE = "edit";
-        
-    } else if (isKeyInUrl('selection')) { // Selection Edits mode
-        id = getNumberFromUrl("selection") ;
+        removeDisabled("btn-aliquote");
+        getElement("btnApiRpg").innerText = "MAJ 🌍 RPG";
+        changeTitle("Modification d'un échantillon");        
+    } else if (ctx.mode === 'selection') { // Selection Edits mode
         // get selection from API
-        const temp = await getDatas(window.location.origin + "/selection/" + id);
+        const temp = await getDatas(window.location.origin + "/selection/" + ctx.id);
         _STORE = {
             datas: temp,
             columns: Object.keys(temp[0])
@@ -157,26 +191,21 @@ async function start() {
         // Change title
         changeTitle("Modification de plusieurs échantillons");
         // Set the mode
-        _MODE = "edits";
-    } else if (isKeyInUrl('excel')) {  // Excel mode
-        id = getNumberFromUrl("excel"); 
+    } else if (ctx.mode === 'excel') {  // Excel mode
         // get datas from API
-        _STORE =  await getDatas(window.location.origin + "/excel/" + id);
+        _STORE =  await getDatas(window.location.origin + "/excel/" + ctx.id);
         if(_STORE["datas"]) {
-           showParentClass("etat",'form-group'); 
+           etat.value = "Importé";
             // get the column selected in excel page
             let isEchantillon = false;
             Object.keys(_STORE.columns).forEach(column => {
                 const elem = getElement(column);
                 // If a column echantillon is found we use excel numerotation not automatic numerotation
                 if (column === "echantillon") {
-                    getElement("numero").readOnly = true;
-                    showParentClass("echantillon",'form-group'); 
-
+                    showParentClass("echantillon",'form-group');
                     isEchantillon = true;
-                }
-                // set column readonly
-                elem.readOnly = true;
+                } 
+                setReadOnly(column);
             });
             if (isEchantillon == false) {
                 showParentClass("numero",'form-group'); 
@@ -184,42 +213,48 @@ async function start() {
                 setReadOnly("nombre");
                 nombre.value = _STORE["datas"].length;
                 echantillon.value = null;
-
             }
             // get the range lines
             setRange();
             changeTitle("Ajout depuis un fichier excel");
-            _MODE = "news";
         }
         
-    } else if (isKeyInUrl('after')) {  // After mode
-        const tmpId = getNumberFromUrl("after"); 
-        const temp = await getDatas(window.location.origin + "/echantillon/after/" + tmpId);
-        document.getElementsByTagName("id").value = 0;
+    } else if (ctx.mode === 'after') {  // After mode        
+        const temp = await getDatas(window.location.origin + "/echantillon/after/" + ctx.id);
         // get echantillon with the API
-        const datas = await getDatas(window.location.origin + "/echantillon/" + tmpId);
+        const datas = await getDatas(window.location.origin + "/echantillon/" + ctx.id);
         // load datas
         loadDatas(datas);
-        //  change somes
-        showParentClass("etat",'form-group'); 
-        getElement("btn-creer").innerText = "Ajouter";
-        setReadOnly([ "type", "programme", "site", "responsable", "prelevement", "pays", "region", "pointx", "pointy", "numero"]);
-        hideParentClass( "btnApiRpg", "row-1");
-        multipleHide(["echantillon",  "etat"]); 
-        multipleShow(["numero",  "nombre"]); 
-        getElement("etat").value = 'Créer';
+        updateReadOnly(ctx);
+        hideParentClass( "btnApiRpg", "form-group row-1 visible");
         getElement("numero").value = temp;
-        changeTitle("Ajout d'échantillon(s)");
-        _MODE = "add";
-    } else { //  // Default add mode
-        multipleHide(["echantillon",  "etat"]); 
-        multipleShow(["numero",  "nombre"]); 
+        getElement("numero").min = temp;
+        multipleremoveInvisible(["numero",  "nombre"]); 
+        removeReadOnly(["numero",  "nombre"]); 
+        changeTitle("Ajout d'autres échantillon(s)");
+    } else if (ctx.mode === 'aliquote') {  // child mode 
+        const datas = await getDatas(window.location.origin + "/echantillon/" + ctx.id);
+        console.log(datas);
+        parent.value = datas.identification;
+        loadDatas(datas);
+        identification.value = createIdentification();
+        updateReadOnly(ctx);
+        hideParentClass( "btnApiRpg", "form-group row-1 visible");
+        showParentClass( "parent", "form-group");
+        // getElement("numero").value = temp;
+        // getElement("numero").min = temp;
+        multipleremoveInvisible(["numero",  "nombre"]); 
+        removeReadOnly(["numero",  "nombre"]); 
+        changeTitle("Création d'autres échantillon(s)");
+    } else if (ctx.mode === 'new') { //  Default add mode
+        multiplesetInvisible(["echantillon",  "etat"]); 
+        multipleremoveInvisible(["numero",  "nombre"]); 
         getElement("etat").value = 'Créer';
-        _MODE = "new";
-    }
-
-    if (_MODE === "none") log("Error _MODE)")
+        updateReadOnly(ctx);    
+    } else log("Error mode");
+    // init list
     refresh();
+    refreshType();   
 }
 
 // start without await

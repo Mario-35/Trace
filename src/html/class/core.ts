@@ -57,6 +57,12 @@ operations.forEach((operation: any) => {
       return fs.existsSync(path.join(__dirname, "/", name)) ? fs.readFileSync(path.join(__dirname, "/", name), "utf-8") : fs.readFileSync(path.join(__dirname, "/", name.replace(".js", ".min.js")), "utf-8");
     }
     
+    getFile(name: string) {
+        return name.includes('css/')
+            ? `<style>${this.addFile(`../../public/${name}`)}</style>`
+            : `<script>${this.addFile(`../../public/${name}`)}</script>`;
+    }
+
     replaceFile(name: string) {
         if(name.includes('css/'))
             this.replaceInReturnResult(`<link rel="stylesheet" href="./${name}">`, `<style>${this.addFile(`../../public/${name}`)}</style>`);

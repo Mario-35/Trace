@@ -1,7 +1,7 @@
 var map, marker;
 
 function addMap() {
-    var curLocation = [pointx.value, pointy.value ];
+    var curLocation = [latitude.value, longitude.value];
 
     map = L.map("map").setView(curLocation, 8);
 
@@ -22,22 +22,23 @@ function addMap() {
         marker.setLatLng(position, {
         draggable: 'true'
         }).bindPopup(position).update();
-        pointx.value = position.lat;
-        pointy.value = position.lng;
+        latitude.value = position.lat;
+        longitude.value = position.lng;
+        removeRpgInfos();
     });
 
-    getElement('pointx').addEventListener('change', async function() {
+    getElement('latitude').addEventListener('change', async function() {
         refreshMap();
     });
 
-    getElement('pointy').addEventListener('change', async function() {
+    getElement('longitude').addEventListener('change', async function() {
         refreshMap();
     });
 
 }
 
 function refreshMap() {
-    const position = [parseInt(pointx.value.replace(',','.')), parseInt(pointy.value.replace(',','.'))];
+    const position = [parseInt(latitude.value.replace(',','.')), parseInt(longitude.value.replace(',','.'))];
     marker.setLatLng(position, {
         draggable: 'true'
     }).bindPopup(position).update();
@@ -45,20 +46,16 @@ function refreshMap() {
 }
 
 async function start() {
-    let id = 0;
-    if(window.location.href.includes('?id=')) {
-        id = +window.location.href.split('?id=')[1] || 0;
-    } 
-    
-    if (id > 0) {
-        const datas = await getDatas(window.location.origin + "/site/" + id);
+    const ctx = createContext();
+    if(ctx.mode === "id") {  // Edit mode
+        const datas = await getDatas(window.location.origin + "/site/" + ctx.id);
         loadDatas(datas);
         loadDatas(_COLUMNS);
         changeTitle("Modification d'un site");
-        document.getElementById("btn-creer").innerText = "Modifier";
-        _MODE = "add";
-    } else _MODE = "new";  
+    } else if (ctx.mode === 'new') { //  Default add mode
+    } else log("Error mode");
     
+    updateButtonCreer(ctx);
     addMap();
 }
 

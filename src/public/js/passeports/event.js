@@ -1,35 +1,36 @@
 getElement('btn-creer').addEventListener('click', async function() {
-    head(" btn-creer");
+    _DATAS = formDatas();
+    const ctx = getContext();
     if(validatePasseport() === true) {
-
-        _DATAS = JSON.stringify(formToJSON(document.getElementsByClassName('formData')[0].elements));
-        var input = document.querySelector('input[type="file"]');
-        if (input.files[0]) {
-            const formData = new FormData();
-            formData.append('image', input.files[0]);
-            const addFile = await fetch(window.location.origin + `/upload`, {
+        if (ctx.mode === "new") {
+            var input = document.querySelector('input[type="file"]');
+            if (input.files[0]) {
+                const formData = new FormData();
+                formData.append('image', input.files[0]);
+                const addFile = await fetch(window.location.origin + `/upload`, {
+                    method: "POST",
+                    body: formData,
+                });
+                const res = await addFile.json();   
+                _DATAS["fichier"] = res.id;
+            } else _DATAS["fichier"] = 0;
+            fetch(window.location.origin + `/passeport`, {
                 method: "POST",
-                body: formData,
-            });
-            const res = await addFile.json();   
-            _DATAS["fichier"] = res.id;
-        } else _DATAS["fichier"] = 0;
-        fetch(window.location.origin + `/passeport`, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(_DATAS),
-        }).then(async response => {
-            if (response.status === 201) {
-                showModalOk("Opération réussie", "./passeports.html");
-            } else {
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(_DATAS),
+            }).then(async response => {
                 const resJson =  await response.json();
-                showModalError(resJson.code + " : " + resJson.error);
-            }
-        }).catch(err => {
-             showModalError(err);
-        });
+                if (response.status === 201) {
+                    showModalOk("Opération réussie", "./passeports.html");
+                } else {
+                    showModalError(resJson.code + " : " + resJson.error);
+                }
+            }).catch(err => {
+                showModalError(err);
+            });
+        }
     }
 });
 

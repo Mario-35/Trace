@@ -2,8 +2,6 @@ let dataList = document.querySelector('.userListing');
 let dataUl = document.querySelector('ul');
 var getData = !JSON.parse(localStorage.getItem('userData')) ? [] : JSON.parse(localStorage.getItem('userData'))
 
-console.log(getData);
-
 getData.forEach(element => {
   dataUl.innerHTML += `<li>${element}</li>`
 })

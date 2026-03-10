@@ -5,12 +5,35 @@ import { readId, readIds } from "../../controller";
 import { List } from "../../html/class/list";
 import { Configuration } from "../../html/class/configuration";
 import { executeSql } from "../../db";
+import { Echantillon } from "../../html/class/echantillon";
+import { Add } from "../../html/class/add";
+import { readConfig } from "@app/configuration/controller";
 export const pagesRoutes = Router();
 
 let config: any | undefined = undefined;
 // Get all echantillons
 pagesRoutes.get("/index", async (req, res) => {
     const html = new Index();
+    res.send(html.toString())
+});
+
+// add echanillion
+pagesRoutes.get("/echantillon-add.html", async (req, res) => {
+    readConfig().then(config => {
+        const html = new Add("echantillon", config);
+        res.send(html.toString());
+    });
+});
+
+pagesRoutes.get("/site-add.html", async (req, res) => {
+    readConfig().then(config => {
+        const html = new Add("site", config);
+        res.send(html.toString());
+    });
+});
+
+pagesRoutes.get("/selections.html", async (req, res) => {
+    const html = new List("Selection");
     res.send(html.toString())
 });
 
@@ -93,5 +116,10 @@ pagesRoutes.post("/SaveConfig", async (req, res)  => {
 
 pagesRoutes.get("/configuration.html", async (req, res) => {
     const html = new Configuration();
+    res.send(html.toString())
+});
+
+pagesRoutes.get("/add/echantillon.html", async (req, res) => {
+        const html = new Echantillon();
     res.send(html.toString())
 });

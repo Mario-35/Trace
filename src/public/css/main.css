@@ -37,20 +37,14 @@
 
 body {
     margin: 0;
-    line-height: 1.5;
-    color: #212529;
+    color: black;
     text-align: left;
-    background-color: #fff;
+    background-color: white;
 }
 
 .fit {
    white-space: nowrap;
    width: 1%;
-}
-
-.DropDownInputOverride { 
-    width:170px;
-    display:none;
 }
 
 
@@ -71,3 +65,5 @@ body {
 .dud {
   color: #757575;
 }
+
+

@@ -1,30 +1,27 @@
 //  button création 
-getElement('btn-creer').addEventListener('click', async function() {
-    head(" btn-creer");
-    
-    _DATAS = formToJSON(document.getElementsByClassName('formData')[0].elements); 
-    if(window.location.href.includes('?id=')) {
-        const id = window.location.href.split('?id=')[1];
-        fetch(window.location.origin + `/echantillon/` + id, {
+getElement('btn-creer').addEventListener('click', async (event) => {
+    event.preventDefault();    
+    _DATAS = formDatas();
+    const ctx = getContext();
+    if (ctx.mode ==="id") {
+        fetch(window.location.origin + `/echantillon/` + ctx.id, {
             method: "PATCH",
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify(formDatas()),
+            body: JSON.stringify(_DATAS),
         }).then(async response => {
+            const resJson =  await response.json();
             if (response.status === 201) {
-                showModalPrint(id, getElement("passeport").value);
+                showModalPrint({echantillon: ctx.id});
             } else {
-                const resJson =  await response.json();
-                showModalError(resJson);
+                showModalError(resJson.error);
             }
         }).catch(err => {
             showModalError(err);
         });
-    } else {
-        if (window.location.href.includes('?excel=')) 
-            _DATAS["excel"] = +window.location.href.split('?excel=')[1] || 0;
-        
+    } else if (isContextMode(["excel", "new"])) {
+        _DATAS["etat"] = "Créer";
         fetch(window.location.origin + `/echantillon`, {
             method: "POST",
             headers: {
@@ -32,76 +29,123 @@ getElement('btn-creer').addEventListener('click', async function() {
             },
             body: JSON.stringify(_DATAS),
         }).then(async response => {
+            const resJson =  await response.json();
             if (response.status === 201) {
-                const data = await response.json();
-                console.log(data);
-                if (data.identification )
-                    showModalPrint(data.identification, getElement("passeport").value, true);
+               if (resJson)
+                    showModalPrint(resJson);
                 else showModalError("Aucun retour reçu");
             } else {
-                const resJson =  await response.json();
                 showModalError(resJson.code + " : " + resJson.error);
             }
         }).catch(err => {
             showModalError(err);
         });
-    }
+    } else alert(_NOTYET);
 });
 
+getElement('btn-aliquote').addEventListener('click', async (event) => {
+    event.preventDefault();   
+    window.location.href = window.location.origin + '/echantillon-add.html?aliquote=' + ctx.value;
+});
+
+
+async function getMaxNombre() {
+        const temp = await getDatas(window.location.origin + '/echantillon/next/' + createIdentification());
+        numero.min = temp;
+        if (temp) numero.value = temp;
+}
+
+function updateIdentification() {
+   getElement("identification").value = createIdentification();
+}
+
+function cleanCulture() {
+   getElement("cultures").value= JSON.stringify({});
+   
+}
+
+
 //  button d'interrogation du rpg
-getElement('btnApiRpg').addEventListener('click', async function() {
-    if (getElement("pointx").value && getElement("pointy").value)  {
-        pointx.value = pointx.value.replace(',','.');
-        pointy.value = pointy.value.replace(',','.');
-        const temp = await getDatas(window.location.origin + '/rpg?pos=' + pointx.value + "," + pointy.value);
-        rpgReferences = JSON.parse(`{${temp.codes.join()}}`);
-        getElement("cultures").value= JSON.stringify(temp.values);
-    }
+getElement('btnApiRpg').addEventListener('click', async (event) => {
+    event.preventDefault();
+    await getRpgInfos(getElement("rpgTab"));
+    refresh();
+});
+
+getElement('btnAddSite').addEventListener('click', async (event) => {
+    event.preventDefault();
+    setDisabled("btnAddSite");
+    await createSite();
     refresh();
 });
 
 // changement de la cle de stockage
-getElement('cle').addEventListener('change', function() {
+getElement('site').addEventListener('blur', async (event) => {
+    event.preventDefault();
+    if(site.value.trim().length > 2) {
+        const datas = await getDatas(`${window.location.origin}/sites/filter/${site.value}`);
+        console.log(datas)
+        addDataList(getElement('site'), datas); 
+    }
+
+});
+// changement de la cle de stockage
+getElement('cle').addEventListener('change', (event) => {
+    event.preventDefault();
     valeur.value = toJson("stockage")[this.value] || '';
 });
 
 // changement de la valeur de stockage
-getElement("valeur").addEventListener("blur", function() {
+getElement("valeur").addEventListener("blur", (event) => {
+    event.preventDefault();
     addToJson ("stockage", cle.value, valeur.value);
     refresh();
 });
 
 // modification de la date de prelevement
-getElement('prelevement').addEventListener('change', function() {
-   getElement("identification").value = createIdentification();
+getElement('prelevement').addEventListener('change', (event) => {
+    event.preventDefault();
+   updateIdentification();
 });
 
 // modification du numéro
-getElement('numero').addEventListener('change', function() {
-   getElement("identification").value = createIdentification();
+getElement('numero').addEventListener('change', (event) => {
+    event.preventDefault();
+   updateIdentification();
 });
 
 // Button de demo
-getElement('demos').addEventListener('change', function() {
+getElement('demos').addEventListener('change', (event) => {
+    event.preventDefault();
     loadValues(_DEMOS[getElement("demos").value]);
     refresh();
 });
 
-getElement("type").addEventListener("change", function() {
-    getElement("cultures").value= JSON.stringify({});
-    refreshType();
-});
-getElement("pointx").addEventListener("change", function() {
-    getElement("cultures").value= JSON.stringify({});
+// Select type
+getElement("type").addEventListener("change", (event) => {
+    event.preventDefault();
+    cleanCulture();
 });
 
-getElement("pointy").addEventListener("change", function() {
-    getElement("cultures").value= JSON.stringify({});
+// latitude change
+getElement("latitude").addEventListener("change", (event) => {
+    event.preventDefault();
+    cleanCulture();
 });
 
-getElement("searchSite").addEventListener("keyup", async function() {
-    getElement('sitesData').innerHTML = "";
-     const temp = await getDatas(`${window.location.origin}/sites/search/${searchSite.value}`);
-     if (temp) 
-         addToOption(getElement('sitesData'), temp);
+// longitude change
+getElement("longitude").addEventListener("change", (event) => {
+    event.preventDefault();
+   cleanCulture();
+});
+
+getElement("nombreOuAnalyses").addEventListener("change", (event) => {
+    event.preventDefault();
+    readOnly(event.target.checked, "nombre");
+    showModalEditingList(" Chaque analyse générera un échantillon", "ajouter une analyse", getElement("analyses"), function() {nombre.value = getElement("analyses").value.split(',').length });  
+});
+
+getElement("pedagogique").addEventListener("change", (event) => {
+    event.preventDefault();
+    refresh();
 });

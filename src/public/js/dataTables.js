@@ -30,14 +30,88 @@ class JsonTable {
 		this.filteredPages = 0;
 		this.filteredData = [];
 
+		this.menuOptions = options.menuOptions || [];
+		this.menu = document.querySelector(".context-menu");
+		this.menuOption = document.querySelector(".context-menu-option");
+		this.menuVisible = false;		
+		this.selectedId = 0;		
+		this.selectedTxt = '';		
 		this.init();
 	}
+
+	toggleMenu (command ) {
+	  this.menu.style.display = command === "show" ? "block" : "none";
+	  this.menuVisible = !this.menuVisible;
+	};
+
+	setPosition({ top, left }) {
+	  this.menu.style.left = `${left}px`;
+	  this.menu.style.top = `${top}px`;
+	  this.toggleMenu("show");
+	};
 
 
 	async init() {
 		await this.fetchData();
 		this.renderTable();
 		this.addGlobalSearchListener();
+		Object(this.menuOptions).forEach(e => {
+			const li = document.createElement("li");
+			li.textContent = e.title;
+			if (e.url)
+				li.setAttribute("url", e.url);
+			if (e.filter)
+				li.setAttribute("filter", e.filter);
+			li.className = "context-menu-option";
+			contextMenu.appendChild(li);
+		})
+
+
+		jsonTable.addEventListener("click", e => {
+		  if (this.menuVisible) this.toggleMenu("hide");
+		});
+		
+		this.menu.addEventListener("click", e => {
+			const url = e.target.getAttribute("url") ;
+			if (this.menuVisible) this.toggleMenu("hide");
+			if (url && url !== "")
+				open(e.target.getAttribute("url") + this.selectedId);
+			else {
+				const filter = e.target.getAttribute("filter") ;
+				if (filter && filter !== "") {
+					this.filterCall(filter);
+				}
+			}
+		});
+		
+		jsonTable.addEventListener("contextmenu", e => {
+			e.preventDefault();
+			this.selectedId = e.target.parentElement.id;
+			this.selectedTxt = e.target.textContent;
+		  const origin = {
+			left: e.pageX,
+			top: e.pageY
+		  };
+		  this.setPosition(origin);
+		  return false;
+		});
+	}
+
+	filterCall(name) {
+        if (name) {
+            const visitor = this[`filter${name}`];
+            if (visitor) {
+                visitor.call(this);
+            } else {
+                Log( `Filter Error error filter${name}`);
+            }
+        }
+    }
+
+	filterIdentification12() {
+		const filtered = this.filterById(Number(this.selectedId));
+		globalSearch.value = filtered[0].identification.slice(0,12);
+		this.filterGlobal(globalSearch.value);
 	}
 
 	async postStore() {
@@ -93,12 +167,6 @@ class JsonTable {
 						await this.addData(event.target);
 					}
 				});
-			
-			// change region value
-			// getElement('addSample').addEventListener('change', async (event) => {
-			// 	await this.addData(event.target.value);
-			// });
-
 			return;
 		}
 		try {
@@ -167,6 +235,12 @@ class JsonTable {
 		return 'white-space: nowrap; width: 1%; font-weight: lighter;font-size: 14px;';
 	}
 
+	async site(element) {
+		const colName = element.value.split('|')[0];
+		const uniqueValues = [...new Set(this.data.map((row) => row[colName]))];
+		const temp = await postDatas(`${window.location.origin}/site/rapprochement`, {unique: uniqueValues});
+		if (temp) showModalList("Fichier Excel", "Base de données", temp, 'Trouvé');
+	}
 	renderHeader() {
 		const tableHeader = this.container.querySelector("thead");
 		tableHeader.innerHTML = "<tr></tr>";
@@ -218,12 +292,16 @@ class JsonTable {
 						option.value = column.key + "|" +value;
 						selectExcel.appendChild(option);
 					});
-					th.appendChild(selectExcel);	
-					
-					selectExcel.addEventListener("change", (e) => {
-						if (e.target.value)
-						e.target.classList.add("something");
-						else e.target.classList.remove("something");
+					th.appendChild(selectExcel);
+
+					selectExcel.addEventListener("change", async (e) => {
+						if (e.target.value.split('|')[1] === "site") {
+							await this.site(e.target);
+						}
+						if (e.target.value) 
+							e.target.classList.add("something");
+						else 
+							e.target.classList.remove("something");
 						this.filterBlankColumn();
 					});
 					break;
@@ -253,13 +331,13 @@ class JsonTable {
 			headerRow.insertAdjacentHTML("beforeend", `<th><button class="btn btn-success icon_print btn-sm" id="printAll"></button></th>`);
 		let elem = getElement("editAll");
 		if (elem) elem.addEventListener("click", async (e) => {
-        	const temp = await this.postDatas(window.location.origin + '/selection', {ids: this.filteredData.map(e => e.id)});
-			if (temp) open(this.editUrl + "?selection=" + temp[0].id, self); 
+        	const temp = await postDatas(window.location.origin + '/selection', {ids: this.filteredData.map(e => e.id)});
+			if (temp) window.location.href =this.editUrl + "?selection=" + temp[0].id;
 		});		
 		elem = getElement("printAll");
 		if (elem) elem.addEventListener("click", async (e) => {
-        	const temp = await this.postDatas(window.location.origin + '/selection', {ids: this.filteredData.map(e => e.id)});
-			if (temp) open(window.location.origin + '/print/' + "selection/" + temp[0].id, self);   
+        	const temp = await postDatas(window.location.origin + '/selection', {ids: this.filteredData.map(e => e.id)});
+			if (temp) open(window.location.origin + '/print/' + "selection/" + temp[0].id, "Imprimer", _PARAMPRINT,);
 		});		
 	}
 
@@ -333,7 +411,7 @@ class JsonTable {
 		if (this.editUrl) this.container
 			.querySelectorAll(".edit-btn")
 			.forEach((btn) =>
-				btn.addEventListener("click", (e) => open(this.editUrl + "?id=" + e.target.parentNode.closest('tr').id, self))
+				btn.addEventListener("click", (e) => window.location.href =this.editUrl + "?id=" + e.target.parentNode.closest('tr').id)
 			); 
 
 		if (this.select === true) {
@@ -353,10 +431,9 @@ class JsonTable {
 		if (this.printUrl) this.container
 			.querySelectorAll(".print-btn")
 			.forEach((btn) =>
-				btn.addEventListener("click", (e) => 
-					open(window.location.origin + '/print' + this.printUrl + e.target.parentNode.closest('tr').id, self))
+				btn.addEventListener("click", (e) => open(window.location.origin + '/print' + this.printUrl + e.target.parentNode.closest('tr').id, "Imprimer", _PARAMPRINT))
 			);
-	}
+		}
 
 	filterSelected(value) {
 		value = String(value);
@@ -475,6 +552,11 @@ class JsonTable {
 		this.renderTable();
 	}
 
+	filterById(id) {
+		id = Number(id);
+		return this.data.filter((row) => row.id == id);
+	}
+
 	filterGlobal(value) {
 		const lowerValue = value.toLowerCase();
 		this.filteredData = this.data.filter((row) =>
@@ -555,6 +637,12 @@ class JsonTable {
 		}
 		this.renderRows();
 	}
+
+
+
+
+
+
 }
 
 

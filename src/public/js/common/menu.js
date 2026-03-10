@@ -6,6 +6,7 @@ document.getElementById("left-pane").innerHTML = `
         <li><a href="./selections.html">Séléctions</a></li>
         <li><a href="./passeports.html">Passeports</a></li>
         <li><a href="./sites.html">Sites</a></li>
+        <li><a href="./api.html">Api</a></li>
         <li><a href="./configuration.html">Configuration</a></li>
     </ul>
 </nav>`;
@@ -19,145 +20,6 @@ document.getElementById("splitter-nav-site").innerHTML = `
     <nav role="navigation" class="splitter-nav-left">
     <img src="./assets/logo.png">
 </nav>`;
-
-// Visualisation du passeport
-function createHTMLviewPasseport(values) {
-    if(!values) 
-        values = {  "id": 0,
-                    "annee": "2019",
-                    "nom": "Nom a déterminer",
-                    "code": "FR",
-                    "tracabilite": "005",
-                    "identifiant": "BR13551",
-                    "origine": "FR"};
-
-    getElement("passeport").value = values.id;
-
-    getElement("blockPasseport").innerHTML = `
-        <div class="container-center">
-            <div class="pass-phyto border">
-                <div class="flag" id="passeportFlag"><img class ="flag-eu" src="./assets/flag-eu.png"></div>
-                <div class="title" id="passeportTitle" align="right"><p>Passeport phytosanitaire - ZP / Plant passport - PZ<br
-                >Beet necrotic yellow vein virus</p></div>
-                <div class="nom" id="passeportNom"><b>A</b> Sol</div>
-                <div class="code" id="passeportCode"><p><b>B</b> ${values.code}-${values.identifiant}</p></div>
-                <div class="trace" id="passeportTracabilite"><p><b>C</b> ${values.annee}-${String(values.tracabilite).padStart(4, '0')}</p></div>
-                <div class="origine" id="passeportOrigine"><p><b>D</b> ${values.origine}</p></div>
-            </div> 
-        </div>`;
-}
-
-// Button de creation du passeport phytosanitaire
-function createHTMLbtnCreatePasseport() {
-    if (+getElement("passeport").value === 0) {        
-        if (_CONFIGURATION.region == getElement("region").value)
-            {
-            getElement("blockPasseport").innerHTML = '';
-        } else if (notNull("cultures")) {
-            getElement("blockPasseport").innerHTML = `
-            <div class="container-center">
-                <div class="btn-group">
-                    <button class="btn btn-passeport"  id="btn-passeport-create">
-                        Créer un passeport phytosanitaire${+getElement("risqueRpg").value < 2 ? '' : ' avec test'} pour ${_YEAR}
-                    </button>
-                </div> 
-            </div>`; 
-
-            document.getElementById('btn-passeport-create').addEventListener('click', function() {
-                createHTMLcreatePasseport();
-                removeDisabled("btn-passeport-create");
-            });    
-
-        }
-    }
-}
-
-function createHTMLcreatePasseport() {
-    getElement("passeport").value = 0;
-    getElement("blockPasseport").innerHTML = `
-                                  <div class="form-row border">  
-                                      <div class="form-group row-1">
-                                          <div class="form-title">
-                                              <label>Création d'un passeport phytosanitaire</label>
-                                          </div>
-                                          <div class="error-message" id="create-error">Créer le passeport avant de poursuivre</div>
-                                      </div>
-                                  </div>
-
-                                  <div class="form-row border">
-
-                                      <div class="form-group row-2">
-                                          <label for="passeportNom">Nom interne du passeport</label>
-                                          <input type="text" id="passeportNom" class="form-control" placeholder="Nom interne du passeport">
-                                          <div class="error-message" id="passeportNom-error">Nom interne du passeport obligatoire</div>
-                                      </div>
-
-                                      <div class="form-group row-3">
-                                          <label for="image">Joindre un fichier${+getElement("risqueRpg").value < 2 ? '' : ' de test négatif de laboratoire'}</label>
-                                          <input class="form-control" type="file" name="image" id="image" accept=".doc,.docx,.pdf">
-                                          <div class="error-message" id="image-error">L'ajout d'un fichier est obligatoire</div>                                          
-                                      </div>
-                                      
-                                      <div class="form-group row-1">                    
-                                          <label>&nbsp;</label>
-                                          <button class="btn btn-api" alt="Créer" id="passCreate">
-                                              <i class="fas fa-check"></i> Créer
-                                          </button>
-                                      </div>
-                                  </div>
-  `; 
-
-  document.getElementById('passCreate').addEventListener('click', async function() {
-    let isValid = true;   
-    if (validateStr('passeportNom') === false) isValid = false;
-    if (validateDate('prelevement') === false) isValid = false;
-    if (isValid === false) return;
-      const datas = {
-          code: 'FR', 
-          origine: 'FR', 
-          identifiant: 'BR13551', 
-          annee: getYear(prelevement), 
-          tracabilite:  "001",
-          nom: passeportNom.value
-      }
-      var input = document.querySelector('input[type="file"]');
-      if (input.files[0]) {
-          const formData = new FormData();
-          formData.append('image', input.files[0]);
-          const addFile = await fetch(window.location.origin + `/upload`, {
-              method: "POST",
-              body: formData,
-          });
-          const res = await addFile.json();
-          datas["fichier"] = res.id;
-      } else datas["fichier"] = 0;
-           
-      await fetch(window.location.origin + `/passeport`, {
-          method: "POST",
-          headers: {
-              "Content-Type": "application/json",
-          },
-          body: JSON.stringify(datas),
-      }).then(async response => {
-          if (response.status === 201) {
-            const res = await response.json();
-            if (res.id) 
-                getElement("passeport").value= +res.id;
-            refresh();
-          } else {
-              const resJson =  await response.json();
-              showModalError(resJson.code + " : " + resJson.error);
-          }
-      }).catch(err => {
-          showModalError(err); 
-      });
-      refresh();
-
-
-  });
-
-  setDisabled("btn-passeport-create");
-}
 
 function addToOption(name, listElements, selected) {
     var select = getElement(name);
@@ -175,8 +37,25 @@ function addToOptions(names, listElements) {
     names.forEach(name => addToOption(name, listElements));
 };
 
+function addDataList(name, listElements) {
+    var select = getElement(name);
+    select.setAttribute("list", name +"s"); 
+    if (select) {
+        var datalist = document.createElement('datalist');
+        datalist.id = name +"s";
+        listElements.forEach(e => {
+            var opt = document.createElement('option');
+            opt.value = e;
+            opt.innerHTML = e;
+            datalist.appendChild(opt); 
+        });
+        select.appendChild(datalist); 
+    }
+};
+
+
 function loadValue(elementName, value) {
-    const elem = getElement(elementName);
+    const elem = document.getElementById(elementName);
     if (elem && value) {            
         switch (elem.type) {
             case "date":
@@ -194,9 +73,15 @@ function loadValue(elementName, value) {
                 break;
             case "number":
                 elem.value = +value;
-                break;        
+                break;  
+            case "hidden":
+                const list = document.getElementById(`${elementName}List`);
+                if (list) 
+                    new editingList(list, "Analyses effectuées", "Ajouter une analyses", value);                       
+                else elem.value = isNaN(value) ? value : +value;
+                break;  
             default:
-                log(`${elem.name} err =====> ${elem.type}`);
+                log(`${elem.name} error 🡺 ${elem.type}`);
                 break;
         }
     };
@@ -276,6 +161,65 @@ class TextScramble {
   }
 }
 
+function updateButtonCreer(ctx) {
+    let name = "Créer";
+    switch (ctx.mode) {
+        case 'id':  
+            name = "Modifier";
+            break;
+        case 'after':
+             name= "Ajouter";
+            break;
+        case 'excel': 
+            name= "Importer";
+            break;
+    }
+    getElement("btn-creer").innerText = `✔️ ${name}`;
+}
+// show elements with context test
+function updateReadOnly(ctx) {
+    updateButtonCreer(ctx);
+
+    if (ctx.mode === 'excel') return;
+    
+    // loop on form element
+    [].reduce.call(form.elements, (data, element) => {
+        // if name present is present in form 
+        let show = element.name ? false : true;     
+        if (element.name) { 
+            if (element.getAttribute("canedit")) {
+                switch (element.getAttribute("canedit")) {
+                    // never so it's never editable
+                    case "never":
+                        show = false;                        
+                        break;
+                    // always editable
+                    case "always":
+                        show = true;                        
+                        break;
+                    // editable if no value
+                    case "notNull":
+                        show = (element.value && element.value === _AUCUN);                     
+                        break;
+                    // editable in edit, new or after mode
+                    case "true":
+                        show = isContextMode(['new','id', 'adter']);                     
+                        break;
+                    // only if etat in Créer value
+                    case "etat:Créer":
+                        show = getElement('etat').value === 'Créer';                     
+                        break;
+                }
+            // in new mode editable is true
+            }  else  show = (ctx.mode ===  'new');
+        }
+        // active or not
+        if (show)
+            element.removeAttribute("readonly");
+        else 
+            element.setAttribute("readonly", "");
+    });
+}
 
 function start() {
     const fx = new TextScramble(document.getElementById('animeText'));

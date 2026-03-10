@@ -1,5 +1,5 @@
 head =(title) => {
-    if(_DEBUG)  console.log('='.repeat(15) + ' ' + title + ' ' + '='.repeat(15));
+    if (_CONFIGURATION.debug === true) console.log('='.repeat(15) + ' ' + title + ' ' + '='.repeat(15));
 }
 
 log =(title) => {
@@ -18,21 +18,21 @@ function addToJson(name, key, value) {
     document.getElementById(name).value =  JSON.stringify(tmp);
 }
 
+
 function toJson(name) {
-    if(name) {
+    if (name) {
         const element = getElement(name);
         if (element && element.value) {
             try {
-                return JSON.parse(document.getElementById(name).value);
-            } catch (error) {    
-               log("======= ERROR =============" + name + "=============================");
-               log(getElement(name).value);
-               log(error);
+                originalJson = JSON.parse(element.value);
+                return JSON.parse(JSON.stringify(originalJson));
+            } catch (error) {
+                return {};
             }
         }
     }
-    return JSON.parse('{}'); 
-}
+};
+
 
 function validateFile(name) {
     const element = getElement(name);
@@ -95,7 +95,7 @@ function validateDate(name) {
 
 function addOptions(name, listElements) {
     // init select for sticker
-    var select = getElement(name);
+    var select = getElementById(name);
     Object.keys(listElements).forEach(e => {
         var opt = document.createElement('option');
         opt.value = listElements[e];

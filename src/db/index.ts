@@ -39,11 +39,11 @@ export function addPartiton(name: string) {
 export async function isDbExists(): Promise<boolean> {
       return  await sql
             .unsafe(`select 1+1 AS result`)
-            .then((res: object) => {
+            .then(() => {
                   return true;
             })
-            .catch((err: Error) => {
-                  console.log(err);
+            .catch((error: Error) => {
+                  console.log(error);
                   return false;
             });
 }
@@ -53,5 +53,10 @@ export {executeSqlValues} from "./executeSqlValues"
 export {createDB} from "./createDB"
 export {createDetaultDatas} from "./createDetaultDatas"
 export {createPgValues} from "./createPgValues"
+export {createPgUpdates} from "./createPgUpdates"
+export {createPgColumns} from "./createPgColumns"
+export {createPgInsert} from "./createPgInsert"
+export {createPgUpdate} from "./createPgUpdate"
+export {writeDB} from "./writeDB"
 
 

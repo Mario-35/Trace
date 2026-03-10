@@ -30,8 +30,8 @@ export class Print extends CoreHtmlView {
                             '<meta charset="UTF-8">',
                             '<meta name="viewport" content="width=device-width, initial-scale=1.0">',
                             '<title>Impression des passeports</title>',
-                            '<link rel="stylesheet" href="./css/print.css">',
-                            '<link rel="stylesheet" href="./css/passeport.css">',
+                            this.getFile("./css/print.css"),
+                            this.getFile("./css/passeport.css"),
                             '</head>',
                             '<body>',
                             '<div class="content" id="passeportsContent"></div>',
@@ -39,14 +39,11 @@ export class Print extends CoreHtmlView {
                             '<script>',
                             `_DATAPI = ${JSON.stringify(this.datas)}`,
                             '</script>',
-                            '<script src="./js/constants.js"></script>',
-                            '<script src="./js/api/print.js"></script>',
+                            this.getFile("./js/configuration.js"),
+                            this.getFile("./js/constants.js"),
+                            this.getFile("./js/api/print.js"),
                             '<script>start()</script>',
                             '</html>'].map((e: string) => e.trim());
-        this.replaceFile("css/print.css");
-        this.replaceFile("css/passeport.css");
-        this.replaceFile("js/constants.js");
-        this.replaceFile("js/api/print.js");
     }
 
     createPrintEchantillonHtmlString() {
@@ -56,8 +53,8 @@ export class Print extends CoreHtmlView {
                             '<meta charset="UTF-8">',
                             '<meta name="viewport" content="width=device-width, initial-scale=1.0">',
                             '<title>Gestion des étiquettes</title>',
-                            '<link rel="stylesheet" href="./css/print.css">',
-                            '<link rel="stylesheet" href="./css/echantillon.css">',
+                            this.getFile("./css/print.css"),
+                            this.getFile("./css/echantillon.css"),
                             '</head>',
                             '<body>',
                             '<div class="content" id="echantillonsContent"></div>',
@@ -65,16 +62,12 @@ export class Print extends CoreHtmlView {
                             '<script>',
                             `_DATAPI = ${JSON.stringify(this.datas)}`,
                             '</script>',
-                            '<script src="./js/constants.js"></script>',
-                            '<script src="./js/libs/JsBarcode.all.min.js"></script>',
-                            '<script src="./js/api/print.js"></script>',
+                            this.getFile("./js/configuration.js"),
+                            this.getFile("./js/constants.js"),
+                            this.getFile("./js/libs/JsBarcode.all.min.js"),
+                            this.getFile("./js/api/print.js"),
                             '<script>start()</script>',
                             '</html>'].map((e: string) => e.trim());
-        this.replaceFile("css/print.css");
-        this.replaceFile("css/echantillon.css");
-        this.replaceFile("js/constants.js");
-        this.replaceFile("js/api/print.js");
-        this.replaceFile("js/libs/JsBarcode.all.min.js");
     }
 
     toString() {

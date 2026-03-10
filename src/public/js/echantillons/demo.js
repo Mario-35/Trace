@@ -2,17 +2,30 @@ const _DEMOS ={
     "Rien": {},
     "Basic": {
         "type": "Sol cultivé",
-        "prelevement": "2026-04-15",
-        "programme": "Programme a faire",
-        "site": "Site sur la lune",
-        "libre": "Un faux diverses",
-        "responsable": "De rien",
+        "prelevement": "2026-03-09",
+        "programme": "RMQS.Biodiv",
+        "site": "PLEYBEN",
+        "libre": "",
+        "responsable": "G.Perès",
         "nombre": 9,
         "pays": "France",
         "region": "Bretagne",
-        "pointx": "2.549023",
-        "pointy": "50.861302",
-        "stockage": {"Piece":"2","Batiment":"psn"},
+        "latitude": "48.2521082",
+        "longitude": "-3.9305030",
+        "dossier": "416",
+        "stockage": {},
+        "cultures": {}
+    },
+    "Gueno": {
+        "type": "Sol cultivé",
+        "prelevement": "2026-03-12",
+        "programme": "RMQS.Biodiv",
+        "site": "ARBOIS",
+        "libre": "",
+        "responsable": "G.Perès",
+        "nombre": 9,
+        "dossier": "416",
+        "stockage": {},
         "cultures": {}
     },
     "Risque": {
@@ -25,23 +38,23 @@ const _DEMOS ={
         "nombre": 9,
         "pays": "France",
         "region": "Normandie",
-        "pointx": "1,4312657",
-        "pointy": "49,9967718",
+        "latitude": "49.9967718",
+        "longitude": "1.4312657",
         "stockage": {"Piece":"Sous sol","Batiment":"13"},
         "cultures": {}
     },
   "PasInfos": {
     "type": "Sol cultivé",
-    "prelevement": "2025-09-27",
+    "prelevement": "2026-09-27",
     "programme": "Egestas Ligula Nullam Corporation",
-    "site": "Site a prevoire",
+    "site": "Site 1185",
     "libre": "Phasellus ornare. Fusce mollis. Duis",
     "responsable": "Wayne Curry",
     "nombre": 9,
     "pays": "France",
     "region": "Nord",
-    "pointx": "1,6442706",
-    "pointy": "50,7160535",
+    "latitude": "50,7160535",
+    "longitude": "1,6442706",
     "stockage": {
       "Piece": "Sous sol",
       "Batiment": "13"
@@ -58,8 +71,8 @@ const _DEMOS ={
     "nombre": 9,
     "pays": "France",
     "region": "Grand Est",
-    "pointx": "4,7256391",
-    "pointy": "48,9702311",
+    "latitude": "48,9702311",
+    "longitude": "4,7256391",
     "stockage": {
       "Piece": "Sous sol",
       "Batiment": "13"
@@ -68,7 +81,7 @@ const _DEMOS ={
   },
   "Risque2": {
     "type": "Sol cultivé",
-    "prelevement": "2025-04-17",
+    "prelevement": "2026-04-17",
     "programme": "Massa Integer Incorporated",
     "site": "Site a prevoire",
     "libre": "nunc. In at pede. Cras",
@@ -76,8 +89,8 @@ const _DEMOS ={
     "nombre": 9,
     "pays": "France",
     "region": "Centre-Val de Loire",
-    "pointx": "1,2425996",
-    "pointy": "48,4138067",
+    "latitude": "48,4138067",
+    "longitude": "1,2425996",
     "stockage": {
       "Piece": "Sous sol",
       "Batiment": "13"
@@ -86,7 +99,7 @@ const _DEMOS ={
   },
   "Possible2": {
     "type": "Sol cultivé",
-    "prelevement": "2025-04-21",
+    "prelevement": "2026-04-21",
     "programme": "Dapibus Id LLP",
     "site": "Site a prevoire",
     "libre": "aliquam adipiscing lacus. Ut nec",
@@ -94,8 +107,8 @@ const _DEMOS ={
     "nombre": 9,
     "pays": "France",
     "region": "Pays de la Loire",
-    "pointx": "-0,2269438",
-    "pointy": "47,5272638",
+    "latitude": "47,5272638",
+    "longitude": "-0,2269438",
     "stockage": {
       "Piece": "Sous sol",
       "Batiment": "13"

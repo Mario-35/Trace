@@ -1,11 +1,12 @@
 import { Router } from "express"
 import { deleteId, readId } from "../../controller"
-import { executeSqlValues, sql } from "../../db"
+import { executeSql, executeSqlValues, sql } from "../../db"
 import { addEchantillon, readEchantillonFromIdentification, readEchantillons, updateEchantillon } from "./controller";
+import { readConfig } from "@app/configuration/controller";
+import { Add } from "../../html/class/add";
 
 
 export const echantillonsRoutes = Router();
-
 
 // Get all echantillons
 echantillonsRoutes.get("/echantillons", async (req, res) => {
@@ -41,17 +42,17 @@ echantillonsRoutes.get("/echantillon/identification/:id", async (req, res) => {
 })
 
 // Get next echantillon numériotation
-echantillonsRoutes.get("/echantillon/after/:id", async (req, res) => {
-    return await sql`select MAX(SUBSTRING (identification FROM 13 FOR 4)::int) from echantillons where identification like CONCAT((select SUBSTRING (identification FROM 1 FOR 12) from echantillons where id = ${+req.params.id}), '%')`.then((max: any) => {
-        return res.status(200).json(Number(max[0].max) + 1);
+echantillonsRoutes.get("/echantillon/next/:id", async (req, res) => {
+    return await executeSql(`SELECT MAX(SUBSTRING (identification FROM 13 FOR 4)::int) from echantillons where identification LIKE '${req.params.id.slice(0, 12)}%'`).then((max: any) => {
+        return res.status                                                                                                                                                                                                                                                                                                         (200).json(Number(max[0].max) + 1);
     }).catch (error => {
         return res.status(404).json({"error": error.detail});
     });
-})
+});
 
 // Create one echantillon
 echantillonsRoutes.post("/echantillon", async (req, res) => {
-    return await addEchantillon(req.body).then((echantillon: any) => {
+    await addEchantillon(req.body).then((echantillon: any) => {
         return res.status(201).json(echantillon);
     }).catch (error => {
         return res.status(error.code === 23505 ? 409 : 404).json({"error": error.detail});
@@ -60,14 +61,29 @@ echantillonsRoutes.post("/echantillon", async (req, res) => {
 
 // Update one echantillon
 echantillonsRoutes.patch("/echantillon/:id", async (req, res) => {
-    const echantillon = await updateEchantillon(req.body,  +req.params.id);
-    res.status(201).json(echantillon)
+   await updateEchantillon(req.body,  +req.params.id).then((echantillon: any) => {
+       return res.status(201).json(echantillon);
+   }).catch((error: any) => {
+        return res.status(404).json({"error": error.detail});
+   })
 }); 
 
 // delete one echantillon
 echantillonsRoutes.delete("/echantillon/:id", async (req, res) => {
     return await deleteId("echantillons",  +req.params.id).then((nothing: any) => {
         return res.status(203).json();
+    }).catch (error => {
+        return res.status(404).json({"error": error.detail});
+    });
+});
+
+
+
+
+// Get next echantillon numériotation
+echantillonsRoutes.get("/echantillon/after/:id", async (req, res) => {
+    return await sql`select MAX(SUBSTRING (identification FROM 13 FOR 4)::int) from echantillons where identification like CONCAT((select SUBSTRING (identification FROM 1 FOR 12) from echantillons where id = ${+req.params.id}), '%')`.then((max: any) => {
+        return res.status(200).json(Number(max[0].max) + 1);
     }).catch (error => {
         return res.status(404).json({"error": error.detail});
     });

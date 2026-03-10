@@ -9,15 +9,16 @@
 import { sql } from ".";
 
 const executeSqlOne = async (query: string): Promise<object> => {
+    console.log(query);
     return new Promise(async function (resolve, reject) {
         await sql
             .unsafe(query)
             .then((res: object) => {
                 resolve(res);
             })
-            .catch((err: Error) => {
-                console.log(err);
-                reject(err);
+            .catch((error: Error) => {
+                console.log(error);
+                reject(error);
             });
     });
 };
@@ -33,9 +34,9 @@ const executeSqlMulti = async (queries: string[]): Promise<object> => {
             .then((res: object) => {
                 resolve(res);
             })
-            .catch((err: Error) => {
-                console.log(err);
-                reject(err);
+            .catch((error: Error) => {
+                console.log(error);
+                reject(error);
             });
     });
 };

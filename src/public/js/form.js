@@ -1,7 +1,7 @@
 function loadDatas(values) {
     _COLUMNS.forEach(e => {
         const elem = document.getElementById(e);
-        if (elem && values[e]) {            
+        if (elem && values[e]) {
             switch (elem.type) {
                 case "date":
                     elem.value = values[e].split("T")[0];
@@ -18,11 +18,12 @@ function loadDatas(values) {
                     break;
                 case "number":
                     elem.value = +values[e];
+                    break;
                 case "hidden":
                     elem.value = isNaN(values[e]) ? values[e] : +values[e];
                     break;
                 default:
-                    log(`${elem.name} err =====> ${elem.type}`);
+                    log(`${elem.name} error 🡺 ${elem.type}`);
                     break;
             }
         }
@@ -64,36 +65,6 @@ const getSelectValues = options => [].reduce.call(options, (values, option) => {
   return option.selected ? values.concat(option.value) : values;
 }, []);
 
-/**
- * A more verbose implementation of `formToJSON()` to explain how it works.
- *
- * NOTE: This function is unused, and is only here for the purpose of explaining how
- * reducing form elements works.
- *
- * @param  {HTMLFormControlsCollection} elements  the form elements
- * @return {Object}                               form data as an object literal
- */
-const formToJSON_deconstructed = elements => {
-  
-  // This is the function that is called on each element of the array.
-  const reducerFunction = (data, element) => {
-    
-    // Add the current field to the object.
-    data[element.name] = element.value;
-
-    return data;
-  };
-  
-  // This is used as the initial value of `data` in `reducerFunction()`.
-  const reducerInitialValue = {};
-  
-  // Now we reduce by `call`-ing `Array.prototype.reduce()` on `elements`.
-  const formData = [].reduce.call(elements, reducerFunction, reducerInitialValue);
-  
-  // The result is then returned for use elsewhere.
-  return formData;
-};
-
 
 /**
  * Retrieves input data from a form and returns it as a Array of columns name.
@@ -129,10 +100,14 @@ const formToJSON = elements => [].reduce.call(elements, (data, element) => {
 
     else if (element.type) switch (element.type) {
       case 'checkbox':
-        data[element.name] = element.checked;
+        data[element.name] = element.checked ? true : false;
         break
       case 'textarea':
-        data[element.name] = element.value || {};
+          try {
+              data[element.name] = JSON.parse(element.value);
+          } catch (error) {
+              data[element.name] = {};
+          }
         break
       case 'number':
         data[element.name] = +element.value;
@@ -145,12 +120,12 @@ const formToJSON = elements => [].reduce.call(elements, (data, element) => {
         data[element.name] = max > 0 ? element.value.slice(0, max): element.value;
         break
       case 'hidden':
-        data[element.name] = isNaN(element.value) ? max > 0 ? element.value.slice(0, max): element.value: +element.value;
+        data[element.name] = isNaN(element.value) ? max > 0 ? element.value.slice(0, max): element.value : +element.value;
         break
       default:
-        log(`${element.name} err =====> ${element.type}`);
+        log(`${element.name} err 🡺 ${element.type}`);
     } else {
-      console.log("[[[[[[[[[[[[[[[[[[[")
+      log(`${element.name} error type`);
     }
   }
   return data;
@@ -166,10 +141,9 @@ const handleFormSubmit = event => {
   event.preventDefault();
   // Call our function to get the form data.
   _DATAS = formToJSON(form.elements); 
-  // ...this is where we’d actually do something with the form data...
-  if (!_DATAS["etat"]) _DATAS["etat"] = "Créer";
-
-  localStorage.setItem('_datas', JSON.stringify(_DATAS));
+  // ...this is where we’d actually do something with the form data...   
+  console.log(_DATAS);
+  if (getElement("ctx")) console.log(getElement("ctx"));
 
 }
 

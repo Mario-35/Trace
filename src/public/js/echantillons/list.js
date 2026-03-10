@@ -5,23 +5,22 @@ if (window.location.href.includes('?passeport='))
 document.addEventListener("DOMContentLoaded", function () {
 	const table = new JsonTable({
 		jsonUrl: window.location.origin + "/echantillons" + `${id > 0 ? '/' + id : ""}`,
-		editUrl: "/addEchantillon.html",
+		editUrl: "/echantillon-add.html",
 		printUrl: "/echantillon/",
 		container: "#jsonTable",
 		globalSearch: "#globalSearch",
 		pagination: "#pagination",
-		columns: [
-			{
-				key: "Add",
-				title: "&nbsp;",
-                header: undefined,
-                message: "Ajouter à la série",
-                icon: "icon_after",
-				searchType: "button",
-                url: "addEchantillon.html?after=",
-			},
-			... structure 
-		]
+		columns: structure,
+        menuOptions: [
+            {
+                title : "Toute cette série",
+                filter: "Identification12",
+            },
+            {
+                title : "Ajouter a cette série",
+                url: "echantillon-add.html?after=",
+            }
+        ]
 	});
 });
 
@@ -60,9 +59,8 @@ class ExcelToJSON {
 }
 
 if (document.getElementById("fileone")) {
-
     fileone.addEventListener("change", function(e) {
-        document.getElementById('blockAjouter').innerHTML = `<a class="btn btn-success icon_plus" id="ajouterExcel" target="_self"> Ajouter</a>`;
+        document.getElementById('blockAjouter').innerHTML = `<a class="btn btn-success icon_plus" id="ajouterExcel"> Ajouter</a>`;
         var fileName = "";
         try {
             if (this.files && this.files.length > 1)
@@ -79,7 +77,6 @@ if (document.getElementById("fileone")) {
             console.log(err);
         }
     });
-
     fileone.addEventListener('change', handleFileSelect, false);
 }
 
@@ -89,6 +86,8 @@ function handleFileSelect(evt) {
     xl2json.parseExcel(files[0]);
     document.getElementById('ajouterExcel').addEventListener('click', async function() {
         const response = await xl2json.table.postStore();
-        open("./addEchantillon.html?excel=" + JSON.parse(response)[0].id);
+        window.location.href ="./echantillon-add.html?excel=" + JSON.parse(response)[0].id;
     }); 
+    fileonelabel.remove();
+    fileone.remove();
 }

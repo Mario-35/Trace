@@ -1,0 +1,107 @@
+
+.txtTodo,
+.btnAdd {
+	font-size: 16px;
+	border: none;
+	padding: 0.8rem 1.2rem;
+	outline: none;
+}
+.btnAdd {
+	float: right;
+	width: 100px;
+	color: #0009;
+	border-radius: 9999px;
+	background: rgb(200, 200, 255, 0.4);
+}
+.btnAdd:focus {
+	color: #339;
+	background: rgb(200, 200, 255, 0.9);
+}
+.txtTodo {
+	font-size: 16px;
+	width: calc(100% - 105px);
+	border: none;
+	background: transparent;
+}
+.txtTodo::placeholder {
+	opacity: 1;
+	color: #444;
+}
+.txtTodo:focus::placeholder {
+	opacity: 0.6;
+	color: rgb(80, 80, 160, 0.9);
+}
+.ulListes {
+	list-style-type: none;
+	user-select: none;
+	max-height: 30vh;
+	min-height: 20vh;
+	overflow-x: hidden;
+	overflow-y: auto;
+	margin-bottom: 16px;
+}
+.ulListes > li {
+	position: relative;
+	transition: all 200ms ease-in-out;
+	padding: 0.3rem 2rem;
+	font-size: 1.3rem;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.ulListes > li:hover {
+}
+.ulListes > li.drag-over {
+	padding-top: 40px;
+}
+.ulListes > li > b {
+	position: absolute;
+	right: 22px;
+	transition: all 200ms ease-in-out;
+	float: right;
+	cursor: pointer;
+	color: black;
+	background: #0001;
+	width: 1.5rem;
+	text-align: center;
+	border-radius: 9999px;
+}
+.ulListes > li > b:hover {
+	color: white;
+	background: #f006;
+}
+.ulListes > li > b:after {
+	content: "\00d7";
+}
+.ulListes::-webkit-scrollbar {
+	width: 8px;
+	height: 8px;
+	background: rgb(0, 0, 0, 0.05);
+}
+.ulListes::-webkit-scrollbar-thumb {
+	background: rgba(200, 200, 200, 0.4);
+	border-radius: 3px;
+}
+controls {
+	display: block;
+	transition: all 300ms ease-in-out;
+	margin: 16px 2rem;
+	background: rgb(0, 0, 0, 0.1);
+	border-radius: 9999px;
+	overflow: hidden;
+	box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0, rgba(27, 31, 35, 0.15) 0 0 0 1px;
+}
+controls:focus-within {
+	box-shadow: 0px 2px 8px rgb(0, 0, 0, 0.35);
+}
+.liste {
+	border-radius: 10px;
+	box-shadow: 0 2px 10px rgb(0, 0, 0, 0.1);
+	width: 80vw;
+	max-width: 600px;
+	min-width: 260px;
+	background-color: rgba(255, 255, 255, 0.1);
+	border: 1px solid rgba(255, 255, 255, 0.2);
+	backdrop-filter: blur(0.6rem);
+	box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+}

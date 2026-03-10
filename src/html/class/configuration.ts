@@ -35,9 +35,11 @@ export class Configuration extends CoreHtmlView {
             const excelColumns = ["${Object.keys(dataBase.echantillons.columns).filter(e => dataBase.echantillons.columns[e].excel).join('","')}"];
             const stickerElements = {${Object.keys(dataBase.echantillons.columns).filter(e => dataBase.echantillons.columns[e].etiquette).map(e => `"${e}" : "${dataBase.echantillons.columns[e].etiquette}"`)}};
             `);
+            
         this.replaceFile("css/form/configuration.css");
         this.replaceFile("css/form/main.css");
         this.replaceFile("css/main.css");
+        this.replaceFile("css/editingList.css");
         this.replaceFile("css/splitter.css");
         this.replaceFile("css/modal.css");
 
@@ -47,6 +49,7 @@ export class Configuration extends CoreHtmlView {
         this.replaceFile("js/all.js"); 
         this.replaceFile("js/common/splitter.js"); 
         this.replaceFile("js/common/menu.js"); 
+        this.replaceFile("js/common/editingList.js"); 
         this.replaceFile("js/form.js"); 
         this.replaceFile("js/api.js"); 
         this.replaceFile("js/helper.js"); 

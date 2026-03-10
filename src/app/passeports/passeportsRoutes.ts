@@ -5,6 +5,7 @@
 import { Router } from "express"
 import { deleteId, readAll, readAlSearch, readId, verifyBody } from "../../controller";
 import { addPasseport, updatePasseport } from "./controller";
+import { executeSql } from "../../db";
 
 export const passeportsRoutes = Router();
 
@@ -32,6 +33,27 @@ export const passeportsRoutes = Router();
       }).catch (error => {
         return res.status(404).json({"error": error.detail});
       });
+    });    
+    
+    // Get one passeport from site and year
+    passeportsRoutes.get("/passeport/:one/:two", async (req, res)  => {
+      if (isNaN(+req.params.one)) {
+        return await executeSql(`SELECT * FROM passeports WHERE UPPER(site) = '${req.params.one.toUpperCase()}' AND annee = '${req.params.two}'`).then((passeport: any) => {
+          return passeport.length === 1 
+          ? res.status(200).json(passeport[0])
+          : res.status(404).json({"code":404,"error":"Not Found"});
+        }).catch (error => {
+          return res.status(404).json({"error": error.detail});
+        });
+      } else {
+        return await executeSql(`SELECT * FROM passeports WHERE annee = '${req.params.year}' AND tracabilite = '${+req.params.tracabilite}'`).then((passeport: any) => {
+          return passeport.length > 0 
+          ? res.status(200).json(passeport[0])
+          : res.status(404).json({"code":404,"error":"Not Found"});
+        }).catch (error => {
+          return res.status(404).json({"error": error.detail});
+        });
+      }
     });  
 
     // Create one passeport

@@ -5,7 +5,7 @@ import { dataBase } from "./base";
 
 export async function createDetaultDatas() {
     await executeSql(`INSERT INTO configuration (
-      site, code, pays, region, pointx, pointy, 
+      site, code, pays, region, latitude, longitude, 
       identifiant, stockages, etats, etiquette
     ) 
     VALUES 
@@ -13,7 +13,7 @@ export async function createDetaultDatas() {
         'UMR Sas Rennes', 'FR', 'France', 
         'Bretagne', '48.112564637819', '-1.656744048248', 
         'BR13551', '{"Batiment","Etage","Piece","Meuble","Etagere","Caisse"}', 
-        '{"Créer","Prélevé","Stocké","Perdu","Detruit","Divisé"}',
+        '{"Créer","Prélevé","Stocké","Perdu","Detruit","Importé"}',
         '{"sticker0":{"key":"identification","align":"center","size":"12px"},"sticker1":{"key":"programme","align":"center","size":"12px"},"sticker2":{"key":"site","align":"center","size":"12px"},"sticker3":{"key":"responsable","align":"center","size":"12px"},"sticker4":{"key":"pays","align":"center","size":"12px"},"sticker5":{"key":"libre","align":"center","size":"12px"}}'
       )
     `);
