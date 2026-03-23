@@ -22,9 +22,9 @@ create_run_script() {
         echo "Delete => $FILERUN"
     fi
     echo "#!/bin/bash" > $FILERUN
-    echo "pm2 stop trace" >> $FILERUN
+    echo "pm2 stop main" >> $FILERUN
     echo "pm2 flush" >> $FILERUN
-    echo "pm2 delete trace" >> $FILERUN
+    echo "pm2 delete main" >> $FILERUN
     echo "echo \"API starting ...\"" >> $FILERUN
     echo "export NODE_ENV=production" >> $FILERUN
     echo "pm2 start ./trace/main.js" >> $FILERUN
