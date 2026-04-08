@@ -6,7 +6,7 @@
  *
  */
 
-import { EConstant } from "../../constant";
+import { _NONCE, EConstant } from "../../constant";
 import { dataBase } from "../../db/base";
 import { CoreHtmlView } from "./core";
 
@@ -109,17 +109,17 @@ export class List extends CoreHtmlView {
 		<div id="modal"></div>  
     </main>
 </body> 
-<script src="./js/api.js"></script>
+<script nonce="${_NONCE}" src="./js/api.js"></script>
 <script>const structure = ${JSON.stringify(listCols)}</script>
-<script src="./js/configuration.js"></script>
-<script src="./js/constants.js"></script>
-<script src="./js/all.js"></script>
-<script src="./js/common/modal.js"></script>
-<script src="./js/common/splitter.js"></script>
-<script src="./js/common/menu.js"></script>  
-<script src="./js/dataTables.js"></script>
-<script src="./js/${plural}/list.js"></script>    
-${excel ? '<script src="./js/libs/xlsx.full.min.js"></script>' : ''}
+<script nonce="${_NONCE}" src="./js/configuration.js"></script>
+<script nonce="${_NONCE}" src="./js/constants.js"></script>
+<script nonce="${_NONCE}" src="./js/all.js"></script>
+<script nonce="${_NONCE}" src="./js/common/modal.js"></script>
+<script nonce="${_NONCE}" src="./js/common/splitter.js"></script>
+<script nonce="${_NONCE}" src="./js/common/menu.js"></script>  
+<script nonce="${_NONCE}" src="./js/dataTables.js"></script>
+<script nonce="${_NONCE}" src="./js/${plural}/list.js"></script>    
+${excel ? `<script nonce="${_NONCE}" src="./js/libs/xlsx.full.min.js"></script>` : ''}
 </html>
 `.split(EConstant.newline)
             .map((e: string) => e.trim())

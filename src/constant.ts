@@ -6,6 +6,10 @@
  *
  */
 
+
+
+import crypto from "node:crypto";
+
 export const HELMET = {
         crossOriginEmbedderPolicy: false,
         crossOriginResourcePolicy: false,
@@ -46,3 +50,6 @@ export let _CONFIG = {};
 export function setConfig(input: any) {
     _CONFIG = input;
 }
+
+
+export const _NONCE = crypto.randomBytes(16).toString("base64");

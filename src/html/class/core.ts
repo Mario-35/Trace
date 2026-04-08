@@ -3,7 +3,7 @@
  * Core Class to be extend for HTML Views
  */
 
-import { EConstant } from "../../constant";
+import { _NONCE, EConstant } from "../../constant";
 import { removeAllQuotes } from "../../helpers/removeAllQuotes";
 import fs from "fs";
 import path from "path";
@@ -45,8 +45,8 @@ const operations: any = [];
             search: e,
             file: name
         });
-    } else if (e.includes('<script src="')) {
-        const name = e.split('<script src="./')[1].split('"></script>')[0];
+    } else if (e.includes(`<script nonce="${_NONCE}" src="`)) {
+        const name = e.split(`<script nonce="${_NONCE}" src="./')[1].split('"></script>`)[0];
         operations.push({
             search: e,
             file: name
@@ -74,13 +74,13 @@ operations.forEach((operation: any) => {
     replaceFile(name: string) {
         if(name.includes('css/'))
             this.replaceInReturnResult(`<link rel="stylesheet" href="./${name}">`, `<style>${this.addFile(`../../public/${name}`)}</style>`);
-            else this.replaceInReturnResult(`<script src="./${name}"></script>`, `<script>${this.addFile(`../../public/${name}`)}</script>`);
+            else this.replaceInReturnResult(`<script nonce="${_NONCE}" src="./${name}"></script>`, `<script>${this.addFile(`../../public/${name}`)}</script>`);
     }
 
     replaceText(name: string, content: string) {
         if(name.includes('css/'))
             this.replaceInReturnResult(`<link rel="stylesheet" href="./${name}">`, `<style>${content}</style>`);
-            else this.replaceInReturnResult(`<script src="./${name}"></script>`, `<script>${content}</script>`);
+            else this.replaceInReturnResult(`<script nonce="${_NONCE}" src="./${name}"></script>`, `<script>${content}</script>`);
 
     }
 

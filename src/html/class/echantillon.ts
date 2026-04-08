@@ -6,6 +6,7 @@
  *
  */
 
+import { _NONCE } from "../../constant";
 import { CoreHtmlView } from "./core";
 
 /**
@@ -40,8 +41,8 @@ export class Echantillon extends CoreHtmlView {
                             '<script>',
                             `_DATAPI = ${JSON.stringify(this.datas)}`,
                             '</script>',
-                            '<script src="./js/constants.js"></script>',
-                            '<script src="./js/api/print.js"></script>',
+                            `<script nonce="${_NONCE}" src="./js/constants.js"></script>`,
+                            `<script nonce="${_NONCE}" src="./js/api/print.js"></script>`,
                             '<script>start()</script>',
                             '</html>'].map((e: string) => e.trim());
     }
