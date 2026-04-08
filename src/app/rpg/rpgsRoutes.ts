@@ -21,7 +21,7 @@ rpgsRoutes.get("/rpg", async (req, res)  => {
       codes : codes,
     });
   }).catch (error => {
-    console.log(error);
+    console.error(error);
     return res.status(404).json({"error": error.detail});
   });
 });

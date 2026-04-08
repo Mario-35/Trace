@@ -81,7 +81,6 @@ export default class HttpServer {
           lines.push(` { "type": "Sol", "programme": "Thése Michael Briere", "pedagogique": false, "condition": null, "site": "Parcelle F0${nbParcelle}", "responsable": "S. Menasseri", "identification": "19032026114400${nbEch}", "parent": null, "dossier": "440", "libre": null, "creation": "2026-03-19T10:44:30.668", "prelevement": "2026-04-07", "peremption": "2031-04-07", "pays": "France", "region": "Bretagne", "latitude": "48.03169", "longitude": "-1.53286", "passeport": null, "cultures": {}, "stockage": {}, "etiquette": { "sticker0": { "key": "identification", "size": "12px", "align": "center" }, "sticker1": { "key": "programme", "size": "12px", "align": "center" }, "sticker2": { "key": "dossier-numero", "size": "14px", "align": "center" }, "sticker3": { "key": "responsable", "size": "12px", "align": "center" }, "sticker4": { "key": "pays", "size": "12px", "align": "center" }, "sticker5": { "key": "analyses", "size": "12px", "align": "center" } }, "analyses": [ "${e}" ], "etat": "Créer" }, `);
         })
       }
-      console.log(lines.join("\r\n"));
       res.status(200).json({});
     })
 

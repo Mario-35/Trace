@@ -50509,6 +50509,644 @@
             "etat": "Créer"
         },
         {
+            "type": "Sol",
+            "programme": "Thése Michael Briere",
+            "pedagogique": false,
+            "condition": null,
+            "site": "Parcelle F025",
+            "responsable": "S. Menasseri",
+            "identification": "0204202620540295",
+            "parent": "1903202611440170",
+            "dossier": "440",
+            "libre": null,
+            "creation": "2026-04-02T18:54:33.581",
+            "prelevement": "2026-04-07",
+            "peremption": "2031-04-07",
+            "pays": "France",
+            "region": "Bretagne",
+            "latitude": "47.87365",
+            "longitude": "-1.90408",
+            "passeport": null,
+            "cultures": {},
+            "stockage": {},
+            "etiquette": {
+                "sticker0": {
+                    "key": "identification",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker1": {
+                    "key": "programme",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker2": {
+                    "key": "dossier-numero",
+                    "size": "14px",
+                    "align": "center"
+                },
+                "sticker3": {
+                    "key": "responsable",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker4": {
+                    "key": "site",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker5": {
+                    "key": "analyses",
+                    "size": "12px",
+                    "align": "center"
+                }
+            },
+            "analyses": [
+                "Biomasse microbienne"
+            ],
+            "etat": "Créer"
+        },
+        {
+            "type": "Sol",
+            "programme": "Thése Michael Briere",
+            "pedagogique": false,
+            "condition": null,
+            "site": "Parcelle F025",
+            "responsable": "S. Menasseri",
+            "identification": "0204202620540296",
+            "parent": "1903202611440170",
+            "dossier": "440",
+            "libre": null,
+            "creation": "2026-04-02T18:54:33.581",
+            "prelevement": "2026-04-07",
+            "peremption": "2031-04-07",
+            "pays": "France",
+            "region": "Bretagne",
+            "latitude": "47.87365",
+            "longitude": "-1.90408",
+            "passeport": null,
+            "cultures": {},
+            "stockage": {},
+            "etiquette": {
+                "sticker0": {
+                    "key": "identification",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker1": {
+                    "key": "programme",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker2": {
+                    "key": "dossier-numero",
+                    "size": "14px",
+                    "align": "center"
+                },
+                "sticker3": {
+                    "key": "responsable",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker4": {
+                    "key": "site",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker5": {
+                    "key": "analyses",
+                    "size": "12px",
+                    "align": "center"
+                }
+            },
+            "analyses": [
+                "Sol 5 mm -18C"
+            ],
+            "etat": "Créer"
+        },
+        {
+            "type": "Sol",
+            "programme": "Thése Michael Briere",
+            "pedagogique": false,
+            "condition": null,
+            "site": "Parcelle F025",
+            "responsable": "S. Menasseri",
+            "identification": "0204202620540297",
+            "parent": "1903202611440170",
+            "dossier": "440",
+            "libre": null,
+            "creation": "2026-04-02T18:54:33.581",
+            "prelevement": "2026-04-07",
+            "peremption": "2031-04-07",
+            "pays": "France",
+            "region": "Bretagne",
+            "latitude": "47.87365",
+            "longitude": "-1.90408",
+            "passeport": null,
+            "cultures": {},
+            "stockage": {},
+            "etiquette": {
+                "sticker0": {
+                    "key": "identification",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker1": {
+                    "key": "programme",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker2": {
+                    "key": "dossier-numero",
+                    "size": "14px",
+                    "align": "center"
+                },
+                "sticker3": {
+                    "key": "responsable",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker4": {
+                    "key": "site",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker5": {
+                    "key": "analyses",
+                    "size": "12px",
+                    "align": "center"
+                }
+            },
+            "analyses": [
+                "Sol frais 5 mm +4C"
+            ],
+            "etat": "Créer"
+        },
+        {
+            "type": "Sol",
+            "programme": "Thése Michael Briere",
+            "pedagogique": false,
+            "condition": null,
+            "site": "Parcelle F025",
+            "responsable": "S. Menasseri",
+            "identification": "0204202620540298",
+            "parent": "1903202611440170",
+            "dossier": "440",
+            "libre": null,
+            "creation": "2026-04-02T18:54:33.581",
+            "prelevement": "2026-04-07",
+            "peremption": "2031-04-07",
+            "pays": "France",
+            "region": "Bretagne",
+            "latitude": "47.87365",
+            "longitude": "-1.90408",
+            "passeport": null,
+            "cultures": {},
+            "stockage": {},
+            "etiquette": {
+                "sticker0": {
+                    "key": "identification",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker1": {
+                    "key": "programme",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker2": {
+                    "key": "dossier-numero",
+                    "size": "14px",
+                    "align": "center"
+                },
+                "sticker3": {
+                    "key": "responsable",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker4": {
+                    "key": "site",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker5": {
+                    "key": "analyses",
+                    "size": "12px",
+                    "align": "center"
+                }
+            },
+            "analyses": [
+                "Sol séché 5 mm"
+            ],
+            "etat": "Créer"
+        },
+        {
+            "type": "Sol",
+            "programme": "Thése Michael Briere",
+            "pedagogique": false,
+            "condition": null,
+            "site": "Parcelle F025",
+            "responsable": "S. Menasseri",
+            "identification": "0204202620540299",
+            "parent": "1903202611440170",
+            "dossier": "440",
+            "libre": null,
+            "creation": "2026-04-02T18:54:33.581",
+            "prelevement": "2026-04-07",
+            "peremption": "2031-04-07",
+            "pays": "France",
+            "region": "Bretagne",
+            "latitude": "47.87365",
+            "longitude": "-1.90408",
+            "passeport": null,
+            "cultures": {},
+            "stockage": {},
+            "etiquette": {
+                "sticker0": {
+                    "key": "identification",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker1": {
+                    "key": "programme",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker2": {
+                    "key": "dossier-numero",
+                    "size": "14px",
+                    "align": "center"
+                },
+                "sticker3": {
+                    "key": "responsable",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker4": {
+                    "key": "site",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker5": {
+                    "key": "analyses",
+                    "size": "12px",
+                    "align": "center"
+                }
+            },
+            "analyses": [
+                "Analyse de base"
+            ],
+            "etat": "Créer"
+        },
+        {
+            "type": "Sol",
+            "programme": "Thése Michael Briere",
+            "pedagogique": false,
+            "condition": null,
+            "site": "Parcelle F025",
+            "responsable": "S. Menasseri",
+            "identification": "0204202620540300",
+            "parent": "1903202611440170",
+            "dossier": "440",
+            "libre": null,
+            "creation": "2026-04-02T18:54:33.581",
+            "prelevement": "2026-04-07",
+            "peremption": "2031-04-07",
+            "pays": "France",
+            "region": "Bretagne",
+            "latitude": "47.87365",
+            "longitude": "-1.90408",
+            "passeport": null,
+            "cultures": {},
+            "stockage": {},
+            "etiquette": {
+                "sticker0": {
+                    "key": "identification",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker1": {
+                    "key": "programme",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker2": {
+                    "key": "dossier-numero",
+                    "size": "14px",
+                    "align": "center"
+                },
+                "sticker3": {
+                    "key": "responsable",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker4": {
+                    "key": "site",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker5": {
+                    "key": "analyses",
+                    "size": "12px",
+                    "align": "center"
+                }
+            },
+            "analyses": [
+                "Respiration"
+            ],
+            "etat": "Créer"
+        },
+        {
+            "type": "Sol",
+            "programme": "Thése Michael Briere",
+            "pedagogique": false,
+            "condition": null,
+            "site": "Parcelle F025",
+            "responsable": "S. Menasseri",
+            "identification": "0204202620540301",
+            "parent": "1903202611440170",
+            "dossier": "440",
+            "libre": null,
+            "creation": "2026-04-02T18:54:33.581",
+            "prelevement": "2026-04-07",
+            "peremption": "2031-04-07",
+            "pays": "France",
+            "region": "Bretagne",
+            "latitude": "47.87365",
+            "longitude": "-1.90408",
+            "passeport": null,
+            "cultures": {},
+            "stockage": {},
+            "etiquette": {
+                "sticker0": {
+                    "key": "identification",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker1": {
+                    "key": "programme",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker2": {
+                    "key": "dossier-numero",
+                    "size": "14px",
+                    "align": "center"
+                },
+                "sticker3": {
+                    "key": "responsable",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker4": {
+                    "key": "site",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker5": {
+                    "key": "analyses",
+                    "size": "12px",
+                    "align": "center"
+                }
+            },
+            "analyses": [
+                "PMN"
+            ],
+            "etat": "Créer"
+        },
+        {
+            "type": "Sol",
+            "programme": "Thése Michael Briere",
+            "pedagogique": false,
+            "condition": null,
+            "site": "Parcelle F025",
+            "responsable": "S. Menasseri",
+            "identification": "0204202620540302",
+            "parent": "1903202611440170",
+            "dossier": "440",
+            "libre": null,
+            "creation": "2026-04-02T18:54:33.581",
+            "prelevement": "2026-04-07",
+            "peremption": "2031-04-07",
+            "pays": "France",
+            "region": "Bretagne",
+            "latitude": "47.87365",
+            "longitude": "-1.90408",
+            "passeport": null,
+            "cultures": {},
+            "stockage": {},
+            "etiquette": {
+                "sticker0": {
+                    "key": "identification",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker1": {
+                    "key": "programme",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker2": {
+                    "key": "dossier-numero",
+                    "size": "14px",
+                    "align": "center"
+                },
+                "sticker3": {
+                    "key": "responsable",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker4": {
+                    "key": "site",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker5": {
+                    "key": "analyses",
+                    "size": "12px",
+                    "align": "center"
+                }
+            },
+            "analyses": [
+                "NO3 NH4"
+            ],
+            "etat": "Créer"
+        },
+        {
+            "type": "Sol",
+            "programme": "Thése Michael Briere",
+            "pedagogique": false,
+            "condition": null,
+            "site": "Parcelle F025",
+            "responsable": "S. Menasseri",
+            "identification": "0204202620540303",
+            "parent": "1903202611440170",
+            "dossier": "440",
+            "libre": null,
+            "creation": "2026-04-02T18:54:33.581",
+            "prelevement": "2026-04-07",
+            "peremption": "2031-04-07",
+            "pays": "France",
+            "region": "Bretagne",
+            "latitude": "47.87365",
+            "longitude": "-1.90408",
+            "passeport": null,
+            "cultures": {},
+            "stockage": {},
+            "etiquette": {
+                "sticker0": {
+                    "key": "identification",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker1": {
+                    "key": "programme",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker2": {
+                    "key": "dossier-numero",
+                    "size": "14px",
+                    "align": "center"
+                },
+                "sticker3": {
+                    "key": "responsable",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker4": {
+                    "key": "site",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker5": {
+                    "key": "analyses",
+                    "size": "12px",
+                    "align": "center"
+                }
+            },
+            "analyses": [
+                "CN sol entier"
+            ],
+            "etat": "Créer"
+        },
+        {
+            "type": "Sol",
+            "programme": "Thése Michael Briere",
+            "pedagogique": false,
+            "condition": null,
+            "site": "Parcelle F025",
+            "responsable": "S. Menasseri",
+            "identification": "0204202620540304",
+            "parent": "1903202611440170",
+            "dossier": "440",
+            "libre": null,
+            "creation": "2026-04-02T18:54:33.581",
+            "prelevement": "2026-04-07",
+            "peremption": "2031-04-07",
+            "pays": "France",
+            "region": "Bretagne",
+            "latitude": "47.87365",
+            "longitude": "-1.90408",
+            "passeport": null,
+            "cultures": {},
+            "stockage": {},
+            "etiquette": {
+                "sticker0": {
+                    "key": "identification",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker1": {
+                    "key": "programme",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker2": {
+                    "key": "dossier-numero",
+                    "size": "14px",
+                    "align": "center"
+                },
+                "sticker3": {
+                    "key": "responsable",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker4": {
+                    "key": "site",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker5": {
+                    "key": "analyses",
+                    "size": "12px",
+                    "align": "center"
+                }
+            },
+            "analyses": [
+                "POM"
+            ],
+            "etat": "Créer"
+        },
+        {
+            "type": "Sol",
+            "programme": "Thése Michael Briere",
+            "pedagogique": false,
+            "condition": null,
+            "site": "Parcelle F025",
+            "responsable": "S. Menasseri",
+            "identification": "0204202620540305",
+            "parent": "1903202611440170",
+            "dossier": "440",
+            "libre": null,
+            "creation": "2026-04-02T18:54:33.581",
+            "prelevement": "2026-04-07",
+            "peremption": "2031-04-07",
+            "pays": "France",
+            "region": "Bretagne",
+            "latitude": "47.87365",
+            "longitude": "-1.90408",
+            "passeport": null,
+            "cultures": {},
+            "stockage": {},
+            "etiquette": {
+                "sticker0": {
+                    "key": "identification",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker1": {
+                    "key": "programme",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker2": {
+                    "key": "dossier-numero",
+                    "size": "14px",
+                    "align": "center"
+                },
+                "sticker3": {
+                    "key": "responsable",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker4": {
+                    "key": "site",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker5": {
+                    "key": "analyses",
+                    "size": "12px",
+                    "align": "center"
+                }
+            },
+            "analyses": [
+                "MAOM"
+            ],
+            "etat": "Créer"
+        },
+        {
             "type": "Sol Cultivé",
             "programme": "Rmqs.biodiv",
             "pedagogique": false,

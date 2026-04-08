@@ -4,6 +4,7 @@ import { asyncForEach } from "../helpers/asyncForEach";
 import { populate } from "./populate";
 import { _TYPES } from "../constant";
 import { toTitleCase } from "../helpers/toTitleCase";
+import { error } from "node:console";
 
 
 export async function createDB(adminPass: string): Promise<Record<string, string>> {
@@ -58,7 +59,11 @@ export async function createDB(adminPass: string): Promise<Record<string, string
     })
   });
   
-  await populate();
+  await populate().then(() => {
+    result["Populate"] = "Ok";
+  }).catch((error) => {
+     console.error(error);
+  });
 
   return result; 
 }

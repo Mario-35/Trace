@@ -46,8 +46,3 @@ export let _CONFIG = {};
 export function setConfig(input: any) {
     _CONFIG = input;
 }
-
-// readConfig().then((config: any) => {
-//     setConfig(config);
-//     console.log("Configuration chargé")
-// });

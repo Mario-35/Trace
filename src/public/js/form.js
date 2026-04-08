@@ -1,6 +1,4 @@
 function loadDatas(values) {
-  console.log(values);
-  
     _COLUMNS.forEach(e => {
         const elem = document.getElementById(e);
         if (elem && values[e]) {
@@ -149,7 +147,6 @@ const handleFormSubmit = event => {
   // Call our function to get the form data.
   _DATAS = formToJSON(form.elements); 
   // ...this is where we’d actually do something with the form data...   
-  console.log(_DATAS);
   if (getElement("ctx")) console.log(getElement("ctx"));
 
 };
