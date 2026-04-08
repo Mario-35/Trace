@@ -6,11 +6,9 @@ import compression from "compression";
 import path from "path";
 import { logger } from "@infra/logger";
 import {  HELMET } from "./constant";
-import { createDB, createDetaultDatas, executeSql, executeSqlValues, sql, writeDB } from "./db";;
+import { createDB, sql, writeDB } from "./db";;
 import { echantillonsRoutes, excelsRoutes, pagesRoutes, passeportsRoutes, selectionsRoutes, sitesRoutes, rpgsRoutes, campagnesRoutes, evenementsRoutes } from "./app";
 import { configRoutes } from "@app/configuration/configRoutes";
-
-
 
 export default class HttpServer {
   private app: Express;
@@ -19,8 +17,8 @@ export default class HttpServer {
   upload: multer.Multer;
   _datas: any;
 
-  constructor() {
-    this.app = express();
+  constructor(app: express.Express) {
+    this.app = app;
     this.storage = multer.memoryStorage();
     this.upload = multer({ storage: this.storage }); 
   }
