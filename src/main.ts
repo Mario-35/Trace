@@ -17,7 +17,15 @@ enum ExitStatus {
 
 async function main(port: number) {
   try {
-    const httpServer = new HttpServer(express());
+    const server = express();
+    server.use(function (req, res, next) {
+  res.setHeader(
+    'Content-Security-Policy-Report-Only',
+    "default-src 'self'; font-src 'self'; img-src 'self'; script-src 'self'; style-src 'self'; frame-src 'self'"
+  );
+  next();
+});
+    const httpServer = new HttpServer(server);
     const exitSignals: NodeJS.Signals[] = ["SIGINT", "SIGTERM", "SIGQUIT"];
     
     if (!fs.existsSync(path.resolve(__dirname, "./public/js", "configuration.js")) && await isDbExists() === true) writeConfig(); 
