@@ -9,13 +9,14 @@
 import postgres from "postgres";
 import { dataBase } from "./base";
 import { executeSql } from "./executeSql";
+const pwd = process.env.NODE_ENV === 'production' ? 'postgres' : "mario29";
 
-export const sql = postgres('postgres://postgres:mario29@localhost:5432/trace', {
+export const sql = postgres('postgres://postgres:' + pwd + '@localhost:5432/trace', {
     host                 : 'localhost',   // Postgres ip address[s] or domain name[s]
     port                 : 5432,          // Postgres server port[s]
     database             : 'trace',         // Name of database to connect to
     username             : 'postgres',    // Username of database user
-    password             : 'mario29',     // Password of database user
+    password             :  pwd,     // Password of database user
     debug: true,
     max: 2000,
     connection: {
