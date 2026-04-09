@@ -35,7 +35,10 @@ export default class HttpServer {
 
   private loadMiddlewares(): void {
     this.app.use(cors());
-    this.app.use(helmet(HELMET) );
+    this.app.use(helmet({
+    contentSecurityPolicy: false,
+    xDownloadOptions: false,
+  }));
     this.app.use(express.json({limit: '50mb'}));
     this.app.use(express.static(path.join(__dirname, 'public')));
     this.app.use(express.json());

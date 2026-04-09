@@ -7,6 +7,7 @@ import { writeConfig } from "@app/configuration/controller";
 import { isDbExists } from "./db";
 import https from "https";
 import http from "http";
+import { _NONCE } from "./constant";
 
 
 enum ExitStatus {
@@ -18,12 +19,7 @@ enum ExitStatus {
 async function main(port: number) {
   try {
     const server = express();
-    server.use(function (req, res, next) {
-  res.setHeader(
-    "Content-Security-Policy", "default-src *; style-src 'self' https://* 'unsafe-inline'; script-src 'self' https://* 'unsafe-inline' 'unsafe-eval'"
-  );
-  next();
-});
+
     const httpServer = new HttpServer(server);
     const exitSignals: NodeJS.Signals[] = ["SIGINT", "SIGTERM", "SIGQUIT"];
     

@@ -9,13 +9,20 @@
 
 
 import crypto from "node:crypto";
+const cspDirectives = {
+  'script-src': [
+    "'self'",
+    "'sha256-loadsofalphanumerics'", // The hash for abc.html
+    "'sha256-some_more/alphanumerics='", // The hash for index.html
+  ],
+};
+
 
 export const HELMET = {
-        crossOriginEmbedderPolicy: false,
-        crossOriginResourcePolicy: false,
-        crossOriginOpenerPolicy: false,
-        contentSecurityPolicy: (process.env.NODE_ENV === 'production') ? undefined : false 
-      }
+  contentSecurityPolicy: {
+    directives: cspDirectives,
+  },
+}
 
 
 
