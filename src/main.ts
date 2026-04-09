@@ -7,7 +7,6 @@ import { writeConfig } from "@app/configuration/controller";
 import { isDbExists } from "./db";
 import https from "https";
 import http from "http";
-import { _NONCE } from "./constant";
 
 
 enum ExitStatus {

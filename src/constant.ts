@@ -7,25 +7,6 @@
  */
 
 
-
-import crypto from "node:crypto";
-const cspDirectives = {
-  'script-src': [
-    "'self'",
-    "'sha256-loadsofalphanumerics'", // The hash for abc.html
-    "'sha256-some_more/alphanumerics='", // The hash for index.html
-  ],
-};
-
-
-export const HELMET = {
-  contentSecurityPolicy: {
-    directives: cspDirectives,
-  },
-}
-
-
-
 export const _TYPES = ["Boues", "Eau", "Invertébrés", "Sol cultivé", "Sol forestier", "Prairie", "Sol"];
 
 export const CORS = {
@@ -57,6 +38,3 @@ export let _CONFIG = {};
 export function setConfig(input: any) {
     _CONFIG = input;
 }
-
-
-export const _NONCE = crypto.randomBytes(16).toString("base64");

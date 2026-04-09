@@ -7,7 +7,7 @@
  */
 
 import { createConfig } from "@app/configuration/controller";
-import { _NONCE, EConstant } from "../../constant";
+import { EConstant } from "../../constant";
 import { dataBase } from "../../db/base";
 import { IHTMLOptions } from "../../types";
 import { CoreHtmlView } from "./core";
@@ -284,20 +284,20 @@ export class Add extends CoreHtmlView {
 			</body> 
 
     <!-- awlays first -->
-    <script nonce="${_NONCE}" src="./js/configuration.js"></script>
-    <script nonce="${_NONCE}" src="./js/constants.js"></script>
-    <script nonce="${_NONCE}" src="./js/all.js"></script>
-    <script nonce="${_NONCE}" src="./js/common/splitter.js"></script>
-    <script nonce="${_NONCE}" src="./js/common/menu.js"></script>
-    <script nonce="${_NONCE}" src="./js/form.js"></script>
-    <script nonce="${_NONCE}" src="./js/api.js"></script>
-    <script nonce="${_NONCE}" src="./js/api/rpg.js"></script>
-    <script nonce="${_NONCE}" src="./js/helper.js"></script>
-    <script nonce="${_NONCE}" src="./js/common/modal.js"></script>   
-    <script nonce="${_NONCE}" src="./js/common/editingList.js"></script>
-    <script nonce="${_NONCE}" src="./js/evenements/add.js"></script>
-    <script nonce="${_NONCE}" src="./js/evenements/event.js"></script>    
-    <script nonce="${_NONCE}" src="./js/evenements/controller.js"></script>
+    <script src="./js/configuration.js"></script>
+    <script src="./js/constants.js"></script>
+    <script src="./js/all.js"></script>
+    <script src="./js/common/splitter.js"></script>
+    <script src="./js/common/menu.js"></script>
+    <script src="./js/form.js"></script>
+    <script src="./js/api.js"></script>
+    <script src="./js/api/rpg.js"></script>
+    <script src="./js/helper.js"></script>
+    <script src="./js/common/modal.js"></script>   
+    <script src="./js/common/editingList.js"></script>
+    <script src="./js/evenements/add.js"></script>
+    <script src="./js/evenements/event.js"></script>    
+    <script src="./js/evenements/controller.js"></script>
 </html>
 `.split(EConstant.newline)
             .map((e: string) => e.trim())
@@ -430,21 +430,21 @@ export class Add extends CoreHtmlView {
 </body> 
 
 <!-- awlays first -->
-<script nonce="${_NONCE}" src="./js/configuration.js"></script>
-<script nonce="${_NONCE}" src="./js/constants.js"></script>
-<script nonce="${_NONCE}" src="./js/all.js"></script>
-<script nonce="${_NONCE}" src="./js/common/splitter.js"></script>
-<script nonce="${_NONCE}" src="./js/common/menu.js"></script>
-<script nonce="${_NONCE}" src="./js/form.js"></script>
-<script nonce="${_NONCE}" src="./js/api.js"></script>
-<script nonce="${_NONCE}" src="./js/api/rpg.js"></script>
-<script nonce="${_NONCE}" src="./js/helper.js"></script>
-<script nonce="${_NONCE}" src="./js/common/modal.js"></script>
-<script nonce="${_NONCE}" src="./leaflet/leaflet.js"></script>
-<script nonce="${_NONCE}" src="./js/sites/add.js"></script>
-<script nonce="${_NONCE}" src="./js/common/regions.js"></script>     
-<script nonce="${_NONCE}" src="./js/sites/event.js"></script>   
-<script nonce="${_NONCE}" src="./js/sites/controller.js"></script>
+<script src="./js/configuration.js"></script>
+<script src="./js/constants.js"></script>
+<script src="./js/all.js"></script>
+<script src="./js/common/splitter.js"></script>
+<script src="./js/common/menu.js"></script>
+<script src="./js/form.js"></script>
+<script src="./js/api.js"></script>
+<script src="./js/api/rpg.js"></script>
+<script src="./js/helper.js"></script>
+<script src="./js/common/modal.js"></script>
+<script src="./leaflet/leaflet.js"></script>
+<script src="./js/sites/add.js"></script>
+<script src="./js/common/regions.js"></script>     
+<script src="./js/sites/event.js"></script>   
+<script src="./js/sites/controller.js"></script>
 </html>
 `.split(EConstant.newline)
             .map((e: string) => e.trim())
@@ -821,26 +821,26 @@ export class Add extends CoreHtmlView {
 </body> 
 
     <!-- awlays first -->
-    <script nonce="${_NONCE}" src="./js/configuration.js"></script>
-    <script nonce="${_NONCE}" src="./js/constants.js"></script>
-    <script nonce="${_NONCE}" src="./js/all.js"></script>
-    <script nonce="${_NONCE}" src="./js/common/splitter.js"></script>
-    <script nonce="${_NONCE}" src="./js/common/menu.js"></script>
-    <script nonce="${_NONCE}" src="./js/form.js"></script>
-    <script nonce="${_NONCE}" src="./js/api.js"></script>
-    <script nonce="${_NONCE}" src="./js/api/rpg.js"></script>
-    <script nonce="${_NONCE}" src="./js/helper.js"></script>
-    <script nonce="${_NONCE}" src="./js/common/modal.js"></script>
-    <script nonce="${_NONCE}" src="./js/echantillons/demo.js"></script>
-    <script nonce="${_NONCE}" src="./js/libs/JsBarcode.all.min.js"></script>
-    <script nonce="${_NONCE}" src="./js/api/print.js"></script>
-    <script nonce="${_NONCE}" src="./js/common/regions.js"></script>    
-    <script nonce="${_NONCE}" src="./js/common/editingList.js"></script>
-    <script nonce="${_NONCE}" src="./js/echantillons/add.js"></script>
-    <script nonce="${_NONCE}" src="./js/echantillons/event.js"></script>    
-    <script nonce="${_NONCE}" src="./js/echantillons/controller.js"></script>
-    <script nonce="${_NONCE}" src="./js/stickers/controller.js"></script>
-    <script nonce="${_NONCE}" src="./js/echantillons/specific/passeports-phyto-sanitaires.js"></script>
+    <script src="./js/configuration.js"></script>
+    <script src="./js/constants.js"></script>
+    <script src="./js/all.js"></script>
+    <script src="./js/common/splitter.js"></script>
+    <script src="./js/common/menu.js"></script>
+    <script src="./js/form.js"></script>
+    <script src="./js/api.js"></script>
+    <script src="./js/api/rpg.js"></script>
+    <script src="./js/helper.js"></script>
+    <script src="./js/common/modal.js"></script>
+    <script src="./js/echantillons/demo.js"></script>
+    <script src="./js/libs/JsBarcode.all.min.js"></script>
+    <script src="./js/api/print.js"></script>
+    <script src="./js/common/regions.js"></script>    
+    <script src="./js/common/editingList.js"></script>
+    <script src="./js/echantillons/add.js"></script>
+    <script src="./js/echantillons/event.js"></script>    
+    <script src="./js/echantillons/controller.js"></script>
+    <script src="./js/stickers/controller.js"></script>
+    <script src="./js/echantillons/specific/passeports-phyto-sanitaires.js"></script>
 </html>
 `.split(EConstant.newline)
             .map((e: string) => e.trim())

@@ -6,7 +6,6 @@
  *
  */
 
-import { _NONCE } from "../../constant";
 import { CoreHtmlView } from "./core";
 
 /**
@@ -37,13 +36,13 @@ export class Print extends CoreHtmlView {
                             '<body>',
                             '<div class="content" id="passeportsContent"></div>',
                             '</body> ',
-                            `<script nonce="${_NONCE}">`,
+                            `<script>`,
                             `_DATAPI = ${JSON.stringify(this.datas)}`,
                             '</script>',
                             this.getFile("./js/configuration.js"),
                             this.getFile("./js/constants.js"),
                             this.getFile("./js/api/print.js"),
-                            `<script nonce="${_NONCE}">start()</script>`,
+                            `<script>start()</script>`,
                             '</html>'].map((e: string) => e.trim());
     }
 
@@ -60,14 +59,14 @@ export class Print extends CoreHtmlView {
                             '<body>',
                             '<div class="content" id="echantillonsContent"></div>',
                             '</body> ',
-                            `<script nonce="${_NONCE}">`,
+                            `<script>`,
                             `_DATAPI = ${JSON.stringify(this.datas)}`,
                             '</script>',
                             this.getFile("./js/configuration.js"),
                             this.getFile("./js/constants.js"),
                             this.getFile("./js/libs/JsBarcode.all.min.js"),
                             this.getFile("./js/api/print.js"),
-                            `<script nonce="${_NONCE}">start()</script>`,
+                            `<script>start()</script>`,
                             '</html>'].map((e: string) => e.trim());
     }
 
