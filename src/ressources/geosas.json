@@ -1,0 +1,2391 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "biodiversite_RMQS_betterave_alerte.1",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          668184.8794,
+          7085093.385
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "id_site": 12,
+        "x_theo": 668184.8794,
+        "y_theo": 7085093.385,
+        "culture_20": 1,
+        "culture__1": 25,
+        "culture__2": 1,
+        "culture__3": 25,
+        "culture__4": 1,
+        "culture__5": "PPH",
+        "culture__6": "PPH",
+        "culture__7": "PPH",
+        "culture__8": "PPH",
+        "culture__9": "PPH",
+        "culture_10": "PPH",
+        "culture_11": "PPH",
+        "culture_12": "PPH",
+        "culture_13": "PPH",
+        "culture_14": "PPH",
+        "bet_alert": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "biodiversite_RMQS_betterave_alerte.2",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          604083.3591,
+          7069637.168
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "id_site": 16,
+        "x_theo": 604083.3591,
+        "y_theo": 7069637.168,
+        "culture_20": null,
+        "culture__1": null,
+        "culture__2": null,
+        "culture__3": null,
+        "culture__4": null,
+        "culture__5": "",
+        "culture__6": "",
+        "culture__7": "",
+        "culture__8": "",
+        "culture__9": "",
+        "culture_10": "",
+        "culture_11": "",
+        "culture_12": "",
+        "culture_13": "",
+        "culture_14": "",
+        "bet_alert": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "biodiversite_RMQS_betterave_alerte.3",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          715756.4976,
+          7036713.904
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "id_site": 41,
+        "x_theo": 715756.4976,
+        "y_theo": 7036713.904,
+        "culture_20": null,
+        "culture__1": null,
+        "culture__2": null,
+        "culture__3": null,
+        "culture__4": null,
+        "culture__5": "",
+        "culture__6": "",
+        "culture__7": "",
+        "culture__8": "",
+        "culture__9": "",
+        "culture_10": "",
+        "culture_11": "",
+        "culture_12": "",
+        "culture_13": "",
+        "culture_14": "",
+        "bet_alert": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "biodiversite_RMQS_betterave_alerte.4",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          587423.7138,
+          6989813.91
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "id_site": 76,
+        "x_theo": 587423.7138,
+        "y_theo": 6989813.91,
+        "culture_20": 1,
+        "culture__1": 3,
+        "culture__2": 25,
+        "culture__3": 1,
+        "culture__4": 1,
+        "culture__5": "BTH",
+        "culture__6": "BTH",
+        "culture__7": "LIF",
+        "culture__8": "BTH",
+        "culture__9": "BTH",
+        "culture_10": "ORH",
+        "culture_11": "LIF",
+        "culture_12": "BTH",
+        "culture_13": "ORH",
+        "culture_14": "BTN",
+        "bet_alert": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "biodiversite_RMQS_betterave_alerte.5",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          667244.1749,
+          6973153.706
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "id_site": 104,
+        "x_theo": 667244.1749,
+        "y_theo": 6973153.706,
+        "culture_20": null,
+        "culture__1": null,
+        "culture__2": null,
+        "culture__3": null,
+        "culture__4": null,
+        "culture__5": "",
+        "culture__6": "",
+        "culture__7": "",
+        "culture__8": "",
+        "culture__9": "",
+        "culture_10": "",
+        "culture_11": "",
+        "culture_12": "",
+        "culture_13": "",
+        "culture_14": "",
+        "bet_alert": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "biodiversite_RMQS_betterave_alerte.6",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          682965.5413,
+          6941037.925
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "id_site": 162,
+        "x_theo": 682965.5413,
+        "y_theo": 6941037.925,
+        "culture_20": 2,
+        "culture__1": 2,
+        "culture__2": 2,
+        "culture__3": 1,
+        "culture__4": null,
+        "culture__5": "",
+        "culture__6": "",
+        "culture__7": "",
+        "culture__8": "",
+        "culture__9": "",
+        "culture_10": "",
+        "culture_11": "",
+        "culture_12": "",
+        "culture_13": "",
+        "culture_14": "",
+        "bet_alert": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "biodiversite_RMQS_betterave_alerte.7",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          362900.939,
+          6911709.714
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "id_site": 220,
+        "x_theo": 362900.939,
+        "y_theo": 6911709.714,
+        "culture_20": null,
+        "culture__1": null,
+        "culture__2": null,
+        "culture__3": null,
+        "culture__4": null,
+        "culture__5": "",
+        "culture__6": "",
+        "culture__7": "",
+        "culture__8": "",
+        "culture__9": "",
+        "culture_10": "",
+        "culture_11": "",
+        "culture_12": "",
+        "culture_13": "",
+        "culture_14": "",
+        "bet_alert": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "biodiversite_RMQS_betterave_alerte.8",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          586756.9438,
+          6909862
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "id_site": 234,
+        "x_theo": 586756.9438,
+        "y_theo": 6909862,
+        "culture_20": null,
+        "culture__1": null,
+        "culture__2": null,
+        "culture__3": null,
+        "culture__4": null,
+        "culture__5": "",
+        "culture__6": "",
+        "culture__7": "",
+        "culture__8": "",
+        "culture__9": "",
+        "culture_10": "",
+        "culture_11": "",
+        "culture_12": "",
+        "culture_13": "",
+        "culture_14": "",
+        "bet_alert": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "biodiversite_RMQS_betterave_alerte.9",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          954519.4141,
+          6906736.048
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "id_site": 257,
+        "x_theo": 954519.4141,
+        "y_theo": 6906736.048,
+        "culture_20": null,
+        "culture__1": null,
+        "culture__2": null,
+        "culture__3": null,
+        "culture__4": null,
+        "culture__5": "",
+        "culture__6": "",
+        "culture__7": "",
+        "culture__8": "",
+        "culture__9": "",
+        "culture_10": "",
+        "culture_11": "",
+        "culture_12": "",
+        "culture_13": "",
+        "culture_14": "",
+        "bet_alert": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "biodiversite_RMQS_betterave_alerte.10",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          634592.5397,
+          6893471.225
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "id_site": 280,
+        "x_theo": 634592.5397,
+        "y_theo": 6893471.225,
+        "culture_20": null,
+        "culture__1": null,
+        "culture__2": null,
+        "culture__3": null,
+        "culture__4": null,
+        "culture__5": "",
+        "culture__6": "",
+        "culture__7": "",
+        "culture__8": "",
+        "culture__9": "",
+        "culture_10": "",
+        "culture_11": "",
+        "culture_12": "",
+        "culture_13": "",
+        "culture_14": "",
+        "bet_alert": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "biodiversite_RMQS_betterave_alerte.11",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          554511.4135,
+          6878149.188
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "id_site": 327,
+        "x_theo": 554511.4135,
+        "y_theo": 6878149.188,
+        "culture_20": 1,
+        "culture__1": 1,
+        "culture__2": 1,
+        "culture__3": 3,
+        "culture__4": 1,
+        "culture__5": "BTH",
+        "culture__6": "BTH",
+        "culture__7": "CZH",
+        "culture__8": "BTH",
+        "culture__9": "BTH",
+        "culture_10": "LIF",
+        "culture_11": "BTH",
+        "culture_12": "BTH",
+        "culture_13": "ORH",
+        "culture_14": "CZH",
+        "bet_alert": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "biodiversite_RMQS_betterave_alerte.12",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          826330.4014,
+          6875856.623
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "id_site": 344,
+        "x_theo": 826330.4014,
+        "y_theo": 6875856.623,
+        "culture_20": 5,
+        "culture__1": 1,
+        "culture__2": 3,
+        "culture__3": 24,
+        "culture__4": 1,
+        "culture__5": "CZH",
+        "culture__6": "BTH",
+        "culture__7": "ORH",
+        "culture__8": "LUD",
+        "culture__9": "LUD",
+        "culture_10": "LUD",
+        "culture_11": "BTH",
+        "culture_12": "BTH",
+        "culture_13": "CZH",
+        "culture_14": "BTH",
+        "bet_alert": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "biodiversite_RMQS_betterave_alerte.13",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1066165.845,
+          6873786.35
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "id_site": 359,
+        "x_theo": 1066165.845,
+        "y_theo": 6873786.35,
+        "culture_20": null,
+        "culture__1": null,
+        "culture__2": null,
+        "culture__3": null,
+        "culture__4": null,
+        "culture__5": "",
+        "culture__6": "",
+        "culture__7": "",
+        "culture__8": "",
+        "culture__9": "",
+        "culture_10": "",
+        "culture_11": "",
+        "culture_12": "",
+        "culture_13": "",
+        "culture_14": "",
+        "bet_alert": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "biodiversite_RMQS_betterave_alerte.14",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          682292.215,
+          6861089.22
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "id_site": 393,
+        "x_theo": 682292.215,
+        "y_theo": 6861089.22,
+        "culture_20": 2,
+        "culture__1": 1,
+        "culture__2": 8,
+        "culture__3": 1,
+        "culture__4": 2,
+        "culture__5": "MIS",
+        "culture__6": "MIS",
+        "culture__7": "MIS",
+        "culture__8": "MIS",
+        "culture__9": "MIS",
+        "culture_10": "BTH",
+        "culture_11": "MIS",
+        "culture_12": "MIS",
+        "culture_13": "MIS",
+        "culture_14": "MIS",
+        "bet_alert": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "biodiversite_RMQS_betterave_alerte.15",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          266445.8072,
+          6848533.679
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "id_site": 428,
+        "x_theo": 266445.8072,
+        "y_theo": 6848533.679,
+        "culture_20": 1,
+        "culture__1": 2,
+        "culture__2": 1,
+        "culture__3": 2,
+        "culture__4": 1,
+        "culture__5": "MIE",
+        "culture__6": "BTH",
+        "culture__7": "MIE",
+        "culture__8": "BTH",
+        "culture__9": "MIE",
+        "culture_10": "MIE",
+        "culture_11": "BTH",
+        "culture_12": "MIE",
+        "culture_13": "MIS",
+        "culture_14": "BTH",
+        "bet_alert": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "biodiversite_RMQS_betterave_alerte.16",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          474168.833,
+          6830844.607
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "id_site": 501,
+        "x_theo": 474168.833,
+        "y_theo": 6830844.607,
+        "culture_20": 3,
+        "culture__1": 2,
+        "culture__2": 1,
+        "culture__3": 1,
+        "culture__4": 1,
+        "culture__5": "TTH",
+        "culture__6": "MIE",
+        "culture__7": "BTH",
+        "culture__8": "CZH",
+        "culture__9": "BTH",
+        "culture_10": "ORH",
+        "culture_11": "MIE",
+        "culture_12": "BTH",
+        "culture_13": "ORH",
+        "culture_14": "CZH",
+        "bet_alert": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "biodiversite_RMQS_betterave_alerte.17",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          729989.0493,
+          6828705.759
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "id_site": 517,
+        "x_theo": 729989.0493,
+        "y_theo": 6828705.759,
+        "culture_20": 2,
+        "culture__1": 1,
+        "culture__2": 1,
+        "culture__3": 3,
+        "culture__4": 3,
+        "culture__5": "ORP",
+        "culture__6": "PPR",
+        "culture__7": "BTH",
+        "culture__8": "ORP",
+        "culture__9": "BTN",
+        "culture_10": "BTH",
+        "culture_11": "CHV",
+        "culture_12": "BTH",
+        "culture_13": "CZH",
+        "culture_14": "BTH",
+        "bet_alert": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "biodiversite_RMQS_betterave_alerte.18",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          186245.201,
+          6817201.324
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "id_site": 541,
+        "x_theo": 186245.201,
+        "y_theo": 6817201.324,
+        "culture_20": 1,
+        "culture__1": 2,
+        "culture__2": 1,
+        "culture__3": 5,
+        "culture__4": 1,
+        "culture__5": "MIE",
+        "culture__6": "ORH",
+        "culture__7": "CZH",
+        "culture__8": "BTH",
+        "culture__9": "MIE",
+        "culture_10": "ORH",
+        "culture_11": "MIE",
+        "culture_12": "BTH",
+        "culture_13": "MIS",
+        "culture_14": "ORH",
+        "bet_alert": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "biodiversite_RMQS_betterave_alerte.19",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          569968.0861,
+          6814060.255
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "id_site": 565,
+        "x_theo": 569968.0861,
+        "y_theo": 6814060.255,
+        "culture_20": 5,
+        "culture__1": 1,
+        "culture__2": 4,
+        "culture__3": 5,
+        "culture__4": 1,
+        "culture__5": "BTH",
+        "culture__6": "MIS",
+        "culture__7": "BTH",
+        "culture__8": "BTH",
+        "culture__9": "CZH",
+        "culture_10": "BTH",
+        "culture_11": "BDH",
+        "culture_12": "CZH",
+        "culture_13": "BTH",
+        "culture_14": "BTN",
+        "bet_alert": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "biodiversite_RMQS_betterave_alerte.20",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          969678.8948,
+          6810664.735
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "id_site": 590,
+        "x_theo": 969678.8948,
+        "y_theo": 6810664.735,
+        "culture_20": null,
+        "culture__1": null,
+        "culture__2": null,
+        "culture__3": null,
+        "culture__4": null,
+        "culture__5": "",
+        "culture__6": "",
+        "culture__7": "",
+        "culture__8": "",
+        "culture__9": "",
+        "culture_10": "",
+        "culture_11": "",
+        "culture_12": "",
+        "culture_13": "",
+        "culture_14": "",
+        "bet_alert": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "biodiversite_RMQS_betterave_alerte.21",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          217835.013,
+          6768980.285
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "id_site": 717,
+        "x_theo": 217835.013,
+        "y_theo": 6768980.285,
+        "culture_20": 25,
+        "culture__1": 19,
+        "culture__2": 19,
+        "culture__3": 25,
+        "culture__4": 19,
+        "culture__5": "PRL",
+        "culture__6": "PRL",
+        "culture__7": "MIS",
+        "culture__8": "BTH",
+        "culture__9": "MIS",
+        "culture_10": "BTH",
+        "culture_11": "CZH",
+        "culture_12": "",
+        "culture_13": "MIS",
+        "culture_14": "BTH",
+        "bet_alert": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "biodiversite_RMQS_betterave_alerte.22",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          361594.0726,
+          6751823.463
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "id_site": 781,
+        "x_theo": 361594.0726,
+        "y_theo": 6751823.463,
+        "culture_20": null,
+        "culture__1": null,
+        "culture__2": null,
+        "culture__3": null,
+        "culture__4": null,
+        "culture__5": "",
+        "culture__6": "",
+        "culture__7": "",
+        "culture__8": "",
+        "culture__9": "",
+        "culture_10": "",
+        "culture_11": "",
+        "culture_12": "",
+        "culture_13": "",
+        "culture_14": "",
+        "bet_alert": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "biodiversite_RMQS_betterave_alerte.23",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          521471.7041,
+          6750506.435
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "id_site": 791,
+        "x_theo": 521471.7041,
+        "y_theo": 6750506.435,
+        "culture_20": 1,
+        "culture__1": 1,
+        "culture__2": 1,
+        "culture__3": 2,
+        "culture__4": 1,
+        "culture__5": "BTH",
+        "culture__6": "BTH",
+        "culture__7": "BTH",
+        "culture__8": "MIE",
+        "culture__9": "BTH",
+        "culture_10": "BTH",
+        "culture_11": "MIE",
+        "culture_12": "BTH",
+        "culture_13": "MIS",
+        "culture_14": "BTH",
+        "bet_alert": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "biodiversite_RMQS_betterave_alerte.24",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          809114.3699,
+          6732097.967
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "id_site": 861,
+        "x_theo": 809114.3699,
+        "y_theo": 6732097.967,
+        "culture_20": null,
+        "culture__1": null,
+        "culture__2": null,
+        "culture__3": null,
+        "culture__4": null,
+        "culture__5": "",
+        "culture__6": "",
+        "culture__7": "",
+        "culture__8": "",
+        "culture__9": "",
+        "culture_10": "",
+        "culture_11": "",
+        "culture_12": "",
+        "culture_13": "",
+        "culture_14": "",
+        "bet_alert": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "biodiversite_RMQS_betterave_alerte.25",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          393307.3435,
+          6719586.469
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "id_site": 887,
+        "x_theo": 393307.3435,
+        "y_theo": 6719586.469,
+        "culture_20": 2,
+        "culture__1": 1,
+        "culture__2": 19,
+        "culture__3": 1,
+        "culture__4": 3,
+        "culture__5": "RGA",
+        "culture__6": "MIE",
+        "culture__7": "BTH",
+        "culture__8": "PTR",
+        "culture__9": "MIE",
+        "culture_10": "TTH",
+        "culture_11": "PTR",
+        "culture_12": "PTR",
+        "culture_13": "TTH",
+        "culture_14": "PTR",
+        "bet_alert": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "biodiversite_RMQS_betterave_alerte.26",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          457256.9431,
+          6719060.213
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "id_site": 891,
+        "x_theo": 457256.9431,
+        "y_theo": 6719060.213,
+        "culture_20": 6,
+        "culture__1": 28,
+        "culture__2": 5,
+        "culture__3": 16,
+        "culture__4": 25,
+        "culture__5": "CZH",
+        "culture__6": "BTH",
+        "culture__7": "CZH",
+        "culture__8": "BTH",
+        "culture__9": "MLT",
+        "culture_10": "BTH",
+        "culture_11": "BTH",
+        "culture_12": "TRN",
+        "culture_13": "BTH",
+        "culture_14": "CZH",
+        "bet_alert": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "biodiversite_RMQS_betterave_alerte.27",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          840952.5583,
+          6715837.867
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "id_site": 915,
+        "x_theo": 840952.5583,
+        "y_theo": 6715837.867,
+        "culture_20": null,
+        "culture__1": null,
+        "culture__2": null,
+        "culture__3": null,
+        "culture__4": null,
+        "culture__5": "",
+        "culture__6": "",
+        "culture__7": "",
+        "culture__8": "",
+        "culture__9": "",
+        "culture_10": "",
+        "culture_11": "",
+        "culture_12": "",
+        "culture_13": "",
+        "culture_14": "",
+        "bet_alert": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "biodiversite_RMQS_betterave_alerte.28",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          297252.2165,
+          6704382.884
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "id_site": 932,
+        "x_theo": 297252.2165,
+        "y_theo": 6704382.884,
+        "culture_20": null,
+        "culture__1": null,
+        "culture__2": null,
+        "culture__3": null,
+        "culture__4": null,
+        "culture__5": "",
+        "culture__6": "",
+        "culture__7": "",
+        "culture__8": "",
+        "culture__9": "",
+        "culture_10": "",
+        "culture_11": "",
+        "culture_12": "",
+        "culture_13": "",
+        "culture_14": "",
+        "bet_alert": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "biodiversite_RMQS_betterave_alerte.29",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          888776.9138,
+          6699440.18
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "id_site": 969,
+        "x_theo": 888776.9138,
+        "y_theo": 6699440.18,
+        "culture_20": 2,
+        "culture__1": 4,
+        "culture__2": 2,
+        "culture__3": 2,
+        "culture__4": 7,
+        "culture__5": "SOJ",
+        "culture__6": "BTH",
+        "culture__7": "MIS",
+        "culture__8": "MIS",
+        "culture__9": "MIS",
+        "culture_10": "MIS",
+        "culture_11": "SOJ",
+        "culture_12": "SOJ",
+        "culture_13": "MIS",
+        "culture_14": "BTH",
+        "bet_alert": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "biodiversite_RMQS_betterave_alerte.30",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          728770.9444,
+          6684815.157
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "id_site": 1004,
+        "x_theo": 728770.9444,
+        "y_theo": 6684815.157,
+        "culture_20": null,
+        "culture__1": null,
+        "culture__2": null,
+        "culture__3": null,
+        "culture__4": null,
+        "culture__5": "",
+        "culture__6": "",
+        "culture__7": "",
+        "culture__8": "",
+        "culture__9": "",
+        "culture_10": "",
+        "culture_11": "",
+        "culture_12": "",
+        "culture_13": "",
+        "culture_14": "",
+        "bet_alert": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "biodiversite_RMQS_betterave_alerte.31",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          664554.0581,
+          6653381.299
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "id_site": 1089,
+        "x_theo": 664554.0581,
+        "y_theo": 6653381.299,
+        "culture_20": 5,
+        "culture__1": 1,
+        "culture__2": 3,
+        "culture__3": 1,
+        "culture__4": 1,
+        "culture__5": "BTH",
+        "culture__6": "TRN",
+        "culture__7": "BTH",
+        "culture__8": "ORP",
+        "culture__9": "ORP",
+        "culture_10": "TRN",
+        "culture_11": "BTH",
+        "culture_12": "ORH",
+        "culture_13": "CZH",
+        "culture_14": "BTH",
+        "bet_alert": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "biodiversite_RMQS_betterave_alerte.32",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          360678.4513,
+          6639913.238
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "id_site": 1114,
+        "x_theo": 360678.4513,
+        "y_theo": 6639913.238,
+        "culture_20": 2,
+        "culture__1": 1,
+        "culture__2": 2,
+        "culture__3": 1,
+        "culture__4": 8,
+        "culture__5": "BTH",
+        "culture__6": "MIE",
+        "culture__7": "BTH",
+        "culture__8": "RGA",
+        "culture__9": "RGA",
+        "culture_10": "TRN",
+        "culture_11": "TTH",
+        "culture_12": "TRN",
+        "culture_13": "TTH",
+        "culture_14": "CZH",
+        "bet_alert": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "biodiversite_RMQS_betterave_alerte.33",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          456597.2741,
+          6639125.221
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "id_site": 1120,
+        "x_theo": 456597.2741,
+        "y_theo": 6639125.221,
+        "culture_20": 19,
+        "culture__1": 1,
+        "culture__2": 1,
+        "culture__3": 3,
+        "culture__4": 4,
+        "culture__5": "PRL",
+        "culture__6": "PRL",
+        "culture__7": "PRL",
+        "culture__8": "PRL",
+        "culture__9": "SNE",
+        "culture_10": "SNE",
+        "culture_11": "SNE",
+        "culture_12": "",
+        "culture_13": "",
+        "culture_14": "",
+        "bet_alert": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "biodiversite_RMQS_betterave_alerte.34",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          488570.0014,
+          6638861.151
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "id_site": 1122,
+        "x_theo": 488570.0014,
+        "y_theo": 6638861.151,
+        "culture_20": 4,
+        "culture__1": 5,
+        "culture__2": 1,
+        "culture__3": 1,
+        "culture__4": 6,
+        "culture__5": "LUZ",
+        "culture__6": "LUZ",
+        "culture__7": "LUZ",
+        "culture__8": "BTH",
+        "culture__9": "BTH",
+        "culture_10": "TRN",
+        "culture_11": "BTH",
+        "culture_12": "CZH",
+        "culture_13": "BTH",
+        "culture_14": "ORP",
+        "bet_alert": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "biodiversite_RMQS_betterave_alerte.35",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          584488.0492,
+          6638064.264
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "id_site": 1128,
+        "x_theo": 584488.0492,
+        "y_theo": 6638064.264,
+        "culture_20": 5,
+        "culture__1": 1,
+        "culture__2": 8,
+        "culture__3": 1,
+        "culture__4": 4,
+        "culture__5": "BTH",
+        "culture__6": "BTH",
+        "culture__7": "ORH",
+        "culture__8": "CZH",
+        "culture__9": "BTH",
+        "culture_10": "MLF",
+        "culture_11": "MLF",
+        "culture_12": "BTH",
+        "culture_13": "ORH",
+        "culture_14": "CZH",
+        "bet_alert": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "biodiversite_RMQS_betterave_alerte.36",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          600340.7032,
+          6621944.505
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "id_site": 1170,
+        "x_theo": 600340.7032,
+        "y_theo": 6621944.505,
+        "culture_20": null,
+        "culture__1": null,
+        "culture__2": null,
+        "culture__3": null,
+        "culture__4": null,
+        "culture__5": "",
+        "culture__6": "",
+        "culture__7": "",
+        "culture__8": "",
+        "culture__9": "",
+        "culture_10": "",
+        "culture_11": "",
+        "culture_12": "",
+        "culture_13": "",
+        "culture_14": "",
+        "bet_alert": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "biodiversite_RMQS_betterave_alerte.37",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          840132.9931,
+          6619918.202
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "id_site": 1185,
+        "x_theo": 840132.9931,
+        "y_theo": 6619918.202,
+        "culture_20": 19,
+        "culture__1": 18,
+        "culture__2": 18,
+        "culture__3": 18,
+        "culture__4": 18,
+        "culture__5": "PPH",
+        "culture__6": "PPH",
+        "culture__7": "PPH",
+        "culture__8": "PPH",
+        "culture__9": "PPH",
+        "culture_10": "PPH",
+        "culture_11": "PPH",
+        "culture_12": "PPH",
+        "culture_13": "PPH",
+        "culture_14": "PPH",
+        "bet_alert": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "biodiversite_RMQS_betterave_alerte.38",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          504026.314,
+          6574784.826
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "id_site": 1288,
+        "x_theo": 504026.314,
+        "y_theo": 6574784.826,
+        "culture_20": 18,
+        "culture__1": 18,
+        "culture__2": 18,
+        "culture__3": 18,
+        "culture__4": 18,
+        "culture__5": "PPH",
+        "culture__6": "PPH",
+        "culture__7": "PPH",
+        "culture__8": "PPH",
+        "culture__9": "PPH",
+        "culture_10": "PPH",
+        "culture_11": "PPH",
+        "culture_12": "PRL",
+        "culture_13": "PPH",
+        "culture_14": "PPH",
+        "bet_alert": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "biodiversite_RMQS_betterave_alerte.39",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          903665.6467,
+          6571413.337
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "id_site": 1313,
+        "x_theo": 903665.6467,
+        "y_theo": 6571413.337,
+        "culture_20": 18,
+        "culture__1": 18,
+        "culture__2": 18,
+        "culture__3": 18,
+        "culture__4": 18,
+        "culture__5": "PPH",
+        "culture__6": "PPH",
+        "culture__7": "PPH",
+        "culture__8": "PPH",
+        "culture__9": "PPH",
+        "culture_10": "PPH",
+        "culture_11": "PPH",
+        "culture_12": "PPH",
+        "culture_13": "PPH",
+        "culture_14": "PPH",
+        "bet_alert": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "biodiversite_RMQS_betterave_alerte.40",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          599806.0995,
+          6558001.367
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "id_site": 1335,
+        "x_theo": 599806.0995,
+        "y_theo": 6558001.367,
+        "culture_20": null,
+        "culture__1": null,
+        "culture__2": null,
+        "culture__3": null,
+        "culture__4": null,
+        "culture__5": "",
+        "culture__6": "",
+        "culture__7": "",
+        "culture__8": "",
+        "culture__9": "",
+        "culture_10": "",
+        "culture_11": "",
+        "culture_12": "",
+        "culture_13": "",
+        "culture_14": "",
+        "bet_alert": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "biodiversite_RMQS_betterave_alerte.41",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          807480.3246,
+          6540263.212
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "id_site": 1390,
+        "x_theo": 807480.3246,
+        "y_theo": 6540263.212,
+        "culture_20": null,
+        "culture__1": null,
+        "culture__2": null,
+        "culture__3": null,
+        "culture__4": null,
+        "culture__5": "",
+        "culture__6": "",
+        "culture__7": "",
+        "culture__8": "",
+        "culture__9": "",
+        "culture_10": "",
+        "culture_11": "",
+        "culture_12": "",
+        "culture_13": "",
+        "culture_14": "",
+        "bet_alert": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "biodiversite_RMQS_betterave_alerte.42",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          567568.9226,
+          6526297.582
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "id_site": 1416,
+        "x_theo": 567568.9226,
+        "y_theo": 6526297.582,
+        "culture_20": null,
+        "culture__1": null,
+        "culture__2": null,
+        "culture__3": null,
+        "culture__4": null,
+        "culture__5": "",
+        "culture__6": "",
+        "culture__7": "",
+        "culture__8": "",
+        "culture__9": "",
+        "culture_10": "",
+        "culture_11": "",
+        "culture_12": "",
+        "culture_13": "",
+        "culture_14": "",
+        "bet_alert": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "biodiversite_RMQS_betterave_alerte.43",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          999024.4492,
+          6506646.126
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "id_site": 1483,
+        "x_theo": 999024.4492,
+        "y_theo": 6506646.126,
+        "culture_20": null,
+        "culture__1": null,
+        "culture__2": null,
+        "culture__3": null,
+        "culture__4": null,
+        "culture__5": "",
+        "culture__6": "",
+        "culture__7": "",
+        "culture__8": "",
+        "culture__9": "",
+        "culture_10": "",
+        "culture_11": "",
+        "culture_12": "",
+        "culture_13": "",
+        "culture_14": "",
+        "bet_alert": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "biodiversite_RMQS_betterave_alerte.44",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          679194.9671,
+          6493391.274
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "id_site": 1504,
+        "x_theo": 679194.9671,
+        "y_theo": 6493391.274,
+        "culture_20": null,
+        "culture__1": null,
+        "culture__2": null,
+        "culture__3": null,
+        "culture__4": null,
+        "culture__5": "",
+        "culture__6": "",
+        "culture__7": "",
+        "culture__8": "",
+        "culture__9": "",
+        "culture_10": "",
+        "culture_11": "",
+        "culture_12": "",
+        "culture_13": "",
+        "culture_14": "",
+        "bet_alert": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "biodiversite_RMQS_betterave_alerte.45",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          774967.2492,
+          6476595.828
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "id_site": 1552,
+        "x_theo": 774967.2492,
+        "y_theo": 6476595.828,
+        "culture_20": null,
+        "culture__1": 18,
+        "culture__2": 18,
+        "culture__3": 18,
+        "culture__4": 18,
+        "culture__5": "PTR",
+        "culture__6": "PTR",
+        "culture__7": "PTR",
+        "culture__8": "PRL",
+        "culture__9": "PRL",
+        "culture_10": "PRL",
+        "culture_11": "PRL",
+        "culture_12": "PRL",
+        "culture_13": "PPH",
+        "culture_14": "PPH",
+        "bet_alert": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "biodiversite_RMQS_betterave_alerte.46",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          998609.1072,
+          6458693.19
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "id_site": 1608,
+        "x_theo": 998609.1072,
+        "y_theo": 6458693.19,
+        "culture_20": null,
+        "culture__1": null,
+        "culture__2": null,
+        "culture__3": null,
+        "culture__4": null,
+        "culture__5": "",
+        "culture__6": "",
+        "culture__7": "",
+        "culture__8": "",
+        "culture__9": "",
+        "culture_10": "",
+        "culture_11": "",
+        "culture_12": "",
+        "culture_13": "",
+        "culture_14": "",
+        "bet_alert": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "biodiversite_RMQS_betterave_alerte.47",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          518950.8463,
+          6446773.387
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "id_site": 1619,
+        "x_theo": 518950.8463,
+        "y_theo": 6446773.387,
+        "culture_20": null,
+        "culture__1": null,
+        "culture__2": null,
+        "culture__3": null,
+        "culture__4": null,
+        "culture__5": "",
+        "culture__6": "",
+        "culture__7": "",
+        "culture__8": "",
+        "culture__9": "",
+        "culture_10": "",
+        "culture_11": "",
+        "culture_12": "",
+        "culture_13": "",
+        "culture_14": "",
+        "bet_alert": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "biodiversite_RMQS_betterave_alerte.48",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          646689.4162,
+          6429722.792
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "id_site": 1668,
+        "x_theo": 646689.4162,
+        "y_theo": 6429722.792,
+        "culture_20": null,
+        "culture__1": null,
+        "culture__2": null,
+        "culture__3": null,
+        "culture__4": null,
+        "culture__5": "",
+        "culture__6": "",
+        "culture__7": "",
+        "culture__8": "",
+        "culture__9": "",
+        "culture_10": "",
+        "culture_11": "",
+        "culture_12": "",
+        "culture_13": "",
+        "culture_14": "",
+        "bet_alert": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "biodiversite_RMQS_betterave_alerte.49",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          726608.5911,
+          6429049.734
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "id_site": 1673,
+        "x_theo": 726608.5911,
+        "y_theo": 6429049.734,
+        "culture_20": null,
+        "culture__1": null,
+        "culture__2": null,
+        "culture__3": null,
+        "culture__4": null,
+        "culture__5": "",
+        "culture__6": "",
+        "culture__7": "",
+        "culture__8": "",
+        "culture__9": "",
+        "culture_10": "",
+        "culture_11": "",
+        "culture_12": "",
+        "culture_13": "",
+        "culture_14": "",
+        "bet_alert": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "biodiversite_RMQS_betterave_alerte.50",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          566370.4284,
+          6382440.062
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "id_site": 1790,
+        "x_theo": 566370.4284,
+        "y_theo": 6382440.062,
+        "culture_20": null,
+        "culture__1": null,
+        "culture__2": null,
+        "culture__3": null,
+        "culture__4": null,
+        "culture__5": "",
+        "culture__6": "",
+        "culture__7": "",
+        "culture__8": "",
+        "culture__9": "",
+        "culture_10": "",
+        "culture_11": "",
+        "culture_12": "",
+        "culture_13": "",
+        "culture_14": "",
+        "bet_alert": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "biodiversite_RMQS_betterave_alerte.51",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          438371.7796,
+          6367516.425
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "id_site": 1824,
+        "x_theo": 438371.7796,
+        "y_theo": 6367516.425,
+        "culture_20": null,
+        "culture__1": null,
+        "culture__2": null,
+        "culture__3": null,
+        "culture__4": null,
+        "culture__5": "",
+        "culture__6": "",
+        "culture__7": "",
+        "culture__8": "",
+        "culture__9": "",
+        "culture_10": "",
+        "culture_11": "",
+        "culture_12": "",
+        "culture_13": "",
+        "culture_14": "",
+        "bet_alert": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "biodiversite_RMQS_betterave_alerte.52",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          933710.1108,
+          6347361.657
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "id_site": 1898,
+        "x_theo": 933710.1108,
+        "y_theo": 6347361.657,
+        "culture_20": 18,
+        "culture__1": 18,
+        "culture__2": 28,
+        "culture__3": 28,
+        "culture__4": 17,
+        "culture__5": "SPH",
+        "culture__6": "PPH",
+        "culture__7": "PPH",
+        "culture__8": "SPH",
+        "culture__9": "SPH",
+        "culture_10": "SPH",
+        "culture_11": "SPH",
+        "culture_12": "SPH",
+        "culture_13": "SPH",
+        "culture_14": "SPH",
+        "bet_alert": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "biodiversite_RMQS_betterave_alerte.53",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          629902.2394,
+          6333956.736
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "id_site": 1925,
+        "x_theo": 629902.2394,
+        "y_theo": 6333956.736,
+        "culture_20": 18,
+        "culture__1": 18,
+        "culture__2": 18,
+        "culture__3": 18,
+        "culture__4": 18,
+        "culture__5": "DTY",
+        "culture__6": "PRL",
+        "culture__7": "PPH",
+        "culture__8": "PPH",
+        "culture__9": "PPH",
+        "culture_10": "PPH",
+        "culture_11": "PPH",
+        "culture_12": "PPH",
+        "culture_13": "PPH",
+        "culture_14": "PPH",
+        "bet_alert": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "biodiversite_RMQS_betterave_alerte.54",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          981520.2382,
+          6330965.596
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "id_site": 1947,
+        "x_theo": 981520.2382,
+        "y_theo": 6330965.596,
+        "culture_20": null,
+        "culture__1": null,
+        "culture__2": null,
+        "culture__3": null,
+        "culture__4": null,
+        "culture__5": "",
+        "culture__6": "",
+        "culture__7": "",
+        "culture__8": "",
+        "culture__9": "",
+        "culture_10": "",
+        "culture_11": "",
+        "culture_12": "",
+        "culture_13": "",
+        "culture_14": "",
+        "bet_alert": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "biodiversite_RMQS_betterave_alerte.55",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          741646.0545,
+          6317032.207
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "id_site": 1979,
+        "x_theo": 741646.0545,
+        "y_theo": 6317032.207,
+        "culture_20": 17,
+        "culture__1": 17,
+        "culture__2": 17,
+        "culture__3": 17,
+        "culture__4": 17,
+        "culture__5": "SPH",
+        "culture__6": "",
+        "culture__7": "SPH",
+        "culture__8": "SPL",
+        "culture__9": "SPL",
+        "culture_10": "SPL",
+        "culture_11": "SPL",
+        "culture_12": "SPL",
+        "culture_13": "SPL",
+        "culture_14": "SPL",
+        "bet_alert": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "biodiversite_RMQS_betterave_alerte.56",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          885488.3523,
+          6315808.012
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "id_site": 1988,
+        "x_theo": 885488.3523,
+        "y_theo": 6315808.012,
+        "culture_20": null,
+        "culture__1": null,
+        "culture__2": null,
+        "culture__3": null,
+        "culture__4": null,
+        "culture__5": "",
+        "culture__6": "",
+        "culture__7": "",
+        "culture__8": "",
+        "culture__9": "",
+        "culture_10": "",
+        "culture_11": "",
+        "culture_12": "",
+        "culture_13": "",
+        "culture_14": "",
+        "bet_alert": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "biodiversite_RMQS_betterave_alerte.57",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          709411.3474,
+          6285337.582
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "id_site": 2069,
+        "x_theo": 709411.3474,
+        "y_theo": 6285337.582,
+        "culture_20": null,
+        "culture__1": null,
+        "culture__2": null,
+        "culture__3": null,
+        "culture__4": 17,
+        "culture__5": "BOP",
+        "culture__6": "",
+        "culture__7": "",
+        "culture__8": "",
+        "culture__9": "",
+        "culture_10": "",
+        "culture_11": "",
+        "culture_12": "",
+        "culture_13": "",
+        "culture_14": "",
+        "bet_alert": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "biodiversite_RMQS_betterave_alerte.58",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          341689.2632,
+          6272407.873
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "id_site": 2092,
+        "x_theo": 341689.2632,
+        "y_theo": 6272407.873,
+        "culture_20": null,
+        "culture__1": null,
+        "culture__2": null,
+        "culture__3": null,
+        "culture__4": null,
+        "culture__5": "",
+        "culture__6": "",
+        "culture__7": "",
+        "culture__8": "",
+        "culture__9": "",
+        "culture_10": "",
+        "culture_11": "",
+        "culture_12": "",
+        "culture_13": "",
+        "culture_14": "",
+        "bet_alert": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "biodiversite_RMQS_betterave_alerte.59",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          549456.4227,
+          6270694.348
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "id_site": 2105,
+        "x_theo": 549456.4227,
+        "y_theo": 6270694.348,
+        "culture_20": 1,
+        "culture__1": 6,
+        "culture__2": 1,
+        "culture__3": 4,
+        "culture__4": 1,
+        "culture__5": "CZH",
+        "culture__6": "BTH",
+        "culture__7": "TRN",
+        "culture__8": "BTH",
+        "culture__9": "CZH",
+        "culture_10": "BTH",
+        "culture_11": "LIH",
+        "culture_12": "BTH",
+        "culture_13": "CZH",
+        "culture_14": "BTH",
+        "bet_alert": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "biodiversite_RMQS_betterave_alerte.60",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          996950.0558,
+          6266899.181
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "id_site": 2133,
+        "x_theo": 996950.0558,
+        "y_theo": 6266899.181,
+        "culture_20": 13,
+        "culture__1": 1,
+        "culture__2": 13,
+        "culture__3": 13,
+        "culture__4": 4,
+        "culture__5": "",
+        "culture__6": "RVI",
+        "culture__7": "VRC",
+        "culture__8": "VRN",
+        "culture__9": "VRC",
+        "culture_10": "VRC",
+        "culture_11": "VRC",
+        "culture_12": "VRC",
+        "culture_13": "VRC",
+        "culture_14": "VRC",
+        "bet_alert": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "biodiversite_RMQS_betterave_alerte.61",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          581287.2729,
+          6254446.055
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "id_site": 2152,
+        "x_theo": 581287.2729,
+        "y_theo": 6254446.055,
+        "culture_20": 4,
+        "culture__1": 6,
+        "culture__2": 4,
+        "culture__3": 6,
+        "culture__4": 4,
+        "culture__5": "TRN",
+        "culture__6": "BDH",
+        "culture__7": "PPR",
+        "culture__8": "BDH",
+        "culture__9": "TRN",
+        "culture_10": "BDH",
+        "culture_11": "TRN",
+        "culture_12": "BDH",
+        "culture_13": "TRN",
+        "culture_14": "BDH",
+        "bet_alert": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "biodiversite_RMQS_betterave_alerte.62",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          852977.5299,
+          6252153.364
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "id_site": 2166,
+        "x_theo": 852977.5299,
+        "y_theo": 6252153.364,
+        "culture_20": null,
+        "culture__1": null,
+        "culture__2": null,
+        "culture__3": null,
+        "culture__4": null,
+        "culture__5": "",
+        "culture__6": "",
+        "culture__7": "",
+        "culture__8": "",
+        "culture__9": "",
+        "culture_10": "",
+        "culture_11": "",
+        "culture_12": "",
+        "culture_13": "",
+        "culture_14": "",
+        "bet_alert": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "biodiversite_RMQS_betterave_alerte.63",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          373260.209,
+          6224200.973
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "id_site": 2213,
+        "x_theo": 373260.209,
+        "y_theo": 6224200.973,
+        "culture_20": null,
+        "culture__1": null,
+        "culture__2": null,
+        "culture__3": null,
+        "culture__4": null,
+        "culture__5": "",
+        "culture__6": "",
+        "culture__7": "",
+        "culture__8": "",
+        "culture__9": "",
+        "culture_10": "",
+        "culture_11": "",
+        "culture_12": "",
+        "culture_13": "",
+        "culture_14": "",
+        "bet_alert": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "biodiversite_RMQS_betterave_alerte.64",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          405223.1413,
+          6223938.452
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "id_site": 2215,
+        "x_theo": 405223.1413,
+        "y_theo": 6223938.452,
+        "culture_20": null,
+        "culture__1": null,
+        "culture__2": null,
+        "culture__3": null,
+        "culture__4": null,
+        "culture__5": "",
+        "culture__6": "",
+        "culture__7": "",
+        "culture__8": "",
+        "culture__9": "",
+        "culture_10": "",
+        "culture_11": "",
+        "culture_12": "",
+        "culture_13": "",
+        "culture_14": "",
+        "bet_alert": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "biodiversite_RMQS_betterave_alerte.65",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          565039.1903,
+          6222615.948
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "id_site": 2225,
+        "x_theo": 565039.1903,
+        "y_theo": 6222615.948,
+        "culture_20": 18,
+        "culture__1": 18,
+        "culture__2": 18,
+        "culture__3": 18,
+        "culture__4": 17,
+        "culture__5": "BOP",
+        "culture__6": "BOP",
+        "culture__7": "BOP",
+        "culture__8": "BOP",
+        "culture__9": "BOP",
+        "culture_10": "BOP",
+        "culture_11": "BOP",
+        "culture_12": "BOP",
+        "culture_13": "SPL",
+        "culture_14": "SPL",
+        "bet_alert": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "biodiversite_RMQS_betterave_alerte.66",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          980554.54,
+          6219092.962
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "id_site": 2238,
+        "x_theo": 980554.54,
+        "y_theo": 6219092.962,
+        "culture_20": null,
+        "culture__1": null,
+        "culture__2": null,
+        "culture__3": null,
+        "culture__4": null,
+        "culture__5": "",
+        "culture__6": "",
+        "culture__7": "",
+        "culture__8": "",
+        "culture__9": "",
+        "culture_10": "",
+        "culture_11": "",
+        "culture_12": "",
+        "culture_13": "",
+        "culture_14": "",
+        "bet_alert": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "biodiversite_RMQS_betterave_alerte.67",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          500980.4421,
+          6207165.535
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "id_site": 2249,
+        "x_theo": 500980.4421,
+        "y_theo": 6207165.535,
+        "culture_20": 18,
+        "culture__1": 18,
+        "culture__2": 18,
+        "culture__3": 18,
+        "culture__4": 18,
+        "culture__5": "PPH",
+        "culture__6": "PPH",
+        "culture__7": "PPH",
+        "culture__8": "PPH",
+        "culture__9": "PPH",
+        "culture_10": "PPH",
+        "culture_11": "PPH",
+        "culture_12": "PPH",
+        "culture_13": "PPH",
+        "culture_14": "PPH",
+        "bet_alert": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "biodiversite_RMQS_betterave_alerte.68",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          692755.9491,
+          6205564.188
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "id_site": 2261,
+        "x_theo": 692755.9491,
+        "y_theo": 6205564.188,
+        "culture_20": null,
+        "culture__1": null,
+        "culture__2": null,
+        "culture__3": null,
+        "culture__4": 17,
+        "culture__5": "PPH",
+        "culture__6": "PPH",
+        "culture__7": "SPH",
+        "culture__8": "SPH",
+        "culture__9": "SPH",
+        "culture_10": "SPH",
+        "culture_11": "SPH",
+        "culture_12": "SPH",
+        "culture_13": "SPL",
+        "culture_14": "SPL",
+        "bet_alert": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "biodiversite_RMQS_betterave_alerte.69",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1018337.894,
+          6890192.862
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "id_site": 10304,
+        "x_theo": 1018337.894,
+        "y_theo": 6890192.862,
+        "culture_20": null,
+        "culture__1": null,
+        "culture__2": null,
+        "culture__3": null,
+        "culture__4": null,
+        "culture__5": "",
+        "culture__6": "",
+        "culture__7": "",
+        "culture__8": "",
+        "culture__9": "",
+        "culture_10": "",
+        "culture_11": "",
+        "culture_12": "",
+        "culture_13": "",
+        "culture_14": "",
+        "bet_alert": 0
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "biodiversite_RMQS_betterave_alerte.70",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          824419.6802,
+          6652027.086
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "id_site": 11099,
+        "x_theo": 824419.6802,
+        "y_theo": 6652027.086,
+        "culture_20": 21,
+        "culture__1": 21,
+        "culture__2": 21,
+        "culture__3": 21,
+        "culture__4": 21,
+        "culture__5": "PPH",
+        "culture__6": "PPH",
+        "culture__7": "",
+        "culture__8": "",
+        "culture__9": "",
+        "culture_10": "",
+        "culture_11": "",
+        "culture_12": "",
+        "culture_13": "",
+        "culture_14": "",
+        "bet_alert": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "biodiversite_RMQS_betterave_alerte.71",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          904351.8228,
+          6651343.028
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "id_site": 11104,
+        "x_theo": 904351.8228,
+        "y_theo": 6651343.028,
+        "culture_20": 18,
+        "culture__1": 19,
+        "culture__2": 19,
+        "culture__3": 19,
+        "culture__4": 19,
+        "culture__5": "PRL",
+        "culture__6": "PRL",
+        "culture__7": "PPH",
+        "culture__8": "PPH",
+        "culture__9": "PPH",
+        "culture_10": "PPH",
+        "culture_11": "PPH",
+        "culture_12": "PPH",
+        "culture_13": "PPH",
+        "culture_14": "PPH",
+        "bet_alert": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "biodiversite_RMQS_betterave_alerte.72",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          967607.4005,
+          6570862.854
+        ]
+      },
+      "geometry_name": "the_geom",
+      "properties": {
+        "id_site": 11317,
+        "x_theo": 967607.4005,
+        "y_theo": 6570862.854,
+        "culture_20": null,
+        "culture__1": null,
+        "culture__2": null,
+        "culture__3": null,
+        "culture__4": null,
+        "culture__5": "",
+        "culture__6": "",
+        "culture__7": "",
+        "culture__8": "",
+        "culture__9": "",
+        "culture_10": "",
+        "culture_11": "",
+        "culture_12": "",
+        "culture_13": "",
+        "culture_14": "",
+        "bet_alert": 0
+      }
+    }
+  ],
+  "totalFeatures": 72,
+  "numberMatched": 72,
+  "numberReturned": 72,
+  "timeStamp": "2026-02-06T15:27:18.727Z",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "urn:ogc:def:crs:EPSG::2154"
+    }
+  }
+}

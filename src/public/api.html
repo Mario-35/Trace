@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Requettes vers l'api</title>
+    <link rel='stylesheet' href='./css/bootstrap.css'>
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/modal.css">
+    <link rel="stylesheet" href="./css/splitter.css">
+    <link rel="stylesheet" href="./css/modal.css">
+    <link rel="stylesheet" href="./css/viewer.css">
+</head>
+
+<body>
+	<header id="splitter-nav-site" class="splitter-nav-site"></header>
+    <!-- <form id="actionForm" class="formData" enctype="multipart/form-data" method="POST"> -->
+        <input type="hidden" id="ctx" name="ctx" value="0" />
+        <main class="main-view">
+            <div class="splitter-nav-view" id="left-pane">
+            </div>
+            <div class="v-drag" id="separator"></div>
+            <div class="content" id="right-pane">
+			<div class="card">
+				<div class="card-header row">
+					<div class="col-1">
+						<span class="input-group-text">Requette</span>
+					</div>
+					<div class="col-10">
+						<div class="input-group">
+							<input id="url" type="text" class="form-control">
+						</div>
+					</div>
+					<div class="col-1">
+						<div class="input-group">
+							<a class="btn btn-primary icon_plus" id="query">Query</a>	
+						</div>
+					</div>
+				</div>
+                <div id="json"></div>
+			</div>
+                </html>
+                
+            </div>
+        </main> 
+    <!-- </form> -->
+    <div id="modal"></div>  
+</body> 
+    <!-- awlays first -->
+    <script src="./js/configuration.js"></script>
+    <script src="./js/constants.js"></script>
+    <script src="./js/all.js"></script>
+    <script src="./js/common/modal.js"></script>
+    <script src="./js/common/splitter.js"></script>
+    <script src="./js/common/menu.js"></script>
+    <script src="./js/api.js"></script>
+    <script src="./js/api/viewer.js"></script>
+</html>

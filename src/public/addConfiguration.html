@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configuration</title>
+    <link rel="stylesheet" href="./css/form/configuration.css">
+    <link rel="stylesheet" href="./css/form/main.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/modal.css">
+    <link rel="stylesheet" href="./css/editingList.css">
+    <link rel="stylesheet" href="./css/splitter.css">
+</head>
+
+<body>
+	<header id="splitter-nav-site" class="splitter-nav-site"></header>
+    <form id="actionForm" class="formData" enctype="multipart/form-data" method="POST">
+        <main class="main-view">
+            <div class="splitter-nav-view" id="left-pane">
+            </div>
+            <div class="v-drag" id="separator"></div>
+            <div class="content" id="right-pane">
+                <div class="container">
+                    <div class="header">
+                        <h1 id="formTitle"></h1>
+                    </div>
+                    <!-- Steps Headers-->            
+                    <div class="progress-bar">
+                        <div class="progress-bar-line" id="progress-line"></div>
+                        <div class="step completed" id="step-1">
+                            <span>1</span>
+                            <span class="step-label">Général</span>
+                        </div>
+                        <div class="step active" id="step-2">
+                            <span>2</span>
+                            <span class="step-label">Stockage</span>
+                        </div>
+                        <div class="step" id="step-3">
+                            <span>3</span>
+                            <span class="step-label">Etats</span>
+                        </div>
+                        <div class="step" id="step-4">
+                            <span>4</span>
+                            <span class="step-label">Listes</span>
+                        </div>
+                        <div class="step" id="step-5">
+                            <span>5</span>
+                            <span class="step-label">Etiquettes</span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-container">
+                        <!-- Step 1: Général -->
+                        <div class="form-step active" id="form-step-1">
+                            <div class="form-row">
+                                <div class="form-group row-2">
+                                    <label for="site">Nom de l'unité</label>
+                                    <input type="text" id="site" name="site" class="form-control" maxlength="25" placeholder="Nom de l'unité" />                           
+                                    <div class="error-message" id="site-error">Nom de l'unité obligatoire</div>
+                                </div>
+                                <div class="form-group row-&">
+                                    <!-- <label for="site">Mode debug</label> -->
+                                    <input type="checkbox" id="debug" name="debug" class="form-control" />
+                                    <label for="debug">Mode debug</label>
+
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group row-1">
+                                    <label for="pays">Pays</label>
+                                    <input type="text" id="pays" name="pays" class="form-control" maxlength="25" placeholder="Pays">
+                                    <div class="error-message" id="pays-error">Indiquer le pays</div>
+                                </div>
+                                
+                                <div class="form-group row-1">
+                                    <label for="region">Région</label>
+                                    <input type="text" id="region" name="region" class="form-control" maxlength="30" placeholder="Region">
+                                    <div class="error-message" id="region-error">Indiquer la région</div>
+                                </div>
+                                <div class="form-group row-1">
+                                    <label for="latitude">
+                                        <span tooltip="Latitude en degré décimal au format WGS84">Latitude</span>
+                                    </label>
+                                    <input type="text" id="latitude" name="latitude" class="form-control" maxlength="15" placeholder="Point X">
+                                    <div class="error-message" id="latitude-error">Indiquer la Latitude au format WGS84</div>
+                                </div>
+                                <div class="form-group row-1">
+                                    <label for="longitude">
+                                        <span tooltip="Longitude en degré décimal au format WGS84">Longitude</span>
+                                    </label>
+                                    <input type="text" id="longitude" name="longitude" class="form-control" maxlength="15" placeholder="Point Y">
+                                    <div class="error-message" id="longitude-error">Indiquer la Longitude au format WGS84</div>
+                                </div>
+                            </div>                            
+                             <div class="form-row">
+                                <div class="form-group row-1">
+                                    <label for="code">
+                                        <span tooltip="Code ISO pour le passeport Phytosanitaire" flow="right">Code ISO</span>
+                                    </label>
+                                    <input type="text" id="code" name="code" class="form-control">
+                                </div>
+                                
+                                <div class="form-group row-1">
+                                    <label for="identifiant">
+                                        <span tooltip="Identifiant délivré par les autorités">Identifiant</span>    
+                                    </label>
+                                    <input type="text" id="identifiant" name="identifiant" class="form-control">
+                                </div>                                     
+                                <div class="form-group row-1">
+                                    <input type="checkbox" id="autoTestPasseport" name="autoTestPasseport" checked>
+                                    <label for="autoTestPasseport"><span tooltip="Autorisé à faire un test en laboratoire">Test laboratoire</span></label>
+                                </div>                                     
+                            </div>
+
+                            
+                            <div class="btn-group">                        
+                                <button class="btn btn-prev" id="prev-1" disabled>⬅ Précédent</button>
+                                <button class="btn btn-next" id="next-1">Suivant ➡</button>
+                            </div>
+                        </div>
+                        
+                        <!-- Step 2: Stockage -->
+                        <div class="form-step" id="form-step-2">
+                            <div class="form-row container-center">
+                                <input type="hidden" id="stockages" name="stockages" class="form-control">
+                                <div id="stockagesList" class="liste"></div>
+                            </div> 
+
+                            <div class="btn-group">
+                                <button class="btn btn-prev" id="prev-2">⬅ Précédent</button>
+                                <button class="btn btn-next" id="next-2">Suivant ➡</button>
+                            </div>
+                        </div>
+                        
+                        <!-- Step 3: Etats -->
+                        <div class="form-step" id="form-step-3">  
+                            <div class="form-row container-center">
+                                <input type="hidden" id="etats" name="etats" class="form-control">
+                                <div id="etatsList" class="liste"></div>
+                            </div> 
+
+                            <div class="btn-group">
+                                <button class="btn btn-prev" id="prev-3">⬅ Précédent</button>
+                                <button class="btn btn-next" id="next-3">Suivant ➡</button>
+                            </div>                            
+                        </div>
+
+                        <!-- Step 4: Listes -->
+                        <div class="form-step" id="form-step-4">  
+                            <div class="form-row">
+                                <div class="row-2">
+                                    <label for="excelSelect" id="excelSelectLabel">Element impotable depuis excel</label>
+                                    <select multiple name="excelSelect" id="excelSelect" class="form-control"></select>
+                                </div>
+                            </div> 
+
+                            <div class="btn-group">
+                                <button class="btn btn-prev" id="prev-4">⬅ Précédent</button>
+                                <button class="btn btn-next" id="next-4">Suivant ➡</button>
+                            </div>                            
+                        </div>
+                        
+                        <!-- Step 5: Etiquettes -->
+                        <div class="form-step" id="form-step-5">    
+                            <div class="form-row">
+                                <div class="form-group row-2">
+                                    <label for="element" id="elementLabel">Element</label>
+                                    <select id="element" class="form-control"> </select>
+                                </div>
+                                <div class="form-group row-3">
+                                    <label for="texte">Texte Libre</label>
+                                    <input type="text" id="texte" class="form-control" maxlength="50" placeholder="Texte Libre">
+                                </div>
+                                <div class="form-group row-1">
+                                    <label>Taille</label>
+                                    <select id="textSize" class="form-control">
+                                        <option >8px</option>
+                                        <option selected>10px</option>
+                                        <option>12px</option>
+                                        <option>14px</option>
+                                        <option>16px</option>
+                                    </select> 
+                                </div>                                   
+                                <div class="form-group row-1">                                    
+                                    <label>Alignement</label>
+                                    <select id="textAlign" class="form-control">
+                                        <option value="left">Gauche</option>
+                                        <option value="center" selected>Centre</option>
+                                        <option value="right">Droite</option>
+                                    </select> 
+                                </div>                         
+                            </div>                            
+                            <div class="form-row">
+                                <div class="form-group row-1">
+                                    <button class="btn btn-test" id="testPrintEtiquette">Imprimer</button>
+                                </div>                            
+                                <div class="form-group row-3">
+                                    <div id="gabaritEtiquette"></div>
+                                </div>
+
+                            </div>                            
+
+                            <div class="btn-group">
+                                <button class="btn btn-prev" id="prev-5">⬅ Précédent</button>
+                                <button class="btn btn-next" id="btn-creer">✔️️ Modifier</button>
+                            </div>  
+                            <textarea id="etiquette" name="etiquette"></textarea>                                                
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main> 
+    </form>
+    <div id="modal"></div>  
+</body> 
+<script>"@DATAS@"</script>
+<!-- awlays first -->
+    <script src="./js/configuration.js"></script>
+    <script src="./js/constants.js"></script>
+    <script src="./js/all.js"></script>
+    <script src="./js/common/splitter.js"></script>
+    <script src="./js/common/menu.js"></script>
+    <script src="./js/common/editingList.js"></script>
+    <script src="./js/form.js"></script>
+    <script src="./js/api.js"></script>
+    <script src="./js/helper.js"></script>
+    <script src="./js/common/modal.js"></script>
+    <script src="./js/libs/JsBarcode.all.min.js"></script>
+    <script src="./js/api/print.js"></script>
+    <script src="./js/common/regions.js"></script>    
+    <script src="./js/configurations/add.js"></script>
+    <script src="./js/configurations/event.js"></script>  
+    <script src="./js/stickers/controller.js"></script>
+    <script src="./js/configurations/controller.js"></script>
+</html>

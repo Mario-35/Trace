@@ -1,0 +1,70 @@
+.inputfile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.inputfile+label {
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	cursor: pointer;
+	display: inline-block;
+	padding: 2px 3px;
+	font-size: 1rem;
+    background-color: var(--background-color);
+    border: 1px solid var(--btn-gray-border);
+}
+
+.no-js .inputfile+label {
+	display: none;
+}
+
+.inputfile.has-focus+label,
+.inputfile:focus+label {
+	outline: 1px dotted #000;
+	outline: -webkit-focus-ring-color auto 5px;
+}
+
+.inputfile+label svg {
+	width: 1em;
+	height: 1em;
+	vertical-align: middle;
+	fill: currentColor;
+	margin-top: -0.25em;
+	margin-right: 0.25em;
+}
+
+.inputfile-1+label {
+    color: var(--content-color);
+    background-color: var(--background-color);
+}
+
+.inputfile-1+label:hover,
+.inputfile-1.has-focus+label,
+.inputfile-1:focus+label {
+    background-color: var(--background-color-hover);
+    border-color: var(--color-active);
+}
+
+.select-excel {
+	white-space: nowrap;
+	width: 1%; 
+	font-weight: lighter;
+	font-size: 14px;
+}
+
+
+.something {
+	background: rgb(184, 179, 179) !important;
+	color: #fff;
+}
+
+.excel-control option {
+	margin: 80px;
+	background: rgba(0, 0, 0, 0.3);
+	color: #fff;
+	text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+}

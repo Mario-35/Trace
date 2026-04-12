@@ -1,0 +1,1 @@
+export const escapeSimpleQuotes = (input: any) => (typeof input === "string") ? input.replace(/[']+/g, "''") : input;

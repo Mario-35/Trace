@@ -1,0 +1,63 @@
+{
+    "configuration": [
+        {
+            "id": 1,
+            "site": "UMR Sas Rennes",
+            "code": "FR",
+            "debug": false,
+            "pays": "France",
+            "region": "Bretagne",
+            "latitude": "48.112564637819",
+            "longitude": "-1.656744048248",
+            "identifiant": "BR13551",
+            "stockages": [
+                "Batiment",
+                "Etage",
+                "Piece",
+                "Meuble",
+                "Etagere",
+                "Caisse"
+            ],
+            "etats": [
+                "Créer",
+                "Prélevé",
+                "Stocké",
+                "Perdu",
+                "Detruit",
+                "Importé"
+            ],
+            "etiquette": {
+                "sticker0": {
+                    "key": "identification",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker1": {
+                    "key": "programme",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker2": {
+                    "key": "site",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker3": {
+                    "key": "responsable",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker4": {
+                    "key": "pays",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker5": {
+                    "key": "libre",
+                    "size": "12px",
+                    "align": "center"
+                }
+            }
+        }
+    ]
+}

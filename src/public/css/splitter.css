@@ -1,0 +1,176 @@
+nav ul {
+  list-style: none;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+nav a,
+nav a:visited,
+nav a:hover,
+nav a:focus,
+nav a:active,
+nav span {
+  color:  var(--bs-pagination-color);
+  text-decoration: none;
+}
+
+.splitter-nav-site {
+  position: fixed;
+  height: 3rem;
+  width: 100%;
+  top: 0;
+  background-color: #0d6efd;
+  z-index: 999;
+}
+.splitter-nav-site .splitter-nav-left {
+  float: left;
+  font-size: 1.8em;
+}
+.splitter-nav-site .splitter-nav-right {
+  float: right;
+}
+.splitter-nav-site a,
+.splitter-nav-site a:visited {
+  color: white;
+  font-weight: 400;
+}
+.splitter-nav-site ul a,
+.splitter-nav-site ul span {
+  display: block;
+  line-height: 3rem;
+  padding: 0 1rem;
+}
+.splitter-nav-site ul li {
+  float: left;
+}
+.splitter-nav-site ul li:hover, .splitter-nav-site ul li:focus-within, .splitter-nav-site ul li:active {
+  background: var(--bs-cyan);
+}
+.splitter-nav-site ul li:hover a, .splitter-nav-site ul li:focus-within a, .splitter-nav-site ul li:active a {
+  outline: none;
+}
+.splitter-nav-site ul li:hover > ul, .splitter-nav-site ul li:focus-within > ul, .splitter-nav-site ul li:active > ul {
+  display: block;
+  visibility: visible;
+}
+.splitter-nav-site ul ul {
+  display: none;
+  visibility: hidden;
+  position: absolute;
+  right: 0;
+  background: var(--bs-cyan);
+}
+.splitter-nav-site ul ul li {
+  float: none;
+  min-width: 10rem;
+  width: auto;
+}
+.splitter-nav-site ul ul li:hover, .splitter-nav-site ul ul li:active {
+  background: var(--bs-cyan);
+}
+.splitter-nav-site ul ul a,
+.splitter-nav-site ul ul span {
+  line-height: 100%;
+  padding: 0.8rem;
+}
+.splitter-nav-site ul ul .version {
+  font-size: 0.6em;
+  text-align: center;
+}
+
+.splitter-nav-app nav {
+  z-index: 990;
+  max-width: 3rem;
+  background-color: #4d4d4d;
+  position: fixed;
+  height: 100%;
+  top: 3rem;
+}
+.splitter-nav-app nav ul a,
+.splitter-nav-app nav ul span {
+  display: block;
+  line-height: 3rem;
+  width: 3rem;
+  padding: 0 0 0 0.5rem;
+}
+.splitter-nav-app nav ul li:hover, .splitter-nav-app nav ul li:active {
+  background: #9a9a9a;
+}
+.splitter-nav-app nav ul li.active {
+  background: #8d8d8d;
+}
+
+main {
+  max-width: 100%;
+  height: calc(100vh - 3rem);
+  margin-top: 3rem;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  align-items: stretch;
+}
+main.hide-nav .splitter-nav-view, main.hide-nav .v-drag {
+  display: none;
+  width: 0;
+  padding: 0;
+  margin: 0;
+}
+main .v-drag {
+  width: 1rem;
+  background: #aaa;
+  cursor: ew-resize;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='30'><path d='M2 0 v30 M5 0 v30 M8 0 v30' fill='none' stroke='black'/></svg>");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+main .splitter-nav-view {
+  background: grey;
+  padding: 0.25rem;
+  min-width: 10rem;
+  width: 20%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+main .splitter-nav-view ul {
+  margin-top: 0.5rem;
+}
+main .splitter-nav-view ul a {
+  display: inline-block;
+  max-width: 90%;
+  max-width: calc(100% - 0.5rem);
+  overflow: hidden;
+  padding: 0.25rem 0.5rem;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  vertical-align: middle;
+  color: white;
+}
+main .splitter-nav-view ul li {
+  margin-bottom: 0.25rem;
+}
+main .splitter-nav-view ul li:hover, main .splitter-nav-view ul li:active, main .splitter-nav-view ul li.active {
+  background: #b3b3b3;
+  border-radius: 5px;
+}
+main .content {
+  padding: 1rem;
+  width: 80%;
+  min-width: 20rem;
+  overflow-y: auto;
+}
+main.hide-nav .content {
+  width: 100%;
+}
+
+.content h1 {
+  font-size: 1.5rem;
+}
+.content h2 {
+  font-size: 1.3rem;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}

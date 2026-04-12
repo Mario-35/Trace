@@ -1,0 +1,45 @@
+
+.center {
+  text-align: center;
+}
+
+.context-menu {
+  background-color: var(--bs-gray-300);
+  width: 250px;
+  z-index: 10;
+  box-shadow: 0 4px 5px 3px rgba(0, 0, 0, 0.2);
+  position: fixed;
+  display: none;
+  transition: 0.2s display ease-in;
+}
+.context-menu .context-menu-options {
+  list-style: none;
+  padding: 0 0 0 0;
+  z-index: 1;
+}
+.context-menu .context-menu-options .context-menu-option {
+  font-weight: 500;
+  z-index: 1;
+  font-size: 14px;
+  padding: 4px 8px 4px 8px;
+  cursor: pointer;
+}
+
+.context-menu .context-menu-options .context-menu-option:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+button {
+  background: grey;
+  border: none;
+}
+
+button .next {
+  color: green;
+}
+
+button[disabled=false]:hover .next {
+  color: red;
+  animation: move 0.5s;
+  animation-iteration-count: 2;
+}
