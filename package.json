@@ -1,6 +1,6 @@
 {
   "name": "mario",
-  "version": "1.0.0",
+  "version": "0.9.1",
   "description": "API gerada com api boilerplate",
   "main": "dist/src/main.js",
   "scripts": {
