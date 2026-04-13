@@ -7,7 +7,7 @@
     "start": "NODE_ENV=production node -r dotenv/config dist/src/main.js",
     "dev": "nodemon --inspect src/main.ts",
     "build": "rimraf dist && tsc --project tsconfig.build.json && resolve-tspaths && node build.js",
-    "mario": "npm run build && git add * && git commit -m \"Update\" && git push",
+    "publish": "npm run build && git add * && git commit -m \"Update\" && git push",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,json,css,scss,md}\"",
