@@ -16,6 +16,7 @@ import { executeSql } from "../../db";
 import { Add } from "../../html/class/add";
 import { _CONFIG, setConfig } from "../../constant";
 import { dataBase } from "../../db/base";
+import { update } from "../../helpers/update";
 
 export const pagesRoutes = Router();
 
@@ -77,6 +78,11 @@ pagesRoutes.get("/" + dataBase.campagnes.name + ".html", async (req, res) => {
 pagesRoutes.get("/" + dataBase.echantillons.name + ".html", async (req, res) => {
     const html = new List(dataBase.echantillons.name);
     res.send(html.toString())
+});
+
+// print sample sticker
+pagesRoutes.get("/update", async (req, res) => {
+    await update();
 });
 
 // print sample sticker
