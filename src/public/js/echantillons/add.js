@@ -117,13 +117,9 @@ nextButtons.forEach((button, index) => {
                 new editingList(getElement("analysesList"), "Analyses effectuées", "Ajouter une analyses", analyses.value);  
                 if(!nombreOuAnalyses.checked) nombre.value = analyses.value.split(',').length;
             }
-            if (currentStep === 3) {
-
-
-
-
-            }
+            if (currentStep === 3) {}
             if (currentStep === 4) {
+                canPrint("printEtiquette");
                 if(!nombreOuAnalyses.checked) nombre.value = getElement("analyses").value.split(',').length;
                 getElement("gabaritEtiquette").innerHTML = "";
                 if (+_DATAS["passeport"] > 0) {
@@ -132,13 +128,13 @@ nextButtons.forEach((button, index) => {
                     getElement("etiquette").value = JSON.stringify(tmp);
                 }
                 if (_DATAS["dossier"] != "") {
-                    console.log("======================================");
                     const tmp = toJson("etiquette");
                     tmp["sticker2"] = {"key":"dossier-numero","size":"14px","align":"center"};
                     getElement("etiquette").value = JSON.stringify(tmp);
                 }
                 _DATAS = formDatas();
-                sticker_start(_DATAS);
+                sticker_start(_DATAS);                
+                refreshSteps();
             }
         }
     });
@@ -150,5 +146,9 @@ prevButtons.forEach((button, index) => {
         showStep(currentStep);
     });
 });
+
+function refreshSteps() {
+    disabled ("btn-creer", (isContextMode(["id", "selection"]) && Object.keys(filterModified(_DATAS)).length > 0) === false);
+}
 
 updateProgressBar();

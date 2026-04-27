@@ -4,7 +4,6 @@ document.getElementById("left-pane").innerHTML = `
     <ul>
         <li><a href="./campagnes.html">Campagnes</a></li>
         <li><a href="./echantillons.html">Echantillons</a></li>
-        <li><a href="./selections.html">Séléctions</a></li>
         <li><a href="./passeports.html">Passeports</a></li>
         <li><a href="./sites.html">Sites</a></li>
         <li><a href="./evenements.html">Evenements</a></li>
@@ -35,13 +34,12 @@ function toTitleCase(str) {
 }
 
 function addToOption(name, listElements, selected) {
-    console.log(listElements);
-    
-    var select = getElement(name);
-    
-    if (select) listElements.forEach(e => {
+    var select = getElement(name);  
+    const options = [];
+    for (i = 0; i < select.length; i++) 
+        options.push(select.options[i].value);
+    if (select) listElements.filter(e => !options.includes(e)).forEach(e => {
         e = toTitleCase(e);
-        console.log(e);
         var opt = document.createElement('option');
         opt.value = e;
         opt.innerHTML = e;
@@ -49,10 +47,6 @@ function addToOption(name, listElements, selected) {
             opt.setAttribute("selected", "selected");
         select.appendChild(opt);
     });
-};
-
-function addToOptions(names, listElements) {
-    names.forEach(name => addToOption(name, listElements));
 };
 
 function addDataList(name, listElements) {
@@ -126,13 +120,15 @@ function setRange() {
 }
 
 // load line from importation store
-function loadRangeLine(index) {
+async function loadRangeLine(index) {
     if(Array.isArray(_STORE.columns)) {
         loadValues( _STORE.datas[index]);
+        if (isContextMode(["aliquote","selectionaliquote"])) showAliquote(_STORE.datas[index]);
     } else {
         Object.keys(_STORE.columns).forEach(column => {
             loadValue(column, _STORE.datas[index][_STORE.columns[column]]);
             getElement("identification").value = createIdentification(index);
+            if (isContextMode(["aliquote","selectionaliquote"])) showAliquote(column, _STORE.datas[index][_STORE.columns[column]]);
         });
     }
     getElement("rowNumber").innerText = 'Ligne : ' + index + ' sur ' + _STORE.datas.length ; 

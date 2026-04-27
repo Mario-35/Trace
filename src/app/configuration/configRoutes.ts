@@ -8,11 +8,12 @@
 
 import { Router } from "express"
 import { readConfig, saveConfig } from "./controller";
+import { dataBase } from "../../db/base";
 
 export const configRoutes = Router();
 
 // Get configuration
-configRoutes.get("/configuration", async (req, res) => {
+configRoutes.get("/" + dataBase.configuration.name, async (req, res) => {
     return await readConfig()
     .then((config: any) => {
         return config.length > 0 
@@ -24,7 +25,7 @@ configRoutes.get("/configuration", async (req, res) => {
 })
 
 // Create one configuration
-configRoutes.post("/configuration", async (req, res) => {
+configRoutes.post("/" + dataBase.configuration.name, async (req, res) => {
     return await saveConfig(req.body)
     .then((config: any) => {
         return res.status(201).json(config);
@@ -34,7 +35,7 @@ configRoutes.post("/configuration", async (req, res) => {
 })
 
 // Update one configuration
-configRoutes.patch("/configuration", async (req, res) => {
+configRoutes.patch("/" + dataBase.configuration.name, async (req, res) => {
     return await saveConfig(req.body)
     .then((config: any) => {
         return res.status(201).json(config);

@@ -18,14 +18,14 @@ export class List extends CoreHtmlView {
     
     createIndexHtmlString(name: String, excel?: boolean) {
         // Split files for better search and replace
-		const plural = name.toLocaleLowerCase() + 's';
+		// const plural = name.toLocaleLowerCase() + 's';
 		const listCols:any = [];
-		const src = dataBase[plural as keyof object].columns;
-		Object.keys(src).filter((e: any) => src[e].list === true).forEach(e => {
+		const src = dataBase[name as keyof object];
+		Object.keys(src.columns).filter((e: any) => src.columns[e].list === true).forEach(e => {
 			listCols.push({
 				key: e,
-				title: src[e].title,
-				searchType: src[e].searchType || "text"
+				title: src.columns[e].title,
+				searchType: src.columns[e].searchType || "text"
 			});
 		});
         this._HTMLResult =`
@@ -34,7 +34,7 @@ export class List extends CoreHtmlView {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestion des ${plural}s</title>
+    <title>Gestion des ${name}s</title>
     <link rel="stylesheet" href="./css/bootstrap.css">
     <link rel="stylesheet" href="./css/icons.css">
     <link rel="stylesheet" href="./css/context-menu.css">
@@ -68,10 +68,10 @@ export class List extends CoreHtmlView {
 					</div>
 					<div class="col-10">
 						<div class="input-group">
-							<span class="input-group-text">${name}</span>
-							${dataBase[plural as keyof object].create === true ? `
+							<span class="input-group-text" id="nameType">${name}</span>
+							${src.create === true ? `
 								<div id="blockAjouter">
-									<a class="btn btn-primary icon_plus" id="ajouter" href="./${name}-add.html"> Ajouter</a>								
+									<a class="btn btn-primary icon_plus" id="ajouter" href="./${src.singular}-add.html"> Ajouter</a>								
 								</div>
 								` : ''}
                             ${ excel ? `
@@ -86,12 +86,24 @@ export class List extends CoreHtmlView {
 						</div>
 					</div>
 				</div>
+				<div class="card-header row">
+					<div class="col-1">
+						<div id="reset">
+							<a class="btn btn-success" id="reset">Reset</a>								
+						</div>
+					</div>
+					<div class="col-10">
+						<span id="infos"></span>
+					</div>
+				</div>
 				<div class="table-responsive">
-					<table id="jsonTable" class="table table-striped table-hover">
+					<form id="actionForm" class="formData" enctype="multipart/form-data" method="POST">
+						<table id="jsonTable" class="table table-striped table-hover">
 						<thead></thead>
 						<tbody></tbody>
 						<tfoot></tfoot>
-					</table>
+						</table>
+					</form>
 				</div>
 				<div class="card-footer">
 					<nav>
@@ -101,12 +113,12 @@ export class List extends CoreHtmlView {
 			</div>
         </div>
 		
-<div class="context-menu">
-  <ul id = "contextMenu" class="context-menu-options">
-  </ul>
-</div>
+		<div class="context-menu">
+			<ul id = "contextMenu" class="context-menu-options">
+			</ul>
+		</div>
 
-		<div id="modal"></div>  
+	<div id="modal"></div>  
     </main>
 </body> 
 <script src="./js/api.js"></script>
@@ -118,7 +130,9 @@ export class List extends CoreHtmlView {
 <script src="./js/common/splitter.js"></script>
 <script src="./js/common/menu.js"></script>  
 <script src="./js/dataTables.js"></script>
-<script src="./js/${plural}/list.js"></script>    
+<script src="./js/${name}/list.js"></script>  
+<script src="./js/form.js"></script>
+
 ${excel ? `<script src="./js/libs/xlsx.full.min.js"></script>` : ''}
 </html>
 `.split(EConstant.newline)

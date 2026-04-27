@@ -22,7 +22,7 @@ export class Print extends CoreHtmlView {
         else if (type ===  "passeport") 
             this.createPrintPasseportHtmlString()
     }
-   
+    
     createPrintPasseportHtmlString() {
         this._HTMLResult = ['<!DOCTYPE html>',
                             '<html lang="en">',

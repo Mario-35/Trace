@@ -143,6 +143,14 @@ function multiRemoveDisabled(names) {
     if(typeof names === "string") names = [names];
     names.forEach(name => removeDisabled(name));
 };
+// detect is chrome
+var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+
+function canPrint(name) {
+  disabled(name, !isChrome);
+  if (isChrome === false) 
+    getElement(name).title = "Uniquement avec chrome";
+}
 
 // version date
 console.log("version : 06/03/2026 ADAM Mario");

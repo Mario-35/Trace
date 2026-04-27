@@ -24,8 +24,7 @@ const executeSqlOne = async (query: string): Promise<object> => {
 };
 
 const executeSqlMulti = async (queries: string[]): Promise<object> => {
-    console.log(queries);
-
+    // console.log(queries);
     return new Promise(async function (resolve, reject) {
         await sql
             .begin((sql) =>
@@ -44,3 +43,5 @@ const executeSqlMulti = async (queries: string[]): Promise<object> => {
 };
 
 export const executeSql = async (query: string | string[]): Promise<object> => (typeof query === "string" ? executeSqlOne(query) : executeSqlMulti(query));
+
+

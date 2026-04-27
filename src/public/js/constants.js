@@ -20,7 +20,7 @@ var _NOTYET = "Not implemented yet";
 const createContext = () => {
     let mode = "new";
     if (window.location.href.includes('?')) {
-        ["id", "selection", "excel", "after", "aliquote", "new", "echantillon"].forEach(e => {
+        ["id", "selection", "excel", "after", "aliquote", "selectionaliquote", "new", "echantillon"].forEach(e => {
             if (isKeyInUrl(e)) setContext(e, +getNumberFromUrl(e), mode);            
         }); 
     } else setContext("new", 0);
@@ -91,6 +91,14 @@ function changeValueInJson(name, key, value) {
         tmp[key[0]][key[1]] = value;
     
     getElement(name).value = JSON.stringify(tmp);
+};
+
+function modifiedValue(element) {
+    const elem = getElement(element);
+    if (elem) {
+        elem.setAttribute("modified", true);
+    }
+    refreshSteps();
 };
 
 

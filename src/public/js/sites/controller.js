@@ -51,10 +51,10 @@ async function start() {
         const datas = await getDatas(window.location.origin + "/site/" + ctx.id);
         loadDatas(datas);
         loadDatas(_COLUMNS);
+        removeDisabled("btnApiRpg"); 
         changeTitle("Modification d'un site");
     } else if (ctx.mode === 'new') { //  Default add mode
     } else log("Error mode");
-    
     updateButtonCreer(ctx);
     addMap();
 }

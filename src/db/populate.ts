@@ -13,9 +13,7 @@ export async function populate() {
             const datas = JSON.parse(file);
             const queries:string[] = [];
             Object(datas[tableName]).forEach((data: any) => {
-                delete data["id"];
-                console.log(`INSERT INTO ${tableName} (${createPgColumns(tableName, data)}) VALUES (${createPgValues(tableName, data)})`);
-                
+                delete data["id"];                
                 queries.push(`INSERT INTO ${tableName} (${createPgColumns(tableName, data)}) VALUES (${createPgValues(tableName, data)})`);
             });
             executeSql(queries).catch((error) => {

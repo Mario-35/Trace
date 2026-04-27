@@ -1,7 +1,6 @@
 class editingList {	
 	constructor(element, message, placeholder, values, keys) {
 		this.key = keys ? true : false;
-		// console.log(`key : ${this.key}`)
 		this.name = element.id.replace('List', '');
 		this.valuesElement = document.getElementById(this.name);
 		this.values = values || this.valuesElement.value;

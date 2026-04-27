@@ -31,4 +31,3 @@ export async function writeDB() {
     return {"status": "ok"}
 }
 
-// app.use(serve(path.join(__dirname, "/", "public")));

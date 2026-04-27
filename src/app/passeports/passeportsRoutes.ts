@@ -10,20 +10,21 @@ import { Router } from "express"
 import { deleteId, readAll, readAlSearch, readId, verifyBody } from "../../controller";
 import { addPasseport, updatePasseport } from "./controller";
 import { executeSql } from "../../db";
+import { dataBase } from "../../db/base";
 
 export const passeportsRoutes = Router();
 
 // Get all passeports
-passeportsRoutes.get("/passeports", async (req, res)  => {
+passeportsRoutes.get("/" + dataBase.passeports.name, async (req, res)  => {
   if(req.query.search)
-      return await readAlSearch("passeports", String(req.query.search))
+      return await readAlSearch(dataBase.passeports.name, String(req.query.search))
     .then((passeport: any) => {
       return res.status(200).json(passeport);
     }).catch (error => {
       console.error(error);
       return res.status(404).json({"error": error.detail});
     });  
-  else return await readAll("passeports")
+  else return await readAll(dataBase.passeports.name)
     .then((passeport: any) => {
       return res.status(200).json(passeport);
     }).catch (error => {
@@ -33,8 +34,8 @@ passeportsRoutes.get("/passeports", async (req, res)  => {
 });
     
 // Get one passeport
-passeportsRoutes.get("/passeport/:id", async (req, res)  => {
-  return await readId("passeports",  +req.params.id)
+passeportsRoutes.get("/" + dataBase.passeports.singular + "/:id", async (req, res)  => {
+  return await readId(dataBase.passeports.name,  +req.params.id)
   .then((passeport: any) => {
     return passeport.length > 0 
     ? res.status(200).json(passeport[0])
@@ -46,9 +47,9 @@ passeportsRoutes.get("/passeport/:id", async (req, res)  => {
 });    
     
 // Get one passeport from site and year
-passeportsRoutes.get("/passeport/:tracabilite/:year", async (req, res)  => {
+passeportsRoutes.get("/" + dataBase.passeports.singular + "/:tracabilite/:year", async (req, res)  => {
   if (isNaN(+req.params.tracabilite)) {
-    return await executeSql(`SELECT * FROM passeports WHERE UPPER(site) = '${req.params.tracabilite.toUpperCase()}' AND annee = '${req.params.year}'`)
+    return await executeSql(`SELECT * FROM passeports WHERE UPPER(site) = '${String(req.params.tracabilite).toUpperCase()}' AND annee = '${req.params.year}'`)
     .then((passeport: any) => {
       return passeport.length === 1 
       ? res.status(200).json(passeport[0])
@@ -70,7 +71,7 @@ passeportsRoutes.get("/passeport/:tracabilite/:year", async (req, res)  => {
 });  
 
 // Create one passeport
-passeportsRoutes.post("/passeport", async (req, res)  => {
+passeportsRoutes.post(dataBase.passeports.name, async (req, res)  => {
   const values = verifyBody(req.body);
   if(values) {
     return await addPasseport(values)
@@ -84,7 +85,7 @@ passeportsRoutes.post("/passeport", async (req, res)  => {
 });
 
 // Update one passeport
-passeportsRoutes.patch("/passeport/:id", async (req, res)  => {
+passeportsRoutes.patch("/" + dataBase.passeports.singular + "/:id", async (req, res)  => {
   return await updatePasseport(req.body,  +req.params.id)
   .then((passeport: any) => {
     return res.status(201).json(passeport);
@@ -95,8 +96,8 @@ passeportsRoutes.patch("/passeport/:id", async (req, res)  => {
 });
 
 // delete one passeport
-passeportsRoutes.delete("/passeport/:id", async (req, res)  => {
-  return await deleteId("passeports",  +req.params.id)
+passeportsRoutes.delete("/" + dataBase.passeports.singular + "/:id", async (req, res)  => {
+  return await deleteId(dataBase.passeports.name,  +req.params.id)
   .then(() => {
     return res.status(203).json();
   }).catch (error => {

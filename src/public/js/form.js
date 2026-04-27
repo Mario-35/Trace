@@ -80,7 +80,7 @@ const formToColumns = elements => [].reduce.call(elements, (data, element) => {
 }, []);
 
 function getInactive(element) {
-  return element.getAttribute("readonly") === "" ? true : false;
+  return element.getAttribute("readonly") === null ? true : false;
 };
 
 const formDatas = () =>  formToJSON(document.getElementsByClassName('formData')[0].elements);
@@ -93,6 +93,7 @@ const formDatas = () =>  formToJSON(document.getElementsByClassName('formData')[
 const formToJSON = elements => [].reduce.call(elements, (data, element) => {
   // Make sure the element has the required properties and should be added.
   // if (isValidElement(element) && isValidValue(element) && !getInactive(element)) {
+  // if (isValidElement(element) && isValidValue(element) && ((isContextMode(["selection"]) && element.getAttribute("readonly") === null)) || !isContextMode(["selection"]) || element.getAttribute("readonly") === null ) {
   if (isValidElement(element) && isValidValue(element)) {
 
     /*
@@ -146,10 +147,20 @@ const handleFormSubmit = event => {
   event.preventDefault();
   // Call our function to get the form data.
   _DATAS = formToJSON(form.elements); 
-  // ...this is where we’d actually do something with the form data...   
-  if (getElement("ctx")) console.log(getElement("ctx"));
+  // ...this is where we’d actually do something with the form data...
 
 };
+
+// return only modified datas FOR UPDATE
+function filterModified(input) {  
+  const datas = {};
+  Object.keys(input).forEach(e => {
+    const elem = getElement(e);
+    if (elem && elem.getAttribute("modified"))
+      datas[e] = input[e];
+  });  
+  return datas
+}
 
 /*
  * This is where things actually get started. We find the form element using
@@ -159,9 +170,9 @@ const handleFormSubmit = event => {
 const form = document.getElementsByClassName('formData')[0];
 form.action = window.location.href.includes("/add") ? window.location.origin + "/" + window.location.href.split('/add')[1].split(".")[0].toLowerCase() : window.location.href;
 
-// form.action = window.location.origin + `/echantillon`;
 form.addEventListener('submit', handleFormSubmit);
 
 _COLUMNS = formToColumns(form.elements); 
 // important
-document.getElementById("formTitle").innerText  = document.title;
+if (getElement("formTitle"))
+  getElement("formTitle").innerText  = document.title;

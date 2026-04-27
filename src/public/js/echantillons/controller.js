@@ -1,14 +1,8 @@
 // create identification with date time (without seconds) and echantillon number
 function createIdentification(nb) {
-    if (isContextMode(['new',"aliquote","excel"])) {
+    if (isContextMode(['new',"aliquote","excel","selectionaliquote"])) {
         if(!_DATE) _DATE = new Date();
         creation.value = _DATE.toISOString();
-console.log("#######################################################################");
-console.log(`echantillon : ${getElement("echantillon").value}`);
-console.log(`numero : ${getElement("numero").value}`);
-
-console.log("#######################################################################");
-
         return `${ _DATE.toLocaleDateString()}${ _DATE.toLocaleTimeString()}`.replace(/\D/g, "").slice(0,12) + (nb || getElement("numero").value ||  getElement("echantillon").value).padStart(4, '0');
     }
 };
@@ -114,6 +108,20 @@ async function setSite() {
     
 };
 
+async function showAliquote(input) {
+    // loadDatas(datas);
+    getElement("parent").value = input.identification;
+    updateReadOnly(ctx);
+    hideParentClass( "btnApiRpg", "form-group row-1 visible");
+    showParentClass( "parent", "form-group");
+    
+    // const temp = await getDatas(window.location.origin + "/echantillon/after/" + input.id);
+    // setMin(getElement("numero"), temp);
+    multipleremoveInvisible(["nombre"]); 
+    removeReadOnly(["nombre"]); 
+    identification.value = createIdentification();
+}
+
 // start of echantillon
 async function start() {
     if (_CONFIGURATION.debug === false) getElement("blockDemo").remove();
@@ -167,10 +175,11 @@ async function start() {
         // read only on all columns
         setReadOnly(Object.keys(_STORE.datas[0]).filter(e => e !== "etat"));
         showParentClass("etat",'form-group'); 
+        if (!["Créer", "Importer"].includes(_STORE.datas[0].etat)) removeDisabled("btn-aliquote");
         // get the range lines
         setRange();
         // Change title
-        changeTitle("Modification de plusieurs échantillons");
+        changeTitle("Modification de " + String(_STORE.datas.length) + " échantillons");
         // Set the mode
     } else if (ctx.mode === 'excel') {  // Excel mode
         // get datas from API
@@ -215,20 +224,23 @@ async function start() {
         changeTitle("Ajout d'autres échantillon(s)");
     } else if (ctx.mode === 'aliquote') {  // child mode 
         const datas = await getDatas(window.location.origin + "/echantillon/" + ctx.id);
-        console.log(datas);
-        
         loadDatas(datas);
-        getElement("parent").value = datas.identification;
-        updateReadOnly(ctx);
-        hideParentClass( "btnApiRpg", "form-group row-1 visible");
-        showParentClass( "parent", "form-group");
-        
-        const temp = await getDatas(window.location.origin + "/echantillon/after/" + datas.id);
-        setMin(getElement("numero"), temp);
-        multipleremoveInvisible(["numero",  "nombre"]); 
-        removeReadOnly(["numero",  "nombre"]); 
-        identification.value = createIdentification();
+        showAliquote(datas);
         changeTitle("Création d'autres échantillon(s)");
+    } else if (ctx.mode === 'selectionaliquote') {  // child mode 
+        // get selection from API
+        const temp2 = await getDatas(window.location.origin + "/selection/" + ctx.id);
+        _STORE = {
+            datas: temp2,
+            columns: Object.keys(temp2[0])
+        }
+        // read only on all columns
+        setReadOnly(Object.keys(_STORE.datas[0]).filter(e => e !== "etat"));
+        // get the range lines
+        setRange();
+
+        await showAliquote( _STORE.datas[0]);
+        changeTitle("Création d'autres échantillon(s) à partir de " + String(_STORE.datas.length) + " échantillons");
     } else if (ctx.mode === 'new') { //  Default add mode
         multiplesetInvisible(["echantillon",  "etat"]); 
         multipleremoveInvisible(["numero",  "nombre"]); 

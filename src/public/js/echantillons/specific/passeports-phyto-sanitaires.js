@@ -48,7 +48,7 @@ function createHTMLviewPasseport(values) {
     </div>
     
     <div class="form-group row-1">
-        <button class="btn btn-test" id="printPasseport">Imprimer</button>
+        <button class="btn btn-test" id="printPasseport" ${isChrome ? '': 'title = \"Uniquement avec chrome\" disabled'}>Imprimer</button>
     </div>      
     `;
     //  button d'interrogation du rpg

@@ -98,7 +98,7 @@ Tant qu'il ne sera pas présent vous ne pouvez pas passer à l'étape suivante.
 
 ![Ajout d'un échantillons masque 2b](assets/doc-echantillon-add-2bSol-phyto-btn.jpg)
 
-En cliquant sur le bouton le masque de saisie ci-dessous apparait : le nom du passeport interne est généré par l’application et il vous est demandé de joindre le document attestant de la prise de décision.
+En cliquant sur le bouton le masque de saisie ci-dessous apparait : le nom du passeport interne est généré par l’application et il vous est proposé de joindre un document attestant de la prise de décision.
 
 ![Ajout d'un échantillons masque 2b](assets/doc-echantillon-add-2bSol-phyto-create.jpg)
 
