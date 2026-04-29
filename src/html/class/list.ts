@@ -55,6 +55,7 @@ export class List extends CoreHtmlView {
 					<div class="col-2">
 						<div class="input-group">
 							<span class="input-group-text" id="infos"></span>
+							<a class="btn btn-success" id="raz">RAZ</a>
 						</div>
 					</div>
 					<div class="col-10">

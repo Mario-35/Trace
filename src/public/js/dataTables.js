@@ -53,6 +53,11 @@ class JsonTable {
 		localStorage.setItem('filters', JSON.stringify(this.mario));
 
 	}
+	razFilter() {
+		delete this.mario[this.adam];
+		localStorage.setItem('filters', JSON.stringify(this.mario));
+		this.filterDatas();
+	}
 
 	toggleMenu (command ) {
 	  this.menu.style.display = command === "show" ? "block" : "none";
@@ -85,6 +90,10 @@ class JsonTable {
 		  if (this.menuVisible) this.toggleMenu("hide");
 		});
 
+		raz.addEventListener("click", e => {
+		  this.razFilter();
+		});
+
 		if (this.menu) this.menu.addEventListener("click", e => {
 			const url = e.target.getAttribute("url") ;
 			if (this.menuVisible) this.toggleMenu("hide");
@@ -109,10 +118,7 @@ class JsonTable {
 		  this.setPosition(origin);
 		  return false;
 		});
-
-		this.filterDatas();
-		// this.filterDatas(isKeyInUrl("filter") ?  globalSearch.value);
-		
+		this.filterDatas();		
 	};
 
 	filterCall(name) {
