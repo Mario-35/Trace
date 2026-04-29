@@ -638,7 +638,8 @@ class JsonTable {
 					)
 				);
 				globalSearch.value = this.mario[this.adam]["global"];
-			} else if (Object.keys(this.mario).length > 0) {
+			} else if (this.mario && Object.keys(this.mario).length > 0) {
+				if (this.mario[this.adam]) 
 				Object.keys(this.mario[this.adam]).forEach(key => {
 					if(this.mario[this.adam][key] !== "")
 						this.filteredData = this.filteredData.filter((row) =>  typeof this.mario[this.adam][key] === 'string' ? row[key].toLowerCase().includes(this.mario[this.adam][key].toLowerCase()) : row[key] === this.mario[this.adam][key]);
