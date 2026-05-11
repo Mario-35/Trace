@@ -41,6 +41,7 @@ export class List extends CoreHtmlView {
     ${excel ? '<link rel="stylesheet" href="./css/import.css">' : ''}
     <link rel="stylesheet" href="./css/modal.css">
     <link rel="stylesheet" href="./css/splitter.css">
+    <link rel="stylesheet" href="./css/menu.css">
 </head>
 
 <body>
@@ -55,22 +56,22 @@ export class List extends CoreHtmlView {
 					<div class="col-12">
 						<div class="input-group">
 							<span class="input-group-text" id="infos"></span>
-							<a class="btn btn-success" id="raz">RAZ</a>
+							<a class="btn btn-warning" id="raz">RAZ</a>
 							<span class="input-group-text" id="nameType">${name}</span>
 							${src.create === true ? `
-								<div id="blockAjouter">
-									<a class="btn btn-primary icon_plus" id="ajouter" href="./${src.singular}-add.html"> Ajouter</a>								
-								</div>
+									<button class="btn btn-primary icon_plus btn-sm" id="ajouter" href="./${src.singular}-add.html"></button>  
+
 								` : ''}
                             ${ excel ? `
-							<span class="input-group-text">Importer</span>
-							<div class="btn btn-success field">
+							<span class="input-group-text"></span>
+							<div class="btn btn-success field" id="blockImporter">
                             	<input type="file" name="file" id="fileone" class="inputfile inputfile-1" accept=".xls,.xlsx"
                                 data-multiple-caption="{count} files selected" multiple />
-                            	<label id="fileonelabel" for="fileone" class="icon_download"> Fichier excel</label>
+                            	<label id="fileonelabel" for="fileone" class="icon_bottom"> Importer excel</label>
 							</div>` :''}
 							<span class="input-group-text" id="globalSearchIcon">🔎 Cherche</span>
 							<input id="globalSearch" type="text" class="form-control" placeholder="Recherche dans tous les champs">
+							<button class="btn btn-success icon_up btn-sm" id="exportExcel"> Excel</button>  
 						</div>
 					</div>
 				</div>

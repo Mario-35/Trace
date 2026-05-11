@@ -20,7 +20,7 @@ var _NOTYET = "Not implemented yet";
 const createContext = () => {
     let mode = "new";
     if (window.location.href.includes('?')) {
-        ["id", "selection", "excel", "after", "aliquote", "selectionaliquote", "new", "echantillon"].forEach(e => {
+        ["id", "selection", "excelaliquote", "excel", "after", "aliquote", "selectionaliquote", "new", "echantillon"].forEach(e => {
             if (isKeyInUrl(e)) setContext(e, +getNumberFromUrl(e), mode);            
         }); 
     } else setContext("new", 0);

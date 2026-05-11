@@ -24,7 +24,7 @@ getElement('btn-creer').addEventListener('click', async (event) => {
         }).catch(err => {
             showModalError(err);
         });
-    } else if (isContextMode(["excel", "new", "after", "aliquote","selectionaliquote"])) {
+    } else if (isContextMode(["excel", "new", "after","excelaliquote", "aliquote", "selectionaliquote"])) {
         _DATAS["etat"] = "Créer";
         fetch(window.location.origin + `/echantillon`, {
             method: "POST",
@@ -132,11 +132,14 @@ getElement("longitude").addEventListener("change", (event) => {
    cleanCulture();
 });
 
-getElement("nombreOuAnalyses").addEventListener("change", (event) => {
-    event.preventDefault();
-    readOnly(event.target.checked, "nombre");
-    showModalEditingList(" Chaque analyse générera un échantillon", "ajouter une analyse", getElement("analyses"), function() {nombre.value = getElement("analyses").value.split(',').length });  
-});
+// getElement("nombreOuAnalyses").addEventListener("change", (event) => {
+//     event.preventDefault();
+//     readOnly(event.target.checked, "nombre");
+//     showModalEditingList("Chaque analyse générera un échantillon", 
+//                         "ajouter une analyse", 
+//                         getElement("analyses"),
+//                         function() {nombre.value = getElement("analyses").value.split(',').length });  
+// });
 
 getElement("pedagogique").addEventListener("change", (event) => {
     event.preventDefault();
@@ -144,4 +147,20 @@ getElement("pedagogique").addEventListener("change", (event) => {
 });
 getElement("etat").addEventListener("change", (event) => {
     modifiedValue("etat");
+});
+
+getElement("btn-libre").addEventListener("click", (event) => {
+    event.preventDefault();
+    showModalEditingList("Liste des libéllés libre", 
+                        "ajouter un libéllé", 
+                        getElement("libre"), 
+                        function() { createExcelFromList(getElement("libre")); });  
+});
+
+getElement("btn-analyses").addEventListener("click", (event) => {
+    event.preventDefault();
+    showModalEditingList("Liste des analyses", 
+                        "ajouter une analyse", 
+                        getElement("analyses"), 
+                        function() { createExcelFromList(getElement("analyses")); });  
 });

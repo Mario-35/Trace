@@ -49,7 +49,8 @@ class JsonTable {
 	addToFilter(key, value) {
 		if(!this.localSave[this.nameOfType])
 			this.localSave[this.nameOfType] = {};
-		if (value.trim() === "")
+		
+		if (String(value).trim() === "")
 			delete this.localSave[this.nameOfType][key];
 		else this.localSave[this.nameOfType][key] = value;
 		localStorage.setItem('filters', JSON.stringify(this.localSave));
@@ -98,7 +99,7 @@ class JsonTable {
 		  if (this.menuVisible) this.toggleMenu("hide");
 		});
 
-		raz.addEventListener("click", e => {
+		if (getElement("raz")) raz.addEventListener("click", e => {
 		  this.razFilter();
 		  this.renderTable("all");
 		});
@@ -131,6 +132,12 @@ class JsonTable {
 		  this.setPosition(origin);
 		  return false;
 		});
+
+		
+		if (getElement("ajouter")) document.getElementById('ajouter').addEventListener('click', async function() {
+			window.location.href = ajouter.getAttribute("href");
+		});
+		
 		this.filterDatas();		
 	};
 
@@ -265,7 +272,6 @@ class JsonTable {
 			this.renderPagination();
 			this.createPerPageSelect();
 		}
-		// infos.innerHTML = `${this.filteredData.length} sur ${this.data.length} total`
 	};
 
 	headerAttribute() {
@@ -389,7 +395,7 @@ class JsonTable {
 		});
 
 		if (this.printUrl) 
-			headerRow.insertAdjacentHTML("beforeend", `<th> <button class="btn btn-success" id="exportExcel">X</button>  <button class="btn btn-success icon_print btn-sm" id="printAll"></button></th>`);
+			headerRow.insertAdjacentHTML("beforeend", `<th><button class="btn btn-success icon_print btn-sm" id="printAll"></button></th>`);
 
 		let elem = getElement("editAll");
 		if (elem) elem.addEventListener("click", async (e) => {
@@ -656,6 +662,7 @@ class JsonTable {
 				);
 				globalSearch.value = this.localSave[this.nameOfType]["global"];
 			} else if (this.localSave && Object.keys(this.localSave).length > 0) {
+				this.filteredData = this.data;
 				if (this.localSave[this.nameOfType]) 
 					Object.keys(this.localSave[this.nameOfType]).forEach(key => {						
 						if(this.localSave[this.nameOfType][key] !== "")

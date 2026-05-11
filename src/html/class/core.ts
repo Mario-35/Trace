@@ -8,6 +8,7 @@ import { removeAllQuotes } from "../../helpers/removeAllQuotes";
 import fs from "fs";
 import path from "path";
 import { removeComments } from "../../helpers/removeComments";
+import { IHTMLOptions } from "../../types";
 
 export class CoreHtmlView {
     _HTMLResult: string[];
@@ -17,47 +18,21 @@ export class CoreHtmlView {
         this._HTMLResult =  [];
     }
 
-      addFileMario(name: string): string {
-      return fs.existsSync(name) ? fs.readFileSync(name, "utf-8") : fs.readFileSync(name.replace(".js", ".min.js"), "utf-8");
+    createHead(title: string, css: string[]) {
+      return `<head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>
+            ${title}
+          </title>
+          ${css.map(e => `<link rel="stylesheet" href="${e[0] === "." ? '' : './css/'}${e}">`).join("")}				
+        </head>`;
     }
 
     loadFile(name: string): string {
       return removeComments(fs.readFileSync(path.join(__dirname, "../../public/", name), "utf-8"));
       // return fs.existsSync(path.join("./public/", name)) 
         // : fs.readFileSync(path.join(__dirname, "/", name.replace(".css", ".min.css")), "utf-8");
-    }
-
-
-    mario() {
-const operations: any = [];
-
-      this._HTMLResult.forEach(e => {
-    if (e.includes('rel="stylesheet"')) {
-        const name = e.split('href="./')[1].split('"')[0];
-        operations.push({
-            search: e,
-            file: name
-        })
-        
-    } else if (e.includes("rel='stylesheet'")) {
-        const name = e.split("href='./")[1].split("'")[0];
-        operations.push({
-            search: e,
-            file: name
-        });
-    } else if (e.includes(`<script src="`)) {
-        const name = e.split(`<script src="./')[1].split('"></script>`)[0];
-        operations.push({
-            search: e,
-            file: name
-        })
-    }
-}) 
-
-operations.forEach((operation: any) => {
-    this.replaceInReturnResult(operation.search, `<style>${this.addFileMario(path.resolve(__dirname, "../../public/", operation.file))}</style>`);
-
-})
     }
     
     addFile(name: string): string {
@@ -141,6 +116,153 @@ operations.forEach((operation: any) => {
 </div>
 <button class="floating-btn"> Contacts </button>`;
     }
+
+
+
+
+
+  addCss(hrefs: string[]) {
+    return hrefs.map(href => `<link rel="stylesheet" href="${href}">`).join("")
+  }
+    
+  progressHeaders(hrefs: string[]) {
+    return hrefs.map((name, index) => `<div class="step" id="step-${index + 1}">
+                        <span>
+                          ${index + 1}
+                        </span> 
+                        <span class="step-label">
+                          ${name}
+                        </span>
+                      </div> `)	
+  }
+
+  inputlabel(options: {
+      name: String;
+      label: String;
+      tooltip?: String;
+      tooltipFlow?: String;
+    }) {
+    return `<label for="${options.name}">
+          ${options.tooltip 	? `<span tooltip="${options.tooltip}" ${options.tooltipFlow  ? `flow="${options.tooltipFlow}"` : ''} >
+                        ${options.label}
+                      </span>` 
+                    : options.label}					
+        </label>`;
+  }
+
+  inputError(options: {
+      name: String;
+      label: String;
+    }) {
+    return `<div class="error-message" id="${options.name}-error">${options.label} obligatoire</div>`;
+  }
+
+  inputText(options: IHTMLOptions) {
+    return `${this.inputlabel(options)}
+        <input type="text" id="${options.name}" name="${options.name}" class="form-control" ${ options.max ? `maxlength=${options.max}"` : ''}  placeholder="${options.label}"  ${options.canedit ? `canedit="${options.canedit}"` : '' } ${options.readonly ? 'readonly' : ''} ${options.disabled ? 'disabled' : ''} />                           
+        ${options.error ? this.inputError(options) : ''} `;				
+  }
+
+  inputFormGroupText(options: IHTMLOptions) {
+    return `<div class="form-group row-${ options.size || 1}${options.invisible ? ' invisible' : '' } ">
+        ${this.inputText(options)}
+      </div>`;
+  }
+
+  inputNumber(options: {
+      name: String;
+      label: String;
+      size?: Number;
+      placeholder: String;
+      error?: boolean;
+      readonly?: boolean;
+      invisible?: boolean;
+      min?: Number;
+      max?: Number;
+      value?: Number;
+      tooltip?: String;
+      tooltipFlow?: String;
+      canedit?: String;
+    }) {
+    return `<div class="form-group row-${options.size || 1}${options.invisible ? ' invisible' : ''}">
+        ${this.inputlabel(options)}
+                <input type="number" id="${options.name}" name="${options.name}"class="form-control"  ${options.min ? `min=${options.min}` : ''} ${options.max ? `max=${options.max}` : ''} value="${options.value || 0}"/>
+        ${options.error ? `<div class="error-message" id="${options.name}-error">${options.placeholder} obligatoire</div>` : ''}
+      </div>`;
+  }
+
+  inputSelect(options: IHTMLOptions, parDef: string) {
+    return `<div class="form-group row-${options.size || 1}${options.invisible ? ' invisible' : ''}">
+        ${this.inputlabel(options)}
+        <select class="form-control" id="${options.name}" name="${options.name}" ${options.max ? `maxlength=${options.max}"` : ''} ${options.canedit ? `canedit="${options.canedit}"` : '' } ${options.readonly ? 'readonly' : ''}> 
+        <option selected="selected">${parDef}</option>
+        </select>
+        ${options.error ? this.inputError(options) : ''}
+      </div>`;
+  }
+
+  inputHidden(name: string, value?: any) {										
+    return `<input type="hidden" id="${name}" name="${name}" ${ value ? `value="${value}"` : ''} />`;
+  }
+
+  inputDate(options: IHTMLOptions) {
+    return `<div class="form-group row-${options.size || 1}${options.invisible ? ' invisible' : ''}">
+        ${this.inputlabel(options)}
+        <input type="date" id="${options.name}" name="${options.name}" class="form-control"   ${options.canedit ? `canedit="${options.canedit}"` : '' } ${options.readonly ? 'readonly' : ''} />                           
+        ${options.error ? this.inputError(options) : ''}
+      </div>`;
+  }
+
+  inputDateTime(options: IHTMLOptions) {
+    return `<div class="form-group row-${options.size || 1}${options.invisible ? ' invisible' : ''}">
+        ${this.inputlabel(options)}
+        <input type="time" step="1" id="${options.name}" name="${options.name}" class="form-control"   ${options.canedit ? `canedit="${options.canedit}"` : '' } ${options.readonly ? 'readonly' : ''} />                           
+        ${options.error ? this.inputError(options) : ''}
+      </div>`;
+  }
+
+  inputBtn(options: IHTMLOptions, btnTypeAndClass: string, btnLabel: string) {
+    return `<div class="form-group row-${options.size || 1}${options.invisible ? ' invisible' : ''}">
+          <button class="btn ${btnTypeAndClass}" id="${options.name}" title="${options.tooltip}" ${options.disabled ? 'disabled' : ''}>
+            ${btnLabel}
+          </button>
+        </div>`;
+  }
+
+  inputChk(options: IHTMLOptions, checked: boolean) {
+    return `<input type="checkbox" id="${options.name}" name="${options.name}" ${checked === true ? 'checked' : ''}>
+`;
+  }
+
+  inputMap(name: string) {
+    return `<div id="${name}" style="width: 600px; height: 400px;">
+        </div>`;
+  }
+
+  inputTextArea(name: string, invisible: boolean) {
+    return `<textarea id="${name}" name="${name}" class="form-control ${invisible ? 'invisible' : ''}">
+        </textarea>`;	
+  }
+
+  rangeHTML() {
+    return `<div class="form-row">                     
+          <div class="fillFull" id="rowLines" >
+          </div>
+        </div>  
+
+        <div class="form-row">                       
+          <div class="form-group row-1 invisible">
+            <label for="row" id="rowNumber">
+            </label>
+          </div>
+        </div>`;
+  };
+
+
+
+
+
+
 
     /**
      * replace in html page

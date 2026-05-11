@@ -18,6 +18,7 @@ import { _CONFIG, setConfig } from "../../constant";
 import { dataBase } from "../../db/base";
 import { update } from "../../helpers/update";
 import { Export } from "../../html/class/export";
+import { Documentation } from "../../html/class/documentation";
 
 export const pagesRoutes = Router();
 
@@ -25,6 +26,12 @@ export const pagesRoutes = Router();
 pagesRoutes.get("/index", async (req, res) => {
     const html = new Index();
     res.send(html.toString())
+});
+
+// add sample
+pagesRoutes.get("/documentation/:page", async (req, res) => {
+    const html = new Documentation(req.params.page + ".html");
+    res.send(html.toString());
 });
 
 // add sample
@@ -174,6 +181,11 @@ pagesRoutes.post("/SaveConfig", async (req, res)  => {
 
 // configuration page
 pagesRoutes.get("/configuration.html", async (req, res) => {
-    res.send(new Configuration().toString())
+    const conf = await readId(dataBase.configuration.name, 1)
+    .then((configuration: any) => {
+            res.send(new Configuration(configuration[0]).toString())
+    }).catch (error => {
+            console.error(error);
+    });       
 });
 

@@ -69,22 +69,21 @@ class ExcelToJSON {
 
 if (document.getElementById("fileone")) {
     fileone.addEventListener("change", function(e) {
-        document.getElementById('blockAjouter').innerHTML = `<a class="btn btn-success icon_plus" id="ajouterExcel"> Ajouter</a>`;
         var fileName = "";
         try {
             if (this.files && this.files.length > 1)
                 fileName = (this.getAttribute("data-multiple-caption") || "").replace("{count}", this.files.length);
             else
                 fileName = e.target.value.split("\\").pop();
-
-            if (fileName) {
-                fileonelabel.querySelector("span").innerHTML = fileName;
-            } else {
-                fileonelabel.innerHTML = labelVal;
-            }
+            ["globalSearchIcon", "globalSearch", 'exportExcel', 'blockImporter', 'raz'].forEach(elem => document.getElementById(elem).remove());
         } catch (err) {
             console.log(err);
         }
+        var im = document.createElement('button');
+        im.className ="btn btn-primary icon_plus btn-sm";
+        im.id="importer" ;
+        im.innerText="Importer" ;
+        document.getElementById('ajouter').replaceWith(im)
     });
     fileone.addEventListener('change', handleFileSelect, false);
 };
@@ -93,10 +92,8 @@ function handleFileSelect(evt) {
     var files = evt.target.files;
     var xl2json = new ExcelToJSON();
     xl2json.parseExcel(files[0]);
-    document.getElementById('ajouterExcel').addEventListener('click', async function() {
+    document.getElementById('importer').addEventListener('click', async function() {
         const response = await xl2json.table.postStore();
         window.location.href ="./echantillon-add.html?excel=" + JSON.parse(response)[0].id;
     }); 
-    fileonelabel.remove();
-    fileone.remove();
 };

@@ -1,6 +1,6 @@
 # Echantillons
 
-l'écran échantillons est une liste (structure communes) :
+L'écran échantillons est une liste (structure communes) :
 
 **Par page** : premet de changer le nombre de lignes sur la page
 

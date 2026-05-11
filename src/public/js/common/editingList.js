@@ -1,6 +1,6 @@
 class editingList {	
-	constructor(element, message, placeholder, values, keys) {
-		this.key = keys ? true : false;
+	constructor(element, message, placeholder, values) {
+		this.key = false;
 		this.name = element.id.replace('List', '');
 		this.valuesElement = document.getElementById(this.name);
 		this.values = values || this.valuesElement.value;
@@ -14,7 +14,7 @@ class editingList {
 					${this.key ? `
 					<select name="cle" id="cle">
 						<option value="">-- Choisir une clé --</option>
-						${keys.map(e => `<option>${e}</option>`)}
+						zobi
 					</select>
 					<input id="txt${this.name}" class="txtKey" placeholder="${placeholder}" />
 					`: `<input id="txt${this.name}" class="txtTodo" placeholder="${placeholder}" />`}
@@ -29,16 +29,7 @@ class editingList {
 	}
 
 	setDatas() {
-		if (this.key) {
-			const vals = {};
-			Array.from(this.ulItem .querySelectorAll('li')).map(option => option.textContent).filter(e => e !== "").forEach(e => {
-				const data = e.split(' : ');
-				vals[data[0]] = data[1];
-			});
-			this.valuesElement.value = JSON.stringify(vals);		
-		} else {
-			this.valuesElement.value = Array.from(this.ulItem .querySelectorAll('li')).map(option => option.textContent).filter(e => e !== "").join(',');
-		}
+		this.valuesElement.value = Array.from(this.ulItem .querySelectorAll('li')).map(option => option.textContent).filter(e => e !== "").join(',');
 	}
 
 	init() {
@@ -54,6 +45,7 @@ class editingList {
 				this.setDatas();
 			}
 		};
+		this.setDatas();
 	}
 
 	cleanItem(input) {
@@ -91,11 +83,13 @@ class editingList {
 	}
 
 	loadDatas() {
-		if (this.key) {
+		if (typeof this.values === 'object' && this.values !== null ) {
 			Object.keys(this.values).forEach(key => {
 				this.ulItem.appendChild(this.newItem(key + " : " + this.cleanItem(this.values[key])));
 			});
 		} else if (this.valuesElement.value.includes(',')) this.valuesElement.value.split(',').filter(e => e.trim() != "").forEach((a) =>
+			this.ulItem.appendChild(this.newItem(a))
+		); else if (this.values.includes(',')) this.values.split(',').filter(e => e.trim() != "").forEach((a) =>
 			this.ulItem.appendChild(this.newItem(a))
 		); else this.ulItem.appendChild(this.newItem(this.valuesElement.value));
 	}

@@ -113,14 +113,14 @@ nextButtons.forEach((button, index) => {
                 setReadOnly([ "type"]);
                 setSite();
             }
-            if (currentStep === 2) {
-                new editingList(getElement("analysesList"), "Analyses effectuées", "Ajouter une analyses", analyses.value);  
-                if(!nombreOuAnalyses.checked) nombre.value = analyses.value.split(',').length;
-            }
-            if (currentStep === 3) {}
-            if (currentStep === 4) {
+            // if (currentStep === 2) {
+            //     new editingList(getElement("analysesList"), "Analyses effectuées", "Ajouter une analyses", analyses.value);  
+            //     if(!nombreOuAnalyses.checked) nombre.value = analyses.value.split(',').length;
+            // }
+            if (currentStep === 2) {}
+            if (currentStep === 3) {
                 canPrint("printEtiquette");
-                if(!nombreOuAnalyses.checked) nombre.value = getElement("analyses").value.split(',').length;
+                // if(!nombreOuAnalyses.checked) nombre.value = getElement("analyses").value.split(',').length;
                 getElement("gabaritEtiquette").innerHTML = "";
                 if (+_DATAS["passeport"] > 0) {
                     const tmp = toJson("etiquette");
@@ -148,7 +148,9 @@ prevButtons.forEach((button, index) => {
 });
 
 function refreshSteps() {
-    disabled ("btn-creer", (isContextMode(["id", "selection" , "selectionaliquote"]) && Object.keys(filterModified(_DATAS)).length > 0) === false);
+    if (isContextMode(["id", "excel", "selection" , "excelaliquote", "selectionaliquote"]))
+        disabled ("btn-creer", (Object.keys(filterModified(_DATAS)).length > 0) === false);
+    else disabled ("btn-creer", false);
 }
 
 updateProgressBar();

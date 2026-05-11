@@ -71,7 +71,10 @@ passeportsRoutes.get("/" + dataBase.passeports.singular + "/:tracabilite/:year",
 });  
 
 // Create one passeport
-passeportsRoutes.post(dataBase.passeports.name, async (req, res)  => {
+passeportsRoutes.post("/" + dataBase.passeports.singular, async (req, res)  => {
+  console.log("#######################");
+  console.log(req.body);
+  
   const values = verifyBody(req.body);
   if(values) {
     return await addPasseport(values)

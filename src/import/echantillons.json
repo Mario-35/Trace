@@ -1657,6 +1657,1014 @@
             "etat": "Créer"
         },
         {
+            "type": "Boues",
+            "programme": "Aquamat",
+            "pedagogique": false,
+            "condition": null,
+            "site": "Lml Bourcefranc-le-chapus",
+            "responsable": "J.aubin",
+            "identification": "0505202611330139",
+            "parent": null,
+            "dossier": "427",
+            "libre": "Boues_mai_2026_lml_cl7_1",
+            "creation": "2026-05-05T09:33:49.807",
+            "prelevement": "2026-05-11",
+            "peremption": "2031-05-11",
+            "pays": "France",
+            "region": "Nouvelle-aquitaine",
+            "latitude": "45.846574110331",
+            "longitude": "-1.155195236206",
+            "passeport": null,
+            "cultures": {},
+            "stockage": {},
+            "etiquette": {
+                "sticker0": {
+                    "key": "identification",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker1": {
+                    "key": "programme",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker2": {
+                    "key": "dossier-numero",
+                    "size": "14px",
+                    "align": "center"
+                },
+                "sticker3": {
+                    "key": "responsable",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker4": {
+                    "key": "site",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker5": {
+                    "key": "libre",
+                    "size": "12px",
+                    "align": "center"
+                }
+            },
+            "analyses": null,
+            "etat": "Créer"
+        },
+        {
+            "type": "Boues",
+            "programme": "Aquamat",
+            "pedagogique": false,
+            "condition": null,
+            "site": "Lml Bourcefranc-le-chapus",
+            "responsable": "J.aubin",
+            "identification": "0505202611330140",
+            "parent": null,
+            "dossier": "427",
+            "libre": "Boues_mai_2026_lml_cl7_2",
+            "creation": "2026-05-05T09:33:49.807",
+            "prelevement": "2026-05-11",
+            "peremption": "2031-05-11",
+            "pays": "France",
+            "region": "Nouvelle-aquitaine",
+            "latitude": "45.846574110331",
+            "longitude": "-1.155195236206",
+            "passeport": null,
+            "cultures": {},
+            "stockage": {},
+            "etiquette": {
+                "sticker0": {
+                    "key": "identification",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker1": {
+                    "key": "programme",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker2": {
+                    "key": "dossier-numero",
+                    "size": "14px",
+                    "align": "center"
+                },
+                "sticker3": {
+                    "key": "responsable",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker4": {
+                    "key": "site",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker5": {
+                    "key": "libre",
+                    "size": "12px",
+                    "align": "center"
+                }
+            },
+            "analyses": null,
+            "etat": "Créer"
+        },
+        {
+            "type": "Boues",
+            "programme": "Aquamat",
+            "pedagogique": false,
+            "condition": null,
+            "site": "Lml Bourcefranc-le-chapus",
+            "responsable": "J.aubin",
+            "identification": "0505202611330141",
+            "parent": null,
+            "dossier": "427",
+            "libre": "Boues_mai_2026_lml_cl7_3",
+            "creation": "2026-05-05T09:33:49.807",
+            "prelevement": "2026-05-11",
+            "peremption": "2031-05-11",
+            "pays": "France",
+            "region": "Nouvelle-aquitaine",
+            "latitude": "45.846574110331",
+            "longitude": "-1.155195236206",
+            "passeport": null,
+            "cultures": {},
+            "stockage": {},
+            "etiquette": {
+                "sticker0": {
+                    "key": "identification",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker1": {
+                    "key": "programme",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker2": {
+                    "key": "dossier-numero",
+                    "size": "14px",
+                    "align": "center"
+                },
+                "sticker3": {
+                    "key": "responsable",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker4": {
+                    "key": "site",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker5": {
+                    "key": "libre",
+                    "size": "12px",
+                    "align": "center"
+                }
+            },
+            "analyses": null,
+            "etat": "Créer"
+        },
+        {
+            "type": "Boues",
+            "programme": "Aquamat",
+            "pedagogique": false,
+            "condition": null,
+            "site": "Lml Bourcefranc-le-chapus",
+            "responsable": "J.aubin",
+            "identification": "0505202611330142",
+            "parent": null,
+            "dossier": "427",
+            "libre": "Boues_mai_2026_lml_cl6_1",
+            "creation": "2026-05-05T09:33:49.807",
+            "prelevement": "2026-05-11",
+            "peremption": "2031-05-11",
+            "pays": "France",
+            "region": "Nouvelle-aquitaine",
+            "latitude": "45.846574110331",
+            "longitude": "-1.155195236206",
+            "passeport": null,
+            "cultures": {},
+            "stockage": {},
+            "etiquette": {
+                "sticker0": {
+                    "key": "identification",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker1": {
+                    "key": "programme",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker2": {
+                    "key": "dossier-numero",
+                    "size": "14px",
+                    "align": "center"
+                },
+                "sticker3": {
+                    "key": "responsable",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker4": {
+                    "key": "site",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker5": {
+                    "key": "libre",
+                    "size": "12px",
+                    "align": "center"
+                }
+            },
+            "analyses": null,
+            "etat": "Créer"
+        },
+        {
+            "type": "Boues",
+            "programme": "Aquamat",
+            "pedagogique": false,
+            "condition": null,
+            "site": "Lml Bourcefranc-le-chapus",
+            "responsable": "J.aubin",
+            "identification": "0505202611330143",
+            "parent": null,
+            "dossier": "427",
+            "libre": "Boues_mai_2026_lml_cl6_2",
+            "creation": "2026-05-05T09:33:49.807",
+            "prelevement": "2026-05-11",
+            "peremption": "2031-05-11",
+            "pays": "France",
+            "region": "Nouvelle-aquitaine",
+            "latitude": "45.846574110331",
+            "longitude": "-1.155195236206",
+            "passeport": null,
+            "cultures": {},
+            "stockage": {},
+            "etiquette": {
+                "sticker0": {
+                    "key": "identification",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker1": {
+                    "key": "programme",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker2": {
+                    "key": "dossier-numero",
+                    "size": "14px",
+                    "align": "center"
+                },
+                "sticker3": {
+                    "key": "responsable",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker4": {
+                    "key": "site",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker5": {
+                    "key": "libre",
+                    "size": "12px",
+                    "align": "center"
+                }
+            },
+            "analyses": null,
+            "etat": "Créer"
+        },
+        {
+            "type": "Boues",
+            "programme": "Aquamat",
+            "pedagogique": false,
+            "condition": null,
+            "site": "Lml Bourcefranc-le-chapus",
+            "responsable": "J.aubin",
+            "identification": "0505202611330144",
+            "parent": null,
+            "dossier": "427",
+            "libre": "Boues_mai_2026_lml_cl6_3",
+            "creation": "2026-05-05T09:33:49.807",
+            "prelevement": "2026-05-11",
+            "peremption": "2031-05-11",
+            "pays": "France",
+            "region": "Nouvelle-aquitaine",
+            "latitude": "45.846574110331",
+            "longitude": "-1.155195236206",
+            "passeport": null,
+            "cultures": {},
+            "stockage": {},
+            "etiquette": {
+                "sticker0": {
+                    "key": "identification",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker1": {
+                    "key": "programme",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker2": {
+                    "key": "dossier-numero",
+                    "size": "14px",
+                    "align": "center"
+                },
+                "sticker3": {
+                    "key": "responsable",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker4": {
+                    "key": "site",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker5": {
+                    "key": "libre",
+                    "size": "12px",
+                    "align": "center"
+                }
+            },
+            "analyses": null,
+            "etat": "Créer"
+        },
+        {
+            "type": "Boues",
+            "programme": "Aquamat",
+            "pedagogique": false,
+            "condition": null,
+            "site": "Lml Bourcefranc-le-chapus",
+            "responsable": "J.aubin",
+            "identification": "0505202611330145",
+            "parent": null,
+            "dossier": "427",
+            "libre": "Boues_mai_2026_lml_cl5_1",
+            "creation": "2026-05-05T09:33:49.807",
+            "prelevement": "2026-05-11",
+            "peremption": "2031-05-11",
+            "pays": "France",
+            "region": "Nouvelle-aquitaine",
+            "latitude": "45.846574110331",
+            "longitude": "-1.155195236206",
+            "passeport": null,
+            "cultures": {},
+            "stockage": {},
+            "etiquette": {
+                "sticker0": {
+                    "key": "identification",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker1": {
+                    "key": "programme",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker2": {
+                    "key": "dossier-numero",
+                    "size": "14px",
+                    "align": "center"
+                },
+                "sticker3": {
+                    "key": "responsable",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker4": {
+                    "key": "site",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker5": {
+                    "key": "libre",
+                    "size": "12px",
+                    "align": "center"
+                }
+            },
+            "analyses": null,
+            "etat": "Créer"
+        },
+        {
+            "type": "Boues",
+            "programme": "Aquamat",
+            "pedagogique": false,
+            "condition": null,
+            "site": "Lml Bourcefranc-le-chapus",
+            "responsable": "J.aubin",
+            "identification": "0505202611330146",
+            "parent": null,
+            "dossier": "427",
+            "libre": "Boues_mai_2026_lml_cl5_2",
+            "creation": "2026-05-05T09:33:49.807",
+            "prelevement": "2026-05-11",
+            "peremption": "2031-05-11",
+            "pays": "France",
+            "region": "Nouvelle-aquitaine",
+            "latitude": "45.846574110331",
+            "longitude": "-1.155195236206",
+            "passeport": null,
+            "cultures": {},
+            "stockage": {},
+            "etiquette": {
+                "sticker0": {
+                    "key": "identification",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker1": {
+                    "key": "programme",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker2": {
+                    "key": "dossier-numero",
+                    "size": "14px",
+                    "align": "center"
+                },
+                "sticker3": {
+                    "key": "responsable",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker4": {
+                    "key": "site",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker5": {
+                    "key": "libre",
+                    "size": "12px",
+                    "align": "center"
+                }
+            },
+            "analyses": null,
+            "etat": "Créer"
+        },
+        {
+            "type": "Boues",
+            "programme": "Aquamat",
+            "pedagogique": false,
+            "condition": null,
+            "site": "Lml Bourcefranc-le-chapus",
+            "responsable": "J.aubin",
+            "identification": "0505202611330147",
+            "parent": null,
+            "dossier": "427",
+            "libre": "Boues_mai_2026_lml_cl5_3",
+            "creation": "2026-05-05T09:33:49.807",
+            "prelevement": "2026-05-11",
+            "peremption": "2031-05-11",
+            "pays": "France",
+            "region": "Nouvelle-aquitaine",
+            "latitude": "45.846574110331",
+            "longitude": "-1.155195236206",
+            "passeport": null,
+            "cultures": {},
+            "stockage": {},
+            "etiquette": {
+                "sticker0": {
+                    "key": "identification",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker1": {
+                    "key": "programme",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker2": {
+                    "key": "dossier-numero",
+                    "size": "14px",
+                    "align": "center"
+                },
+                "sticker3": {
+                    "key": "responsable",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker4": {
+                    "key": "site",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker5": {
+                    "key": "libre",
+                    "size": "12px",
+                    "align": "center"
+                }
+            },
+            "analyses": null,
+            "etat": "Créer"
+        },
+        {
+            "type": "Boues",
+            "programme": "Aquamat",
+            "pedagogique": false,
+            "condition": null,
+            "site": "Lml Bourcefranc-le-chapus",
+            "responsable": "J.aubin",
+            "identification": "0505202611330148",
+            "parent": null,
+            "dossier": "427",
+            "libre": "Boues_mai_2026_lml_cl4_1",
+            "creation": "2026-05-05T09:33:49.807",
+            "prelevement": "2026-05-11",
+            "peremption": "2031-05-11",
+            "pays": "France",
+            "region": "Nouvelle-aquitaine",
+            "latitude": "45.846574110331",
+            "longitude": "-1.155195236206",
+            "passeport": null,
+            "cultures": {},
+            "stockage": {},
+            "etiquette": {
+                "sticker0": {
+                    "key": "identification",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker1": {
+                    "key": "programme",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker2": {
+                    "key": "dossier-numero",
+                    "size": "14px",
+                    "align": "center"
+                },
+                "sticker3": {
+                    "key": "responsable",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker4": {
+                    "key": "site",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker5": {
+                    "key": "libre",
+                    "size": "12px",
+                    "align": "center"
+                }
+            },
+            "analyses": null,
+            "etat": "Créer"
+        },
+        {
+            "type": "Boues",
+            "programme": "Aquamat",
+            "pedagogique": false,
+            "condition": null,
+            "site": "Lml Bourcefranc-le-chapus",
+            "responsable": "J.aubin",
+            "identification": "0505202611330149",
+            "parent": null,
+            "dossier": "427",
+            "libre": "Boues_mai_2026_lml_cl4_2",
+            "creation": "2026-05-05T09:33:49.807",
+            "prelevement": "2026-05-11",
+            "peremption": "2031-05-11",
+            "pays": "France",
+            "region": "Nouvelle-aquitaine",
+            "latitude": "45.846574110331",
+            "longitude": "-1.155195236206",
+            "passeport": null,
+            "cultures": {},
+            "stockage": {},
+            "etiquette": {
+                "sticker0": {
+                    "key": "identification",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker1": {
+                    "key": "programme",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker2": {
+                    "key": "dossier-numero",
+                    "size": "14px",
+                    "align": "center"
+                },
+                "sticker3": {
+                    "key": "responsable",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker4": {
+                    "key": "site",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker5": {
+                    "key": "libre",
+                    "size": "12px",
+                    "align": "center"
+                }
+            },
+            "analyses": null,
+            "etat": "Créer"
+        },
+        {
+            "type": "Boues",
+            "programme": "Aquamat",
+            "pedagogique": false,
+            "condition": null,
+            "site": "Lml Bourcefranc-le-chapus",
+            "responsable": "J.aubin",
+            "identification": "0505202611330150",
+            "parent": null,
+            "dossier": "427",
+            "libre": "Boues_mai_2026_lml_cl4_3",
+            "creation": "2026-05-05T09:33:49.807",
+            "prelevement": "2026-05-11",
+            "peremption": "2031-05-11",
+            "pays": "France",
+            "region": "Nouvelle-aquitaine",
+            "latitude": "45.846574110331",
+            "longitude": "-1.155195236206",
+            "passeport": null,
+            "cultures": {},
+            "stockage": {},
+            "etiquette": {
+                "sticker0": {
+                    "key": "identification",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker1": {
+                    "key": "programme",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker2": {
+                    "key": "dossier-numero",
+                    "size": "14px",
+                    "align": "center"
+                },
+                "sticker3": {
+                    "key": "responsable",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker4": {
+                    "key": "site",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker5": {
+                    "key": "libre",
+                    "size": "12px",
+                    "align": "center"
+                }
+            },
+            "analyses": null,
+            "etat": "Créer"
+        },
+        {
+            "type": "Boues",
+            "programme": "Aquamat",
+            "pedagogique": false,
+            "condition": null,
+            "site": "Lml Bourcefranc-le-chapus",
+            "responsable": "J.aubin",
+            "identification": "0505202611330151",
+            "parent": null,
+            "dossier": "427",
+            "libre": "Boues_mai_2026_lml_cl3_1",
+            "creation": "2026-05-05T09:33:49.807",
+            "prelevement": "2026-05-11",
+            "peremption": "2031-05-11",
+            "pays": "France",
+            "region": "Nouvelle-aquitaine",
+            "latitude": "45.846574110331",
+            "longitude": "-1.155195236206",
+            "passeport": null,
+            "cultures": {},
+            "stockage": {},
+            "etiquette": {
+                "sticker0": {
+                    "key": "identification",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker1": {
+                    "key": "programme",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker2": {
+                    "key": "dossier-numero",
+                    "size": "14px",
+                    "align": "center"
+                },
+                "sticker3": {
+                    "key": "responsable",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker4": {
+                    "key": "site",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker5": {
+                    "key": "libre",
+                    "size": "12px",
+                    "align": "center"
+                }
+            },
+            "analyses": null,
+            "etat": "Créer"
+        },
+        {
+            "type": "Boues",
+            "programme": "Aquamat",
+            "pedagogique": false,
+            "condition": null,
+            "site": "Lml Bourcefranc-le-chapus",
+            "responsable": "J.aubin",
+            "identification": "0505202611330152",
+            "parent": null,
+            "dossier": "427",
+            "libre": "Boues_mai_2026_lml_cl3_2",
+            "creation": "2026-05-05T09:33:49.807",
+            "prelevement": "2026-05-11",
+            "peremption": "2031-05-11",
+            "pays": "France",
+            "region": "Nouvelle-aquitaine",
+            "latitude": "45.846574110331",
+            "longitude": "-1.155195236206",
+            "passeport": null,
+            "cultures": {},
+            "stockage": {},
+            "etiquette": {
+                "sticker0": {
+                    "key": "identification",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker1": {
+                    "key": "programme",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker2": {
+                    "key": "dossier-numero",
+                    "size": "14px",
+                    "align": "center"
+                },
+                "sticker3": {
+                    "key": "responsable",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker4": {
+                    "key": "site",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker5": {
+                    "key": "libre",
+                    "size": "12px",
+                    "align": "center"
+                }
+            },
+            "analyses": null,
+            "etat": "Créer"
+        },
+        {
+            "type": "Boues",
+            "programme": "Aquamat",
+            "pedagogique": false,
+            "condition": null,
+            "site": "Lml Bourcefranc-le-chapus",
+            "responsable": "J.aubin",
+            "identification": "0505202611330153",
+            "parent": null,
+            "dossier": "427",
+            "libre": "Boues_mai_2026_lml_cl3_3",
+            "creation": "2026-05-05T09:33:49.807",
+            "prelevement": "2026-05-11",
+            "peremption": "2031-05-11",
+            "pays": "France",
+            "region": "Nouvelle-aquitaine",
+            "latitude": "45.846574110331",
+            "longitude": "-1.155195236206",
+            "passeport": null,
+            "cultures": {},
+            "stockage": {},
+            "etiquette": {
+                "sticker0": {
+                    "key": "identification",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker1": {
+                    "key": "programme",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker2": {
+                    "key": "dossier-numero",
+                    "size": "14px",
+                    "align": "center"
+                },
+                "sticker3": {
+                    "key": "responsable",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker4": {
+                    "key": "site",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker5": {
+                    "key": "libre",
+                    "size": "12px",
+                    "align": "center"
+                }
+            },
+            "analyses": null,
+            "etat": "Créer"
+        },
+        {
+            "type": "Boues",
+            "programme": "Aquamat",
+            "pedagogique": false,
+            "condition": null,
+            "site": "Lml Bourcefranc-le-chapus",
+            "responsable": "J.aubin",
+            "identification": "0505202611330154",
+            "parent": null,
+            "dossier": "427",
+            "libre": "Boues_mai_2026_lml_cl2_1",
+            "creation": "2026-05-05T09:33:49.807",
+            "prelevement": "2026-05-11",
+            "peremption": "2031-05-11",
+            "pays": "France",
+            "region": "Nouvelle-aquitaine",
+            "latitude": "45.846574110331",
+            "longitude": "-1.155195236206",
+            "passeport": null,
+            "cultures": {},
+            "stockage": {},
+            "etiquette": {
+                "sticker0": {
+                    "key": "identification",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker1": {
+                    "key": "programme",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker2": {
+                    "key": "dossier-numero",
+                    "size": "14px",
+                    "align": "center"
+                },
+                "sticker3": {
+                    "key": "responsable",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker4": {
+                    "key": "site",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker5": {
+                    "key": "libre",
+                    "size": "12px",
+                    "align": "center"
+                }
+            },
+            "analyses": null,
+            "etat": "Créer"
+        },
+        {
+            "type": "Boues",
+            "programme": "Aquamat",
+            "pedagogique": false,
+            "condition": null,
+            "site": "Lml Bourcefranc-le-chapus",
+            "responsable": "J.aubin",
+            "identification": "0505202611330155",
+            "parent": null,
+            "dossier": "427",
+            "libre": "Boues_mai_2026_lml_cl2_2",
+            "creation": "2026-05-05T09:33:49.807",
+            "prelevement": "2026-05-11",
+            "peremption": "2031-05-11",
+            "pays": "France",
+            "region": "Nouvelle-aquitaine",
+            "latitude": "45.846574110331",
+            "longitude": "-1.155195236206",
+            "passeport": null,
+            "cultures": {},
+            "stockage": {},
+            "etiquette": {
+                "sticker0": {
+                    "key": "identification",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker1": {
+                    "key": "programme",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker2": {
+                    "key": "dossier-numero",
+                    "size": "14px",
+                    "align": "center"
+                },
+                "sticker3": {
+                    "key": "responsable",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker4": {
+                    "key": "site",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker5": {
+                    "key": "libre",
+                    "size": "12px",
+                    "align": "center"
+                }
+            },
+            "analyses": null,
+            "etat": "Créer"
+        },
+        {
+            "type": "Boues",
+            "programme": "Aquamat",
+            "pedagogique": false,
+            "condition": null,
+            "site": "Lml Bourcefranc-le-chapus",
+            "responsable": "J.aubin",
+            "identification": "0505202611330156",
+            "parent": null,
+            "dossier": "427",
+            "libre": "Boues_mai_2026_lml_cl2_3",
+            "creation": "2026-05-05T09:33:49.807",
+            "prelevement": "2026-05-11",
+            "peremption": "2031-05-11",
+            "pays": "France",
+            "region": "Nouvelle-aquitaine",
+            "latitude": "45.846574110331",
+            "longitude": "-1.155195236206",
+            "passeport": null,
+            "cultures": {},
+            "stockage": {},
+            "etiquette": {
+                "sticker0": {
+                    "key": "identification",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker1": {
+                    "key": "programme",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker2": {
+                    "key": "dossier-numero",
+                    "size": "14px",
+                    "align": "center"
+                },
+                "sticker3": {
+                    "key": "responsable",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker4": {
+                    "key": "site",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker5": {
+                    "key": "libre",
+                    "size": "12px",
+                    "align": "center"
+                }
+            },
+            "analyses": null,
+            "etat": "Créer"
+        },
+        {
             "type": "Eau",
             "programme": "Nutritiouspond",
             "pedagogique": false,
@@ -3310,6 +4318,1014 @@
             "analyses": [
                 ""
             ],
+            "etat": "Créer"
+        },
+        {
+            "type": "Eau",
+            "programme": "Aquamat",
+            "pedagogique": false,
+            "condition": null,
+            "site": "Lml Bourcefranc-le-chapus",
+            "responsable": "J.aubin",
+            "identification": "0505202611310019",
+            "parent": null,
+            "dossier": "427",
+            "libre": "Eau_mai_2026_lml_cl7_1",
+            "creation": "2026-05-05T09:31:27.954",
+            "prelevement": "2026-05-11",
+            "peremption": "2031-05-11",
+            "pays": "France",
+            "region": "Nouvelle-aquitaine",
+            "latitude": "45.846574110331",
+            "longitude": "-1.155195236206",
+            "passeport": null,
+            "cultures": {},
+            "stockage": {},
+            "etiquette": {
+                "sticker0": {
+                    "key": "identification",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker1": {
+                    "key": "programme",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker2": {
+                    "key": "dossier-numero",
+                    "size": "14px",
+                    "align": "center"
+                },
+                "sticker3": {
+                    "key": "responsable",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker4": {
+                    "key": "site",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker5": {
+                    "key": "libre",
+                    "size": "12px",
+                    "align": "center"
+                }
+            },
+            "analyses": null,
+            "etat": "Créer"
+        },
+        {
+            "type": "Eau",
+            "programme": "Aquamat",
+            "pedagogique": false,
+            "condition": null,
+            "site": "Lml Bourcefranc-le-chapus",
+            "responsable": "J.aubin",
+            "identification": "0505202611310020",
+            "parent": null,
+            "dossier": "427",
+            "libre": "Eau_mai_2026_lml_cl7_2",
+            "creation": "2026-05-05T09:31:27.954",
+            "prelevement": "2026-05-11",
+            "peremption": "2031-05-11",
+            "pays": "France",
+            "region": "Nouvelle-aquitaine",
+            "latitude": "45.846574110331",
+            "longitude": "-1.155195236206",
+            "passeport": null,
+            "cultures": {},
+            "stockage": {},
+            "etiquette": {
+                "sticker0": {
+                    "key": "identification",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker1": {
+                    "key": "programme",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker2": {
+                    "key": "dossier-numero",
+                    "size": "14px",
+                    "align": "center"
+                },
+                "sticker3": {
+                    "key": "responsable",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker4": {
+                    "key": "site",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker5": {
+                    "key": "libre",
+                    "size": "12px",
+                    "align": "center"
+                }
+            },
+            "analyses": null,
+            "etat": "Créer"
+        },
+        {
+            "type": "Eau",
+            "programme": "Aquamat",
+            "pedagogique": false,
+            "condition": null,
+            "site": "Lml Bourcefranc-le-chapus",
+            "responsable": "J.aubin",
+            "identification": "0505202611310021",
+            "parent": null,
+            "dossier": "427",
+            "libre": "Eau_mai_2026_lml_cl7_3",
+            "creation": "2026-05-05T09:31:27.954",
+            "prelevement": "2026-05-11",
+            "peremption": "2031-05-11",
+            "pays": "France",
+            "region": "Nouvelle-aquitaine",
+            "latitude": "45.846574110331",
+            "longitude": "-1.155195236206",
+            "passeport": null,
+            "cultures": {},
+            "stockage": {},
+            "etiquette": {
+                "sticker0": {
+                    "key": "identification",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker1": {
+                    "key": "programme",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker2": {
+                    "key": "dossier-numero",
+                    "size": "14px",
+                    "align": "center"
+                },
+                "sticker3": {
+                    "key": "responsable",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker4": {
+                    "key": "site",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker5": {
+                    "key": "libre",
+                    "size": "12px",
+                    "align": "center"
+                }
+            },
+            "analyses": null,
+            "etat": "Créer"
+        },
+        {
+            "type": "Eau",
+            "programme": "Aquamat",
+            "pedagogique": false,
+            "condition": null,
+            "site": "Lml Bourcefranc-le-chapus",
+            "responsable": "J.aubin",
+            "identification": "0505202611310022",
+            "parent": null,
+            "dossier": "427",
+            "libre": "Eau_mai_2026_lml_cl6_1",
+            "creation": "2026-05-05T09:31:27.954",
+            "prelevement": "2026-05-11",
+            "peremption": "2031-05-11",
+            "pays": "France",
+            "region": "Nouvelle-aquitaine",
+            "latitude": "45.846574110331",
+            "longitude": "-1.155195236206",
+            "passeport": null,
+            "cultures": {},
+            "stockage": {},
+            "etiquette": {
+                "sticker0": {
+                    "key": "identification",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker1": {
+                    "key": "programme",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker2": {
+                    "key": "dossier-numero",
+                    "size": "14px",
+                    "align": "center"
+                },
+                "sticker3": {
+                    "key": "responsable",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker4": {
+                    "key": "site",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker5": {
+                    "key": "libre",
+                    "size": "12px",
+                    "align": "center"
+                }
+            },
+            "analyses": null,
+            "etat": "Créer"
+        },
+        {
+            "type": "Eau",
+            "programme": "Aquamat",
+            "pedagogique": false,
+            "condition": null,
+            "site": "Lml Bourcefranc-le-chapus",
+            "responsable": "J.aubin",
+            "identification": "0505202611310023",
+            "parent": null,
+            "dossier": "427",
+            "libre": "Eau_mai_2026_lml_cl6_2",
+            "creation": "2026-05-05T09:31:27.954",
+            "prelevement": "2026-05-11",
+            "peremption": "2031-05-11",
+            "pays": "France",
+            "region": "Nouvelle-aquitaine",
+            "latitude": "45.846574110331",
+            "longitude": "-1.155195236206",
+            "passeport": null,
+            "cultures": {},
+            "stockage": {},
+            "etiquette": {
+                "sticker0": {
+                    "key": "identification",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker1": {
+                    "key": "programme",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker2": {
+                    "key": "dossier-numero",
+                    "size": "14px",
+                    "align": "center"
+                },
+                "sticker3": {
+                    "key": "responsable",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker4": {
+                    "key": "site",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker5": {
+                    "key": "libre",
+                    "size": "12px",
+                    "align": "center"
+                }
+            },
+            "analyses": null,
+            "etat": "Créer"
+        },
+        {
+            "type": "Eau",
+            "programme": "Aquamat",
+            "pedagogique": false,
+            "condition": null,
+            "site": "Lml Bourcefranc-le-chapus",
+            "responsable": "J.aubin",
+            "identification": "0505202611310024",
+            "parent": null,
+            "dossier": "427",
+            "libre": "Eau_mai_2026_lml_cl6_3",
+            "creation": "2026-05-05T09:31:27.954",
+            "prelevement": "2026-05-11",
+            "peremption": "2031-05-11",
+            "pays": "France",
+            "region": "Nouvelle-aquitaine",
+            "latitude": "45.846574110331",
+            "longitude": "-1.155195236206",
+            "passeport": null,
+            "cultures": {},
+            "stockage": {},
+            "etiquette": {
+                "sticker0": {
+                    "key": "identification",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker1": {
+                    "key": "programme",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker2": {
+                    "key": "dossier-numero",
+                    "size": "14px",
+                    "align": "center"
+                },
+                "sticker3": {
+                    "key": "responsable",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker4": {
+                    "key": "site",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker5": {
+                    "key": "libre",
+                    "size": "12px",
+                    "align": "center"
+                }
+            },
+            "analyses": null,
+            "etat": "Créer"
+        },
+        {
+            "type": "Eau",
+            "programme": "Aquamat",
+            "pedagogique": false,
+            "condition": null,
+            "site": "Lml Bourcefranc-le-chapus",
+            "responsable": "J.aubin",
+            "identification": "0505202611310025",
+            "parent": null,
+            "dossier": "427",
+            "libre": "Eau_mai_2026_lml_cl5_1",
+            "creation": "2026-05-05T09:31:27.954",
+            "prelevement": "2026-05-11",
+            "peremption": "2031-05-11",
+            "pays": "France",
+            "region": "Nouvelle-aquitaine",
+            "latitude": "45.846574110331",
+            "longitude": "-1.155195236206",
+            "passeport": null,
+            "cultures": {},
+            "stockage": {},
+            "etiquette": {
+                "sticker0": {
+                    "key": "identification",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker1": {
+                    "key": "programme",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker2": {
+                    "key": "dossier-numero",
+                    "size": "14px",
+                    "align": "center"
+                },
+                "sticker3": {
+                    "key": "responsable",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker4": {
+                    "key": "site",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker5": {
+                    "key": "libre",
+                    "size": "12px",
+                    "align": "center"
+                }
+            },
+            "analyses": null,
+            "etat": "Créer"
+        },
+        {
+            "type": "Eau",
+            "programme": "Aquamat",
+            "pedagogique": false,
+            "condition": null,
+            "site": "Lml Bourcefranc-le-chapus",
+            "responsable": "J.aubin",
+            "identification": "0505202611310026",
+            "parent": null,
+            "dossier": "427",
+            "libre": "Eau_mai_2026_lml_cl5_2",
+            "creation": "2026-05-05T09:31:27.954",
+            "prelevement": "2026-05-11",
+            "peremption": "2031-05-11",
+            "pays": "France",
+            "region": "Nouvelle-aquitaine",
+            "latitude": "45.846574110331",
+            "longitude": "-1.155195236206",
+            "passeport": null,
+            "cultures": {},
+            "stockage": {},
+            "etiquette": {
+                "sticker0": {
+                    "key": "identification",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker1": {
+                    "key": "programme",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker2": {
+                    "key": "dossier-numero",
+                    "size": "14px",
+                    "align": "center"
+                },
+                "sticker3": {
+                    "key": "responsable",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker4": {
+                    "key": "site",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker5": {
+                    "key": "libre",
+                    "size": "12px",
+                    "align": "center"
+                }
+            },
+            "analyses": null,
+            "etat": "Créer"
+        },
+        {
+            "type": "Eau",
+            "programme": "Aquamat",
+            "pedagogique": false,
+            "condition": null,
+            "site": "Lml Bourcefranc-le-chapus",
+            "responsable": "J.aubin",
+            "identification": "0505202611310027",
+            "parent": null,
+            "dossier": "427",
+            "libre": "Eau_mai_2026_lml_cl5_3",
+            "creation": "2026-05-05T09:31:27.954",
+            "prelevement": "2026-05-11",
+            "peremption": "2031-05-11",
+            "pays": "France",
+            "region": "Nouvelle-aquitaine",
+            "latitude": "45.846574110331",
+            "longitude": "-1.155195236206",
+            "passeport": null,
+            "cultures": {},
+            "stockage": {},
+            "etiquette": {
+                "sticker0": {
+                    "key": "identification",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker1": {
+                    "key": "programme",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker2": {
+                    "key": "dossier-numero",
+                    "size": "14px",
+                    "align": "center"
+                },
+                "sticker3": {
+                    "key": "responsable",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker4": {
+                    "key": "site",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker5": {
+                    "key": "libre",
+                    "size": "12px",
+                    "align": "center"
+                }
+            },
+            "analyses": null,
+            "etat": "Créer"
+        },
+        {
+            "type": "Eau",
+            "programme": "Aquamat",
+            "pedagogique": false,
+            "condition": null,
+            "site": "Lml Bourcefranc-le-chapus",
+            "responsable": "J.aubin",
+            "identification": "0505202611310028",
+            "parent": null,
+            "dossier": "427",
+            "libre": "Eau_mai_2026_lml_cl4_1",
+            "creation": "2026-05-05T09:31:27.954",
+            "prelevement": "2026-05-11",
+            "peremption": "2031-05-11",
+            "pays": "France",
+            "region": "Nouvelle-aquitaine",
+            "latitude": "45.846574110331",
+            "longitude": "-1.155195236206",
+            "passeport": null,
+            "cultures": {},
+            "stockage": {},
+            "etiquette": {
+                "sticker0": {
+                    "key": "identification",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker1": {
+                    "key": "programme",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker2": {
+                    "key": "dossier-numero",
+                    "size": "14px",
+                    "align": "center"
+                },
+                "sticker3": {
+                    "key": "responsable",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker4": {
+                    "key": "site",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker5": {
+                    "key": "libre",
+                    "size": "12px",
+                    "align": "center"
+                }
+            },
+            "analyses": null,
+            "etat": "Créer"
+        },
+        {
+            "type": "Eau",
+            "programme": "Aquamat",
+            "pedagogique": false,
+            "condition": null,
+            "site": "Lml Bourcefranc-le-chapus",
+            "responsable": "J.aubin",
+            "identification": "0505202611310029",
+            "parent": null,
+            "dossier": "427",
+            "libre": "Eau_mai_2026_lml_cl4_2",
+            "creation": "2026-05-05T09:31:27.954",
+            "prelevement": "2026-05-11",
+            "peremption": "2031-05-11",
+            "pays": "France",
+            "region": "Nouvelle-aquitaine",
+            "latitude": "45.846574110331",
+            "longitude": "-1.155195236206",
+            "passeport": null,
+            "cultures": {},
+            "stockage": {},
+            "etiquette": {
+                "sticker0": {
+                    "key": "identification",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker1": {
+                    "key": "programme",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker2": {
+                    "key": "dossier-numero",
+                    "size": "14px",
+                    "align": "center"
+                },
+                "sticker3": {
+                    "key": "responsable",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker4": {
+                    "key": "site",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker5": {
+                    "key": "libre",
+                    "size": "12px",
+                    "align": "center"
+                }
+            },
+            "analyses": null,
+            "etat": "Créer"
+        },
+        {
+            "type": "Eau",
+            "programme": "Aquamat",
+            "pedagogique": false,
+            "condition": null,
+            "site": "Lml Bourcefranc-le-chapus",
+            "responsable": "J.aubin",
+            "identification": "0505202611310030",
+            "parent": null,
+            "dossier": "427",
+            "libre": "Eau_mai_2026_lml_cl4_3",
+            "creation": "2026-05-05T09:31:27.954",
+            "prelevement": "2026-05-11",
+            "peremption": "2031-05-11",
+            "pays": "France",
+            "region": "Nouvelle-aquitaine",
+            "latitude": "45.846574110331",
+            "longitude": "-1.155195236206",
+            "passeport": null,
+            "cultures": {},
+            "stockage": {},
+            "etiquette": {
+                "sticker0": {
+                    "key": "identification",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker1": {
+                    "key": "programme",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker2": {
+                    "key": "dossier-numero",
+                    "size": "14px",
+                    "align": "center"
+                },
+                "sticker3": {
+                    "key": "responsable",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker4": {
+                    "key": "site",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker5": {
+                    "key": "libre",
+                    "size": "12px",
+                    "align": "center"
+                }
+            },
+            "analyses": null,
+            "etat": "Créer"
+        },
+        {
+            "type": "Eau",
+            "programme": "Aquamat",
+            "pedagogique": false,
+            "condition": null,
+            "site": "Lml Bourcefranc-le-chapus",
+            "responsable": "J.aubin",
+            "identification": "0505202611310031",
+            "parent": null,
+            "dossier": "427",
+            "libre": "Eau_mai_2026_lml_cl3_1",
+            "creation": "2026-05-05T09:31:27.954",
+            "prelevement": "2026-05-11",
+            "peremption": "2031-05-11",
+            "pays": "France",
+            "region": "Nouvelle-aquitaine",
+            "latitude": "45.846574110331",
+            "longitude": "-1.155195236206",
+            "passeport": null,
+            "cultures": {},
+            "stockage": {},
+            "etiquette": {
+                "sticker0": {
+                    "key": "identification",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker1": {
+                    "key": "programme",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker2": {
+                    "key": "dossier-numero",
+                    "size": "14px",
+                    "align": "center"
+                },
+                "sticker3": {
+                    "key": "responsable",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker4": {
+                    "key": "site",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker5": {
+                    "key": "libre",
+                    "size": "12px",
+                    "align": "center"
+                }
+            },
+            "analyses": null,
+            "etat": "Créer"
+        },
+        {
+            "type": "Eau",
+            "programme": "Aquamat",
+            "pedagogique": false,
+            "condition": null,
+            "site": "Lml Bourcefranc-le-chapus",
+            "responsable": "J.aubin",
+            "identification": "0505202611310032",
+            "parent": null,
+            "dossier": "427",
+            "libre": "Eau_mai_2026_lml_cl3_2",
+            "creation": "2026-05-05T09:31:27.954",
+            "prelevement": "2026-05-11",
+            "peremption": "2031-05-11",
+            "pays": "France",
+            "region": "Nouvelle-aquitaine",
+            "latitude": "45.846574110331",
+            "longitude": "-1.155195236206",
+            "passeport": null,
+            "cultures": {},
+            "stockage": {},
+            "etiquette": {
+                "sticker0": {
+                    "key": "identification",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker1": {
+                    "key": "programme",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker2": {
+                    "key": "dossier-numero",
+                    "size": "14px",
+                    "align": "center"
+                },
+                "sticker3": {
+                    "key": "responsable",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker4": {
+                    "key": "site",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker5": {
+                    "key": "libre",
+                    "size": "12px",
+                    "align": "center"
+                }
+            },
+            "analyses": null,
+            "etat": "Créer"
+        },
+        {
+            "type": "Eau",
+            "programme": "Aquamat",
+            "pedagogique": false,
+            "condition": null,
+            "site": "Lml Bourcefranc-le-chapus",
+            "responsable": "J.aubin",
+            "identification": "0505202611310033",
+            "parent": null,
+            "dossier": "427",
+            "libre": "Eau_mai_2026_lml_cl3_3",
+            "creation": "2026-05-05T09:31:27.954",
+            "prelevement": "2026-05-11",
+            "peremption": "2031-05-11",
+            "pays": "France",
+            "region": "Nouvelle-aquitaine",
+            "latitude": "45.846574110331",
+            "longitude": "-1.155195236206",
+            "passeport": null,
+            "cultures": {},
+            "stockage": {},
+            "etiquette": {
+                "sticker0": {
+                    "key": "identification",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker1": {
+                    "key": "programme",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker2": {
+                    "key": "dossier-numero",
+                    "size": "14px",
+                    "align": "center"
+                },
+                "sticker3": {
+                    "key": "responsable",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker4": {
+                    "key": "site",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker5": {
+                    "key": "libre",
+                    "size": "12px",
+                    "align": "center"
+                }
+            },
+            "analyses": null,
+            "etat": "Créer"
+        },
+        {
+            "type": "Eau",
+            "programme": "Aquamat",
+            "pedagogique": false,
+            "condition": null,
+            "site": "Lml Bourcefranc-le-chapus",
+            "responsable": "J.aubin",
+            "identification": "0505202611310034",
+            "parent": null,
+            "dossier": "427",
+            "libre": "Eau_mai_2026_lml_cl2_1",
+            "creation": "2026-05-05T09:31:27.954",
+            "prelevement": "2026-05-11",
+            "peremption": "2031-05-11",
+            "pays": "France",
+            "region": "Nouvelle-aquitaine",
+            "latitude": "45.846574110331",
+            "longitude": "-1.155195236206",
+            "passeport": null,
+            "cultures": {},
+            "stockage": {},
+            "etiquette": {
+                "sticker0": {
+                    "key": "identification",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker1": {
+                    "key": "programme",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker2": {
+                    "key": "dossier-numero",
+                    "size": "14px",
+                    "align": "center"
+                },
+                "sticker3": {
+                    "key": "responsable",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker4": {
+                    "key": "site",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker5": {
+                    "key": "libre",
+                    "size": "12px",
+                    "align": "center"
+                }
+            },
+            "analyses": null,
+            "etat": "Créer"
+        },
+        {
+            "type": "Eau",
+            "programme": "Aquamat",
+            "pedagogique": false,
+            "condition": null,
+            "site": "Lml Bourcefranc-le-chapus",
+            "responsable": "J.aubin",
+            "identification": "0505202611310035",
+            "parent": null,
+            "dossier": "427",
+            "libre": "Eau_mai_2026_lml_cl2_2",
+            "creation": "2026-05-05T09:31:27.954",
+            "prelevement": "2026-05-11",
+            "peremption": "2031-05-11",
+            "pays": "France",
+            "region": "Nouvelle-aquitaine",
+            "latitude": "45.846574110331",
+            "longitude": "-1.155195236206",
+            "passeport": null,
+            "cultures": {},
+            "stockage": {},
+            "etiquette": {
+                "sticker0": {
+                    "key": "identification",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker1": {
+                    "key": "programme",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker2": {
+                    "key": "dossier-numero",
+                    "size": "14px",
+                    "align": "center"
+                },
+                "sticker3": {
+                    "key": "responsable",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker4": {
+                    "key": "site",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker5": {
+                    "key": "libre",
+                    "size": "12px",
+                    "align": "center"
+                }
+            },
+            "analyses": null,
+            "etat": "Créer"
+        },
+        {
+            "type": "Eau",
+            "programme": "Aquamat",
+            "pedagogique": false,
+            "condition": null,
+            "site": "Lml Bourcefranc-le-chapus",
+            "responsable": "J.aubin",
+            "identification": "0505202611310036",
+            "parent": null,
+            "dossier": "427",
+            "libre": "Eau_mai_2026_lml_cl2_3",
+            "creation": "2026-05-05T09:31:27.954",
+            "prelevement": "2026-05-11",
+            "peremption": "2031-05-11",
+            "pays": "France",
+            "region": "Nouvelle-aquitaine",
+            "latitude": "45.846574110331",
+            "longitude": "-1.155195236206",
+            "passeport": null,
+            "cultures": {},
+            "stockage": {},
+            "etiquette": {
+                "sticker0": {
+                    "key": "identification",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker1": {
+                    "key": "programme",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker2": {
+                    "key": "dossier-numero",
+                    "size": "14px",
+                    "align": "center"
+                },
+                "sticker3": {
+                    "key": "responsable",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker4": {
+                    "key": "site",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker5": {
+                    "key": "libre",
+                    "size": "12px",
+                    "align": "center"
+                }
+            },
+            "analyses": null,
             "etat": "Créer"
         },
         {
@@ -29310,6 +31326,1014 @@
                 "sticker5": {
                     "key": "libre",
                     "size": "14px",
+                    "align": "center"
+                }
+            },
+            "analyses": null,
+            "etat": "Créer"
+        },
+        {
+            "type": "Invertébrés",
+            "programme": "Aquamat",
+            "pedagogique": false,
+            "condition": "Ethanol",
+            "site": "Lml Bourcefranc-le-chapus",
+            "responsable": "J.aubin",
+            "identification": "0505202611350001",
+            "parent": null,
+            "dossier": "427",
+            "libre": "Mib_mai_2026_lml_cl7_pleine_eau",
+            "creation": "2026-05-05T09:35:56.785",
+            "prelevement": "2026-05-11",
+            "peremption": "2031-05-11",
+            "pays": "France",
+            "region": "Nouvelle-aquitaine",
+            "latitude": "45.846574110331",
+            "longitude": "-1.155195236206",
+            "passeport": null,
+            "cultures": {},
+            "stockage": {},
+            "etiquette": {
+                "sticker0": {
+                    "key": "identification",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker1": {
+                    "key": "programme",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker2": {
+                    "key": "dossier-numero",
+                    "size": "14px",
+                    "align": "center"
+                },
+                "sticker3": {
+                    "key": "condition",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker4": {
+                    "key": "site",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker5": {
+                    "key": "libre",
+                    "size": "12px",
+                    "align": "center"
+                }
+            },
+            "analyses": null,
+            "etat": "Créer"
+        },
+        {
+            "type": "Invertébrés",
+            "programme": "Aquamat",
+            "pedagogique": false,
+            "condition": "Ethanol",
+            "site": "Lml Bourcefranc-le-chapus",
+            "responsable": "J.aubin",
+            "identification": "0505202611350002",
+            "parent": null,
+            "dossier": "427",
+            "libre": "Mib_mai_2026_lml_cl7_berge",
+            "creation": "2026-05-05T09:35:56.785",
+            "prelevement": "2026-05-11",
+            "peremption": "2031-05-11",
+            "pays": "France",
+            "region": "Nouvelle-aquitaine",
+            "latitude": "45.846574110331",
+            "longitude": "-1.155195236206",
+            "passeport": null,
+            "cultures": {},
+            "stockage": {},
+            "etiquette": {
+                "sticker0": {
+                    "key": "identification",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker1": {
+                    "key": "programme",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker2": {
+                    "key": "dossier-numero",
+                    "size": "14px",
+                    "align": "center"
+                },
+                "sticker3": {
+                    "key": "condition",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker4": {
+                    "key": "site",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker5": {
+                    "key": "libre",
+                    "size": "12px",
+                    "align": "center"
+                }
+            },
+            "analyses": null,
+            "etat": "Créer"
+        },
+        {
+            "type": "Invertébrés",
+            "programme": "Aquamat",
+            "pedagogique": false,
+            "condition": "Ethanol",
+            "site": "Lml Bourcefranc-le-chapus",
+            "responsable": "J.aubin",
+            "identification": "0505202611350003",
+            "parent": null,
+            "dossier": "427",
+            "libre": "Mib_mai_2026_lml_cl6_pleine_eau",
+            "creation": "2026-05-05T09:35:56.785",
+            "prelevement": "2026-05-11",
+            "peremption": "2031-05-11",
+            "pays": "France",
+            "region": "Nouvelle-aquitaine",
+            "latitude": "45.846574110331",
+            "longitude": "-1.155195236206",
+            "passeport": null,
+            "cultures": {},
+            "stockage": {},
+            "etiquette": {
+                "sticker0": {
+                    "key": "identification",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker1": {
+                    "key": "programme",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker2": {
+                    "key": "dossier-numero",
+                    "size": "14px",
+                    "align": "center"
+                },
+                "sticker3": {
+                    "key": "condition",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker4": {
+                    "key": "site",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker5": {
+                    "key": "libre",
+                    "size": "12px",
+                    "align": "center"
+                }
+            },
+            "analyses": null,
+            "etat": "Créer"
+        },
+        {
+            "type": "Invertébrés",
+            "programme": "Aquamat",
+            "pedagogique": false,
+            "condition": "Ethanol",
+            "site": "Lml Bourcefranc-le-chapus",
+            "responsable": "J.aubin",
+            "identification": "0505202611350004",
+            "parent": null,
+            "dossier": "427",
+            "libre": "Mib_mai_2026_lml_cl6_berge",
+            "creation": "2026-05-05T09:35:56.785",
+            "prelevement": "2026-05-11",
+            "peremption": "2031-05-11",
+            "pays": "France",
+            "region": "Nouvelle-aquitaine",
+            "latitude": "45.846574110331",
+            "longitude": "-1.155195236206",
+            "passeport": null,
+            "cultures": {},
+            "stockage": {},
+            "etiquette": {
+                "sticker0": {
+                    "key": "identification",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker1": {
+                    "key": "programme",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker2": {
+                    "key": "dossier-numero",
+                    "size": "14px",
+                    "align": "center"
+                },
+                "sticker3": {
+                    "key": "condition",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker4": {
+                    "key": "site",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker5": {
+                    "key": "libre",
+                    "size": "12px",
+                    "align": "center"
+                }
+            },
+            "analyses": null,
+            "etat": "Créer"
+        },
+        {
+            "type": "Invertébrés",
+            "programme": "Aquamat",
+            "pedagogique": false,
+            "condition": "Ethanol",
+            "site": "Lml Bourcefranc-le-chapus",
+            "responsable": "J.aubin",
+            "identification": "0505202611350005",
+            "parent": null,
+            "dossier": "427",
+            "libre": "Mib_mai_2026_lml_cl5_pleine_eau",
+            "creation": "2026-05-05T09:35:56.785",
+            "prelevement": "2026-05-11",
+            "peremption": "2031-05-11",
+            "pays": "France",
+            "region": "Nouvelle-aquitaine",
+            "latitude": "45.846574110331",
+            "longitude": "-1.155195236206",
+            "passeport": null,
+            "cultures": {},
+            "stockage": {},
+            "etiquette": {
+                "sticker0": {
+                    "key": "identification",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker1": {
+                    "key": "programme",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker2": {
+                    "key": "dossier-numero",
+                    "size": "14px",
+                    "align": "center"
+                },
+                "sticker3": {
+                    "key": "condition",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker4": {
+                    "key": "site",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker5": {
+                    "key": "libre",
+                    "size": "12px",
+                    "align": "center"
+                }
+            },
+            "analyses": null,
+            "etat": "Créer"
+        },
+        {
+            "type": "Invertébrés",
+            "programme": "Aquamat",
+            "pedagogique": false,
+            "condition": "Ethanol",
+            "site": "Lml Bourcefranc-le-chapus",
+            "responsable": "J.aubin",
+            "identification": "0505202611350006",
+            "parent": null,
+            "dossier": "427",
+            "libre": "Mib_mai_2026_lml_cl5_berge",
+            "creation": "2026-05-05T09:35:56.785",
+            "prelevement": "2026-05-11",
+            "peremption": "2031-05-11",
+            "pays": "France",
+            "region": "Nouvelle-aquitaine",
+            "latitude": "45.846574110331",
+            "longitude": "-1.155195236206",
+            "passeport": null,
+            "cultures": {},
+            "stockage": {},
+            "etiquette": {
+                "sticker0": {
+                    "key": "identification",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker1": {
+                    "key": "programme",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker2": {
+                    "key": "dossier-numero",
+                    "size": "14px",
+                    "align": "center"
+                },
+                "sticker3": {
+                    "key": "condition",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker4": {
+                    "key": "site",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker5": {
+                    "key": "libre",
+                    "size": "12px",
+                    "align": "center"
+                }
+            },
+            "analyses": null,
+            "etat": "Créer"
+        },
+        {
+            "type": "Invertébrés",
+            "programme": "Aquamat",
+            "pedagogique": false,
+            "condition": "Ethanol",
+            "site": "Lml Bourcefranc-le-chapus",
+            "responsable": "J.aubin",
+            "identification": "0505202611350007",
+            "parent": null,
+            "dossier": "427",
+            "libre": "Mib_mai_2026_lml_cl4_pleine_eau",
+            "creation": "2026-05-05T09:35:56.785",
+            "prelevement": "2026-05-11",
+            "peremption": "2031-05-11",
+            "pays": "France",
+            "region": "Nouvelle-aquitaine",
+            "latitude": "45.846574110331",
+            "longitude": "-1.155195236206",
+            "passeport": null,
+            "cultures": {},
+            "stockage": {},
+            "etiquette": {
+                "sticker0": {
+                    "key": "identification",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker1": {
+                    "key": "programme",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker2": {
+                    "key": "dossier-numero",
+                    "size": "14px",
+                    "align": "center"
+                },
+                "sticker3": {
+                    "key": "condition",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker4": {
+                    "key": "site",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker5": {
+                    "key": "libre",
+                    "size": "12px",
+                    "align": "center"
+                }
+            },
+            "analyses": null,
+            "etat": "Créer"
+        },
+        {
+            "type": "Invertébrés",
+            "programme": "Aquamat",
+            "pedagogique": false,
+            "condition": "Ethanol",
+            "site": "Lml Bourcefranc-le-chapus",
+            "responsable": "J.aubin",
+            "identification": "0505202611350008",
+            "parent": null,
+            "dossier": "427",
+            "libre": "Mib_mai_2026_lml_cl4_berge",
+            "creation": "2026-05-05T09:35:56.785",
+            "prelevement": "2026-05-11",
+            "peremption": "2031-05-11",
+            "pays": "France",
+            "region": "Nouvelle-aquitaine",
+            "latitude": "45.846574110331",
+            "longitude": "-1.155195236206",
+            "passeport": null,
+            "cultures": {},
+            "stockage": {},
+            "etiquette": {
+                "sticker0": {
+                    "key": "identification",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker1": {
+                    "key": "programme",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker2": {
+                    "key": "dossier-numero",
+                    "size": "14px",
+                    "align": "center"
+                },
+                "sticker3": {
+                    "key": "condition",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker4": {
+                    "key": "site",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker5": {
+                    "key": "libre",
+                    "size": "12px",
+                    "align": "center"
+                }
+            },
+            "analyses": null,
+            "etat": "Créer"
+        },
+        {
+            "type": "Invertébrés",
+            "programme": "Aquamat",
+            "pedagogique": false,
+            "condition": "Ethanol",
+            "site": "Lml Bourcefranc-le-chapus",
+            "responsable": "J.aubin",
+            "identification": "0505202611350009",
+            "parent": null,
+            "dossier": "427",
+            "libre": "Mib_mai_2026_lml_cl3_pleine_eau",
+            "creation": "2026-05-05T09:35:56.785",
+            "prelevement": "2026-05-11",
+            "peremption": "2031-05-11",
+            "pays": "France",
+            "region": "Nouvelle-aquitaine",
+            "latitude": "45.846574110331",
+            "longitude": "-1.155195236206",
+            "passeport": null,
+            "cultures": {},
+            "stockage": {},
+            "etiquette": {
+                "sticker0": {
+                    "key": "identification",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker1": {
+                    "key": "programme",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker2": {
+                    "key": "dossier-numero",
+                    "size": "14px",
+                    "align": "center"
+                },
+                "sticker3": {
+                    "key": "condition",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker4": {
+                    "key": "site",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker5": {
+                    "key": "libre",
+                    "size": "12px",
+                    "align": "center"
+                }
+            },
+            "analyses": null,
+            "etat": "Créer"
+        },
+        {
+            "type": "Invertébrés",
+            "programme": "Aquamat",
+            "pedagogique": false,
+            "condition": "Ethanol",
+            "site": "Lml Bourcefranc-le-chapus",
+            "responsable": "J.aubin",
+            "identification": "0505202611350010",
+            "parent": null,
+            "dossier": "427",
+            "libre": "Mib_mai_2026_lml_cl3_berge",
+            "creation": "2026-05-05T09:35:56.785",
+            "prelevement": "2026-05-11",
+            "peremption": "2031-05-11",
+            "pays": "France",
+            "region": "Nouvelle-aquitaine",
+            "latitude": "45.846574110331",
+            "longitude": "-1.155195236206",
+            "passeport": null,
+            "cultures": {},
+            "stockage": {},
+            "etiquette": {
+                "sticker0": {
+                    "key": "identification",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker1": {
+                    "key": "programme",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker2": {
+                    "key": "dossier-numero",
+                    "size": "14px",
+                    "align": "center"
+                },
+                "sticker3": {
+                    "key": "condition",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker4": {
+                    "key": "site",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker5": {
+                    "key": "libre",
+                    "size": "12px",
+                    "align": "center"
+                }
+            },
+            "analyses": null,
+            "etat": "Créer"
+        },
+        {
+            "type": "Invertébrés",
+            "programme": "Aquamat",
+            "pedagogique": false,
+            "condition": "Ethanol",
+            "site": "Lml Bourcefranc-le-chapus",
+            "responsable": "J.aubin",
+            "identification": "0505202611350011",
+            "parent": null,
+            "dossier": "427",
+            "libre": "Mib_mai_2026_lml_cl2_pleine_eau",
+            "creation": "2026-05-05T09:35:56.785",
+            "prelevement": "2026-05-11",
+            "peremption": "2031-05-11",
+            "pays": "France",
+            "region": "Nouvelle-aquitaine",
+            "latitude": "45.846574110331",
+            "longitude": "-1.155195236206",
+            "passeport": null,
+            "cultures": {},
+            "stockage": {},
+            "etiquette": {
+                "sticker0": {
+                    "key": "identification",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker1": {
+                    "key": "programme",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker2": {
+                    "key": "dossier-numero",
+                    "size": "14px",
+                    "align": "center"
+                },
+                "sticker3": {
+                    "key": "condition",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker4": {
+                    "key": "site",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker5": {
+                    "key": "libre",
+                    "size": "12px",
+                    "align": "center"
+                }
+            },
+            "analyses": null,
+            "etat": "Créer"
+        },
+        {
+            "type": "Invertébrés",
+            "programme": "Aquamat",
+            "pedagogique": false,
+            "condition": "Ethanol",
+            "site": "Lml Bourcefranc-le-chapus",
+            "responsable": "J.aubin",
+            "identification": "0505202611350012",
+            "parent": null,
+            "dossier": "427",
+            "libre": "Mib_mai_2026_lml_cl2_berge",
+            "creation": "2026-05-05T09:35:56.785",
+            "prelevement": "2026-05-11",
+            "peremption": "2031-05-11",
+            "pays": "France",
+            "region": "Nouvelle-aquitaine",
+            "latitude": "45.846574110331",
+            "longitude": "-1.155195236206",
+            "passeport": null,
+            "cultures": {},
+            "stockage": {},
+            "etiquette": {
+                "sticker0": {
+                    "key": "identification",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker1": {
+                    "key": "programme",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker2": {
+                    "key": "dossier-numero",
+                    "size": "14px",
+                    "align": "center"
+                },
+                "sticker3": {
+                    "key": "condition",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker4": {
+                    "key": "site",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker5": {
+                    "key": "libre",
+                    "size": "12px",
+                    "align": "center"
+                }
+            },
+            "analyses": null,
+            "etat": "Créer"
+        },
+        {
+            "type": "Invertébrés",
+            "programme": "Aquamat",
+            "pedagogique": false,
+            "condition": "Ethanol",
+            "site": "Lml Bourcefranc-le-chapus",
+            "responsable": "J.aubin",
+            "identification": "0505202611350013",
+            "parent": null,
+            "dossier": "427",
+            "libre": "Zpk_mai_2026_lml_cl7",
+            "creation": "2026-05-05T09:35:56.785",
+            "prelevement": "2026-05-11",
+            "peremption": "2031-05-11",
+            "pays": "France",
+            "region": "Nouvelle-aquitaine",
+            "latitude": "45.846574110331",
+            "longitude": "-1.155195236206",
+            "passeport": null,
+            "cultures": {},
+            "stockage": {},
+            "etiquette": {
+                "sticker0": {
+                    "key": "identification",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker1": {
+                    "key": "programme",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker2": {
+                    "key": "dossier-numero",
+                    "size": "14px",
+                    "align": "center"
+                },
+                "sticker3": {
+                    "key": "condition",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker4": {
+                    "key": "site",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker5": {
+                    "key": "libre",
+                    "size": "12px",
+                    "align": "center"
+                }
+            },
+            "analyses": null,
+            "etat": "Créer"
+        },
+        {
+            "type": "Invertébrés",
+            "programme": "Aquamat",
+            "pedagogique": false,
+            "condition": "Ethanol",
+            "site": "Lml Bourcefranc-le-chapus",
+            "responsable": "J.aubin",
+            "identification": "0505202611350014",
+            "parent": null,
+            "dossier": "427",
+            "libre": "Zpk_mai_2026_lml_cl6",
+            "creation": "2026-05-05T09:35:56.785",
+            "prelevement": "2026-05-11",
+            "peremption": "2031-05-11",
+            "pays": "France",
+            "region": "Nouvelle-aquitaine",
+            "latitude": "45.846574110331",
+            "longitude": "-1.155195236206",
+            "passeport": null,
+            "cultures": {},
+            "stockage": {},
+            "etiquette": {
+                "sticker0": {
+                    "key": "identification",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker1": {
+                    "key": "programme",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker2": {
+                    "key": "dossier-numero",
+                    "size": "14px",
+                    "align": "center"
+                },
+                "sticker3": {
+                    "key": "condition",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker4": {
+                    "key": "site",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker5": {
+                    "key": "libre",
+                    "size": "12px",
+                    "align": "center"
+                }
+            },
+            "analyses": null,
+            "etat": "Créer"
+        },
+        {
+            "type": "Invertébrés",
+            "programme": "Aquamat",
+            "pedagogique": false,
+            "condition": "Ethanol",
+            "site": "Lml Bourcefranc-le-chapus",
+            "responsable": "J.aubin",
+            "identification": "0505202611350015",
+            "parent": null,
+            "dossier": "427",
+            "libre": "Zpk_mai_2026_lml_cl5",
+            "creation": "2026-05-05T09:35:56.785",
+            "prelevement": "2026-05-11",
+            "peremption": "2031-05-11",
+            "pays": "France",
+            "region": "Nouvelle-aquitaine",
+            "latitude": "45.846574110331",
+            "longitude": "-1.155195236206",
+            "passeport": null,
+            "cultures": {},
+            "stockage": {},
+            "etiquette": {
+                "sticker0": {
+                    "key": "identification",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker1": {
+                    "key": "programme",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker2": {
+                    "key": "dossier-numero",
+                    "size": "14px",
+                    "align": "center"
+                },
+                "sticker3": {
+                    "key": "condition",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker4": {
+                    "key": "site",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker5": {
+                    "key": "libre",
+                    "size": "12px",
+                    "align": "center"
+                }
+            },
+            "analyses": null,
+            "etat": "Créer"
+        },
+        {
+            "type": "Invertébrés",
+            "programme": "Aquamat",
+            "pedagogique": false,
+            "condition": "Ethanol",
+            "site": "Lml Bourcefranc-le-chapus",
+            "responsable": "J.aubin",
+            "identification": "0505202611350016",
+            "parent": null,
+            "dossier": "427",
+            "libre": "Zpk_mai_2026_lml_cl4",
+            "creation": "2026-05-05T09:35:56.785",
+            "prelevement": "2026-05-11",
+            "peremption": "2031-05-11",
+            "pays": "France",
+            "region": "Nouvelle-aquitaine",
+            "latitude": "45.846574110331",
+            "longitude": "-1.155195236206",
+            "passeport": null,
+            "cultures": {},
+            "stockage": {},
+            "etiquette": {
+                "sticker0": {
+                    "key": "identification",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker1": {
+                    "key": "programme",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker2": {
+                    "key": "dossier-numero",
+                    "size": "14px",
+                    "align": "center"
+                },
+                "sticker3": {
+                    "key": "condition",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker4": {
+                    "key": "site",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker5": {
+                    "key": "libre",
+                    "size": "12px",
+                    "align": "center"
+                }
+            },
+            "analyses": null,
+            "etat": "Créer"
+        },
+        {
+            "type": "Invertébrés",
+            "programme": "Aquamat",
+            "pedagogique": false,
+            "condition": "Ethanol",
+            "site": "Lml Bourcefranc-le-chapus",
+            "responsable": "J.aubin",
+            "identification": "0505202611350017",
+            "parent": null,
+            "dossier": "427",
+            "libre": "Zpk_mai_2026_lml_cl3",
+            "creation": "2026-05-05T09:35:56.785",
+            "prelevement": "2026-05-11",
+            "peremption": "2031-05-11",
+            "pays": "France",
+            "region": "Nouvelle-aquitaine",
+            "latitude": "45.846574110331",
+            "longitude": "-1.155195236206",
+            "passeport": null,
+            "cultures": {},
+            "stockage": {},
+            "etiquette": {
+                "sticker0": {
+                    "key": "identification",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker1": {
+                    "key": "programme",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker2": {
+                    "key": "dossier-numero",
+                    "size": "14px",
+                    "align": "center"
+                },
+                "sticker3": {
+                    "key": "condition",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker4": {
+                    "key": "site",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker5": {
+                    "key": "libre",
+                    "size": "12px",
+                    "align": "center"
+                }
+            },
+            "analyses": null,
+            "etat": "Créer"
+        },
+        {
+            "type": "Invertébrés",
+            "programme": "Aquamat",
+            "pedagogique": false,
+            "condition": "Ethanol",
+            "site": "Lml Bourcefranc-le-chapus",
+            "responsable": "J.aubin",
+            "identification": "0505202611350018",
+            "parent": null,
+            "dossier": "427",
+            "libre": "Zpk_mai_2026_lml_cl2",
+            "creation": "2026-05-05T09:35:56.785",
+            "prelevement": "2026-05-11",
+            "peremption": "2031-05-11",
+            "pays": "France",
+            "region": "Nouvelle-aquitaine",
+            "latitude": "45.846574110331",
+            "longitude": "-1.155195236206",
+            "passeport": null,
+            "cultures": {},
+            "stockage": {},
+            "etiquette": {
+                "sticker0": {
+                    "key": "identification",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker1": {
+                    "key": "programme",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker2": {
+                    "key": "dossier-numero",
+                    "size": "14px",
+                    "align": "center"
+                },
+                "sticker3": {
+                    "key": "condition",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker4": {
+                    "key": "site",
+                    "size": "12px",
+                    "align": "center"
+                },
+                "sticker5": {
+                    "key": "libre",
+                    "size": "12px",
                     "align": "center"
                 }
             },

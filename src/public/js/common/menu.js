@@ -1,15 +1,51 @@
 // Menu gauche
+// document.getElementById("left-pane").innerHTML = ` 
+// <nav role="navigation">
+//     <ul>
+//         <li><a href="./campagnes.html">Campagnes</a></li>
+//         <li><a href="./echantillons.html">Echantillons</a></li>
+//         <li><a href="./passeports.html">Passeports</a></li>
+//         <li><a href="./sites.html">Sites</a></li>
+//         <li><a href="./evenements.html">Evenements</a></li>
+//         <li><a href="./api.html">Api</a></li>
+//         <li><a href="./configuration.html">Configuration</a></li>
+//         <li><a href="./documentation/echantillons.html">doc</a></li>
+//     </ul>
+// </nav>`;
+
 document.getElementById("left-pane").innerHTML = ` 
-<nav role="navigation">
-    <ul>
-        <li><a href="./campagnes.html">Campagnes</a></li>
-        <li><a href="./echantillons.html">Echantillons</a></li>
-        <li><a href="./passeports.html">Passeports</a></li>
-        <li><a href="./sites.html">Sites</a></li>
-        <li><a href="./evenements.html">Evenements</a></li>
-        <li><a href="./api.html">Api</a></li>
-        <li><a href="./configuration.html">Configuration</a></li>
-    </ul>
+		<nav role='navigation'>
+  <ul class="menu">
+    <li class="item"><a href="${testWhere('documentation') ? '..' : '.'}/campagnes.html" class="link">Campagnes</a></li>
+    <li class="item item--parent${testWhere('echantillon') ?' item--opened' : ''}" aria-expanded="false" aria-controls="collapsible-0">
+      <a class="menu__span">Echantillons</a>
+      <ul class="menu" aria-hidden="true" id="collapsible-0">
+        <li class="item"><a href="${testWhere('documentation') ? '..' : '.'}/echantillons.html" class="link">Liste des échantillons</a></li>
+        <li class="item"><a href="${testWhere('documentation') ? '..' : '.'}/echantillon-add.html" class="link">Ajouter</a></li>
+        <li class="item"><a href="/documentation/echantillons" class="link">Documentation</a></li>
+      </ul>
+    </li>
+    <li class="item"><a href="/sdfs/" class="link">Menu item</a></li>
+    <li class="item"><a href="/sdfs/" class="link">Menu item</a></li>
+    <li class="item item--parent${testWhere('passeport') ?' item--opened' : ''}" aria-expanded="false" aria-controls="collapsible-1">
+      <a class="menu__span">Passeports</a>
+      <ul class="menu" aria-hidden="true" id="collapsible-1">
+        <li class="item"><a href="${testWhere('documentation') ? '..' : '.'}/passeports.html" class="link">Liste des passeports</a></li>
+        <li class="item"><a href="/documentation/passeports" class="link">Documentation</a></li>
+      </ul>
+    </li>
+    <li class="item item--parent${testWhere('site') ?' item--opened' : ''}" aria-expanded="false" aria-controls="collapsible-2">
+      <a class="menu__span">Sites</a>
+      <ul class="menu" aria-hidden="true" id="collapsible-2">
+        <li class="item"><a href="${testWhere('documentation') ? '..' : '.'}/sites.html" class="link">Liste des sites</a></li>
+        <li class="item"><a href="${testWhere('documentation') ? '..' : '.'}/site-add.html" class="link">Ajouter</a></li>
+        <li class="item"><a href="/documentation/sites" class="link">Documentation</a></li>
+      </ul>
+    </li>    
+    <li class="item"><a href="${testWhere('documentation') ? '..' : '.'}/api.html" class="link">Api</a></li>
+    <li class="item"><a href="/documentation/procedure" class="link">Procedure</a></li>
+    <li class="item"><a href="${testWhere('documentation') ? '..' : '.'}/configuration.html" class="link">Configuration</a></li>
+  </ul>
 </nav>`;
 
 // Menu droite                
@@ -248,7 +284,35 @@ function updateReadOnly(ctx) {
     });
 }
 
+function toggleSubmenu() {
+    const itemHeight = 34;
+    const $submenu = this.querySelector('.menu');
+    const submenuItemsLength = $submenu.querySelectorAll('.item').length;
+    const submenuHeight = submenuItemsLength * itemHeight;
+    const isOpened = this.classList.contains('item--opened');
+
+    if(!isOpened) {
+        this.setAttribute('aria-expanded', 'true');
+        $submenu.setAttribute('aria-hidden', 'false');
+        $submenu.style.maxHeight = submenuHeight + 'px';
+    } else {
+        this.setAttribute('aria-expanded', 'false');
+        $submenu.setAttribute('aria-hidden', 'true');
+        $submenu.style.maxHeight = '0px';
+    }
+
+    this.classList.toggle('item--opened');
+}
+
 function start() {
+    const parentItems = document.querySelectorAll('.item--parent');
+    
+    function addListeners($element) {
+      $element.addEventListener('click', toggleSubmenu)
+    }
+    
+    parentItems.forEach(addListeners)
+
     const fx = new TextScramble(document.getElementById('animeText'));
     const phrases = [
     'Gestion Des échantillons',

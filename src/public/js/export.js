@@ -12,3 +12,6 @@ const xlsx = XLSX.write(workbook, {type: "binary", bookType: "xlsx"});
 
 // write file
 XLSX.writeFile(workbook, "echantillons.xlsx", { compression: true });
+
+// go to prev page
+window.location.href = history.back();

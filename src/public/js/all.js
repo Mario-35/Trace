@@ -1,6 +1,9 @@
 // global form datas
 let _COLUMNS = [];
 
+function testWhere(test) {
+    return window.location.href.includes(test);
+}
 
 // get element by id or name with test
 
@@ -52,7 +55,8 @@ function multiplesetInvisible(names) {
 function multipleremoveInvisible(names) {
     if (typeof names === "string") names = [names];
     names.forEach(name => {
-        const elem = document.getElementById(name);
+      const elem = document.getElementById(name);
+        removeInvisible(elem);
         if(elem) 
           removeInvisible(elem.parentNode.closest('.form-group'));
       });
@@ -154,4 +158,17 @@ function canPrint(name) {
 
 // version date
 console.log("version : 06/03/2026 ADAM Mario");
+
+
+
+
+
+
+
+
+
+
+
+
+
 

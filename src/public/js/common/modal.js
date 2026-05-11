@@ -158,18 +158,17 @@ function showModalEditingList(titleKey, titleValue, element, callback) {
             </section>
         </article> `;
         
-        new editingList(getElement("modalEditList"), titleKey, titleValue, element.value);  
-        
+        new editingList(getElement("modalEditList"), titleKey, titleValue, element.getAttribute("list") || element.value);         
         
         getElement("close").addEventListener('click',  handleCloseModal);
-
-
+                
         getElement("ok").addEventListener("click", (event) => {
             // Stop the form from submitting since we’re handling that with AJAX.
             event.preventDefault();
-            element.value = modalEdit.value;
+            element.value = modalEdit.value.split(",")[0];
+            element.setAttribute("list", modalEdit.value);
             callback();
-             modal.innerHTML = '';
+            modal.innerHTML = '';
         });
     }
 };

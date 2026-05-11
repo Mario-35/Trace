@@ -37,7 +37,8 @@ export async function addEchantillon(values: any) {
       tmpCode =  values["identification" as keyof object].slice(0,12);      
       
       // alicotage insert
-      if (values["parent"]) {
+      if (values["excelaliquote"]) values["excel"] = values["excelaliquote"];
+      if (values["selectionaliquote"]) {
             start = values["numero"] ? +values["numero"] : 0;
             // get all ids of the selection
             await readId(dataBase.selections.name, +values["selectionaliquote" as keyof object])
