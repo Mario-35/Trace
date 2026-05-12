@@ -25,7 +25,7 @@ export class Configuration extends CoreHtmlView {
         this.createConfigurationHtmlString();
     }
     
-    async createConfigurationHtmlStringNex() {
+    async createConfigurationHtmlString() {
         // const conf = fs
         //     .readFileSync(path.resolve(__dirname, "../../public/js/", "configuration.js"))
         //     .toString().replace("_CONFIGURATION = ","").replace("};","}");
@@ -125,6 +125,19 @@ export class Configuration extends CoreHtmlView {
                                         <button class="btn btn-next" id="next-1">Suivant ➡</button>
                                     </div>
 								</div>
+
+                        <!-- Step 2: Stockage -->
+                        <div class="form-step" id="form-step-2">
+                            <div class="form-row container-center">
+                                <input type="hidden" id="stockages" name="stockages" class="form-control">
+                                <div id="stockagesList" class="liste"></div>
+                            </div> 
+
+                            <div class="btn-group">
+                                <button class="btn btn-prev" id="prev-2">⬅ Précédent</button>
+                                <button class="btn btn-next" id="next-2">Suivant ➡</button>
+                            </div>
+                        </div>                                
                         
                         <!-- Step 3: Etats -->
                         <div class="form-step" id="form-step-3">  
@@ -243,46 +256,6 @@ Object.keys(conf).forEach((e) => getElement(e) ? getElement(e).value = conf[e] :
                 const stickerElements = {${Object.keys(dataBase.echantillons.columns).filter(e => dataBase.echantillons.columns[e].etiquette).map(e => `"${e}" : "${dataBase.echantillons.columns[e].etiquette}"`)}};
                 `);
 
-    }
-    createConfigurationHtmlString() {
-        // Split files for better search and replace
-        this._HTMLResult = fs
-            .readFileSync(path.resolve(__dirname, "../../public/", "addConfiguration.html"))
-            .toString()
-            .split(EConstant.newline)
-            .map((e: string) => e.trim())
-            .filter((e) => e.trim() != "");
-            
-        this.replacer('"@DATAS@"', `
-            const excelColumns = ["${Object.keys(dataBase.echantillons.columns).filter(e => dataBase.echantillons.columns[e].excel).join('","')}"];
-            const stickerElements = {${Object.keys(dataBase.echantillons.columns).filter(e => dataBase.echantillons.columns[e].etiquette).map(e => `"${e}" : "${dataBase.echantillons.columns[e].etiquette}"`)}};
-            `);
-            
-        this.replaceFile("css/form/configuration.css");
-        this.replaceFile("css/form/main.css");
-        this.replaceFile("css/main.css");
-        this.replaceFile("css/editingList.css");
-        this.replaceFile("css/splitter.css");
-        this.replaceFile("css/modal.css");
-
-// LOAD or file 
-        this.replaceFile("js/configuration.js"); 
-        this.replaceFile("js/constants.js"); 
-        this.replaceFile("js/all.js"); 
-        this.replaceFile("js/common/splitter.js"); 
-        this.replaceFile("js/common/menu.js"); 
-        this.replaceFile("js/common/editingList.js"); 
-        this.replaceFile("js/form.js"); 
-        this.replaceFile("js/api.js"); 
-        this.replaceFile("js/helper.js"); 
-        this.replaceFile("js/common/modal.js"); 
-        this.replaceFile("js/libs/JsBarcode.all.min.js"); 
-        this.replaceFile("js/api/print.js"); 
-        this.replaceFile("js/configurations/add.js"); 
-        this.replaceFile("js/common/regions.js"); 
-        this.replaceFile("js/configurations/event.js");   
-        this.replaceFile("js/stickers/controller.js"); 
-        this.replaceFile("js/configurations/controller.js"); 
     }
 
     toString() {

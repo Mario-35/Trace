@@ -105,7 +105,7 @@ export class List extends CoreHtmlView {
         </div>
 		
 		<div class="context-menu">
-			<ul id = "contextMenu" class="context-menu-options">
+			<ul id="contextMenu" class="context-menu-options">
 			</ul>
 		</div>
 
