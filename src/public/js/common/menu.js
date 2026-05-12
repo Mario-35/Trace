@@ -27,6 +27,7 @@ document.getElementById("left-pane").innerHTML = `
     </li>    
     <li class="item"><a href="${testWhere('documentation') ? '..' : '.'}/api.html" class="link">Api</a></li>
     <li class="item"><a href="/documentation/procedure" class="link">Procedure</a></li>
+    <li class="item"><a href="/documentation/imprimante" class="link">Imprimante Etiquette</a></li>
     <li class="item"><a href="${testWhere('documentation') ? '..' : '.'}/configuration.html" class="link">Configuration</a></li>
   </ul>
 </nav>`;
