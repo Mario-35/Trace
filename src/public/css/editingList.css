@@ -47,8 +47,8 @@
 .ulListes {
 	list-style-type: none;
 	user-select: none;
-	max-height: 30vh;
-	min-height: 20vh;
+	max-height: 22vh;
+	min-height: 15vh;
 	overflow-x: hidden;
 	overflow-y: auto;
 	margin-bottom: 16px;

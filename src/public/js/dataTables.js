@@ -599,6 +599,10 @@ class JsonTable {
 	filterColumn(key, value) {
 		// Filter data based on specific column key and input value
 		// Update filteredData based on current search criteria
+				console.log("##############filterColumn#########################")
+		console.log(key)
+		console.log(value)
+
 		if (value === "") {
 			// If search value is empty, reset to original data
 			this.filteredData = [...this.data];
@@ -606,7 +610,7 @@ class JsonTable {
 			// Perform filtering based on the key and value
 			const lowerCaseValue = value.toLowerCase();
 
-			this.filteredData = this.data.filter((row) => {
+			this.filteredData = this.filteredData.filter((row) => {
 				if ( this.columns.find((col) => col.key === key && col.searchType === "select") ) {
 					// For select dropdown filtering
 					return row[key].toLowerCase() === lowerCaseValue;

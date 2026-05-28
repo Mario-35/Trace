@@ -326,7 +326,7 @@ export const dataBase: Idb = {
           type: "text",
           title: "Numéro de dossier",
           create: "varchar(4) NOT NULL DEFAULT ''",
-          list: false,
+          list: true,
           excel: true,
           etiquette: "0029"
         },

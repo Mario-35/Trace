@@ -24,6 +24,8 @@ const executeSqlOne = async (query: string): Promise<object> => {
 };
 
 const executeSqlMulti = async (queries: string[]): Promise<object> => {
+    console.log(queries);
+
     return new Promise(async function (resolve, reject) {
         await sql
             .begin((sql) =>
