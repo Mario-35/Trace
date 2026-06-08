@@ -18,8 +18,8 @@ const _DEMOS ={
         "cultures": {}
     },
     "Gueno": {
-        "type": "Sol cultivé",
-        "prelevement": "2026-04-19",
+        "type": "Sol Cultivé",
+        "prelevement": "2026-06-19",
         "programme": "RMQS.Biodiv",
         "site": "Chateau-garnier",
         "libre": "",
@@ -30,7 +30,7 @@ const _DEMOS ={
         "cultures": {}
     },
     "Risque": {
-        "type": "Sol cultivé",
+        "type": "Sol Cultivé",
         "prelevement": "2026-05-15",
         "programme": "informatique",
         "site": "Site a prevoire",
@@ -45,7 +45,7 @@ const _DEMOS ={
         "cultures": {}
     },
   "PasInfos": {
-    "type": "Sol cultivé",
+    "type": "Sol Cultivé",
     "prelevement": "2026-09-27",
     "programme": "Egestas Ligula Nullam Corporation",
     "site": "Site 1185",
@@ -63,7 +63,7 @@ const _DEMOS ={
     "cultures": {}
   },
   "Possible": {
-    "type": "Sol cultivé",
+    "type": "Sol Cultivé",
     "prelevement": "2026-08-12",
     "programme": "Curabitur Sed Tortor Ltd",
     "site": "Site a prevoire",
@@ -81,8 +81,8 @@ const _DEMOS ={
     "cultures": {}
   },
   "Risque2": {
-    "type": "Sol cultivé",
-    "prelevement": "2026-04-17",
+    "type": "Sol Cultivé",
+    "prelevement": "2026-06-17",
     "programme": "Massa Integer Incorporated",
     "site": "Site a prevoire",
     "libre": "nunc. In at pede. Cras",
@@ -99,8 +99,8 @@ const _DEMOS ={
     "cultures": {}
   },
   "Possible2": {
-    "type": "Sol cultivé",
-    "prelevement": "2026-04-21",
+    "type": "Sol Cultivé",
+    "prelevement": "2026-06-21",
     "programme": "Dapibus Id LLP",
     "site": "Site a prevoire",
     "libre": "aliquam adipiscing lacus. Ut nec",

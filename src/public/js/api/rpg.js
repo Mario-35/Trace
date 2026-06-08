@@ -45,7 +45,15 @@ function showRpgInfos(input, element) {
             
             if(getElement("risqueRpg")) risqueRpg.value = +test.niveau || -1 ;
             if(getElement("cultures")) getElement("cultures").value= JSON.stringify(input.cultures);
-
+            if(getElement("region") && input.cultures['departement']) {
+                region = getElement("region");
+                if (["Region", ""].includes(region.value)) {
+                    region.value = String( +input.cultures['departement']);
+                     changedpt();
+                }
+            }
+            // remove 
+            delete input.cultures['departement'];
             if(_CONFIGURATION.passeport === true && region.value.toUpperCase() !== _CONFIGURATION.region.toUpperCase()) 
                 btn = (test.niveau !== -1 || (test.niveau > 1 && (_CONFIGURATION.autoTest && _CONFIGURATION.autoTest === true) )) ? `
                 <tr id="btn-passeport">

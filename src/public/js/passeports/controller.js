@@ -5,7 +5,7 @@ function refresh() {
 
 async function start() {
     const ctx = createContext();
-    if (ctx.mode === "id") {  // Edit mode
+    if (ctx.mode === "idechantillon") {  // Edit mode
         const datas = await getDatas(window.location.origin + "/passeport/" + ctx.id);
         loadDatas(datas);
         changeTitle("Modification d'un passeport phytosanitaire");

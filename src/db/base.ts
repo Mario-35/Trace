@@ -10,6 +10,8 @@ const index: Icolumn = {
 export const dataBase: Idb = {
   "configuration": {
     save: true,
+    name: "configuration",
+    singular: "configuration",
     create: true,
     import: false,
     "columns": {
@@ -107,8 +109,11 @@ export const dataBase: Idb = {
     },
     "constraints" : []
   },
+  
   "passeports" : {
     save: true,
+    name: "passeports",
+    singular: "passeport",
     create: true,
     import: false,
     "columns": {
@@ -167,9 +172,12 @@ export const dataBase: Idb = {
         "constraints" : [
           "CONSTRAINT passeport_pkey PRIMARY KEY (id)"
         ]
-  }, 
+  },
+  
   "campagnes" : {
     save: false,
+    name: "campagnes",
+    singular: "campagne",    
     create: false,
     import: false,
     "columns": {
@@ -201,13 +209,6 @@ export const dataBase: Idb = {
           calculate: "src.programme",
           list: true,
         },
-        "site": {
-          type: "text",
-          title: "Site de prélèvement",
-          create: "",
-          calculate: "src.site",
-          list: true,
-        },
         "responsable": {
           type: "text",
           title: "Résponsable",
@@ -226,24 +227,26 @@ export const dataBase: Idb = {
           type: "date",
           title: "Date de prélèvement",
           create: "",
-          //  calculate: "src.prelevement",
           calculate: "CONCAT(SUBSTRING (src.prelevement::text FROM 9 FOR 2), '-', SUBSTRING (src.prelevement::text FROM 6 FOR 2), '-', SUBSTRING (src.prelevement::text FROM 0 FOR 5))",
-          // calculate: "CONCAT(SUBSTRING (src.prelevement::text FROM 6 FOR 8), SUBSTRING (src.prelevement::text FROM 9 FOR 10), '-', SUBSTRING (src.prelevement::text FROM 0 FOR 3))",
           list: true,
         },
         "echantillons": {
           type: "number",
           title: "N°",
           create: "",
-          calculate: "(SELECT COUNT(*) FROM echantillons WHERE identification LIKE src.id || '%')",
+          calculate: "(SELECT COUNT(*) FROM echantillons WHERE COALESCE(parent, identification) LIKE src.id || '%')",
+          searchType: "infos",
           list: true,
         },
     },
             
       "constraints" : ["CONSTRAINT echantillons_pkey UNIQUE NULLS NOT DISTINCT (type, identification)"]
-  },   
+  },
+  
   "echantillons" : {
     save: true,
+    name: "echantillons",
+    singular: "echantillon",      
     create: true,
     import: true,
     "columns": {
@@ -311,7 +314,8 @@ export const dataBase: Idb = {
           type: "text",
           title: "Echantillon parent",
           create: "varchar(16) NULL",
-          list: false,
+          searchType: "hidden",
+          list: true,
           etiquette: "1902202617320001"
         },
         "alicotage": {
@@ -433,9 +437,12 @@ export const dataBase: Idb = {
         },
     },
     "constraints" : ["CONSTRAINT echantillons_pkey UNIQUE NULLS NOT DISTINCT (type, identification)"]
-  },   
+  },
+  
   "rpg" : {
     save: true,
+    name: "rpg",
+    singular: "rpg",   
     create: true,
     import: false,
     "columns": {
@@ -454,8 +461,11 @@ export const dataBase: Idb = {
     },              
     "constraints" : []
   },
+
   "sites" : {
     save: true,
+    name: "sites",
+    singular: "site",       
     create: true,
     import: false,
     "columns": {
@@ -492,9 +502,12 @@ export const dataBase: Idb = {
         },
     },
     "constraints" : ["CONSTRAINT sites_pkey PRIMARY KEY (id)"]
-  },    
+  },
+  
   "excels" : {
     save: false,
+    name: "excels",
+    singular: "excel",    
     create: true,
     import: false,
     "columns": {
@@ -508,9 +521,12 @@ export const dataBase: Idb = {
         },
             
       "constraints" : []
-  },    
+  },  
+
   "selections" : {
     save: false,
+    name: "selections",
+    singular: "selection",      
     create: true,
     import: false,
     "columns": {
@@ -524,9 +540,12 @@ export const dataBase: Idb = {
         },
             
       "constraints" : []
-  },    
+  },  
+
   "fichiers" : {
     save: true,
+    name: "fichiers",
+    singular: "fichier",       
     create: true,
     import: false,
     "columns": {
@@ -547,8 +566,11 @@ export const dataBase: Idb = {
             
       "constraints" : []
   },
+
   "evenements" : {
     save: true,
+    name: "evenements",
+    singular: "evenement",     
     create: true,
     import: false,
     "columns": {

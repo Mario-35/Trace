@@ -9,7 +9,7 @@
 import postgres from "postgres";
 import { dataBase } from "./base";
 import { executeSql } from "./executeSql";
-const pwd = process.env.NODE_ENV === 'production' ? 'postgres' : "postgres";
+const pwd = process.env.NODE_ENV === 'production' ? 'postgres' : "mario29";
 
 export const sql = postgres('postgres://postgres:' + pwd + '@localhost:5432/trace', {
     host                 : 'localhost',   // Postgres ip address[s] or domain name[s]
@@ -21,7 +21,14 @@ export const sql = postgres('postgres://postgres:' + pwd + '@localhost:5432/trac
     max: 2000,
     connection: {
         application_name: `Echantillons`
-    }
+    }, types: {
+      date: {
+        to: 1184,
+        from: [1082, 1083, 1114, 1184],
+        serialize: (x: string) => x, // TypeScript to PostgreSQL
+        parse: (x: string) => x, // PostgreSQL to TypeScript
+      },
+    },
 });
 
 export function admin(password: string) {    

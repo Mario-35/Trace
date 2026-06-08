@@ -266,6 +266,13 @@
   color: white;
 }
 
+.btn-list {
+  background: var(--teal);
+  color: black;
+  margin-top: 25px;
+  height: 35px;
+}
+
 .btn-aliquote:hover,
 .btn-next:hover, .btn-creer:hover {
     background: var(--secondary);

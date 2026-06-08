@@ -1,18 +1,4 @@
-nav ul {
-  list-style: none;
-  position: relative;
-  margin: 0;
-  padding: 0;
-}
-nav a,
-nav a:visited,
-nav a:hover,
-nav a:focus,
-nav a:active,
-nav span {
-  color:  var(--bs-pagination-color);
-  text-decoration: none;
-}
+
 
 .splitter-nav-site {
   position: fixed;
@@ -127,6 +113,22 @@ main .v-drag {
   background-repeat: no-repeat;
   background-position: center;
 }
+.content h1 {
+  font-size: 1.5rem;
+}
+.content h2 {
+  font-size: 1.3rem;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+
+
+
+
+
+
+
 main .splitter-nav-view {
   background: grey;
   padding: 0.25rem;
@@ -135,7 +137,7 @@ main .splitter-nav-view {
   overflow-x: hidden;
   overflow-y: auto;
 }
-main .splitter-nav-view ul {
+/* main .splitter-nav-view ul {
   margin-top: 0.5rem;
 }
 main .splitter-nav-view ul a {
@@ -155,7 +157,7 @@ main .splitter-nav-view ul li {
 main .splitter-nav-view ul li:hover, main .splitter-nav-view ul li:active, main .splitter-nav-view ul li.active {
   background: #b3b3b3;
   border-radius: 5px;
-}
+} */
 main .content {
   padding: 1rem;
   width: 80%;
@@ -164,13 +166,4 @@ main .content {
 }
 main.hide-nav .content {
   width: 100%;
-}
-
-.content h1 {
-  font-size: 1.5rem;
-}
-.content h2 {
-  font-size: 1.3rem;
-  margin-top: 1rem;
-  margin-bottom: 0.5rem;
 }

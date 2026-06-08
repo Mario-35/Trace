@@ -11,6 +11,7 @@ import path from "path";
 import util from "util";
 import fs from "fs";
 import { dataBase } from "../../db/base";
+import { readId } from "../../controller";
 
 // Read configuration
 export async function readConfig() {
@@ -44,7 +45,7 @@ function writeConfigurationFile(configuration: any) {
 
 // Write configuration file
 export async function writeConfig() {
-      executeSql(`SELECT * FROM configuration WHERE id = 1`)
+      readId(dataBase.configuration.name, 1)
       .then((configuration: any) => {
             writeConfigurationFile(configuration[0]);
       }).catch (error => {
@@ -55,11 +56,12 @@ export async function writeConfig() {
 // Save configuration
 export async function saveConfig(values: any) {
       return new Promise(async function (resolve, reject) {
-            return await executeSql(`${createPgUpdate("configuration", values)} WHERE id = 1`)
+            return await executeSql(`${createPgUpdate(dataBase.configuration.name, values)} WHERE id = 1`)
             .then(async (ret) => {
                   await writeConfig();
                   resolve(ret);
             }).catch (error => {
+                  console.error(error);
                   reject(error);
             });
       });

@@ -92,7 +92,7 @@ export default class HttpServer {
 
     // Route to upload an image
     this.app.post('/upload', this.upload.single('image'), async (_req: Request, res: Response) => {
-      if(_req.file)
+      if (_req.file)
         try {
             const imageBuffer = _req.file.buffer;
             const filename = _req.file.originalname;

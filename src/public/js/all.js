@@ -1,6 +1,9 @@
 // global form datas
 let _COLUMNS = [];
 
+function testWhere(test) {
+    return window.location.href.includes(test);
+}
 
 // get element by id or name with test
 
@@ -18,7 +21,7 @@ function changeTitle(title) {
   document.title = title;
 };
 
-// =======================> Vidible
+// =======================> Visible
 function setInvisible(element) {
   element = getElement(element);
   if(element) {
@@ -52,7 +55,8 @@ function multiplesetInvisible(names) {
 function multipleremoveInvisible(names) {
     if (typeof names === "string") names = [names];
     names.forEach(name => {
-        const elem = document.getElementById(name);
+      const elem = document.getElementById(name);
+        removeInvisible(elem);
         if(elem) 
           removeInvisible(elem.parentNode.closest('.form-group'));
       });
@@ -143,7 +147,28 @@ function multiRemoveDisabled(names) {
     if(typeof names === "string") names = [names];
     names.forEach(name => removeDisabled(name));
 };
+// detect is chrome
+var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+
+function canPrint(name) {
+  disabled(name, !isChrome);
+  if (isChrome === false) 
+    getElement(name).title = "Uniquement avec chrome";
+}
 
 // version date
 console.log("version : 06/03/2026 ADAM Mario");
+
+
+
+
+
+
+
+
+
+
+
+
+
 

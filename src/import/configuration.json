@@ -11,7 +11,7 @@
             "longitude": "-1.656744048248",
             "identifiant": "Br13551",
             "etats": [
-                "Créer,Prélevé,Stocké,Perdu,Detruit,Importé"
+                "Créer,Prélevé,Stocké,Perdu,Detruit,Importé,Annulé,Reprelevé"
             ],
             "types": [
                 "Boues,Eau,Invertébrés,Sol Cultivé,Sol Forestier,Prairie,Sol"

@@ -15,6 +15,10 @@ import { Configuration } from "../../html/class/configuration";
 import { executeSql } from "../../db";
 import { Add } from "../../html/class/add";
 import { _CONFIG, setConfig } from "../../constant";
+import { dataBase } from "../../db/base";
+import { update } from "../../helpers/update";
+import { Export } from "../../html/class/export";
+import { Documentation } from "../../html/class/documentation";
 
 export const pagesRoutes = Router();
 
@@ -25,66 +29,95 @@ pagesRoutes.get("/index", async (req, res) => {
 });
 
 // add sample
-pagesRoutes.get("/echantillon-add.html", async (req, res) => {
-    const html = new Add("echantillon", _CONFIG);
+pagesRoutes.get("/documentation/:page", async (req, res) => {
+    const html = new Documentation(req.params.page + ".html");
+    res.send(html.toString());
+});
+
+// add sample
+pagesRoutes.get("/" + dataBase.echantillons.singular + "-add.html", async (req, res) => {
+    const html = new Add(dataBase.echantillons.singular, _CONFIG);
     res.send(html.toString());
 });
 
 // add event
-pagesRoutes.get("/evenement-add.html", async (req, res) => {
-    const html = new Add("evenement", _CONFIG);
+pagesRoutes.get("/" + dataBase.evenements.singular + "-add.html", async (req, res) => {
+    const html = new Add(dataBase.evenements.singular, _CONFIG);
     res.send(html.toString());
 });
 
 // add site
-pagesRoutes.get("/site-add.html", async (req, res) => {
-    const html = new Add("site", _CONFIG);
+pagesRoutes.get("/" + dataBase.sites.singular + "-add.html", async (req, res) => {
+    const html = new Add(dataBase.sites.singular, _CONFIG);
     res.send(html.toString());
 });
 
-// selection page
-pagesRoutes.get("/selections.html", async (req, res) => {
-    const html = new List("Selection");
-    res.send(html.toString())
+// add passeport
+pagesRoutes.get("/" + dataBase.passeports.singular + "-add.html", async (req, res) => {
+    const html = new Add(dataBase.passeports.singular, _CONFIG);
+    res.send(html.toString());
 });
 
 // sites page
-pagesRoutes.get("/sites.html", async (req, res) => {
-    const html = new List("Site");
+pagesRoutes.get("/" + dataBase.sites.name + ".html", async (req, res) => {
+    const html = new List(dataBase.sites.name);
     res.send(html.toString())
 });
 
 // evenements page
-pagesRoutes.get("/evenements.html", async (req, res) => {
-    const html = new List("Evenement");
+pagesRoutes.get("/" + dataBase.evenements.name + ".html", async (req, res) => {
+    const html = new List(dataBase.evenements.name);
     res.send(html.toString())
 });
 
 // passeports page
-pagesRoutes.get("/passeports.html", async (req, res) => {
-    const html = new List("Passeport");
+pagesRoutes.get("/" + dataBase.passeports.name + ".html", async (req, res) => {
+    const html = new List(dataBase.passeports.name);
     res.send(html.toString())
 });
 
 // campagnes page
-pagesRoutes.get("/campagnes.html", async (req, res) => {
-    const html = new List("Campagne");
+pagesRoutes.get("/" + dataBase.campagnes.name + ".html", async (req, res) => {
+    const html = new List(dataBase.campagnes.name);
     res.send(html.toString())
 });
 
 // echantillons page
-pagesRoutes.get("/echantillons.html", async (req, res) => {
-    const html = new List("Echantillon", true);
+pagesRoutes.get("/" + dataBase.echantillons.name + ".html", async (req, res) => {
+    const html = new List(dataBase.echantillons.name, true);
     res.send(html.toString())
 });
 
+// echantillons page
+pagesRoutes.get("/export.html", async (req, res) => {
+    const id = req.url.split("?selection=")[1];
+    await executeSql(`SELECT ids FROM selections WHERE id=${id}`)
+    .then(async (ids: any) => {
+        await executeSql(`SELECT 
+            ${Object.keys(dataBase.echantillons.columns).filter(e => dataBase.echantillons.columns[e].type !== "json" && !dataBase.echantillons.columns[e].calculate)}, 
+            unnest(analyses) AS analyses 
+            FROM ${dataBase.echantillons.name} WHERE id IN (${ ids[0].ids })`)
+        .then((datas) => {
+            const html = new Export(datas);            
+            res.send(html.toString())
+        });                                                                                                                                                                                                                                                                                                     
+    });
+});
+
 // print sample sticker
-pagesRoutes.get("/print/:type", async (req, res) => {
-    switch (req.params.type ) {
-        case 'echantillon':
-            const html = new Print("echantillon", [_CONFIG] );
-            return res.set('Content-Type', 'text/html').send(html.toString());
-    }
+pagesRoutes.get("/update", async (req, res) => {
+    await update(); 
+    res.redirect('/');
+    process.exit(0);
+
+});
+
+// export Excel
+pagesRoutes.get("/update", async (req, res) => {
+    await update(); 
+    res.redirect('/');
+    process.exit(0);
+
 });
 
 // prints
@@ -95,17 +128,17 @@ pagesRoutes.get("/print/:type/:id", async (req, res) => {
                 const html = new Print("echantillon", _CONFIG);
                 return res.set('Content-Type', 'text/html').send(html.toString());
             } else return res.status(404).json({"error": "no config"});
-        case 'echantillon':
-            return await readId("echantillons",  +req.params.id).then((echantillon: any) => {
+        case dataBase.echantillons.singular:
+            return await readId(dataBase.echantillons.name,  +req.params.id).then((echantillon: any) => {
                 const html = new Print("echantillon", echantillon);
                 res.set('Content-Type', 'text/html').send(html.toString())
             }).catch (error => {
                 console.error(error);
                 return res.status(404).json({"error": error.detail});
             });  
-        case 'selection':
-            return await readId("selections",  +req.params.id).then(async (selection: any) => {
-                return await readIds("echantillons", selection[0].ids).then(async (all: any) => {
+        case dataBase.selections.singular:
+            return await readId(dataBase.selections.name,  +req.params.id).then(async (selection: any) => {
+                return await readIds(dataBase.echantillons.name, selection[0].ids).then(async (all: any) => {
                         const html = new Print("echantillon", all);
                         res.set('Content-Type', 'text/html').send(html.toString())
                 }).catch (error => {
@@ -116,8 +149,8 @@ pagesRoutes.get("/print/:type/:id", async (req, res) => {
                 console.error(error);
                 return res.status(404).json({"error": error.detail});
             });   
-        case 'passeport':
-            return await readId("passeports",  +req.params.id).then((passeport: any) => {
+        case dataBase.passeports.singular:
+            return await readId(dataBase.passeports.name,  +req.params.id).then((passeport: any) => {
                 const html = new Print("passeport", passeport);
                 res.set('Content-Type', 'text/html').send(html.toString())
             }).catch (error => {
@@ -125,7 +158,7 @@ pagesRoutes.get("/print/:type/:id", async (req, res) => {
                 return res.status(404).json({"error": error.detail});
             });               
         case 'identification':   
-            return await executeSql(`SELECT * FROM echantillons WHERE identification LIKE '${req.params.id.slice(0,12)}%'`).then(async (all: any) => {
+            return await executeSql(`SELECT * FROM ${dataBase.echantillons.name} WHERE identification LIKE '${req.params.id.slice(0,12)}%'`).then(async (all: any) => {
                     const html = new Print("echantillon", all);
                     res.set('Content-Type', 'text/html').send(html.toString())
             }).catch (error => {
@@ -148,7 +181,11 @@ pagesRoutes.post("/SaveConfig", async (req, res)  => {
 
 // configuration page
 pagesRoutes.get("/configuration.html", async (req, res) => {
-    const html = new Configuration();
-    res.send(html.toString())
+    const conf = await readId(dataBase.configuration.name, 1)
+    .then((configuration: any) => {
+            res.send(new Configuration(configuration[0]).toString())
+    }).catch (error => {
+            console.error(error);
+    });       
 });
 

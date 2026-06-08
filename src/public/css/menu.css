@@ -1,0 +1,85 @@
+.menu {
+  list-style-type: none;
+  line-height: 1.2;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  padding: 0;
+}
+
+.menu ol, ul, dl, li {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.menu .menu__span, .link {
+  display: block;
+  text-decoration: none;
+  color: #cdd1d5;
+  padding-left: 12px;
+
+}
+.menu .item--opened li
+{
+   padding: 1px 0px 0px 12px;
+}
+
+.menu .menu__span {
+  background: none;
+  border: none;
+  display: block;
+  width: 100%;
+  text-align: left;
+  color: #c8e6f1;
+}
+
+.menu .menu__span:after {
+  content: "";
+  width: 5px;
+  height: 5px;
+  margin-top: -3px;
+  margin-left: 8px;
+  vertical-align: middle;
+  display: inline-block;
+  border: 1px solid black;
+  border-top-width: 0;
+  border-right-width: 0;
+  transform: rotate(-45deg);
+  will-change: border-bottom-left-radius;
+  transition: border-bottom-left-radius 0.1s;
+}
+
+.menu .item--opened .menu__span {
+  color: #a3d9ee;
+}
+
+.menu .link {
+  color: white;
+}
+.menu .item .menu {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transform: rotateX(90deg);
+  will-change: transform;
+  transform-origin: 0 0;
+  transform-style: preserve-3d;
+  transition: transform 0.5s, max-height 0.5s, opacity 0.5s;
+}
+
+.menu .item--opened .menu {
+  transform: rotateX(0deg);
+    padding-top: 6px;
+
+
+  max-height: none;
+  opacity: 1;
+}
+
+
+
+.menu a:hover {
+  background: #0d2b3d;
+  border-radius: 15px;
+  padding-left: 12px;
+}

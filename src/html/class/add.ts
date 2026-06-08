@@ -9,7 +9,6 @@
 import { createConfig } from "@app/configuration/controller";
 import { EConstant } from "../../constant";
 import { dataBase } from "../../db/base";
-import { IHTMLOptions } from "../../types";
 import { CoreHtmlView } from "./core";
 
 export class Add extends CoreHtmlView {
@@ -33,161 +32,13 @@ export class Add extends CoreHtmlView {
     }
 
 
-	addCss(hrefs: string[]) {
-		return hrefs.map(href => `<link rel="stylesheet" href="${href}">`).join("")
-	}
-    
-	progressHeaders(hrefs: string[]) {
-		return hrefs.map((name, index) => `<div class="step" id="step-${index + 1}">
-												<span>
-													${index + 1}
-												</span> 
-												<span class="step-label">
-													${name}
-												</span>
-											</div> `)	
-	}
 
-	inputlabel(options: {
-			name: String;
-			label: String;
-			tooltip?: String;
-			tooltipFlow?: String;
-		}) {
-		return `<label for="${options.name}">
-					${options.tooltip 	? `<span tooltip="${options.tooltip}" ${options.tooltipFlow  ? `flow="${options.tooltipFlow}"` : ''} >
-												${options.label}
-											</span>` 
-										: options.label}					
-				</label>`;
-	}
-	inputError(options: {
-			name: String;
-			label: String;
-		}) {
-		return `<div class="error-message" id="${options.name}-error">${options.label} obligatoire</div>`;
-	}
-
-	inputText(options: IHTMLOptions) {
-		return `${this.inputlabel(options)}
-				<input type="text" id="${options.name}" name="${options.name}" class="form-control" ${ options.max ? `maxlength=${options.max}"` : ''}  placeholder="${options.label}"  ${options.canedit ? `canedit="${options.canedit}"` : '' } ${options.readonly ? 'readonly' : ''} ${options.disabled ? 'disabled' : ''} />                           
-				${options.error ? this.inputError(options) : ''} `;
-
-
-				
-	}
-
-	inputFormGroupText(options: IHTMLOptions) {
-		return `
-			<div class="form-group row-${ options.size || 1}${options.invisible ? ' invisible' : '' } ">
-				${this.inputText(options)}
-			</div>`;
-	}
-
-	inputNumber(options: {
-			name: String;
-			label: String;
-			size?: Number;
-			placeholder: String;
-			error?: boolean;
-			readonly?: boolean;
-			invisible?: boolean;
-			min?: Number;
-			max?: Number;
-			value?: Number;
-			tooltip?: String;
-			tooltipFlow?: String;
-			canedit?: String;
-		}) {
-		return `
-			<div class="form-group row-${options.size || 1}${options.invisible ? ' invisible' : ''}">
-				${this.inputlabel(options)}
-                <input type="number" id="${options.name}" name="${options.name}"class="form-control"  ${options.min ? `min=${options.min}` : ''} ${options.max ? `max=${options.max}` : ''} value="${options.value || 0}"/>
-				${options.error ? `<div class="error-message" id="${options.name}-error">${options.placeholder} obligatoire</div>` : ''}
-			</div>`;
-	}
-
-	inputSelect(options: IHTMLOptions, parDef: string) {
-		return `
-			<div class="form-group row-${options.size || 1}${options.invisible ? ' invisible' : ''}">
-				${this.inputlabel(options)}
-				<select class="form-control" id="${options.name}" name="${options.name}" ${options.max ? `maxlength=${options.max}"` : ''} ${options.canedit ? `canedit="${options.canedit}"` : '' } ${options.readonly ? 'readonly' : ''}> 
-				<option selected="selected">${parDef}</option>
-				</select>
-				${options.error ? this.inputError(options) : ''}
-			</div>`;
-	}
-
-	inputHidden(name: string, value?: any) {										
-		return `<input type="hidden" id="${name}" name="${name}" ${ value ? `value="${value}"` : ''} />`;
-	}
-
-	inputDate(options: IHTMLOptions) {
-		return `
-			<div class="form-group row-${options.size || 1}${options.invisible ? ' invisible' : ''}">
-				${this.inputlabel(options)}
-				<input type="date" id="${options.name}" name="${options.name}" class="form-control"   ${options.canedit ? `canedit="${options.canedit}"` : '' } ${options.readonly ? 'readonly' : ''} />                           
-				${options.error ? this.inputError(options) : ''}
-			</div>`;
-	}
-	inputDateTime(options: IHTMLOptions) {
-		return `
-			<div class="form-group row-${options.size || 1}${options.invisible ? ' invisible' : ''}">
-				${this.inputlabel(options)}
-				<input type="time" step="1" id="${options.name}" name="${options.name}" class="form-control"   ${options.canedit ? `canedit="${options.canedit}"` : '' } ${options.readonly ? 'readonly' : ''} />                           
-				${options.error ? this.inputError(options) : ''}
-			</div>`;
-	}
-
-	inputBtn(options: IHTMLOptions, btnTypeAndClass: string, btnLabel: string) {
-		return `<div class="form-group row-${options.size || 1}${options.invisible ? ' invisible' : ''}">
-					<button class="btn ${btnTypeAndClass}" id="${options.name}" title="${options.tooltip}" ${options.disabled ? 'disabled' : ''}>
-						${btnLabel}
-					</button>
-				</div>`;
-	}
-	inputChk(options: IHTMLOptions, checked: boolean) {
-		return `<input type="checkbox" id="${options.name}" name="${options.name}" ${checked === true ? 'checked' : ''}>
-`;
-	}
-
-	inputMap(name: string) {
-		return `<div id="${name}" style="width: 600px; height: 400px;">
-				</div>`;
-	}
-
-	inputTextArea(name: string, invisible: boolean) {
-		return `<textarea id="${name}" name="${name}" class="form-control ${invisible ? 'invisible' : ''}">
-				</textarea>`;	
-	}
-
-	rangeHTML() {
-		return `<div class="form-row">                     
-					<div class="fillFull" id="rowLines" >
-					</div>
-				</div>  
-
-				<div class="form-row">                       
-					<div class="form-group row-1 invisible">
-						<label for="row" id="rowNumber">
-						</label>
-					</div>
-				</div>`;
-	};
 
     createAddEvenementHtmlString(name: String) {
         this._HTMLResult =`
 			<!DOCTYPE html>
 			<html lang="fr">
-			<head>
-				<meta charset="UTF-8">
-				<meta name="viewport" content="width=device-width, initial-scale=1.0">
-				<title>
-					Ajout d'échantillon(s)
-				</title>
-				${this.addCss([ "./css/print.css", "./css/echantillon.css", "./css/passeport.css", "./css/form/main.css", "./css/main.css", "./css/modal.css", "./css/editingList.css", "./css/splitter.css"])}				
-			</head>
-
+			${this.createHead("Ajout d'évenement(s)", ["print.css", "echantillon.css", "passeport.css", "form/main.css", "main.css", "modal.css", "editingList.css", "splitter.css", "menu.css"])}
 			<body>
 				<header id="splitter-nav-site" class="splitter-nav-site"></header>
 				<form id="actionForm" class="formData" enctype="multipart/form-data" method="POST">
@@ -326,12 +177,7 @@ export class Add extends CoreHtmlView {
         this._HTMLResult =`
 			<!DOCTYPE html>
 			<html lang="fr">
-			<head>
-				<meta charset="UTF-8">
-				<meta name="viewport" content="width=device-width, initial-scale=1.0">
-				<title>Ajout d'échantillon(s)</title>
-				${this.addCss(["./css/form/main.css", "./css/main.css", "./css/modal.css", "./css/main.css", "./css/splitter.css", "./leaflet/leaflet.css"])}
-			</head>
+			${this.createHead("Ajout d'un site", ["form/main.css", "main.css", "modal.css", "main.css", "splitter.css", "menu.css", "./leaflet/leaflet.css"])}
 
 <body>
 	<header id="splitter-nav-site" class="splitter-nav-site"></header>
@@ -466,13 +312,7 @@ export class Add extends CoreHtmlView {
         this._HTMLResult =`
 			<!DOCTYPE html>
 			<html lang="fr">
-			<head>
-				<meta charset="UTF-8">
-				<meta name="viewport" content="width=device-width, initial-scale=1.0">
-				<title>Ajout d'échantillon(s)</title>
-				${this.addCss([ "./css/print.css", "./css/echantillon.css", "./css/passeport.css", "./css/form/main.css", "./css/main.css", "./css/modal.css", "./css/editingList.css", "./css/splitter.css"])}				
-			</head>
-
+			${this.createHead("Ajout d'échantillon(s)", [ "print.css", "echantillon.css", "passeport.css", "form/main.css", "main.css", "modal.css", "editingList.css", "splitter.css", "menu.css"])}
 			<body>
 				<header id="splitter-nav-site" class="splitter-nav-site"></header>
 				<form id="actionForm" class="formData" enctype="multipart/form-data" method="POST">
@@ -489,7 +329,7 @@ export class Add extends CoreHtmlView {
 								<!-- Steps Headers-->            
 								<div class="progress-bar">
 									<div class="progress-bar-line" id="progress-line"></div>
-									${this.progressHeaders(["Prélevement", "Localisation", "Analyses", "Stockage", "Etiquettes"])}
+									${this.progressHeaders(["Prélevement", "Localisation", "Stockage", "Etiquettes"])}
 								</div>
                     
 								<div class="form-container">
@@ -588,13 +428,17 @@ export class Add extends CoreHtmlView {
 											invisible: true,
 										})}
 
-										<div class="form-group row-1 invisible"> 
-											${this.inputHidden("analysesNombre")}
-											<input type="checkbox" id="nombreOuAnalyses" name="nombreOuAnalyses" checked>
-											<label for="nombreOuAnalyses"><span tooltip="Nombre de prélevement(s) à créer / ou à créer depuis la liste des analyses">Nombre / Analyses</span></label>
-											<input type="number" id="nombre" name="nombre" class="form-control"  min="1" max = "9998" value="1"/>
-											<div class="error-message" id="nombre-error">Compris entre 1 et 9998</div>
-										</div>								
+										${this.inputNumber({
+											min: 1,
+											value: 1,
+											max: 9998,
+											name: "nombre",
+											tooltip: "Numéro de départ de la numérotation des échantillons",
+											placeholder: "nombre entre 1 et 9998",
+											label: "Nombre de prélevement(s)",
+											error: true,
+											invisible: true,
+										})}							
 
 										${this.inputNumber({
 											min: 1,
@@ -631,19 +475,32 @@ export class Add extends CoreHtmlView {
 											tooltip: "Condition de prélèvement",
 											label: "Condition de prélèvement",
 											error: true,
+											canedit: "true"
 										})}
 									</div>
 
 									<div class="form-row">
-										${this.inputFormGroupText({
-											size: 2,
-											max: 75,
-											name: "libre",
-											tooltip: "Infos libre sélectionnable lors de l'impression des étiquettes",
-											label: "Infos libre",
-											canedit: "true"
-										})}                              
+											${this.inputFormGroupText({
+												size: 2,
+												max: 75,
+												name: "libre",
+												tooltip: "Infos libre sélectionnable lors de l'impression des étiquettes",
+												label: "Infos libre",
+												canedit: "true"
+											})}                     
+											<button tooltip="Créer une liste à importer" class="btn btn-list invisible" id="btn-libre">Créer</button>    
+
+											${this.inputFormGroupText({
+												size: 2,
+												max: 75,
+												name: "analyses",
+												tooltip: "Liste des analyses",
+												label: "Analyses",
+												canedit: "true"
+											})}
+											<button tooltip="Créer une liste à importer" class="btn btn-list invisible" id="btn-analyses">Créer</button>    
 									</div>                            
+
 									
 									${this.rangeHTML()}
 									
@@ -732,18 +589,6 @@ export class Add extends CoreHtmlView {
 							${this.inputTextArea("cultures", true)}
                         </div>
                         
-                        <!-- Step 3: Analyses -->
-                        <div class="form-step" id="form-step-3">                          
-                            <div class="form-row container-center">
-								${this.inputHidden("analyses")}
-                                <div id="analysesList" class="liste form-control"></div>
-                            </div> 
-
-                            <div class="btn-group">
-                                <button class="btn btn-prev" id="prev-3">⬅ Précédent</button>
-                                <button class="btn btn-next" id="next-3">Suivant ➡</button>
-                            </div>
-                        </div>
                         <!-- Step 3: Stockage -->
                         <div class="form-step" id="form-step-4">                          
 

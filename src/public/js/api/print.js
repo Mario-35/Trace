@@ -1,3 +1,4 @@
+
 function createSticker(name, stick, value) {
     const element = document.createElement('div');
     element.className = name;
@@ -24,7 +25,8 @@ function genrateBarCode(element, data) {
 
 function createEtiquette(element, values) {
     // special combo
-    values["dossier-numero"] = String(values["dossier"]).padStart(4, '0') + '-' + values["identification"].slice(-4);
+    if (values["dossier"] && values["identification"])    
+     values["dossier-numero"] = String(values["dossier"]).padStart(4, '0') + '-' + values["identification"].slice(-4);
     // for passeport to have inormation on trace 
     const isPassport = +values["passeport"] > 0;
     if(isPassport) values["passeport"] = `${values["prelevement"].slice(0, 4)}-${String(values["passeport"]).padStart(4, "0")}`;        
@@ -49,8 +51,11 @@ function createEtiquette(element, values) {
     </table>`;
     etiquette.appendChild(rightCB);      
     Object.keys(vals).filter(e => e != "sticker0").forEach(stick => {
-        const key = vals[stick].key;
-        etiquette.appendChild(createSticker(stick === "sticker2" && isPassport ? "stickerPasseport": stick, vals[stick], values[key]));        
+        const key = vals[stick].key;        
+        if (key)
+            etiquette.appendChild(createSticker(stick === "sticker2" && isPassport ? "stickerPasseport": stick, vals[stick], values[key]));    
+        else if (vals[stick].value)     
+            etiquette.appendChild(createSticker(stick === "sticker2" && isPassport ? "stickerPasseport": stick, vals[stick], vals[stick].value));    
     });
     element.appendChild(etiquette);
 };

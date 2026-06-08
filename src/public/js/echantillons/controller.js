@@ -1,14 +1,8 @@
 // create identification with date time (without seconds) and echantillon number
 function createIdentification(nb) {
-    if (isContextMode(['new',"aliquote","excel"])) {
+    if (isContextMode(['new',"aliquote","excelaliquote","excel","selectionaliquote"])) {
         if(!_DATE) _DATE = new Date();
         creation.value = _DATE.toISOString();
-console.log("#######################################################################");
-console.log(`echantillon : ${getElement("echantillon").value}`);
-console.log(`numero : ${getElement("numero").value}`);
-
-console.log("#######################################################################");
-
         return `${ _DATE.toLocaleDateString()}${ _DATE.toLocaleTimeString()}`.replace(/\D/g, "").slice(0,12) + (nb || getElement("numero").value ||  getElement("echantillon").value).padStart(4, '0');
     }
 };
@@ -35,8 +29,6 @@ function refresh() {
     if(!identification.value) {
         identification.value = createIdentification();
     }
-    // identification reaonly
-    // setReadOnly("identification");
     // peremption date
     if(!getElement("peremption").value) { 
         if(getElement("prelevement").value) { 
@@ -114,6 +106,26 @@ async function setSite() {
     
 };
 
+async function showAliquote(input) {
+    // loadDatas(datas);
+    if (input)
+        getElement("parent").value = input.identification;
+    updateReadOnly(ctx);
+    hideParentClass( "btnApiRpg", "form-group row-1 visible");
+    showParentClass( "parent", "form-group");
+    multipleremoveInvisible(["numero",  "nombre", "btn-analyses", "btn-libre"]); 
+    removeReadOnly(["nombre","numero","libre","analyses","condition","responsable"]); 
+    identification.value = createIdentification();
+}
+function restoreDatas() {
+    const datas = JSON.parse(localStorage.getItem('_DATAS'));    
+    if (datas) {
+        Object.keys(datas).forEach(e => {
+            loadValue(e, datas[e]);
+        });
+        localStorage.removeItem('_DATAS');
+    }
+}
 // start of echantillon
 async function start() {
     if (_CONFIGURATION.debug === false) getElement("blockDemo").remove();
@@ -126,7 +138,7 @@ async function start() {
     // addToOption(getElement('cle'), _CONFIGURATION.stockages);   
     // init select for etats keys       
     addToOption(getElement('etat'), _CONFIGURATION.etats, "Créer");
-    addToOption(getElement('type'), _CONFIGURATION.types, "---- Aucun ----");
+    addToOption(getElement('type'), _CONFIGURATION.types, _AUCUN);
     addToOption(getElement('textSize'), _CONFIGURATION.sizes, "10px");
     // add demos if debug
     if(_CONFIGURATION.debug) addToOption(getElement('demos'), Object.keys(_DEMOS));   
@@ -167,17 +179,27 @@ async function start() {
         // read only on all columns
         setReadOnly(Object.keys(_STORE.datas[0]).filter(e => e !== "etat"));
         showParentClass("etat",'form-group'); 
+        if (!["Créer", "Importer"].includes(_STORE.datas[0].etat)) removeDisabled("btn-aliquote");
         // get the range lines
         setRange();
         // Change title
-        changeTitle("Modification de plusieurs échantillons");
+        changeTitle("Modification de " + String(_STORE.datas.length) + " échantillons");
         // Set the mode
-    } else if (ctx.mode === 'excel') {  // Excel mode
+    } else if (ctx.mode === 'excel' || ctx.mode === "excelaliquote") {  // Excel mode
         // get datas from API
         _STORE =  await getDatas(window.location.origin + "/excel/" + ctx.id);
         if(_STORE["datas"]) {
-           etat.value = "Importé";
+            this.restoreDatas();
+            etat.value = "Importé";
             // get the column selected in excel page
+            if (ctx.mode === "excelaliquote") {
+                showAliquote();
+                identification.value = createIdentification();
+                setReadOnly("nombre");
+                setInvisible("btn-libre");
+                setInvisible("btn-analyses");
+                changeTitle("Création d'autres échantillon(s) depuis un fichier excel");                
+            } else changeTitle("Ajout depuis un fichier excel");
             let isEchantillon = false;
             Object.keys(_STORE.columns).forEach(column => {
                 const elem = getElement(column);
@@ -188,6 +210,7 @@ async function start() {
                 } 
                 setReadOnly(column);
             });
+            // get the range lines
             if (isEchantillon == false) {
                 showParentClass("numero",'form-group'); 
                 showParentClass("nombre",'form-group'); 
@@ -195,9 +218,7 @@ async function start() {
                 nombre.value = _STORE["datas"].length;
                 echantillon.value = null;
             }
-            // get the range lines
             setRange();
-            changeTitle("Ajout depuis un fichier excel");
         }
         
     } else if (ctx.mode === 'after') {  // After mode        
@@ -215,25 +236,29 @@ async function start() {
         changeTitle("Ajout d'autres échantillon(s)");
     } else if (ctx.mode === 'aliquote') {  // child mode 
         const datas = await getDatas(window.location.origin + "/echantillon/" + ctx.id);
-        console.log(datas);
-        
         loadDatas(datas);
-        getElement("parent").value = datas.identification;
-        updateReadOnly(ctx);
-        hideParentClass( "btnApiRpg", "form-group row-1 visible");
-        showParentClass( "parent", "form-group");
-        
-        const temp = await getDatas(window.location.origin + "/echantillon/after/" + datas.id);
-        setMin(getElement("numero"), temp);
-        multipleremoveInvisible(["numero",  "nombre"]); 
-        removeReadOnly(["numero",  "nombre"]); 
-        identification.value = createIdentification();
+        showAliquote(datas);
         changeTitle("Création d'autres échantillon(s)");
+    } else if (ctx.mode === 'selectionaliquote') {  // child mode 
+        // get selection from API
+        const temp2 = await getDatas(window.location.origin + "/selection/" + ctx.id);
+        _STORE = {
+            datas: temp2,
+            columns: Object.keys(temp2[0])
+        }
+        // read only on all columns
+        setReadOnly(Object.keys(_STORE.datas[0]).filter(e => e !== "etat"));
+        // get the range lines
+        setRange();
+
+        await showAliquote( _STORE.datas[0]);
+        changeTitle("Création d'autres échantillon(s) à partir de " + String(_STORE.datas.length) + " échantillons");
     } else if (ctx.mode === 'new') { //  Default add mode
         multiplesetInvisible(["echantillon",  "etat"]); 
-        multipleremoveInvisible(["numero",  "nombre"]); 
+        multipleremoveInvisible(["numero",  "nombre", "btn-analyses", "btn-libre"]); 
         getElement("etat").value = 'Créer';
-        updateReadOnly(ctx);   
+        updateReadOnly(ctx);        
+
         new editingList(getElement("stockageList"), "Mots clés pour le stockage", "Ajouter une clé", {}, _CONFIGURATION["stockages"]);  
 
     } else log("Error mode");
@@ -248,6 +273,26 @@ function setMin(element, min) {
         if (element.value < min)
             element.value = min;
 };
+
+async function createExcelFromList(element) {    
+    if (element.getAttribute("list") !== "") {
+        const name = element.name
+        const obj = [];
+        element.getAttribute("list").split(',').forEach(e => {
+            obj.push({ [`${name}`]: e});        
+        });
+        const response = await fetch(window.location.origin + `/excel`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ "datas": obj, "columns": { [`${name}`]: name }}),
+        });		
+        const res = await response.text();
+        localStorage.setItem('_DATAS', JSON.stringify(formDatas()));
+        window.location.href = `./echantillon-add.html?excel${getContext().mode === 'aliquote' ? "aliquote=" : "="}${JSON.parse(res)[0].id}`;
+    }
+}
 
 // start without await
 start();

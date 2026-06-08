@@ -19,8 +19,6 @@ async function start() {
         
         saveetat.value = String(datas.etat);
         savestockage.value = String(savestockage.etat);
-        console.log(savestockage.value);
-        // savestockage.value = JSON.stringify(JSON.parse(datas.stockage));
 
         new editingList(getElement("stockageList"), "Mots clés pour le stockage", "Ajouter une clé", datas.stockage, _CONFIGURATION["stockages"]);  
 
@@ -28,7 +26,6 @@ async function start() {
     } else if (ctx.mode === 'selection') { // Selection Edits mode
         // get selection from API
         const temp = await getDatas(window.location.origin + "/selection/" + ctx.id);
-        console.log(temp)
         _STORE = {
             datas: temp,
             columns: Object.keys(temp[0])

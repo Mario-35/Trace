@@ -1,0 +1,186 @@
+
+          <h1 id="echantillons">Echantillons</h1>
+          <p>L&#39;écran échantillons est une liste (structure communes) :</p>
+
+          <p>Le bouton <strong>RAZ</strong> permet de Remettre à zéro les filtres de recherche. </p>
+          <p>Le bouton <strong>+</strong> permet de créer un ou plusieurs échantillons détaillés dans Ajouter.</p>
+          <p>Le bouton <strong>Importer Excel</strong> permet d&#39;importer un fichier Excel afin de créer plusieurs échantillons détaillés dans Importer. </p>
+          <p>Le champ <strong>Cherche</strong> : permet d&#39;exécuter une recherche sur tous les champs des échantillons, alors que les cases de recherche sous le nom des colonnes permettent de filtrer les données sur la colonne concernée uniquement. </p>
+          <p>Le premier bouton de chaque ligne permet d&#39;éditer l&#39;échantillon de la ligne sélectionnée alors que le bouton vert éditera l&#39;intégralité de la sélection en cours.</p>
+          <p>Le dernier bouton de chaque ligne permet d&#39;imprimer l&#39;étiquette de l&#39;échantillon alors que le bouton ver imprimera toutes les étiquettes de la sélection.</p>
+          <p>Enfin un <strong>menu contextuel</strong> est disponible en cliquant dur le bouton droit de la souris permettant de sélectionner des opérations adaptées à la ligne en question. </p>
+          <p>
+            <img src="assets/doc-echantillons.jpg" alt="Liste des échantillons">
+        </p>
+        <p>En bas de chaque page une pagination est proposées</p>
+        <p> <strong>Par page</strong> : premet de changer le nombre de lignes sur la page et les numéro permettent de se deplacer dans les numéro de pages correspondantes.</p>
+        <img src="assets/pagination.jpg" alt="Pagination">
+
+          <h2 id="ajout-d-un-chantillon">Ajout d&#39;un échantillon</h2>
+          <p>L&#39;ajout d&#39;un échantillon se déroule en 4 étapes</p>
+          <p>
+            <a href="#masque-1-prélèvement">Prélevement</a>, <a href="#masque-2-localisation">Localisation</a>, <a href="#masque-4-stockage">Stockage</a>, <a href="#masque-5-etiquettes">Etiquettes</a>,
+          </p>
+          <h3 id="masque-1-pr-l-vement">Masque 1 Prélèvement</h3>
+          <p>
+            <img src="assets/doc-echantillon-add-1.jpg" alt="Ajout d&#39;un échantillons masque 1">
+          </p>
+          <h3 id="lors-de-la-cr-ation-toutes-les-donn-es-saisies-formeront-les-donn-es-des-chantillons-mais-ensuite-chaque-chantillon-pourra-tre-modifi-ind-pendamment-des-autres-">Lors de la création toutes les données saisies formeront les données des échantillons MAIS ensuite chaque échantillon pourra être modifié indépendamment des autres.</h3>
+          <ul>
+            <li>
+              <p>
+                <strong>Type de prélèvement</strong> permet de séléctionner le type de prélèvement de(s) échantillon(s) crée(s) <strong>ATTENTION</strong> en cliquant sur suivant pour passer à létape suivante il ne sera plus possible de le changer.
+              </p>
+            </li>
+            <li>
+              <p>
+                <strong>Programme</strong> Permet de sélectionner le programme concerné par le ou les échantillons une case à cocher est disponible afin de préciser s&#39;il s’agit d&#39;un programme pédagogique qui aura une gestion particulière, le nom de l&#39;item change pour éviter toute ambiguïté.
+              </p>
+            </li>
+            <li>
+              <p>
+                <strong>Site de prélèvement</strong> Le site de prélèvement indique le nom du site concerné par les échantillons si le site n’est pas présent dans la base des sites de l’application le site sera créé lors de l’étape suivante, notez qu&#39;une liste est proposé dès lors qu&#39;au moins 2 caractères sont saisis.
+              </p>
+            </li>
+            <li>
+              <p>
+                <strong>Identification</strong> ce champ généré par l&#39;application et non modifiable indique le code unique de l&#39;échantillon constitué de la date de création Jour Mois Année Heure Minutes suivi du numéro d&#39;échantillon sur quatre caractères (les blancs étant remplacé par des zéros).
+              </p>
+            </li>
+            <li>
+              <p>
+                <strong>Numéro de dossier</strong> Indique le numéro de dossier interne.
+              </p>
+            </li>
+            <li>
+              <p>
+                <strong>N° de départ</strong> Indique le numéro de départ de la numérotation des échantillons.
+              </p>
+            </li>
+            <li>
+              <p>
+                <strong>Nombre</strong> Indique le nombre d&#39;échantillons à créer.
+              </p>
+            </li>
+            <li>
+              <p>
+                <strong>Date du prélevement</strong> Indique la date du prélèvement &quot;envisagée&quot; elle sera modifiable ultérieurement.
+              </p>
+            </li>
+            <li>
+              <p>
+                <strong>Date de péremption</strong> Indique la date de la péremption de l’échantillon qui sera mise à 5 ans par default elle sera modifiable ultérieurement.
+              </p>
+            </li>
+            <li>
+              <p>
+                <strong>Condition de prélèvement</strong> indique les condition de prélevements.
+              </p>
+            </li>
+            <li>
+              <p>
+                <strong>Infos libre</strong> Ligne de texte libre.
+                <p>le bouton <strong>Créer</strong> permet de saisir une liste d'infos pour chaque échantillon et je nombre constituera le nombre d&#39;échantillons à créer c&#39;est a dire un par analyse notez que le nombre d'échantillon est mis a jour.</p>
+              </p>
+            </li>
+            <li>
+              <p><strong>Analyse(s)</strong> Analyse(s) de l'échantillon (une liste d'analyses séparé d'une virgule represente une liste d'analyses effectué sur chaque échantillon).</p>
+              <p>le bouton <strong>Créer</strong> permet de saisir une liste d'analyses representant les analyses à effectuer sur chaque échantillon et le nombre d&#39;analyse constituera le nombre d&#39;échantillons à créer c&#39;est a dire un par analyse notez que le nombre d'échantillon est mis a jour.</p>
+            </li>
+            <li>
+              <p>le bouton <strong>Créer une aliquote</strong> permet de créer un ou plusieurs aliquote (Cette option n'est possible que si l'Etat du prélévement est Prélevé, donc au moins après la validation de cet écran).</p>
+            </li>
+          </ul>
+          <h3 id="masque-2-localisation">Masque 2 Localisation</h3>
+          <p>Le masque de la localisation est différe si le site saisi dans l&#39;étape précédente est connu de l&#39;application sinon vous avez la possibilité de le créer à cette étape malgré que le fait de passer par la gestion des sites est plus confortable avec une carte permettant une localisation plus sure.</p>
+          <h4 id="cas-ou-le-site-n-est-pas-reconnu-">Cas ou le site n&#39;est pas reconnu.</h4>
+          <p>
+            <img src="assets/doc-echantillon-add-2.jpg" alt="Ajout d&#39;un échantillons masque 2">
+          </p>
+          <ul>
+            <li>
+              <p>
+                <strong>Nom du site</strong> Nom du site permetant l&#39;identification lors des recherche.
+              </p>
+            </li>
+            <li>
+              <p>
+                <strong>Pays</strong> Nom du pays.
+              </p>
+            </li>
+            <li>
+              <p>
+                <strong>Région</strong> Région précise la région du site notez que si dans « région » vous saisissez le code postal à 5 ou à 2 chiffres, la région est automatiquement trouvée et le département apparaît sous la souris.
+              </p>
+            </li>
+            <li>
+              <p>
+                <strong>Latitude</strong> et <strong>Longitude</strong> Indique la position au format WGS84 demandé par le e Registre Parcellaire Graphique (RPG), on remarque que tant que les données ne sont pas saisies le bouton RPG n’est pas utilisable et le bouton suivant reste sans effet.
+              </p>
+            </li>
+            <li>
+              <p>Le bouton <strong>Créer</strong> permet de créer le site. </p>
+            </li>
+          </ul>
+          <h4 id="cas-ou-le-site-est-reconnu-">Cas ou le site est reconnu.</h4>
+          <p>
+            <img src="assets/doc-echantillon-add-2b.jpg" alt="Ajout d&#39;un échantillons masque 2b">
+          </p>
+          <p>Si le site est reconnu les champs sont bleuté indiquant qu’ils ne sont pas modifiables.</p>
+          <p>Dans le cas d&#39;un échantillon de sol un bouton RPG apparait ce Button permet d&#39;interroger Le Registre Parcellaire Graphique et d&#39;afficher l&#39;historique culturale.</p>
+          <p>
+            <img src="assets/doc-echantillon-add-2bSola.jpg" alt="Ajout d&#39;un échantillons masque 2b">
+          </p>
+          <p>Dans le cas particulier d&#39;un échantillon de sol l&#39;historique culturale apparait.</p>
+          <p>
+            <img src="assets/doc-echantillon-add-2bSolb.jpg" alt="Ajout d&#39;un échantillons masque 2b">
+          </p>
+          <p>Dans le cas ou dans la configuration le passeport sanitaire est activé en plus d&#39;un échantillon de sol l&#39;historique culturale apparait ainsi qu&#39;un message indiquant le niveau &quot;d&#39;expertise&quot; du risque.</p>
+          <p>
+            <img src="assets/doc-echantillon-add-2bSol-phyto.jpg" alt="Ajout d&#39;un échantillons masque 2b">
+          </p>
+          <p>Dans le cas ou dans la configuration le passeport sanitaire est activé, qu&#39;il s&#39;agit d&#39;un échantillon de sol et que la région de prélèvement est différente de celle du lieu indiqué dans la configuration l&#39;historique culturale apparait, un message indiquant le niveau &quot;d&#39;expertise&quot; du risque aussi et un bouton vous demandant de créer un passeport phytosanitaire.</p>
+          <p>Tant qu&#39;il ne sera pas présent vous ne pouvez pas passer à l&#39;étape suivante.</p>
+          <p>
+            <img src="assets/doc-echantillon-add-2bSol-phyto-btn.jpg" alt="Ajout d&#39;un échantillons masque 2b">
+          </p>
+          <p>En cliquant sur le bouton le masque de saisie ci-dessous apparait : le nom du passeport interne est généré par l’application et il vous est proposé de joindre un document attestant de la prise de décision.</p>
+          <p>
+            <img src="assets/doc-echantillon-add-2bSol-phyto-create.jpg" alt="Ajout d&#39;un échantillons masque 2b">
+          </p>
+          <p>
+            <strong>NOTEZ</strong> Si un passeport pour ce lieu à la même année est présent dans la base l&#39;écran aurait été comme celui-ci après :
+          </p>
+          <p>
+            <img src="assets/doc-echantillon-add-2bSol-phyto-found.jpg" alt="Ajout d&#39;un échantillons masque 2b">
+          </p>
+          <h3 id="masque-4-stockage">Masque 4 Stockage</h3>
+          <p>Cet onglet permet de gérer le stockage de l&#39;échantillon, le système fonctionne avec un système de clé valeur les clés étant paramétré dans la configuration, Il est possible aussi de réorganiser avec la souris grâce au glisser déposer</p>
+          <p>
+            <img src="assets/doc-echantillon-add-3.jpg" alt="Ajout d&#39;un échantillons masque 1">
+          </p>
+          <h3 id="masque-5-etiquettes">Masque 5 Etiquettes</h3>
+          <p>Enfin la dernière étape est le paramétrage de l&#39;étiquette les éléments modifiables sont sélectionnable avec la souris (en passant dessus la couleur change en bleu ) et le choix influe sur les éléments de saisie :</p>
+          <ul>
+            <li>
+              <strong>Element</strong> Permet de choisir un champ disponible à imprimer
+            </li>
+            <li>
+              <strong>Texte Libre</strong> Permet d&#39;écrire un texte à répliquer sur tous les échantillons
+            </li>
+            <li>
+              <strong>Taille</strong> Change la taille du texte
+            </li>
+            <li>
+              <strong>Alignement</strong> Défini l&#39;alignement de la cellule
+            </li>
+          </ul>
+          <p>
+            <img src="assets/doc-echantillon-add-4.jpg" alt="Ajout d&#39;un échantillons masque 1">
+          </p>
+          <p>En cliquant sur Créer si tout se passe correctement l&#39;application vous demandes si vous souhaitez imprimer les étiquettes :</p>
+          <p>
+            <img src="assets/doc-echantillon-add-ok.jpg" alt="Ajout d&#39;un échantillons masque 1">
+          </p>
+        
+

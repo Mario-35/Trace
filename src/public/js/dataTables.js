@@ -3,11 +3,13 @@ document.querySelector("html").setAttribute("data-bs-theme", "dark");
 class JsonTable {
 	mariol = [];
 	constructor(options) {
+		this.nameOfType = getElement("nameType").innerText;
+		this.localSave = options.mario || JSON.parse(localStorage.getItem('filters')) || {};
 		this.jsonUrl = options.jsonUrl || "";
 		this.addUrl = options.addUrl || "";
 		this.seeUrl  = options.seeUrl || "";
 		this.editUrl = options.editUrl || undefined;
-		this.printUrl = options.printUrl || undefined; // printUrl icon 
+		this.printUrl = isChrome === true ? options.printUrl || undefined : undefined; // printUrl icon 
 		this.perPageSelect = [25, 50, 100, 500, 1000];
 		this.rowsPerPage = this.perPageSelect[0];
 		this.container = document.querySelector(options.container || "#jsonTable");
@@ -39,6 +41,28 @@ class JsonTable {
 		this.init();
 	}
 
+	removeToFilter(key) {
+		if(this.localSave[this.nameOfType])
+			delete this.localSave[this.nameOfType][key];
+	}
+
+	addToFilter(key, value) {
+		if(!this.localSave[this.nameOfType])
+			this.localSave[this.nameOfType] = {};
+		
+		if (String(value).trim() === "")
+			delete this.localSave[this.nameOfType][key];
+		else this.localSave[this.nameOfType][key] = value;
+		localStorage.setItem('filters', JSON.stringify(this.localSave));
+
+	}
+	razFilter() {
+		delete this.localSave[this.nameOfType];
+		localStorage.setItem('filters', JSON.stringify(this.localSave));
+		  this.filteredData = [...this.data];	
+		this.filterDatas();
+	}
+
 	toggleMenu (command ) {
 	  this.menu.style.display = command === "show" ? "block" : "none";
 	  this.menuVisible = !this.menuVisible;
@@ -48,6 +72,11 @@ class JsonTable {
 	  this.menu.style.left = `${left}px`;
 	  this.menu.style.top = `${top}px`;
 	  this.toggleMenu("show");
+	};
+
+	async exportExcel() {
+		const temp = await postDatas(window.location.origin + '/selection', {ids: this.filteredData.map(e => e.id)});
+		if (temp) window.location.href = window.location.origin + "/export.html?selection=" +  temp[0].id;
 	};
 
 
@@ -64,42 +93,52 @@ class JsonTable {
 				li.setAttribute("filter", e.filter);
 			li.className = "context-menu-option";
 			contextMenu.appendChild(li);
-		})
-
+		});
 
 		jsonTable.addEventListener("click", e => {
 		  if (this.menuVisible) this.toggleMenu("hide");
 		});
 
-		if (this.menu) this.menu.addEventListener("click", e => {
-			const url = e.target.getAttribute("url") ;
-			if (this.menuVisible) this.toggleMenu("hide");
-			if (url && url !== "")
-				window.location.href = `${url}${url.includes('?') ? this.selectedId : ''}`;
-			else {
-				const filter = e.target.getAttribute("filter") ;
-				if (filter && filter !== "") {
-					this.filterCall(filter);
+		if (getElement("raz")) 
+			raz.addEventListener("click", () => {
+				this.razFilter();
+				this.renderTable("all");
+			});
+
+		if (getElement("exportExcel")) 
+			exportExcel.addEventListener("click", async () => {
+				await this.exportExcel();
+			});
+
+		if (this.menu) 
+			this.menu.addEventListener("click", () => {
+				const url = e.target.getAttribute("url") ;
+				if (this.menuVisible) 
+					this.toggleMenu("hide");
+
+				if (url && url !== "") {
+					window.location.href = `${url}${url.includes('?') ? this.selectedId : ''}`;
+				} else {
+					const filter = e.target.getAttribute("filter") ;
+					if (filter && filter !== "") 
+						this.filterCall(filter);
 				}
-			}
-		});
+			});
 		
 		jsonTable.addEventListener("contextmenu", e => {
 			e.preventDefault();
 			this.selectedId = e.target.parentElement.id;
 			this.selectedTxt = e.target.textContent;
-		  const origin = {
-			left: e.pageX,
-			top: e.pageY
-		  };
+		  const origin = { left: e.pageX, top: e.pageY };
 		  this.setPosition(origin);
 		  return false;
 		});
-
-		if (isKeyInUrl("filter")) {
-			globalSearch.value = getFromUrl("filter");  
-			this.filterGlobal(globalSearch.value);
-		}
+		
+		if (getElement("ajouter")) document.getElementById('ajouter').addEventListener('click', async function() {
+			window.location.href = ajouter.getAttribute("href");
+		});
+		
+		this.filterDatas();		
 	};
 
 	filterCall(name) {
@@ -116,7 +155,7 @@ class JsonTable {
 	filterIdentification12() {
 		const filtered = this.filterById(Number(this.selectedId));
 		globalSearch.value = filtered[0].identification.slice(0,12);
-		this.filterGlobal(globalSearch.value);
+		this.filterDatas(globalSearch.value);
 	};
 
 	async postStore() {
@@ -128,6 +167,7 @@ class JsonTable {
 				corespondance[names[1]] = names[0];
 			}
         });
+
 		// converti les echantillons en chiffres
 		if (corespondance["echantillon"])
 			this.filteredData.forEach(e => e[corespondance["echantillon"]] = +e[corespondance["echantillon"]] );
@@ -136,6 +176,7 @@ class JsonTable {
 			datas: this.filteredData,
 			columns: corespondance
 		};
+
         const response = await fetch(window.location.origin + `/excel`, {
             method: "POST",
             headers: {
@@ -164,7 +205,7 @@ class JsonTable {
 			this.filteredData = [...this.data];			
 			if (!this.addUrl ||this.addUrl.trim() == "") return;
 
-						// change region value
+			// change region value
 			if (getElement('addSample'))
 				getElement('addSample').addEventListener('keydown', async (event) => {
 					// if return and france
@@ -174,6 +215,7 @@ class JsonTable {
 				});
 			return;
 		}
+
 		try {
 			const response = await fetch(this.jsonUrl);
 			this.data = await response.json();
@@ -183,43 +225,12 @@ class JsonTable {
 		}
 	};
 
-	// async post_Datas(url, datas) {
-	// 	try {
-	// 		const response = await fetch(encodeURI(url), {
-	// 			method: 'POST',
-	// 			headers: {
-	// 				"Content-Type": "application/json",
-	// 			},
-	// 			body: JSON.stringify(datas),
-	// 		});
-	// 		return await response.json();		
-	// 	} catch (error) {
-	// 		log(error);
-	// 		return undefined
-	// 	}
-	// }
-
         // Per Page Select
     createPerPageSelect() {
-            // perPageSelect.innerHTML = "";
-            // var select = document.createElement("select");
-			// select.className ="form-control";
-			// select.id ="essai";
-			// [25, 50, 100, 500, 1000].forEach(val => {
-			// 	var opt = document.createElement('option');
-			// 	opt.value = val;
-			// 	opt.innerHTML = val;
-			// 	if (getElement("essai") && val === essai.value)
-			// 		opt.setAttribute("selected", "selected");
-			// 	select.appendChild(opt);
-			// });
-			
-			// perPageSelect.appendChild(select);
-
-			perPageSelect.addEventListener("change", (e) => {
-				this.rowsPerPage = e.target.value;
-				this.renderTable();
-			});
+		perPageSelect.addEventListener("change", (e) => {
+			this.rowsPerPage = e.target.value;
+			this.renderTable();
+		});
 };
 
 	renderTable(which = "all") {
@@ -233,7 +244,6 @@ class JsonTable {
 			this.renderPagination();
 			this.createPerPageSelect();
 		}
-		// infos.innerHTML = `${this.filteredData.length} sur ${this.data.length} total`
 	};
 
 	headerAttribute() {
@@ -246,104 +256,123 @@ class JsonTable {
 		const temp = await postDatas(`${window.location.origin}/site/rapprochement`, {unique: uniqueValues});
 		if (temp) showModalList("Fichier Excel", "Base de données", temp, 'Trouvé');
 	};
+
 	renderHeader() {
 		const tableHeader = this.container.querySelector("thead");
 		tableHeader.innerHTML = "<tr></tr>";
 		const headerRow = tableHeader.querySelector("tr");
 		if (this.editUrl)
 			headerRow.insertAdjacentHTML("afterbegin", `<th><button class="btn btn-success icon_edit btn-sm" id="editAll"></button></th>`);
+
 		if (this.select === true) 
 			headerRow.insertAdjacentHTML("afterbegin", `<th style="${this.headerAttribute()}"><label>Filter</label><select id="id-select" class="form-control excel-control"> <option value="">tout</option> <option value="true">✔️️</option> <option value="false">❌</option> </select></th>`);
+
 		this.columns.filter(e => e.key.toUpperCase() !== 'ID').forEach((column) => {
-			const th = document.createElement("th");
-			const label = document.createElement("label");
-			label.innerHTML = column.title || column.key;
-			th.appendChild(label);
-			switch (column.searchType) {
-				case "button":
-					if (column.header) {
-						const buttonEdit = document.createElement("button");
-						buttonEdit.className = "btn btn-success btn-sm";
-						buttonEdit.innerHTML = '<i title="editer toute la selection" class="bi bi-eye" id="seeAll"></i>';
-						th.appendChild(buttonEdit);					
-					}
-
-				break;
-				case "select":
-					const selectSelect = document.createElement("select");
-					selectSelect.className = "form-control";
-					selectSelect.innerHTML = `<option value="">Tous</option>`;
-					const uniqueValues = [...new Set(this.data.map((row) => row[column.key]))];
-					uniqueValues.forEach((value) => {
-						const option = document.createElement("option");
-						option.textContent = value;
-						option.value = value;
-						selectSelect.appendChild(option);
-					});
-					selectSelect.addEventListener("change", (e) =>
-						this.filterColumn(column.key, e.target.value)
-					);
-					th.appendChild(selectSelect);					
+			if(column.searchType !== "hidden") {
+				const th = document.createElement("th");
+				const label = document.createElement("label");
+				label.innerHTML = column.title || column.key;
+				th.appendChild(label);
+				switch (column.searchType) {
+					case "infos":
 					break;
-				case "excel":
-					th.setAttribute("style", this.headerAttribute());
-					const selectExcel = document.createElement("select");
-					selectExcel.className = "form-control";
-					selectExcel.classList.add("excel-control");
-					selectExcel.innerHTML = `<option value="">Aucun</option>`;
-					Object.keys(_CONFIGURATION.stickerElements).forEach((value) => {
-						const option = document.createElement("option");
-						option.textContent = value;
-						option.value = column.key + "|" +value;
-						selectExcel.appendChild(option);
-					});
-					th.appendChild(selectExcel);
-
-					selectExcel.addEventListener("change", async (e) => {
-						if (e.target.value.split('|')[1] === "site") {
-							await this.site(e.target);
+					case "button":
+						if (column.header) {
+							const buttonEdit = document.createElement("button");
+							buttonEdit.className = "btn btn-success btn-sm";
+							buttonEdit.innerHTML = '<i title="editer toute la selection" class="bi bi-eye" id="seeAll"></i>';
+							th.appendChild(buttonEdit);					
 						}
-						if (e.target.value) 
-							e.target.classList.add("something");
-						else 
-							e.target.classList.remove("something");
-						this.filterBlankColumn();
-					});
+	
 					break;
-				case "boolean":
-					const selectBoolean = document.createElement("select");
-					selectBoolean.className = "form-control";
-					selectBoolean.innerHTML = `<option value="">Etat</option><option value="true">✔️️</option> <option value="false">❌</option>`;
-					selectBoolean.addEventListener("change", (e) =>
-						this.filterColumn(column.key, e.target.value)
-					);
-					th.appendChild(selectBoolean);					
-					break;				
-				default:
-					const input = document.createElement("input");
-					input.type = "text";
-					input.className = "form-control";
-					input.placeholder = `${column.key}`;
-					input.addEventListener("input", (e) =>
-						this.filterColumn(column.key, e.target.value)
-					);
-					th.appendChild(input);					
-					break;
+					case "select":
+						const selectSelect = document.createElement("select");
+						selectSelect.className = "form-control";
+						selectSelect.innerHTML = `<option value="">Tous</option>`;
+						const uniqueValues = [...new Set(this.data.map((row) => row[column.key]))];
+						uniqueValues.forEach((value) => {
+							const option = document.createElement("option");
+							option.textContent = value;
+							option.value = value;
+							selectSelect.appendChild(option);
+						});
+						selectSelect.addEventListener("change", (e) =>
+							this.filterDatas()
+						);
+						th.appendChild(selectSelect);					
+						break;
+					case "excel":
+						th.setAttribute("style", this.headerAttribute());
+						const selectExcel = document.createElement("select");
+						selectExcel.className = "form-control";
+						selectExcel.classList.add("excel-control");
+						selectExcel.innerHTML = `<option value="">Aucun</option>`;
+						Object.keys(_CONFIGURATION.stickerElements).forEach((value) => {
+							const option = document.createElement("option");
+							option.textContent = value;
+							option.value = column.key + "|" +value;
+							selectExcel.appendChild(option);
+						});
+						th.appendChild(selectExcel);
+	
+						selectExcel.addEventListener("change", async (e) => {
+							if (e.target.value.split('|')[1] === "site") {
+								await this.site(e.target);
+							}
+							if (e.target.value) 
+								e.target.classList.add("something");
+							else 
+								e.target.classList.remove("something");
+							this.filterBlankColumn();
+						});
+						break;
+					case "boolean":
+						const selectBoolean = document.createElement("select");
+						selectBoolean.className = "form-control";
+						selectBoolean.innerHTML = `<option value="">Etat</option><option value="true">✔️️</option> <option value="false">❌</option>`;
+						if (this.localSave[this.nameOfType] && this.localSave[this.nameOfType][column.key])
+							selectBoolean.value = this.localSave[this.nameOfType][column.key];
+						selectBoolean.addEventListener("change", (e) => {
+							const tmp = e.target.value === "true" ? true : e.target.value === "false" ? false : '';
+							if (typeof tmp === "boolean") this.addToFilter(column.key, tmp); else this.removeToFilter(column.key);
+							this.filterDatas();
+						}
+						);
+						th.appendChild(selectBoolean);					
+						break;				
+					default:
+						const input = document.createElement("input");
+						input.type = "text";
+						if (this.localSave[this.nameOfType] && this.localSave[this.nameOfType][column.key])
+							input.value = this.localSave[this.nameOfType][column.key];
+						input.className = "form-control";
+						input.placeholder = `${column.key}`;
+						input.addEventListener("input", (e) => {
+							this.addToFilter(column.key, e.target.value);
+							this.filterDatas();
+						});
+						
+						th.appendChild(input);					
+						break;
+				}
+				headerRow.appendChild(th);
 			}
-			headerRow.appendChild(th);
 		});
+
 		if (this.printUrl) 
 			headerRow.insertAdjacentHTML("beforeend", `<th><button class="btn btn-success icon_print btn-sm" id="printAll"></button></th>`);
-		let elem = getElement("editAll");
-		if (elem) elem.addEventListener("click", async (e) => {
-        	const temp = await postDatas(window.location.origin + '/selection', {ids: this.filteredData.map(e => e.id)});
-			if (temp) window.location.href = this.editUrl + "?selection=" + temp[0].id;
-		});		
-		elem = getElement("printAll");
-		if (elem) elem.addEventListener("click", async (e) => {
-        	const temp = await postDatas(window.location.origin + '/selection', {ids: this.filteredData.map(e => e.id)});
-			if (temp) open(window.location.origin + '/print/' + "selection/" + temp[0].id, "Imprimer", _PARAMPRINT,);
-		});		
+
+		if (getElement("editAll")) 
+			editAll.addEventListener("click", async () => {
+				const temp = await postDatas(window.location.origin + '/selection', {ids: this.filteredData.map(e => e.id)});
+				if (temp) window.location.href = this.editUrl + "?selection=" + temp[0].id;
+			});
+		
+		if (getElement("printAll")) 
+			printAll.addEventListener("click", async () => {
+        		const temp = await postDatas(window.location.origin + '/selection', {ids: this.filteredData.map(e => e.id)});
+				if (temp) open(window.location.origin + '/print/' + "selection/" + temp[0].id, "Imprimer", _PARAMPRINT,);
+			});		
 	}
 
 	renderRows() {
@@ -352,15 +381,15 @@ class JsonTable {
 		const start = (this.currentPage - 1) * this.rowsPerPage;
 		const end = start + this.rowsPerPage;
 		let rows = [...this.filteredData];
-
+		infos.innerText = rows.length + " sur " + this.data.length;
 		// // Sorting
-		// if (this.sortColumn) {
-		// 	rows.sort((a, b) => {
-		// 		if (this.sortOrder === "asc")
-		// 			return a[this.sortColumn] > b[this.sortColumn] ? 1 : -1;
-		// 		return a[this.sortColumn] < b[this.sortColumn] ? 1 : -1;
-		// 	});
-		// }
+		if (this.sortColumn) {
+			rows.sort((a, b) => {
+				if (this.sortOrder === "asc")
+					return a[this.sortColumn] > b[this.sortColumn] ? 1 : -1;
+				return a[this.sortColumn] < b[this.sortColumn] ? 1 : -1;
+			});
+		}
 
 		// Paging
 		const totalPages = Math.ceil(rows.length / this.rowsPerPage);
@@ -379,7 +408,7 @@ class JsonTable {
 				"afterbegin",
 				`<td><input class="select-btn" type="checkbox" ${String(row.selected) == 'true' ? 'checked' : ''} data-row="${row.id}"></td>`
 			);
-			Object(this.columns.filter(e => e.key.toUpperCase() !== 'ID')).forEach((column) => {	
+			Object(this.columns.filter(e => e.key.toUpperCase() !== 'ID' && e.searchType !== "hidden")).forEach((column) => {	
 				const key = column.key;	;
 				if (!["selected"].includes(key)) {
 					const td = document.createElement("td");
@@ -544,7 +573,7 @@ class JsonTable {
 	addGlobalSearchListener() {
 		if (this.globalSearchInput) {
 			this.globalSearchInput.addEventListener("input", (e) =>
-				this.filterGlobal(e.target.value)
+				this.filterDatas(e.target.value)
 			);
 		}
 	};
@@ -560,17 +589,6 @@ class JsonTable {
 	filterById(id) {
 		id = Number(id);
 		return this.data.filter((row) => row.id == id);
-	};
-
-	filterGlobal(value) {
-		const lowerValue = value.toLowerCase();
-		this.filteredData = this.data.filter((row) =>
-			Object.values(row).some((field) =>
-				String(field).toLowerCase().includes(lowerValue)
-			)
-		);
-		this.currentPage = 1;
-		this.renderTable();
 	};
 
 	// remove all blank or non present column from seleted excel
@@ -595,37 +613,34 @@ class JsonTable {
 		this.currentPage = 1; // Reset to first page
 		this.renderTable("rows");
 	};
+	
 
-	filterColumn(key, value) {
-		// Filter data based on specific column key and input value
-		// Update filteredData based on current search criteria
-				console.log("##############filterColumn#########################")
-		console.log(key)
-		console.log(value)
+	filterDatas(value) {
+		if (value && value.trim() !== "")
+			this.addToFilter("global", value.toLowerCase());
 
-		if (value === "") {
-			// If search value is empty, reset to original data
-			this.filteredData = [...this.data];
-		} else {
-			// Perform filtering based on the key and value
-			const lowerCaseValue = value.toLowerCase();
-
-			this.filteredData = this.filteredData.filter((row) => {
-				if ( this.columns.find((col) => col.key === key && col.searchType === "select") ) {
-					// For select dropdown filtering
-					return row[key].toLowerCase() === lowerCaseValue;
-				} else if ( this.columns.find((col) => col.key === key && col.searchType === "boolean") ) {
-					return row[key] === (value === 'true') ? true : false;
-				} else {					
-					// For text input filtering
-					return row[key] ? typeof row[key] === 'string' ? row[key].toLowerCase().includes(lowerCaseValue) : row[key].join("").toLowerCase().includes(lowerCaseValue) : "";
-				}
-			});
+		if (this.nameOfType) {			
+			if (this.localSave[this.nameOfType] && this.localSave[this.nameOfType]["global"]) {
+				this.filteredData = this.data.filter((row) =>
+					Object.values(row).some((field) => String(field).toLowerCase().includes(this.localSave[this.nameOfType]["global"]))
+				);
+				globalSearch.value = this.localSave[this.nameOfType]["global"];
+			} else if (this.localSave && Object.keys(this.localSave).length > 0) {
+				this.filteredData = this.data;
+				if (this.localSave[this.nameOfType]) 
+					Object.keys(this.localSave[this.nameOfType]).forEach(key => {			
+						if (this.localSave[this.nameOfType][key] !== "")
+							this.filteredData = this.filteredData.filter(row => typeof row[key] === 'string'
+								? row[key].toLowerCase().includes(this.localSave[this.nameOfType][key].toLowerCase()) 
+								: typeof row[key] === 'boolean' 
+									 ? row[key] === this.localSave[this.nameOfType][key]
+									 : this.localSave[this.nameOfType][key].includes(row[key]));
+					});
+			}
+			// Re-render table rows and pagination after filtering
+			this.currentPage = 1; // Reset to first page
+			this.renderTable("rows");
 		}
-
-		// Re-render table rows and pagination after filtering
-		this.currentPage = 1; // Reset to first page
-		this.renderTable("rows");
 	};
 
 	adjustTfootSearchFields() {

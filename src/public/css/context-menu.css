@@ -12,12 +12,12 @@
   display: none;
   transition: 0.2s display ease-in;
 }
-.context-menu .context-menu-options {
+.context-menu-options {
   list-style: none;
   padding: 0 0 0 0;
   z-index: 1;
 }
-.context-menu .context-menu-options .context-menu-option {
+.context-menu-options {
   font-weight: 500;
   z-index: 1;
   font-size: 14px;
@@ -25,7 +25,7 @@
   cursor: pointer;
 }
 
-.context-menu .context-menu-options .context-menu-option:hover {
+.context-menu-options .context-menu-option:hover {
   background: rgba(0, 0, 0, 0.2);
 }
 

@@ -17,6 +17,5 @@ document.querySelector('#userInput').addEventListener('change', (e) => {
   let liCreate = document.createElement('li')
   liCreate.innerText = e.target.value;
   getData.push(e.target.value);
-  let pushData = dataUl.append(liCreate);
-  localStorage.setItem('userData', JSON.stringify(getData));
+  // localStorage.setItem('userData', JSON.stringify(getData));
 });

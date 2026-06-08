@@ -8,13 +8,14 @@
 
 import { Router } from "express"
 import { deleteId, readId } from "../../controller"
-import { createListColumns, executeSql, executeSqlValues, sql } from "../../db"
+import { createListColumns, createPgUpdates, executeSql, executeSqlValues, sql } from "../../db"
 import { addEchantillon, updateEchantillon } from "./controller";
+import { dataBase } from "../../db/base";
 
 export const echantillonsRoutes = Router();
 
-echantillonsRoutes.get("/list/echantillons", async (req, res)  => {
-    await executeSql(`SELECT id, ${createListColumns("echantillons")} FROM echantillons ORDER BY creation`)
+echantillonsRoutes.get("/list/" + dataBase.echantillons.name, async (req, res)  => {
+    await executeSql(`SELECT id, ${createListColumns(dataBase.echantillons.name)} FROM ${dataBase.echantillons.name} ORDER BY creation`)
     .then((site: any) => {
       return res.status(200).json(site);
     }).catch (error => {
@@ -23,8 +24,8 @@ echantillonsRoutes.get("/list/echantillons", async (req, res)  => {
 });
 
 // Get one echantillon from identification
-echantillonsRoutes.get("/echantillon/identification/:id", async (req, res) => {
-    await executeSql(`SELECT id, ${createListColumns("echantillons")} FROM echantillons WHERE identification ${req.params.id.length < 13 ? 'LIKE' : '='} '${ req.params.id }${req.params.id.length < 13 ? '%' : ''}' ORDER BY creation`)
+echantillonsRoutes.get("/" + dataBase.echantillons.singular + "/identification/:id", async (req, res) => {
+    await executeSql(`SELECT id, ${createListColumns(dataBase.echantillons.name)} FROM ${dataBase.echantillons.name} WHERE identification ${req.params.id.length < 13 ? 'LIKE' : '='} '${ req.params.id }${req.params.id.length < 13 ? '%' : ''}' ORDER BY creation`)
     .then((echantillon: any) => {
         return res.status(200).json(echantillon);
     }).catch (error => {
@@ -33,8 +34,8 @@ echantillonsRoutes.get("/echantillon/identification/:id", async (req, res) => {
 });
 
 // Get all echantillons
-echantillonsRoutes.get("/echantillons", async (req, res) => {
-    return await executeSql(`SELECT * FROM echantillons ORDER BY creation, Identification`)
+echantillonsRoutes.get("/" + dataBase.echantillons.name, async (req, res) => {
+    return await executeSql(`SELECT * FROM ${dataBase.echantillons.name} ORDER BY creation, Identification`)
     .then((echantillons: any) => {
         return res.status(200).json(echantillons);
     }).catch (error => {
@@ -43,8 +44,8 @@ echantillonsRoutes.get("/echantillons", async (req, res) => {
 });
 
 // Get all echantillons with passport id
-echantillonsRoutes.get("/list/echantillons/:id", async (req, res) => {
-    await executeSql(`SELECT id, ${createListColumns("echantillons")} FROM echantillons WHERE passeport = ${ +req.params.id } ORDER BY creation`)
+echantillonsRoutes.get("/list/" + dataBase.echantillons.name +"/:id", async (req, res) => {
+    await executeSql(`SELECT id, ${createListColumns(dataBase.echantillons.name)} FROM ${dataBase.echantillons.name} WHERE passeport = ${ +req.params.id } ORDER BY creation`)
     .then((echantillons: any) => {
         return res.status(200).json(echantillons);
     }).catch (error => {
@@ -53,8 +54,8 @@ echantillonsRoutes.get("/list/echantillons/:id", async (req, res) => {
 });
 
 // Get one sample
-echantillonsRoutes.get("/echantillon/:id", async (req, res) => {
-    return await readId("echantillons",  +req.params.id)
+echantillonsRoutes.get("/" + dataBase.echantillons.singular + "/:id", async (req, res) => {
+    return await readId(dataBase.echantillons.name,  +req.params.id)
     .then(async (echantillon: any) => {
         if (echantillon.length === 1) {
             echantillon = echantillon[0];
@@ -69,18 +70,18 @@ echantillonsRoutes.get("/echantillon/:id", async (req, res) => {
 });
 
 // Get next sample number
-echantillonsRoutes.get("/echantillon/next/:id", async (req, res) => {
-    return await executeSql(`SELECT MAX(SUBSTRING (identification FROM 13 FOR 4)::int) from echantillons where identification LIKE '${req.params.id.slice(0, 12)}%'`)
+echantillonsRoutes.get("/" + dataBase.echantillons.singular + "/next/:id", async (req, res) => {
+    return await executeSql(`SELECT COALESCE( MAX( SUBSTRING ( identification FROM 13 FOR 4 ):: int ), 0) as numero FROM ${dataBase.echantillons.name} WHERE identification LIKE '${String(req.params.id.slice(0,12))}%' LIMIT 1` )
     .then((max: any) => {
-        return res.status                                                                                                                                                                                                                                                                                                         (200).json(Number(max[0].max) + 1);
+        return res.status(200).json(Number(max[0].max) + 1);
     }).catch (error => {
         return res.status(404).json({"error": error.detail});
     });
 });
 
 // Get next sample number for after request
-echantillonsRoutes.get("/echantillon/after/:id", async (req, res) => {
-    return await executeSql(`select MAX(SUBSTRING (identification FROM 13 FOR 4)::int) from echantillons where identification like CONCAT((select SUBSTRING (identification FROM 1 FOR 12) from echantillons where id = ${+req.params.id}), '%')`)
+echantillonsRoutes.get("/" + dataBase.echantillons.singular + "/after/:id", async (req, res) => {
+    return await executeSql(`SELECT MAX( SUBSTRING ( identification FROM 13 FOR 4 ):: int ) FROM ${dataBase.echantillons.name} WHERE identification like CONCAT( ( SELECT SUBSTRING ( identification FROM 1 FOR 12 ) FROM ${dataBase.echantillons.name} WHERE id = ${+String(req.params.id)} ), '%' )`)
     .then((max: any) => {
         return res.status(200).json(Number(max[0].max) + 1);
     }).catch (error => {
@@ -89,7 +90,7 @@ echantillonsRoutes.get("/echantillon/after/:id", async (req, res) => {
 });
 
 // Create one sample
-echantillonsRoutes.post("/echantillon", async (req, res) => {
+echantillonsRoutes.post("/" + dataBase.echantillons.singular + "", async (req, res) => {
     await addEchantillon(req.body)
     .then((echantillon: any) => {
         return res.status(201).json(echantillon);
@@ -99,8 +100,8 @@ echantillonsRoutes.post("/echantillon", async (req, res) => {
 });
 
 // Update one sample
-echantillonsRoutes.patch("/echantillon/:id", async (req, res) => {
-   await updateEchantillon(req.body,  +req.params.id)
+echantillonsRoutes.patch("/" + dataBase.echantillons.singular + "/:id", async (req, res) => {
+   await updateEchantillon(req.body, +req.params.id)
    .then((echantillon: any) => {
        return res.status(201).json(echantillon);
    }).catch((error: any) => {
@@ -108,9 +109,24 @@ echantillonsRoutes.patch("/echantillon/:id", async (req, res) => {
    })
 }); 
 
+// Update Selection
+echantillonsRoutes.patch("/" + dataBase.echantillons.name + "/selection/:id", async (req, res) => {
+    return await executeSql(`SELECT ids FROM selections WHERE id=${+req.params.id}`)
+    .then(async (ids: any) => {
+        return  await executeSql(`UPDATE ${dataBase.echantillons.name} SET ${createPgUpdates(dataBase.echantillons.name, req.body)} WHERE id IN (${ ids[0].ids })`)
+        .then(() => {
+            return res.status(201).json({selection : +req.params.id});
+        }).catch((error: any) => {
+                return res.status(404).json({"error": error.detail});
+        });                                                                                                                                                                                                                                                                                                       
+    }).catch (error => {
+        return res.status(404).json({"error": error.detail});
+    }); 
+}); 
+
 // delete one sample
-echantillonsRoutes.delete("/echantillon/:id", async (req, res) => {
-    return await deleteId("echantillons",  +req.params.id)
+echantillonsRoutes.delete("/" + dataBase.echantillons.singular + "/:id", async (req, res) => {
+    return await deleteId(dataBase.echantillons.name,  +req.params.id)
     .then(() => {
         return res.status(203).json();
     }).catch (error => {

@@ -35,7 +35,7 @@ export async function createDB(adminPass: string): Promise<Record<string, string
   const query:string[] = [];
   Object.keys(dataBase).forEach(tableName => {
     const cols:string[] = [];
-    if(dataBase[tableName].create === true) {
+    if (dataBase[tableName].create === true) {
       Object.keys(dataBase[tableName].columns).forEach((columnName: string) => {
         if (String(dataBase[tableName as keyof object].columns[columnName as keyof object]["create" as keyof object]).trim() !== "")
          cols.push(columnName + " " + dataBase[tableName as keyof object].columns[columnName as keyof object]["create" as keyof object]);  

@@ -24,7 +24,9 @@
                 "Stocké",
                 "Perdu",
                 "Detruit",
-                "Importé"
+                "Importé", 
+                "Annulé",
+                "Reprelevé"
             ],
             "etiquette": {
                 "sticker0": {

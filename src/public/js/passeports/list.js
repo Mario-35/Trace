@@ -19,3 +19,6 @@ document.addEventListener("DOMContentLoaded", function () {
 		// columns: structure
 	});
 });
+
+// passeport addes in echantillon process
+ajouter.remove();
