@@ -4,603 +4,29 @@
             "datas": {
                 "datas": [
                     {
-                        "id": 0,
-                        "Bloc": 1,
-                        "libre": "A-101    S2FV    0-5 cm",
-                        "Parcelle": "A-101",
-                        "selected": true,
-                        "Traitement": "S2FV",
-                        "type d'analyse": "stabilité",
-                        "Profondeur (cm)": "0-5 cm",
-                        "N° Dossier pole analytique": "205-1122"
+                        "analyses": "ADNE 1/4"
                     },
                     {
-                        "id": 1,
-                        "Bloc": 1,
-                        "libre": "A-102    S2M    0-5 cm",
-                        "Parcelle": "A-102",
-                        "selected": true,
-                        "Traitement": "S2M",
-                        "type d'analyse": "stabilité",
-                        "Profondeur (cm)": "0-5 cm",
-                        "N° Dossier pole analytique": "205-1123"
+                        "analyses": "ADNE 2/4"
                     },
                     {
-                        "id": 2,
-                        "Bloc": 1,
-                        "libre": "A-103    S1FV    0-5 cm",
-                        "Parcelle": "A-103",
-                        "selected": true,
-                        "Traitement": "S1FV",
-                        "type d'analyse": "stabilité",
-                        "Profondeur (cm)": "0-5 cm",
-                        "N° Dossier pole analytique": "205-1124"
+                        "analyses": "ADNE 3/4"
                     },
                     {
-                        "id": 3,
-                        "Bloc": 1,
-                        "libre": "A-104    S1M    0-5 cm",
-                        "Parcelle": "A-104",
-                        "selected": true,
-                        "Traitement": "S1M",
-                        "type d'analyse": "stabilité",
-                        "Profondeur (cm)": "0-5 cm",
-                        "N° Dossier pole analytique": "205-1125"
+                        "analyses": "ADNE 4/4"
                     },
                     {
-                        "id": 4,
-                        "Bloc": 1,
-                        "libre": "A-105    LM    0-5 cm",
-                        "Parcelle": "A-105",
-                        "selected": true,
-                        "Traitement": "LM",
-                        "type d'analyse": "stabilité",
-                        "Profondeur (cm)": "0-5 cm",
-                        "N° Dossier pole analytique": "205-1126"
+                        "analyses": "DA/HUM TM1"
                     },
                     {
-                        "id": 5,
-                        "Bloc": 1,
-                        "libre": "A-106    LFV    0-5 cm",
-                        "Parcelle": "A-106",
-                        "selected": true,
-                        "Traitement": "LFV",
-                        "type d'analyse": "stabilité",
-                        "Profondeur (cm)": "0-5 cm",
-                        "N° Dossier pole analytique": "205-1127"
+                        "analyses": "DA/HUM TM2"
                     },
                     {
-                        "id": 6,
-                        "Bloc": 2,
-                        "libre": "A-201    LM    0-5 cm",
-                        "Parcelle": "A-201",
-                        "selected": true,
-                        "Traitement": "LM",
-                        "type d'analyse": "stabilité",
-                        "Profondeur (cm)": "0-5 cm",
-                        "N° Dossier pole analytique": "205-1128"
-                    },
-                    {
-                        "id": 7,
-                        "Bloc": 2,
-                        "libre": "A-202    LFV    0-5 cm",
-                        "Parcelle": "A-202",
-                        "selected": true,
-                        "Traitement": "LFV",
-                        "type d'analyse": "stabilité",
-                        "Profondeur (cm)": "0-5 cm",
-                        "N° Dossier pole analytique": "205-1129"
-                    },
-                    {
-                        "id": 8,
-                        "Bloc": 2,
-                        "libre": "A-203    S2M    0-5 cm",
-                        "Parcelle": "A-203",
-                        "selected": true,
-                        "Traitement": "S2M",
-                        "type d'analyse": "stabilité",
-                        "Profondeur (cm)": "0-5 cm",
-                        "N° Dossier pole analytique": "205-1130"
-                    },
-                    {
-                        "id": 9,
-                        "Bloc": 2,
-                        "libre": "A-204    S2FV    0-5 cm",
-                        "Parcelle": "A-204",
-                        "selected": true,
-                        "Traitement": "S2FV",
-                        "type d'analyse": "stabilité",
-                        "Profondeur (cm)": "0-5 cm",
-                        "N° Dossier pole analytique": "205-1131"
-                    },
-                    {
-                        "id": 10,
-                        "Bloc": 2,
-                        "libre": "A-205    S1M    0-5 cm",
-                        "Parcelle": "A-205",
-                        "selected": true,
-                        "Traitement": "S1M",
-                        "type d'analyse": "stabilité",
-                        "Profondeur (cm)": "0-5 cm",
-                        "N° Dossier pole analytique": "205-1132"
-                    },
-                    {
-                        "id": 11,
-                        "Bloc": 2,
-                        "libre": "A-206    S1FV    0-5 cm",
-                        "Parcelle": "A-206",
-                        "selected": true,
-                        "Traitement": "S1FV",
-                        "type d'analyse": "stabilité",
-                        "Profondeur (cm)": "0-5 cm",
-                        "N° Dossier pole analytique": "205-1133"
-                    },
-                    {
-                        "id": 12,
-                        "Bloc": 3,
-                        "libre": "A-301    S1FV    0-5 cm",
-                        "Parcelle": "A-301",
-                        "selected": true,
-                        "Traitement": "S1FV",
-                        "type d'analyse": "stabilité",
-                        "Profondeur (cm)": "0-5 cm",
-                        "N° Dossier pole analytique": "205-1134"
-                    },
-                    {
-                        "id": 13,
-                        "Bloc": 3,
-                        "libre": "A-302    S1M    0-5 cm",
-                        "Parcelle": "A-302",
-                        "selected": true,
-                        "Traitement": "S1M",
-                        "type d'analyse": "stabilité",
-                        "Profondeur (cm)": "0-5 cm",
-                        "N° Dossier pole analytique": "205-1135"
-                    },
-                    {
-                        "id": 14,
-                        "Bloc": 3,
-                        "libre": "A-303    LFV    0-5 cm",
-                        "Parcelle": "A-303",
-                        "selected": true,
-                        "Traitement": "LFV",
-                        "type d'analyse": "stabilité",
-                        "Profondeur (cm)": "0-5 cm",
-                        "N° Dossier pole analytique": "205-1136"
-                    },
-                    {
-                        "id": 15,
-                        "Bloc": 3,
-                        "libre": "A-304    LM    0-5 cm",
-                        "Parcelle": "A-304",
-                        "selected": true,
-                        "Traitement": "LM",
-                        "type d'analyse": "stabilité",
-                        "Profondeur (cm)": "0-5 cm",
-                        "N° Dossier pole analytique": "205-1137"
-                    },
-                    {
-                        "id": 16,
-                        "Bloc": 3,
-                        "libre": "A-305    S2FV    0-5 cm",
-                        "Parcelle": "A-305",
-                        "selected": true,
-                        "Traitement": "S2FV",
-                        "type d'analyse": "stabilité",
-                        "Profondeur (cm)": "0-5 cm",
-                        "N° Dossier pole analytique": "205-1138"
-                    },
-                    {
-                        "id": 17,
-                        "Bloc": 3,
-                        "libre": "A-306    S2M    0-5 cm",
-                        "Parcelle": "A-306",
-                        "selected": true,
-                        "Traitement": "S2M",
-                        "type d'analyse": "stabilité",
-                        "Profondeur (cm)": "0-5 cm",
-                        "N° Dossier pole analytique": "205-1139"
-                    },
-                    {
-                        "id": 18,
-                        "Bloc": 1,
-                        "libre": "A-101    S2FV    5-15 cm",
-                        "Parcelle": "A-101",
-                        "selected": true,
-                        "Traitement": "S2FV",
-                        "type d'analyse": "stabilité",
-                        "Profondeur (cm)": "5-15 cm",
-                        "N° Dossier pole analytique": "205-1140"
-                    },
-                    {
-                        "id": 19,
-                        "Bloc": 1,
-                        "libre": "A-102    S2M    5-15 cm",
-                        "Parcelle": "A-102",
-                        "selected": true,
-                        "Traitement": "S2M",
-                        "type d'analyse": "stabilité",
-                        "Profondeur (cm)": "5-15 cm",
-                        "N° Dossier pole analytique": "205-1141"
-                    },
-                    {
-                        "id": 20,
-                        "Bloc": 1,
-                        "libre": "A-103    S1FV    5-15 cm",
-                        "Parcelle": "A-103",
-                        "selected": true,
-                        "Traitement": "S1FV",
-                        "type d'analyse": "stabilité",
-                        "Profondeur (cm)": "5-15 cm",
-                        "N° Dossier pole analytique": "205-1142"
-                    },
-                    {
-                        "id": 21,
-                        "Bloc": 1,
-                        "libre": "A-104    S1M    5-15 cm",
-                        "Parcelle": "A-104",
-                        "selected": true,
-                        "Traitement": "S1M",
-                        "type d'analyse": "stabilité",
-                        "Profondeur (cm)": "5-15 cm",
-                        "N° Dossier pole analytique": "205-1143"
-                    },
-                    {
-                        "id": 22,
-                        "Bloc": 1,
-                        "libre": "A-105    LM    5-15 cm",
-                        "Parcelle": "A-105",
-                        "selected": true,
-                        "Traitement": "LM",
-                        "type d'analyse": "stabilité",
-                        "Profondeur (cm)": "5-15 cm",
-                        "N° Dossier pole analytique": "205-1144"
-                    },
-                    {
-                        "id": 23,
-                        "Bloc": 1,
-                        "libre": "A-106    LFV    5-15 cm",
-                        "Parcelle": "A-106",
-                        "selected": true,
-                        "Traitement": "LFV",
-                        "type d'analyse": "stabilité",
-                        "Profondeur (cm)": "5-15 cm",
-                        "N° Dossier pole analytique": "205-1145"
-                    },
-                    {
-                        "id": 24,
-                        "Bloc": 2,
-                        "libre": "A-201    LM    5-15 cm",
-                        "Parcelle": "A-201",
-                        "selected": true,
-                        "Traitement": "LM",
-                        "type d'analyse": "stabilité",
-                        "Profondeur (cm)": "5-15 cm",
-                        "N° Dossier pole analytique": "205-1146"
-                    },
-                    {
-                        "id": 25,
-                        "Bloc": 2,
-                        "libre": "A-202    LFV    5-15 cm",
-                        "Parcelle": "A-202",
-                        "selected": true,
-                        "Traitement": "LFV",
-                        "type d'analyse": "stabilité",
-                        "Profondeur (cm)": "5-15 cm",
-                        "N° Dossier pole analytique": "205-1147"
-                    },
-                    {
-                        "id": 26,
-                        "Bloc": 2,
-                        "libre": "A-203    S2M    5-15 cm",
-                        "Parcelle": "A-203",
-                        "selected": true,
-                        "Traitement": "S2M",
-                        "type d'analyse": "stabilité",
-                        "Profondeur (cm)": "5-15 cm",
-                        "N° Dossier pole analytique": "205-1148"
-                    },
-                    {
-                        "id": 27,
-                        "Bloc": 2,
-                        "libre": "A-204    S2FV    5-15 cm",
-                        "Parcelle": "A-204",
-                        "selected": true,
-                        "Traitement": "S2FV",
-                        "type d'analyse": "stabilité",
-                        "Profondeur (cm)": "5-15 cm",
-                        "N° Dossier pole analytique": "205-1149"
-                    },
-                    {
-                        "id": 28,
-                        "Bloc": 2,
-                        "libre": "A-205    S1M    5-15 cm",
-                        "Parcelle": "A-205",
-                        "selected": true,
-                        "Traitement": "S1M",
-                        "type d'analyse": "stabilité",
-                        "Profondeur (cm)": "5-15 cm",
-                        "N° Dossier pole analytique": "205-1150"
-                    },
-                    {
-                        "id": 29,
-                        "Bloc": 2,
-                        "libre": "A-206    S1FV    5-15 cm",
-                        "Parcelle": "A-206",
-                        "selected": true,
-                        "Traitement": "S1FV",
-                        "type d'analyse": "stabilité",
-                        "Profondeur (cm)": "5-15 cm",
-                        "N° Dossier pole analytique": "205-1151"
-                    },
-                    {
-                        "id": 30,
-                        "Bloc": 3,
-                        "libre": "A-301    S1FV    5-15 cm",
-                        "Parcelle": "A-301",
-                        "selected": true,
-                        "Traitement": "S1FV",
-                        "type d'analyse": "stabilité",
-                        "Profondeur (cm)": "5-15 cm",
-                        "N° Dossier pole analytique": "205-1152"
-                    },
-                    {
-                        "id": 31,
-                        "Bloc": 3,
-                        "libre": "A-302    S1M    5-15 cm",
-                        "Parcelle": "A-302",
-                        "selected": true,
-                        "Traitement": "S1M",
-                        "type d'analyse": "stabilité",
-                        "Profondeur (cm)": "5-15 cm",
-                        "N° Dossier pole analytique": "205-1153"
-                    },
-                    {
-                        "id": 32,
-                        "Bloc": 3,
-                        "libre": "A-303    LFV    5-15 cm",
-                        "Parcelle": "A-303",
-                        "selected": true,
-                        "Traitement": "LFV",
-                        "type d'analyse": "stabilité",
-                        "Profondeur (cm)": "5-15 cm",
-                        "N° Dossier pole analytique": "205-1154"
-                    },
-                    {
-                        "id": 33,
-                        "Bloc": 3,
-                        "libre": "A-304    LM    5-15 cm",
-                        "Parcelle": "A-304",
-                        "selected": true,
-                        "Traitement": "LM",
-                        "type d'analyse": "stabilité",
-                        "Profondeur (cm)": "5-15 cm",
-                        "N° Dossier pole analytique": "205-1155"
-                    },
-                    {
-                        "id": 34,
-                        "Bloc": 3,
-                        "libre": "A-305    S2FV    5-15 cm",
-                        "Parcelle": "A-305",
-                        "selected": true,
-                        "Traitement": "S2FV",
-                        "type d'analyse": "stabilité",
-                        "Profondeur (cm)": "5-15 cm",
-                        "N° Dossier pole analytique": "205-1156"
-                    },
-                    {
-                        "id": 35,
-                        "Bloc": 3,
-                        "libre": "A-306    S2M    5-15 cm",
-                        "Parcelle": "A-306",
-                        "selected": true,
-                        "Traitement": "S2M",
-                        "type d'analyse": "stabilité",
-                        "Profondeur (cm)": "5-15 cm",
-                        "N° Dossier pole analytique": "205-1157"
-                    },
-                    {
-                        "id": 36,
-                        "Bloc": 1,
-                        "libre": "A-101    S2FV    15-25 cm",
-                        "Parcelle": "A-101",
-                        "selected": true,
-                        "Traitement": "S2FV",
-                        "type d'analyse": "stabilité",
-                        "Profondeur (cm)": "15-25 cm",
-                        "N° Dossier pole analytique": "205-1158"
-                    },
-                    {
-                        "id": 37,
-                        "Bloc": 1,
-                        "libre": "A-102    S2M    15-25 cm",
-                        "Parcelle": "A-102",
-                        "selected": true,
-                        "Traitement": "S2M",
-                        "type d'analyse": "stabilité",
-                        "Profondeur (cm)": "15-25 cm",
-                        "N° Dossier pole analytique": "205-1159"
-                    },
-                    {
-                        "id": 38,
-                        "Bloc": 1,
-                        "libre": "A-103    S1FV    15-25 cm",
-                        "Parcelle": "A-103",
-                        "selected": true,
-                        "Traitement": "S1FV",
-                        "type d'analyse": "stabilité",
-                        "Profondeur (cm)": "15-25 cm",
-                        "N° Dossier pole analytique": "205-1160"
-                    },
-                    {
-                        "id": 39,
-                        "Bloc": 1,
-                        "libre": "A-104    S1M    15-25 cm",
-                        "Parcelle": "A-104",
-                        "selected": true,
-                        "Traitement": "S1M",
-                        "type d'analyse": "stabilité",
-                        "Profondeur (cm)": "15-25 cm",
-                        "N° Dossier pole analytique": "205-1161"
-                    },
-                    {
-                        "id": 40,
-                        "Bloc": 1,
-                        "libre": "A-105    LM    15-25 cm",
-                        "Parcelle": "A-105",
-                        "selected": true,
-                        "Traitement": "LM",
-                        "type d'analyse": "stabilité",
-                        "Profondeur (cm)": "15-25 cm",
-                        "N° Dossier pole analytique": "205-1162"
-                    },
-                    {
-                        "id": 41,
-                        "Bloc": 1,
-                        "libre": "A-106    LFV    15-25 cm",
-                        "Parcelle": "A-106",
-                        "selected": true,
-                        "Traitement": "LFV",
-                        "type d'analyse": "stabilité",
-                        "Profondeur (cm)": "15-25 cm",
-                        "N° Dossier pole analytique": "205-1163"
-                    },
-                    {
-                        "id": 42,
-                        "Bloc": 2,
-                        "libre": "A-201    LM    15-25 cm",
-                        "Parcelle": "A-201",
-                        "selected": true,
-                        "Traitement": "LM",
-                        "type d'analyse": "stabilité",
-                        "Profondeur (cm)": "15-25 cm",
-                        "N° Dossier pole analytique": "205-1164"
-                    },
-                    {
-                        "id": 43,
-                        "Bloc": 2,
-                        "libre": "A-202    LFV    15-25 cm",
-                        "Parcelle": "A-202",
-                        "selected": true,
-                        "Traitement": "LFV",
-                        "type d'analyse": "stabilité",
-                        "Profondeur (cm)": "15-25 cm",
-                        "N° Dossier pole analytique": "205-1165"
-                    },
-                    {
-                        "id": 44,
-                        "Bloc": 2,
-                        "libre": "A-203    S2M    15-25 cm",
-                        "Parcelle": "A-203",
-                        "selected": true,
-                        "Traitement": "S2M",
-                        "type d'analyse": "stabilité",
-                        "Profondeur (cm)": "15-25 cm",
-                        "N° Dossier pole analytique": "205-1166"
-                    },
-                    {
-                        "id": 45,
-                        "Bloc": 2,
-                        "libre": "A-204    S2FV    15-25 cm",
-                        "Parcelle": "A-204",
-                        "selected": true,
-                        "Traitement": "S2FV",
-                        "type d'analyse": "stabilité",
-                        "Profondeur (cm)": "15-25 cm",
-                        "N° Dossier pole analytique": "205-1167"
-                    },
-                    {
-                        "id": 46,
-                        "Bloc": 2,
-                        "libre": "A-205    S1M    15-25 cm",
-                        "Parcelle": "A-205",
-                        "selected": true,
-                        "Traitement": "S1M",
-                        "type d'analyse": "stabilité",
-                        "Profondeur (cm)": "15-25 cm",
-                        "N° Dossier pole analytique": "205-1168"
-                    },
-                    {
-                        "id": 47,
-                        "Bloc": 2,
-                        "libre": "A-206    S1FV    15-25 cm",
-                        "Parcelle": "A-206",
-                        "selected": true,
-                        "Traitement": "S1FV",
-                        "type d'analyse": "stabilité",
-                        "Profondeur (cm)": "15-25 cm",
-                        "N° Dossier pole analytique": "205-1169"
-                    },
-                    {
-                        "id": 48,
-                        "Bloc": 3,
-                        "libre": "A-301    S1FV    15-25 cm",
-                        "Parcelle": "A-301",
-                        "selected": true,
-                        "Traitement": "S1FV",
-                        "type d'analyse": "stabilité",
-                        "Profondeur (cm)": "15-25 cm",
-                        "N° Dossier pole analytique": "205-1170"
-                    },
-                    {
-                        "id": 49,
-                        "Bloc": 3,
-                        "libre": "A-302    S1M    15-25 cm",
-                        "Parcelle": "A-302",
-                        "selected": true,
-                        "Traitement": "S1M",
-                        "type d'analyse": "stabilité",
-                        "Profondeur (cm)": "15-25 cm",
-                        "N° Dossier pole analytique": "205-1171"
-                    },
-                    {
-                        "id": 50,
-                        "Bloc": 3,
-                        "libre": "A-303    LFV    15-25 cm",
-                        "Parcelle": "A-303",
-                        "selected": true,
-                        "Traitement": "LFV",
-                        "type d'analyse": "stabilité",
-                        "Profondeur (cm)": "15-25 cm",
-                        "N° Dossier pole analytique": "205-1172"
-                    },
-                    {
-                        "id": 51,
-                        "Bloc": 3,
-                        "libre": "A-304    LM    15-25 cm",
-                        "Parcelle": "A-304",
-                        "selected": true,
-                        "Traitement": "LM",
-                        "type d'analyse": "stabilité",
-                        "Profondeur (cm)": "15-25 cm",
-                        "N° Dossier pole analytique": "205-1173"
-                    },
-                    {
-                        "id": 52,
-                        "Bloc": 3,
-                        "libre": "A-305    S2FV    15-25 cm",
-                        "Parcelle": "A-305",
-                        "selected": true,
-                        "Traitement": "S2FV",
-                        "type d'analyse": "stabilité",
-                        "Profondeur (cm)": "15-25 cm",
-                        "N° Dossier pole analytique": "205-1174"
-                    },
-                    {
-                        "id": 53,
-                        "Bloc": 3,
-                        "libre": "A-306    S2M    15-25 cm",
-                        "Parcelle": "A-306",
-                        "selected": true,
-                        "Traitement": "S2M",
-                        "type d'analyse": "stabilité",
-                        "Profondeur (cm)": "15-25 cm",
-                        "N° Dossier pole analytique": "205-1175"
+                        "analyses": "DA/HUM TM3"
                     }
                 ],
                 "columns": {
-                    "libre": "Profondeur (cm)",
-                    "dossier": "N° Dossier pole analytique"
+                    "analyses": "analyses"
                 }
             }
         },
@@ -608,689 +34,29 @@
             "datas": {
                 "datas": [
                     {
-                        "id": 0,
-                        "Site": "LANTIC",
-                        "Année": 2026,
-                        "Contenu": "Sol cultivé",
-                        "ID: Site": 428,
-                        "selected": true,
-                        "Programme": "RMQS.Biodiv",
-                        "Code Barre": "428041",
-                        "Péremption": "5 ans",
-                        "Scientifique": "G.Perès",
-                        "N° de Dossier": 428,
-                        "N°échantillon": "041",
-                        "Date prélèvement": "2026-03-03T23:00:00.000Z",
-                        "Analyses demandées": "Nématodes",
-                        "N° d'identification": "428-041"
+                        "analyses": "ADNE 1/4"
                     },
                     {
-                        "id": 1,
-                        "Site": "LANTIC",
-                        "Année": 2026,
-                        "Contenu": "Sol cultivé",
-                        "ID: Site": 428,
-                        "selected": true,
-                        "Programme": "RMQS.Biodiv",
-                        "Code Barre": "428042",
-                        "Péremption": "5 ans",
-                        "Scientifique": "G.Perès",
-                        "N° de Dossier": 428,
-                        "N°échantillon": "042",
-                        "Date prélèvement": "2026-03-03T23:00:00.000Z",
-                        "Analyses demandées": "Matière org",
-                        "N° d'identification": "428-042"
+                        "analyses": "ADNE 2/4"
                     },
                     {
-                        "id": 2,
-                        "Site": "LANTIC",
-                        "Année": 2026,
-                        "Contenu": "Sol cultivé",
-                        "ID: Site": 428,
-                        "selected": true,
-                        "Programme": "RMQS.Biodiv",
-                        "Code Barre": "428043",
-                        "Péremption": "5 ans",
-                        "Scientifique": "G.Perès",
-                        "N° de Dossier": 428,
-                        "N°échantillon": "043",
-                        "Date prélèvement": "2026-03-03T23:00:00.000Z",
-                        "Analyses demandées": "Physico-chimie",
-                        "N° d'identification": "428-043"
+                        "analyses": "ADNE 3/4"
                     },
                     {
-                        "id": 3,
-                        "Site": "LANTIC",
-                        "Année": 2026,
-                        "Contenu": "Sol cultivé",
-                        "ID: Site": 428,
-                        "selected": true,
-                        "Programme": "RMQS.Biodiv",
-                        "Code Barre": "428044",
-                        "Péremption": "5 ans",
-                        "Scientifique": "G.Perès",
-                        "N° de Dossier": 428,
-                        "N°échantillon": "044",
-                        "Date prélèvement": "2026-03-03T23:00:00.000Z",
-                        "Analyses demandées": "ADNe 1",
-                        "N° d'identification": "428-044"
+                        "analyses": "ADNE 4/4"
                     },
                     {
-                        "id": 4,
-                        "Site": "LANTIC",
-                        "Année": 2026,
-                        "Contenu": "Sol cultivé",
-                        "ID: Site": 428,
-                        "selected": true,
-                        "Programme": "RMQS.Biodiv",
-                        "Code Barre": "428045",
-                        "Péremption": "5 ans",
-                        "Scientifique": "G.Perès",
-                        "N° de Dossier": 428,
-                        "N°échantillon": "045",
-                        "Date prélèvement": "2026-03-03T23:00:00.000Z",
-                        "Analyses demandées": "ADNe 2",
-                        "N° d'identification": "428-045"
+                        "analyses": "DA/Hum TM1"
                     },
                     {
-                        "id": 5,
-                        "Site": "LANTIC",
-                        "Année": 2026,
-                        "Contenu": "Sol cultivé",
-                        "ID: Site": 428,
-                        "selected": true,
-                        "Programme": "RMQS.Biodiv",
-                        "Code Barre": "428046",
-                        "Péremption": "5 ans",
-                        "Scientifique": "G.Perès",
-                        "N° de Dossier": 428,
-                        "N°échantillon": "046",
-                        "Date prélèvement": "2026-03-03T23:00:00.000Z",
-                        "Analyses demandées": "ADNe 3",
-                        "N° d'identification": "428-046"
+                        "analyses": "DA/Hum TM2"
                     },
                     {
-                        "id": 6,
-                        "Site": "LANTIC",
-                        "Année": 2026,
-                        "Contenu": "Sol cultivé",
-                        "ID: Site": 428,
-                        "selected": true,
-                        "Programme": "RMQS.Biodiv",
-                        "Code Barre": "428047",
-                        "Péremption": "5 ans",
-                        "Scientifique": "G.Perès",
-                        "N° de Dossier": 428,
-                        "N°échantillon": "047",
-                        "Date prélèvement": "2026-03-03T23:00:00.000Z",
-                        "Analyses demandées": "ADNe 4",
-                        "N° d'identification": "428-047"
-                    },
-                    {
-                        "id": 7,
-                        "Site": "LANTIC",
-                        "Année": 2026,
-                        "Contenu": "Sol cultivé",
-                        "ID: Site": 428,
-                        "selected": true,
-                        "Programme": "RMQS.Biodiv",
-                        "Code Barre": "428048",
-                        "Péremption": "5 ans",
-                        "Scientifique": "G.Perès",
-                        "N° de Dossier": 428,
-                        "N°échantillon": "048",
-                        "Date prélèvement": "2026-03-03T23:00:00.000Z",
-                        "Analyses demandées": "DA/humidité 1",
-                        "N° d'identification": "428-048"
-                    },
-                    {
-                        "id": 8,
-                        "Site": "LANTIC",
-                        "Année": 2026,
-                        "Contenu": "Sol cultivé",
-                        "ID: Site": 428,
-                        "selected": true,
-                        "Programme": "RMQS.Biodiv",
-                        "Code Barre": "428049",
-                        "Péremption": "5 ans",
-                        "Scientifique": "G.Perès",
-                        "N° de Dossier": 428,
-                        "N°échantillon": "049",
-                        "Date prélèvement": "2026-03-03T23:00:00.000Z",
-                        "Analyses demandées": "DA/humidité 2",
-                        "N° d'identification": "428-049"
-                    },
-                    {
-                        "id": 9,
-                        "Site": "LANTIC",
-                        "Année": 2026,
-                        "Contenu": "Sol cultivé",
-                        "ID: Site": 428,
-                        "selected": true,
-                        "Programme": "RMQS.Biodiv",
-                        "Code Barre": "428050",
-                        "Péremption": "5 ans",
-                        "Scientifique": "G.Perès",
-                        "N° de Dossier": 428,
-                        "N°échantillon": "050",
-                        "Date prélèvement": "2026-03-03T23:00:00.000Z",
-                        "Analyses demandées": "DA/humidité 3",
-                        "N° d'identification": "428-050"
-                    },
-                    {
-                        "id": 10,
-                        "Site": "ROUPERROUX",
-                        "Année": 2026,
-                        "Contenu": "Sol cultivé",
-                        "ID: Site": 501,
-                        "selected": true,
-                        "Programme": "RMQS.Biodiv",
-                        "Code Barre": "501051",
-                        "Péremption": "5 ans",
-                        "Scientifique": "G.Perès",
-                        "N° de Dossier": 501,
-                        "N°échantillon": "051",
-                        "Date prélèvement": "2026-03-04T23:00:00.000Z",
-                        "Analyses demandées": "Nématodes",
-                        "N° d'identification": "501-051"
-                    },
-                    {
-                        "id": 11,
-                        "Site": "ROUPERROUX",
-                        "Année": 2026,
-                        "Contenu": "Sol cultivé",
-                        "ID: Site": 501,
-                        "selected": true,
-                        "Programme": "RMQS.Biodiv",
-                        "Code Barre": "501052",
-                        "Péremption": "5 ans",
-                        "Scientifique": "G.Perès",
-                        "N° de Dossier": 501,
-                        "N°échantillon": "052",
-                        "Date prélèvement": "2026-03-04T23:00:00.000Z",
-                        "Analyses demandées": "Matière org",
-                        "N° d'identification": "501-052"
-                    },
-                    {
-                        "id": 12,
-                        "Site": "ROUPERROUX",
-                        "Année": 2026,
-                        "Contenu": "Sol cultivé",
-                        "ID: Site": 501,
-                        "selected": true,
-                        "Programme": "RMQS.Biodiv",
-                        "Code Barre": "501053",
-                        "Péremption": "5 ans",
-                        "Scientifique": "G.Perès",
-                        "N° de Dossier": 501,
-                        "N°échantillon": "053",
-                        "Date prélèvement": "2026-03-04T23:00:00.000Z",
-                        "Analyses demandées": "Physico-chimie",
-                        "N° d'identification": "501-053"
-                    },
-                    {
-                        "id": 13,
-                        "Site": "ROUPERROUX",
-                        "Année": 2026,
-                        "Contenu": "Sol cultivé",
-                        "ID: Site": 501,
-                        "selected": true,
-                        "Programme": "RMQS.Biodiv",
-                        "Code Barre": "501054",
-                        "Péremption": "5 ans",
-                        "Scientifique": "G.Perès",
-                        "N° de Dossier": 501,
-                        "N°échantillon": "054",
-                        "Date prélèvement": "2026-03-04T23:00:00.000Z",
-                        "Analyses demandées": "ADNe 1",
-                        "N° d'identification": "501-054"
-                    },
-                    {
-                        "id": 14,
-                        "Site": "ROUPERROUX",
-                        "Année": 2026,
-                        "Contenu": "Sol cultivé",
-                        "ID: Site": 501,
-                        "selected": true,
-                        "Programme": "RMQS.Biodiv",
-                        "Code Barre": "501055",
-                        "Péremption": "5 ans",
-                        "Scientifique": "G.Perès",
-                        "N° de Dossier": 501,
-                        "N°échantillon": "055",
-                        "Date prélèvement": "2026-03-04T23:00:00.000Z",
-                        "Analyses demandées": "ADNe 2",
-                        "N° d'identification": "501-055"
-                    },
-                    {
-                        "id": 15,
-                        "Site": "ROUPERROUX",
-                        "Année": 2026,
-                        "Contenu": "Sol cultivé",
-                        "ID: Site": 501,
-                        "selected": true,
-                        "Programme": "RMQS.Biodiv",
-                        "Code Barre": "501056",
-                        "Péremption": "5 ans",
-                        "Scientifique": "G.Perès",
-                        "N° de Dossier": 501,
-                        "N°échantillon": "056",
-                        "Date prélèvement": "2026-03-04T23:00:00.000Z",
-                        "Analyses demandées": "ADNe 3",
-                        "N° d'identification": "501-056"
-                    },
-                    {
-                        "id": 16,
-                        "Site": "ROUPERROUX",
-                        "Année": 2026,
-                        "Contenu": "Sol cultivé",
-                        "ID: Site": 501,
-                        "selected": true,
-                        "Programme": "RMQS.Biodiv",
-                        "Code Barre": "501057",
-                        "Péremption": "5 ans",
-                        "Scientifique": "G.Perès",
-                        "N° de Dossier": 501,
-                        "N°échantillon": "057",
-                        "Date prélèvement": "2026-03-04T23:00:00.000Z",
-                        "Analyses demandées": "ADNe 4",
-                        "N° d'identification": "501-057"
-                    },
-                    {
-                        "id": 17,
-                        "Site": "ROUPERROUX",
-                        "Année": 2026,
-                        "Contenu": "Sol cultivé",
-                        "ID: Site": 501,
-                        "selected": true,
-                        "Programme": "RMQS.Biodiv",
-                        "Code Barre": "501058",
-                        "Péremption": "5 ans",
-                        "Scientifique": "G.Perès",
-                        "N° de Dossier": 501,
-                        "N°échantillon": "058",
-                        "Date prélèvement": "2026-03-04T23:00:00.000Z",
-                        "Analyses demandées": "DA/humidité 1",
-                        "N° d'identification": "501-058"
-                    },
-                    {
-                        "id": 18,
-                        "Site": "ROUPERROUX",
-                        "Année": 2026,
-                        "Contenu": "Sol cultivé",
-                        "ID: Site": 501,
-                        "selected": true,
-                        "Programme": "RMQS.Biodiv",
-                        "Code Barre": "501059",
-                        "Péremption": "5 ans",
-                        "Scientifique": "G.Perès",
-                        "N° de Dossier": 501,
-                        "N°échantillon": "059",
-                        "Date prélèvement": "2026-03-04T23:00:00.000Z",
-                        "Analyses demandées": "DA/humidité 2",
-                        "N° d'identification": "501-059"
-                    },
-                    {
-                        "id": 19,
-                        "Site": "ROUPERROUX",
-                        "Année": 2026,
-                        "Contenu": "Sol cultivé",
-                        "ID: Site": 501,
-                        "selected": true,
-                        "Programme": "RMQS.Biodiv",
-                        "Code Barre": "501060",
-                        "Péremption": "5 ans",
-                        "Scientifique": "G.Perès",
-                        "N° de Dossier": 501,
-                        "N°échantillon": "060",
-                        "Date prélèvement": "2026-03-04T23:00:00.000Z",
-                        "Analyses demandées": "DA/humidité 3",
-                        "N° d'identification": "501-060"
-                    },
-                    {
-                        "id": 20,
-                        "Site": "PLEYBEN",
-                        "Année": 2026,
-                        "Contenu": "Sol cultivé",
-                        "ID: Site": 541,
-                        "selected": true,
-                        "Programme": "RMQS.Biodiv",
-                        "Code Barre": "541061",
-                        "Péremption": "5 ans",
-                        "Scientifique": "G.Perès",
-                        "N° de Dossier": 541,
-                        "N°échantillon": "061",
-                        "Date prélèvement": "2026-03-02T23:00:00.000Z",
-                        "Analyses demandées": "Nématodes",
-                        "N° d'identification": "541-061"
-                    },
-                    {
-                        "id": 21,
-                        "Site": "PLEYBEN",
-                        "Année": 2026,
-                        "Contenu": "Sol cultivé",
-                        "ID: Site": 541,
-                        "selected": true,
-                        "Programme": "RMQS.Biodiv",
-                        "Code Barre": "541062",
-                        "Péremption": "5 ans",
-                        "Scientifique": "G.Perès",
-                        "N° de Dossier": 541,
-                        "N°échantillon": "062",
-                        "Date prélèvement": "2026-03-02T23:00:00.000Z",
-                        "Analyses demandées": "Matière org",
-                        "N° d'identification": "541-062"
-                    },
-                    {
-                        "id": 22,
-                        "Site": "PLEYBEN",
-                        "Année": 2026,
-                        "Contenu": "Sol cultivé",
-                        "ID: Site": 541,
-                        "selected": true,
-                        "Programme": "RMQS.Biodiv",
-                        "Code Barre": "541063",
-                        "Péremption": "5 ans",
-                        "Scientifique": "G.Perès",
-                        "N° de Dossier": 541,
-                        "N°échantillon": "063",
-                        "Date prélèvement": "2026-03-02T23:00:00.000Z",
-                        "Analyses demandées": "Physico-chimie",
-                        "N° d'identification": "541-063"
-                    },
-                    {
-                        "id": 23,
-                        "Site": "PLEYBEN",
-                        "Année": 2026,
-                        "Contenu": "Sol cultivé",
-                        "ID: Site": 541,
-                        "selected": true,
-                        "Programme": "RMQS.Biodiv",
-                        "Code Barre": "541064",
-                        "Péremption": "5 ans",
-                        "Scientifique": "G.Perès",
-                        "N° de Dossier": 541,
-                        "N°échantillon": "064",
-                        "Date prélèvement": "2026-03-02T23:00:00.000Z",
-                        "Analyses demandées": "ADNe 1",
-                        "N° d'identification": "541-064"
-                    },
-                    {
-                        "id": 24,
-                        "Site": "PLEYBEN",
-                        "Année": 2026,
-                        "Contenu": "Sol cultivé",
-                        "ID: Site": 541,
-                        "selected": true,
-                        "Programme": "RMQS.Biodiv",
-                        "Code Barre": "541065",
-                        "Péremption": "5 ans",
-                        "Scientifique": "G.Perès",
-                        "N° de Dossier": 541,
-                        "N°échantillon": "065",
-                        "Date prélèvement": "2026-03-02T23:00:00.000Z",
-                        "Analyses demandées": "ADNe 2",
-                        "N° d'identification": "541-065"
-                    },
-                    {
-                        "id": 25,
-                        "Site": "PLEYBEN",
-                        "Année": 2026,
-                        "Contenu": "Sol cultivé",
-                        "ID: Site": 541,
-                        "selected": true,
-                        "Programme": "RMQS.Biodiv",
-                        "Code Barre": "541066",
-                        "Péremption": "5 ans",
-                        "Scientifique": "G.Perès",
-                        "N° de Dossier": 541,
-                        "N°échantillon": "066",
-                        "Date prélèvement": "2026-03-02T23:00:00.000Z",
-                        "Analyses demandées": "ADNe 3",
-                        "N° d'identification": "541-066"
-                    },
-                    {
-                        "id": 26,
-                        "Site": "PLEYBEN",
-                        "Année": 2026,
-                        "Contenu": "Sol cultivé",
-                        "ID: Site": 541,
-                        "selected": true,
-                        "Programme": "RMQS.Biodiv",
-                        "Code Barre": "541067",
-                        "Péremption": "5 ans",
-                        "Scientifique": "G.Perès",
-                        "N° de Dossier": 541,
-                        "N°échantillon": "067",
-                        "Date prélèvement": "2026-03-02T23:00:00.000Z",
-                        "Analyses demandées": "ADNe 4",
-                        "N° d'identification": "541-067"
-                    },
-                    {
-                        "id": 27,
-                        "Site": "PLEYBEN",
-                        "Année": 2026,
-                        "Contenu": "Sol cultivé",
-                        "ID: Site": 541,
-                        "selected": true,
-                        "Programme": "RMQS.Biodiv",
-                        "Code Barre": "541068",
-                        "Péremption": "5 ans",
-                        "Scientifique": "G.Perès",
-                        "N° de Dossier": 541,
-                        "N°échantillon": "068",
-                        "Date prélèvement": "2026-03-02T23:00:00.000Z",
-                        "Analyses demandées": "DA/humidité 1",
-                        "N° d'identification": "541-068"
-                    },
-                    {
-                        "id": 28,
-                        "Site": "PLEYBEN",
-                        "Année": 2026,
-                        "Contenu": "Sol cultivé",
-                        "ID: Site": 541,
-                        "selected": true,
-                        "Programme": "RMQS.Biodiv",
-                        "Code Barre": "541069",
-                        "Péremption": "5 ans",
-                        "Scientifique": "G.Perès",
-                        "N° de Dossier": 541,
-                        "N°échantillon": "069",
-                        "Date prélèvement": "2026-03-02T23:00:00.000Z",
-                        "Analyses demandées": "DA/humidité 2",
-                        "N° d'identification": "541-069"
-                    },
-                    {
-                        "id": 29,
-                        "Site": "PLEYBEN",
-                        "Année": 2026,
-                        "Contenu": "Sol cultivé",
-                        "ID: Site": 541,
-                        "selected": true,
-                        "Programme": "RMQS.Biodiv",
-                        "Code Barre": "541070",
-                        "Péremption": "5 ans",
-                        "Scientifique": "G.Perès",
-                        "N° de Dossier": 541,
-                        "N°échantillon": "070",
-                        "Date prélèvement": "2026-03-02T23:00:00.000Z",
-                        "Analyses demandées": "DA/humidité 3",
-                        "N° d'identification": "541-070"
-                    },
-                    {
-                        "id": 30,
-                        "Site": "FREIGNE",
-                        "Année": 2026,
-                        "Contenu": "Sol cultivé",
-                        "ID: Site": 887,
-                        "selected": true,
-                        "Programme": "RMQS.Biodiv",
-                        "Code Barre": "887111",
-                        "Péremption": "5 ans",
-                        "Scientifique": "G.Perès",
-                        "N° de Dossier": 887,
-                        "N°échantillon": "111",
-                        "Date prélèvement": "2026-03-05T23:00:00.000Z",
-                        "Analyses demandées": "Nématodes",
-                        "N° d'identification": "887-111"
-                    },
-                    {
-                        "id": 31,
-                        "Site": "FREIGNE",
-                        "Année": 2026,
-                        "Contenu": "Sol cultivé",
-                        "ID: Site": 887,
-                        "selected": true,
-                        "Programme": "RMQS.Biodiv",
-                        "Code Barre": "887112",
-                        "Péremption": "5 ans",
-                        "Scientifique": "G.Perès",
-                        "N° de Dossier": 887,
-                        "N°échantillon": "112",
-                        "Date prélèvement": "2026-03-05T23:00:00.000Z",
-                        "Analyses demandées": "Matière org",
-                        "N° d'identification": "887-112"
-                    },
-                    {
-                        "id": 32,
-                        "Site": "FREIGNE",
-                        "Année": 2026,
-                        "Contenu": "Sol cultivé",
-                        "ID: Site": 887,
-                        "selected": true,
-                        "Programme": "RMQS.Biodiv",
-                        "Code Barre": "887113",
-                        "Péremption": "5 ans",
-                        "Scientifique": "G.Perès",
-                        "N° de Dossier": 887,
-                        "N°échantillon": "113",
-                        "Date prélèvement": "2026-03-05T23:00:00.000Z",
-                        "Analyses demandées": "Physico-chimie",
-                        "N° d'identification": "887-113"
-                    },
-                    {
-                        "id": 33,
-                        "Site": "FREIGNE",
-                        "Année": 2026,
-                        "Contenu": "Sol cultivé",
-                        "ID: Site": 887,
-                        "selected": true,
-                        "Programme": "RMQS.Biodiv",
-                        "Code Barre": "887114",
-                        "Péremption": "5 ans",
-                        "Scientifique": "G.Perès",
-                        "N° de Dossier": 887,
-                        "N°échantillon": "114",
-                        "Date prélèvement": "2026-03-05T23:00:00.000Z",
-                        "Analyses demandées": "ADNe 1",
-                        "N° d'identification": "887-114"
-                    },
-                    {
-                        "id": 34,
-                        "Site": "FREIGNE",
-                        "Année": 2026,
-                        "Contenu": "Sol cultivé",
-                        "ID: Site": 887,
-                        "selected": true,
-                        "Programme": "RMQS.Biodiv",
-                        "Code Barre": "887115",
-                        "Péremption": "5 ans",
-                        "Scientifique": "G.Perès",
-                        "N° de Dossier": 887,
-                        "N°échantillon": "115",
-                        "Date prélèvement": "2026-03-05T23:00:00.000Z",
-                        "Analyses demandées": "ADNe 2",
-                        "N° d'identification": "887-115"
-                    },
-                    {
-                        "id": 35,
-                        "Site": "FREIGNE",
-                        "Année": 2026,
-                        "Contenu": "Sol cultivé",
-                        "ID: Site": 887,
-                        "selected": true,
-                        "Programme": "RMQS.Biodiv",
-                        "Code Barre": "887116",
-                        "Péremption": "5 ans",
-                        "Scientifique": "G.Perès",
-                        "N° de Dossier": 887,
-                        "N°échantillon": "116",
-                        "Date prélèvement": "2026-03-05T23:00:00.000Z",
-                        "Analyses demandées": "ADNe 3",
-                        "N° d'identification": "887-116"
-                    },
-                    {
-                        "id": 36,
-                        "Site": "FREIGNE",
-                        "Année": 2026,
-                        "Contenu": "Sol cultivé",
-                        "ID: Site": 887,
-                        "selected": true,
-                        "Programme": "RMQS.Biodiv",
-                        "Code Barre": "887117",
-                        "Péremption": "5 ans",
-                        "Scientifique": "G.Perès",
-                        "N° de Dossier": 887,
-                        "N°échantillon": "117",
-                        "Date prélèvement": "2026-03-05T23:00:00.000Z",
-                        "Analyses demandées": "ADNe 4",
-                        "N° d'identification": "887-117"
-                    },
-                    {
-                        "id": 37,
-                        "Site": "FREIGNE",
-                        "Année": 2026,
-                        "Contenu": "Sol cultivé",
-                        "ID: Site": 887,
-                        "selected": true,
-                        "Programme": "RMQS.Biodiv",
-                        "Code Barre": "887118",
-                        "Péremption": "5 ans",
-                        "Scientifique": "G.Perès",
-                        "N° de Dossier": 887,
-                        "N°échantillon": "118",
-                        "Date prélèvement": "2026-03-05T23:00:00.000Z",
-                        "Analyses demandées": "DA/humidité 1",
-                        "N° d'identification": "887-118"
-                    },
-                    {
-                        "id": 38,
-                        "Site": "FREIGNE",
-                        "Année": 2026,
-                        "Contenu": "Sol cultivé",
-                        "ID: Site": 887,
-                        "selected": true,
-                        "Programme": "RMQS.Biodiv",
-                        "Code Barre": "887119",
-                        "Péremption": "5 ans",
-                        "Scientifique": "G.Perès",
-                        "N° de Dossier": 887,
-                        "N°échantillon": "119",
-                        "Date prélèvement": "2026-03-05T23:00:00.000Z",
-                        "Analyses demandées": "DA/humidité 2",
-                        "N° d'identification": "887-119"
-                    },
-                    {
-                        "id": 39,
-                        "Site": "FREIGNE",
-                        "Année": 2026,
-                        "Contenu": "Sol cultivé",
-                        "ID: Site": 887,
-                        "selected": true,
-                        "Programme": "RMQS.Biodiv",
-                        "Code Barre": "887120",
-                        "Péremption": "5 ans",
-                        "Scientifique": "G.Perès",
-                        "N° de Dossier": 887,
-                        "N°échantillon": "120",
-                        "Date prélèvement": "2026-03-05T23:00:00.000Z",
-                        "Analyses demandées": "DA/humidité 3",
-                        "N° d'identification": "887-120"
+                        "analyses": "DA/Hum TM3"
                     }
                 ],
                 "columns": {
-                    "dossier": "N° de Dossier",
-                    "responsable": "Scientifique"
+                    "analyses": "analyses"
                 }
             }
         },
@@ -1298,242 +64,29 @@
             "datas": {
                 "datas": [
                     {
-                        "id": 0,
-                        "Site": "LML Bourcefranc (17)",
-                        "Année": 2026,
-                        "selected": true,
-                        "Programme": "AQUAMAT",
-                        "Péremption": "05_2031",
-                        "Scientifique": "J.Aubin",
-                        "Libellé libre": "Eau_mai_2026_LML_CL7_1",
-                        "N° de Dossier": 427,
-                        "Date prélèvement": "2026-05-10T22:00:00.000Z",
-                        "type échantillons": "Eau"
+                        "analyses": "ADNE 1/4"
                     },
                     {
-                        "id": 1,
-                        "Site": "LML Bourcefranc (17)",
-                        "Année": 2026,
-                        "selected": true,
-                        "Programme": "AQUAMAT",
-                        "Péremption": "05_2031",
-                        "Scientifique": "J.Aubin",
-                        "Libellé libre": "Eau_mai_2026_LML_CL7_2",
-                        "N° de Dossier": 427,
-                        "Date prélèvement": "2026-05-10T22:00:00.000Z",
-                        "type échantillons": "Eau"
+                        "analyses": "ADNE 2/4"
                     },
                     {
-                        "id": 2,
-                        "Site": "LML Bourcefranc (17)",
-                        "Année": 2026,
-                        "selected": true,
-                        "Programme": "AQUAMAT",
-                        "Péremption": "05_2031",
-                        "Scientifique": "J.Aubin",
-                        "Libellé libre": "Eau_mai_2026_LML_CL7_3",
-                        "N° de Dossier": 427,
-                        "Date prélèvement": "2026-05-10T22:00:00.000Z",
-                        "type échantillons": "Eau"
+                        "analyses": "ADNE 3/4"
                     },
                     {
-                        "id": 3,
-                        "Site": "LML Bourcefranc (17)",
-                        "Année": 2026,
-                        "selected": true,
-                        "Programme": "AQUAMAT",
-                        "Péremption": "05_2031",
-                        "Scientifique": "J.Aubin",
-                        "Libellé libre": "Eau_mai_2026_LML_CL6_1",
-                        "N° de Dossier": 427,
-                        "Date prélèvement": "2026-05-10T22:00:00.000Z",
-                        "type échantillons": "Eau"
+                        "analyses": "ADNE 4/4"
                     },
                     {
-                        "id": 4,
-                        "Site": "LML Bourcefranc (17)",
-                        "Année": 2026,
-                        "selected": true,
-                        "Programme": "AQUAMAT",
-                        "Péremption": "05_2031",
-                        "Scientifique": "J.Aubin",
-                        "Libellé libre": "Eau_mai_2026_LML_CL6_2",
-                        "N° de Dossier": 427,
-                        "Date prélèvement": "2026-05-10T22:00:00.000Z",
-                        "type échantillons": "Eau"
+                        "analyses": "DA/Hum TM1"
                     },
                     {
-                        "id": 5,
-                        "Site": "LML Bourcefranc (17)",
-                        "Année": 2026,
-                        "selected": true,
-                        "Programme": "AQUAMAT",
-                        "Péremption": "05_2031",
-                        "Scientifique": "J.Aubin",
-                        "Libellé libre": "Eau_mai_2026_LML_CL6_3",
-                        "N° de Dossier": 427,
-                        "Date prélèvement": "2026-05-10T22:00:00.000Z",
-                        "type échantillons": "Eau"
+                        "analyses": "DA/Hum TM2"
                     },
                     {
-                        "id": 6,
-                        "Site": "LML Bourcefranc (17)",
-                        "Année": 2026,
-                        "selected": true,
-                        "Programme": "AQUAMAT",
-                        "Péremption": "05_2031",
-                        "Scientifique": "J.Aubin",
-                        "Libellé libre": "Eau_mai_2026_LML_CL5_1",
-                        "N° de Dossier": 427,
-                        "Date prélèvement": "2026-05-10T22:00:00.000Z",
-                        "type échantillons": "Eau"
-                    },
-                    {
-                        "id": 7,
-                        "Site": "LML Bourcefranc (17)",
-                        "Année": 2026,
-                        "selected": true,
-                        "Programme": "AQUAMAT",
-                        "Péremption": "05_2031",
-                        "Scientifique": "J.Aubin",
-                        "Libellé libre": "Eau_mai_2026_LML_CL5_2",
-                        "N° de Dossier": 427,
-                        "Date prélèvement": "2026-05-10T22:00:00.000Z",
-                        "type échantillons": "Eau"
-                    },
-                    {
-                        "id": 8,
-                        "Site": "LML Bourcefranc (17)",
-                        "Année": 2026,
-                        "selected": true,
-                        "Programme": "AQUAMAT",
-                        "Péremption": "05_2031",
-                        "Scientifique": "J.Aubin",
-                        "Libellé libre": "Eau_mai_2026_LML_CL5_3",
-                        "N° de Dossier": 427,
-                        "Date prélèvement": "2026-05-10T22:00:00.000Z",
-                        "type échantillons": "Eau"
-                    },
-                    {
-                        "id": 9,
-                        "Site": "LML Bourcefranc (17)",
-                        "Année": 2026,
-                        "selected": true,
-                        "Programme": "AQUAMAT",
-                        "Péremption": "05_2031",
-                        "Scientifique": "J.Aubin",
-                        "Libellé libre": "Eau_mai_2026_LML_CL4_1",
-                        "N° de Dossier": 427,
-                        "Date prélèvement": "2026-05-10T22:00:00.000Z",
-                        "type échantillons": "Eau"
-                    },
-                    {
-                        "id": 10,
-                        "Site": "LML Bourcefranc (17)",
-                        "Année": 2026,
-                        "selected": true,
-                        "Programme": "AQUAMAT",
-                        "Péremption": "05_2031",
-                        "Scientifique": "J.Aubin",
-                        "Libellé libre": "Eau_mai_2026_LML_CL4_2",
-                        "N° de Dossier": 427,
-                        "Date prélèvement": "2026-05-10T22:00:00.000Z",
-                        "type échantillons": "Eau"
-                    },
-                    {
-                        "id": 11,
-                        "Site": "LML Bourcefranc (17)",
-                        "Année": 2026,
-                        "selected": true,
-                        "Programme": "AQUAMAT",
-                        "Péremption": "05_2031",
-                        "Scientifique": "J.Aubin",
-                        "Libellé libre": "Eau_mai_2026_LML_CL4_3",
-                        "N° de Dossier": 427,
-                        "Date prélèvement": "2026-05-10T22:00:00.000Z",
-                        "type échantillons": "Eau"
-                    },
-                    {
-                        "id": 12,
-                        "Site": "LML Bourcefranc (17)",
-                        "Année": 2026,
-                        "selected": true,
-                        "Programme": "AQUAMAT",
-                        "Péremption": "05_2031",
-                        "Scientifique": "J.Aubin",
-                        "Libellé libre": "Eau_mai_2026_LML_CL3_1",
-                        "N° de Dossier": 427,
-                        "Date prélèvement": "2026-05-10T22:00:00.000Z",
-                        "type échantillons": "Eau"
-                    },
-                    {
-                        "id": 13,
-                        "Site": "LML Bourcefranc (17)",
-                        "Année": 2026,
-                        "selected": true,
-                        "Programme": "AQUAMAT",
-                        "Péremption": "05_2031",
-                        "Scientifique": "J.Aubin",
-                        "Libellé libre": "Eau_mai_2026_LML_CL3_2",
-                        "N° de Dossier": 427,
-                        "Date prélèvement": "2026-05-10T22:00:00.000Z",
-                        "type échantillons": "Eau"
-                    },
-                    {
-                        "id": 14,
-                        "Site": "LML Bourcefranc (17)",
-                        "Année": 2026,
-                        "selected": true,
-                        "Programme": "AQUAMAT",
-                        "Péremption": "05_2031",
-                        "Scientifique": "J.Aubin",
-                        "Libellé libre": "Eau_mai_2026_LML_CL3_3",
-                        "N° de Dossier": 427,
-                        "Date prélèvement": "2026-05-10T22:00:00.000Z",
-                        "type échantillons": "Eau"
-                    },
-                    {
-                        "id": 15,
-                        "Site": "LML Bourcefranc (17)",
-                        "Année": 2026,
-                        "selected": true,
-                        "Programme": "AQUAMAT",
-                        "Péremption": "05_2031",
-                        "Scientifique": "J.Aubin",
-                        "Libellé libre": "Eau_mai_2026_LML_CL2_1",
-                        "N° de Dossier": 427,
-                        "Date prélèvement": "2026-05-10T22:00:00.000Z",
-                        "type échantillons": "Eau"
-                    },
-                    {
-                        "id": 16,
-                        "Site": "LML Bourcefranc (17)",
-                        "Année": 2026,
-                        "selected": true,
-                        "Programme": "AQUAMAT",
-                        "Péremption": "05_2031",
-                        "Scientifique": "J.Aubin",
-                        "Libellé libre": "Eau_mai_2026_LML_CL2_2",
-                        "N° de Dossier": 427,
-                        "Date prélèvement": "2026-05-10T22:00:00.000Z",
-                        "type échantillons": "Eau"
-                    },
-                    {
-                        "id": 17,
-                        "Site": "LML Bourcefranc (17)",
-                        "Année": 2026,
-                        "selected": true,
-                        "Programme": "AQUAMAT",
-                        "Péremption": "05_2031",
-                        "Scientifique": "J.Aubin",
-                        "Libellé libre": "Eau_mai_2026_LML_CL2_3",
-                        "N° de Dossier": 427,
-                        "Date prélèvement": "2026-05-10T22:00:00.000Z",
-                        "type échantillons": "Eau"
+                        "analyses": "DA/Hum TM31"
                     }
                 ],
                 "columns": {
-                    "libre": "Libellé libre"
+                    "analyses": "analyses"
                 }
             }
         },
@@ -1541,246 +94,29 @@
             "datas": {
                 "datas": [
                     {
-                        "id": 0,
-                        "Site": "LML Bourcefranc (17)",
-                        "Année": 2026,
-                        "selected": true,
-                        "Programme": "AQUAMAT",
-                        "Péremption": "05_2031",
-                        "Scientifique": "J.Aubin",
-                        "Libellé libre": "Eau_mai_2026_LML_CL7_1",
-                        "N° de Dossier": 427,
-                        "N°échantillon": 19,
-                        "Date prélèvement": "2026-05-10T22:00:00.000Z",
-                        "type échantillons": "Eau"
+                        "analyses": "ADNE 1/4"
                     },
                     {
-                        "id": 1,
-                        "Site": "LML Bourcefranc (17)",
-                        "Année": 2026,
-                        "selected": true,
-                        "Programme": "AQUAMAT",
-                        "Péremption": "05_2031",
-                        "Scientifique": "J.Aubin",
-                        "Libellé libre": "Eau_mai_2026_LML_CL7_2",
-                        "N° de Dossier": 427,
-                        "Date prélèvement": "2026-05-10T22:00:00.000Z",
-                        "type échantillons": "Eau"
+                        "analyses": "ADNE 2/4"
                     },
                     {
-                        "id": 2,
-                        "Site": "LML Bourcefranc (17)",
-                        "Année": 2026,
-                        "selected": true,
-                        "Programme": "AQUAMAT",
-                        "Péremption": "05_2031",
-                        "Scientifique": "J.Aubin",
-                        "Libellé libre": "Eau_mai_2026_LML_CL7_3",
-                        "N° de Dossier": 427,
-                        "Date prélèvement": "2026-05-10T22:00:00.000Z",
-                        "type échantillons": "Eau"
+                        "analyses": "ADNE 3/4"
                     },
                     {
-                        "id": 3,
-                        "Site": "LML Bourcefranc (17)",
-                        "Année": 2026,
-                        "selected": true,
-                        "Programme": "AQUAMAT",
-                        "Péremption": "05_2031",
-                        "Scientifique": "J.Aubin",
-                        "Libellé libre": "Eau_mai_2026_LML_CL6_1",
-                        "N° de Dossier": 427,
-                        "Date prélèvement": "2026-05-10T22:00:00.000Z",
-                        "type échantillons": "Eau"
+                        "analyses": "ADNE 4/4"
                     },
                     {
-                        "id": 4,
-                        "Site": "LML Bourcefranc (17)",
-                        "Année": 2026,
-                        "selected": true,
-                        "Programme": "AQUAMAT",
-                        "Péremption": "05_2031",
-                        "Scientifique": "J.Aubin",
-                        "Libellé libre": "Eau_mai_2026_LML_CL6_2",
-                        "N° de Dossier": 427,
-                        "Date prélèvement": "2026-05-10T22:00:00.000Z",
-                        "type échantillons": "Eau"
+                        "analyses": "DA/Hum TM1"
                     },
                     {
-                        "id": 5,
-                        "Site": "LML Bourcefranc (17)",
-                        "Année": 2026,
-                        "selected": true,
-                        "Programme": "AQUAMAT",
-                        "Péremption": "05_2031",
-                        "Scientifique": "J.Aubin",
-                        "Libellé libre": "Eau_mai_2026_LML_CL6_3",
-                        "N° de Dossier": 427,
-                        "Date prélèvement": "2026-05-10T22:00:00.000Z",
-                        "type échantillons": "Eau"
+                        "analyses": "DA/Hum TM2"
                     },
                     {
-                        "id": 6,
-                        "Site": "LML Bourcefranc (17)",
-                        "Année": 2026,
-                        "selected": true,
-                        "Programme": "AQUAMAT",
-                        "Péremption": "05_2031",
-                        "Scientifique": "J.Aubin",
-                        "Libellé libre": "Eau_mai_2026_LML_CL5_1",
-                        "N° de Dossier": 427,
-                        "Date prélèvement": "2026-05-10T22:00:00.000Z",
-                        "type échantillons": "Eau"
-                    },
-                    {
-                        "id": 7,
-                        "Site": "LML Bourcefranc (17)",
-                        "Année": 2026,
-                        "selected": true,
-                        "Programme": "AQUAMAT",
-                        "Péremption": "05_2031",
-                        "Scientifique": "J.Aubin",
-                        "Libellé libre": "Eau_mai_2026_LML_CL5_2",
-                        "N° de Dossier": 427,
-                        "Date prélèvement": "2026-05-10T22:00:00.000Z",
-                        "type échantillons": "Eau"
-                    },
-                    {
-                        "id": 8,
-                        "Site": "LML Bourcefranc (17)",
-                        "Année": 2026,
-                        "selected": true,
-                        "Programme": "AQUAMAT",
-                        "Péremption": "05_2031",
-                        "Scientifique": "J.Aubin",
-                        "Libellé libre": "Eau_mai_2026_LML_CL5_3",
-                        "N° de Dossier": 427,
-                        "Date prélèvement": "2026-05-10T22:00:00.000Z",
-                        "type échantillons": "Eau"
-                    },
-                    {
-                        "id": 9,
-                        "Site": "LML Bourcefranc (17)",
-                        "Année": 2026,
-                        "selected": true,
-                        "Programme": "AQUAMAT",
-                        "Péremption": "05_2031",
-                        "Scientifique": "J.Aubin",
-                        "Libellé libre": "Eau_mai_2026_LML_CL4_1",
-                        "N° de Dossier": 427,
-                        "Date prélèvement": "2026-05-10T22:00:00.000Z",
-                        "type échantillons": "Eau"
-                    },
-                    {
-                        "id": 10,
-                        "Site": "LML Bourcefranc (17)",
-                        "Année": 2026,
-                        "selected": true,
-                        "Programme": "AQUAMAT",
-                        "Péremption": "05_2031",
-                        "Scientifique": "J.Aubin",
-                        "Libellé libre": "Eau_mai_2026_LML_CL4_2",
-                        "N° de Dossier": 427,
-                        "Date prélèvement": "2026-05-10T22:00:00.000Z",
-                        "type échantillons": "Eau"
-                    },
-                    {
-                        "id": 11,
-                        "Site": "LML Bourcefranc (17)",
-                        "Année": 2026,
-                        "selected": true,
-                        "Programme": "AQUAMAT",
-                        "Péremption": "05_2031",
-                        "Scientifique": "J.Aubin",
-                        "Libellé libre": "Eau_mai_2026_LML_CL4_3",
-                        "N° de Dossier": 427,
-                        "Date prélèvement": "2026-05-10T22:00:00.000Z",
-                        "type échantillons": "Eau"
-                    },
-                    {
-                        "id": 12,
-                        "Site": "LML Bourcefranc (17)",
-                        "Année": 2026,
-                        "selected": true,
-                        "Programme": "AQUAMAT",
-                        "Péremption": "05_2031",
-                        "Scientifique": "J.Aubin",
-                        "Libellé libre": "Eau_mai_2026_LML_CL3_1",
-                        "N° de Dossier": 427,
-                        "Date prélèvement": "2026-05-10T22:00:00.000Z",
-                        "type échantillons": "Eau"
-                    },
-                    {
-                        "id": 13,
-                        "Site": "LML Bourcefranc (17)",
-                        "Année": 2026,
-                        "selected": true,
-                        "Programme": "AQUAMAT",
-                        "Péremption": "05_2031",
-                        "Scientifique": "J.Aubin",
-                        "Libellé libre": "Eau_mai_2026_LML_CL3_2",
-                        "N° de Dossier": 427,
-                        "Date prélèvement": "2026-05-10T22:00:00.000Z",
-                        "type échantillons": "Eau"
-                    },
-                    {
-                        "id": 14,
-                        "Site": "LML Bourcefranc (17)",
-                        "Année": 2026,
-                        "selected": true,
-                        "Programme": "AQUAMAT",
-                        "Péremption": "05_2031",
-                        "Scientifique": "J.Aubin",
-                        "Libellé libre": "Eau_mai_2026_LML_CL3_3",
-                        "N° de Dossier": 427,
-                        "Date prélèvement": "2026-05-10T22:00:00.000Z",
-                        "type échantillons": "Eau"
-                    },
-                    {
-                        "id": 15,
-                        "Site": "LML Bourcefranc (17)",
-                        "Année": 2026,
-                        "selected": true,
-                        "Programme": "AQUAMAT",
-                        "Péremption": "05_2031",
-                        "Scientifique": "J.Aubin",
-                        "Libellé libre": "Eau_mai_2026_LML_CL2_1",
-                        "N° de Dossier": 427,
-                        "Date prélèvement": "2026-05-10T22:00:00.000Z",
-                        "type échantillons": "Eau"
-                    },
-                    {
-                        "id": 16,
-                        "Site": "LML Bourcefranc (17)",
-                        "Année": 2026,
-                        "selected": true,
-                        "Programme": "AQUAMAT",
-                        "Péremption": "05_2031",
-                        "Scientifique": "J.Aubin",
-                        "Libellé libre": "Eau_mai_2026_LML_CL2_2",
-                        "N° de Dossier": 427,
-                        "Date prélèvement": "2026-05-10T22:00:00.000Z",
-                        "type échantillons": "Eau"
-                    },
-                    {
-                        "id": 17,
-                        "Site": "LML Bourcefranc (17)",
-                        "Année": 2026,
-                        "selected": true,
-                        "Programme": "AQUAMAT",
-                        "Péremption": "05_2031",
-                        "Scientifique": "J.Aubin",
-                        "Libellé libre": "Eau_mai_2026_LML_CL2_3",
-                        "N° de Dossier": 427,
-                        "Date prélèvement": "2026-05-10T22:00:00.000Z",
-                        "type échantillons": "Eau"
+                        "analyses": "DA/Hum TM3"
                     }
                 ],
                 "columns": {
-                    "type": "type échantillons",
-                    "libre": "Libellé libre",
-                    "programme": "Programme",
-                    "responsable": "Scientifique"
+                    "analyses": "analyses"
                 }
             }
         },
@@ -1788,301 +124,29 @@
             "datas": {
                 "datas": [
                     {
-                        "id": 0,
-                        "Site": "LML Bourcefranc (17)",
-                        "Année": 2026,
-                        "selected": true,
-                        "Programme": "AQUAMAT",
-                        "Code Barre": 427139,
-                        "Péremption": "05_2031",
-                        "Scientifique": "J.Aubin",
-                        "Libellé libre": "Boues_mai_2026_LML_CL7_1",
-                        "N° de Dossier": 427,
-                        "N°échantillon": 139,
-                        "Date prélèvement": "2026-05-10T22:00:00.000Z",
-                        "type échantillons": "Boues",
-                        "N° d'identification": "427-139"
+                        "analyses": "DA/Hum TM1"
                     },
                     {
-                        "id": 1,
-                        "Site": "LML Bourcefranc (17)",
-                        "Année": 2026,
-                        "selected": true,
-                        "Programme": "AQUAMAT",
-                        "Code Barre": 427140,
-                        "Péremption": "05_2031",
-                        "Scientifique": "J.Aubin",
-                        "Libellé libre": "Boues_mai_2026_LML_CL7_2",
-                        "N° de Dossier": 427,
-                        "N°échantillon": 140,
-                        "Date prélèvement": "2026-05-10T22:00:00.000Z",
-                        "type échantillons": "Boues",
-                        "N° d'identification": "427-140"
+                        "analyses": "DA/Hum TM2"
                     },
                     {
-                        "id": 2,
-                        "Site": "LML Bourcefranc (17)",
-                        "Année": 2026,
-                        "selected": true,
-                        "Programme": "AQUAMAT",
-                        "Code Barre": 427141,
-                        "Péremption": "05_2031",
-                        "Scientifique": "J.Aubin",
-                        "Libellé libre": "Boues_mai_2026_LML_CL7_3",
-                        "N° de Dossier": 427,
-                        "N°échantillon": 141,
-                        "Date prélèvement": "2026-05-10T22:00:00.000Z",
-                        "type échantillons": "Boues",
-                        "N° d'identification": "427-141"
+                        "analyses": "DA/Hum TM3"
                     },
                     {
-                        "id": 3,
-                        "Site": "LML Bourcefranc (17)",
-                        "Année": 2026,
-                        "selected": true,
-                        "Programme": "AQUAMAT",
-                        "Code Barre": 427142,
-                        "Péremption": "05_2031",
-                        "Scientifique": "J.Aubin",
-                        "Libellé libre": "Boues_mai_2026_LML_CL6_1",
-                        "N° de Dossier": 427,
-                        "N°échantillon": 142,
-                        "Date prélèvement": "2026-05-10T22:00:00.000Z",
-                        "type échantillons": "Boues",
-                        "N° d'identification": "427-142"
+                        "analyses": "ADNE 1/4"
                     },
                     {
-                        "id": 4,
-                        "Site": "LML Bourcefranc (17)",
-                        "Année": 2026,
-                        "selected": true,
-                        "Programme": "AQUAMAT",
-                        "Code Barre": 427143,
-                        "Péremption": "05_2031",
-                        "Scientifique": "J.Aubin",
-                        "Libellé libre": "Boues_mai_2026_LML_CL6_2",
-                        "N° de Dossier": 427,
-                        "N°échantillon": 143,
-                        "Date prélèvement": "2026-05-10T22:00:00.000Z",
-                        "type échantillons": "Boues",
-                        "N° d'identification": "427-143"
+                        "analyses": "ADNE 2/4"
                     },
                     {
-                        "id": 5,
-                        "Site": "LML Bourcefranc (17)",
-                        "Année": 2026,
-                        "selected": true,
-                        "Programme": "AQUAMAT",
-                        "Code Barre": 427144,
-                        "Péremption": "05_2031",
-                        "Scientifique": "J.Aubin",
-                        "Libellé libre": "Boues_mai_2026_LML_CL6_3",
-                        "N° de Dossier": 427,
-                        "N°échantillon": 144,
-                        "Date prélèvement": "2026-05-10T22:00:00.000Z",
-                        "type échantillons": "Boues",
-                        "N° d'identification": "427-144"
+                        "analyses": "ADNE 3/4"
                     },
                     {
-                        "id": 6,
-                        "Site": "LML Bourcefranc (17)",
-                        "Année": 2026,
-                        "selected": true,
-                        "Programme": "AQUAMAT",
-                        "Code Barre": 427145,
-                        "Péremption": "05_2031",
-                        "Scientifique": "J.Aubin",
-                        "Libellé libre": "Boues_mai_2026_LML_CL5_1",
-                        "N° de Dossier": 427,
-                        "N°échantillon": 145,
-                        "Date prélèvement": "2026-05-10T22:00:00.000Z",
-                        "type échantillons": "Boues",
-                        "N° d'identification": "427-145"
-                    },
-                    {
-                        "id": 7,
-                        "Site": "LML Bourcefranc (17)",
-                        "Année": 2026,
-                        "selected": true,
-                        "Programme": "AQUAMAT",
-                        "Code Barre": 427146,
-                        "Péremption": "05_2031",
-                        "Scientifique": "J.Aubin",
-                        "Libellé libre": "Boues_mai_2026_LML_CL5_2",
-                        "N° de Dossier": 427,
-                        "N°échantillon": 146,
-                        "Date prélèvement": "2026-05-10T22:00:00.000Z",
-                        "type échantillons": "Boues",
-                        "N° d'identification": "427-146"
-                    },
-                    {
-                        "id": 8,
-                        "Site": "LML Bourcefranc (17)",
-                        "Année": 2026,
-                        "selected": true,
-                        "Programme": "AQUAMAT",
-                        "Code Barre": 427147,
-                        "Péremption": "05_2031",
-                        "Scientifique": "J.Aubin",
-                        "Libellé libre": "Boues_mai_2026_LML_CL5_3",
-                        "N° de Dossier": 427,
-                        "N°échantillon": 147,
-                        "Date prélèvement": "2026-05-10T22:00:00.000Z",
-                        "type échantillons": "Boues",
-                        "N° d'identification": "427-147"
-                    },
-                    {
-                        "id": 9,
-                        "Site": "LML Bourcefranc (17)",
-                        "Année": 2026,
-                        "selected": true,
-                        "Programme": "AQUAMAT",
-                        "Code Barre": 427148,
-                        "Péremption": "05_2031",
-                        "Scientifique": "J.Aubin",
-                        "Libellé libre": "Boues_mai_2026_LML_CL4_1",
-                        "N° de Dossier": 427,
-                        "N°échantillon": 148,
-                        "Date prélèvement": "2026-05-10T22:00:00.000Z",
-                        "type échantillons": "Boues",
-                        "N° d'identification": "427-148"
-                    },
-                    {
-                        "id": 10,
-                        "Site": "LML Bourcefranc (17)",
-                        "Année": 2026,
-                        "selected": true,
-                        "Programme": "AQUAMAT",
-                        "Code Barre": 427149,
-                        "Péremption": "05_2031",
-                        "Scientifique": "J.Aubin",
-                        "Libellé libre": "Boues_mai_2026_LML_CL4_2",
-                        "N° de Dossier": 427,
-                        "N°échantillon": 149,
-                        "Date prélèvement": "2026-05-10T22:00:00.000Z",
-                        "type échantillons": "Boues",
-                        "N° d'identification": "427-149"
-                    },
-                    {
-                        "id": 11,
-                        "Site": "LML Bourcefranc (17)",
-                        "Année": 2026,
-                        "selected": true,
-                        "Programme": "AQUAMAT",
-                        "Code Barre": 427150,
-                        "Péremption": "05_2031",
-                        "Scientifique": "J.Aubin",
-                        "Libellé libre": "Boues_mai_2026_LML_CL4_3",
-                        "N° de Dossier": 427,
-                        "N°échantillon": 150,
-                        "Date prélèvement": "2026-05-10T22:00:00.000Z",
-                        "type échantillons": "Boues",
-                        "N° d'identification": "427-150"
-                    },
-                    {
-                        "id": 12,
-                        "Site": "LML Bourcefranc (17)",
-                        "Année": 2026,
-                        "selected": true,
-                        "Programme": "AQUAMAT",
-                        "Code Barre": 427151,
-                        "Péremption": "05_2031",
-                        "Scientifique": "J.Aubin",
-                        "Libellé libre": "Boues_mai_2026_LML_CL3_1",
-                        "N° de Dossier": 427,
-                        "N°échantillon": 151,
-                        "Date prélèvement": "2026-05-10T22:00:00.000Z",
-                        "type échantillons": "Boues",
-                        "N° d'identification": "427-151"
-                    },
-                    {
-                        "id": 13,
-                        "Site": "LML Bourcefranc (17)",
-                        "Année": 2026,
-                        "selected": true,
-                        "Programme": "AQUAMAT",
-                        "Code Barre": 427152,
-                        "Péremption": "05_2031",
-                        "Scientifique": "J.Aubin",
-                        "Libellé libre": "Boues_mai_2026_LML_CL3_2",
-                        "N° de Dossier": 427,
-                        "N°échantillon": 152,
-                        "Date prélèvement": "2026-05-10T22:00:00.000Z",
-                        "type échantillons": "Boues",
-                        "N° d'identification": "427-152"
-                    },
-                    {
-                        "id": 14,
-                        "Site": "LML Bourcefranc (17)",
-                        "Année": 2026,
-                        "selected": true,
-                        "Programme": "AQUAMAT",
-                        "Code Barre": 427153,
-                        "Péremption": "05_2031",
-                        "Scientifique": "J.Aubin",
-                        "Libellé libre": "Boues_mai_2026_LML_CL3_3",
-                        "N° de Dossier": 427,
-                        "N°échantillon": 153,
-                        "Date prélèvement": "2026-05-10T22:00:00.000Z",
-                        "type échantillons": "Boues",
-                        "N° d'identification": "427-153"
-                    },
-                    {
-                        "id": 15,
-                        "Site": "LML Bourcefranc (17)",
-                        "Année": 2026,
-                        "selected": true,
-                        "Programme": "AQUAMAT",
-                        "Code Barre": 427154,
-                        "Péremption": "05_2031",
-                        "Scientifique": "J.Aubin",
-                        "Libellé libre": "Boues_mai_2026_LML_CL2_1",
-                        "N° de Dossier": 427,
-                        "N°échantillon": 154,
-                        "Date prélèvement": "2026-05-10T22:00:00.000Z",
-                        "type échantillons": "Boues",
-                        "N° d'identification": "427-154"
-                    },
-                    {
-                        "id": 16,
-                        "Site": "LML Bourcefranc (17)",
-                        "Année": 2026,
-                        "selected": true,
-                        "Programme": "AQUAMAT",
-                        "Code Barre": 427155,
-                        "Péremption": "05_2031",
-                        "Scientifique": "J.Aubin",
-                        "Libellé libre": "Boues_mai_2026_LML_CL2_2",
-                        "N° de Dossier": 427,
-                        "N°échantillon": 155,
-                        "Date prélèvement": "2026-05-10T22:00:00.000Z",
-                        "type échantillons": "Boues",
-                        "N° d'identification": "427-155"
-                    },
-                    {
-                        "id": 17,
-                        "Site": "LML Bourcefranc (17)",
-                        "Année": 2026,
-                        "selected": true,
-                        "Programme": "AQUAMAT",
-                        "Code Barre": 427156,
-                        "Péremption": "05_2031",
-                        "Scientifique": "J.Aubin",
-                        "Libellé libre": "Boues_mai_2026_LML_CL2_3",
-                        "N° de Dossier": 427,
-                        "N°échantillon": 156,
-                        "Date prélèvement": "2026-05-10T22:00:00.000Z",
-                        "type échantillons": "Boues",
-                        "N° d'identification": "427-156"
+                        "analyses": "ADNE 4/4"
                     }
                 ],
                 "columns": {
-                    "type": "type échantillons",
-                    "libre": "Libellé libre",
-                    "dossier": "N° de Dossier",
-                    "programme": "Programme",
-                    "echantillon": "N°échantillon",
-                    "responsable": "Scientifique"
+                    "analyses": "analyses"
                 }
             }
         },
@@ -2090,245 +154,2231 @@
             "datas": {
                 "datas": [
                     {
-                        "id": 0,
-                        "Site": "LML Bourcefranc (17)",
-                        "Année": 2026,
-                        "selected": true,
-                        "Programme": "AQUAMAT",
-                        "Péremption": "05_2031",
-                        "Scientifique": "J.Aubin",
-                        "Libellé libre": "MIB_mai_2026_LML_CL7_Pleine_eau",
-                        "N° de Dossier": 427,
-                        "Date prélèvement": "2026-05-10T22:00:00.000Z",
-                        "type échantillons": "Invertébrés + éthanol"
+                        "analyses": "ADNE 1/4"
                     },
                     {
-                        "id": 1,
-                        "Site": "LML Bourcefranc (17)",
-                        "Année": 2026,
-                        "selected": true,
-                        "Programme": "AQUAMAT",
-                        "Péremption": "05_2031",
-                        "Scientifique": "J.Aubin",
-                        "Libellé libre": "MIB_mai_2026_LML_CL7_Berge",
-                        "N° de Dossier": 427,
-                        "Date prélèvement": "2026-05-10T22:00:00.000Z",
-                        "type échantillons": "Invertébrés + éthanol"
+                        "analyses": "ADNE 2/4"
                     },
                     {
-                        "id": 2,
-                        "Site": "LML Bourcefranc (17)",
-                        "Année": 2026,
-                        "selected": true,
-                        "Programme": "AQUAMAT",
-                        "Péremption": "05_2031",
-                        "Scientifique": "J.Aubin",
-                        "Libellé libre": "MIB_mai_2026_LML_CL6_Pleine_eau",
-                        "N° de Dossier": 427,
-                        "Date prélèvement": "2026-05-10T22:00:00.000Z",
-                        "type échantillons": "Invertébrés + éthanol"
+                        "analyses": "ADNE 3/4"
                     },
                     {
-                        "id": 3,
-                        "Site": "LML Bourcefranc (17)",
-                        "Année": 2026,
-                        "selected": true,
-                        "Programme": "AQUAMAT",
-                        "Péremption": "05_2031",
-                        "Scientifique": "J.Aubin",
-                        "Libellé libre": "MIB_mai_2026_LML_CL6_Berge",
-                        "N° de Dossier": 427,
-                        "Date prélèvement": "2026-05-10T22:00:00.000Z",
-                        "type échantillons": "Invertébrés + éthanol"
+                        "analyses": "ADNE 4/4"
                     },
                     {
-                        "id": 4,
-                        "Site": "LML Bourcefranc (17)",
-                        "Année": 2026,
-                        "selected": true,
-                        "Programme": "AQUAMAT",
-                        "Péremption": "05_2031",
-                        "Scientifique": "J.Aubin",
-                        "Libellé libre": "MIB_mai_2026_LML_CL5_Pleine_eau",
-                        "N° de Dossier": 427,
-                        "Date prélèvement": "2026-05-10T22:00:00.000Z",
-                        "type échantillons": "Invertébrés + éthanol"
+                        "analyses": "DA/Hum TM1"
                     },
                     {
-                        "id": 5,
-                        "Site": "LML Bourcefranc (17)",
-                        "Année": 2026,
-                        "selected": true,
-                        "Programme": "AQUAMAT",
-                        "Péremption": "05_2031",
-                        "Scientifique": "J.Aubin",
-                        "Libellé libre": "MIB_mai_2026_LML_CL5_Berge",
-                        "N° de Dossier": 427,
-                        "Date prélèvement": "2026-05-10T22:00:00.000Z",
-                        "type échantillons": "Invertébrés + éthanol"
+                        "analyses": "DA/Hum TM2"
                     },
                     {
-                        "id": 6,
-                        "Site": "LML Bourcefranc (17)",
-                        "Année": 2026,
-                        "selected": true,
-                        "Programme": "AQUAMAT",
-                        "Péremption": "05_2031",
-                        "Scientifique": "J.Aubin",
-                        "Libellé libre": "MIB_mai_2026_LML_CL4_Pleine_eau",
-                        "N° de Dossier": 427,
-                        "Date prélèvement": "2026-05-10T22:00:00.000Z",
-                        "type échantillons": "Invertébrés + éthanol"
-                    },
-                    {
-                        "id": 7,
-                        "Site": "LML Bourcefranc (17)",
-                        "Année": 2026,
-                        "selected": true,
-                        "Programme": "AQUAMAT",
-                        "Péremption": "05_2031",
-                        "Scientifique": "J.Aubin",
-                        "Libellé libre": "MIB_mai_2026_LML_CL4_Berge",
-                        "N° de Dossier": 427,
-                        "Date prélèvement": "2026-05-10T22:00:00.000Z",
-                        "type échantillons": "Invertébrés + éthanol"
-                    },
-                    {
-                        "id": 8,
-                        "Site": "LML Bourcefranc (17)",
-                        "Année": 2026,
-                        "selected": true,
-                        "Programme": "AQUAMAT",
-                        "Péremption": "05_2031",
-                        "Scientifique": "J.Aubin",
-                        "Libellé libre": "MIB_mai_2026_LML_CL3_Pleine_eau",
-                        "N° de Dossier": 427,
-                        "Date prélèvement": "2026-05-10T22:00:00.000Z",
-                        "type échantillons": "Invertébrés + éthanol"
-                    },
-                    {
-                        "id": 9,
-                        "Site": "LML Bourcefranc (17)",
-                        "Année": 2026,
-                        "selected": true,
-                        "Programme": "AQUAMAT",
-                        "Péremption": "05_2031",
-                        "Scientifique": "J.Aubin",
-                        "Libellé libre": "MIB_mai_2026_LML_CL3_Berge",
-                        "N° de Dossier": 427,
-                        "Date prélèvement": "2026-05-10T22:00:00.000Z",
-                        "type échantillons": "Invertébrés + éthanol"
-                    },
-                    {
-                        "id": 10,
-                        "Site": "LML Bourcefranc (17)",
-                        "Année": 2026,
-                        "selected": true,
-                        "Programme": "AQUAMAT",
-                        "Péremption": "05_2031",
-                        "Scientifique": "J.Aubin",
-                        "Libellé libre": "MIB_mai_2026_LML_CL2_Pleine_eau",
-                        "N° de Dossier": 427,
-                        "Date prélèvement": "2026-05-10T22:00:00.000Z",
-                        "type échantillons": "Invertébrés + éthanol"
-                    },
-                    {
-                        "id": 11,
-                        "Site": "LML Bourcefranc (17)",
-                        "Année": 2026,
-                        "selected": true,
-                        "Programme": "AQUAMAT",
-                        "Péremption": "05_2031",
-                        "Scientifique": "J.Aubin",
-                        "Libellé libre": "MIB_mai_2026_LML_CL2_Berge",
-                        "N° de Dossier": 427,
-                        "Date prélèvement": "2026-05-10T22:00:00.000Z",
-                        "type échantillons": "Invertébrés + éthanol"
-                    },
-                    {
-                        "id": 12,
-                        "Site": "LML Bourcefranc (17)",
-                        "Année": 2026,
-                        "selected": true,
-                        "Programme": "AQUAMAT",
-                        "Péremption": "05_2031",
-                        "Scientifique": "J.Aubin",
-                        "Libellé libre": "ZPK_mai_2026_LML_CL7",
-                        "N° de Dossier": 427,
-                        "Date prélèvement": "2026-05-10T22:00:00.000Z",
-                        "type échantillons": "Zooplancton + éthanol"
-                    },
-                    {
-                        "id": 13,
-                        "Site": "LML Bourcefranc (17)",
-                        "Année": 2026,
-                        "selected": true,
-                        "Programme": "AQUAMAT",
-                        "Péremption": "05_2031",
-                        "Scientifique": "J.Aubin",
-                        "Libellé libre": "ZPK_mai_2026_LML_CL6",
-                        "N° de Dossier": 427,
-                        "Date prélèvement": "2026-05-10T22:00:00.000Z",
-                        "type échantillons": "Zooplancton + éthanol"
-                    },
-                    {
-                        "id": 14,
-                        "Site": "LML Bourcefranc (17)",
-                        "Année": 2026,
-                        "selected": true,
-                        "Programme": "AQUAMAT",
-                        "Péremption": "05_2031",
-                        "Scientifique": "J.Aubin",
-                        "Libellé libre": "ZPK_mai_2026_LML_CL5",
-                        "N° de Dossier": 427,
-                        "Date prélèvement": "2026-05-10T22:00:00.000Z",
-                        "type échantillons": "Zooplancton + éthanol"
-                    },
-                    {
-                        "id": 15,
-                        "Site": "LML Bourcefranc (17)",
-                        "Année": 2026,
-                        "selected": true,
-                        "Programme": "AQUAMAT",
-                        "Péremption": "05_2031",
-                        "Scientifique": "J.Aubin",
-                        "Libellé libre": "ZPK_mai_2026_LML_CL4",
-                        "N° de Dossier": 427,
-                        "Date prélèvement": "2026-05-10T22:00:00.000Z",
-                        "type échantillons": "Zooplancton + éthanol"
-                    },
-                    {
-                        "id": 16,
-                        "Site": "LML Bourcefranc (17)",
-                        "Année": 2026,
-                        "selected": true,
-                        "Programme": "AQUAMAT",
-                        "Péremption": "05_2031",
-                        "Scientifique": "J.Aubin",
-                        "Libellé libre": "ZPK_mai_2026_LML_CL3",
-                        "N° de Dossier": 427,
-                        "Date prélèvement": "2026-05-10T22:00:00.000Z",
-                        "type échantillons": "Zooplancton + éthanol"
-                    },
-                    {
-                        "id": 17,
-                        "Site": "LML Bourcefranc (17)",
-                        "Année": 2026,
-                        "selected": true,
-                        "Programme": "AQUAMAT",
-                        "Péremption": "05_2031",
-                        "Scientifique": "J.Aubin",
-                        "Libellé libre": "ZPK_mai_2026_LML_CL2",
-                        "N° de Dossier": 427,
-                        "Date prélèvement": "2026-05-10T22:00:00.000Z",
-                        "type échantillons": "Zooplancton + éthanol"
+                        "analyses": "DA/Hum TM3"
                     }
                 ],
                 "columns": {
-                    "libre": "Libellé libre",
-                    "dossier": "N° de Dossier",
-                    "programme": "Programme",
-                    "responsable": "Scientifique"
+                    "analyses": "analyses"
+                }
+            }
+        },
+        {
+            "datas": {
+                "datas": [
+                    {
+                        "analyses": "DA/Hum TM1"
+                    },
+                    {
+                        "analyses": "DA/Hum TM2"
+                    },
+                    {
+                        "analyses": "DA/Hum TM"
+                    },
+                    {
+                        "analyses": "ADNE 1/4"
+                    },
+                    {
+                        "analyses": "ADNE 2/4"
+                    },
+                    {
+                        "analyses": "ADNE 3/4"
+                    },
+                    {
+                        "analyses": "ADNE 4/4"
+                    }
+                ],
+                "columns": {
+                    "analyses": "analyses"
+                }
+            }
+        },
+        {
+            "datas": {
+                "datas": [
+                    {
+                        "analyses": "Boues_mai_2026_Rheu_501_1"
+                    },
+                    {
+                        "analyses": "Boues_mai_2026_Rheu_501_2"
+                    },
+                    {
+                        "analyses": "Boues_mai_2026_Rheu_501_3"
+                    },
+                    {
+                        "analyses": "Boues_mai_2026_Rheu_502_1"
+                    },
+                    {
+                        "analyses": "Boues_mai_2026_Rheu_502_2"
+                    },
+                    {
+                        "analyses": "Boues_mai_2026_Rheu_502_3"
+                    },
+                    {
+                        "analyses": "Boues_mai_2026_Rheu_504_1"
+                    },
+                    {
+                        "analyses": "Boues_mai_2026_Rheu_504_2"
+                    },
+                    {
+                        "analyses": "Boues_mai_2026_Rheu_504_3"
+                    },
+                    {
+                        "analyses": "Boues_mai_2026_Rheu_505_1"
+                    },
+                    {
+                        "analyses": "Boues_mai_2026_Rheu_505_2"
+                    },
+                    {
+                        "analyses": "Boues_mai_2026_Rheu_505_3"
+                    },
+                    {
+                        "analyses": "Boues_mai_2026_Rheu_507_1"
+                    },
+                    {
+                        "analyses": "Boues_mai_2026_Rheu_507_2"
+                    },
+                    {
+                        "analyses": "Boues_mai_2026_Rheu_507_3"
+                    },
+                    {
+                        "analyses": "Boues_mai_2026_Rheu_508_1"
+                    },
+                    {
+                        "analyses": "Boues_mai_2026_Rheu_508_2"
+                    },
+                    {
+                        "analyses": "Boues_mai_2026_Rheu_508_3"
+                    }
+                ],
+                "columns": {
+                    "analyses": "analyses"
+                }
+            }
+        },
+        {
+            "datas": {
+                "datas": [
+                    {
+                        "analyses": "Boues_mai_2026_Rheu_501_1"
+                    },
+                    {
+                        "analyses": "Boues_mai_2026_Rheu_501_2"
+                    },
+                    {
+                        "analyses": "Boues_mai_2026_Rheu_501_3"
+                    },
+                    {
+                        "analyses": "Boues_mai_2026_Rheu_502_1"
+                    },
+                    {
+                        "analyses": "Boues_mai_2026_Rheu_502_2"
+                    },
+                    {
+                        "analyses": "Boues_mai_2026_Rheu_502_3"
+                    },
+                    {
+                        "analyses": "Boues_mai_2026_Rheu_504_1"
+                    },
+                    {
+                        "analyses": "Boues_mai_2026_Rheu_504_2"
+                    },
+                    {
+                        "analyses": "Boues_mai_2026_Rheu_504_3"
+                    },
+                    {
+                        "analyses": "Boues_mai_2026_Rheu_505_1"
+                    },
+                    {
+                        "analyses": "Boues_mai_2026_Rheu_505_2"
+                    },
+                    {
+                        "analyses": "Boues_mai_2026_Rheu_505_3"
+                    },
+                    {
+                        "analyses": "Boues_mai_2026_Rheu_507_1"
+                    },
+                    {
+                        "analyses": "Boues_mai_2026_Rheu_507_2"
+                    },
+                    {
+                        "analyses": "Boues_mai_2026_Rheu_507_3"
+                    },
+                    {
+                        "analyses": "Boues_mai_2026_Rheu_508_1"
+                    },
+                    {
+                        "analyses": "Boues_mai_2026_Rheu_508_2"
+                    },
+                    {
+                        "analyses": "Boues_mai_2026_Rheu_508_3"
+                    }
+                ],
+                "columns": {
+                    "analyses": "analyses"
+                }
+            }
+        },
+        {
+            "datas": {
+                "datas": [
+                    {
+                        "analyses": "Boues_mai_2026_Rheu_501_1"
+                    },
+                    {
+                        "analyses": "Boues_mai_2026_Rheu_501_2"
+                    },
+                    {
+                        "analyses": "Boues_mai_2026_Rheu_501_3"
+                    },
+                    {
+                        "analyses": "Boues_mai_2026_Rheu_502_1"
+                    },
+                    {
+                        "analyses": "Boues_mai_2026_Rheu_502_2"
+                    },
+                    {
+                        "analyses": "Boues_mai_2026_Rheu_502_3"
+                    },
+                    {
+                        "analyses": "Boues_mai_2026_Rheu_504_1"
+                    },
+                    {
+                        "analyses": "Boues_mai_2026_Rheu_504_2"
+                    },
+                    {
+                        "analyses": "Boues_mai_2026_Rheu_504_3"
+                    },
+                    {
+                        "analyses": "Boues_mai_2026_Rheu_505_1"
+                    },
+                    {
+                        "analyses": "Boues_mai_2026_Rheu_505_2"
+                    },
+                    {
+                        "analyses": "Boues_mai_2026_Rheu_505_3"
+                    },
+                    {
+                        "analyses": "Boues_mai_2026_Rheu_507_1"
+                    },
+                    {
+                        "analyses": "Boues_mai_2026_Rheu_507_2"
+                    },
+                    {
+                        "analyses": "Boues_mai_2026_Rheu_507_3"
+                    },
+                    {
+                        "analyses": "Boues_mai_2026_Rheu_508_1"
+                    },
+                    {
+                        "analyses": "Boues_mai_2026_Rheu_508_2"
+                    },
+                    {
+                        "analyses": "Boues_mai_2026_Rheu_508_3"
+                    }
+                ],
+                "columns": {
+                    "analyses": "analyses"
+                }
+            }
+        },
+        {
+            "datas": {
+                "datas": [
+                    {
+                        "analyses": "Eau_mai_2026_Rheu_501_1"
+                    },
+                    {
+                        "analyses": "Eau_mai_2026_Rheu_501_2"
+                    },
+                    {
+                        "analyses": "Eau_mai_2026_Rheu_501_3"
+                    },
+                    {
+                        "analyses": "Eau_mai_2026_Rheu_502_1"
+                    },
+                    {
+                        "analyses": "Eau_mai_2026_Rheu_502_2"
+                    },
+                    {
+                        "analyses": "Eau_mai_2026_Rheu_502_3"
+                    },
+                    {
+                        "analyses": "Eau_mai_2026_Rheu_504_1"
+                    },
+                    {
+                        "analyses": "Eau_mai_2026_Rheu_504_2"
+                    },
+                    {
+                        "analyses": "Eau_mai_2026_Rheu_504_3"
+                    },
+                    {
+                        "analyses": "Eau_mai_2026_Rheu_505_1"
+                    },
+                    {
+                        "analyses": "Eau_mai_2026_Rheu_505_2"
+                    },
+                    {
+                        "analyses": "Eau_mai_2026_Rheu_505_3"
+                    },
+                    {
+                        "analyses": "Eau_mai_2026_Rheu_507_1"
+                    },
+                    {
+                        "analyses": "Eau_mai_2026_Rheu_507_2"
+                    },
+                    {
+                        "analyses": "Eau_mai_2026_Rheu_507_3"
+                    },
+                    {
+                        "analyses": "Eau_mai_2026_Rheu_508_1"
+                    },
+                    {
+                        "analyses": "Eau_mai_2026_Rheu_508_2"
+                    },
+                    {
+                        "analyses": "Eau_mai_2026_Rheu_508_3"
+                    }
+                ],
+                "columns": {
+                    "analyses": "analyses"
+                }
+            }
+        },
+        {
+            "datas": {
+                "datas": [
+                    {
+                        "analyses": "MIB_mai_2026_Rheu_501_Pleine_eau"
+                    },
+                    {
+                        "analyses": "MIB_mai_2026_Rheu_501_Berge"
+                    },
+                    {
+                        "analyses": "MIB_mai_2026_Rheu_502_Pleine_eau"
+                    },
+                    {
+                        "analyses": "MIB_mai_2026_Rheu_502_Berge"
+                    },
+                    {
+                        "analyses": "MIB_mai_2026_Rheu_504_Pleine_eau"
+                    },
+                    {
+                        "analyses": "MIB_mai_2026_Rheu_504_Berge"
+                    },
+                    {
+                        "analyses": "MIB_mai_2026_Rheu_505_Pleine_eau"
+                    },
+                    {
+                        "analyses": "MIB_mai_2026_Rheu_505_Berge"
+                    },
+                    {
+                        "analyses": "MIB_mai_2026_Rheu_507_Pleine_eau"
+                    },
+                    {
+                        "analyses": "MIB_mai_2026_Rheu_507_Berge"
+                    },
+                    {
+                        "analyses": "MIB_mai_2026_Rheu_508_Pleine_eau"
+                    },
+                    {
+                        "analyses": "MIB_mai_2026_Rheu_508_Berge"
+                    },
+                    {
+                        "analyses": "ZPK_mai_2026_Rheu_501"
+                    },
+                    {
+                        "analyses": "ZPK_mai_2026_Rheu_502"
+                    },
+                    {
+                        "analyses": "ZPK_mai_2026_Rheu_504"
+                    },
+                    {
+                        "analyses": "ZPK_mai_2026_Rheu_505"
+                    },
+                    {
+                        "analyses": "ZPK_mai_2026_Rheu_507"
+                    },
+                    {
+                        "analyses": "ZPK_mai_2026_Rheu_508"
+                    }
+                ],
+                "columns": {
+                    "analyses": "analyses"
+                }
+            }
+        },
+        {
+            "datas": {
+                "datas": [
+                    {
+                        "analyses": "TM1 Clair"
+                    },
+                    {
+                        "analyses": "TM1 Foncé"
+                    },
+                    {
+                        "analyses": "TM2 Clair"
+                    },
+                    {
+                        "analyses": "TM2 Foncé"
+                    },
+                    {
+                        "analyses": "TM3 Clair"
+                    },
+                    {
+                        "analyses": "TM3 Foncé"
+                    },
+                    {
+                        "analyses": "TM4 Clair"
+                    },
+                    {
+                        "analyses": "TM4 Foncé"
+                    },
+                    {
+                        "analyses": "TM5 Clair"
+                    },
+                    {
+                        "analyses": "TM5 Foncé"
+                    },
+                    {
+                        "analyses": "TM6 Clair"
+                    },
+                    {
+                        "analyses": "TM6 Foncé"
+                    },
+                    {
+                        "analyses": "Biodiv 1"
+                    },
+                    {
+                        "analyses": "Biodiv 2"
+                    },
+                    {
+                        "analyses": "Biodiv 3"
+                    },
+                    {
+                        "analyses": "Archive"
+                    }
+                ],
+                "columns": {
+                    "analyses": "analyses"
+                }
+            }
+        },
+        {
+            "datas": {
+                "datas": [
+                    {
+                        "analyses": "TM1 Clair"
+                    },
+                    {
+                        "analyses": "TM1 Foncé"
+                    },
+                    {
+                        "analyses": "Moutarde 1"
+                    },
+                    {
+                        "analyses": "TM2 Clair"
+                    },
+                    {
+                        "analyses": "TM2 Foncé"
+                    },
+                    {
+                        "analyses": "Moutarde 2"
+                    },
+                    {
+                        "analyses": "TM3 Clair"
+                    },
+                    {
+                        "analyses": "TM3 Foncé"
+                    },
+                    {
+                        "analyses": "Moutarde 3"
+                    },
+                    {
+                        "analyses": "TM4 Clair"
+                    },
+                    {
+                        "analyses": "TM4 Foncé"
+                    },
+                    {
+                        "analyses": "Moutarde 4"
+                    },
+                    {
+                        "analyses": "TM5 Clair"
+                    },
+                    {
+                        "analyses": "TM5 Foncé"
+                    },
+                    {
+                        "analyses": "Moutarde 5"
+                    },
+                    {
+                        "analyses": "TM6 Clair"
+                    },
+                    {
+                        "analyses": "TM6 Foncé"
+                    },
+                    {
+                        "analyses": "Moutarde 6"
+                    },
+                    {
+                        "analyses": "Biodiv 1"
+                    },
+                    {
+                        "analyses": "Biodiv 2"
+                    },
+                    {
+                        "analyses": "Biodiv 3"
+                    },
+                    {
+                        "analyses": "Archive"
+                    }
+                ],
+                "columns": {
+                    "analyses": "analyses"
+                }
+            }
+        },
+        {
+            "datas": {
+                "datas": [
+                    {
+                        "analyses": "TM1 Clair"
+                    },
+                    {
+                        "analyses": "TM1 Foncé"
+                    },
+                    {
+                        "analyses": "Moutarde 1"
+                    },
+                    {
+                        "analyses": "TM2 Clair"
+                    },
+                    {
+                        "analyses": "TM2 Foncé"
+                    },
+                    {
+                        "analyses": "Moutarde 2"
+                    },
+                    {
+                        "analyses": "TM3 Clair"
+                    },
+                    {
+                        "analyses": "TM3 Foncé"
+                    },
+                    {
+                        "analyses": "Moutarde 3"
+                    },
+                    {
+                        "analyses": "TM4 Clair"
+                    },
+                    {
+                        "analyses": "TM4 Foncé"
+                    },
+                    {
+                        "analyses": "Moutarde 4"
+                    },
+                    {
+                        "analyses": "TM5 Clair"
+                    },
+                    {
+                        "analyses": "TM5 Foncé"
+                    },
+                    {
+                        "analyses": "Moutarde 5"
+                    },
+                    {
+                        "analyses": "TM6 Clair"
+                    },
+                    {
+                        "analyses": "TM6 Foncé"
+                    },
+                    {
+                        "analyses": "Moutarde 6"
+                    },
+                    {
+                        "analyses": "Biodiv 1"
+                    },
+                    {
+                        "analyses": "Biodiv 2"
+                    },
+                    {
+                        "analyses": "Biodiv 3"
+                    },
+                    {
+                        "analyses": "Archive"
+                    }
+                ],
+                "columns": {
+                    "analyses": "analyses"
+                }
+            }
+        },
+        {
+            "datas": {
+                "datas": [
+                    {
+                        "analyses": "B1-T1-1"
+                    },
+                    {
+                        "analyses": "B1-T1-2"
+                    },
+                    {
+                        "analyses": "B1-T1-3"
+                    },
+                    {
+                        "analyses": "B1-T2-1"
+                    },
+                    {
+                        "analyses": "B1-T2-2"
+                    },
+                    {
+                        "analyses": "B1-T2-3"
+                    },
+                    {
+                        "analyses": "B1-T3-1"
+                    },
+                    {
+                        "analyses": "B1-T3-2"
+                    },
+                    {
+                        "analyses": "B1-T3-3"
+                    },
+                    {
+                        "analyses": "B1-T5-1"
+                    },
+                    {
+                        "analyses": "B1-T5-2"
+                    },
+                    {
+                        "analyses": "B1-T5-3"
+                    },
+                    {
+                        "analyses": "B2-T1-1"
+                    },
+                    {
+                        "analyses": "B2-T1-2"
+                    },
+                    {
+                        "analyses": "B2-T1-3"
+                    },
+                    {
+                        "analyses": "B2-T2-1"
+                    },
+                    {
+                        "analyses": "B2-T2-2"
+                    },
+                    {
+                        "analyses": "B2-T2-3"
+                    },
+                    {
+                        "analyses": "B2-T3-1"
+                    },
+                    {
+                        "analyses": "B2-T3-2"
+                    },
+                    {
+                        "analyses": "B2-T3-3"
+                    },
+                    {
+                        "analyses": "B2-T5-1"
+                    },
+                    {
+                        "analyses": "B2-T5-2"
+                    },
+                    {
+                        "analyses": "B2-T5-3"
+                    },
+                    {
+                        "analyses": "B3-T1-1"
+                    },
+                    {
+                        "analyses": "B3-T1-2"
+                    },
+                    {
+                        "analyses": "B3-T1-3"
+                    },
+                    {
+                        "analyses": "B3-T2-1"
+                    },
+                    {
+                        "analyses": "B3-T2-2"
+                    },
+                    {
+                        "analyses": "B3-T2-3"
+                    },
+                    {
+                        "analyses": "B3-T3-1"
+                    },
+                    {
+                        "analyses": "B3-T3-2"
+                    },
+                    {
+                        "analyses": "B3-T3-3"
+                    },
+                    {
+                        "analyses": "B3-T5-1"
+                    },
+                    {
+                        "analyses": "B3-T5-2"
+                    },
+                    {
+                        "analyses": "B3-T5-3"
+                    },
+                    {
+                        "analyses": "B4-T1-1"
+                    },
+                    {
+                        "analyses": "B4-T1-2"
+                    },
+                    {
+                        "analyses": "B4-T1-3"
+                    },
+                    {
+                        "analyses": "B4-T2-1"
+                    },
+                    {
+                        "analyses": "B4-T2-2"
+                    },
+                    {
+                        "analyses": "B4-T2-3"
+                    },
+                    {
+                        "analyses": "B4-T3-1"
+                    },
+                    {
+                        "analyses": "B4-T3-2"
+                    },
+                    {
+                        "analyses": "B4-T3-3"
+                    },
+                    {
+                        "analyses": "B4-T5-1"
+                    },
+                    {
+                        "analyses": "B4-T5-2"
+                    },
+                    {
+                        "analyses": "B4-T5-3"
+                    }
+                ],
+                "columns": {
+                    "analyses": "analyses"
+                }
+            }
+        },
+        {
+            "datas": {
+                "datas": [
+                    {
+                        "analyses": "nématodes"
+                    },
+                    {
+                        "analyses": "MO"
+                    }
+                ],
+                "columns": {
+                    "analyses": "analyses"
+                }
+            }
+        },
+        {
+            "datas": {
+                "datas": [
+                    {
+                        "analyses": "Nématodes"
+                    },
+                    {
+                        "analyses": "MO"
+                    }
+                ],
+                "columns": {
+                    "analyses": "analyses"
+                }
+            }
+        },
+        {
+            "datas": {
+                "datas": [
+                    {
+                        "analyses": "Nématodes"
+                    },
+                    {
+                        "analyses": "MO"
+                    }
+                ],
+                "columns": {
+                    "analyses": "analyses"
+                }
+            }
+        },
+        {
+            "datas": {
+                "datas": [
+                    {
+                        "analyses": "Nématodes"
+                    }
+                ],
+                "columns": {
+                    "analyses": "analyses"
+                }
+            }
+        },
+        {
+            "datas": {
+                "datas": [
+                    {
+                        "analyses": "TM1 Clair"
+                    },
+                    {
+                        "analyses": "TM1 Foncé"
+                    },
+                    {
+                        "analyses": "Moutarde 1"
+                    },
+                    {
+                        "analyses": "TM2 Clair"
+                    },
+                    {
+                        "analyses": "TM2 Foncé"
+                    },
+                    {
+                        "analyses": "Moutarde 2"
+                    },
+                    {
+                        "analyses": "TM3 Clair"
+                    },
+                    {
+                        "analyses": "TM3 Foncé"
+                    },
+                    {
+                        "analyses": "Moutarde 3"
+                    },
+                    {
+                        "analyses": "TM4 Clair"
+                    },
+                    {
+                        "analyses": "TM4 Foncé"
+                    },
+                    {
+                        "analyses": "Moutarde 4"
+                    },
+                    {
+                        "analyses": "TM5 Clair"
+                    },
+                    {
+                        "analyses": "TM5 Foncé"
+                    },
+                    {
+                        "analyses": "Moutarde 5"
+                    },
+                    {
+                        "analyses": "TM6 Clair"
+                    },
+                    {
+                        "analyses": "TM6 Foncé"
+                    },
+                    {
+                        "analyses": "Moutarde 6"
+                    },
+                    {
+                        "analyses": "Biodiv 1"
+                    },
+                    {
+                        "analyses": "Biodiv 2"
+                    },
+                    {
+                        "analyses": "Biodiv 3"
+                    },
+                    {
+                        "analyses": "Archive"
+                    }
+                ],
+                "columns": {
+                    "analyses": "analyses"
+                }
+            }
+        },
+        {
+            "datas": {
+                "datas": [
+                    {
+                        "analyses": "TM1 Clair"
+                    },
+                    {
+                        "analyses": "TM1 Foncé"
+                    },
+                    {
+                        "analyses": "Moutarde 1"
+                    },
+                    {
+                        "analyses": "TM2 Clair"
+                    },
+                    {
+                        "analyses": "TM2 Foncé"
+                    },
+                    {
+                        "analyses": "Moutarde 2"
+                    },
+                    {
+                        "analyses": "TM3 Clair"
+                    },
+                    {
+                        "analyses": "TM3 Foncé"
+                    },
+                    {
+                        "analyses": "Moutarde 3"
+                    },
+                    {
+                        "analyses": "TM4 Clair"
+                    },
+                    {
+                        "analyses": "TM4 Foncé"
+                    },
+                    {
+                        "analyses": "Moutarde 4"
+                    },
+                    {
+                        "analyses": "TM5 Clair"
+                    },
+                    {
+                        "analyses": "TM5 Foncé"
+                    },
+                    {
+                        "analyses": "Moutarde 5"
+                    },
+                    {
+                        "analyses": "TM6 Clair"
+                    },
+                    {
+                        "analyses": "TM6 Foncé"
+                    },
+                    {
+                        "analyses": "Moutarde 6"
+                    },
+                    {
+                        "analyses": "Biodiv 1"
+                    },
+                    {
+                        "analyses": "Biodiv 2"
+                    },
+                    {
+                        "analyses": "Biodiv 3"
+                    },
+                    {
+                        "analyses": "Archive"
+                    }
+                ],
+                "columns": {
+                    "analyses": "analyses"
+                }
+            }
+        },
+        {
+            "datas": {
+                "datas": [
+                    {
+                        "analyses": "TM1 Clair"
+                    },
+                    {
+                        "analyses": "TM1 Foncé"
+                    },
+                    {
+                        "analyses": "Moutarde 1"
+                    },
+                    {
+                        "analyses": "TM2 Clair"
+                    },
+                    {
+                        "analyses": "TM2 Foncé"
+                    },
+                    {
+                        "analyses": "Moutarde 2"
+                    },
+                    {
+                        "analyses": "TM3 Clair"
+                    },
+                    {
+                        "analyses": "TM3 Foncé"
+                    },
+                    {
+                        "analyses": "Moutarde 3"
+                    },
+                    {
+                        "analyses": "TM4 Clair"
+                    },
+                    {
+                        "analyses": "TM4 Foncé"
+                    },
+                    {
+                        "analyses": "Moutarde 4"
+                    },
+                    {
+                        "analyses": "TM5 Clair"
+                    },
+                    {
+                        "analyses": "TM5 Foncé"
+                    },
+                    {
+                        "analyses": "Moutarde 5"
+                    },
+                    {
+                        "analyses": "TM6 Clair"
+                    },
+                    {
+                        "analyses": "TM6 Foncé"
+                    },
+                    {
+                        "analyses": "Moutarde 6"
+                    },
+                    {
+                        "analyses": "Biodiv 1"
+                    },
+                    {
+                        "analyses": "Biodiv 2"
+                    },
+                    {
+                        "analyses": "Biodiv 3"
+                    },
+                    {
+                        "analyses": "Archive"
+                    }
+                ],
+                "columns": {
+                    "analyses": "analyses"
+                }
+            }
+        },
+        {
+            "datas": {
+                "datas": [
+                    {
+                        "analyses": "TM1 Clair"
+                    },
+                    {
+                        "analyses": "TM1 Foncé"
+                    },
+                    {
+                        "analyses": "Moutarde 1"
+                    },
+                    {
+                        "analyses": "TM2 Clair"
+                    },
+                    {
+                        "analyses": "TM2 Foncé"
+                    },
+                    {
+                        "analyses": "Moutarde 2"
+                    },
+                    {
+                        "analyses": "TM3 Clair"
+                    },
+                    {
+                        "analyses": "TM3 Foncé"
+                    },
+                    {
+                        "analyses": "Moutarde 3"
+                    },
+                    {
+                        "analyses": "TM4 Clair"
+                    },
+                    {
+                        "analyses": "TM4 Foncé"
+                    },
+                    {
+                        "analyses": "Moutarde 4"
+                    },
+                    {
+                        "analyses": "TM5 Clair"
+                    },
+                    {
+                        "analyses": "TM5 Foncé"
+                    },
+                    {
+                        "analyses": "Moutarde 5"
+                    },
+                    {
+                        "analyses": "TM6 Clair"
+                    },
+                    {
+                        "analyses": "TM6 Foncé"
+                    },
+                    {
+                        "analyses": "Moutarde 6"
+                    },
+                    {
+                        "analyses": "Biodiv 1"
+                    },
+                    {
+                        "analyses": "Biodiv 2"
+                    },
+                    {
+                        "analyses": "Biodiv 3"
+                    },
+                    {
+                        "analyses": "Archive"
+                    }
+                ],
+                "columns": {
+                    "analyses": "analyses"
+                }
+            }
+        },
+        {
+            "datas": {
+                "datas": [
+                    {
+                        "analyses": "ddzaz"
+                    },
+                    {
+                        "analyses": "zaedaz"
+                    },
+                    {
+                        "analyses": "ezedaz"
+                    },
+                    {
+                        "analyses": "ezaezaeaz"
+                    }
+                ],
+                "columns": {
+                    "analyses": "analyses"
+                }
+            }
+        },
+        {
+            "datas": {
+                "datas": [
+                    {
+                        "analyses": "Composite"
+                    }
+                ],
+                "columns": {
+                    "analyses": "analyses"
+                }
+            }
+        },
+        {
+            "datas": {
+                "datas": [
+                    {
+                        "analyses": "composite"
+                    }
+                ],
+                "columns": {
+                    "analyses": "analyses"
+                }
+            }
+        },
+        {
+            "datas": {
+                "datas": [
+                    {
+                        "analyses": "Composite"
+                    }
+                ],
+                "columns": {
+                    "analyses": "analyses"
+                }
+            }
+        },
+        {
+            "datas": {
+                "datas": [
+                    {
+                        "analyses": "TM1 Clair"
+                    },
+                    {
+                        "analyses": "TM1 Foncé"
+                    },
+                    {
+                        "analyses": "Moutarde 1"
+                    },
+                    {
+                        "analyses": "TM2 Clair"
+                    },
+                    {
+                        "analyses": "TM2 Foncé"
+                    },
+                    {
+                        "analyses": "Moutarde 2"
+                    },
+                    {
+                        "analyses": "TM3 Clair"
+                    },
+                    {
+                        "analyses": "TM3 Foncé"
+                    },
+                    {
+                        "analyses": "Moutarde 3"
+                    },
+                    {
+                        "analyses": "TM4 Clair"
+                    },
+                    {
+                        "analyses": "TM4 Foncé"
+                    },
+                    {
+                        "analyses": "Moutarde 4"
+                    },
+                    {
+                        "analyses": "TM5 Clair"
+                    },
+                    {
+                        "analyses": "TM5 Foncé"
+                    },
+                    {
+                        "analyses": "Moutarde 5"
+                    },
+                    {
+                        "analyses": "TM6 Clair"
+                    },
+                    {
+                        "analyses": "TM6 Foncé"
+                    },
+                    {
+                        "analyses": "Moutarde 6"
+                    },
+                    {
+                        "analyses": "Biodiv 1"
+                    },
+                    {
+                        "analyses": "Biodiv 2"
+                    },
+                    {
+                        "analyses": "Biodiv 3"
+                    },
+                    {
+                        "analyses": "Archive"
+                    }
+                ],
+                "columns": {
+                    "analyses": "analyses"
+                }
+            }
+        },
+        {
+            "datas": {
+                "datas": [
+                    {
+                        "analyses": "TM1 Clair"
+                    },
+                    {
+                        "analyses": "TM1 Foncé"
+                    },
+                    {
+                        "analyses": "Moutarde 1"
+                    },
+                    {
+                        "analyses": "TM2 Clair"
+                    },
+                    {
+                        "analyses": "TM2 Foncé"
+                    },
+                    {
+                        "analyses": "Moutarde 2"
+                    },
+                    {
+                        "analyses": "TM3 Clair"
+                    },
+                    {
+                        "analyses": "TM3 Foncé"
+                    },
+                    {
+                        "analyses": "Moutarde 3"
+                    },
+                    {
+                        "analyses": "TM4 Clair"
+                    },
+                    {
+                        "analyses": "TM4 Foncé"
+                    },
+                    {
+                        "analyses": "Moutarde 4"
+                    },
+                    {
+                        "analyses": "TM5 Clair"
+                    },
+                    {
+                        "analyses": "TM5 Foncé"
+                    },
+                    {
+                        "analyses": "Moutarde 5"
+                    },
+                    {
+                        "analyses": "TM6 Clair"
+                    },
+                    {
+                        "analyses": "TM6 Foncé"
+                    },
+                    {
+                        "analyses": "Moutarde 6"
+                    },
+                    {
+                        "analyses": "Biodiv 1"
+                    },
+                    {
+                        "analyses": "Biodiv 2"
+                    },
+                    {
+                        "analyses": "Biodiv 3"
+                    },
+                    {
+                        "analyses": "Archive"
+                    }
+                ],
+                "columns": {
+                    "analyses": "analyses"
+                }
+            }
+        },
+        {
+            "datas": {
+                "datas": [
+                    {
+                        "analyses": "TM1 Clair"
+                    },
+                    {
+                        "analyses": "TM1 Foncé"
+                    },
+                    {
+                        "analyses": "Moutarde 1"
+                    },
+                    {
+                        "analyses": "TM2 Clair"
+                    },
+                    {
+                        "analyses": "TM2 Foncé"
+                    },
+                    {
+                        "analyses": "Moutarde 2"
+                    },
+                    {
+                        "analyses": "TM3 Clair"
+                    },
+                    {
+                        "analyses": "TM3 Foncé"
+                    },
+                    {
+                        "analyses": "Moutarde 3"
+                    },
+                    {
+                        "analyses": "TM4 Clair"
+                    },
+                    {
+                        "analyses": "TM4 Foncé"
+                    },
+                    {
+                        "analyses": "Moutarde 4"
+                    },
+                    {
+                        "analyses": "TM5 Clair"
+                    },
+                    {
+                        "analyses": "TM5 Foncé"
+                    },
+                    {
+                        "analyses": "Moutarde 5"
+                    },
+                    {
+                        "analyses": "TM6 Clair"
+                    },
+                    {
+                        "analyses": "TM6 Foncé"
+                    },
+                    {
+                        "analyses": "Moutarde 6"
+                    },
+                    {
+                        "analyses": "Biodiv 1"
+                    },
+                    {
+                        "analyses": "Biodiv 2"
+                    },
+                    {
+                        "analyses": "Biodiv 3"
+                    },
+                    {
+                        "analyses": "Archive"
+                    }
+                ],
+                "columns": {
+                    "analyses": "analyses"
+                }
+            }
+        },
+        {
+            "datas": {
+                "datas": [
+                    {
+                        "analyses": "Stabilite agregat 0-1 mm"
+                    },
+                    {
+                        "analyses": "Stabilite agregat > 5 mm"
+                    }
+                ],
+                "columns": {
+                    "analyses": "analyses"
+                }
+            }
+        },
+        {
+            "datas": {
+                "datas": [
+                    {
+                        "analyses": "TM1 Clair"
+                    },
+                    {
+                        "analyses": "TM1 Foncé"
+                    },
+                    {
+                        "analyses": "Moutarde 1"
+                    },
+                    {
+                        "analyses": "TM2 Clair"
+                    },
+                    {
+                        "analyses": "TM2 Foncé"
+                    },
+                    {
+                        "analyses": "Moutarde 2"
+                    },
+                    {
+                        "analyses": "TM3 Clair"
+                    },
+                    {
+                        "analyses": "TM3 Foncé"
+                    },
+                    {
+                        "analyses": "Moutarde 3"
+                    },
+                    {
+                        "analyses": "TM4 Clair"
+                    },
+                    {
+                        "analyses": "TM4 Foncé"
+                    },
+                    {
+                        "analyses": "Moutarde 4"
+                    },
+                    {
+                        "analyses": "TM5 Clair"
+                    },
+                    {
+                        "analyses": "TM5 Foncé"
+                    },
+                    {
+                        "analyses": "Moutarde 5"
+                    },
+                    {
+                        "analyses": "TM6 Clair"
+                    },
+                    {
+                        "analyses": "TM6 Foncé"
+                    },
+                    {
+                        "analyses": "Moutarde 6"
+                    },
+                    {
+                        "analyses": "Biodiv 1"
+                    },
+                    {
+                        "analyses": "Biodiv 2"
+                    },
+                    {
+                        "analyses": "Biodiv 3"
+                    },
+                    {
+                        "analyses": "Archive"
+                    }
+                ],
+                "columns": {
+                    "analyses": "analyses"
+                }
+            }
+        },
+        {
+            "datas": {
+                "datas": [
+                    {
+                        "analyses": "Nématodes"
+                    },
+                    {
+                        "analyses": "Matière Organique"
+                    },
+                    {
+                        "analyses": "Analyse Phisico-Chimique"
+                    },
+                    {
+                        "analyses": "ADNe1"
+                    },
+                    {
+                        "analyses": "ADNe2"
+                    },
+                    {
+                        "analyses": "ADNe3"
+                    },
+                    {
+                        "analyses": "ANDe4"
+                    },
+                    {
+                        "analyses": "CM1"
+                    },
+                    {
+                        "analyses": "CM2"
+                    },
+                    {
+                        "analyses": "CM3"
+                    },
+                    {
+                        "analyses": "CM4"
+                    },
+                    {
+                        "analyses": "CM5"
+                    },
+                    {
+                        "analyses": "CM6"
+                    },
+                    {
+                        "analyses": "DA/Hum1"
+                    },
+                    {
+                        "analyses": "DA/Hum2"
+                    },
+                    {
+                        "analyses": "DA/Hum3"
+                    }
+                ],
+                "columns": {
+                    "analyses": "analyses"
+                }
+            }
+        },
+        {
+            "datas": {
+                "datas": [
+                    {
+                        "analyses": "Nématodes"
+                    },
+                    {
+                        "analyses": "Matière Organique"
+                    },
+                    {
+                        "analyses": "Analyse Phisico-Chimique"
+                    },
+                    {
+                        "analyses": "ADNe1"
+                    },
+                    {
+                        "analyses": "ADNe2"
+                    },
+                    {
+                        "analyses": "ADNe3"
+                    },
+                    {
+                        "analyses": "ANDe4"
+                    },
+                    {
+                        "analyses": "CM1"
+                    },
+                    {
+                        "analyses": "CM2"
+                    },
+                    {
+                        "analyses": "CM3"
+                    },
+                    {
+                        "analyses": "CM4"
+                    },
+                    {
+                        "analyses": "CM5"
+                    },
+                    {
+                        "analyses": "CM6"
+                    },
+                    {
+                        "analyses": "DA/Hum1"
+                    },
+                    {
+                        "analyses": "DA/Hum2"
+                    },
+                    {
+                        "analyses": "DA/Hum3"
+                    }
+                ],
+                "columns": {
+                    "analyses": "analyses"
+                }
+            }
+        },
+        {
+            "datas": {
+                "datas": [
+                    {
+                        "analyses": "Nématodes"
+                    },
+                    {
+                        "analyses": "Matière Organique"
+                    },
+                    {
+                        "analyses": "Analyse Phisico-Chimique"
+                    },
+                    {
+                        "analyses": "ADNe1"
+                    },
+                    {
+                        "analyses": "ADNe2"
+                    },
+                    {
+                        "analyses": "ADNe3"
+                    },
+                    {
+                        "analyses": "ANDe4"
+                    },
+                    {
+                        "analyses": "CM1"
+                    },
+                    {
+                        "analyses": "CM2"
+                    },
+                    {
+                        "analyses": "CM3"
+                    },
+                    {
+                        "analyses": "CM4"
+                    },
+                    {
+                        "analyses": "CM5"
+                    },
+                    {
+                        "analyses": "CM6"
+                    },
+                    {
+                        "analyses": "DA/Hum1"
+                    },
+                    {
+                        "analyses": "DA/Hum2"
+                    },
+                    {
+                        "analyses": "DA/Hum3"
+                    }
+                ],
+                "columns": {
+                    "analyses": "analyses"
+                }
+            }
+        },
+        {
+            "datas": {
+                "datas": [
+                    {
+                        "analyses": "TM1 Clair"
+                    },
+                    {
+                        "analyses": "TM1 Foncé"
+                    },
+                    {
+                        "analyses": "Moutarde 1"
+                    },
+                    {
+                        "analyses": "TM2 Clair"
+                    },
+                    {
+                        "analyses": "TM2 Foncé"
+                    },
+                    {
+                        "analyses": "Moutarde 2"
+                    },
+                    {
+                        "analyses": "TM3 Clair"
+                    },
+                    {
+                        "analyses": "TM3 Foncé"
+                    },
+                    {
+                        "analyses": "Moutarde 3"
+                    },
+                    {
+                        "analyses": "TM4 Clair"
+                    },
+                    {
+                        "analyses": "TM4 Foncé"
+                    },
+                    {
+                        "analyses": "Moutarde 4"
+                    },
+                    {
+                        "analyses": "TM5 Clair"
+                    },
+                    {
+                        "analyses": "TM5 Foncé"
+                    },
+                    {
+                        "analyses": "Moutarde 5"
+                    },
+                    {
+                        "analyses": "TM6 Clair"
+                    },
+                    {
+                        "analyses": "TM6 Foncé"
+                    },
+                    {
+                        "analyses": "Moutarde 6"
+                    },
+                    {
+                        "analyses": "Biodiv 1"
+                    },
+                    {
+                        "analyses": "Biodiv 2"
+                    },
+                    {
+                        "analyses": "Biodiv 3"
+                    },
+                    {
+                        "analyses": "Archive"
+                    }
+                ],
+                "columns": {
+                    "analyses": "analyses"
+                }
+            }
+        },
+        {
+            "datas": {
+                "datas": [
+                    {
+                        "analyses": "TM1 Clair"
+                    },
+                    {
+                        "analyses": "TM1 Foncé"
+                    },
+                    {
+                        "analyses": "Moutarde 1"
+                    },
+                    {
+                        "analyses": "TM2 Clair"
+                    },
+                    {
+                        "analyses": "TM2 Foncé"
+                    },
+                    {
+                        "analyses": "Moutarde 2"
+                    },
+                    {
+                        "analyses": "TM3 Clair"
+                    },
+                    {
+                        "analyses": "TM3 Foncé"
+                    },
+                    {
+                        "analyses": "Moutarde 3"
+                    },
+                    {
+                        "analyses": "TM4 Clair"
+                    },
+                    {
+                        "analyses": "TM4 Foncé"
+                    },
+                    {
+                        "analyses": "Moutarde 4"
+                    },
+                    {
+                        "analyses": "TM5 Clair"
+                    },
+                    {
+                        "analyses": "TM5 Foncé"
+                    },
+                    {
+                        "analyses": "Moutarde 5"
+                    },
+                    {
+                        "analyses": "TM6 Clair"
+                    },
+                    {
+                        "analyses": "TM6 Foncé"
+                    },
+                    {
+                        "analyses": "Moutarde 6"
+                    },
+                    {
+                        "analyses": "Biodiv 1"
+                    },
+                    {
+                        "analyses": "Biodiv 2"
+                    },
+                    {
+                        "analyses": "Biodiv 3"
+                    },
+                    {
+                        "analyses": "Archive"
+                    }
+                ],
+                "columns": {
+                    "analyses": "analyses"
+                }
+            }
+        },
+        {
+            "datas": {
+                "datas": [
+                    {
+                        "analyses": "Nématodes"
+                    },
+                    {
+                        "analyses": "Matière Organique"
+                    },
+                    {
+                        "analyses": "Analyse Phisico-Chimique"
+                    },
+                    {
+                        "analyses": "ADNe1"
+                    },
+                    {
+                        "analyses": "ADNe2"
+                    },
+                    {
+                        "analyses": "ADNe3"
+                    },
+                    {
+                        "analyses": "ANDe4"
+                    },
+                    {
+                        "analyses": "CM1"
+                    },
+                    {
+                        "analyses": "CM2"
+                    },
+                    {
+                        "analyses": "CM3"
+                    },
+                    {
+                        "analyses": "CM4"
+                    },
+                    {
+                        "analyses": "CM5"
+                    },
+                    {
+                        "analyses": "CM6"
+                    },
+                    {
+                        "analyses": "DA/Hum1"
+                    },
+                    {
+                        "analyses": "DA/Hum2"
+                    },
+                    {
+                        "analyses": "DA/Hum3"
+                    }
+                ],
+                "columns": {
+                    "analyses": "analyses"
+                }
+            }
+        },
+        {
+            "datas": {
+                "datas": [
+                    {
+                        "analyses": "échantillonnage"
+                    },
+                    {
+                        "analyses": "pH"
+                    }
+                ],
+                "columns": {
+                    "analyses": "analyses"
+                }
+            }
+        },
+        {
+            "datas": {
+                "datas": [
+                    {
+                        "analyses": "Composite"
+                    }
+                ],
+                "columns": {
+                    "analyses": "analyses"
+                }
+            }
+        },
+        {
+            "datas": {
+                "datas": [
+                    {
+                        "analyses": "composite"
+                    }
+                ],
+                "columns": {
+                    "analyses": "analyses"
+                }
+            }
+        },
+        {
+            "datas": {
+                "datas": [
+                    {
+                        "analyses": "composite"
+                    }
+                ],
+                "columns": {
+                    "analyses": "analyses"
+                }
+            }
+        },
+        {
+            "datas": {
+                "datas": [
+                    {
+                        "analyses": "SAS en sec : pH ; P Olsen ; C/N"
+                    }
+                ],
+                "columns": {
+                    "analyses": "analyses"
+                }
+            }
+        },
+        {
+            "datas": {
+                "datas": [
+                    {
+                        "analyses": "composite"
+                    }
+                ],
+                "columns": {
+                    "analyses": "analyses"
+                }
+            }
+        },
+        {
+            "datas": {
+                "datas": [
+                    {
+                        "analyses": "composite"
+                    }
+                ],
+                "columns": {
+                    "analyses": "analyses"
+                }
+            }
+        },
+        {
+            "datas": {
+                "datas": [
+                    {
+                        "analyses": "Composite"
+                    }
+                ],
+                "columns": {
+                    "analyses": "analyses"
+                }
+            }
+        },
+        {
+            "datas": {
+                "datas": [
+                    {
+                        "analyses": "Composite"
+                    }
+                ],
+                "columns": {
+                    "analyses": "analyses"
+                }
+            }
+        },
+        {
+            "datas": {
+                "datas": [
+                    {
+                        "analyses": "Composite"
+                    }
+                ],
+                "columns": {
+                    "analyses": "analyses"
+                }
+            }
+        },
+        {
+            "datas": {
+                "datas": [
+                    {
+                        "analyses": "composite"
+                    },
+                    {
+                        "analyses": "composite"
+                    },
+                    {
+                        "analyses": "composite"
+                    }
+                ],
+                "columns": {
+                    "analyses": "analyses"
+                }
+            }
+        },
+        {
+            "datas": {
+                "datas": [
+                    {
+                        "analyses": "SAS en sec : pH ; P Olsen ; C/N"
+                    }
+                ],
+                "columns": {
+                    "analyses": "analyses"
+                }
+            }
+        },
+        {
+            "datas": {
+                "datas": [
+                    {
+                        "analyses": "SAS en sec : pH ; P Olsen ; C/N"
+                    }
+                ],
+                "columns": {
+                    "analyses": "analyses"
+                }
+            }
+        },
+        {
+            "datas": {
+                "datas": [
+                    {
+                        "analyses": "SAS en frais : NO3 ; NH4 ; Hp"
+                    },
+                    {
+                        "analyses": "SAS en sec et broyé : TN/TC ; Hp residuelle"
+                    },
+                    {
+                        "analyses": "SAS en sec et non broyé : pH ; P Olsen"
+                    },
+                    {
+                        "analyses": "SAS en congelé : analyse enzymatique"
+                    },
+                    {
+                        "analyses": "QUALYSE"
+                    },
+                    {
+                        "analyses": "IFPEN en sec (Rock-Eval)"
+                    }
+                ],
+                "columns": {
+                    "analyses": "analyses"
+                }
+            }
+        },
+        {
+            "datas": {
+                "datas": [
+                    {
+                        "analyses": "Composite"
+                    },
+                    {
+                        "analyses": "Composite"
+                    },
+                    {
+                        "analyses": "Composite"
+                    },
+                    {
+                        "analyses": "Composite"
+                    },
+                    {
+                        "analyses": "Composite"
+                    },
+                    {
+                        "analyses": "Composite"
+                    },
+                    {
+                        "analyses": "Composite"
+                    },
+                    {
+                        "analyses": "Composite"
+                    },
+                    {
+                        "analyses": "Composite"
+                    },
+                    {
+                        "analyses": "Composite"
+                    },
+                    {
+                        "analyses": "Composite"
+                    },
+                    {
+                        "analyses": "Composite"
+                    },
+                    {
+                        "analyses": "Composite"
+                    },
+                    {
+                        "analyses": "Composite"
+                    },
+                    {
+                        "analyses": "Composite"
+                    },
+                    {
+                        "analyses": "Composite"
+                    },
+                    {
+                        "analyses": "Composite"
+                    },
+                    {
+                        "analyses": "Composite"
+                    },
+                    {
+                        "analyses": "Composite"
+                    },
+                    {
+                        "analyses": "Composite"
+                    },
+                    {
+                        "analyses": "Composite"
+                    },
+                    {
+                        "analyses": "Composite"
+                    },
+                    {
+                        "analyses": "Composite"
+                    },
+                    {
+                        "analyses": "Composite"
+                    },
+                    {
+                        "analyses": "Composite"
+                    },
+                    {
+                        "analyses": "Composite"
+                    },
+                    {
+                        "analyses": "Composite"
+                    },
+                    {
+                        "analyses": "Composite"
+                    },
+                    {
+                        "analyses": "Composite"
+                    },
+                    {
+                        "analyses": "Composite"
+                    }
+                ],
+                "columns": {
+                    "analyses": "analyses"
+                }
+            }
+        },
+        {
+            "datas": {
+                "datas": [
+                    {
+                        "analyses": "Composite"
+                    },
+                    {
+                        "analyses": "Composite"
+                    },
+                    {
+                        "analyses": "Composite"
+                    },
+                    {
+                        "analyses": "Composite"
+                    },
+                    {
+                        "analyses": "Composite"
+                    },
+                    {
+                        "analyses": "Composite"
+                    },
+                    {
+                        "analyses": "Composite"
+                    },
+                    {
+                        "analyses": "Composite"
+                    },
+                    {
+                        "analyses": "Composite"
+                    },
+                    {
+                        "analyses": "Composite"
+                    },
+                    {
+                        "analyses": "Composite"
+                    },
+                    {
+                        "analyses": "Composite"
+                    },
+                    {
+                        "analyses": "Composite"
+                    },
+                    {
+                        "analyses": "Composite"
+                    },
+                    {
+                        "analyses": "Composite"
+                    },
+                    {
+                        "analyses": "Composite"
+                    },
+                    {
+                        "analyses": "Composite"
+                    },
+                    {
+                        "analyses": "Composite"
+                    },
+                    {
+                        "analyses": "Composite"
+                    },
+                    {
+                        "analyses": "Composite"
+                    },
+                    {
+                        "analyses": "Composite"
+                    },
+                    {
+                        "analyses": "Composite"
+                    },
+                    {
+                        "analyses": "Composite"
+                    },
+                    {
+                        "analyses": "Composite"
+                    },
+                    {
+                        "analyses": "Composite"
+                    },
+                    {
+                        "analyses": "Composite"
+                    },
+                    {
+                        "analyses": "Composite"
+                    },
+                    {
+                        "analyses": "Composite"
+                    },
+                    {
+                        "analyses": "Composite"
+                    },
+                    {
+                        "analyses": "Composite"
+                    }
+                ],
+                "columns": {
+                    "analyses": "analyses"
                 }
             }
         }

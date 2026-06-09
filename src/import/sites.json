@@ -295,27 +295,6 @@
             "longitude": "0.45651"
         },
         {
-            "nom": "Chalagnac [1619]",
-            "pays": "France",
-            "region": "Region",
-            "latitude": "45.09670",
-            "longitude": "0.69529"
-        },
-        {
-            "nom": "Bernos-beaulac [1824]",
-            "pays": "France",
-            "region": "Region",
-            "latitude": "44.35818",
-            "longitude": "-0.28255"
-        },
-        {
-            "nom": "Panazol [11416]",
-            "pays": "France",
-            "region": "Region",
-            "latitude": "45.82190",
-            "longitude": "1.30093"
-        },
-        {
             "nom": "Apremont [1313]",
             "pays": "France",
             "region": "Auvergne-rhône-alpes",
@@ -652,6 +631,20 @@
             "longitude": "-1.57815"
         },
         {
+            "nom": "Chalagnac [1619]",
+            "pays": "France",
+            "region": "Region",
+            "latitude": "45.09670",
+            "longitude": "0.69529"
+        },
+        {
+            "nom": "Bernos-beaulac [1824]",
+            "pays": "France",
+            "region": "Region",
+            "latitude": "44.35818",
+            "longitude": "-0.28255"
+        },
+        {
             "nom": "Parcelle F019",
             "pays": "France",
             "region": "Bretagne",
@@ -832,6 +825,48 @@
             "region": "Normandie",
             "latitude": "49.21671",
             "longitude": "-1.62805"
+        },
+        {
+            "nom": "Panazol [11416]",
+            "pays": "France",
+            "region": "Region",
+            "latitude": "45.82190",
+            "longitude": "1.30093"
+        },
+        {
+            "nom": "Bernos Beaulac",
+            "pays": "France",
+            "region": "Nouvelle-aquitaine",
+            "latitude": "44.35771343315659",
+            "longitude": "-0.2839594524494661"
+        },
+        {
+            "nom": "Panazol [1416]",
+            "pays": "France",
+            "region": "Nouvelle-aquitaine",
+            "latitude": "45.82203251599365",
+            "longitude": "1.3007247903432586"
+        },
+        {
+            "nom": "Heurtevent [323]",
+            "pays": "France",
+            "region": "Normandie",
+            "latitude": "48.9741180537298",
+            "longitude": "0.13802396615068346"
+        },
+        {
+            "nom": "Parc De Brequigny ",
+            "pays": "France ",
+            "region": "Bretagne ",
+            "latitude": "4804578n",
+            "longitude": "141201w"
+        },
+        {
+            "nom": "Parc De Bréquigny ",
+            "pays": "France ",
+            "region": "Bretagne",
+            "latitude": "48.08295",
+            "longitude": "-1.68810"
         }
     ]
 }
