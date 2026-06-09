@@ -111,7 +111,7 @@ class JsonTable {
 			});
 
 		if (this.menu) 
-			this.menu.addEventListener("click", () => {
+			this.menu.addEventListener("click", e => {
 				const url = e.target.getAttribute("url") ;
 				if (this.menuVisible) 
 					this.toggleMenu("hide");
