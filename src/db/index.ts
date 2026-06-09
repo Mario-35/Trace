@@ -9,7 +9,7 @@
 import postgres from "postgres";
 import { dataBase } from "./base";
 import { executeSql } from "./executeSql";
-const pwd = process.env.NODE_ENV === 'production' ? 'postgres' : "mario29";
+const pwd = process.env.NODE_ENV === 'production' ? 'postgres' : "postgres";
 
 export const sql = postgres('postgres://postgres:' + pwd + '@localhost:5432/trace', {
     host                 : 'localhost',   // Postgres ip address[s] or domain name[s]

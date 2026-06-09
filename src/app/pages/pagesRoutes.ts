@@ -19,6 +19,7 @@ import { dataBase } from "../../db/base";
 import { update } from "../../helpers/update";
 import { Export } from "../../html/class/export";
 import { Documentation } from "../../html/class/documentation";
+import { download } from "../../helpers/download";
 
 export const pagesRoutes = Router();
 
@@ -112,14 +113,6 @@ pagesRoutes.get("/update", async (req, res) => {
 
 });
 
-// export Excel
-pagesRoutes.get("/update", async (req, res) => {
-    await update(); 
-    res.redirect('/');
-    process.exit(0);
-
-});
-
 // prints
 pagesRoutes.get("/print/:type/:id", async (req, res) => {
     switch (req.params.type ) {
@@ -189,3 +182,11 @@ pagesRoutes.get("/configuration.html", async (req, res) => {
     });       
 });
 
+pagesRoutes.get("/download", async (req, res) => {
+    const data = download(res); 
+    res.set('Content-Type', 'application/octet-stream');
+    res.set('Content-Disposition', `attachment; filename=downloaded_file.zip`);
+    res.set('Content-Length', data.length);
+    res.send(data);
+
+});
