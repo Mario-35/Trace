@@ -20,6 +20,7 @@ import { update } from "../../helpers/update";
 import { Export } from "../../html/class/export";
 import { Documentation } from "../../html/class/documentation";
 import { download } from "../../helpers/download";
+import { clean } from "../../helpers/clean";
 
 export const pagesRoutes = Router();
 
@@ -110,6 +111,12 @@ pagesRoutes.get("/update", async (req, res) => {
     await update(); 
     res.redirect('/');
     process.exit(0);
+
+});
+
+pagesRoutes.get("/clean", async (req, res) => {
+    await clean(); 
+    res.status(201).send();
 
 });
 

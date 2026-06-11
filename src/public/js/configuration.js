@@ -9,7 +9,7 @@ _CONFIGURATION = {
   latitude: '48.112564637819',
   longitude: '-1.656744048248',
   identifiant: 'Br13551',
-  etats: [ 'Créer', 'Prélevé', 'Stocké', 'Perdu', 'Detruit', 'Importé', 'Annulé', 'Reprelevé' ],
+  etats: [ 'Créer', 'Prélevé', 'Stocké', 'Perdu', 'Detruit', 'Importé', 'Annulé', 'Supprimer','Reprelevé' ],
   types: [
     'Boues',
     'Eau',

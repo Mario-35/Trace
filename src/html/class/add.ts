@@ -349,7 +349,11 @@ export class Add extends CoreHtmlView {
                                 
 										<div class="form-group row-2">
 												<input type="checkbox" id="pedagogique" name="pedagogique">
-												<label for="pedagogique"><span class="pipo" tooltip="Programme concerné par le prélévement coché la case en cas de programme pédagogique">Programme</span></label>
+												<label for="pedagogique">
+													<span class="pipo" tooltip="Programme concerné par le prélévement coché la case en cas de programme pédagogique">
+														Programme
+													</span>
+												</label>
 											<input type="text" id="programme" name="programme" class="form-control" maxlength="25" placeholder="Nom du programme" />                              
 											<div class="error-message" id="programme-error">Nom du programme obligatoire</div>
 										</div>
