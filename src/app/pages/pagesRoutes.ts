@@ -12,7 +12,7 @@ import { Print } from "../../html/class/print";
 import { readId, readIds } from "../../controller";
 import { List } from "../../html/class/list";
 import { Configuration } from "../../html/class/configuration";
-import { executeSql } from "../../db";
+import { executeSql, writeDB } from "../../db";
 import { Add } from "../../html/class/add";
 import { _CONFIG, setConfig } from "../../constant";
 import { dataBase } from "../../db/base";
@@ -91,20 +91,20 @@ pagesRoutes.get("/" + dataBase.echantillons.name + ".html", async (req, res) => 
 });
 
 // echantillons page
-pagesRoutes.get("/export.html", async (req, res) => {
-    const id = req.url.split("?selection=")[1];
-    await executeSql(`SELECT ids FROM selections WHERE id=${id}`)
-    .then(async (ids: any) => {
-        await executeSql(`SELECT 
-            ${Object.keys(dataBase.echantillons.columns).filter(e => dataBase.echantillons.columns[e].type !== "json" && !dataBase.echantillons.columns[e].calculate)}, 
-            unnest(analyses) AS analyses 
-            FROM ${dataBase.echantillons.name} WHERE id IN (${ ids[0].ids })`)
-        .then((datas) => {
-            const html = new Export(datas);            
-            res.send(html.toString())
-        });                                                                                                                                                                                                                                                                                                     
-    });
-});
+// pagesRoutes.get("/export.html", async (req, res) => {
+//     const id = req.url.split("?selection=")[1];
+//     await executeSql(`SELECT ids FROM selections WHERE id=${id}`)
+//     .then(async (ids: any) => {
+//         await executeSql(`SELECT 
+//             ${Object.keys(dataBase.echantillons.columns).filter(e => dataBase.echantillons.columns[e].type !== "json" && !dataBase.echantillons.columns[e].calculate)}, 
+//             unnest(analyses) AS analyses 
+//             FROM ${dataBase.echantillons.name} WHERE id IN (${ ids[0].ids })`)
+//         .then((datas) => {
+//             const html = new Export(datas);            
+//             res.send(html.toString())
+//         });                                                                                                                                                                                                                                                                                                     
+//     });
+// });
 
 // print sample sticker
 pagesRoutes.get("/update", async (req, res) => {
@@ -190,10 +190,11 @@ pagesRoutes.get("/configuration.html", async (req, res) => {
 });
 
 pagesRoutes.get("/download", async (req, res) => {
-    const data = download(res); 
-    res.set('Content-Type', 'application/octet-stream');
-    res.set('Content-Disposition', `attachment; filename=downloaded_file.zip`);
-    res.set('Content-Length', data.length);
-    res.send(data);
-
+    writeDB().then(() => {
+        const data = download(); 
+        res.set('Content-Type', 'application/octet-stream');
+        res.set('Content-Disposition', `attachment; filename=download_${new Date().toJSON().slice(0,16).replaceAll('-','').replace(':','')}.zip`);
+        res.set('Content-Length', data.length);
+        res.send(data);
+    })
 });

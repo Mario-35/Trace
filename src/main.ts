@@ -42,13 +42,13 @@ async function main(port: number) {
       logger.info(`Serveur HTTP actif sur le port ${3000}`);
     });
     
-    https.createServer({
-      key: fs.readFileSync(path.join(__dirname, 'keys/server.key'), 'utf8'),
-      cert: fs.readFileSync(path.join(__dirname, 'keys/server.crt'), 'utf8'),
-      ca: fs.readFileSync(path.join(__dirname, 'keys/server.ca'), 'utf8')
-    }, app).listen(443, () => {
-      logger.info(`Serveur HTTPS actif sur le port ${443}`);
-    });
+    // https.createServer({
+    //   key: fs.readFileSync(path.join(__dirname, 'keys/server.key'), 'utf8'),
+    //   cert: fs.readFileSync(path.join(__dirname, 'keys/server.crt'), 'utf8'),
+    //   ca: fs.readFileSync(path.join(__dirname, 'keys/server.ca'), 'utf8')
+    // }, app).listen(443, () => {
+    //   logger.info(`Serveur HTTPS actif sur le port ${443}`);
+    // });
   } catch (error) {
     logger.error(`Arret du serveur avec l'erreur : ${error}`);
     process.exit(ExitStatus.Failure);
