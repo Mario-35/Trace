@@ -69,11 +69,12 @@ create_run_script() {
 check_node() {
     if ! command -v node > /dev/null
     then
-        echo "Installing Node..."
+        info "Installing Node..."
         sudo  curl -fsSL https://deb.nodesource.com/setup_22.x | sudo -E bash -
         sudo apt install nodejs
         NODEVER=$(node -v) 
     else
+        success "Node found"
         NODEVER=$(node -v) 
     fi    
 }
