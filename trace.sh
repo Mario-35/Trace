@@ -174,10 +174,9 @@ config_node() {
 # Function to check PostgreSQL-postgis and install it if not
 check_gnupg() {
     if which gpg >/dev/null; then 
-        echo "gnupg2 Installed"
+        info "gnupg2 Installed"
     else
-        echo "gnupg2 Not installed" #If not installed
-        echo "gnupg2 Installing..."
+        warning "gnupg2 Not installed" #If not installed
         sudo apt install gnupg2 #installation
     fi
 }
@@ -185,7 +184,7 @@ check_gnupg() {
 # Function to check PostgreSQL-postgis and install it if not
 check_pg() {
     if ! psql --version | grep -q "psql (PostgreSQL)"; then
-        echo "Installing postgresql-postgis ..."
+        warning "Installing postgresql-postgis ..."
         sudo install -d /usr/share/postgresql-common/pgdg
         sudo curl -o /usr/share/postgresql-common/pgdg/apt.postgresql.org.asc --fail https://www.postgresql.org/media/keys/ACCC4CF8.asc
         sudo sh -c 'echo "deb [signed-by=/usr/share/postgresql-common/pgdg/apt.postgresql.org.asc] https://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
@@ -201,6 +200,7 @@ check_pg() {
         update_pg_hba
         PGVER=$(psql --version)
     else
+        INFO "postgresql installed"
         PGVER=$(psql --version)
     fi  
 }
@@ -228,10 +228,11 @@ update_pg_hba() {
 check_pm2() {
     if ! command -v pm2 > /dev/null
     then
-        echo "Installing pm2..."
+        warning "Installing pm2..."
         sudo npm install pm2@latest -g
         PM2VER=$(pm2 -v) 
     else
+        INFO "pm2 installed"
         PM2VER=$(pm2 -v) 
     fi    
 }
@@ -240,10 +241,10 @@ check_pm2() {
 check_unzip() {
     if ! command -v unzip > /dev/null
     then
-        echo "Installing unzip..."
+        warning "Installing unzip..."
         sudo apt-get install unzip
     else
-        echo "unzip is already installed."
+        info "unzip is already installed."
     fi
 }
 
@@ -251,7 +252,7 @@ check_unzip() {
 check_dist() {
     # Check if file already present and ask to use it if true
     if [ -f $FILEDIST ]; then
-        echo "$FILEDIST is already present."
+        warning "$FILEDIST is already present."
         while true; do
             read -p "Do you wish to use it " yn
             case $yn in
@@ -269,9 +270,9 @@ check_dist() {
 save_dist() {
     if [ -f "$FILEDIST" ]; then
         rm -f $FILEDISTOLD
-        echo "Delete => $FILEDISTOLD"
+        info "Delete => $FILEDISTOLD"
         mv $FILEDIST $FILEDISTOLD
-        echo "Move $FILEDIST => $FILEDISTOLD"
+        info "Move $FILEDIST => $FILEDISTOLD"
     fi
 }
 
