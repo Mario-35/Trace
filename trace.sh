@@ -12,7 +12,6 @@
 # Works on macOS and Linux
 # This script is idempotent - safe to run multiple times
 
-set -euo pipefail
 
 # Colors for output
 GREEN='\033[0;32m'
@@ -100,7 +99,7 @@ config_node() {
     info "Setting up npm to install global packages without sudo..."
     
     # Check if npm is installed
-    if ! command -v npm &> /dev/null; then
+    if ! command -v npm > /dev/null; then
         error "npm is not installed. Please install Node.js and npm first."
         exit 1
     fi
@@ -187,7 +186,8 @@ check_pg() {
         warning "Installing postgresql-postgis ..."
         sudo install -d /usr/share/postgresql-common/pgdg
         sudo curl -o /usr/share/postgresql-common/pgdg/apt.postgresql.org.asc --fail https://www.postgresql.org/media/keys/ACCC4CF8.asc
-         sudo apt update
+        sudo sh -c 'echo "deb [signed-by=/usr/share/postgresql-common/pgdg/apt.postgresql.org.asc] https://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
+        sudo apt update
         sudo apt install postgresql-17-postgis-3 -y
             if ! psql --version | grep -q "psql (PostgreSQL)"; then
             exit
