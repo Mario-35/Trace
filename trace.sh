@@ -317,6 +317,8 @@ run_trace() {
     pm2 start ./trace/main.js
 }
 
+info "Essai"
+    
 check_gnupg;
 check_pg;
 check_node;
