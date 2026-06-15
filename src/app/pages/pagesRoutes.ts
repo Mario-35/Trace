@@ -91,20 +91,20 @@ pagesRoutes.get("/" + dataBase.echantillons.name + ".html", async (req, res) => 
 });
 
 // echantillons page
-// pagesRoutes.get("/export.html", async (req, res) => {
-//     const id = req.url.split("?selection=")[1];
-//     await executeSql(`SELECT ids FROM selections WHERE id=${id}`)
-//     .then(async (ids: any) => {
-//         await executeSql(`SELECT 
-//             ${Object.keys(dataBase.echantillons.columns).filter(e => dataBase.echantillons.columns[e].type !== "json" && !dataBase.echantillons.columns[e].calculate)}, 
-//             unnest(analyses) AS analyses 
-//             FROM ${dataBase.echantillons.name} WHERE id IN (${ ids[0].ids })`)
-//         .then((datas) => {
-//             const html = new Export(datas);            
-//             res.send(html.toString())
-//         });                                                                                                                                                                                                                                                                                                     
-//     });
-// });
+pagesRoutes.get("/export.html", async (req, res) => {
+    const id = req.url.split("?selection=")[1];
+    await executeSql(`SELECT ids FROM selections WHERE id=${id}`)
+    .then(async (ids: any) => {
+        await executeSql(`SELECT 
+            ${Object.keys(dataBase.echantillons.columns).filter(e => dataBase.echantillons.columns[e].type !== "json" && !dataBase.echantillons.columns[e].calculate)}, 
+            unnest(analyses) AS analyses 
+            FROM ${dataBase.echantillons.name} WHERE id IN (${ ids[0].ids })`)
+        .then((datas) => {
+            const html = new Export(datas);            
+            res.send(html.toString())
+        });                                                                                                                                                                                                                                                                                                     
+    });
+});
 
 // print sample sticker
 pagesRoutes.get("/update", async (req, res) => {

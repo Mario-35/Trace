@@ -12,6 +12,9 @@ import { dataBase } from "../../db/base";
 import { asyncForEach } from "../../helpers/asyncForEach";
 
 export async function addEchantillon(values: any) {
+      console.log(values);
+      console.log(values["nombre" as keyof object]);
+      
       // store all queries
       const queries:string[] = [];
       // store analyzes case nombreOuAnalyses is true
@@ -24,15 +27,13 @@ export async function addEchantillon(values: any) {
       const insertInto = tableColumns;
       // Get the start number
       let start = +values["numero" as keyof object]; 
+      let nb = values["nombre" as keyof object]; 
       const codesIdentification:string[] = [];
-
-      // Get the nb of lines to insert
-      let nb= +values["nombre" as keyof object];
       // loop on analyses
-      if (!values["nombreOuAnalyses" as keyof object]) {
-            analyzes = values["analyses" as keyof object].split(",");
-            nb = analyzes.length;
-      }
+      // if (!values["nombreOuAnalyses" as keyof object]) {
+      //       analyzes = values["analyses" as keyof object].split(",");
+      //       nb = analyzes.length;
+      // }
       // create start string for identification
       tmpCode =  values["identification" as keyof object].slice(0,12);      
       
@@ -94,15 +95,20 @@ export async function addEchantillon(values: any) {
                   });
       } // normal insert
       else {           
+      console.log("=====================================");
+            console.log(nb);
 
             // create identification codes
             for (var i = 0; i < nb; i++)
                   codesIdentification.push(tmpCode + String(i + start).padStart(4, '0'));
+
+            console.log(codesIdentification);
+            
             // loop in identifications
             codesIdentification.forEach((identification, i) => {
                   values["identification" as keyof object] = identification;
-                   if (!values["nombreOuAnalyses" as keyof object])
-                        values["analyses"] = analyzes[i];
+                  //  if (!values["nombreOuAnalyses" as keyof object])
+                  //       values["analyses"] = analyzes[0];
                   queries.push(`INSERT INTO ${dataBase.echantillons.name} (${insertInto.join()}) VALUES (${createPgValues(dataBase.echantillons.name, values)})`);
             });
             // execute all queries
