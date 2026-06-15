@@ -328,6 +328,7 @@ run_trace() {
 
 info "Essai"
     
+check_sudo;
 check_gnupg;
 check_pg;
 check_node;
