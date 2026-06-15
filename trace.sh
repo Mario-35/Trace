@@ -169,6 +169,15 @@ config_node() {
     fi
 }
 
+# Function to check PostgreSQL-postgis and install it if not
+check_sudo() {
+    if which sudo >/dev/null; then 
+        info "sudo Installed"
+    else
+        warning "sudo Not installed" #If not installed
+        sudo apt install sudo #installation
+    fi
+}
 
 # Function to check PostgreSQL-postgis and install it if not
 check_gnupg() {
