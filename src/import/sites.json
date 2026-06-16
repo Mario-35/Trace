@@ -855,11 +855,25 @@
             "longitude": "0.13802396615068346"
         },
         {
+            "nom": "Parc De Brequigny ",
+            "pays": "France ",
+            "region": "Bretagne ",
+            "latitude": "4804578n",
+            "longitude": "141201w"
+        },
+        {
             "nom": "Parc De Bréquigny ",
             "pays": "France ",
             "region": "Bretagne",
             "latitude": "48.08295",
             "longitude": "-1.68810"
+        },
+        {
+            "nom": "Media Parc De Retiers",
+            "pays": "France",
+            "region": "Bretagne",
+            "latitude": "47.9136295",
+            "longitude": "-1.381179"
         }
     ]
 }

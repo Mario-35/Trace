@@ -29,11 +29,6 @@ export async function addEchantillon(values: any) {
       let start = +values["numero" as keyof object]; 
       let nb = values["nombre" as keyof object]; 
       const codesIdentification:string[] = [];
-      // loop on analyses
-      // if (!values["nombreOuAnalyses" as keyof object]) {
-      //       analyzes = values["analyses" as keyof object].split(",");
-      //       nb = analyzes.length;
-      // }
       // create start string for identification
       tmpCode =  values["identification" as keyof object].slice(0,12);      
       
@@ -94,21 +89,14 @@ export async function addEchantillon(values: any) {
                         console.error(error);
                   });
       } // normal insert
-      else {           
-      console.log("=====================================");
-            console.log(nb);
-
+      else {
             // create identification codes
             for (var i = 0; i < nb; i++)
                   codesIdentification.push(tmpCode + String(i + start).padStart(4, '0'));
-
-            console.log(codesIdentification);
             
             // loop in identifications
             codesIdentification.forEach((identification, i) => {
                   values["identification" as keyof object] = identification;
-                  //  if (!values["nombreOuAnalyses" as keyof object])
-                  //       values["analyses"] = analyzes[0];
                   queries.push(`INSERT INTO ${dataBase.echantillons.name} (${insertInto.join()}) VALUES (${createPgValues(dataBase.echantillons.name, values)})`);
             });
             // execute all queries

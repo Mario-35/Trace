@@ -2,7 +2,7 @@ _CONFIGURATION = {
   id: 1,
   site: 'Umr Sas Rennes',
   code: 'Fr',
-  debug: false,
+  debug: true,
   passeport: true,
   pays: 'France',
   region: 'Bretagne',

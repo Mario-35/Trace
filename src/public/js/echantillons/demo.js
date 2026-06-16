@@ -2,7 +2,7 @@ const _DEMOS ={
     "Rien": {},
     "Basic": {
         "type": "Boues",
-        "prelevement": "2026-05-09",
+        "prelevement": "2026-10-09",
         "programme": "RMQS.Biodiv",
         "site": "PLEYBEN",
         "libre": "",
