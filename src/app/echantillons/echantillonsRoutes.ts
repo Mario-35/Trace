@@ -25,7 +25,7 @@ echantillonsRoutes.get("/list/" + dataBase.echantillons.name, async (req, res)  
 
 // Get one echantillon from identification
 echantillonsRoutes.get("/" + dataBase.echantillons.singular + "/identification/:id", async (req, res) => {
-    await executeSql(`SELECT id, ${createListColumns(dataBase.echantillons.name)} FROM ${dataBase.echantillons.name} WHERE identification ${req.params.id.length < 13 ? 'LIKE' : '='} '${ req.params.id }${req.params.id.length < 13 ? '%' : ''}' ORDER BY creation`)
+    await executeSql(`SELECT id, ${createListColumns(dataBase.echantillons.name)} FROM ${dataBase.echantillons.name} WHERE identification ${req.params.id.length < 13 ? 'LIKE' : '='} '${ req.params.id }${req.params.id.length < 13 ? '%' : ''}' ORDER BY identification`)
     .then((echantillon: any) => {
         return res.status(200).json(echantillon);
     }).catch (error => {

@@ -92,7 +92,6 @@ getElement('site').addEventListener('blur', async (event) => {
         const datas = await getDatas(`${window.location.origin}/sites/filter/${site.value}`);
         addDataList(getElement('site'), datas); 
     }
-
 });
 
 // modification de la date de prelevement
@@ -163,4 +162,34 @@ getElement("btn-analyses").addEventListener("click", (event) => {
                         "ajouter une analyse", 
                         getElement("analyses"), 
                         function() { createExcelFromList(getElement("analyses")); });  
+});
+
+
+// changement du nom du programme
+getElement('programme').addEventListener('blur', async (event) => {
+    event.preventDefault();
+    if(programme.value.trim() !== "") {
+        try {
+            let temp = await getDatas(window.location.origin + `/programme?nom='${programme.value.toUpperCase()}'`);
+            Object.keys(temp).forEach(key => {
+                if (key === "numero") {
+                    const elem = getElement("numero");
+                    elem.value = +temp[key]+ 1;
+                    elem.min = +temp[key]+ 1;
+                } else getElement(key).value = temp[key];
+            });
+        } catch (error) {
+            showModalError(error);
+        }
+    }
+    
+
+
+
+
+
+
+
+
+    
 });
