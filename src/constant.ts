@@ -11,7 +11,8 @@ export const _TYPES = ["Boues", "Eau", "Invertébrés", "Sol cultivé", "Sol for
 export let _LOCALHOST: string  | undefined = undefined;
 
 export function setLocal(req: any) {
-    if (!_LOCALHOST) _LOCALHOST = `http://${req.host}`;
+    if (!_LOCALHOST) _LOCALHOST = ""
+    // if (!_LOCALHOST) _LOCALHOST = `http://${req.host}`;
     
 }
 
