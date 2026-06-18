@@ -14,7 +14,7 @@ import { List } from "../../html/class/list";
 import { Configuration } from "../../html/class/configuration";
 import { executeSql, writeDB } from "../../db";
 import { Add } from "../../html/class/add";
-import { _CONFIG, setConfig } from "../../constant";
+import { _CONFIG, EConstant, setConfig, setLocal } from "../../constant";
 import { dataBase } from "../../db/base";
 import { update } from "../../helpers/update";
 import { Export } from "../../html/class/export";
@@ -38,7 +38,7 @@ pagesRoutes.get("/documentation/:page", async (req, res) => {
 });
 
 // add sample
-pagesRoutes.get("/" + dataBase.echantillons.singular + "-add.html", async (req, res) => {
+pagesRoutes.get("/" + dataBase.echantillons.singular + "-add.html", async (req, res) => {   
     const html = new Add(dataBase.echantillons.singular, _CONFIG);
     res.send(html.toString());
 });
@@ -87,6 +87,7 @@ pagesRoutes.get("/" + dataBase.campagnes.name + ".html", async (req, res) => {
 
 // echantillons page
 pagesRoutes.get("/" + dataBase.echantillons.name + ".html", async (req, res) => {
+    setLocal(req);
     const html = new List(dataBase.echantillons.name, true);
     res.send(html.toString())
 });

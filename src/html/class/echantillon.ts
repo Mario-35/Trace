@@ -6,7 +6,7 @@
  *
  */
 
-import { EConstant } from "../../constant";
+import { _LOCALHOST, EConstant } from "../../constant";
 import { CoreHtmlView } from "./core";
 
 /**
@@ -41,8 +41,8 @@ export class Echantillon extends CoreHtmlView {
                             `<script>`,
                             `_DATAPI = ${JSON.stringify(this.datas)}`,
                             '</script>',
-                            `<script src="${EConstant.localHost}/js/constants.js"></script>`,
-                            `<script src="${EConstant.localHost}/js/api/print.js"></script>`,
+                            `<script src="${_LOCALHOST}/js/constants.js"></script>`,
+                            `<script src="${_LOCALHOST}/js/api/print.js"></script>`,
                             `<script>start()</script>`,
                             '</html>'].map((e: string) => e.trim());
     }

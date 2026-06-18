@@ -8,6 +8,7 @@ import { logger } from "@infra/logger";
 import { createDB, sql, writeDB } from "./db";;
 import { echantillonsRoutes, excelsRoutes, pagesRoutes, passeportsRoutes, selectionsRoutes, sitesRoutes, rpgsRoutes, campagnesRoutes, evenementsRoutes } from "./app";
 import { configRoutes } from "@app/configuration/configRoutes";
+import { setLocal } from "./constant";
 
 export default class HttpServer {
   private app: Express;
@@ -46,6 +47,11 @@ export default class HttpServer {
   }
   
   private loadRoutes(): void {
+
+  this.app.use((req, res, next) => {
+    setLocal(req);
+    next();
+  });
 
     this.app.use('/', configRoutes);
     this.app.use('/', echantillonsRoutes);

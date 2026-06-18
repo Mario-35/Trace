@@ -22,8 +22,6 @@ async function main(port: number) {
     const httpServer = new HttpServer(server);
     const exitSignals: NodeJS.Signals[] = ["SIGINT", "SIGTERM", "SIGQUIT"];
     
-    server.use(express.static(__dirname + '/public'));
-    
     if (!fs.existsSync(path.resolve(__dirname, "./public/js", "configuration.js")) && await isDbExists() === true) writeConfig(); 
     exitSignals.map((sig) =>
       process.on(sig, async () => {
@@ -42,8 +40,6 @@ async function main(port: number) {
 
     http.createServer(app).listen(3000, () => {
       logger.info(`Serveur HTTP actif sur le port ${3000}`);
-      console.log();
-      
     });
     
     // https.createServer({
