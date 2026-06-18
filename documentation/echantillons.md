@@ -56,6 +56,10 @@ L'ajout d'un échantillon se déroule en 5 étapes
 
 - **Infos libre** Ligne de texte libre.
 
+#### A NOTER
+
+Si vous saisissez un nom de programme ou un numéro de dossier qui se trouve déjà présent le programme, programme pédagogique, responsable, dossier, type et calcul du premier sont automatiquement renseigné SI CELLES CI SONT VIDES.
+
 ### Masque 2 Localisation
 
 Le masque de la localisation est différé si le site saisi dans l'étape précédente est connu de l'application sinon vous avez la possibilité de le créer à cette étape malgré que le fait de passer par la gestion des sites est plus confortable avec une carte permettant une localisation plus sure.

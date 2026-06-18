@@ -70,20 +70,20 @@ echantillonsRoutes.get("/" + dataBase.echantillons.singular + "/:id", async (req
 });
 
 // Get next sample number
-echantillonsRoutes.get("/" + dataBase.echantillons.singular + "/next/:id", async (req, res) => {
+echantillonsRoutes.get("/" + dataBase.echantillons.singular + "/next/identification/:id", async (req, res) => {
     return await executeSql(`SELECT COALESCE( MAX( SUBSTRING ( identification FROM 13 FOR 4 ):: int ), 0) as numero FROM ${dataBase.echantillons.name} WHERE identification LIKE '${String(req.params.id.slice(0,12))}%' LIMIT 1` )
     .then((max: any) => {
-        return res.status(200).json(Number(max[0].max) + 1);
+        return res.status(200).json({max : Number(max[0].max) + 1});
     }).catch (error => {
         return res.status(404).json({"error": error.detail});
     });
 });
 
 // Get next sample number for after request
-echantillonsRoutes.get("/" + dataBase.echantillons.singular + "/after/:id", async (req, res) => {
+echantillonsRoutes.get("/" + dataBase.echantillons.singular + "/after/identification/:id", async (req, res) => {
     return await executeSql(`SELECT MAX( SUBSTRING ( identification FROM 13 FOR 4 ):: int ) FROM ${dataBase.echantillons.name} WHERE identification like CONCAT( ( SELECT SUBSTRING ( identification FROM 1 FOR 12 ) FROM ${dataBase.echantillons.name} WHERE id = ${+String(req.params.id)} ), '%' )`)
-    .then((max: any) => {
-        return res.status(200).json(Number(max[0].max) + 1);
+    .then((max: any) => {        
+        return res.status(200).json({max : Number(max[0].max) + 1});
     }).catch (error => {
         return res.status(404).json({"error": error.detail});
     });

@@ -5,6 +5,7 @@
           <p>Le bouton <strong>RAZ</strong> permet de Remettre à zéro les filtres de recherche. </p>
           <p>Le bouton <strong>+</strong> permet de créer un ou plusieurs échantillons détaillés dans Ajouter.</p>
           <p>Le bouton <strong>Importer Excel</strong> permet d&#39;importer un fichier Excel afin de créer plusieurs échantillons détaillés dans Importer. </p>
+          <p>Le bouton <strong>Excel</strong> permet de créer un fichier Excel à partir des echantillons filtés. </p>
           <p>Le champ <strong>Cherche</strong> : permet d&#39;exécuter une recherche sur tous les champs des échantillons, alors que les cases de recherche sous le nom des colonnes permettent de filtrer les données sur la colonne concernée uniquement. </p>
           <p>Le premier bouton de chaque ligne permet d&#39;éditer l&#39;échantillon de la ligne sélectionnée alors que le bouton vert éditera l&#39;intégralité de la sélection en cours.</p>
           <p>Le dernier bouton de chaque ligne permet d&#39;imprimer l&#39;étiquette de l&#39;échantillon alors que le bouton ver imprimera toutes les étiquettes de la sélection.</p>
@@ -35,6 +36,7 @@
             <li>
               <p>
                 <strong>Programme</strong> Permet de sélectionner le programme concerné par le ou les échantillons une case à cocher est disponible afin de préciser s&#39;il s’agit d&#39;un programme pédagogique qui aura une gestion particulière, le nom de l&#39;item change pour éviter toute ambiguïté.
+                <br>Si vous saisissez un nom de programme se trouve déjà présent dans la base de données le programme, programme pédagogique, responsable, dossier, type et calcul du numéro de départ sont automatiquement renseigné SI CELLES CI SONT VIDES.               
               </p>
             </li>
             <li>
@@ -50,6 +52,7 @@
             <li>
               <p>
                 <strong>Numéro de dossier</strong> Indique le numéro de dossier interne.
+                <br>Si vous saisissez un nom de numéro de dossier se trouve déjà présent dans la base de données le programme, programme pédagogique, responsable, dossier, type et calcul du numéro de départ sont automatiquement renseigné SI CELLES CI SONT VIDES.               
               </p>
             </li>
             <li>
@@ -91,6 +94,73 @@
               <p>le bouton <strong>Créer une aliquote</strong> permet de créer un ou plusieurs aliquote (Cette option n'est possible que si l'Etat du prélévement est Prélevé, donc au moins après la validation de cet écran).</p>
             </li>
           </ul>
+
+
+
+
+
+
+
+          <h3>Lors de la modification d'un ou plusieurs échantillons certains champs non accessible qui ne le sont pas lors de la création.</h3>
+          <p>
+            <img src="assets/doc-echantillon-update-1.jpg" alt="Update d&#39;un échantillons masque 1">
+          </p>
+          <p>
+            <strong>Etat de prélèvement</strong> permet de d'identifier l'état du prélèvement de(s) échantillon(s).
+          </p>
+          <ul>
+            <li>
+              <p>
+                <strong>Créer</strong> indique que l'échantillon à été créer.
+              </p>
+            </li>
+              <p>
+                <strong>Importé</strong> indique que l'échantillon à été créer grace à l'outil d'importation.
+              </p>
+            </li>            
+            <li>
+              <p>
+                <strong>Prélevé</strong> L'échantillon à été prélevé.
+              </p>
+            </li>
+            <li>
+              <p>
+                <strong>Stocké</strong> L'échantillon est stocké à l'endroit indiqué dans l'onglet stockage.
+              </p>
+            </li>
+            <li>
+              <p>
+                <strong>Perdu</strong> Indique que L'échantillon est perdu.
+              </p>
+            </li>
+            <li>
+              <p>
+                <strong>Detruit</strong> Indique que L'échantillon à été détruit dans les conditions corrects.
+              </p>
+            </li>
+            <li>
+              <p>
+                <strong>Annulé</strong> Indique que le prélévement à été annulé.
+              </p>
+            </li>
+            <li>
+              <p>
+                <strong>Reprelevé</strong> Indique que le prélèvement à été relevé et donc que cet échantillon est annulé et qu'un autre échantillon à été généré.
+              </p>
+            </li>
+            <li>
+              <p>
+                <strong>Supprimer</strong> Indique que L'échantillon est supprimé et que lors du prochain nettoyage tous les échantillons taggués supprimer seront effacé.
+              </p>
+            </li>
+          </ul>
+
+
+
+
+
+
+
           <h3 id="masque-2-localisation">Masque 2 Localisation</h3>
           <p>Le masque de la localisation est différe si le site saisi dans l&#39;étape précédente est connu de l&#39;application sinon vous avez la possibilité de le créer à cette étape malgré que le fait de passer par la gestion des sites est plus confortable avec une carte permettant une localisation plus sure.</p>
           <h4 id="cas-ou-le-site-n-est-pas-reconnu-">Cas ou le site n&#39;est pas reconnu.</h4>

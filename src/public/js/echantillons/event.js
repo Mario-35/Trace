@@ -164,32 +164,38 @@ getElement("btn-analyses").addEventListener("click", (event) => {
                         function() { createExcelFromList(getElement("analyses")); });  
 });
 
+function fillDatas(input) {
+    Object.keys(input).forEach(key => {
+        if (key === "numero") {
+            const elem = getElement("numero");
+            elem.value = +input[key]+ 1;
+            elem.min = +input[key]+ 1;
+        } else setIfNull(key, input[key]);
+    });
+};
 
-// changement du nom du programme
+// chargement d'infos à partir du nom de programme
 getElement('programme').addEventListener('blur', async (event) => {
     event.preventDefault();
     if(programme.value.trim() !== "") {
         try {
             let temp = await getDatas(window.location.origin + `/programme?nom='${programme.value.toUpperCase()}'`);
-            Object.keys(temp).forEach(key => {
-                if (key === "numero") {
-                    const elem = getElement("numero");
-                    elem.value = +temp[key]+ 1;
-                    elem.min = +temp[key]+ 1;
-                } else getElement(key).value = temp[key];
-            });
+            fillDatas(temp);
         } catch (error) {
             showModalError(error);
         }
-    }
-    
+    }    
+});
 
-
-
-
-
-
-
-
-    
+// chargement d'infos à partir du numero de dossier
+getElement('dossier').addEventListener('blur', async (event) => {
+    event.preventDefault();
+    if(dossier.value.trim() !== "") {
+        try {
+            let temp = await getDatas(window.location.origin + `/programme?dossier='${dossier.value.toUpperCase()}'`);
+            fillDatas(temp);
+        } catch (error) {
+            showModalError(error);
+        }
+    }    
 });

@@ -222,15 +222,15 @@ async function start() {
         }
         
     } else if (ctx.mode === 'after') {  // After mode        
-        const temp = await getDatas(window.location.origin + "/echantillon/after/" + ctx.id);
+        const temp = await getDatas(window.location.origin + "/echantillon/after/identification/" + ctx.id);
         // get echantillon with the API
         const datas = await getDatas(window.location.origin + "/echantillon/" + ctx.id);
         // load datas
         loadDatas(datas);
         updateReadOnly(ctx);
         hideParentClass( "btnApiRpg", "form-group row-1 visible");
-        getElement("numero").value = temp;
-        getElement("numero").min = temp;
+        getElement("numero").value = temp.max;
+        getElement("numero").min = temp.max;
         multipleremoveInvisible(["numero",  "nombre"]); 
         removeReadOnly(["numero",  "nombre"]); 
         changeTitle("Ajout d'autres échantillon(s)");

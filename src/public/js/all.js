@@ -160,10 +160,13 @@ function canPrint(name) {
 console.log("version : 06/03/2026 ADAM Mario");
 
 
-console.log(`download_${new Date().toJSON().slice(0,16).replaceAll('-','').replace(':','')}`);
-
-
-
+function setIfNull(element, value) {
+  element = getElement(element)
+  if(element) {
+    if (element.value.trim() === "")
+      element.value = value;
+  }
+};
 
 
 

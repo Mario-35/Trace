@@ -56,6 +56,59 @@
                         </ul>             
 				    </div>
 				</div>
+
+
+          <p>
+            <strong>Liste des routes</strong> permet de d'identifier l'état du prélèvement de(s) échantillon(s).
+          </p>
+          <ul>
+            <li>
+              <p onclick="loadApi(this)">
+                <strong>echantillons</strong> Retourne tous les échantillons
+              </p>
+            <li>
+              <p onclick="loadApi(this)">
+                <strong>list/echantillons</strong> Retourne tous les échantillons au format liste
+              </p>
+            </li>
+            <li>
+              <p onclick="loadApi(this)">
+                <strong>echantillon/:id</strong> Retourne un échantillon
+              </p>
+            </li>
+            <li>
+              <p onclick="loadApi(this)">
+                <strong>echantillon/identification/:id</strong> Retourne un échantillon à partir de son identification
+              </p>
+            </li>            
+            <li>
+              <p onclick="loadApi(this)">
+                <strong>list/echantillons/:id</strong> Retourne tous les échantillons d'un numero de passeport au format liste
+              </p>
+            </li>
+            <li>
+              <p onclick="loadApi(this)">
+                <strong>echantillon/next/identification/:id</strong> Retourne le prochain numéro à partir d'un échantillon
+              </p>
+            </li>
+            
+            <li>
+              <p onclick="loadApi(this)">
+                <strong>echantillon/after/identification/:id</strong> Retourne le prochain numéro à partir d'un échantillon
+              </p>
+            </li>    
+            <li>
+              <p onclick="loadApi(this)">
+                <strong>list/campagnes</strong> Retourne toutes les campagnes au format liste
+              </p>
+            </li> 
+
+
+
+        </ul>
+
+
+
 			</div>
                 </html>
                 

@@ -122,12 +122,17 @@ pagesRoutes.get("/clean", async (req, res) => {
 
 // get programme infos
 pagesRoutes.get("/programme", async (req, res) => {
-    return executeSql(`SELECT programme, pedagogique, responsable, dossier, type, COALESCE( MAX( SUBSTRING ( identification FROM 13 FOR 4 ):: int ), 0) as numero FROM "echantillons" WHERE UPPER(programme) = ${decodeURI(req.url.split("?nom=")[1])} GROUP BY programme, pedagogique, responsable, dossier, type LIMIT 1`)
-    .then((programme: any) => {
-            res.send(programme[0])
-    }).catch (error => {
-            console.error(error);
-    });  
+    let sql = undefined;
+    if (req.url.includes("?nom="))
+        sql = `SELECT programme, pedagogique, responsable, dossier, type, COALESCE( MAX( SUBSTRING ( identification FROM 13 FOR 4 ):: int ), 0) as numero FROM "echantillons" WHERE UPPER(programme) = ${decodeURI(req.url.split("?nom=")[1])} GROUP BY programme, pedagogique, responsable, dossier, type LIMIT 1`;
+    else if (req.url.includes("?dossier="))
+        sql = `SELECT programme, pedagogique, responsable, dossier, type, COALESCE( MAX( SUBSTRING ( identification FROM 13 FOR 4 ):: int ), 0) as numero FROM "echantillons" WHERE UPPER(dossier) = ${decodeURI(req.url.split("?dossier=")[1])} GROUP BY programme, pedagogique, responsable, dossier, type LIMIT 1`;
+    if(sql) return executeSql( sql )
+        .then((programme: any) => {
+                res.send(programme[0])
+        }).catch (error => {
+                console.error(error);
+        });  
 });
 
 // prints
