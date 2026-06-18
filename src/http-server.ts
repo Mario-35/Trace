@@ -34,7 +34,7 @@ export default class HttpServer {
   }
 
   private loadMiddlewares(): void {
-    this.app.use(cors(CORS));
+    this.app.use(cors());
     this.app.use(helmet({
     contentSecurityPolicy: false,
     xDownloadOptions: false,
