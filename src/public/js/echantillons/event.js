@@ -170,6 +170,7 @@ function fillDatas(input) {
             const elem = getElement("numero");
             elem.value = +input[key]+ 1;
             elem.min = +input[key]+ 1;
+            updateIdentification();
         } else setIfNull(key, input[key]);
     });
 };

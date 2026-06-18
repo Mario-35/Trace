@@ -163,7 +163,7 @@ console.log("version : 06/03/2026 ADAM Mario");
 function setIfNull(element, value) {
   element = getElement(element)
   if(element) {
-    if (element.value.trim() === "")
+    if (element.value.trim() === "" || element.value.trim() === '---- Aucun ----')
       element.value = value;
   }
 };
