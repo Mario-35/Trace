@@ -31,9 +31,6 @@ export class Add extends CoreHtmlView {
 		}
     }
 
-
-
-
     createAddEvenementHtmlString(name: String) {
         this._HTMLResult =`
 			<!DOCTYPE html>

@@ -8,7 +8,7 @@ import { logger } from "@infra/logger";
 import { createDB, sql, writeDB } from "./db";;
 import { echantillonsRoutes, excelsRoutes, pagesRoutes, passeportsRoutes, selectionsRoutes, sitesRoutes, rpgsRoutes, campagnesRoutes, evenementsRoutes } from "./app";
 import { configRoutes } from "@app/configuration/configRoutes";
-import { setLocal } from "./constant";
+import { CORS, setLocal } from "./constant";
 
 export default class HttpServer {
   private app: Express;
@@ -34,7 +34,7 @@ export default class HttpServer {
   }
 
   private loadMiddlewares(): void {
-    this.app.use(cors());
+    this.app.use(cors(CORS));
     this.app.use(helmet({
     contentSecurityPolicy: false,
     xDownloadOptions: false,
