@@ -7,7 +7,7 @@ getDatas = async (url, text) => {
 				"Content-Type": "application/json",
 			},
 		});
-		return response.status >= 400 ? undefined : await text ? response.text() : response.json();
+		return response && response.status >= 400 ? undefined : await text ? response.text() : response.json();
 	} catch (error) {
 		log(error);
 		return undefined
@@ -32,11 +32,11 @@ postDatas = async (url, datas) => {
 
 
 function loadApi(element) {
-	let a = element.children[0].innerText;
-	const lol = {
+	let data = element.children[0].innerText;
+	const infos = {
 		"identification/:id": 'identification/2402202604360001',
 		":id": 1
 	}
-	Object.keys(lol).forEach(key => a = a.replace(key, lol[key]));
-	url.value = a;
+	Object.keys(infos).forEach(key => data = data.replace(key, infos[key]));
+	url.value = data;
 }

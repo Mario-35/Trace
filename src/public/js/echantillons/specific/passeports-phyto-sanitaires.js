@@ -36,7 +36,7 @@ function createHTMLviewPasseport(values) {
     <div class="form-group row-3"> 
         <div class="container-center">
             <div class="pass-phyto border">
-                <div class="flag" id="passeportFlag"><img class ="flag-eu" src="./assets/flag-eu.png"></div>
+                <div class="flag" id="passeportFlag"><img class ="flag-eu" src="${EConstant.localHost}/assets/flag-eu.png"></div>
                 <div class="title" id="passeportTitle" align="right"><p>Passeport phytosanitaire - ZP / Plant passport - PZ<br
                 >Beet necrotic yellow vein virus</p></div>
                 <div class="nom" id="passeportNom"><b>A</b> Sol</div>

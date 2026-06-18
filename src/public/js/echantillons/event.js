@@ -193,8 +193,10 @@ getElement('dossier').addEventListener('blur', async (event) => {
     if(dossier.value.trim() !== "") {
         try {
             let temp = await getDatas(window.location.origin + `/programme?dossier='${dossier.value.toUpperCase()}'`);
-            fillDatas(temp);
+            if (temp)
+                fillDatas(temp);
         } catch (error) {
+            log(error);
             showModalError(error);
         }
     }    

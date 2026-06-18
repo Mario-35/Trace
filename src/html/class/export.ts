@@ -6,6 +6,7 @@
  *
  */
 
+import { EConstant } from "../../constant";
 import { executeSql } from "../../db";
 import { dataBase } from "../../db/base";
 import { CoreHtmlView } from "./core";
@@ -39,8 +40,8 @@ export class Export extends CoreHtmlView {
                             `<script>`,
                             `const _DATAS = ${JSON.stringify(this.datas)}`,
                             '</script>',
-                            '<script src="./js/libs/xlsx.full.min.js"></script>',
-                            `<script src="./js/export.js"></script>`,
+                            `<script src="${EConstant.localHost}/js/libs/xlsx.full.min.js"></script>`,
+                            `<script src="${EConstant.localHost}/js/export.js"></script>`,
                             '</html>'].map((e: string) => e.trim());
 
     }

@@ -18,6 +18,7 @@ export const CORS = {
 export const EConstant = Object.freeze({
     appName: "Trace",
     repository: "https://github.com/Mario-35/Trace",
+    localHost: "http://localhost:3000",
     branch: "main",
     columnSeparator: "@|@",
     doubleQuotedComa: '",\n"',

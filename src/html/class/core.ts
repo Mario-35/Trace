@@ -48,14 +48,14 @@ export class CoreHtmlView {
 
     replaceFile(name: string) {
         if (name.includes('css/'))
-            this.replaceInReturnResult(`<link rel="stylesheet" href="./${name}">`, `<style>${this.addFile(`../../public/${name}`)}</style>`);
-            else this.replaceInReturnResult(`<script src="./${name}"></script>`, `<script>${this.addFile(`../../public/${name}`)}</script>`);
+            this.replaceInReturnResult(`<link rel="stylesheet" href="${EConstant.localHost}/${name}">`, `<style>${this.addFile(`../../public/${name}`)}</style>`);
+            else this.replaceInReturnResult(`<script src="${EConstant.localHost}/${name}"></script>`, `<script>${this.addFile(`../../public/${name}`)}</script>`);
     }
 
     replaceText(name: string, content: string) {
         if (name.includes('css/'))
-            this.replaceInReturnResult(`<link rel="stylesheet" href="./${name}">`, `<style>${content}</style>`);
-            else this.replaceInReturnResult(`<script src="./${name}"></script>`, `<script>${content}</script>`);
+            this.replaceInReturnResult(`<link rel="stylesheet" href="${EConstant.localHost}/${name}">`, `<style>${content}</style>`);
+            else this.replaceInReturnResult(`<script src="${EConstant.localHost}/${name}"></script>`, `<script>${content}</script>`);
 
     }
 

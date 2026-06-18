@@ -34,13 +34,13 @@ export class List extends CoreHtmlView {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestion des ${name}s</title>
-    <link rel="stylesheet" href="./css/bootstrap.css">
-    <link rel="stylesheet" href="./css/icons.css">
-    <link rel="stylesheet" href="./css/context-menu.css">
-    ${excel ? '<link rel="stylesheet" href="./css/import.css">' : ''}
-    <link rel="stylesheet" href="./css/modal.css">
-    <link rel="stylesheet" href="./css/splitter.css">
-    <link rel="stylesheet" href="./css/menu.css">
+    <link rel="stylesheet" href="${EConstant.localHost}/css/bootstrap.css">
+    <link rel="stylesheet" href="${EConstant.localHost}/css/icons.css">
+    <link rel="stylesheet" href="${EConstant.localHost}/css/context-menu.css">
+    ${excel ? `<link rel="stylesheet" href="${EConstant.localHost}/css/import.css">` : ''}
+    <link rel="stylesheet" href="${EConstant.localHost}/css/modal.css">
+    <link rel="stylesheet" href="${EConstant.localHost}/css/splitter.css">
+    <link rel="stylesheet" href="${EConstant.localHost}/css/menu.css">
 </head>
 
 <body>
@@ -57,7 +57,7 @@ export class List extends CoreHtmlView {
 							<span class="input-group-text" id="infos"></span>
 							<a class="btn btn-warning" id="raz">RAZ</a>
 							<span class="input-group-text" id="nameType">${name}</span>
-							${src.create === true ? ` <button class="btn btn-primary icon_plus btn-sm" id="ajouter" href="./${src.singular}-add.html"></button> ` : ''}
+							${src.create === true ? ` <button class="btn btn-primary icon_plus btn-sm" id="ajouter" href="${EConstant.localHost}/${src.singular}-add.html"></button> ` : ''}
                             ${ excel ? `
 							<span class="input-group-text"></span>
 							<div class="btn btn-success field" id="blockImporter">
@@ -112,19 +112,19 @@ export class List extends CoreHtmlView {
 	<div id="modal"></div>  
     </main>
 </body> 
-<script src="./js/api.js"></script>
+<script src="${EConstant.localHost}/js/api.js"></script>
 <script>const structure = ${JSON.stringify(listCols)}</script>
-<script src="./js/configuration.js"></script>
-<script src="./js/constants.js"></script>
-<script src="./js/all.js"></script>
-<script src="./js/common/modal.js"></script>
-<script src="./js/common/splitter.js"></script>
-<script src="./js/common/menu.js"></script>  
-<script src="./js/dataTables.js"></script>
-<script src="./js/${name}/list.js"></script>  
-<script src="./js/form.js"></script>
+<script src="${EConstant.localHost}/js/configuration.js"></script>
+<script src="${EConstant.localHost}/js/constants.js"></script>
+<script src="${EConstant.localHost}/js/all.js"></script>
+<script src="${EConstant.localHost}/js/common/modal.js"></script>
+<script src="${EConstant.localHost}/js/common/splitter.js"></script>
+<script src="${EConstant.localHost}/js/common/menu.js"></script>  
+<script src="${EConstant.localHost}/js/dataTables.js"></script>
+<script src="${EConstant.localHost}/js/${name}/list.js"></script>  
+<script src="${EConstant.localHost}/js/form.js"></script>
 
-${excel ? `<script src="./js/libs/xlsx.full.min.js"></script>` : ''}
+${excel ? `<script src="${EConstant.localHost}/js/libs/xlsx.full.min.js"></script>` : ''}
 </html>
 `.split(EConstant.newline)
             .map((e: string) => e.trim())

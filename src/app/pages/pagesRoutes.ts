@@ -21,16 +21,17 @@ import { Export } from "../../html/class/export";
 import { Documentation } from "../../html/class/documentation";
 import { download } from "../../helpers/download";
 import { clean } from "../../helpers/clean";
+import { log } from "console";
 
 export const pagesRoutes = Router();
 
-// Get all echantillons
+// default index
 pagesRoutes.get("/index", async (req, res) => {
     const html = new Index();
     res.send(html.toString())
 });
 
-// add sample
+// get documentation page
 pagesRoutes.get("/documentation/:page", async (req, res) => {
     const html = new Documentation(req.params.page + ".html");
     res.send(html.toString());
@@ -90,7 +91,7 @@ pagesRoutes.get("/" + dataBase.echantillons.name + ".html", async (req, res) => 
     res.send(html.toString())
 });
 
-// echantillons page
+// export datas
 pagesRoutes.get("/export.html", async (req, res) => {
     const id = req.url.split("?selection=")[1];
     await executeSql(`SELECT ids FROM selections WHERE id=${id}`)
@@ -106,18 +107,22 @@ pagesRoutes.get("/export.html", async (req, res) => {
     });
 });
 
-// print sample sticker
+// Update application
 pagesRoutes.get("/update", async (req, res) => {
-    await update(); 
-    res.redirect('/');
-    process.exit(0);
-
+    try {
+        await update(); 
+        res.send({"update" : "Ok"});
+        // pm2 reload app
+        process.exit(0);        
+    } catch (error) {
+        res.send({"error" : error});
+    }
 });
 
+// Clean datas
 pagesRoutes.get("/clean", async (req, res) => {
     await clean(); 
     res.status(201).send();
-
 });
 
 // get programme infos
@@ -129,9 +134,9 @@ pagesRoutes.get("/programme", async (req, res) => {
         sql = `SELECT programme, pedagogique, responsable, dossier, type, COALESCE( MAX( SUBSTRING ( identification FROM 13 FOR 4 ):: int ), 0) as numero FROM "echantillons" WHERE UPPER(dossier) = ${decodeURI(req.url.split("?dossier=")[1])} GROUP BY programme, pedagogique, responsable, dossier, type LIMIT 1`;
     if(sql) return executeSql( sql )
         .then((programme: any) => {
-                res.send(programme[0])
+            res.send(programme[0] ? programme[0] : {});
         }).catch (error => {
-                console.error(error);
+            log(error);
         });  
 });
 
@@ -189,6 +194,7 @@ pagesRoutes.get("/print/:type/:id", async (req, res) => {
 
 });
 
+// save configuration
 pagesRoutes.post("/SaveConfig", async (req, res)  => {
     setConfig(req.body);
     res.status(201).send();
@@ -204,6 +210,7 @@ pagesRoutes.get("/configuration.html", async (req, res) => {
     });       
 });
 
+// download export datas
 pagesRoutes.get("/download", async (req, res) => {
     writeDB().then(() => {
         const data = download(); 
