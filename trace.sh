@@ -58,7 +58,7 @@ create_run_script() {
     echo "pm2 delete main" >> $FILERUN
     echo "echo \"API starting ...\"" >> $FILERUN
     echo "export NODE_ENV=production" >> $FILERUN
-    echo "pm2 start ./trace/main.js --env production --watch --ignore-watch \"node_modules\"" >> $FILERUN
+    echo "pm2 start ./trace/main.js --env production" >> $FILERUN
     echo "pm2 logs --lines 500" >> $FILERUN
     sudo chmod -R 777 $FILERUN
     echo "Create script => $FILERUN"
@@ -71,6 +71,12 @@ check_node() {
         info "Installing Node..."
         sudo  curl -fsSL https://deb.nodesource.com/setup_22.x | sudo -E bash -
         sudo apt install nodejs
+        # Make a directory for global installations
+        mkdir ~/.npm-global
+        # Configure npm to use the new directory path
+        npm config set prefix '~/.npm-global'
+        # Open or create a ~/.profile file and add this line
+        export PATH=~/.npm-global/bin:$PATH
         NODEVER=$(node -v) 
     else
         success "Node found"
