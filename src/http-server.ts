@@ -49,6 +49,7 @@ export default class HttpServer {
   private loadRoutes(): void {
 
   this.app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin',  `http://${req.host}`);
     setLocal(req);
     next();
   });
