@@ -58,7 +58,7 @@ create_run_script() {
     echo "pm2 delete main" >> $FILERUN
     echo "echo \"API starting ...\"" >> $FILERUN
     echo "export NODE_ENV=production" >> $FILERUN
-    echo "pm2 start ./trace/main.js --watch --ignore-watch \"node_modules\"" >> $FILERUN
+    echo "pm2 start ./trace/main.js --env production --watch --ignore-watch" >> $FILERUN
     echo "pm2 logs --lines 500" >> $FILERUN
     sudo chmod -R 777 $FILERUN
     echo "Create script => $FILERUN"
@@ -77,7 +77,6 @@ check_node() {
         NODEVER=$(node -v) 
     fi    
 }
-
 
 # Detect shell configuration file
 detect_shell_config() {
@@ -290,7 +289,6 @@ download_dist() {
     sudo curl -L -O https://github.com/Mario-35/trace/raw/refs/heads/main/dist.zip
 }
 
-
 # Function to install trace
 install_trace() {
     # save actual to bak
@@ -325,8 +323,6 @@ run_trace() {
     NODE_ENV=production
     pm2 start ./trace/main.js
 }
-
-info "Essai"
     
 check_sudo;
 check_gnupg;
