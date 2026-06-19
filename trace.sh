@@ -58,7 +58,7 @@ create_run_script() {
     echo "pm2 delete main" >> $FILERUN
     echo "echo \"API starting ...\"" >> $FILERUN
     echo "export NODE_ENV=production" >> $FILERUN
-    echo "pm2 start ./trace/main.js --env production --watch \"node_modules\"" >> $FILERUN
+    echo "pm2 start ./trace/main.js --env production --watch --ignore-watch \"node_modules\"" >> $FILERUN
     echo "pm2 logs --lines 500" >> $FILERUN
     sudo chmod -R 777 $FILERUN
     echo "Create script => $FILERUN"
@@ -236,7 +236,7 @@ check_pm2() {
     if ! command -v pm2 > /dev/null
     then
         warning "Installing pm2..."
-        sudo npm install pm2@latest -g
+        npm install pm2@latest -g
         PM2VER=$(pm2 -v) 
     else
         INFO "pm2 installed"
