@@ -58,7 +58,7 @@ create_run_script() {
     echo "pm2 delete main" >> $FILERUN
     echo "echo \"API starting ...\"" >> $FILERUN
     echo "export NODE_ENV=production" >> $FILERUN
-    echo "pm2 start ./trace/main.js --env production --watch --ignore-watch" >> $FILERUN
+    echo "pm2 start ./trace/main.js --env production --watch" >> $FILERUN
     echo "pm2 logs --lines 500" >> $FILERUN
     sudo chmod -R 777 $FILERUN
     echo "Create script => $FILERUN"
