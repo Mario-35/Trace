@@ -171,6 +171,8 @@ function fillDatas(input) {
             elem.value = +input[key]+ 1;
             elem.min = +input[key]+ 1;
             updateIdentification();
+        } else if (key === "etiquette") {
+            getElement(key).value = JSON.stringify(input[key]);
         } else setIfNull(key, input[key]);
     });
 };

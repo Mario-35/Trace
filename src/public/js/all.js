@@ -156,17 +156,16 @@ function canPrint(name) {
     getElement(name).title = "Uniquement avec chrome";
 }
 
-// version date
-console.log("version : 06/03/2026 ADAM Mario");
-
-
 function setIfNull(element, value) {
-  element = getElement(element)
+  element = getElement(element);  
   if(element) {
     if (element.value.trim() === "" || element.value.trim() === '---- Aucun ----')
-      element.value = value;
+      element.value = typeof value === "object" ? JSON.stringify(value) : value;
   }
 };
+
+// version date
+console.log("version : 22/06/2026 ADAM Mario");
 
 
 

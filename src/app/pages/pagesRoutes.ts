@@ -129,10 +129,11 @@ pagesRoutes.get("/clean", async (req, res) => {
 // get programme infos
 pagesRoutes.get("/programme", async (req, res) => {
     let sql = undefined;
+    const list = 'programme, pedagogique, responsable, dossier, type, etiquette';
     if (req.url.includes("?nom="))
-        sql = `SELECT programme, pedagogique, responsable, dossier, type, COALESCE( MAX( SUBSTRING ( identification FROM 13 FOR 4 ):: int ), 0) as numero FROM "echantillons" WHERE UPPER(programme) = ${decodeURI(req.url.split("?nom=")[1])} GROUP BY programme, pedagogique, responsable, dossier, type LIMIT 1`;
+        sql = `SELECT ${list}, COALESCE( MAX( SUBSTRING ( identification FROM 13 FOR 4 ):: int ), 0) as numero FROM "echantillons" WHERE UPPER(programme) = ${decodeURI(req.url.split("?nom=")[1])} GROUP BY ${list} LIMIT 1`;
     else if (req.url.includes("?dossier="))
-        sql = `SELECT programme, pedagogique, responsable, dossier, type, COALESCE( MAX( SUBSTRING ( identification FROM 13 FOR 4 ):: int ), 0) as numero FROM "echantillons" WHERE UPPER(dossier) = ${decodeURI(req.url.split("?dossier=")[1])} GROUP BY programme, pedagogique, responsable, dossier, type LIMIT 1`;
+        sql = `SELECT ${list}, COALESCE( MAX( SUBSTRING ( identification FROM 13 FOR 4 ):: int ), 0) as numero FROM "echantillons" WHERE UPPER(dossier) = ${decodeURI(req.url.split("?dossier=")[1])} GROUP BY ${list} LIMIT 1`;
     if(sql) return executeSql( sql )
         .then((programme: any) => {
             res.send(programme[0] ? programme[0] : {});
