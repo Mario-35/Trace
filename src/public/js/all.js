@@ -165,7 +165,7 @@ function setIfNull(element, value) {
 };
 
 // version date
-console.log("version : 22/06/2026 ADAM Mario");
+document.getElementById("version").innerText = "version : 22/06/2026";
 
 
 

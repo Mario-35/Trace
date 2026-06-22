@@ -1,3 +1,27 @@
+.index {
+  text-decoration: none;
+}
+
+.index::before {
+  content: "Traçabilité"; /* Insert the word to be colored (Today) */
+  position: absolute;
+  width: min-content;
+  color: var(--bs-teal);
+  left: 0;   /* Adjust left position to match original word */
+  z-index: 1;
+}
+
+
+.index:after {
+  content: "échantillons"; /* Insert the word to be colored (Today) */
+  position: absolute;
+  width: min-content;
+  color: var(--bs-warning); /* Set the desired color (orange) */
+  left: 11ch;   /* Adjust left position to match original word */
+  z-index: 1;
+}
+
+
 .menu {
   list-style-type: none;
   line-height: 1.2;
@@ -75,8 +99,6 @@
   max-height: none;
   opacity: 1;
 }
-
-
 
 .menu a:hover {
   background: #0d2b3d;
