@@ -17,7 +17,7 @@ function addSpecialOptions(name, listElements) {
         opt.innerHTML = `${e} [${listElements[e]}]`;
         select.appendChild(opt);
     });
-    document.getElementById(name).value = "FR"
+    setElementValue(name, "FR");
 };
 
 addSpecialOptions("origine", {

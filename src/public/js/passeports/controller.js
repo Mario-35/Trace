@@ -8,8 +8,8 @@ async function start() {
     if (ctx.mode === "idechantillon") {  // Edit mode
         const datas = await getDatas(window.location.origin + "/passeport/" + ctx.id);
         loadDatas(datas);
-        changeTitle("Modification d'un passeport phytosanitaire");
-        document.getElementById("btn-creer").innerText = "Modifier"; 
+        setElementText("formTitle", "Modification d'un passeport phytosanitaire");
+        setElementText("btn-creer", "Modifier"); 
         setReadOnly(["annee", "tracabilite", "origine", "image"]);
         createHTMLviewPasseport(datas[0]);
     } else log("Error mode");

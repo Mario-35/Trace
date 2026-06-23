@@ -41,6 +41,10 @@ class JsonTable {
 		this.init();
 	}
 
+	filtered() {
+		return ( this.filteredData.length !== this.data.length)
+	}
+
 	removeToFilter(key) {
 		if(this.localSave[this.nameOfType])
 			delete this.localSave[this.nameOfType][key];
@@ -84,16 +88,18 @@ class JsonTable {
 		await this.fetchData();
 		this.renderTable();
 		this.addGlobalSearchListener();
-		Object(this.menuOptions).forEach(e => {
-			const li = document.createElement("li");
-			li.textContent = e.title;
-			if (e.url)
-				li.setAttribute("url", e.url);
-			if (e.filter)
-				li.setAttribute("filter", e.filter);
-			li.className = "context-menu-option";
-			contextMenu.appendChild(li);
-		});
+		
+		if (Object(this.menuOptions).length > 0)
+			Object(this.menuOptions).forEach(e => {
+				const li = document.createElement("li");
+				li.textContent = e.title;
+				if (e.url)
+					li.setAttribute("url", e.url);
+				if (e.filter)
+					li.setAttribute("filter", e.filter);
+				li.className = "context-menu-option";
+				contextMenu.appendChild(li);
+			});
 
 		jsonTable.addEventListener("click", e => {
 		  if (this.menuVisible) this.toggleMenu("hide");
@@ -125,14 +131,15 @@ class JsonTable {
 				}
 			});
 		
-		jsonTable.addEventListener("contextmenu", e => {
-			e.preventDefault();
-			this.selectedId = e.target.parentElement.id;
-			this.selectedTxt = e.target.textContent;
-		  const origin = { left: e.pageX, top: e.pageY };
-		  this.setPosition(origin);
-		  return false;
-		});
+		if(Object(this.menuOptions).length > 0)
+			jsonTable.addEventListener("contextmenu", e => {
+				e.preventDefault();
+				this.selectedId = e.target.parentElement.id;
+				this.selectedTxt = e.target.textContent;
+			const origin = { left: e.pageX, top: e.pageY };
+			this.setPosition(origin);
+			return false;
+			});
 		
 		if (getElement("ajouter")) document.getElementById('ajouter').addEventListener('click', async function() {
 			window.location.href = ajouter.getAttribute("href");
@@ -154,7 +161,7 @@ class JsonTable {
 
 	filterIdentification12() {
 		const filtered = this.filterById(Number(this.selectedId));
-		globalSearch.value = filtered[0].identification.slice(0,12);
+		setElementValue(globalSearch, filtered[0].identification.slice(0,12));
 		this.filterDatas(globalSearch.value);
 	};
 
@@ -381,6 +388,10 @@ class JsonTable {
 		const start = (this.currentPage - 1) * this.rowsPerPage;
 		const end = start + this.rowsPerPage;
 		let rows = [...this.filteredData];
+		if (this.filtered()) 
+			getElement("jsonTable").classList.add("colorFiltered")
+		else
+			getElement("jsonTable").classList.remove("colorFiltered")
 		infos.innerText = rows.length + " sur " + this.data.length;
 		// // Sorting
 		if (this.sortColumn) {
@@ -467,7 +478,14 @@ class JsonTable {
 			.forEach((btn) =>
 				btn.addEventListener("click", (e) => open(window.location.origin + '/print' + this.printUrl + e.target.parentNode.closest('tr').id, "Imprimer", _PARAMPRINT))
 			);
-		};
+		if (this.filtered()) {
+			if (this.editUrl) getElement("editAll").classList.remove("disabled")
+			if(this.printUrl) getElement("printAll").classList.remove("disabled")
+		} else {
+			if(this.editUrl) getElement("editAll").classList.add("disabled")
+			if(this.printUrl) getElement("printAll").classList.add("disabled")
+		}
+	};
 
 	filterSelected(value) {
 		value = String(value);
@@ -624,7 +642,7 @@ class JsonTable {
 				this.filteredData = this.data.filter((row) =>
 					Object.values(row).some((field) => String(field).toLowerCase().includes(this.localSave[this.nameOfType]["global"]))
 				);
-				globalSearch.value = this.localSave[this.nameOfType]["global"];
+				setElementValue(globalSearch, this.localSave[this.nameOfType]["global"]);
 			} else if (this.localSave && Object.keys(this.localSave).length > 0) {
 				this.filteredData = this.data;
 				if (this.localSave[this.nameOfType]) 

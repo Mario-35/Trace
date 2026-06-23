@@ -15,7 +15,7 @@ function addToJson(name, key, value) {
     if (value.trim() === "") 
         delete tmp[key];
         else tmp[key] = value;
-    document.getElementById(name).value =  JSON.stringify(tmp);
+    setElementValue(name, JSON.stringify(tmp));
 }
 
 

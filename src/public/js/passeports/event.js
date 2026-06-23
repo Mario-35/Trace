@@ -35,9 +35,9 @@ getElement('btn-creer').addEventListener('click', async function() {
 });
 
 getElement('demo').addEventListener('click', function() {
-    document.getElementById("nom").value = 'Parcelle de chez moi 2026';
-    document.getElementById("annee").value  = '2026';
-    document.getElementById("tracabilite").value = '16';
-    document.getElementById("origine").value = "FR";
+    setElementValue("nom", 'Parcelle de chez moi 2026');
+    setElementValue("annee", '2026');
+    setElementValue("tracabilite", '16');
+    setElementValue("origine", "FR");
     refresh();
 });

@@ -11,14 +11,22 @@ function getElement(name) {
   if (typeof name === "string") {
     element = document.getElementById(name);
     if (element) return element;
-    console.log("element not found 🡺 " + name);
+    if (_CONFIGURATION.debug === true) console.log("element not found 🡺 " + name);
   } else return name;
 };
 
-// change title of the page
-function changeTitle(title) {
-  getElement("formTitle").innerText = title;
-  document.title = title;
+// change element text
+function setElementText(name, value) {
+  const test = getElement(name);
+  if (test) 
+    test.innerText = value;
+};
+
+// change element value
+function setElementValue(name, value) {
+  const test = getElement(name);
+  if (test && value) 
+    test.value = value;
 };
 
 // =======================> Visible
@@ -165,7 +173,7 @@ function setIfNull(element, value) {
 };
 
 // version date
-document.getElementById("version").innerText = "version : 22/06/2026";
+setElementText("version", "version : 22/06/2026");
 
 
 

@@ -52,12 +52,6 @@ function showModalError( message) {
 };
     
 function showModalPrint(options) {
-    // option {
-    //      echantillon : echantillon id
-    //      passeport : passeport id
-    //      identification : identification string;
-    // }
-    // identification = identification || false;
     getElement("modal").innerHTML =` 
         <article class="modal">
             <section class="modal__content modal__ok">

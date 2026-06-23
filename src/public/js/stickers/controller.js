@@ -1,11 +1,11 @@
 // Fonction de selection d'element d'étiquette
 function selectElement(name) {
     const tmp = toJson("etiquette")[name];
-    getElement("element").value = tmp.key;
-    getElement("texte").value = tmp.value || "";
-    getElement("elementLabel").innerText = name;
-    getElement("textAlign").value = tmp.align || "center";  
-    getElement("textSize").value = tmp.size || "12px";   
+    setElementValue("element", tmp.key);
+    setElementValue("texte", tmp.value || "");
+    setElementText("elementLabel", name);
+    setElementValue("textAlign", tmp.align || "center");  
+    setElementValue("textSize", tmp.size || "12px");   
     multiRemoveDisabled(["element", "elementLabel", "texte", "textAlign", "textSize"]);
 };
 

@@ -6,7 +6,7 @@
  *
  */
 
-import { _LOCALHOST, EConstant } from "../../constant";
+import { EConstant } from "../../constant";
 import { dataBase } from "../../db/base";
 import { CoreHtmlView } from "./core";
 
@@ -34,20 +34,19 @@ export class List extends CoreHtmlView {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestion des ${name}s</title>
-    <link rel="stylesheet" href="${_LOCALHOST}/css/bootstrap.css">
-    <link rel="stylesheet" href="${_LOCALHOST}/css/icons.css">
-    <link rel="stylesheet" href="${_LOCALHOST}/css/context-menu.css">
-    ${excel ? `<link rel="stylesheet" href="${_LOCALHOST}/css/import.css">` : ''}
-    <link rel="stylesheet" href="${_LOCALHOST}/css/modal.css">
-    <link rel="stylesheet" href="${_LOCALHOST}/css/splitter.css">
-    <link rel="stylesheet" href="${_LOCALHOST}/css/menu.css">
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/icons.css">
+    <link rel="stylesheet" href="/css/context-menu.css">
+    ${excel ? `<link rel="stylesheet" href="/css/import.css">` : ''}
+    <link rel="stylesheet" href="/css/modal.css">
+    <link rel="stylesheet" href="/css/splitter.css">
+    <link rel="stylesheet" href="/css/menu.css">
 </head>
 
 <body>
 	<header id="splitter-nav-site" class="splitter-nav-site"></header>
     <main class="main-view">
-        <div class="splitter-nav-view" id="left-pane">
-        </div>
+        <div class="splitter-nav-view" id="left-pane"></div>
         <div class="v-drag" id="separator"></div>
         <div class="content" id="right-pane">
 			<div class="card">
@@ -57,7 +56,7 @@ export class List extends CoreHtmlView {
 							<span class="input-group-text" id="infos"></span>
 							<a class="btn btn-warning" id="raz">RAZ</a>
 							<span class="input-group-text" id="nameType">${name}</span>
-							${src.create === true ? ` <button class="btn btn-primary icon_plus btn-sm" id="ajouter" href="${_LOCALHOST}/${src.singular}-add.html"></button> ` : ''}
+							${src.create === true ? ` <button class="btn btn-primary icon_plus btn-sm" id="ajouter" href="/${src.singular}-add.html"></button> ` : ''}
                             ${ excel ? `
 							<span class="input-group-text"></span>
 							<div class="btn btn-success field" id="blockImporter">
@@ -112,19 +111,19 @@ export class List extends CoreHtmlView {
 	<div id="modal"></div>  
     </main>
 </body> 
-<script src="${_LOCALHOST}/js/api.js"></script>
+<script src="/js/api.js"></script>
 <script>const structure = ${JSON.stringify(listCols)}</script>
-<script src="${_LOCALHOST}/js/configuration.js"></script>
-<script src="${_LOCALHOST}/js/constants.js"></script>
-<script src="${_LOCALHOST}/js/all.js"></script>
-<script src="${_LOCALHOST}/js/common/modal.js"></script>
-<script src="${_LOCALHOST}/js/common/splitter.js"></script>
-<script src="${_LOCALHOST}/js/common/menu.js"></script>  
-<script src="${_LOCALHOST}/js/dataTables.js"></script>
-<script src="${_LOCALHOST}/js/${name}/list.js"></script>  
-<script src="${_LOCALHOST}/js/form.js"></script>
+<script src="/js/configuration.js"></script>
+<script src="/js/constants.js"></script>
+<script src="/js/all.js"></script>
+<script src="/js/common/modal.js"></script>
+<script src="/js/common/splitter.js"></script>
+<script src="/js/common/menu.js"></script>  
+<script src="/js/dataTables.js"></script>
+<script src="/js/${name}/list.js"></script>  
+<script src="/js/form.js"></script>
 
-${excel ? `<script src="${_LOCALHOST}/js/libs/xlsx.full.min.js"></script>` : ''}
+${excel ? `<script src="/js/libs/xlsx.full.min.js"></script>` : ''}
 </html>
 `.split(EConstant.newline)
             .map((e: string) => e.trim())

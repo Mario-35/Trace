@@ -90,7 +90,7 @@ function changeValueInJson(name, key, value) {
     else 
         tmp[key[0]][key[1]] = value;
     
-    getElement(name).value = JSON.stringify(tmp);
+    setElementValue(name, JSON.stringify(tmp));
 };
 
 function modifiedValue(element) {

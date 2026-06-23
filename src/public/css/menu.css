@@ -1,27 +1,3 @@
-.index {
-  text-decoration: none;
-}
-
-.index::before {
-  content: "Traçabilité"; /* Insert the word to be colored (Today) */
-  position: absolute;
-  width: min-content;
-  color: var(--bs-teal);
-  left: 0;   /* Adjust left position to match original word */
-  z-index: 1;
-}
-
-
-.index:after {
-  content: "échantillons"; /* Insert the word to be colored (Today) */
-  position: absolute;
-  width: min-content;
-  color: var(--bs-warning); /* Set the desired color (orange) */
-  left: 11ch;   /* Adjust left position to match original word */
-  z-index: 1;
-}
-
-
 .menu {
   list-style-type: none;
   line-height: 1.2;
@@ -104,4 +80,37 @@
   background: #0d2b3d;
   border-radius: 15px;
   padding-left: 12px;
+}
+
+.index {
+  font-family: 'Changa One';
+  text-decoration: none;
+  font-size: 16px;
+  margin-left: 145px; 
+}
+
+.index::before {
+  content: "Traçabilité"; /* Insert the word to be colored (Today) */
+  position: absolute;
+  width: min-content;
+  color: #20c997;
+  font-size: 32px;
+
+  left: 0;   /* Adjust left position to match original word */
+  z-index: 1;
+}
+
+
+.index:after {
+  font-size: 32px;
+  content: "échantillons"; /* Insert the word to be colored (Today) */
+  position: absolute;
+  width: min-content;
+  color: #ffc107; /* Set the desired color (orange) */
+  left: 175px;   /* Adjust left position to match original word */
+  z-index: 1;
+}
+
+.colorFiltered {
+    --bs-table-bg: #e0fcec;
 }

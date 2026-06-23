@@ -58,18 +58,17 @@ getElement('btn-aliquote').addEventListener('click', async (event) => {
 async function getMaxNombre() {
         const temp = await getDatas(window.location.origin + '/echantillon/next/' + createIdentification());
         numero.min = temp;
-        if (temp) numero.value = temp;
+        if (temp) 
+            setElementValue(numero, temp);
 };
 
 function updateIdentification() {
-   getElement("identification").value = createIdentification();
+   setElementValue("identification", createIdentification());
 };
 
 function cleanCulture() {
-   getElement("cultures").value= JSON.stringify({});
-   
+   setElementValue("cultures", JSON.stringify({}));   
 };
-
 
 //  button d'interrogation du rpg
 getElement('btnApiRpg').addEventListener('click', async (event) => {
@@ -172,7 +171,7 @@ function fillDatas(input) {
             elem.min = +input[key]+ 1;
             updateIdentification();
         } else if (key === "etiquette") {
-            getElement(key).value = JSON.stringify(input[key]);
+            setElementValue(key, JSON.stringify(input[key]));
         } else setIfNull(key, input[key]);
     });
 };

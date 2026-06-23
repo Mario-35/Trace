@@ -7,7 +7,7 @@
  */
 
 import { createConfig } from "@app/configuration/controller";
-import { _LOCALHOST, EConstant } from "../../constant";
+import { EConstant } from "../../constant";
 import { dataBase } from "../../db/base";
 import { CoreHtmlView } from "./core";
 
@@ -32,6 +32,17 @@ export class Add extends CoreHtmlView {
     }
 
     createAddEvenementHtmlString(name: String) {
+        // Split files for better search and replace
+		const plural = name.toLocaleLowerCase() + 's'
+		const listCols:any = [];
+		const src = dataBase[plural as keyof object].columns;
+		Object.keys(src).filter((e: any) => src[e].list === true).forEach(e => {
+			listCols.push({
+				key: e,
+				title: src[e].title,
+				searchType: src[e].searchType || "text"
+			});
+		});		
         this._HTMLResult =`
 			<!DOCTYPE html>
 			<html lang="fr">
@@ -132,20 +143,20 @@ export class Add extends CoreHtmlView {
 			</body> 
 
     <!-- awlays first -->
-    <script src="${_LOCALHOST}/js/configuration.js"></script>
-    <script src="${_LOCALHOST}/js/constants.js"></script>
-    <script src="${_LOCALHOST}/js/all.js"></script>
-    <script src="${_LOCALHOST}/js/common/splitter.js"></script>
-    <script src="${_LOCALHOST}/js/common/menu.js"></script>
-    <script src="${_LOCALHOST}/js/form.js"></script>
-    <script src="${_LOCALHOST}/js/api.js"></script>
-    <script src="${_LOCALHOST}/js/api/rpg.js"></script>
-    <script src="${_LOCALHOST}/js/helper.js"></script>
-    <script src="${_LOCALHOST}/js/common/modal.js"></script>   
-    <script src="${_LOCALHOST}/js/common/editingList.js"></script>
-    <script src="${_LOCALHOST}/js/evenements/add.js"></script>
-    <script src="${_LOCALHOST}/js/evenements/event.js"></script>    
-    <script src="${_LOCALHOST}/js/evenements/controller.js"></script>
+    <script src="/js/configuration.js"></script>
+    <script src="/js/constants.js"></script>
+    <script src="/js/all.js"></script>
+    <script src="/js/common/splitter.js"></script>
+    <script src="/js/common/menu.js"></script>
+    <script src="/js/form.js"></script>
+    <script src="/js/api.js"></script>
+    <script src="/js/api/rpg.js"></script>
+    <script src="/js/helper.js"></script>
+    <script src="/js/common/modal.js"></script>   
+    <script src="/js/common/editingList.js"></script>
+    <script src="/js/evenements/add.js"></script>
+    <script src="/js/evenements/event.js"></script>    
+    <script src="/js/evenements/controller.js"></script>
 </html>
 `.split(EConstant.newline)
             .map((e: string) => e.trim())
@@ -273,21 +284,21 @@ export class Add extends CoreHtmlView {
 </body> 
 
 <!-- awlays first -->
-<script src="${_LOCALHOST}/js/configuration.js"></script>
-<script src="${_LOCALHOST}/js/constants.js"></script>
-<script src="${_LOCALHOST}/js/all.js"></script>
-<script src="${_LOCALHOST}/js/common/splitter.js"></script>
-<script src="${_LOCALHOST}/js/common/menu.js"></script>
-<script src="${_LOCALHOST}/js/form.js"></script>
-<script src="${_LOCALHOST}/js/api.js"></script>
-<script src="${_LOCALHOST}/js/api/rpg.js"></script>
-<script src="${_LOCALHOST}/js/helper.js"></script>
-<script src="${_LOCALHOST}/js/common/modal.js"></script>
-<script src="${_LOCALHOST}/leaflet/leaflet.js"></script>
-<script src="${_LOCALHOST}/js/sites/add.js"></script>
-<script src="${_LOCALHOST}/js/common/regions.js"></script>     
-<script src="${_LOCALHOST}/js/sites/event.js"></script>   
-<script src="${_LOCALHOST}/js/sites/controller.js"></script>
+<script src="/js/configuration.js"></script>
+<script src="/js/constants.js"></script>
+<script src="/js/all.js"></script>
+<script src="/js/common/splitter.js"></script>
+<script src="/js/common/menu.js"></script>
+<script src="/js/form.js"></script>
+<script src="/js/api.js"></script>
+<script src="/js/api/rpg.js"></script>
+<script src="/js/helper.js"></script>
+<script src="/js/common/modal.js"></script>
+<script src="/leaflet/leaflet.js"></script>
+<script src="/js/sites/add.js"></script>
+<script src="/js/common/regions.js"></script>     
+<script src="/js/sites/event.js"></script>   
+<script src="/js/sites/controller.js"></script>
 </html>
 `.split(EConstant.newline)
             .map((e: string) => e.trim())
@@ -667,26 +678,26 @@ export class Add extends CoreHtmlView {
 </body> 
 
     <!-- awlays first -->
-    <script src="${_LOCALHOST}/js/configuration.js"></script>
-    <script src="${_LOCALHOST}/js/constants.js"></script>
-    <script src="${_LOCALHOST}/js/all.js"></script>
-    <script src="${_LOCALHOST}/js/common/splitter.js"></script>
-    <script src="${_LOCALHOST}/js/common/menu.js"></script>
-    <script src="${_LOCALHOST}/js/form.js"></script>
-    <script src="${_LOCALHOST}/js/api.js"></script>
-    <script src="${_LOCALHOST}/js/api/rpg.js"></script>
-    <script src="${_LOCALHOST}/js/helper.js"></script>
-    <script src="${_LOCALHOST}/js/common/modal.js"></script>
-    <script src="${_LOCALHOST}/js/echantillons/demo.js"></script>
-    <script src="${_LOCALHOST}/js/libs/JsBarcode.all.min.js"></script>
-    <script src="${_LOCALHOST}/js/api/print.js"></script>
-    <script src="${_LOCALHOST}/js/common/regions.js"></script>    
-    <script src="${_LOCALHOST}/js/common/editingList.js"></script>
-    <script src="${_LOCALHOST}/js/echantillons/add.js"></script>
-    <script src="${_LOCALHOST}/js/echantillons/event.js"></script>    
-    <script src="${_LOCALHOST}/js/echantillons/controller.js"></script>
-    <script src="${_LOCALHOST}/js/stickers/controller.js"></script>
-    <script src="${_LOCALHOST}/js/echantillons/specific/passeports-phyto-sanitaires.js"></script>
+    <script src="/js/configuration.js"></script>
+    <script src="/js/constants.js"></script>
+    <script src="/js/all.js"></script>
+    <script src="/js/common/splitter.js"></script>
+    <script src="/js/common/menu.js"></script>
+    <script src="/js/form.js"></script>
+    <script src="/js/api.js"></script>
+    <script src="/js/api/rpg.js"></script>
+    <script src="/js/helper.js"></script>
+    <script src="/js/common/modal.js"></script>
+    <script src="/js/echantillons/demo.js"></script>
+    <script src="/js/libs/JsBarcode.all.min.js"></script>
+    <script src="/js/api/print.js"></script>
+    <script src="/js/common/regions.js"></script>    
+    <script src="/js/common/editingList.js"></script>
+    <script src="/js/echantillons/add.js"></script>
+    <script src="/js/echantillons/event.js"></script>    
+    <script src="/js/echantillons/controller.js"></script>
+    <script src="/js/stickers/controller.js"></script>
+    <script src="/js/echantillons/specific/passeports-phyto-sanitaires.js"></script>
 </html>
 `.split(EConstant.newline)
             .map((e: string) => e.trim())

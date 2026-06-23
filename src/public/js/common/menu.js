@@ -24,7 +24,15 @@ document.getElementById("left-pane").innerHTML = `
         <li class="item"><a href="${testWhere('documentation') ? '..' : '.'}/site-add.html" class="link">Ajouter</a></li>
         <li class="item"><a href="/documentation/sites" class="link">Documentation</a></li>
       </ul>
-    </li>    
+    </li>
+    <li class="item item--parent${testWhere('evenement') ?' item--opened' : ''}" aria-expanded="false" aria-controls="collapsible-3">
+      <a class="menu__span">Evenements</a>
+      <ul class="menu" aria-hidden="true" id="collapsible-3">
+        <li class="item"><a href="${testWhere('documentation') ? '..' : '.'}/evenements.html" class="link">Liste des evenements</a></li>
+        <li class="item"><a href="${testWhere('documentation') ? '..' : '.'}/evenement-add.html" class="link">Ajouter</a></li>
+        <li class="item"><a href="/documentation/evenements" class="link">Documentation</a></li>
+      </ul>
+    </li>      
     <li class="item"><a href="${testWhere('documentation') ? '..' : '.'}/api.html" class="link">Api</a></li>
     <li class="item"><a href="/documentation/procedure" class="link">Procedure</a></li>
     <li class="item"><a href="/documentation/imprimante" class="link">Imprimante Etiquette</a></li>
@@ -35,12 +43,13 @@ document.getElementById("left-pane").innerHTML = `
 // Menu droite                
 document.getElementById("splitter-nav-site").innerHTML = `
 <nav role="navigation" class="splitter-nav-left splitter-menu-color">
-    <a href="index.html" class="index">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;des </div></a>    
+    <a href="index.html" class="index">
+        des
+    </a>    
 </nav>
-    <nav role="navigation" class="splitter-nav-right" id="splitter-nav-right">
-    <nav role="navigation" class="splitter-nav-left">
-    <img src="./assets/logo.png">
-</nav>`;
+<nav role="navigation" class="splitter-nav-right" id="splitter-nav-right">
+<nav role="navigation" class="splitter-nav-left">
+<img src="./assets/logo.png">`;
 
 function toTitleCase(str) {
     try {
@@ -151,7 +160,7 @@ async function loadRangeLine(index) {
             if (isContextMode(["aliquote","selectionaliquote"])) showAliquote(column, _STORE.datas[index][_STORE.columns[column]]);
         });
     }
-    getElement("rowNumber").innerText = 'Ligne : ' + index + ' sur ' + _STORE.datas.length ; 
+    setElementText("rowNumber", 'Ligne : ' + index + ' sur ' + _STORE.datas.length); 
 };
 
 function updateButtonCreer(ctx) {
@@ -167,7 +176,7 @@ function updateButtonCreer(ctx) {
             name= "Importer";
             break;
     }
-    getElement("btn-creer").innerText = `✔️ ${name}`;
+    setElementText("btn-creer", `✔️ ${name}`);
 }
 // show elements with context test
 function updateReadOnly(ctx) {

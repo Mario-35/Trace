@@ -7,7 +7,7 @@ async function setPasseport() {
     } 
     const temp = await getDatas(`${window.location.origin}/passeport/${nomSite.value}/${getYear(prelevement)}`);
     if (temp) {
-        getElement("passeport").value = temp.id;
+        setElementValue("passeport", temp.id);
         if (getElement("btn-passeport")) getElement("btn-passeport").remove();
         createHTMLviewPasseport(temp);
         removeDisabled("next-2");
@@ -21,22 +21,20 @@ async function setPasseport() {
 function createHTMLviewPasseport(values) {
     if(!values) 
         values = {  
-                    "id": 0,
-                    "annee": "2019",
-                    "nom": "Nom a déterminer",
-                    "code": "FR",
-                    "tracabilite": "005",
-                    "identifiant": "BR13551",
-                    "origine": "FR"
-                };
-
-    // getElement("passeport").value = values.id;
+                "id": 0,
+                "annee": "2019",
+                "nom": "Nom a déterminer",
+                "code": "FR",
+                "tracabilite": "005",
+                "identifiant": "BR13551",
+                "origine": "FR"
+            };
 
     getElement("blockPasseport").innerHTML = `
     <div class="form-group row-3"> 
         <div class="container-center">
             <div class="pass-phyto border">
-                <div class="flag" id="passeportFlag"><img class ="flag-eu" src="${_LOCALHOST}/assets/flag-eu.png"></div>
+                <div class="flag" id="passeportFlag"><img class ="flag-eu" src="/assets/flag-eu.png"></div>
                 <div class="title" id="passeportTitle" align="right"><p>Passeport phytosanitaire - ZP / Plant passport - PZ<br
                 >Beet necrotic yellow vein virus</p></div>
                 <div class="nom" id="passeportNom"><b>A</b> Sol</div>

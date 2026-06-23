@@ -3,7 +3,7 @@
  * Core Class to be extend for HTML Views
  */
 
-import { _LOCALHOST, EConstant } from "../../constant";
+import { EConstant } from "../../constant";
 import { removeAllQuotes } from "../../helpers/removeAllQuotes";
 import fs from "fs";
 import path from "path";
@@ -48,14 +48,14 @@ export class CoreHtmlView {
 
     replaceFile(name: string) {
         if (name.includes('css/'))
-            this.replaceInReturnResult(`<link rel="stylesheet" href="${_LOCALHOST}/${name}">`, `<style>${this.addFile(`../../public/${name}`)}</style>`);
-            else this.replaceInReturnResult(`<script src="${_LOCALHOST}/${name}"></script>`, `<script>${this.addFile(`../../public/${name}`)}</script>`);
+            this.replaceInReturnResult(`<link rel="stylesheet" href="/${name}">`, `<style>${this.addFile(`../../public/${name}`)}</style>`);
+            else this.replaceInReturnResult(`<script src="/${name}"></script>`, `<script>${this.addFile(`../../public/${name}`)}</script>`);
     }
 
     replaceText(name: string, content: string) {
         if (name.includes('css/'))
-            this.replaceInReturnResult(`<link rel="stylesheet" href="${_LOCALHOST}/${name}">`, `<style>${content}</style>`);
-            else this.replaceInReturnResult(`<script src="${_LOCALHOST}/${name}"></script>`, `<script>${content}</script>`);
+            this.replaceInReturnResult(`<link rel="stylesheet" href="/${name}">`, `<style>${content}</style>`);
+            else this.replaceInReturnResult(`<script src="/${name}"></script>`, `<script>${content}</script>`);
 
     }
 

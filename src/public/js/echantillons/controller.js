@@ -117,6 +117,7 @@ async function showAliquote(input) {
     removeReadOnly(["nombre","numero","libre","analyses","condition","responsable"]); 
     identification.value = createIdentification();
 }
+
 function restoreDatas() {
     const datas = JSON.parse(localStorage.getItem('_DATAS'));    
     if (datas) {
@@ -163,8 +164,8 @@ async function start() {
         showParentClass('etat', 'form-group'); 
         hideParentClass( "btnApiRpg", "row-1");
         if (!["Créer", "Importer"].includes(datas.etat)) removeDisabled("btn-aliquote");
-        getElement("btnApiRpg").innerText = "MAJ 🌍 RPG";
-        changeTitle("Modification d'un échantillon");         
+        setElementText("btnApiRpg", "MAJ 🌍 RPG");
+        setElementText("formTitle", "Modification d'un échantillon");         
         parentClass( "parent", "form-group", datas.parent !== null) ;
 
         new editingList(getElement("stockageList"), "Mots clés pour le stockage", "Ajouter une clé", datas.stockage, _CONFIGURATION["stockages"]);  
@@ -183,7 +184,7 @@ async function start() {
         // get the range lines
         setRange();
         // Change title
-        changeTitle("Modification de " + String(_STORE.datas.length) + " échantillons");
+        setElementText("formTitle", "Modification de " + String(_STORE.datas.length) + " échantillons");
         // Set the mode
     } else if (ctx.mode === 'excel' || ctx.mode === "excelaliquote") {  // Excel mode
         // get datas from API
@@ -198,8 +199,8 @@ async function start() {
                 setReadOnly("nombre");
                 setInvisible("btn-libre");
                 setInvisible("btn-analyses");
-                changeTitle("Création d'autres échantillon(s) depuis un fichier excel");                
-            } else changeTitle("Ajout depuis un fichier excel");
+                setElementText("formTitle", "Création d'autres échantillon(s) depuis un fichier excel");                
+            } else setElementText("formTitle", "Ajout depuis un fichier excel");
             let isEchantillon = false;
             Object.keys(_STORE.columns).forEach(column => {
                 const elem = getElement(column);
@@ -233,12 +234,12 @@ async function start() {
         getElement("numero").min = temp.max;
         multipleremoveInvisible(["numero",  "nombre"]); 
         removeReadOnly(["numero",  "nombre"]); 
-        changeTitle("Ajout d'autres échantillon(s)");
+        setElementText("formTitle", "Ajout d'autres échantillon(s)");
     } else if (ctx.mode === 'aliquote') {  // child mode 
         const datas = await getDatas(window.location.origin + "/echantillon/" + ctx.id);
         loadDatas(datas);
         showAliquote(datas);
-        changeTitle("Création d'autres échantillon(s)");
+        setElementText("formTitle", "Création d'autres échantillon(s)");
     } else if (ctx.mode === 'selectionaliquote') {  // child mode 
         // get selection from API
         const temp2 = await getDatas(window.location.origin + "/selection/" + ctx.id);
@@ -252,7 +253,7 @@ async function start() {
         setRange();
 
         await showAliquote( _STORE.datas[0]);
-        changeTitle("Création d'autres échantillon(s) à partir de " + String(_STORE.datas.length) + " échantillons");
+        setElementText("formTitle", "Création d'autres échantillon(s) à partir de " + String(_STORE.datas.length) + " échantillons");
     } else if (ctx.mode === 'new') { //  Default add mode
         multiplesetInvisible(["echantillon",  "etat"]); 
         multipleremoveInvisible(["numero",  "nombre", "btn-analyses", "btn-libre"]); 

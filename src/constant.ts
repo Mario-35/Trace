@@ -8,21 +8,6 @@
 
 
 export const _TYPES = ["Boues", "Eau", "Invertébrés", "Sol cultivé", "Sol forestier", "Prairie", "Sol"];
-export let _LOCALHOST: string  | undefined = undefined;
-
-export function setLocal(req: any) {
-    if (!_LOCALHOST) _LOCALHOST = ""
-    // if (!_LOCALHOST) _LOCALHOST = `http://${req.host}`;
-    
-}
-
-export const CORS = {
-    origin: '*',
-    methods: ['GET', 'PUT', 'POST', 'DELETE', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'Authorization']
-}
-
-
 
 export const EConstant = Object.freeze({
     appName: "Trace",

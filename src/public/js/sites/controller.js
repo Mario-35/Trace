@@ -22,8 +22,8 @@ function addMap() {
         marker.setLatLng(position, {
         draggable: 'true'
         }).bindPopup(position).update();
-        latitude.value = position.lat;
-        longitude.value = position.lng;
+        setElementValue(latitude, position.lat);
+        setElementValue(longitude, position.lng);
         removeRpgInfos();
     });
 
@@ -52,11 +52,11 @@ async function start() {
         loadDatas(datas);
         loadDatas(_COLUMNS);
         removeDisabled("btnApiRpg"); 
-        changeTitle("Modification d'un site");
+        setElementText("formTitle", "Modification d'un site");
     } else if (ctx.mode === 'new') { //  Default add mode
-        latitude.value = _CONFIGURATION["latitude"];
-        longitude.value = _CONFIGURATION["longitude"];
-        pays.value = _CONFIGURATION["pays"];
+        setElementValue(latitude, _CONFIGURATION["latitude"]);
+        setElementValue(longitude, _CONFIGURATION["longitude"]);
+        setElementValue(pays, _CONFIGURATION["pays"]);
     } else log("Error mode");
     updateButtonCreer(ctx);
     addMap();
