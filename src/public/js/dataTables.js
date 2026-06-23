@@ -1,7 +1,6 @@
 document.querySelector("html").setAttribute("data-bs-theme", "dark");
 
 class JsonTable {
-	mariol = [];
 	constructor(options) {
 		this.nameOfType = getElement("nameType").innerText;
 		this.localSave = options.mario || JSON.parse(localStorage.getItem('filters')) || {};

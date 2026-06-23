@@ -83,10 +83,9 @@
 }
 
 .index {
-  font-family: 'Changa One';
   text-decoration: none;
   font-size: 16px;
-  margin-left: 145px; 
+  margin-left: 163px; 
 }
 
 .index::before {
@@ -100,14 +99,13 @@
   z-index: 1;
 }
 
-
 .index:after {
   font-size: 32px;
   content: "échantillons"; /* Insert the word to be colored (Today) */
   position: absolute;
   width: min-content;
   color: #ffc107; /* Set the desired color (orange) */
-  left: 175px;   /* Adjust left position to match original word */
+  left: 195px;   /* Adjust left position to match original word */
   z-index: 1;
 }
 
