@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
 	const table = new JsonTable({
-		jsonUrl: window.location.origin + "/passeports",
+		jsonUrl: window.location.origin + "/list/passeports",
 		printUrl: "/passeport/",
 		container: "#jsonTable",
 		globalSearch: "#globalSearch",

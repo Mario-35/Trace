@@ -13,11 +13,11 @@ document.addEventListener("DOMContentLoaded", function () {
 		columns: structure,
         menuOptions: [
             {
-                title : "Evenement pour cet échantillon",
+                title : "Evénement pour cet échantillon",
                 url: "evenement-add.html?echantillon=",
             },
             {
-                title : "Tous les échantillons de cette série",
+                title : "Echantillons de cette série",
                 filter: "Identification12",
             },
             {
@@ -25,8 +25,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 url: "echantillon-add.html?after=",
             },
             {
-                title : "Créer un évenement cette série",
-                url: "evenement-add.html?série=",
+                title : "Ajouter un événement à cette série",
+                url: "evenement-add.html?serie=",
             }
             
         ]

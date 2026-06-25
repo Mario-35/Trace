@@ -9,10 +9,20 @@
 import { Router } from "express"
 import { deleteId, readAll, readAlSearch, readId, verifyBody } from "../../controller";
 import { addPasseport, updatePasseport } from "./controller";
-import { executeSql } from "../../db";
+import { createListColumns, executeSql } from "../../db";
 import { dataBase } from "../../db/base";
 
 export const passeportsRoutes = Router();
+
+passeportsRoutes.get("/list/" + dataBase.passeports.name, async (req, res)  => {
+    await executeSql(`SELECT id, ${createListColumns(dataBase.passeports.name)} FROM ${dataBase.passeports.name} ORDER BY id`)
+    .then((passeport: any) => {
+      return res.status(200).json(passeport);
+    }).catch (error => {
+      return res.status(404).json({"error": error.detail});
+    });
+});
+
 
 // Get all passeports
 passeportsRoutes.get("/" + dataBase.passeports.name, async (req, res)  => {
@@ -30,6 +40,16 @@ passeportsRoutes.get("/" + dataBase.passeports.name, async (req, res)  => {
     }).catch (error => {
       console.error(error);
       return res.status(404).json({"error": error.detail});
+    });
+});
+
+// Get all echantillons with passport id
+passeportsRoutes.get("/list/" + dataBase.passeports.singular + "/" + dataBase.echantillons.name + "/:id", async (req, res) => {
+    await executeSql(`SELECT id, ${createListColumns(dataBase.echantillons.name)} FROM ${dataBase.echantillons.name} WHERE passeport = ${ +req.params.id } ORDER BY creation`)
+    .then((echantillons: any) => {
+        return res.status(200).json(echantillons);
+    }).catch (error => {
+        return res.status(404).json({"error": error.detail});
     });
 });
     
@@ -72,9 +92,6 @@ passeportsRoutes.get("/" + dataBase.passeports.singular + "/:tracabilite/:year",
 
 // Create one passeport
 passeportsRoutes.post("/" + dataBase.passeports.singular, async (req, res)  => {
-  console.log("#######################");
-  console.log(req.body);
-  
   const values = verifyBody(req.body);
   if (values) {
     return await addPasseport(values)

@@ -118,7 +118,7 @@ export default class HttpServer {
     this.app.get("/status", async (_req: Request, res: Response) => {
       res.status(200).json({
         status: "Serveur actif",
-        timestamp: new Date().toISOString(),
+        timestamp: new Date().toLocaleString(),
         uptime: process.uptime()
       })
     })

@@ -63,7 +63,7 @@ function validateStr(name) {
 function validateSelect(name) {
     const element = getElement(name);
     const elementError = getElement(name + '-error');
-    if (element.value === '---- Aucun ----') {
+    if (element.value === _AUCUN) {
         elementError.style.display = 'block';
         return false;
     } else {

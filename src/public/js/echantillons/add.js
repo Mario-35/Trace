@@ -113,10 +113,6 @@ nextButtons.forEach((button, index) => {
                 setReadOnly([ "type"]);
                 setSite();
             }
-            // if (currentStep === 2) {
-            //     new editingList(getElement("analysesList"), "Analyses effectuées", "Ajouter une analyses", analyses.value);  
-            //     if(!nombreOuAnalyses.checked) nombre.value = analyses.value.split(',').length;
-            // }
             if (currentStep === 2) {}
             if (currentStep === 3) {
                 canPrint("printEtiquette");

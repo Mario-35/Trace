@@ -164,7 +164,7 @@ export const dataBase: Idb = {
             type: "number",
             title: "N°",
             create: "",
-            calculate: 'SELECT COUNT(*) FROM echantilllons WHERE passeport=id',
+            calculate: '(SELECT COUNT(*) FROM echantillons WHERE passeport=passeports.id)::int',
             list: true,
           },
           

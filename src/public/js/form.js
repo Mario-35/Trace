@@ -122,6 +122,7 @@ const formToJSON = elements => [].reduce.call(elements, (data, element) => {
         data[element.name] = max > 0 ? element.value.slice(0, max): element.value;
         break
       case 'text':
+      case 'time':
       case 'date':
         data[element.name] = max > 0 ? element.value.slice(0, max): element.value;
         break

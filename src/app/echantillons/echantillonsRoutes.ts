@@ -33,6 +33,16 @@ echantillonsRoutes.get("/" + dataBase.echantillons.singular + "/identification/:
     });
 });
 
+// Get all echantillons series from one echantillons
+echantillonsRoutes.get("/" + dataBase.echantillons.name + "/serie/:id", async (req, res) => {
+    await executeSql(`SELECT id FROM ${dataBase.echantillons.name} WHERE identification LIKE CONCAT((SELECT SUBSTRING ( identification FROM 1 FOR 12 ) FROM ${dataBase.echantillons.name} WHERE id =${ req.params.id }), '%') GROUP BY id ORDER by id`)
+    .then((echantillon: any) => {
+        return res.status(200).json(echantillon);
+    }).catch (error => {
+        return res.status(404).json({"error": error.detail});
+    });
+});
+
 // Get all echantillons
 echantillonsRoutes.get("/" + dataBase.echantillons.name, async (req, res) => {
     return await executeSql(`SELECT * FROM ${dataBase.echantillons.name} ORDER BY creation, Identification`)

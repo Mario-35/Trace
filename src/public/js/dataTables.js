@@ -2,7 +2,6 @@ document.querySelector("html").setAttribute("data-bs-theme", "dark");
 
 class JsonTable {
 	constructor(options) {
-		this.nameOfType = getElement("nameType").innerText;
 		this.localSave = options.mario || JSON.parse(localStorage.getItem('filters')) || {};
 		this.jsonUrl = options.jsonUrl || "";
 		this.addUrl = options.addUrl || "";
@@ -35,8 +34,7 @@ class JsonTable {
 		this.menu = document.querySelector(".context-menu");
 		this.menuOption = document.querySelector(".context-menu-option");
 		this.menuVisible = false;		
-		this.selectedId = 0;		
-		this.selectedTxt = '';		
+		this.selectedId = 0;	
 		this.init();
 	}
 
@@ -45,22 +43,22 @@ class JsonTable {
 	}
 
 	removeToFilter(key) {
-		if(this.localSave[this.nameOfType])
-			delete this.localSave[this.nameOfType][key];
+		if(this.localSave[getElementText("nameType")])
+			delete this.localSave[getElementText("nameType")][key];
 	}
 
 	addToFilter(key, value) {
-		if(!this.localSave[this.nameOfType])
-			this.localSave[this.nameOfType] = {};
+		if(!this.localSave[getElementText("nameType")])
+			this.localSave[getElementText("nameType")] = {};
 		
 		if (String(value).trim() === "")
-			delete this.localSave[this.nameOfType][key];
-		else this.localSave[this.nameOfType][key] = value;
+			delete this.localSave[getElementText("nameType")][key];
+		else this.localSave[getElementText("nameType")][key] = value;
 		localStorage.setItem('filters', JSON.stringify(this.localSave));
 
 	}
 	razFilter() {
-		delete this.localSave[this.nameOfType];
+		delete this.localSave[getElementText("nameType")];
 		localStorage.setItem('filters', JSON.stringify(this.localSave));
 		  this.filteredData = [...this.data];	
 		this.filterDatas();
@@ -134,7 +132,6 @@ class JsonTable {
 			jsonTable.addEventListener("contextmenu", e => {
 				e.preventDefault();
 				this.selectedId = e.target.parentElement.id;
-				this.selectedTxt = e.target.textContent;
 			const origin = { left: e.pageX, top: e.pageY };
 			this.setPosition(origin);
 			return false;
@@ -277,7 +274,7 @@ class JsonTable {
 			if(column.searchType !== "hidden") {
 				const th = document.createElement("th");
 				const label = document.createElement("label");
-				label.innerHTML = column.title || column.key;
+				label.innerHTML = column.key;
 				th.appendChild(label);
 				switch (column.searchType) {
 					case "infos":
@@ -335,9 +332,9 @@ class JsonTable {
 					case "boolean":
 						const selectBoolean = document.createElement("select");
 						selectBoolean.className = "form-control";
-						selectBoolean.innerHTML = `<option value="">Etat</option><option value="true">✔️️</option> <option value="false">❌</option>`;
-						if (this.localSave[this.nameOfType] && this.localSave[this.nameOfType][column.key])
-							selectBoolean.value = this.localSave[this.nameOfType][column.key];
+						selectBoolean.innerHTML = `<option value="">Tous</option><option value="true">✔️️</option> <option value="false">❌</option>`;
+						if (this.localSave[getElementText("nameType")] && this.localSave[getElementText("nameType")][column.key])
+							selectBoolean.value = this.localSave[getElementText("nameType")][column.key];
 						selectBoolean.addEventListener("change", (e) => {
 							const tmp = e.target.value === "true" ? true : e.target.value === "false" ? false : '';
 							if (typeof tmp === "boolean") this.addToFilter(column.key, tmp); else this.removeToFilter(column.key);
@@ -349,8 +346,8 @@ class JsonTable {
 					default:
 						const input = document.createElement("input");
 						input.type = "text";
-						if (this.localSave[this.nameOfType] && this.localSave[this.nameOfType][column.key])
-							input.value = this.localSave[this.nameOfType][column.key];
+						if (this.localSave[getElementText("nameType")] && this.localSave[getElementText("nameType")][column.key])
+							input.value = this.localSave[getElementText("nameType")][column.key];
 						input.className = "form-control";
 						input.placeholder = `${column.key}`;
 						input.addEventListener("input", (e) => {
@@ -388,9 +385,10 @@ class JsonTable {
 		const end = start + this.rowsPerPage;
 		let rows = [...this.filteredData];
 		if (this.filtered()) 
-			getElement("jsonTable").classList.add("colorFiltered")
+			getElement("jsonTable").classList.add("colorFiltered");
 		else
-			getElement("jsonTable").classList.remove("colorFiltered")
+			getElement("jsonTable").classList.remove("colorFiltered");
+
 		infos.innerText = rows.length + " sur " + this.data.length;
 		// // Sorting
 		if (this.sortColumn) {
@@ -636,22 +634,22 @@ class JsonTable {
 		if (value && value.trim() !== "")
 			this.addToFilter("global", value.toLowerCase());
 
-		if (this.nameOfType) {			
-			if (this.localSave[this.nameOfType] && this.localSave[this.nameOfType]["global"]) {
+		if (getElementText("nameType")) {			
+			if (this.localSave[getElementText("nameType")] && this.localSave[getElementText("nameType")]["global"]) {
 				this.filteredData = this.data.filter((row) =>
-					Object.values(row).some((field) => String(field).toLowerCase().includes(this.localSave[this.nameOfType]["global"]))
+					Object.values(row).some((field) => String(field).toLowerCase().includes(this.localSave[getElementText("nameType")]["global"]))
 				);
-				setElementValue(globalSearch, this.localSave[this.nameOfType]["global"]);
+				setElementValue(globalSearch, this.localSave[getElementText("nameType")]["global"]);
 			} else if (this.localSave && Object.keys(this.localSave).length > 0) {
 				this.filteredData = this.data;
-				if (this.localSave[this.nameOfType]) 
-					Object.keys(this.localSave[this.nameOfType]).forEach(key => {			
-						if (this.localSave[this.nameOfType][key] !== "")
+				if (this.localSave[getElementText("nameType")]) 
+					Object.keys(this.localSave[getElementText("nameType")]).forEach(key => {			
+						if (this.localSave[getElementText("nameType")][key] !== "")
 							this.filteredData = this.filteredData.filter(row => typeof row[key] === 'string'
-								? row[key].toLowerCase().includes(this.localSave[this.nameOfType][key].toLowerCase()) 
+								? row[key].toLowerCase().includes(this.localSave[getElementText("nameType")][key].toLowerCase()) 
 								: typeof row[key] === 'boolean' 
-									 ? row[key] === this.localSave[this.nameOfType][key]
-									 : this.localSave[this.nameOfType][key].includes(row[key]));
+									 ? row[key] === this.localSave[getElementText("nameType")][key]
+									 : this.localSave[getElementText("nameType")][key].includes(row[key]));
 					});
 			}
 			// Re-render table rows and pagination after filtering

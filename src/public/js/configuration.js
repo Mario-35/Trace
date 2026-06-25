@@ -1,4 +1,4 @@
-_CONFIGURATION = {
+const _CONFIGURATION = {
   id: 1,
   site: 'Umr Sas Rennes',
   code: 'Fr',

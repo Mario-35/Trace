@@ -1,5 +1,6 @@
 // global form datas
 let _COLUMNS = [];
+const _debug = true;
 
 function testWhere(test) {
     return window.location.href.includes(test);
@@ -11,7 +12,7 @@ function getElement(name) {
   if (typeof name === "string") {
     element = document.getElementById(name);
     if (element) return element;
-    if (_CONFIGURATION.debug === true) console.log("element not found 🡺 " + name);
+    if (_debug === true) console.log("element not found 🡺 " + name);
   } else return name;
 };
 
@@ -20,6 +21,12 @@ function setElementText(name, value) {
   const test = getElement(name);
   if (test) 
     test.innerText = value;
+};
+
+function getElementText(name) {
+  const test = getElement(name);
+  if (test) 
+    return test.innerText;
 };
 
 // change element value
@@ -167,13 +174,13 @@ function canPrint(name) {
 function setIfNull(element, value) {
   element = getElement(element);  
   if(element) {
-    if (element.value.trim() === "" || element.value.trim() === '---- Aucun ----')
+    if (element.value.trim() === "" || element.value.trim() === _AUCUN)
       element.value = typeof value === "object" ? JSON.stringify(value) : value;
   }
 };
 
 // version date
-setElementText("version", "version : 22/06/2026");
+setElementText("version", "version : 25/06/2026");
 
 
 

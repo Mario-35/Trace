@@ -57,6 +57,9 @@ evenementsRoutes.get("/" + dataBase.evenements.singular + "/:id", async (req, re
     
 // Create one evenement
 evenementsRoutes.post("/" + dataBase.evenements.singular + "", async (req, res)  => {
+  console.log("############# POST ############################");
+  console.log(req.body);
+  
   const values = verifyBody(req.body);
   if (values) {
     return await addEvenement(values)

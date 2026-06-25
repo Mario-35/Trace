@@ -2,7 +2,7 @@
 function createIdentification(nb) {
     if (isContextMode(['new',"aliquote","excelaliquote","excel","selectionaliquote"])) {
         if(!_DATE) _DATE = new Date();
-        creation.value = _DATE.toISOString();
+        creation.value = _DATE.toLocaleString();
         return `${ _DATE.toLocaleDateString()}${ _DATE.toLocaleTimeString()}`.replace(/\D/g, "").slice(0,12) + (nb || getElement("numero").value ||  getElement("echantillon").value).padStart(4, '0');
     }
 };

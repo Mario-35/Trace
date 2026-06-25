@@ -9,7 +9,7 @@
 
 .menu ol, ul, dl, li {
     margin-top: 0;
-    margin-bottom: 1rem;
+    margin-bottom: 3px;
 }
 
 .menu .menu__span, .link {

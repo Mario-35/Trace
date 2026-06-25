@@ -29,7 +29,6 @@ document.getElementById("left-pane").innerHTML = `
       <a class="menu__span">Evenements</a>
       <ul class="menu" aria-hidden="true" id="collapsible-3">
         <li class="item"><a href="${testWhere('documentation') ? '..' : '.'}/evenements.html" class="link">Liste des evenements</a></li>
-        <li class="item"><a href="${testWhere('documentation') ? '..' : '.'}/evenement-add.html" class="link">Ajouter</a></li>
         <li class="item"><a href="/documentation/evenements" class="link">Documentation</a></li>
       </ul>
     </li>      
