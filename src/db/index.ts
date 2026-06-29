@@ -12,37 +12,34 @@ import { executeSql } from "./executeSql";
 const pwd = process.env.NODE_ENV === 'production' ? 'postgres' : "postgres";
 
 export const sql = postgres('postgres://postgres:' + pwd + '@localhost:5432/trace', {
-    host                 : 'localhost',   // Postgres ip address[s] or domain name[s]
-    port                 : 5432,          // Postgres server port[s]
-    database             : 'trace',         // Name of database to connect to
-    username             : 'postgres',    // Username of database user
-    password             :  pwd,     // Password of database user
-    debug: true,
-    max: 2000,
-    connection: {
-        application_name: `Echantillons`
-    }, types: {
-      date: {
-        to: 1184,
-        from: [1082, 1083, 1114, 1184],
-        serialize: (x: string) => x, // TypeScript to PostgreSQL
-        parse: (x: string) => x, // PostgreSQL to TypeScript
-      },
-    },
+    host                : 'localhost',   // Postgres ip address[s] or domain name[s]
+    port                : 5432,          // Postgres server port[s]
+    database            : 'trace',         // Name of database to connect to
+    username            : 'postgres',    // Username of database user
+    password            :  pwd,     // Password of database user
+    debug               :  true,
+    max                 : 2000,
+    connection          : { application_name: `Echantillons` }, 
+    types               : {
+                            date: {
+                                to: 1184,
+                                from: [1082, 1083, 1114, 1184],
+                                serialize: (x: string) => x, // TypeScript to PostgreSQL
+                                parse: (x: string) => x, // PostgreSQL to TypeScript
+                            },
+                        },
 });
 
 export function admin(password: string) {    
     return postgres(`postgres://postgres:${password}@localhost:5432/postgres`, {
-        host                 : 'localhost',   // Postgres ip address[s] or domain name[s]
-        port                 : 5432,          // Postgres server port[s]
-        database             : 'postgres',         // Name of database to connect to
-        username             : 'postgres',    // Username of database user
-        password             : password,     // Password of database user
-        debug: true,
-        max: 2000,
-        connection: {
-            application_name: `Trace`
-        }
+        host                : 'localhost',   // Postgres ip address[s] or domain name[s]
+        port                : 5432,          // Postgres server port[s]
+        database            : 'postgres',         // Name of database to connect to
+        username            : 'postgres',    // Username of database user
+        password            : password,     // Password of database user
+        debug               :  true,
+        max                 : 2000,
+        connection          : { application_name: `Trace` }
     });
 }
 
@@ -54,7 +51,7 @@ export function addPartiton(name: string) {
 
 export async function isDbExists(): Promise<boolean> {
       return  await sql
-            .unsafe(`select 1+1 AS result`)
+            .unsafe(`SELECT 1+1 AS result`)
             .then(() => {
                   return true;
             })
@@ -64,16 +61,16 @@ export async function isDbExists(): Promise<boolean> {
             });
 }
 
-export {executeSql} from "./executeSql"
-export {executeSqlValues} from "./executeSqlValues"
-export {createDB} from "./createDB"
-export {createDetaultDatas} from "./createDetaultDatas"
-export {createPgValues} from "./createPgValues"
-export {createPgUpdates} from "./createPgUpdates"
-export {createPgColumns} from "./createPgColumns"
-export {createListColumns} from "./createListColumns"
-export {createPgInsert} from "./createPgInsert"
-export {createPgUpdate} from "./createPgUpdate"
-export {writeDB} from "./writeDB"
+export {executeSql} from "./executeSql";
+export {executeSqlValues} from "./executeSqlValues";
+export {createDB} from "./createDB";
+export {createDetaultDatas} from "./createDetaultDatas";
+export {createPgValues} from "./createPgValues";
+export {createPgUpdates} from "./createPgUpdates";
+export {createPgColumns} from "./createPgColumns";
+export {createListColumns} from "./createListColumns";
+export {createPgInsert} from "./createPgInsert";
+export {createPgUpdate} from "./createPgUpdate";
+export {writeDB} from "./writeDB";
 
 

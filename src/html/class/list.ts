@@ -66,7 +66,7 @@ export class List extends CoreHtmlView {
 							</div>` :''}
 							<span class="input-group-text" id="globalSearchIcon">🔎 Cherche</span>
 							<input id="globalSearch" type="text" class="form-control" placeholder="Recherche dans tous les champs">
-							<button class="btn btn-success icon_up btn-sm" id="exportExcel"> Excel</button>  
+							${name === "echantillons" ? '<button class="btn btn-success icon_up btn-sm" id="exportExcel"> Excel</button>' : ''}
 						</div>
 					</div>
 				</div>

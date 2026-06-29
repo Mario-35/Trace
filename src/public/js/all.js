@@ -3,8 +3,6 @@ let _COLUMNS = [];
 const _debug = true;
 
 function testWhere(test) {
-  console.log(window.location.origin);
-  
     return window.location.href.includes(test);
 }
 

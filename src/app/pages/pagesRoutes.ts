@@ -92,9 +92,8 @@ pagesRoutes.get("/" + dataBase.echantillons.name + ".html", async (req, res) => 
 });
 
 // export datas
-pagesRoutes.get("/export.html", async (req, res) => {
-    const id = req.url.split("?selection=")[1];
-    await executeSql(`SELECT ids FROM selections WHERE id=${id}`)
+pagesRoutes.get("/" + dataBase.echantillons.name + "/export/:id", async (req, res) => {
+    await executeSql(`SELECT ids FROM selections WHERE id=${+req.params.id}`)
     .then(async (ids: any) => {
         await executeSql(`SELECT 
             ${Object.keys(dataBase.echantillons.columns).filter(e => dataBase.echantillons.columns[e].type !== "json" && !dataBase.echantillons.columns[e].calculate)}, 
@@ -106,7 +105,6 @@ pagesRoutes.get("/export.html", async (req, res) => {
         });                                                                                                                                                                                                                                                                                                     
     });
 });
-
 // Update application
 pagesRoutes.get("/update", async (req, res) => {
     try {

@@ -1,41 +1,41 @@
 document.getElementById("left-pane").innerHTML = ` 
 		<nav role='navigation'>
   <ul class="menu">
-    <li class="item"><a href="./campagnes.html" class="link">Campagnes</a></li>
+    <li class="item"><a href="${testWhere('documentation') ? '..' : '.'}/campagnes.html" class="link">Campagnes</a></li>
     <li class="item item--parent${testWhere('echantillon') ?' item--opened' : ''}" aria-expanded="false" aria-controls="collapsible-0">
       <a class="menu__span">Echantillons</a>
       <ul class="menu" aria-hidden="true" id="collapsible-0">
-        <li class="item"><a href="./echantillons.html" class="link">Liste des échantillons</a></li>
-        <li class="item"><a href="./echantillon-add.html" class="link">Ajouter</a></li>
+        <li class="item"><a href="${testWhere('documentation') ? '..' : '.'}/echantillons.html" class="link">Liste des échantillons</a></li>
+        <li class="item"><a href="${testWhere('documentation') ? '..' : '.'}/echantillon-add.html" class="link">Ajouter</a></li>
         <li class="item"><a href="/documentation/echantillons" class="link">Documentation</a></li>
       </ul>
     </li>
     <li class="item item--parent${testWhere('passeport') ?' item--opened' : ''}" aria-expanded="false" aria-controls="collapsible-1">
       <a class="menu__span">Passeports</a>
       <ul class="menu" aria-hidden="true" id="collapsible-1">
-        <li class="item"><a href="./passeports.html" class="link">Liste des passeports</a></li>
+        <li class="item"><a href="${testWhere('documentation') ? '..' : '.'}/passeports.html" class="link">Liste des passeports</a></li>
         <li class="item"><a href="/documentation/passeports" class="link">Documentation</a></li>
       </ul>
     </li>
     <li class="item item--parent${testWhere('site') ?' item--opened' : ''}" aria-expanded="false" aria-controls="collapsible-2">
       <a class="menu__span">Sites</a>
       <ul class="menu" aria-hidden="true" id="collapsible-2">
-        <li class="item"><a href="./sites.html" class="link">Liste des sites</a></li>
-        <li class="item"><a href="./site-add.html" class="link">Ajouter</a></li>
+        <li class="item"><a href="${testWhere('documentation') ? '..' : '.'}/sites.html" class="link">Liste des sites</a></li>
+        <li class="item"><a href="${testWhere('documentation') ? '..' : '.'}/site-add.html" class="link">Ajouter</a></li>
         <li class="item"><a href="/documentation/sites" class="link">Documentation</a></li>
       </ul>
     </li>
     <li class="item item--parent${testWhere('evenement') ?' item--opened' : ''}" aria-expanded="false" aria-controls="collapsible-3">
       <a class="menu__span">Evenements</a>
       <ul class="menu" aria-hidden="true" id="collapsible-3">
-        <li class="item"><a href="./evenements.html" class="link">Liste des evenements</a></li>
+        <li class="item"><a href="${testWhere('documentation') ? '..' : '.'}/evenements.html" class="link">Liste des evenements</a></li>
         <li class="item"><a href="/documentation/evenements" class="link">Documentation</a></li>
       </ul>
     </li>      
-    <li class="item"><a href="./api.html" class="link">Api</a></li>
+    <li class="item"><a href="${testWhere('documentation') ? '..' : '.'}/api.html" class="link">Api</a></li>
     <li class="item"><a href="/documentation/procedure" class="link">Procedure</a></li>
     <li class="item"><a href="/documentation/imprimante" class="link">Imprimante Etiquette</a></li>
-    <li class="item"><a href="./configuration.html" class="link">Configuration</a></li>
+    <li class="item"><a href="${testWhere('documentation') ? '..' : '.'}/configuration.html" class="link">Configuration</a></li>
   </ul>
 </nav>`;
 

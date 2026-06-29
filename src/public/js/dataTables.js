@@ -77,7 +77,7 @@ class JsonTable {
 
 	async exportExcel() {
 		const temp = await postDatas(window.location.origin + '/selection', {ids: this.filteredData.map(e => e.id)});
-		if (temp) window.location.href = window.location.origin + "/export.html?selection=" +  temp[0].id;
+		if (temp) window.location.href = window.location.origin + "/" + getElementText("nameType") + "/export/" +  temp[0].id;
 	};
 
 
@@ -290,7 +290,7 @@ class JsonTable {
 					break;
 					case "select":
 						const selectSelect = document.createElement("select");
-						selectSelect.className = "form-control";
+						selectSelect.className = "form-control filter";
 						selectSelect.innerHTML = `<option value="">Tous</option>`;
 						const uniqueValues = [...new Set(this.data.map((row) => row[column.key]))];
 						uniqueValues.forEach((value) => {
@@ -331,7 +331,7 @@ class JsonTable {
 						break;
 					case "boolean":
 						const selectBoolean = document.createElement("select");
-						selectBoolean.className = "form-control";
+						selectBoolean.className = "form-control filter";
 						selectBoolean.innerHTML = `<option value="">Tous</option><option value="true">✔️️</option> <option value="false">❌</option>`;
 						if (this.localSave[getElementText("nameType")] && this.localSave[getElementText("nameType")][column.key])
 							selectBoolean.value = this.localSave[getElementText("nameType")][column.key];
@@ -348,7 +348,7 @@ class JsonTable {
 						input.type = "text";
 						if (this.localSave[getElementText("nameType")] && this.localSave[getElementText("nameType")][column.key])
 							input.value = this.localSave[getElementText("nameType")][column.key];
-						input.className = "form-control";
+						input.className = "form-control filter";
 						input.placeholder = `${column.key}`;
 						input.addEventListener("input", (e) => {
 							this.addToFilter(column.key, e.target.value);
@@ -379,6 +379,14 @@ class JsonTable {
 	}
 
 	renderRows() {
+		// test if global
+		const disabled = getElement("globalSearch").value.trim().length > 0;
+		Array.prototype.forEach.call(document.getElementsByClassName("filter"), function(el) {
+			if (disabled)
+				el.setAttribute("disabled", "");
+			else
+				el.removeAttribute("disabled");
+		});	
 		const tableBody = this.container.querySelector("tbody");
 		tableBody.innerHTML = "";
 		const start = (this.currentPage - 1) * this.rowsPerPage;
@@ -639,7 +647,7 @@ class JsonTable {
 				this.filteredData = this.data.filter((row) =>
 					Object.values(row).some((field) => String(field).toLowerCase().includes(this.localSave[getElementText("nameType")]["global"]))
 				);
-				setElementValue(globalSearch, this.localSave[getElementText("nameType")]["global"]);
+				// setElementValue(globalSearch, this.localSave[getElementText("nameType")]["global"]);
 			} else if (this.localSave && Object.keys(this.localSave).length > 0) {
 				this.filteredData = this.data;
 				if (this.localSave[getElementText("nameType")]) 
