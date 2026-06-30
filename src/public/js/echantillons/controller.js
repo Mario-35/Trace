@@ -43,7 +43,7 @@ function refresh() {
         setInvisible("cultures");
     }  
     
-    valueIfChecked(pedagogique.nextSibling.nextSibling, pedagogique, "Programme", " pédagogique")
+    // valueIfChecked(pedagogique.nextSibling.nextSibling, pedagogique, "Programme", " pédagogique")
     
 };
 
@@ -140,6 +140,7 @@ async function start() {
     // init select for etats keys       
     addToOption(getElement('etat'), _CONFIGURATION.etats, "Créer");
     addToOption(getElement('type'), _CONFIGURATION.types, _AUCUN);
+    addToOption(getElement('caracterisation'), _CONFIGURATION.caracterisations, _AUCUN);
     addToOption(getElement('textSize'), _CONFIGURATION.sizes, "10px");
     // add demos if debug
     if(_CONFIGURATION.debug) addToOption(getElement('demos'), Object.keys(_DEMOS));   

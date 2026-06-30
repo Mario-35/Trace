@@ -139,12 +139,12 @@ getElement("longitude").addEventListener("change", (event) => {
 //                         function() {nombre.value = getElement("analyses").value.split(',').length });  
 // });
 
-getElement("pedagogique").addEventListener("change", (event) => {
-    event.preventDefault();
-    refresh();
-});
 getElement("etat").addEventListener("change", (event) => {
     modifiedValue("etat");
+});
+
+getElement("caracterisation").addEventListener("change", (event) => {
+    modifiedValue("caracterisation");
 });
 
 getElement("btn-libre").addEventListener("click", (event) => {

@@ -187,7 +187,6 @@ export class Configuration extends CoreHtmlView {
                                         <option>14px</option>
                                         <option>16px</option>
                                         <option>18px</option>
-                                        <option>20px</option>
                                     </select> 
                                 </div>                                   
                                 <div class="form-group row-1">                                    

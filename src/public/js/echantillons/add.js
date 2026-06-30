@@ -30,8 +30,7 @@ function updateProgressBar() {
 function showStep(stepIndex) {
     formSteps.forEach((step, index) => {
         step.classList.toggle('active', index === stepIndex);
-    });
-    
+    });    
     updateProgressBar();
 };
 

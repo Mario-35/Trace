@@ -28,7 +28,7 @@ export function createConfig(configuration?: any) {
 // Write configuration file
 function writeConfigurationFile(configuration: any) {
       configuration["excelColumns"] = Object.keys(dataBase.echantillons.columns).filter(e => dataBase.echantillons.columns[e].excel);
-      ["etats", "types", "sizes", "stockages" ].forEach(e => {
+      ["etats", "types", "caracterisations", "sizes", "stockages" ].forEach(e => {
             configuration[e] = configuration[e][0].split(",");
       })
       configuration["stickerElements"] = JSON.parse(`{"echantillon": "1902202617320002", "dossier":"0429", "numero":"0002", "prelevement":"2026-03-04", "peremption":"2031-03-04", "passeport":"2026-0003", "dossier-numero":"0429-0002",

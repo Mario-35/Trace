@@ -10,6 +10,7 @@ const _CONFIGURATION = {
   longitude: '-1.656744048248',
   identifiant: 'Br13551',
   etats: [ 'Créer', 'Prélevé', 'Stocké', 'Perdu', 'Detruit', 'Importé', 'Annulé', 'Supprimer', 'Reprelevé' ],
+  caracterisations: [ 'Normal', 'Blanc', 'Doublon', 'Pédagogique' ],
   types: [
     'Boues',
     'Eau',
@@ -20,7 +21,7 @@ const _CONFIGURATION = {
     'Plante',
     'Sol'
   ],
-  sizes: [ '8px', '10px', '12px', '14px', '16px', '18px', '20px' ],
+  sizes: [ '8px', '10px', '12px', '14px', '16px', '18px' ],
   stockages: [ 'Batiment', 'Etage', 'Piece', 'Meuble', 'Etagere', 'Caisse' ],
   print: { width: '50mm', height: '25mm' },
   etiquette: {
@@ -50,7 +51,7 @@ const _CONFIGURATION = {
     'dossier-numero': '0429-0002',
     type: 'Sol',
     programme: 'Programme concerné',
-    pedagogique: 'Programme pédagogique',
+    carracteristion: 'Normal',
     condition: 'Etanol',
     site: 'Nom du site',
     responsable: 'ADAM Mario',

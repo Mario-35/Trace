@@ -271,14 +271,13 @@ export const dataBase: Idb = {
           excel: true,
           etiquette: "Programme concerné"
         },
-        "pedagogique": {
-          type: "boolean",
-          title: "Programme pédagogique",
-          create: "boolean NOT NULL default false",
+        "caracterisation": {
+          type: "text",
+          title: "caractérisation",
+          create: "varchar(25) NOT NULL",
           list : false,
-          excel: false,
-          etiquette: "Programme pédagogique"
-        },            
+          etiquette: "Normal"
+        },                   
         "condition": {
           type: "text",
           title: "Condition de prélèvement",

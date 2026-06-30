@@ -355,15 +355,27 @@ export class Add extends CoreHtmlView {
 												error: true
 											},'---- Aucun ----')}
                                 
+											${this.inputSelect({
+												max: 15,
+												name: "caracterisation",
+												tooltip: "Caractérisation du prélévement",
+												label: "Caractérisation",
+												placeholder: "label",
+												canedit: "true",
+												error: true
+											},'Normal')}
+
+
 										<div class="form-group row-2">
-												<input type="checkbox" id="pedagogique" name="pedagogique">
-												<label for="pedagogique">
-													<span class="pipo" tooltip="Programme concerné par le prélévement coché la case en cas de programme pédagogique">
-														Programme
-													</span>
-												</label>
-											<input type="text" id="programme" name="programme" class="form-control" maxlength="25" placeholder="Nom du programme" />                              
-											<div class="error-message" id="programme-error">Nom du programme obligatoire</div>
+											${this.inputFormGroupText({
+												size: 2,
+												max: 25,
+												name: "programme",
+												label: "Nom du programme",
+												tooltip: "Nom du programme",
+												error: true,
+												tooltipFlow: "right",
+											})}
 										</div>
 									</div>
 
