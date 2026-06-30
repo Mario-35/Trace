@@ -20,7 +20,7 @@ const _CONFIGURATION = {
     'Plante',
     'Sol'
   ],
-  sizes: [ '8px', '10px', '12px', '14px', '16px' ],
+  sizes: [ '8px', '10px', '12px', '14px', '16px', '18px', '20px' ],
   stockages: [ 'Batiment', 'Etage', 'Piece', 'Meuble', 'Etagere', 'Caisse' ],
   print: { width: '50mm', height: '25mm' },
   etiquette: {
