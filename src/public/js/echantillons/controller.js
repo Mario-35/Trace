@@ -141,8 +141,6 @@ async function start() {
     addToOption(getElement('type'), _CONFIGURATION.types, _AUCUN);
     addToOption(getElement('caracterisation'), _CONFIGURATION.caracterisations, "Normal");
     addToOption(getElement('textSize'), _CONFIGURATION.sizes, "10px");
-    // add demos if debug
-    if(_CONFIGURATION.debug) addToOption(getElement('demos'), Object.keys(_DEMOS));   
     // set and get context
     const ctx = createContext();
     // action son mode

@@ -159,7 +159,7 @@ export class CoreHtmlView {
 
   inputText(options: IHTMLOptions) {
     return `${this.inputlabel(options)}
-        <input type="text" id="${options.name}" name="${options.name}" class="form-control" ${ options.max ? `maxlength=${options.max}"` : ''}  placeholder="${options.label}"  ${options.canedit ? `canedit="${options.canedit}"` : '' } ${options.readonly ? 'readonly' : ''} ${options.disabled ? 'disabled' : ''} />                           
+        <input type="text" id="${options.name}" name="${options.name}" class="form-control" ${ options.max ? `maxlength="${options.max}"` : ''}  placeholder="${options.label}"  ${options.canedit ? `canedit="${options.canedit}"` : '' } ${options.readonly ? 'readonly' : ''} ${options.disabled ? 'disabled' : ''} />                           
         ${options.error ? this.inputError(options) : ''} `;				
   }
 
@@ -194,7 +194,7 @@ export class CoreHtmlView {
   inputSelect(options: IHTMLOptions, parDef: string) {
     return `<div class="form-group row-${options.size || 1}${options.invisible ? ' invisible' : ''}">
         ${this.inputlabel(options)}
-        <select class="form-control" id="${options.name}" name="${options.name}" ${options.max ? `maxlength=${options.max}"` : ''} ${options.canedit ? `canedit="${options.canedit}"` : '' } ${options.readonly ? 'readonly' : ''}> 
+        <select class="form-control" id="${options.name}" name="${options.name}" ${options.max ? `maxlength="${options.max}"` : ''} ${options.canedit ? `canedit="${options.canedit}"` : '' } ${options.readonly ? 'readonly' : ''}> 
         <option selected="selected">${parDef}</option>
         </select>
         ${options.error ? this.inputError(options) : ''}

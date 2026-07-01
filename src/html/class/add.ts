@@ -14,10 +14,13 @@ import { CoreHtmlView } from "./core";
 export class Add extends CoreHtmlView {
 	config: any;
 	configuration: any;
+	plural: string;
+
     constructor(name: String, config: any) {
         super();
 		this.config = config;
 		this.configuration  = createConfig();
+		this.plural = name.toLocaleLowerCase() + 's'
 		switch (name) {
 			case "echantillon":
 				this.createAddEchantillonHtmlString(name);
@@ -30,12 +33,18 @@ export class Add extends CoreHtmlView {
 				break;
 		}
     }
+	maxLength(coulumn: string) {
+		try {
+			const src = dataBase[this.plural as keyof object].columns[coulumn].create;
+			return +src.split('(')[1].split(')')[0];
+		} catch (error) {
+			return undefined;	
+		}
 
+	}
     createAddEvenementHtmlString(name: String) {
-        // Split files for better search and replace
-		const plural = name.toLocaleLowerCase() + 's'
 		const listCols:any = [];
-		const src = dataBase[plural as keyof object].columns;
+		const src = dataBase[this.plural as keyof object].columns;
 		Object.keys(src).filter((e: any) => src[e].list === true).forEach(e => {
 			listCols.push({
 				key: e,
@@ -82,7 +91,7 @@ export class Add extends CoreHtmlView {
 										})}										
 										
 										${this.inputFormGroupText({
-											max: 16,
+											max: this.maxLength("identification"),
 											size: 2,
 											name: "identification",
 											tooltip: "Identification (Généré automatiquement)",
@@ -94,7 +103,7 @@ export class Add extends CoreHtmlView {
 										
 										${this.inputSelect({
 											size: 2,
-											max: 10,
+											max: this.maxLength("etat"),
 											name: "etat",
 											tooltip: "Etat du prélévement",
 											label: "Etat du prélévement",
@@ -106,14 +115,14 @@ export class Add extends CoreHtmlView {
 
 									<div class="form-row">
 										${this.inputFormGroupText({
-											max: 30,
+											max: this.maxLength("personne"),
 											name: "personne",
 											tooltip: "Personne @ l'origine de l'événement / opération",
 											label: "Personne (Qui)",
 											canedit: "true"
 										})}                              
 										${this.inputFormGroupText({
-											max: 75,
+											max: this.maxLength("operation"),
 											name: "operation",
 											tooltip: "Detail de l'événement / opération",
 											label: "Detail de l'operation",
@@ -160,21 +169,12 @@ export class Add extends CoreHtmlView {
 </html>
 `.split(EConstant.newline)
             .map((e: string) => e.trim())
-            .filter((e) => e.trim() != "");   
-
-
-
-
-
-
-
+            .filter((e) => e.trim() != "");
 	}
 
     createAddSiteHtmlString(name: String) {
-        // Split files for better search and replace
-		const plural = name.toLocaleLowerCase() + 's'
 		const listCols:any = [];
-		const src = dataBase[plural as keyof object].columns;
+		const src = dataBase[this.plural as keyof object].columns;
 		Object.keys(src).filter((e: any) => src[e].list === true).forEach(e => {
 			listCols.push({
 				key: e,
@@ -206,7 +206,7 @@ export class Add extends CoreHtmlView {
                                 <div class="form-row">
                                     <div class="form-group row-1">
 										${this.inputText({
-											max: 25,
+											max: this.maxLength("nom"),
 											name: "nom",
 											label: "Nom du site",
 											tooltip: "Nom du site permettant les rapprochements lors des recherches",
@@ -214,7 +214,7 @@ export class Add extends CoreHtmlView {
 											error: true,
 										})}
 										${this.inputText({
-											max: 25,
+											max: this.maxLength("pays"),
 											name: "pays",
 											label: "Pays",
 											tooltip: "Pays du site géographique",
@@ -222,7 +222,7 @@ export class Add extends CoreHtmlView {
 											error: true,
 										})}
 										${this.inputText({
-											max: 30,
+											max: this.maxLength("region"),
 											name: "region",
 											label: "Région",
 											tooltip: "Saisissez le code postal sur 2 ou 5 chiffres pour effectuer une recherche",
@@ -244,7 +244,7 @@ export class Add extends CoreHtmlView {
 											error: true,
 										})}
 										<hr>
-																		${this.inputBtn({
+								${this.inputBtn({
 									name: "btnApiRpg",
 									label: "Interroger",
 									disabled: true,
@@ -306,10 +306,8 @@ export class Add extends CoreHtmlView {
     }
 
 	createAddEchantillonHtmlString(name: String) {
-        // Split files for better search and replace
-		const plural = name.toLocaleLowerCase() + 's'
 		const listCols:any = [];
-		const src = dataBase[plural as keyof object].columns;
+		const src = dataBase[this.plural as keyof object].columns;
 		Object.keys(src).filter((e: any) => src[e].list === true).forEach(e => {
 			listCols.push({
 				key: e,
@@ -346,7 +344,7 @@ export class Add extends CoreHtmlView {
 										${this.inputHidden("creation")}
 										<div class="form-row">
 											${this.inputSelect({
-												max: 15,
+												max: this.maxLength("type"),
 												name: "type",
 												tooltip: "Type de prélévement",
 												label: "Type de prélévement",
@@ -355,7 +353,7 @@ export class Add extends CoreHtmlView {
 												error: true
 											},'---- Aucun ----')}                            
 											${this.inputSelect({
-												max: 15,
+												max: this.maxLength("caracterisation"),
 												name: "caracterisation",
 												tooltip: "Caractérisation du prélévement",
 												label: "Caractérisation",
@@ -365,7 +363,7 @@ export class Add extends CoreHtmlView {
 											},'Normal')}
 											${this.inputFormGroupText({
 												size: 2,
-												max: 25,
+												max: this.maxLength("programme"),
 												name: "programme",
 												label: "Nom du programme",
 												tooltip: "Nom du programme",
@@ -377,7 +375,7 @@ export class Add extends CoreHtmlView {
 									<div class="form-row">
 										${this.inputFormGroupText({
 											size: 2,
-											max: 25,
+											max: this.maxLength("site"),
 											name: "site",
 											label: "Site de prélèvement",
 											tooltip: "Site géographique de prélévement",
@@ -387,7 +385,7 @@ export class Add extends CoreHtmlView {
 
 										${this.inputFormGroupText({
 											size: 2,
-											max: 25,
+											max: this.maxLength("responsable"),
 											name: "responsable",
 											tooltip: "Personne responsable du programme / prélèvement",
 											label: "Nom du responsable",
@@ -397,7 +395,7 @@ export class Add extends CoreHtmlView {
 
 									<div class="form-row">
 										${this.inputFormGroupText({
-											max: 16,
+											max: this.maxLength("parent"),
 											name: "parent",
 											tooltip: "Identification de l'échantillon parent",
 											label: "Echantillon Parent",
@@ -408,7 +406,7 @@ export class Add extends CoreHtmlView {
 										})}
 
 										${this.inputFormGroupText({
-											max: 16,
+											max: this.maxLength("identification"),
 											name: "identification",
 											tooltip: "Identification (Généré automatiquement)",
 											label: "Identification",
@@ -416,7 +414,6 @@ export class Add extends CoreHtmlView {
 											readonly: true,
 											canedit: "never",
 										})}
-
 										${this.inputNumber({
 											min: 0,
 											max: 9998,
@@ -425,9 +422,8 @@ export class Add extends CoreHtmlView {
 											label: "N° de dossier",
 											placeholder: "label",
 										})}
-
 										${this.inputSelect({
-											max: 10,
+											max: this.maxLength("etat"),
 											name: "etat",
 											tooltip: "Etat du prélévement",
 											label: "Etat du prélévement",
@@ -489,7 +485,7 @@ export class Add extends CoreHtmlView {
 
 										${this.inputFormGroupText({
 											size: 2,
-											max: 25,
+											max: this.maxLength("condition"),
 											name: "condition",
 											tooltip: "Condition de prélèvement",
 											label: "Condition de prélèvement",
@@ -501,7 +497,7 @@ export class Add extends CoreHtmlView {
 									<div class="form-row">
 											${this.inputFormGroupText({
 												size: 2,
-												max: 75,
+												max: this.maxLength("libre"),
 												name: "libre",
 												tooltip: "Infos libre sélectionnable lors de l'impression des étiquettes",
 												label: "Infos libre",
@@ -511,7 +507,7 @@ export class Add extends CoreHtmlView {
 
 											${this.inputFormGroupText({
 												size: 2,
-												max: 75,
+												max: this.maxLength("analyses"),
 												name: "analyses",
 												tooltip: "Liste des analyses",
 												label: "Analyses",
@@ -535,7 +531,7 @@ export class Add extends CoreHtmlView {
                                 <div class="error-message" id="site-create-error">Le site </div>
 								${this.inputFormGroupText({
 									size: 2,
-									max: 25,
+									max: this.maxLength("nomSite"),
 									name: "nomSite",
 									label: "Nom du site",
 									tooltip: "Nom du site géographique",
@@ -545,14 +541,14 @@ export class Add extends CoreHtmlView {
                             </div>
                             <div class="form-row">
 								${this.inputFormGroupText({
-									max: 25,
+									max: this.maxLength("pays"),
 									name: "pays",
 									label: "Pays",
 									tooltip: "Pays du site géographique",
 									error: true,
 								})}
 								${this.inputFormGroupText({
-									max: 30,
+									max: this.maxLength("region"),
 									name: "region",
 									label: "Région",
 									tooltip: "Saisissez le code postal sur 2 ou 5 chiffres pour effectuer une recherche",

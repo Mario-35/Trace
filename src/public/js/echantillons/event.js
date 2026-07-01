@@ -105,13 +105,6 @@ getElement('numero').addEventListener('change', (event) => {
    updateIdentification();
 });
 
-// Button de demo
-getElement('demos').addEventListener('change', (event) => {
-    event.preventDefault();
-    loadValues(_DEMOS[getElement("demos").value]);
-    refresh();
-});
-
 // Select type
 getElement("type").addEventListener("change", (event) => {
     event.preventDefault();
