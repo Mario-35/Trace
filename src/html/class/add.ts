@@ -353,8 +353,7 @@ export class Add extends CoreHtmlView {
 												placeholder: "label",
 												canedit: "notNull",
 												error: true
-											},'---- Aucun ----')}
-                                
+											},'---- Aucun ----')}                            
 											${this.inputSelect({
 												max: 15,
 												name: "caracterisation",
@@ -364,9 +363,6 @@ export class Add extends CoreHtmlView {
 												canedit: "true",
 												error: true
 											},'Normal')}
-
-
-										<div class="form-group row-2">
 											${this.inputFormGroupText({
 												size: 2,
 												max: 25,
@@ -374,7 +370,6 @@ export class Add extends CoreHtmlView {
 												label: "Nom du programme",
 												tooltip: "Nom du programme",
 												error: true,
-												tooltipFlow: "right",
 											})}
 										</div>
 									</div>
@@ -527,13 +522,6 @@ export class Add extends CoreHtmlView {
 
 									
 									${this.rangeHTML()}
-									
-									<div id="blockDemo" class="form-row">
-										<div class="form-group row-1">                                
-											<label for="demos">Données de démonstration</label>
-											<select class="form-control" id="demos"></select>                
-										</div> 
-									</div>  
 									
 									<div class="btn-group">                   
 										<button tooltip="L'état ne peut être créer ou importer" class="btn btn-aliquote" id="btn-aliquote" disabled>⬅ Créer une aliquote</button>

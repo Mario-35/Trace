@@ -129,7 +129,6 @@ function restoreDatas() {
 }
 // start of echantillon
 async function start() {
-    if (_CONFIGURATION.debug === false) getElement("blockDemo").remove();
     _DATE = new Date();
     // get default sticker config 
     getElement("etiquette").value = JSON.stringify(_CONFIGURATION.etiquette);   
@@ -163,6 +162,8 @@ async function start() {
         }
         // change somes
         showParentClass('etat', 'form-group'); 
+        showParentClass('caracterisation', 'form-group'); 
+        
         hideParentClass( "btnApiRpg", "row-1");
         if (!["Créer", "Importer"].includes(datas.etat)) removeDisabled("btn-aliquote");
         setElementText("btnApiRpg", "MAJ 🌍 RPG");
