@@ -1,0 +1,40 @@
+@import url(https://fonts.googleapis.com/css?family=Changa+One);
+
+.logo {
+  font-family: 'Changa One', cursive;
+  margin: 0;
+  text-align: center;
+}
+
+.logo >div  {
+  display: block;
+  width: 700px;
+  margin: 0px auto;
+  padding: 0 100px 20px 0;
+}
+
+.letter-T, .letter-E {
+  line-height: 400px;
+  font-size: 500px;
+  letter-spacing: -100px;
+  color: var(--bs-teal);
+  text-shadow: 0px 0px 30px rgba(30, 28, 28, 0.6);
+  transition: all 2s;
+}
+.letter-E {
+  color: var(--bs-warning);
+  position: relative;
+}
+
+.logo >div:hover span {
+  margin: 0 70px;
+}
+.logo >div:hover .letter-E:after {
+  border-bottom: 0px solid transparent;
+  left: -100px;
+  width: 0;
+  border-right: 0px solid transparent;
+}
+.logo >div:hover {
+  cursor: pointer;
+}
