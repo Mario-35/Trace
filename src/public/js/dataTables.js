@@ -286,8 +286,7 @@ class JsonTable {
 							buttonEdit.className = "btn btn-success btn-sm";
 							buttonEdit.innerHTML = '<i title="editer toute la selection" class="bi bi-eye" id="seeAll"></i>';
 							th.appendChild(buttonEdit);					
-						}
-	
+						}	
 					break;
 					case "select":
 						const selectSelect = document.createElement("select");

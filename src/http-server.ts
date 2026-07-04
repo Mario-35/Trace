@@ -7,7 +7,7 @@ import path from "path";
 import { logger } from "@infra/logger";
 import { createDB, sql, writeDB } from "./db";;
 import { echantillonsRoutes, excelsRoutes, pagesRoutes, passeportsRoutes, selectionsRoutes, sitesRoutes, rpgsRoutes, campagnesRoutes, evenementsRoutes } from "./app";
-import { configRoutes } from "@app/configuration/configRoutes";
+import { configRoutes } from "@app/configuration/routes";
 
 export default class HttpServer {
   private app: Express;

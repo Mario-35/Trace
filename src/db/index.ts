@@ -1,7 +1,7 @@
 /**
  * DB index
  *
- * @copyright 2020-present Inrae
+ * @copyright 2026-present Inrae
  * @author mario.adam@inrae.fr
  *
  */
@@ -64,11 +64,10 @@ export async function isDbExists(): Promise<boolean> {
 export {executeSql} from "./executeSql";
 export {executeSqlValues} from "./executeSqlValues";
 export {createDB} from "./createDB";
-export {createDetaultDatas} from "./createDetaultDatas";
 export {createPgValues} from "./createPgValues";
 export {createPgUpdates} from "./createPgUpdates";
 export {createPgColumns} from "./createPgColumns";
-export {createListColumns} from "./createListColumns";
+export {getListColumns} from "./getListColumns";
 export {createPgInsert} from "./createPgInsert";
 export {createPgUpdate} from "./createPgUpdate";
 export {writeDB} from "./writeDB";

@@ -1,12 +1,21 @@
+/**
+ * Database structure
+ *
+ * @copyright 2026-present Inrae
+ * @author mario.adam@inrae.fr
+ *
+ */
+
 import { Idb, Icolumn } from "../types";
 
+// create index column maker
 const index: Icolumn = {
                 type: "index" ,
                 title: "Index",
                 create: "int2 GENERATED ALWAYS AS IDENTITY( INCREMENT BY 1 MINVALUE 1 MAXVALUE 32767 START 1 CACHE 1 NO CYCLE) NOT NULL",
                 list : false
             } 
-            
+// database object structrure        
 export const dataBase: Idb = {
   "configuration": {
     save: true,

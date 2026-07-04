@@ -1,3 +1,11 @@
+/**
+ * Execute SQL(s) values
+ *
+ * @copyright 2026-present Inrae
+ * @author mario.adam@inrae.fr
+ *
+ */
+
 import { sql } from ".";
 
 
@@ -34,5 +42,6 @@ const executeSqlMultiValues = async (queries: string[]): Promise<object> => {
             });
     });
 };
+
 export const executeSqlValues = async (query: string | string[]): Promise<object> =>
     typeof query === "string" ? executeSqlOneValues(query) : executeSqlMultiValues(query);

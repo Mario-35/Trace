@@ -1,7 +1,7 @@
 /**
  * HTML Views First for API.
  *
- * @copyright 2020-present Inrae
+ * @copyright 2026-present Inrae
  * @author mario.adam@inrae.fr
  *
  */

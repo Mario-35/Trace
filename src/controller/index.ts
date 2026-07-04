@@ -1,7 +1,7 @@
 /**
  * Controllers
  *
- * @copyright 2020-present Inrae
+ * @copyright 2026-present Inrae
  * @author mario.adam@inrae.fr
  *
  */
@@ -25,10 +25,6 @@ export async function readId(table: string, id: number) {
 
 export async function readIds(table: string, ids: number[]) {
       return await executeSql(`SELECT * FROM "${table}" WHERE id IN (${ ids.join() })`);
-};
-
-export async function readIdentifications(table: string, ientifications: string[]) {
-      return await executeSql(`SELECT * FROM "${table}" WHERE id IN ('${ ientifications.join("','") }')`);
 };
 
 export function verifyBody(values: any) {

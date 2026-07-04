@@ -1,8 +1,17 @@
+/**
+ * Create list values with postgresSql syntax
+ *
+ * @copyright 2026-present Inrae
+ * @author mario.adam@inrae.fr
+ *
+ */
+
 import { getColumns } from ".";
 import { escapeSimpleQuotes } from "../helpers/escapeSimpleQuotes";
 import { toTitleCase } from "../helpers/toTitleCase";
 import { dataBase } from "./base";
 
+// Create list values with postgresSql syntax
 export function createPgValues(tableName: string, values: any, columns?: string[]) {
       const results: string[] = [];
       (columns || getColumns(tableName)).forEach(column => {
@@ -15,16 +24,10 @@ export function createPgValues(tableName: string, values: any, columns?: string[
                               break;  
                         case "json":
                               results.push(`${JSON.stringify(values[column])}`);
-                              break;                                                
-                        // case "text":
+                              break;
                         case "text":
                               results.push(escapeSimpleQuotes(toTitleCase(values[column])));
-                              break;
-                        //       if (dataBase[tableName].columns[column].create.includes('varchar')) {
-                        //             const max = dataBase[tableName].columns[column].create.split('(')[1].split(')')[0];
-                        //             results.push(escapeSimpleQuotes(values[column]).substring(0,+max));
-                        //       } else results.push(escapeSimpleQuotes(values[column]));
-                        //       break;                                                
+                              break;                                              
                         default:
                               results.push(escapeSimpleQuotes(values[column]));
                   }

@@ -1,3 +1,11 @@
+/**
+ * Create UPDATE statement with postgresSql syntax
+ *
+ * @copyright 2026-present Inrae
+ * @author mario.adam@inrae.fr
+ *
+ */
+
 import { getColumns } from ".";
 import { dataBase } from "./base";
 

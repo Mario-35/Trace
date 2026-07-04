@@ -1,7 +1,7 @@
 /**
  * Sites controller
  *
- * @copyright 2020-present Inrae
+ * @copyright 2026-present Inrae
  * @author mario.adam@inrae.fr
  *
  */
@@ -10,6 +10,7 @@ import { readId } from "../../controller";
 import { createPgInsert, createPgUpdate, executeSql, sql } from "../../db";
 import { dataBase } from "../../db/base";
 
+// add one site
 export async function addSite(values: any) {
       return new Promise(async function (resolve, reject) {
             return await executeSql(`${createPgInsert(dataBase.sites.name, values)} RETURNING id`)
@@ -22,6 +23,7 @@ export async function addSite(values: any) {
       });
 };
 
+// update one site
 export async function updateSite(values: any, id: number) {
       return new Promise(async function (resolve, reject) {
             return await executeSql(`${createPgUpdate(dataBase.sites.name, values)} WHERE id = ${ id }`)

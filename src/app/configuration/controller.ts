@@ -1,7 +1,7 @@
 /**
  * Configuration controller
  *
- * @copyright 2020-present Inrae
+ * @copyright 2026-present Inrae
  * @author mario.adam@inrae.fr
  *
  */
@@ -15,7 +15,7 @@ import { readId } from "../../controller";
 
 // Read configuration
 export async function readConfig() {
-      // return await executeSql(`SELECT * FROM configuration WHERE id = 1`);
+      return await executeSql(`SELECT * FROM configuration WHERE id = 1`);
 };
 
 // Create configuration
@@ -25,6 +25,7 @@ export function createConfig(configuration?: any) {
       configuration["stickerElements"] = JSON.parse(`{"echantillon": "1902202617320002", "dossier":"0429", "numero":"0002", "prelevement":"2026-03-04", "peremption":"2031-03-04", "passeport":"2026-0003", "dossier-numero":"0429-0002", ${Object.keys(dataBase.echantillons.columns).filter(e => dataBase.echantillons.columns[e].etiquette).map(e => `"${e}" : "${dataBase.echantillons.columns[e].etiquette}"`)}}`);
       return configuration;
 }
+
 // Write configuration file
 function writeConfigurationFile(configuration: any) {
       configuration["excelColumns"] = Object.keys(dataBase.echantillons.columns).filter(e => dataBase.echantillons.columns[e].excel);
@@ -43,7 +44,7 @@ function writeConfigurationFile(configuration: any) {
       );
 }
 
-// Write configuration file
+// Save configuration
 export async function writeConfig() {
       readId(dataBase.configuration.name, 1)
       .then((configuration: any) => {
@@ -53,7 +54,7 @@ export async function writeConfig() {
       });
 }
 
-// Save configuration
+// Save configuration and write File
 export async function saveConfig(values: any) {
       return new Promise(async function (resolve, reject) {
             return await executeSql(`${createPgUpdate(dataBase.configuration.name, values)} WHERE id = 1`)

@@ -1,3 +1,11 @@
+/**
+ * Create column list  with postgresSql syntax
+ *
+ * @copyright 2026-present Inrae
+ * @author mario.adam@inrae.fr
+ *
+ */
+
 import { getColumns } from ".";
 
 export function createPgColumns(tableName: string, values: any) {

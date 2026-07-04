@@ -1,18 +1,18 @@
 /**
  * App index
  *
- * @copyright 2020-present Inrae
+ * @copyright 2026-present Inrae
  * @author mario.adam@inrae.fr
  *
  */
 
-export {echantillonsRoutes} from "./echantillons/echantillonsRoutes";
-export {passeportsRoutes} from "./passeports/passeportsRoutes";
-export {sitesRoutes} from "./sites/sitesRoutes";
-export {evenementsRoutes} from "./evenements/evenementsRoutes";
-export {pagesRoutes} from "./pages/pagesRoutes";
-export {configRoutes} from "./configuration/configRoutes";
-export {excelsRoutes} from "./excels/excelsRoutes";
-export {selectionsRoutes} from "./selections/selectionsRoutes";
-export {rpgsRoutes} from "./rpg/rpgsRoutes";
-export {campagnesRoutes} from "./campagnes/campagnesRoutes";
+export {echantillonsRoutes} from "./echantillons/routes";
+export {passeportsRoutes} from "./passeports/routes";
+export {sitesRoutes} from "./sites/routes";
+export {evenementsRoutes} from "./evenements/routes";
+export {pagesRoutes} from "./pages/routes";
+export {configRoutes} from "./configuration/routes";
+export {excelsRoutes} from "./excels/routes";
+export {selectionsRoutes} from "./selections/routes";
+export {rpgsRoutes} from "./rpg/routes";
+export {campagnesRoutes} from "./campagnes/routes";

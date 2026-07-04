@@ -1,7 +1,7 @@
 /**
- * Echantillons controller
+ * Sample controller
  *
- * @copyright 2020-present Inrae
+ * @copyright 2026-present Inrae
  * @author mario.adam@inrae.fr
  *
  */
@@ -11,6 +11,7 @@ import { createPgUpdates, createPgValues, executeSql, sql } from "../../db";
 import { dataBase } from "../../db/base";
 import { asyncForEach } from "../../helpers/asyncForEach";
 
+// add echantillon(s)
 export async function addEchantillon(values: any) {
       console.log(values);
       console.log(values["nombre" as keyof object]);
@@ -30,7 +31,7 @@ export async function addEchantillon(values: any) {
       let nb = values["nombre" as keyof object]; 
       const codesIdentification:string[] = [];
       // create start string for identification
-      tmpCode =  values["identification" as keyof object].slice(0,12);      
+      tmpCode =  values["identification" as keyof object].slice(0,12);
       
       // alicotage insert
       if (values["excelaliquote"]) values["excel"] = values["excelaliquote"];
@@ -123,7 +124,6 @@ export async function addEchantillon(values: any) {
             });
       });
 };
-
 export async function updateEchantillon(values: any, id: number) {
       return new Promise(async function (resolve, reject) {
             return await executeSql(`UPDATE ${dataBase.echantillons.name} SET ${createPgUpdates(dataBase.echantillons.name, values)} WHERE id = ${ id }`)

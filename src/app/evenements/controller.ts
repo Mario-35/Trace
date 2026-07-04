@@ -1,7 +1,15 @@
+/**
+ * Events controller
+ *
+ * @copyright 2026-present Inrae
+ * @author mario.adam@inrae.fr
+ *
+ */
 
 import { createPgInsert, createPgUpdate, executeSql, sql } from "../../db";
 import { dataBase } from "../../db/base";
 
+// Create events
 export async function addEvenement(values: any) {
       const valuesCopy = {... values};
       valuesCopy["date"] = `${valuesCopy["date"]} ${valuesCopy["time"]}`;
@@ -33,6 +41,7 @@ export async function addEvenement(values: any) {
       });
 };
 
+// Update event
 export async function updateEvenement(values: any, id: number) {
       return new Promise(async function (resolve, reject) {
             return await executeSql(`${createPgUpdate(dataBase.evenements.name, values)} WHERE id = ${ id }`)
@@ -45,4 +54,6 @@ export async function updateEvenement(values: any, id: number) {
             });
       });
 };
+
+// no delete event allowed
 

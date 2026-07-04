@@ -1,3 +1,12 @@
+/**
+ * HTML Element Interface
+ *
+ * @copyright 2026-present Inrae
+ * @review 29-06-2026
+ * @author mario.adam@inrae.fr
+ *
+ */
+
 export interface IHTMLOptions {
     name: String;
     label: String;

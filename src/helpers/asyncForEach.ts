@@ -1,7 +1,7 @@
 /**
  * asyncForEach.
  *
- * @copyright 2020-present Inrae
+ * @copyright 2026-present Inrae
  * @author mario.adam@inrae.fr
  *
  * https://gist.github.com/Atinux/fd2bcce63e44a7d3addddc166ce93fb2

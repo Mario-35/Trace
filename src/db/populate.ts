@@ -1,3 +1,10 @@
+/**
+ * Populate tables
+ *
+ * @copyright 2026-present Inrae
+ * @author mario.adam@inrae.fr
+ *
+ */
 
 import path from 'path';
 import { asyncForEach } from "../helpers/asyncForEach";
@@ -6,6 +13,7 @@ import { executeSql } from "./executeSql";
 import { readFileSync } from 'fs';
 import { createPgColumns, createPgValues } from '.';
 
+// populate tables with json found in import folder
 export async function populate() {
     asyncForEach(Object.keys(dataBase).filter(e => e !== "fichiers"), async (tableName: string) => {
         if (dataBase[tableName].save === true) {
