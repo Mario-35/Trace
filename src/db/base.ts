@@ -399,7 +399,7 @@ export const dataBase: Idb = {
           type: "number",
           title: "Passeport",
           create: "int2 NULL", 
-          list: false
+          list: true
         },
         "cultures": {
           type: "json",

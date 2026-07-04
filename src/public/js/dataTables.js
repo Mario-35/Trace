@@ -272,7 +272,8 @@ class JsonTable {
 
 		this.columns.filter(e => e.key.toUpperCase() !== 'ID').forEach((column) => {
 			if(column.searchType !== "hidden") {
-				const th = document.createElement("th");
+				const th = document.createElement("th");				
+				th.style.cssText = 'font-size: 12px;';
 				const label = document.createElement("label");
 				label.innerHTML = column.key;
 				th.appendChild(label);
@@ -290,6 +291,7 @@ class JsonTable {
 					break;
 					case "select":
 						const selectSelect = document.createElement("select");
+						selectSelect.style.cssText = 'font-size: 14px;';
 						selectSelect.className = "form-control filter";
 						selectSelect.innerHTML = `<option value="">Tous</option>`;
 						const uniqueValues = [...new Set(this.data.map((row) => row[column.key]))];
@@ -331,6 +333,7 @@ class JsonTable {
 						break;
 					case "boolean":
 						const selectBoolean = document.createElement("select");
+						selectBoolean.style.cssText = 'font-size: 14px;';
 						selectBoolean.className = "form-control filter";
 						selectBoolean.innerHTML = `<option value="">Tous</option><option value="true">✔️️</option> <option value="false">❌</option>`;
 						if (this.localSave[getElementText("nameType")] && this.localSave[getElementText("nameType")][column.key])
@@ -346,6 +349,8 @@ class JsonTable {
 					default:
 						const input = document.createElement("input");
 						input.type = "text";
+						input.style.cssText = 'font-size: 14px;';
+
 						if (this.localSave[getElementText("nameType")] && this.localSave[getElementText("nameType")][column.key])
 							input.value = this.localSave[getElementText("nameType")][column.key];
 						input.className = "form-control filter";
@@ -493,6 +498,7 @@ class JsonTable {
 	};
 
 	filterSelected(value) {
+		
 		value = String(value);
 		if (value === "") {
 			this.filteredData = [...this.data];
@@ -647,17 +653,26 @@ class JsonTable {
 				this.filteredData = this.data.filter((row) =>
 					Object.values(row).some((field) => String(field).toLowerCase().includes(this.localSave[getElementText("nameType")]["global"]))
 				);
-				// setElementValue(globalSearch, this.localSave[getElementText("nameType")]["global"]);
 			} else if (this.localSave && Object.keys(this.localSave).length > 0) {
+				
 				this.filteredData = this.data;
 				if (this.localSave[getElementText("nameType")]) 
-					Object.keys(this.localSave[getElementText("nameType")]).forEach(key => {			
-						if (this.localSave[getElementText("nameType")][key] !== "")
-							this.filteredData = this.filteredData.filter(row => typeof row[key] === 'string'
-								? row[key].toLowerCase().includes(this.localSave[getElementText("nameType")][key].toLowerCase()) 
-								: typeof row[key] === 'boolean' 
-									 ? row[key] === this.localSave[getElementText("nameType")][key]
-									 : this.localSave[getElementText("nameType")][key].includes(row[key]));
+					Object.keys(this.localSave[getElementText("nameType")]).forEach(key => {				
+						if (this.localSave[getElementText("nameType")][key] !== "") 
+							this.filteredData = this.filteredData.filter(row => {
+								switch (typeof row[key] ) {
+									case 'string':								
+										return row[key].toLowerCase().includes(this.localSave[getElementText("nameType")][key].toLowerCase());
+									case 'boolean':								
+										return row[key] === this.localSave[getElementText("nameType")][key]
+									case 'number':								
+										return +row[key] == this.localSave[getElementText("nameType")][key]	
+									case 'object':								
+										return JSON.stringify(row[key]).toLowerCase().includes(this.localSave[getElementText("nameType")][key].toLowerCase());								
+									default:
+										return this.localSave[getElementText("nameType")][key].includes(row[key])
+								}
+						});
 					});
 			}
 			// Re-render table rows and pagination after filtering
