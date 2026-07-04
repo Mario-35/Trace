@@ -369,7 +369,6 @@ export class Add extends CoreHtmlView {
 												tooltip: "Nom du programme",
 												error: true,
 											})}
-										</div>
 									</div>
 
 									<div class="form-row">
