@@ -6,70 +6,71 @@
  *
  */
 
-import postgres from "postgres";
-import { dataBase } from "./base";
-import { executeSql } from "./executeSql";
-const pwd = process.env.NODE_ENV === 'production' ? 'postgres' : "postgres";
+import postgres from "postgres"
+import { dataBase } from "./base"
+import { executeSql } from "./executeSql"
+const pwd = process.env.NODE_ENV === "production" ? "postgres" : "postgres"
 
-export const sql = postgres('postgres://postgres:' + pwd + '@localhost:5432/trace', {
-    host                : 'localhost',   // Postgres ip address[s] or domain name[s]
-    port                : 5432,          // Postgres server port[s]
-    database            : 'trace',         // Name of database to connect to
-    username            : 'postgres',    // Username of database user
-    password            :  pwd,     // Password of database user
-    debug               :  true,
-    max                 : 2000,
-    connection          : { application_name: `Echantillons` }, 
-    types               : {
-                            date: {
-                                to: 1184,
-                                from: [1082, 1083, 1114, 1184],
-                                serialize: (x: string) => x, // TypeScript to PostgreSQL
-                                parse: (x: string) => x, // PostgreSQL to TypeScript
-                            },
-                        },
-});
+export const sql = postgres("postgres://postgres:" + pwd + "@localhost:5432/trace", {
+  host: "localhost", // Postgres ip address[s] or domain name[s]
+  port: 5432, // Postgres server port[s]
+  database: "trace", // Name of database to connect to
+  username: "postgres", // Username of database user
+  password: pwd, // Password of database user
+  debug: true,
+  max: 2000,
+  connection: { application_name: `Echantillons` },
+  types: {
+    date: {
+      to: 1184,
+      from: [1082, 1083, 1114, 1184],
+      serialize: (x: string) => x, // TypeScript to PostgreSQL
+      parse: (x: string) => x // PostgreSQL to TypeScript
+    }
+  }
+})
 
-export function admin(password: string) {    
-    return postgres(`postgres://postgres:${password}@localhost:5432/postgres`, {
-        host                : 'localhost',   // Postgres ip address[s] or domain name[s]
-        port                : 5432,          // Postgres server port[s]
-        database            : 'postgres',         // Name of database to connect to
-        username            : 'postgres',    // Username of database user
-        password            : password,     // Password of database user
-        debug               :  true,
-        max                 : 2000,
-        connection          : { application_name: `Trace` }
-    });
+export function admin(password: string) {
+  return postgres(`postgres://postgres:${password}@localhost:5432/postgres`, {
+    host: "localhost", // Postgres ip address[s] or domain name[s]
+    port: 5432, // Postgres server port[s]
+    database: "postgres", // Name of database to connect to
+    username: "postgres", // Username of database user
+    password: password, // Password of database user
+    debug: true,
+    max: 2000,
+    connection: { application_name: `Trace` }
+  })
 }
 
-export const getColumns = (tableName: string) => Object.keys(dataBase[tableName].columns).filter(e => e != "id");
+export const getColumns = (tableName: string) =>
+  Object.keys(dataBase[tableName].columns).filter((e) => e != "id")
 
 export function addPartiton(name: string) {
-    executeSql(`CREATE TABLE IF NOT EXISTS "echantillon_${name.toLowerCase()}" PARTITION OF echantillons FOR VALUES IN ('${name}');`);
+  executeSql(
+    `CREATE TABLE IF NOT EXISTS "echantillon_${name.toLowerCase()}" PARTITION OF echantillons FOR VALUES IN ('${name}');`
+  )
 }
 
 export async function isDbExists(): Promise<boolean> {
-      return  await sql
-            .unsafe(`SELECT 1+1 AS result`)
-            .then(() => {
-                  return true;
-            })
-            .catch((error: Error) => {
-                  console.error(error);
-                  return false;
-            });
+  return await sql
+    .unsafe(`SELECT 1+1 AS result`)
+    .then(() => {
+      return true
+    })
+    .catch((error: Error) => {
+      console.error(error)
+      return false
+    })
 }
 
-export {executeSql} from "./executeSql";
-export {executeSqlValues} from "./executeSqlValues";
-export {createDB} from "./createDB";
-export {createPgValues} from "./createPgValues";
-export {createPgUpdates} from "./createPgUpdates";
-export {createPgColumns} from "./createPgColumns";
-export {getListColumns} from "./getListColumns";
-export {createPgInsert} from "./createPgInsert";
-export {createPgUpdate} from "./createPgUpdate";
-export {writeDB} from "./writeDB";
-
-
+export { executeSql } from "./executeSql"
+export { executeSqlValues } from "./executeSqlValues"
+export { createDB } from "./createDB"
+export { createPgValues } from "./createPgValues"
+export { createPgUpdates } from "./createPgUpdates"
+export { createPgColumns } from "./createPgColumns"
+export { getListColumns } from "./getListColumns"
+export { createPgInsert } from "./createPgInsert"
+export { createPgUpdate } from "./createPgUpdate"
+export { writeDB } from "./writeDB"

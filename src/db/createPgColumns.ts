@@ -6,8 +6,11 @@
  *
  */
 
-import { getColumns } from ".";
+import { getColumns } from "."
 
 export function createPgColumns(tableName: string, values: any) {
-      return getColumns(tableName).map(column => values[column]  ? `"${column}"` : '').filter(e => e !== "").join();
+  return getColumns(tableName)
+    .map((column) => (values[column] ? `"${column}"` : ""))
+    .filter((e) => e !== "")
+    .join()
 }

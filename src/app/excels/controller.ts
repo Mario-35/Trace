@@ -6,11 +6,13 @@
  *
  */
 
-import { executeSql } from "../../db";
-import { dataBase } from "../../db/base";
-import { escapeSimpleQuotes } from "../../helpers/escapeSimpleQuotes";
+import { executeSql } from "../../db"
+import { dataBase } from "../../db/base"
+import { escapeSimpleQuotes } from "../../helpers/escapeSimpleQuotes"
 
 // add excels import datas
-export async function addExcel(values: any) { 
-      return await executeSql(`INSERT INTO ${dataBase.excels.name} (datas) VALUES ('${escapeSimpleQuotes(JSON.stringify(values))}') RETURNING id`);
+export async function addExcel(values: any) {
+  return await executeSql(
+    `INSERT INTO ${dataBase.excels.name} (datas) VALUES ('${escapeSimpleQuotes(JSON.stringify(values))}') RETURNING id`
+  )
 }

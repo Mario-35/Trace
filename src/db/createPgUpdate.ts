@@ -6,8 +6,8 @@
  *
  */
 
-import { createPgUpdates } from ".";
+import { createPgUpdates } from "."
 
 export function createPgUpdate(tableName: string, values: any) {
-      return `UPDATE ${tableName} SET ${createPgUpdates(tableName, values)}`;
+  return `UPDATE ${tableName} SET ${createPgUpdates(tableName, values)}`
 }

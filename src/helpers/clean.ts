@@ -1,3 +1,11 @@
+/**
+ * Clean DB routes
+ *
+ * @copyright 2026-present Inrae
+ * @author mario.adam@inrae.fr
+ *
+ */
+
 import { executeSql } from '../db';
 
 export async function clean() {

@@ -6,8 +6,8 @@
  *
  */
 
-import { createPgColumns, createPgValues, getColumns } from ".";
+import { createPgColumns, createPgValues, getColumns } from "."
 
 export function createPgInsert(tableName: string, values: any) {
-      return `INSERT INTO ${tableName} (${createPgColumns(tableName, values)}) VALUES (${createPgValues(tableName, values)})`;
+  return `INSERT INTO ${tableName} (${createPgColumns(tableName, values)}) VALUES (${createPgValues(tableName, values)})`
 }

@@ -6,8 +6,8 @@
  *
  */
 
-import fs from "fs";
-import path from "path";
+import fs from "fs"
+import path from "path"
 
 /**
  *
@@ -17,11 +17,11 @@ import path from "path";
  */
 
 export function listFiles(source: string, extension: string): string[] {
-    const result: string[] = [];
-    fs.readdirSync(path.join(source))
-        .filter((e: string) => e.endsWith(`.${extension}`))
-        .forEach((file) => {
-            result.push(file);
-        });
-    return result;
+  const result: string[] = []
+  fs.readdirSync(path.join(source))
+    .filter((e: string) => e.endsWith(`.${extension}`))
+    .forEach((file) => {
+      result.push(file)
+    })
+  return result
 }

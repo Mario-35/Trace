@@ -1,18 +1,25 @@
-var fs = require('fs');
-var path = require('path');
+/**
+ * Download file tool
+ *
+ * @copyright 2026-present Inrae
+ * @author mario.adam@inrae.fr
+ *
+ */
 
-var AdmZip = require("adm-zip");
+import fs from "fs"
+import path from "path"
 
+// no type declarations available for adm-zip
+const AdmZip = require("adm-zip")
 
 export function download() {
-    const to_zip = fs.readdirSync(path.resolve(__dirname, "../import"));
-    // creating archives
-    const zp = new AdmZip();
+  const importDir = path.resolve(__dirname, "../import")
+  const files = fs.readdirSync(importDir)
 
-    for (let k = 0; k < to_zip.length; k++) {
-        zp.addLocalFile(path.resolve(__dirname, "../import") + "/" + to_zip[k])
-    }
-    // toBuffer() is used to read the data and save it
-    // for downloading process!
-    return zp.toBuffer();
-};
+  const zip = new AdmZip()
+  for (const file of files) {
+    zip.addLocalFile(path.join(importDir, file))
+  }
+
+  return zip.toBuffer()
+}
