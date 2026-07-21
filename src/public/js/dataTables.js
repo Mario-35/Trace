@@ -43,17 +43,19 @@ class JsonTable {
 	}
 
 	removeToFilter(key) {
-		if(this.localSave[getElementText("nameType")])
-			delete this.localSave[getElementText("nameType")][key];
+		const nameType = getElementText("nameType");
+		if(this.localSave[nameType])
+			delete this.localSave[nameType][key];
 	}
 
 	addToFilter(key, value) {
-		if(!this.localSave[getElementText("nameType")])
-			this.localSave[getElementText("nameType")] = {};
-		
+		const nameType = getElementText("nameType");
+		if(!this.localSave[nameType])
+			this.localSave[nameType] = {};
+
 		if (String(value).trim() === "")
-			delete this.localSave[getElementText("nameType")][key];
-		else this.localSave[getElementText("nameType")][key] = value;
+			delete this.localSave[nameType][key];
+		else this.localSave[nameType][key] = value;
 		localStorage.setItem('filters', JSON.stringify(this.localSave));
 
 	}
@@ -261,6 +263,7 @@ class JsonTable {
 	};
 
 	renderHeader() {
+		const nameType = getElementText("nameType");
 		const tableHeader = this.container.querySelector("thead");
 		tableHeader.innerHTML = "<tr></tr>";
 		const headerRow = tableHeader.querySelector("tr");
@@ -288,7 +291,7 @@ class JsonTable {
 							th.appendChild(buttonEdit);					
 						}	
 					break;
-					case "select":
+					case "select": {
 						const selectSelect = document.createElement("select");
 						selectSelect.style.cssText = 'font-size: 14px;';
 						selectSelect.className = "form-control filter";
@@ -303,9 +306,10 @@ class JsonTable {
 						selectSelect.addEventListener("change", (e) =>
 							this.filterDatas()
 						);
-						th.appendChild(selectSelect);					
+						th.appendChild(selectSelect);
 						break;
-					case "excel":
+					}
+					case "excel": {
 						th.setAttribute("style", this.headerAttribute());
 						const selectExcel = document.createElement("select");
 						selectExcel.className = "form-control";
@@ -318,49 +322,52 @@ class JsonTable {
 							selectExcel.appendChild(option);
 						});
 						th.appendChild(selectExcel);
-	
+
 						selectExcel.addEventListener("change", async (e) => {
 							if (e.target.value.split('|')[1] === "site") {
 								await this.site(e.target);
 							}
-							if (e.target.value) 
+							if (e.target.value)
 								e.target.classList.add("something");
-							else 
+							else
 								e.target.classList.remove("something");
 							this.filterBlankColumn();
 						});
 						break;
-					case "boolean":
+					}
+					case "boolean": {
 						const selectBoolean = document.createElement("select");
 						selectBoolean.style.cssText = 'font-size: 14px;';
 						selectBoolean.className = "form-control filter";
 						selectBoolean.innerHTML = `<option value="">Tous</option><option value="true">✔️️</option> <option value="false">❌</option>`;
-						if (this.localSave[getElementText("nameType")] && this.localSave[getElementText("nameType")][column.key])
-							selectBoolean.value = this.localSave[getElementText("nameType")][column.key];
+						if (this.localSave[nameType] && this.localSave[nameType][column.key])
+							selectBoolean.value = this.localSave[nameType][column.key];
 						selectBoolean.addEventListener("change", (e) => {
 							const tmp = e.target.value === "true" ? true : e.target.value === "false" ? false : '';
 							if (typeof tmp === "boolean") this.addToFilter(column.key, tmp); else this.removeToFilter(column.key);
 							this.filterDatas();
 						}
 						);
-						th.appendChild(selectBoolean);					
-						break;				
-					default:
+						th.appendChild(selectBoolean);
+						break;
+					}
+					default: {
 						const input = document.createElement("input");
 						input.type = "text";
 						input.style.cssText = 'font-size: 14px;';
 
-						if (this.localSave[getElementText("nameType")] && this.localSave[getElementText("nameType")][column.key])
-							input.value = this.localSave[getElementText("nameType")][column.key];
+						if (this.localSave[nameType] && this.localSave[nameType][column.key])
+							input.value = this.localSave[nameType][column.key];
 						input.className = "form-control filter";
 						input.placeholder = `${column.key}`;
 						input.addEventListener("input", (e) => {
 							this.addToFilter(column.key, e.target.value);
 							this.filterDatas();
 						});
-						
-						th.appendChild(input);					
+
+						th.appendChild(input);
 						break;
+					}
 				}
 				headerRow.appendChild(th);
 			}
@@ -429,7 +436,7 @@ class JsonTable {
 				`<td><input class="select-btn" type="checkbox" ${String(row.selected) == 'true' ? 'checked' : ''} data-row="${row.id}"></td>`
 			);
 			Object(this.columns.filter(e => e.key.toUpperCase() !== 'ID' && e.searchType !== "hidden")).forEach((column) => {	
-				const key = column.key;	;
+				const key = column.key;
 				if (!["selected"].includes(key)) {
 					const td = document.createElement("td");
 					const tmp = this.columns.find((col) => col.key === key);
@@ -475,9 +482,8 @@ class JsonTable {
 			.forEach((btn) =>  
 				btn.addEventListener("click", (e) => {
 					const id = +e.target.getAttribute("data-row");
-					this.filteredData = this.data.filter((row) => row.id == id )[0].selected = e.target.checked
-
-				} 
+					this.data.filter((row) => row.id == id )[0].selected = e.target.checked
+				}
 				)
 			);
 		} 
@@ -647,29 +653,30 @@ class JsonTable {
 		if (value && value.trim() !== "")
 			this.addToFilter("global", value.toLowerCase());
 
-		if (getElementText("nameType")) {			
-			if (this.localSave[getElementText("nameType")] && this.localSave[getElementText("nameType")]["global"]) {
+		const nameType = getElementText("nameType");
+		if (nameType) {
+			if (this.localSave[nameType] && this.localSave[nameType]["global"]) {
 				this.filteredData = this.data.filter((row) =>
-					Object.values(row).some((field) => String(field).toLowerCase().includes(this.localSave[getElementText("nameType")]["global"]))
+					Object.values(row).some((field) => String(field).toLowerCase().includes(this.localSave[nameType]["global"]))
 				);
 			} else if (this.localSave && Object.keys(this.localSave).length > 0) {
-				
+
 				this.filteredData = this.data;
-				if (this.localSave[getElementText("nameType")]) 
-					Object.keys(this.localSave[getElementText("nameType")]).forEach(key => {				
-						if (this.localSave[getElementText("nameType")][key] !== "") 
+				if (this.localSave[nameType])
+					Object.keys(this.localSave[nameType]).forEach(key => {
+						if (this.localSave[nameType][key] !== "")
 							this.filteredData = this.filteredData.filter(row => {
 								switch (typeof row[key] ) {
-									case 'string':								
-										return row[key].toLowerCase().includes(this.localSave[getElementText("nameType")][key].toLowerCase());
-									case 'boolean':								
-										return row[key] === this.localSave[getElementText("nameType")][key]
-									case 'number':								
-										return +row[key] == this.localSave[getElementText("nameType")][key]	
-									case 'object':								
-										return JSON.stringify(row[key]).toLowerCase().includes(this.localSave[getElementText("nameType")][key].toLowerCase());								
+									case 'string':
+										return row[key].toLowerCase().includes(this.localSave[nameType][key].toLowerCase());
+									case 'boolean':
+										return row[key] === this.localSave[nameType][key]
+									case 'number':
+										return +row[key] == this.localSave[nameType][key]
+									case 'object':
+										return JSON.stringify(row[key]).toLowerCase().includes(this.localSave[nameType][key].toLowerCase());
 									default:
-										return this.localSave[getElementText("nameType")][key].includes(row[key])
+										return this.localSave[nameType][key].includes(row[key])
 								}
 						});
 					});

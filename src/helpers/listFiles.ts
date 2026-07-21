@@ -17,11 +17,5 @@ import path from "path"
  */
 
 export function listFiles(source: string, extension: string): string[] {
-  const result: string[] = []
-  fs.readdirSync(path.join(source))
-    .filter((e: string) => e.endsWith(`.${extension}`))
-    .forEach((file) => {
-      result.push(file)
-    })
-  return result
+  return fs.readdirSync(path.join(source)).filter((file) => file.endsWith(`.${extension}`))
 }

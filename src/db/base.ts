@@ -284,7 +284,7 @@ export const dataBase: Idb = {
       caracterisation: {
         type: "text",
         title: "caractérisation",
-        create: "varchar(25) NOT NULL",
+        create: "varchar(25) NOT NULL default 'Normal'",
         list: false,
         etiquette: "Normal"
       },

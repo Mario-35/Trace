@@ -126,7 +126,7 @@ pagesRoutes.get("/clean", async (req, res) => {
 // get programme infos
 pagesRoutes.get("/programme", async (req, res) => {
   let sql = undefined
-  const list = "programme, pedagogique, responsable, dossier, type, etiquette"
+  const list = "programme, caracterisation, responsable, dossier, type, etiquette"
   if (req.url.includes("?nom="))
     sql = `SELECT ${list}, COALESCE( MAX( SUBSTRING ( identification FROM 13 FOR 4 ):: int ), 0) as numero FROM "echantillons" WHERE UPPER(programme) = ${decodeURI(req.url.split("?nom=")[1])} GROUP BY ${list} LIMIT 1`
   else if (req.url.includes("?dossier="))

@@ -8,6 +8,7 @@
 
 import { executeSql, sql } from "../db";
 import { dataBase } from "../db/base";
+import { escapeSimpleQuotes } from "../helpers/escapeSimpleQuotes";
 
 
 export async function readAll(table: string) {
@@ -16,7 +17,7 @@ export async function readAll(table: string) {
 
 export async function readAlSearch(table: string, search: string) {
        const tableColumns = Object.keys(dataBase[table as keyof object]["columns" as keyof object]);
-      return await executeSql(`SELECT * FROM "${table}" WHERE ${tableColumns.map(e => `"${e}" LIKE '%${search}%'`).join(" OR ")}`);
+      return await executeSql(`SELECT * FROM "${table}" WHERE ${tableColumns.map(e => `"${e}" LIKE '%${escapeSimpleQuotes(search)}%'`).join(" OR ")}`);
 };
 
 export async function readId(table: string, id: number) {

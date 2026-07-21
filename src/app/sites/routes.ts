@@ -12,6 +12,7 @@ import { addSite, updateSite } from "./controller"
 import { executeSql, executeSqlValues } from "../../db"
 import { asyncForEach } from "../../helpers/asyncForEach"
 import { dataBase } from "../../db/base"
+import { escapeSimpleQuotes } from "../../helpers/escapeSimpleQuotes"
 
 export const sitesRoutes = Router()
 
@@ -54,7 +55,7 @@ sitesRoutes.get("/" + dataBase.sites.singular + "/:id", async (req, res) => {
 // get site by is name search
 sitesRoutes.get("/" + dataBase.sites.name + "/search/:name", async (req, res) => {
   return await executeSql(
-    `SELECT * FROM ${dataBase.sites.name} WHERE UPPER(nom) LIKE '%${String(req.params.name).toUpperCase()}%'`
+    `SELECT * FROM ${dataBase.sites.name} WHERE UPPER(nom) LIKE '%${escapeSimpleQuotes(String(req.params.name)).toUpperCase()}%'`
   )
     .then((sites: any) => {
       return sites.length > 0
@@ -87,7 +88,7 @@ sitesRoutes.post("/" + dataBase.sites.singular + "/rapprochement", async (req, r
   const result: Record<string, string> = {}
   await asyncForEach(req.body.unique, async (name: string) => {
     await executeSqlValues(
-      `SELECT nom FROM ${dataBase.sites.name} WHERE UPPER(nom) LIKE '${name.toUpperCase()}%'`
+      `SELECT nom FROM ${dataBase.sites.name} WHERE UPPER(nom) LIKE '${escapeSimpleQuotes(name).toUpperCase()}%'`
     )
       .then((res: any) => {
         result[name] = res[0] ? String(res[0]) : "Non Trouvé"
@@ -127,7 +128,7 @@ sitesRoutes.delete("/" + dataBase.sites.singular + "/:id", async (req, res) => {
 // for datalists but not used
 sitesRoutes.get("/" + dataBase.sites.name + "/filter/:name", async (req, res) => {
   return await executeSqlValues(
-    `SELECT nom FROM ${dataBase.sites.name} WHERE UPPER(nom) LIKE '${String(req.params.name).toUpperCase()}%'`
+    `SELECT nom FROM ${dataBase.sites.name} WHERE UPPER(nom) LIKE '${escapeSimpleQuotes(String(req.params.name)).toUpperCase()}%'`
   ).then((sites: any) => {
     return res.status(201).json(sites.map((e: any) => e[0]))
   })
