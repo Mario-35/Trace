@@ -12,6 +12,17 @@
   float: left;
   font-size: 1.8em;
 }
+.splitter-nav-site .splitter-nav-left span {
+  font-size: 0.6em;
+  color: cyan;
+}
+
+#identity {
+  font-size: 0.8em;
+  color: white;
+  cursor: pointer;
+}
+
 .splitter-nav-site .splitter-nav-right {
   float: right;
 }

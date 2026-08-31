@@ -180,7 +180,7 @@ function setIfNull(element, value) {
 };
 
 // version date
-setElementText("version", "version : 25/06/2026");
+setElementText("version", "version : 01/09/2026");
 
 
 

@@ -47,8 +47,12 @@ document.getElementById("splitter-nav-site").innerHTML = `
     </a>    
 </nav>
 <nav role="navigation" class="splitter-nav-right" id="splitter-nav-right">
+
 <nav role="navigation" class="splitter-nav-left">
-<img src="./assets/logo.png">`;
+<span>identifié comme : </span>
+<a id="identity">${localStorage.getItem('identity') || "Inconu"}</a>
+<img src="./assets/logo.png">
+`;
 
 function toTitleCase(str) {
     try {
@@ -251,6 +255,21 @@ function start() {
     }
     
     parentItems.forEach(addListeners);
+
+    if (!localStorage.getItem('identity')) {
+        const name = prompt('Identifié vous', '');
+        identity.innerHTML = name;
+        localStorage.setItem('identity', name);
+    }
+
+    // change identity on click
+    identity.addEventListener('click', function() {
+        let name = prompt('Identifié vous', '');
+        if (name.trim() === '') name = "inconnu";
+        identity.innerHTML = name;
+        localStorage.setItem('identity', name);
+    });
+
 }
 
 start();
