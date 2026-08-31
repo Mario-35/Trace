@@ -69,8 +69,8 @@ function addKey(event) {
 }
 
 // get the list on the actual step
-function getNameList() { return  currentStep === 1 ? stockages : listEtats};
-function getNameElement() { return  currentStep === 1 ? stockages : etats };
+function getNameList() { return listEtats};
+function getNameElement() { return etats };
 
 
 // update values on the hidden form value
@@ -89,10 +89,6 @@ function start() {
   longitude.value =  _CONFIGURATION.longitude || "-1.6567440482485551",
   code.value = _CONFIGURATION.code || "FR";
   identifiant.value = _CONFIGURATION.identifiant || "BR13551";
-
-  // create draggable lists
-  // MakeList("listStockages");
-  // MakeList("listEtats");
   
   // get default sticker config 
   getElement("etiquette").value = JSON.stringify(_CONFIGURATION.etiquette);
@@ -101,7 +97,6 @@ function start() {
   getElement('excelSelect').innerHTML =  excelColumns.map(e => `<option title="${e}">${e}</option>`);
   addToOption(getElement('element'), Object.keys(_CONFIGURATION.stickerElements));
   
-  new editingList(getElement("stockagesList"), "Mots clés pour le stockage", "Ajouter une clé", _CONFIGURATION["stockages"]);  
   new editingList(getElement("etatsList"), "Mots clés pour les différents états", "Ajouter un état", _CONFIGURATION["etats"]);
   
   sticker_start(_CONFIGURATION.stickerElements);

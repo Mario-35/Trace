@@ -20,4 +20,5 @@ export interface IHTMLOptions {
     tooltip?: String;
     tooltipFlow?: String;
     canedit?: String;
+    json?: String;
 };

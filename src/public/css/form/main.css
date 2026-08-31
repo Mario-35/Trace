@@ -230,6 +230,19 @@
     background: var(--secondary);
 }
 
+
+.btn-events {
+    background: var(--orange);
+    color: var(--light);
+    border: 2px solid var(--warning);
+}
+
+.btn-events:hover {
+    background: var(--warning);
+}
+
+
+
 .messageRpg{
     font-size: 1.2rem;
     font-weight: 600;

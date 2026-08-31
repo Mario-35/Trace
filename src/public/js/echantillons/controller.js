@@ -66,7 +66,7 @@ async function createSite() {
             "longitude": longitude.value,
         });
 		if (temp) {
-            showModalOk("Site Créer");
+            showModalOk("Site Crée");
             setSite();
             removeDisabled("next-2");
         }
@@ -107,7 +107,6 @@ async function setSite() {
 };
 
 async function showAliquote(input) {
-    // loadDatas(datas);
     if (input)
         getElement("parent").value = input.identification;
     updateReadOnly(ctx);
@@ -127,22 +126,31 @@ function restoreDatas() {
         localStorage.removeItem('_DATAS');
     }
 }
+
+
+function fillEditsFromJson(name, datas) {
+    Object.keys(datas).forEach(data => {
+        const element = getElement(name + String(data).charAt(0).toUpperCase() + String(data).slice(1));
+        if (element) element.value = datas[data];
+    })
+
+}
+
 // start of echantillon
 async function start() {
     _DATE = new Date();
     // get default sticker config 
     getElement("etiquette").value = JSON.stringify(_CONFIGURATION.etiquette);   
     // init select for sticker
-    addToOption(getElement('element'), Object.keys(_CONFIGURATION.stickerElements));  
-    // init select for stockage keys       
-    // addToOption(getElement('cle'), _CONFIGURATION.stockages);   
+    addToOption(getElement('element'), Object.keys(_CONFIGURATION.stickerElements));
     // init select for etats keys       
-    addToOption(getElement('etat'), _CONFIGURATION.etats, "Créer");
+    addToOption(getElement('etat'), _CONFIGURATION.etats, "Crée");
     addToOption(getElement('type'), _CONFIGURATION.types, _AUCUN);
     addToOption(getElement('caracterisation'), _CONFIGURATION.caracterisations, "Normal");
     addToOption(getElement('textSize'), _CONFIGURATION.sizes, "10px");
     // set and get context
     const ctx = createContext();
+    setInvisible("btn-events");
     // action son mode
     if (ctx.mode === "id") {  // Edit mode
         // get echantillon with the API
@@ -152,23 +160,23 @@ async function start() {
             if (datas && datas.codes) {
                 rpgReferences = JSON.parse(`{${datas.codes.join()}}`);
                 delete datas.codes;
-            }
-            
+            }            
             // load datas
             loadDatas(datas);
             updateReadOnly(ctx);
+            visible("btn-events", datas["evenements"] == true);
         }
         // change somes
         showParentClass('etat', 'form-group'); 
         showParentClass('caracterisation', 'form-group'); 
         
         hideParentClass( "btnApiRpg", "row-1");
-        if (!["Créer", "Importer"].includes(datas.etat)) removeDisabled("btn-aliquote");
+        if (!["Crée", "Importé"].includes(datas.etat)) removeDisabled("btn-aliquote");
         setElementText("btnApiRpg", "MAJ 🌍 RPG");
         setElementText("formTitle", "Modification d'un échantillon");         
         parentClass( "parent", "form-group", datas.parent !== null) ;
 
-        new editingList(getElement("stockageList"), "Mots clés pour le stockage", "Ajouter une clé", datas.stockage, _CONFIGURATION["stockages"]);  
+        fillEditsFromJson("stockage", datas.stockage);
               
     } else if (ctx.mode === 'selection') { // Selection Edits mode
         // get selection from API
@@ -180,7 +188,7 @@ async function start() {
         // read only on all columns
         setReadOnly(Object.keys(_STORE.datas[0]).filter(e => e !== "etat"));
         showParentClass("etat",'form-group'); 
-        if (!["Créer", "Importer"].includes(_STORE.datas[0].etat)) removeDisabled("btn-aliquote");
+        if (!["Crée", "Importé"].includes(_STORE.datas[0].etat)) removeDisabled("btn-aliquote");
         // get the range lines
         setRange();
         // Change title
@@ -220,8 +228,7 @@ async function start() {
                 echantillon.value = null;
             }
             setRange();
-        }
-        
+        }      
     } else if (ctx.mode === 'after') {  // After mode        
         const temp = await getDatas(window.location.origin + "/echantillon/after/identification/" + ctx.id);
         // get echantillon with the API
@@ -257,11 +264,8 @@ async function start() {
     } else if (ctx.mode === 'new') { //  Default add mode
         multiplesetInvisible(["echantillon",  "etat"]); 
         multipleremoveInvisible(["numero",  "nombre", "btn-analyses", "btn-libre"]); 
-        getElement("etat").value = 'Créer';
-        updateReadOnly(ctx);        
-
-        new editingList(getElement("stockageList"), "Mots clés pour le stockage", "Ajouter une clé", {}, _CONFIGURATION["stockages"]);  
-
+        getElement("etat").value = 'Crée';
+        updateReadOnly(ctx);
     } else log("Error mode");
     // init list
     refresh();

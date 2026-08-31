@@ -119,7 +119,7 @@ pagesRoutes.get("/update", async (req, res) => {
 
 // Clean datas
 pagesRoutes.get("/clean", async (req, res) => {
-  await clean()
+  await clean();
   res.status(201).send()
 })
 
@@ -139,6 +139,12 @@ pagesRoutes.get("/programme", async (req, res) => {
       .catch((error) => {
         log(error)
       })
+})
+
+pagesRoutes.get("/ip", async (req, res) => {
+
+const ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+console.log(req.headers);
 })
 
 // prints

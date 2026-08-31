@@ -9,7 +9,7 @@ const _CONFIGURATION = {
   latitude: '48.112564637819',
   longitude: '-1.656744048248',
   identifiant: 'Br13551',
-  etats: [ 'Créer', 'Prélevé', 'Stocké', 'Perdu', 'Detruit', 'Importé', 'Annulé', 'Supprimer', 'Reprelevé' ],
+  etats: [ 'Crée', 'Prélevé', 'Stocké', 'Perdu', 'Détruit', 'Importé', 'Annulé', 'Non prélevé', 'Supprimé', 'Reprelevé', "Expédié" ],
   caracterisations: [ 'Normal', 'Blanc', 'Doublon', 'Pédagogique' ],
   types: [
     'Boues',
@@ -22,7 +22,6 @@ const _CONFIGURATION = {
     'Sol'
   ],
   sizes: [ '8px', '10px', '12px', '14px', '16px', '18px' ],
-  stockages: [ 'Batiment', 'Etage', 'Piece', 'Meuble', 'Etagere', 'Caisse' ],
   print: { width: '50mm', height: '25mm' },
   etiquette: {
     sticker0: { key: 'identification', size: '12px', align: 'center' },
@@ -63,6 +62,6 @@ const _CONFIGURATION = {
     latitude: '2.549023',
     longitude: '49.9967718',
     analyses: 'Matière org, Physico-chimi ADNe 1',
-    etat: 'Créer'
+    etat: 'Crée'
   }
 };

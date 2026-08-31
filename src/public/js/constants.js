@@ -94,7 +94,7 @@ function changeValueInJson(name, key, value) {
     setElementValue(name, JSON.stringify(tmp));
 };
 
-function modifiedValue(element) {
+function modifiedValue(element) {    
     const elem = getElement(element);
     if (elem) {
         elem.setAttribute("modified", true);

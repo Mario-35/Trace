@@ -186,7 +186,8 @@ function updateReadOnly(ctx) {
     // loop on form element
     [].reduce.call(form.elements, (data, element) => {
         // if name present is present in form 
-        let show = element.name ? false : true;     
+        let show = element.name ? false : true;
+        if (element.hasAttribute("json")) return;
         if (element.name) { 
             if (element.getAttribute("canedit")) {
                 switch (element.getAttribute("canedit")) {
@@ -204,11 +205,11 @@ function updateReadOnly(ctx) {
                         break;
                     // editable in edit, new or after mode
                     case "true":
-                        show = isContextMode(['new','id', 'adter']);                     
+                        show = isContextMode(['new','id', 'after']);                     
                         break;
-                    // only if etat in Créer value
-                    case "etat:Créer":
-                        show = getElement('etat').value === 'Créer';                     
+                    // only if etat in Crée value
+                    case "etat:Crée":
+                        show = getElement('etat').value === 'Crée';                     
                         break;
                 }
             // in new mode editable is true

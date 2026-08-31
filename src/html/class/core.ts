@@ -159,7 +159,7 @@ export class CoreHtmlView {
 
   inputText(options: IHTMLOptions) {
     return `${this.inputlabel(options)}
-        <input type="text" id="${options.name}" name="${options.name}" class="form-control" ${ options.max ? `maxlength="${options.max}"` : ''}  placeholder="${options.label}"  ${options.canedit ? `canedit="${options.canedit}"` : '' } ${options.readonly ? 'readonly' : ''} ${options.disabled ? 'disabled' : ''} />                           
+        <input type="text" id="${options.name}" name="${options.name}" class="form-control" ${ options.max ? `maxlength="${options.max}"` : ''}  placeholder="${options.label}"  ${options.canedit ? `canedit="${options.canedit}"` : '' } ${options.json ? `json="${options.json}"`  : ''} ${options.readonly ? 'readonly' : ''} ${options.disabled ? 'disabled' : ''} />                           
         ${options.error ? this.inputError(options) : ''} `;				
   }
 
@@ -258,7 +258,78 @@ export class CoreHtmlView {
         </div>`;
   };
 
+  inputFormStockage() {
+    return `<div class="form-row">
+              ${this.inputFormGroupText({
+                max: 50,
+                name: "stockageSite",
+                label: "Site / Adresse",
+                tooltip: "Site de stockage de l'échantillon",
+                json: "stockage",
+                error: true,
+              })}
+            </div>
+            <div class="form-row">
+              ${this.inputFormGroupText({
+                max: 50,
+                name: "stockageBatiment",
+                label: "batiment",
+                tooltip: "Batiment de stockage de l'échantillon",
+                json: "stockage",
+                error: true,
+              })}
+              
+              ${this.inputFormGroupText({
+                max: 50,
+                name: "stockagePiece",
+                label: "Piece",
+                tooltip: "Piece de stockage de l'échantillon",
+                json: "stockage",
+                error: true,
+              })}		
+            </div>
+            <div class="form-row">								
+              ${this.inputFormGroupText({
+                max: 50,
+                name: "stockageMeuble",
+                label: "Meuble",
+                tooltip: "Meuble de stockage de l'échantillon",
+                json: "stockage",
+                error: true,
+              })}	
+              
+              ${this.inputFormGroupText({
+                max: 50,
+                name: "stockageEmplacement",
+                label: "Emplacement",
+                tooltip: "Emplacement dans le meuble",
+                json: "stockage",
+                error: true,
+              })}						
+              ${this.inputFormGroupText({
+                max: 50,
+                name: "stockageConditionnement",
+                label: "Conditionnement",
+                tooltip: "Conditionnement du stockage",
+                json: "stockage",
+                error: true,
+              })}		
+            </div>
+            <div class="form-row">								
+              ${this.inputFormGroupText({
+                max: 50,
+                name: "stockageInfos",
+                label: "Infos",
+                tooltip: "Infos supplementaire",
+                json: "stockage",
+                error: true,
+              })}		
+            </div>
 
+            <div class="form-row container-center">
+              ${this.inputTextArea("stockage", true)}
+            </div>`;	
+  }
 
 
 

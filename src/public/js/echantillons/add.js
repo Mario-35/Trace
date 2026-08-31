@@ -11,6 +11,7 @@ let currentStep = 0;
 // Update progress bar
 function updateProgressBar() {
     const progressPercentage = (currentStep / (steps.length - 1)) * 100;
+    // update progress
     progressLine.style.width = `${progressPercentage}%`;
     
     steps.forEach((step, index) => {
@@ -76,9 +77,15 @@ function validateStep2() {
         if (validateStr('longitude') === false) isValid = false; 
     }
 
+    setReadOnly(["stockageSite","stockageBatiment" ,"stockagePiece" ,"stockageMeuble" ,"stockageEmplacement" ,"stockageConditionnement"]);
+    if ([ "Prélevé", "Stocké"].includes(etat.value)) {
+        removeReadOnly(["stockageSite","stockageBatiment" ,"stockagePiece" ,"stockageMeuble" ,"stockageEmplacement" ,"stockageConditionnement" , "stockageInfos"]);
+    } else if (["Détruit"].includes(etat.value)) {
+        removeReadOnly("stockageSite");
+    }
+    
     if (type.value.startsWith("Sol ")) {
         if (isContextMode(["id", "selection", "after"])) return isValid;
-
         // If not historical cultural get it and out without valid
         if (notNull("cultures") === false) {
             isValid = false;

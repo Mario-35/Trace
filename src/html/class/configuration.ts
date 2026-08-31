@@ -130,7 +130,6 @@ export class Configuration extends CoreHtmlView {
                         <div class="form-step" id="form-step-2">
                             <div class="form-row container-center">
                                 <input type="hidden" id="stockages" name="stockages" class="form-control">
-                                <div id="stockagesList" class="liste"></div>
                             </div> 
 
                             <div class="btn-group">

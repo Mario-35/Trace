@@ -144,6 +144,9 @@ function showModalEditingList(titleKey, titleValue, element, callback) {
         <article class="modal">
             <section class="modal__content modal__list">
                 <button id="close" class="modal__close">&times;</button>
+                <div class="list-header">
+                    <span> ${titleKey} </span>
+                </div>                 
                 <input type="hidden" id="modalEdit" name="modalEdit">
                 <div id="modalEditList" class="modal-control"></div>                
                 <p class="modal__actions">
@@ -167,3 +170,48 @@ function showModalEditingList(titleKey, titleValue, element, callback) {
     }
 };
 
+
+function showModalEventsList(datas) {
+    const table = [`<table class="table table-year">`];
+        table.push("<tr>");
+        table.push(`<th> Date </th>`);
+        table.push(`<th> Personne / Evenement </th>`);
+        table.push(`<th> Etat </th>`);
+        table.push("</tr>");
+    Object(datas).forEach(e => {
+        table.push("<tr>");
+        table.push(`<td> ${e.date} </td>`);
+        table.push(`<td> ${e.personne} </td>`);
+        table.push(`<td> ${e.saveetat} </td>`);
+        table.push("</tr>");
+        table.push('<tr>');
+        table.push(`<td colspan="3"> ${e.operation} </td>`);
+        table.push("</tr>");
+    });
+    table.push("</table>");
+    if (element) {
+        getElement('modal').innerHTML =  `
+        <article class="modal">
+            <section class="modal__content modal__list">
+                <button id="close" class="modal__close">&times;</button>
+                <div class="list-header">
+                    <span> Evenement(s) liés à cet échantillon </span>
+                </div> 
+                <div class="modal-control">
+                ${table.join("")}
+                </div> 
+                <p class="modal__actions">
+                    <button id="ok" class="modal__action modal__action--ok">Ok</button>
+                </p>            
+            </section>
+        </article> `;        
+        
+        getElement("close").addEventListener('click',  handleCloseModal);
+                
+        getElement("ok").addEventListener("click", (event) => {
+            // Stop the form from submitting since we’re handling that with AJAX.
+            event.preventDefault();
+            modal.innerHTML = '';
+        });
+    }
+};

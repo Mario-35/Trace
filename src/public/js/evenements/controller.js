@@ -13,13 +13,11 @@ async function start() {
         setElementValue(date, now.getFullYear()+"-"+(("0" + (now.getMonth() + 1)).slice(-2))+"-"+(("0" + now.getDate()).slice(-2)) );
         setElementValue(time, now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds());
 
-        addToOption(getElement('etat'), _CONFIGURATION.etats, "Créer");
+        addToOption(getElement('etat'), _CONFIGURATION.etats, "Crée");
         loadValues(datas);
         
         setElementValue(saveetat, String(datas.etat));
         setElementValue(savestockage, String(savestockage.etat));
-
-        new editingList(getElement("stockageList"), "Mots clés pour le stockage", "Ajouter une clé", datas.stockage, _CONFIGURATION["stockages"]);  
 
       }
     } else if (ctx.mode === "id") {  // Edit mode
@@ -27,7 +25,6 @@ async function start() {
         const datas = await getDatas(window.location.origin + "/evenement/" + ctx.id);
         // rpg codes
         if (datas) {
-          console.log(datas);
           loadValues(datas);
           setElementValue(date, datas["date"].split(' ')[0]);
           setElementValue(time, datas["date"].split(' ')[1]);

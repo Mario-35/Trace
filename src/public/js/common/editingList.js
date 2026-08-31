@@ -7,7 +7,6 @@ class editingList {
 		this.placeholder = placeholder;
 		this.selected = undefined;
 		element.innerHTML = `
-		<label for="addCleEtat">${message} </label>
 			<div class="listbox-area">
 			${this.key ? `<div class="grid">`: '' }
 				<controls>
@@ -129,7 +128,7 @@ class editingList {
 			e.target.classList.remove("drag-over");
 			if (window.draggedItem === e.target) return;
 
-			this.ulItem.removeChild(window.draggedItem,);
+			this.ulItem.removeChild(window.draggedItem);
 			this.ulItem.insertBefore(window.draggedItem, e.target);
 
 			this.setDatas();

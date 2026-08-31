@@ -442,8 +442,16 @@ export const dataBase: Idb = {
         title: "Etat du prélèvement",
         create: "varchar(10) NOT NULL",
         list: true,
-        etiquette: "Créer"
-      }
+        etiquette: "Crée"
+      },
+      evenements: {
+        type: "boolean",
+        searchType: "boolean",
+        title: "E",
+        create: "",
+        calculate: "(SELECT COUNT(*) FROM evenements WHERE identification=echantillons.identification)::int > 0",
+        list: true
+      },
     },
     constraints: ["CONSTRAINT echantillons_pkey UNIQUE NULLS NOT DISTINCT (type, identification)"]
   },
@@ -629,7 +637,7 @@ export const dataBase: Idb = {
         title: "Etat initialt",
         create: "varchar(10) NOT NULL",
         list: true,
-        etiquette: "Créer"
+        etiquette: "Crée"
       }
     },
     constraints: []

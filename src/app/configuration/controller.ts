@@ -39,7 +39,7 @@ function writeConfigurationFile(configuration: any) {
   configuration["excelColumns"] = Object.keys(dataBase.echantillons.columns).filter(
     (e) => dataBase.echantillons.columns[e].excel
   )
-  ;["etats", "types", "caracterisations", "sizes", "stockages"].forEach((e) => {
+  ;["etats", "types", "caracterisations", "sizes"].forEach((e) => {
     configuration[e] = configuration[e][0].split(",")
   })
   configuration["stickerElements"] =

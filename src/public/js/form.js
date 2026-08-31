@@ -1,4 +1,4 @@
-function loadDatas(values) {
+function loadDatas(values) {  
     _COLUMNS.forEach(e => {
         const elem = document.getElementById(e);
         if (elem && values[e]) {
@@ -109,11 +109,13 @@ const formToJSON = elements => [].reduce.call(elements, (data, element) => {
         data[element.name] = element.checked ? true : false;
         break
       case 'textarea':
+        if (!data[element.name]) {
           try {
               data[element.name] = JSON.parse(element.value);
           } catch (error) {
               data[element.name] = {};
           }
+        }
         break
       case 'number':
         data[element.name] = +element.value;
@@ -124,7 +126,12 @@ const formToJSON = elements => [].reduce.call(elements, (data, element) => {
       case 'text':
       case 'time':
       case 'date':
-        data[element.name] = max > 0 ? element.value.slice(0, max): element.value;
+        if (element.hasAttribute("json")) {
+          const name = element.getAttribute("json");          
+          const key = element.name.replace(name,"").toLowerCase();          
+          if (!data[name]) data[name] = {};
+          data[name][key] =  max > 0 ? element.value.slice(0, max): element.value;
+        } else data[element.name] = max > 0 ? element.value.slice(0, max): element.value;
         break
       case 'hidden':
         data[element.name] = isNaN(element.value) ? max > 0 ? element.value.slice(0, max): element.value : +element.value;
@@ -135,6 +142,8 @@ const formToJSON = elements => [].reduce.call(elements, (data, element) => {
       log(`${element.name} error type`);
     }
   }
+  // console.log(data);
+  
   return data;
 }, {});
 

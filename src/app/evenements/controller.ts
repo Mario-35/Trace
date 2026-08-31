@@ -23,7 +23,7 @@ export async function addEvenement(values: any) {
           Object(echantillons).forEach((echantillon: any) => {
             if (values["etat"] !== "---- Laisser ----")
               queries.push(
-                `UPDATE ${dataBase.echantillons.name} SET etat = '${values["etat"]}' WHERE identification = ${echantillon["identification"]}`
+                `UPDATE ${dataBase.echantillons.name} SET etat = '${values["etat"]}' WHERE identification = '${echantillon["identification"]}'`
               )
             queries.push(
               `${createPgInsert(dataBase.evenements.name, { ...valuesCopy, ...echantillon })}`

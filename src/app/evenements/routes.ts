@@ -61,6 +61,22 @@ evenementsRoutes.get("/" + dataBase.evenements.singular + "/:id", async (req, re
       console.error(error)
       return res.status(404).json({ error: error.detail })
     })
+});
+
+// Get one event
+evenementsRoutes.get("/list/" + dataBase.evenements.name + "/identification/:id", async (req, res) => {  
+  return await executeSql(
+    `SELECT id, ${getListColumns(dataBase.evenements.name)} FROM ${dataBase.evenements.name} WHERE identification = '${req.params.id}' ORDER BY date`
+  )
+    .then((site: any) => {
+      return site.length > 0
+        ? res.status(200).json(site)
+        : res.status(404).json({ code: 404, error: "Not Found" })
+    })
+    .catch((error) => {
+      console.error(error)
+      return res.status(404).json({ error: error.detail })
+    })
 })
 
 // Create one event

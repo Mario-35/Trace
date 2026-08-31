@@ -21,7 +21,8 @@ export async function readAlSearch(table: string, search: string) {
 };
 
 export async function readId(table: string, id: number) {
-      return await executeSql(`SELECT * FROM "${table}" WHERE id = ${ id }`);
+      const tableColumns = Object.keys(dataBase[table as keyof object]["columns" as keyof object]).filter(e => dataBase[table as keyof object]["columns" as keyof object][e]["calculate"]).map(e => `${dataBase[table as keyof object]["columns" as keyof object][e]["calculate"]} AS ${e}`);
+      return await executeSql(`SELECT ${tableColumns ? `${tableColumns.join()}, *`: "*"} FROM "${table}" WHERE id = ${ id }`);
 };
 
 export async function readIds(table: string, ids: number[]) {

@@ -25,7 +25,7 @@ getElement('btn-creer').addEventListener('click', async (event) => {
             showModalError(err);
         });
     } else if (isContextMode(["excel", "new", "after","excelaliquote", "aliquote", "selectionaliquote"])) {
-        _DATAS["etat"] = "Créer";
+        _DATAS["etat"] = "Crée";
         fetch(window.location.origin + `/echantillon`, {
             method: "POST",
             headers: {
@@ -196,3 +196,28 @@ getElement('dossier').addEventListener('blur', async (event) => {
         }
     }    
 });
+
+const inputs = document.getElementsByTagName('input');
+
+for(var i=0; i < inputs.length; i++){
+ if(inputs[i].getAttribute('type')=='text' && inputs[i].name.startsWith('stockage')) {
+    inputs[i].addEventListener("change", (e) =>
+        modifiedValue('stockage')
+    );
+ }
+}
+
+// chargement d'infos à partir du nom de programme
+getElement('btn-events').addEventListener('click', async (event) => {
+    event.preventDefault();
+        try {
+            let temp = await getDatas(window.location.origin + `/list/evenements/identification/${identification.value}`);
+            if (temp)
+                showModalEventsList(temp);
+        } catch (error) {
+            log(error);
+            showModalError(error);
+        }
+        
+});
+

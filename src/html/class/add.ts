@@ -109,7 +109,7 @@ export class Add extends CoreHtmlView {
 											label: "Etat du prélévement",
 											placeholder: "label",
 											canedit: "true",
-										}, 'Créer')}
+										}, 'Crée')}
 
 									</div>
 
@@ -134,7 +134,6 @@ export class Add extends CoreHtmlView {
 									
 									<div class="form-row container-center">
 										<input type="hidden" id="stockage" name="stockage" class="form-control">
-										<div id="stockageList" class="liste"></div>
 									</div> 
 							
 									<div class="btn-group">
@@ -318,7 +317,7 @@ export class Add extends CoreHtmlView {
         this._HTMLResult =`
 			<!DOCTYPE html>
 			<html lang="fr">
-			${this.createHead("Ajout d'échantillon(s)", [ "print.css", "echantillon.css", "passeport.css", "form/main.css", "main.css", "modal.css", "editingList.css", "splitter.css", "menu.css"])}
+			${this.createHead("Ajout d'échantillon(s)", ["print.css", "echantillon.css", "passeport.css", "form/main.css", "main.css", "modal.css", "editingList.css", "splitter.css", "menu.css"])}
 			<body>
 				<header id="splitter-nav-site" class="splitter-nav-site"></header>
 				<form id="actionForm" class="formData" enctype="multipart/form-data" method="POST">
@@ -413,6 +412,7 @@ export class Add extends CoreHtmlView {
 											readonly: true,
 											canedit: "never",
 										})}
+										
 										${this.inputNumber({
 											min: 0,
 											max: 9998,
@@ -421,6 +421,7 @@ export class Add extends CoreHtmlView {
 											label: "N° de dossier",
 											placeholder: "label",
 										})}
+
 										${this.inputSelect({
 											max: this.maxLength("etat"),
 											name: "etat",
@@ -428,7 +429,7 @@ export class Add extends CoreHtmlView {
 											label: "Etat du prélévement",
 											placeholder: "label",
 											canedit: "true",
-										},'Créer')}
+										},'Crée')}
 
 										${this.inputNumber({
 											min: 1,
@@ -494,32 +495,34 @@ export class Add extends CoreHtmlView {
 									</div>
 
 									<div class="form-row">
-											${this.inputFormGroupText({
-												size: 2,
-												max: this.maxLength("libre"),
-												name: "libre",
-												tooltip: "Infos libre sélectionnable lors de l'impression des étiquettes",
-												label: "Infos libre",
-												canedit: "true"
-											})}                     
-											<button tooltip="Créer une liste à importer" class="btn btn-list invisible" id="btn-libre">Créer</button>    
+										${this.inputFormGroupText({
+											size: 2,
+											max: this.maxLength("libre"),
+											name: "libre",
+											tooltip: "Infos libre sélectionnable lors de l'impression des étiquettes",
+											label: "Infos libre",
+											canedit: "true"
+										})}                     
+										<button tooltip="Créer une liste à importer" class="btn btn-list invisible" id="btn-libre">Créer</button>    
 
-											${this.inputFormGroupText({
-												size: 2,
-												max: this.maxLength("analyses"),
-												name: "analyses",
-												tooltip: "Liste des analyses",
-												label: "Analyses",
-												canedit: "true"
-											})}
-											<button tooltip="Créer une liste à importer" class="btn btn-list invisible" id="btn-analyses">Créer</button>    
+										${this.inputFormGroupText({
+											size: 2,
+											max: this.maxLength("analyses"),
+											name: "analyses",
+											tooltip: "Liste des analyses",
+											label: "Analyses",
+											canedit: "true"
+										})}
+										<button tooltip="Créer une liste à importer" class="btn btn-list invisible" id="btn-analyses">Créer</button>    
 									</div>                            
 
 									
 									${this.rangeHTML()}
+
 									
 									<div class="btn-group">                   
 										<button tooltip="L'état ne peut être créer ou importer" class="btn btn-aliquote" id="btn-aliquote" disabled>⬅ Créer une aliquote</button>
+										<button class="btn btn-events" id="btn-events">Evenement(s)</button>										
 										<button class="btn btn-next" id="next-1">Suivant ➡</button>
 									</div>
 								</div>
@@ -597,12 +600,8 @@ export class Add extends CoreHtmlView {
                         </div>
                         
                         <!-- Step 3: Stockage -->
-                        <div class="form-step" id="form-step-4">                          
-
-							<div class="form-row container-center">
-								${this.inputTextArea("stockage", true)}
-								<div id="stockageList" class="liste"></div>
-							</div> 
+                        <div class="form-step" id="form-step-4">						
+							${this.inputFormStockage()}	
 
                             <div class="btn-group">
                                 <button class="btn btn-prev" id="prev-3">⬅ Précédent</button>

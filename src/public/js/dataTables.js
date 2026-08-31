@@ -1,6 +1,7 @@
 document.querySelector("html").setAttribute("data-bs-theme", "dark");
 
 class JsonTable {
+	// get options parameters
 	constructor(options) {
 		this.localSave = options.mario || JSON.parse(localStorage.getItem('filters')) || {};
 		this.jsonUrl = options.jsonUrl || "";
@@ -37,17 +38,23 @@ class JsonTable {
 		this.selectedId = 0;	
 		this.init();
 	}
-
+	// is datas filtered ?
 	filtered() {
 		return ( this.filteredData.length !== this.data.length)
 	}
-
+	// remove all filters on the page
+	cleanFilter() {
+		delete this.localSave[getElementText("nameType")];
+		localStorage.setItem('filters', JSON.stringify(this.localSave));
+	}
+	// remove one filter
 	removeToFilter(key) {
 		const nameType = getElementText("nameType");
-		if(this.localSave[nameType])
+		if(this.localSave[nameType]) {
 			delete this.localSave[nameType][key];
+		}
 	}
-
+	// add a filter to filter list
 	addToFilter(key, value) {
 		const nameType = getElementText("nameType");
 		if(!this.localSave[nameType])
@@ -55,34 +62,35 @@ class JsonTable {
 
 		if (String(value).trim() === "")
 			delete this.localSave[nameType][key];
-		else this.localSave[nameType][key] = value;
-		localStorage.setItem('filters', JSON.stringify(this.localSave));
+		else 
+			this.localSave[nameType][key] = value;
 
-	}
-	razFilter() {
-		delete this.localSave[getElementText("nameType")];
+		// save filters to survive page change
 		localStorage.setItem('filters', JSON.stringify(this.localSave));
-		  this.filteredData = [...this.data];	
+	}
+	// raz button
+	razFilter() {
+		this.cleanFilter();
+		this.filteredData = [...this.data];	
 		this.filterDatas();
 	}
-
+	// contextual menu show
 	toggleMenu (command ) {
 	  this.menu.style.display = command === "show" ? "block" : "none";
 	  this.menuVisible = !this.menuVisible;
 	};
-
+	// contextual menu positioning
 	setPosition({ top, left }) {
 	  this.menu.style.left = `${left}px`;
 	  this.menu.style.top = `${top}px`;
 	  this.toggleMenu("show");
 	};
-
+	// post excel export 
 	async exportExcel() {
 		const temp = await postDatas(window.location.origin + '/selection', {ids: this.filteredData.map(e => e.id)});
 		if (temp) window.location.href = window.location.origin + "/" + getElementText("nameType") + "/export/" +  temp[0].id;
 	};
-
-
+	// start is here
 	async init() {
 		await this.fetchData();
 		this.renderTable();
@@ -122,6 +130,7 @@ class JsonTable {
 					this.toggleMenu("hide");
 
 				if (url && url !== "") {
+					this.cleanFilter();
 					window.location.href = `${url}${url.includes('?') ? this.selectedId : ''}`;
 				} else {
 					const filter = e.target.getAttribute("filter") ;
@@ -146,6 +155,7 @@ class JsonTable {
 		this.filterDatas();		
 	};
 
+	// calling filter
 	filterCall(name) {
         if (name) {
             const visitor = this[`filter${name}`];
@@ -230,13 +240,13 @@ class JsonTable {
 		}
 	};
 
-        // Per Page Select
+    // Per Page Select
     createPerPageSelect() {
 		perPageSelect.addEventListener("change", (e) => {
 			this.rowsPerPage = e.target.value;
 			this.renderTable();
 		});
-};
+	};
 
 	renderTable(which = "all") {
 		if (which == "all") {
@@ -280,6 +290,8 @@ class JsonTable {
 				const label = document.createElement("label");
 				label.innerHTML = column.key;
 				th.appendChild(label);
+				label.addEventListener("click", (e) => this.toggleSort(label) );
+
 				switch (column.searchType) {
 					case "infos":
 					break;
@@ -409,12 +421,12 @@ class JsonTable {
 			getElement("jsonTable").classList.remove("colorFiltered");
 
 		infos.innerText = rows.length + " sur " + this.data.length;
-		// // Sorting
+		// Sorting
 		if (this.sortColumn) {
 			rows.sort((a, b) => {
 				if (this.sortOrder === "asc")
-					return a[this.sortColumn] > b[this.sortColumn] ? 1 : -1;
-				return a[this.sortColumn] < b[this.sortColumn] ? 1 : -1;
+					return a[this.sortColumnClean()] > b[this.sortColumnClean()] ? 1 : -1;
+				return a[this.sortColumnClean()] < b[this.sortColumnClean()] ? 1 : -1;
 			});
 		}
 
@@ -493,17 +505,22 @@ class JsonTable {
 			.forEach((btn) =>
 				btn.addEventListener("click", (e) => open(window.location.origin + '/print' + this.printUrl + e.target.parentNode.closest('tr').id, "Imprimer", _PARAMPRINT))
 			);
+			
 		if (this.filtered()) {
-			if (this.editUrl) getElement("editAll").classList.remove("disabled")
-			if(this.printUrl) getElement("printAll").classList.remove("disabled")
+			if (this.editUrl) 
+				getElement("editAll").classList.remove("disabled");
+			if (this.printUrl) 
+				getElement("printAll").classList.remove("disabled");
 		} else {
-			if(this.editUrl) getElement("editAll").classList.add("disabled")
-			if(this.printUrl) getElement("printAll").classList.add("disabled")
+			if (this.editUrl) 
+				getElement("editAll").classList.add("disabled");
+			if (this.printUrl) 
+				getElement("printAll").classList.add("disabled");
 		}
 	};
 
 	filterSelected(value) {
-		
+		// force type		
 		value = String(value);
 		if (value === "") {
 			this.filteredData = [...this.data];
@@ -604,6 +621,7 @@ class JsonTable {
 		});
 	};
 
+	// create filters listeners
 	addGlobalSearchListener() {
 		if (this.globalSearchInput) {
 			this.globalSearchInput.addEventListener("input", (e) =>
@@ -612,6 +630,7 @@ class JsonTable {
 		}
 	};
 
+	// get row by his id
 	getRow(id) {
 		this.filteredData = this.data.filter((row) =>
 			row.id === id
@@ -620,6 +639,7 @@ class JsonTable {
 		this.renderTable();
 	};
 
+	// filter data by his id
 	filterById(id) {
 		id = Number(id);
 		return this.data.filter((row) => row.id == id);
@@ -644,7 +664,7 @@ class JsonTable {
 			});
 			if (good === true) return item;
 		})
-		this.currentPage = 1; // Reset to first page
+		this.currentPage = 1; // Set to first page
 		this.renderTable("rows");
 	};
 	
@@ -666,6 +686,7 @@ class JsonTable {
 					Object.keys(this.localSave[nameType]).forEach(key => {
 						if (this.localSave[nameType][key] !== "")
 							this.filteredData = this.filteredData.filter(row => {
+								// test data type
 								switch (typeof row[key] ) {
 									case 'string':
 										return row[key].toLowerCase().includes(this.localSave[nameType][key].toLowerCase());
@@ -682,11 +703,12 @@ class JsonTable {
 					});
 			}
 			// Re-render table rows and pagination after filtering
-			this.currentPage = 1; // Reset to first page
+			this.currentPage = 1; // Set to first page
 			this.renderTable("rows");
 		}
 	};
 
+	// foot page
 	adjustTfootSearchFields() {
 		// Adjust tfoot search fields
 		const tfoot = this.container.querySelector("tfoot");
@@ -696,13 +718,23 @@ class JsonTable {
 		tfoot.insertBefore(th, tfoot.firstElementChild); // Adjust based on your specific structure
 	};
 
+	sortColumnClean() {
+		return this.sortColumn.innerText.replace('🠋','').replace('🠉','');
+	}
+
+	// sort data  // not use
 	toggleSort(column) {
+		// clean actual sort column header
+		if(this.sortColumn)
+			this.sortColumn.innerText = this.sortColumnClean(); 
+
 		if (this.sortColumn === column) {
 			this.sortOrder = this.sortOrder === "asc" ? "desc" : "asc";
 		} else {
 			this.sortColumn = column;
 			this.sortOrder = "asc";
 		}
+		this.sortColumn.innerText = `${this.sortOrder === "asc" ? "🠋" : "🠉"}${this.sortColumnClean()}`;
 		this.renderRows();
 	};
 }
