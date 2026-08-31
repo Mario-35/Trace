@@ -6,6 +6,7 @@
   "scripts": {
     "start": "NODE_ENV=production node -r dotenv/config dist/src/main.js",
     "dev": "nodemon --inspect src/main.ts",
+    "publish": "npm run build && git add -u && git commit -m \"version 1\" && git push",
     "build": "rimraf dist && tsc --project tsconfig.build.json && resolve-tspaths && node build.js",
     "mario": "npm run build && git add * && git commit -m \"Update\" && git push",
     "lint": "eslint .",
