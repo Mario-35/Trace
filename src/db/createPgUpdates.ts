@@ -7,6 +7,7 @@
  */
 
 import { getColumns } from "."
+import { escapeSimpleQuotes } from "../helpers/escapeSimpleQuotes"
 import { dataBase } from "./base"
 
 export function createPgUpdates(tableName: string, values: any) {
@@ -14,7 +15,12 @@ export function createPgUpdates(tableName: string, values: any) {
   const columns = getColumns(tableName)
   columns.forEach((column) => {
     if (values[column]) {
+      console.log(dataBase[tableName].columns[column].type);
+      
       switch (dataBase[tableName].columns[column].type) {
+        case "text":
+          results.push(`"${column}" = '${escapeSimpleQuotes(values[column])}'`)
+          break        
         case "text[]":
           results.push(`"${column}" = '{"${values[column].split(",").join('","')}"}'`)
           break

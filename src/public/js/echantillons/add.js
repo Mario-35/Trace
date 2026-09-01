@@ -80,7 +80,7 @@ function validateStep2() {
     setReadOnly(["stockageSite","stockageBatiment" ,"stockagePiece" ,"stockageMeuble" ,"stockageEmplacement" ,"stockageConditionnement"]);
     if ([ "Prélevé", "Stocké"].includes(etat.value)) {
         removeReadOnly(["stockageSite","stockageBatiment" ,"stockagePiece" ,"stockageMeuble" ,"stockageEmplacement" ,"stockageConditionnement" , "stockageInfos"]);
-    } else if (["Détruit"].includes(etat.value)) {
+    } else if (["Expédié", "Détruit"].includes(etat.value)) {
         removeReadOnly("stockageSite");
     }
     

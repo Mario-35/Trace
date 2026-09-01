@@ -64,6 +64,7 @@ export async function isDbExists(): Promise<boolean> {
     })
 }
 
+export { createEventSql } from "./createEventSql"
 export { executeSql } from "./executeSql"
 export { executeSqlValues } from "./executeSqlValues"
 export { createDB } from "./createDB"
@@ -74,3 +75,5 @@ export { getListColumns } from "./getListColumns"
 export { createPgInsert } from "./createPgInsert"
 export { createPgUpdate } from "./createPgUpdate"
 export { writeDB } from "./writeDB"
+
+

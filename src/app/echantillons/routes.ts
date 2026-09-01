@@ -8,7 +8,7 @@
 
 import { Router } from "express"
 import { deleteId, readId } from "../../controller"
-import { getListColumns, createPgUpdates, executeSql, executeSqlValues, sql } from "../../db"
+import { getListColumns, createPgUpdates, executeSql, executeSqlValues, createEventSql } from "../../db"
 import { addEchantillon, updateEchantillon } from "./controller"
 import { dataBase } from "../../db/base"
 
@@ -147,7 +147,12 @@ echantillonsRoutes.post("/" + dataBase.echantillons.singular + "", async (req, r
 // Update one sample
 echantillonsRoutes.patch("/" + dataBase.echantillons.singular + "/:id", async (req, res) => {
   await updateEchantillon(req.body, +req.params.id)
-    .then((echantillon: any) => {
+    .then(async (echantillon: any) => {
+      await executeSql(createEventSql({
+        personne: req.body.identity,
+        operation: "update",
+        identification: [+req.params.id]
+      }));
       return res.status(201).json(echantillon)
     })
     .catch((error: any) => {
@@ -159,6 +164,12 @@ echantillonsRoutes.patch("/" + dataBase.echantillons.singular + "/:id", async (r
 echantillonsRoutes.patch("/" + dataBase.echantillons.name + "/selection/:id", async (req, res) => {
   return await executeSql(`SELECT ids FROM selections WHERE id=${+req.params.id}`)
     .then(async (ids: any) => {
+      await executeSql(createEventSql({
+        personne: req.body.identity,
+        operation: "update",
+        identification: ids[0].ids
+      }));
+      
       return await executeSql(
         `UPDATE ${dataBase.echantillons.name} SET ${createPgUpdates(dataBase.echantillons.name, req.body)} WHERE id IN (${ids[0].ids})`
       )

@@ -143,7 +143,7 @@ const formToJSON = elements => [].reduce.call(elements, (data, element) => {
     }
   }
   // console.log(data);
-  
+  data["identity"] = identity.innerText;  
   return data;
 }, {});
 
@@ -163,12 +163,13 @@ const handleFormSubmit = event => {
 
 // return only modified datas FOR UPDATE
 function filterModified(input) {  
-  const datas = {};
+  const datas = {identity : identity.innerText };
   Object.keys(input).forEach(e => {
     const elem = getElement(e);
     if (elem && elem.getAttribute("modified"))
       datas[e] = input[e];
   });  
+  
   return datas
 }
 
