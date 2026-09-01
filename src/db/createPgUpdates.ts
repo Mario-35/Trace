@@ -14,15 +14,13 @@ export function createPgUpdates(tableName: string, values: any) {
   const results: string[] = []
   const columns = getColumns(tableName)
   columns.forEach((column) => {
-    if (values[column]) {
-      console.log(dataBase[tableName].columns[column].type);
-      
+    if (values[column]) {      
       switch (dataBase[tableName].columns[column].type) {
         case "text":
           results.push(`"${column}" = '${escapeSimpleQuotes(values[column])}'`)
           break        
         case "text[]":
-          results.push(`"${column}" = '{"${values[column].split(",").join('","')}"}'`)
+          results.push(`"${column}" = '{"${values[column].split(",").map((str: string) => escapeSimpleQuotes(str)).join('","')}"}'`)
           break
         case "json":
           results.push(`"${column}" = '${JSON.stringify(values[column])}'`)

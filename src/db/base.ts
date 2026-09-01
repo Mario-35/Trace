@@ -490,7 +490,7 @@ export const dataBase: Idb = {
       nom: {
         type: "text",
         title: "Nom du site",
-        create: "varchar(50) NOT NULL",
+        create: "varchar(50) UNIQUE NOT NULL",
         list: true
       },
       pays: {
@@ -588,7 +588,7 @@ export const dataBase: Idb = {
     save: true,
     name: "evenements",
     singular: "evenement",
-    create: true,
+    create: false,
     import: false,
     columns: {
       id: {

@@ -168,11 +168,8 @@ echantillonsRoutes.patch("/" + dataBase.echantillons.name + "/selection/:id", as
         personne: req.body.identity,
         operation: "update",
         identification: ids[0].ids
-      }));
-      
-      return await executeSql(
-        `UPDATE ${dataBase.echantillons.name} SET ${createPgUpdates(dataBase.echantillons.name, req.body)} WHERE id IN (${ids[0].ids})`
-      )
+      }));      
+      return await executeSql( `UPDATE ${dataBase.echantillons.name} SET ${createPgUpdates(dataBase.echantillons.name, req.body)} WHERE id IN (${ids[0].ids})` )
         .then(() => {
           return res.status(201).json({ selection: +req.params.id })
         })
