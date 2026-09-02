@@ -251,7 +251,64 @@ export const dataBase: Idb = {
 
     constraints: ["CONSTRAINT echantillons_pkey UNIQUE NULLS NOT DISTINCT (type, identification)"]
   },
-
+  evenements: {
+    save: true,
+    name: "evenements",
+    singular: "evenement",
+    create: true,
+    import: false,
+    columns: {
+      id: {
+        type: "index",
+        title: "Index",
+        create:
+          "int8 GENERATED ALWAYS AS IDENTITY( INCREMENT BY 1 MINVALUE 1 MAXVALUE 9223372036854775807 START 1 CACHE 1 NO CYCLE) NOT NULL",
+        list: false
+      },
+      date: {
+        type: "timestamp",
+        title: "Date",
+        create: "timestamp without time zone",
+        list: true,
+        excel: false
+      },
+      identification: {
+        type: "text",
+        title: "Identification",
+        create: "varchar(16) NOT NULL",
+        list: true,
+        etiquette: "1902202617320002"
+      },
+      personne: {
+        type: "text",
+        title: "Personne",
+        create: "varchar(50) NOT NULL",
+        list: true,
+        excel: true,
+        etiquette: "ADAM Mario"
+      },
+      operation: {
+        type: "text",
+        title: "Opération",
+        create: "varchar(255) NOT NULL",
+        list: true
+      },
+      savestockage: {
+        type: "json",
+        title: "Stockage initial",
+        create: "jsonb NULL",
+        list: false
+      },
+      saveetat: {
+        type: "text",
+        title: "Etat initialt",
+        create: "varchar(10) NOT NULL",
+        list: true,
+        etiquette: "Crée"
+      }
+    },
+    constraints: []
+  },
   echantillons: {
     save: true,
     name: "echantillons",
@@ -584,62 +641,5 @@ export const dataBase: Idb = {
     constraints: []
   },
 
-  evenements: {
-    save: true,
-    name: "evenements",
-    singular: "evenement",
-    create: false,
-    import: false,
-    columns: {
-      id: {
-        type: "index",
-        title: "Index",
-        create:
-          "int8 GENERATED ALWAYS AS IDENTITY( INCREMENT BY 1 MINVALUE 1 MAXVALUE 9223372036854775807 START 1 CACHE 1 NO CYCLE) NOT NULL",
-        list: false
-      },
-      date: {
-        type: "timestamp",
-        title: "Date",
-        create: "timestamp without time zone",
-        list: true,
-        excel: false
-      },
-      identification: {
-        type: "text",
-        title: "Identification",
-        create: "varchar(16) NOT NULL",
-        list: true,
-        etiquette: "1902202617320002"
-      },
-      personne: {
-        type: "text",
-        title: "Personne",
-        create: "varchar(50) NOT NULL",
-        list: true,
-        excel: true,
-        etiquette: "ADAM Mario"
-      },
-      operation: {
-        type: "text",
-        title: "Opération",
-        create: "varchar(255) NOT NULL",
-        list: true
-      },
-      savestockage: {
-        type: "json",
-        title: "Stockage initial",
-        create: "jsonb NULL",
-        list: false
-      },
-      saveetat: {
-        type: "text",
-        title: "Etat initialt",
-        create: "varchar(10) NOT NULL",
-        list: true,
-        etiquette: "Crée"
-      }
-    },
-    constraints: []
-  }
+
 }

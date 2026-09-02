@@ -105,6 +105,7 @@ pagesRoutes.get("/" + dataBase.echantillons.name + "/export/:id", async (req, re
     }
   )
 })
+
 // Update application
 pagesRoutes.get("/update", async (req, res) => {
   try {
@@ -139,13 +140,7 @@ pagesRoutes.get("/programme", async (req, res) => {
       .catch((error) => {
         log(error)
       })
-})
-
-pagesRoutes.get("/ip", async (req, res) => {
-
-const ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
-console.log(req.headers);
-})
+});
 
 // prints
 pagesRoutes.get("/print/:type/:id", async (req, res) => {

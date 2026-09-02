@@ -403,7 +403,7 @@ class JsonTable {
 
 	renderRows() {
 		// test if global
-		const disabled = getElement("globalSearch").value.trim().length > 0;
+		const disabled = getElement("globalSearch") && globalSearch.value.trim().length > 0;
 		Array.prototype.forEach.call(document.getElementsByClassName("filter"), function(el) {
 			if (disabled)
 				el.setAttribute("disabled", "");

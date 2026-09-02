@@ -91,6 +91,10 @@ if (document.getElementById("fileone")) {
 function handleFileSelect(evt) {
     var files = evt.target.files;
     var xl2json = new ExcelToJSON();
+    console.log("#########################");
+    
+    console.log(xl2json);
+    
     xl2json.parseExcel(files[0]);
     document.getElementById('importer').addEventListener('click', async function() {
         const response = await xl2json.table.postStore();
