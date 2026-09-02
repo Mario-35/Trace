@@ -126,9 +126,9 @@ sitesRoutes.delete("/" + dataBase.sites.singular + "/:id", async (req, res) => {
 })
 
 // for datalists but not used
-sitesRoutes.get("/" + dataBase.sites.name + "/filter/:name", async (req, res) => {
+sitesRoutes.get("/" + dataBase.sites.name + "/filter/:name", async (req, res) => {  
   return await executeSqlValues(
-    `SELECT nom FROM ${dataBase.sites.name} WHERE UPPER(nom) LIKE '${escapeSimpleQuotes(String(req.params.name)).toUpperCase()}%'`
+    `SELECT nom FROM ${dataBase.sites.name} WHERE UPPER(nom) LIKE '%${escapeSimpleQuotes(String(req.params.name)).toUpperCase()}%'`
   ).then((sites: any) => {
     return res.status(201).json(sites.map((e: any) => e[0]))
   })

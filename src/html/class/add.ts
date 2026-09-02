@@ -204,7 +204,7 @@ export class Add extends CoreHtmlView {
                         <div class="form-step active">
                                 <div class="form-row">
                                     <div class="form-group row-1">
-										${this.inputText({
+										${this.inputDataList({
 											max: this.maxLength("nom"),
 											name: "nom",
 											label: "Nom du site",
@@ -212,6 +212,8 @@ export class Add extends CoreHtmlView {
 											tooltipFlow: "right",
 											error: true,
 										})}
+
+
 										${this.inputText({
 											max: this.maxLength("pays"),
 											name: "pays",
@@ -371,7 +373,7 @@ export class Add extends CoreHtmlView {
 									</div>
 
 									<div class="form-row">
-										${this.inputFormGroupText({
+										${this.inputFormGroupDataListText({
 											size: 2,
 											max: this.maxLength("site"),
 											name: "site",
@@ -531,7 +533,7 @@ export class Add extends CoreHtmlView {
                         <div class="form-step" id="form-step-2"> 
                             <div class="form-row">
                                 <div class="error-message" id="site-create-error">Le site </div>
-								${this.inputFormGroupText({
+								${this.inputDataList({
 									size: 2,
 									max: this.maxLength("nomSite"),
 									name: "nomSite",

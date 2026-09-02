@@ -85,7 +85,7 @@ getElement('btnAddSite').addEventListener('click', async (event) => {
 });
 
 // changement de la cle de stockage
-getElement('site').addEventListener('blur', async (event) => {
+getElement('site').addEventListener('input', async (event) => {    
     event.preventDefault();
     if(site.value.trim().length > 2) {
         const datas = await getDatas(`${window.location.origin}/sites/filter/${site.value}`);

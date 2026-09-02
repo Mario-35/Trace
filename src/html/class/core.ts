@@ -163,6 +163,19 @@ export class CoreHtmlView {
         ${options.error ? this.inputError(options) : ''} `;				
   }
 
+  inputDataList(options: IHTMLOptions) {
+    return `${this.inputlabel(options)}
+        <input list="${options.name}-list" id="${options.name}" name="${options.name}" class="form-control" ${ options.max ? `maxlength="${options.max}"` : ''}  placeholder="${options.label}"  ${options.canedit ? `canedit="${options.canedit}"` : '' } ${options.json ? `json="${options.json}"`  : ''} ${options.readonly ? 'readonly' : ''} ${options.disabled ? 'disabled' : ''} />                           
+        ${options.error ? this.inputError(options) : ''} 
+        <datalist id="${options.name}-list"></datalist>`;				
+  }
+
+  inputFormGroupDataListText(options: IHTMLOptions) {
+    return `<div class="form-group row-${ options.size || 1}${options.invisible ? ' invisible' : '' } ">
+        ${this.inputDataList(options)}
+      </div>`;
+  }
+
   inputFormGroupText(options: IHTMLOptions) {
     return `<div class="form-group row-${ options.size || 1}${options.invisible ? ' invisible' : '' } ">
         ${this.inputText(options)}
