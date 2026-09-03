@@ -328,6 +328,7 @@ export const dataBase: Idb = {
         title: "Type de prélèvement",
         create: "varchar(25) NOT NULL",
         list: true,
+        searchType: "select",
         etiquette: "Sol"
       },
       programme: {
@@ -497,8 +498,9 @@ export const dataBase: Idb = {
       etat: {
         type: "text",
         title: "Etat du prélèvement",
-        create: "varchar(10) NOT NULL",
+        create: "varchar(12) NOT NULL",
         list: true,
+        searchType: "select",
         etiquette: "Crée"
       },
       evenements: {

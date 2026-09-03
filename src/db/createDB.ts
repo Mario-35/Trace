@@ -31,7 +31,7 @@ export async function createDB(adminPass: string): Promise<Record<string, string
       // drop database
       return await admin(adminPass)
         .unsafe("DROP DATABASE trace")
-        .then(async (res) => {
+        .then(async () => {
           result["DROP DATABASE"] = "Ok"
           // create blank database
           return await admin(adminPass)
@@ -41,11 +41,15 @@ export async function createDB(adminPass: string): Promise<Record<string, string
               return true
             })
             .catch((error) => {
+              console.log(error);
+              
               result["CREATE DATABASE"] = "Error"
               return false
             })
         })
         .catch(async (error) => {
+              console.log(error);
+
           return await admin(adminPass)
             .unsafe("CREATE DATABASE trace")
             .then(async (res) => {
@@ -53,6 +57,8 @@ export async function createDB(adminPass: string): Promise<Record<string, string
               return true
             })
             .catch((error) => {
+              console.log(error);
+
               result["CREATE DATABASE"] = "Error"
               return false
             })
@@ -63,7 +69,7 @@ export async function createDB(adminPass: string): Promise<Record<string, string
   if (create === false) return result
 
   // store all queries
-  const queries: string[] = []
+  const queries: string[] = ["CREATE EXTENSION unaccent;"]
 
   // loop on tables
   Object.keys(dataBase).forEach((tableName) => {

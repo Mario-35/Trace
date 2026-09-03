@@ -31,8 +31,6 @@ export class CoreHtmlView {
 
     loadFile(name: string): string {
       return removeComments(fs.readFileSync(path.join(__dirname, "../../public/", name), "utf-8"));
-      // return fs.existsSync(path.join("./public/", name)) 
-        // : fs.readFileSync(path.join(__dirname, "/", name.replace(".css", ".min.css")), "utf-8");
     }
     
     addFile(name: string): string {

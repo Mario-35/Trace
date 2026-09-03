@@ -315,9 +315,10 @@ class JsonTable {
 							option.value = value;
 							selectSelect.appendChild(option);
 						});
-						selectSelect.addEventListener("change", (e) =>
-							this.filterDatas()
-						);
+						selectSelect.addEventListener("change", (e) => {
+							this.addToFilter(column.key, e.target.value);
+							this.filterDatas();
+						});
 						th.appendChild(selectSelect);
 						break;
 					}
