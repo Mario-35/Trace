@@ -212,8 +212,6 @@ export class Add extends CoreHtmlView {
 											tooltipFlow: "right",
 											error: true,
 										})}
-
-
 										${this.inputText({
 											max: this.maxLength("pays"),
 											name: "pays",
@@ -245,13 +243,12 @@ export class Add extends CoreHtmlView {
 											error: true,
 										})}
 										<hr>
-								${this.inputBtn({
-									name: "btnApiRpg",
-									label: "Interroger",
-									disabled: true,
-									tooltip: "Interroger Registre Parcellaire Graphique",
-								}, "btn-api form-group float-end", "🌍 Registre Parcellaire Graphique")}
-
+										${this.inputBtn({
+											name: "btnApiRpg",
+											label: "Interroger",
+											disabled: true,
+											tooltip: "Interroger Registre Parcellaire Graphique",
+										}, "btn-api form-group float-end", "🌍 Registre Parcellaire Graphique")}
                                     </div>
                                     <div class="form-group row-1">
 										${this.inputMap("map")}                                        
@@ -370,28 +367,29 @@ export class Add extends CoreHtmlView {
 												tooltip: "Nom du programme",
 												error: true,
 											})}
-									</div>
+										</div>
 
-									<div class="form-row">
-										${this.inputFormGroupDataListText({
-											size: 2,
-											max: this.maxLength("site"),
-											name: "site",
-											label: "Site de prélèvement",
-											tooltip: "Site géographique de prélévement",
-											error: true,
-											tooltipFlow: "right",
-										})}
+										<div class="form-row">
+											${this.inputFormGroupDataListText({
+												size: 2,
+												max: this.maxLength("site"),
+												name: "site",
+												label: "Site du prélèvement",
+												tooltip: "Site du prélévement",
+												error: true,
+												canedit: "rhyzo",
+												tooltipFlow: "right",
+											})}
 
-										${this.inputFormGroupText({
-											size: 2,
-											max: this.maxLength("responsable"),
-											name: "responsable",
-											tooltip: "Personne responsable du programme / prélèvement",
-											label: "Nom du responsable",
-											error: true,
-										})}
-									</div>
+											${this.inputFormGroupText({
+												size: 2,
+												max: this.maxLength("responsable"),
+												name: "responsable",
+												tooltip: "Personne responsable du programme / prélèvement",
+												label: "Nom du responsable",
+												error: true,
+											})}
+										</div>
 
 									<div class="form-row">
 										${this.inputFormGroupText({
@@ -504,7 +502,8 @@ export class Add extends CoreHtmlView {
 											tooltip: "Infos libre sélectionnable lors de l'impression des étiquettes",
 											label: "Infos libre",
 											canedit: "true"
-										})}                     
+										})}
+										                     
 										<button tooltip="Créer une liste à importer" class="btn btn-list invisible" id="btn-libre">Créer</button>    
 
 										${this.inputFormGroupText({
@@ -516,12 +515,10 @@ export class Add extends CoreHtmlView {
 											canedit: "true"
 										})}
 										<button tooltip="Créer une liste à importer" class="btn btn-list invisible" id="btn-analyses">Créer</button>    
-									</div>                            
+									</div>
 
-									
 									${this.rangeHTML()}
 
-									
 									<div class="btn-group">                   
 										<button tooltip="L'état ne peut être créer ou importer" class="btn btn-aliquote" id="btn-aliquote" disabled>⬅ Créer une aliquote</button>
 										<button class="btn btn-events" id="btn-events">Evenement(s)</button>										
@@ -533,14 +530,16 @@ export class Add extends CoreHtmlView {
                         <div class="form-step" id="form-step-2"> 
                             <div class="form-row">
                                 <div class="error-message" id="site-create-error">Le site </div>
+								
 								${this.inputDataList({
-									size: 2,
 									max: this.maxLength("nomSite"),
 									name: "nomSite",
 									label: "Nom du site",
 									tooltip: "Nom du site géographique",
-									error: true,
 									tooltipFlow: "right",
+									canedit: "rhyzo",
+									error: true,
+
 								})}
                             </div>
                             <div class="form-row">
@@ -549,6 +548,8 @@ export class Add extends CoreHtmlView {
 									name: "pays",
 									label: "Pays",
 									tooltip: "Pays du site géographique",
+									tooltipFlow: "right",
+									canedit: "rhyzo",
 									error: true,
 								})}
 								${this.inputFormGroupText({
@@ -556,21 +557,23 @@ export class Add extends CoreHtmlView {
 									name: "region",
 									label: "Région",
 									tooltip: "Saisissez le code postal sur 2 ou 5 chiffres pour effectuer une recherche",
+									canedit: "rhyzo",
 									error: true,
 								})}
 								${this.inputFormGroupText({
 									name: "latitude",
-									label: "Latitude",
+									label: "Latitude du site",
 									tooltip: "Latitude en degré décimal au format WGS84",
+									canedit: "rhyzo",
 									error: true,
 								})}
 								${this.inputFormGroupText({
 									name: "longitude",
-									label: "Longitude",
+									label: "Longitude du site",
 									tooltip: "Longitude en degré décimal au format WGS84",
+									canedit: "rhyzo",
 									error: true,
-								})}
-								
+								})}							
 								${this.inputBtn({
 									name: "btnApiRpg",
 									label: "Interroger",
@@ -582,7 +585,7 @@ export class Add extends CoreHtmlView {
 									label: "Interroger",
 									tooltip: "Création du site",
 								}, "btn-add form-group float-end", "Créer")}
-                            </div>
+							</div>
 
                             <div class="form-row">
                                 <div class="form-group row-1" id="rpgTab"></div>  

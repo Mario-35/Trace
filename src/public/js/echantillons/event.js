@@ -2,7 +2,6 @@
 getElement('btn-creer').addEventListener('click', async (event) => {
     event.preventDefault();    
     _DATAS = formDatas();
-    
     const ctx = getContext();
     if (isContextMode(["id", "selection"])) {
         fetch(window.location.origin + `/echantillon${isContextMode(["selection"]) ? 's/selection' :''}/` + ctx.id, {
@@ -122,15 +121,6 @@ getElement("longitude").addEventListener("change", (event) => {
     event.preventDefault();
    cleanCulture();
 });
-
-// getElement("nombreOuAnalyses").addEventListener("change", (event) => {
-//     event.preventDefault();
-//     readOnly(event.target.checked, "nombre");
-//     showModalEditingList("Chaque analyse générera un échantillon", 
-//                         "ajouter une analyse", 
-//                         getElement("analyses"),
-//                         function() {nombre.value = getElement("analyses").value.split(',').length });  
-// });
 
 getElement("etat").addEventListener("change", (event) => {
     modifiedValue("etat");

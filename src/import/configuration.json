@@ -14,14 +14,16 @@
                 "Crée,Prélevé,Stocké,Perdu,Détruit,Importé,Annulé,Non prélevé,Supprimé,Reprelevé,Expédié"
             ],
             "types": [
-                "Boues,Eau,Invertébrés,Sol Cultivé,Sol Forestier,Prairie,Plante,Sol"
+                "Boues,Eau,Invertébrés,Prairie,Plante,Végétal"
             ],
+            "passeports" : [ "Sol Cultivé, Sol Forestier, Sol" ],
             "sizes": [
                 "8px,10px,12px,14px,16px"
             ],
             "stockages": [
                 "Batiment,Etage,Piece,Meuble,Etagere,Caisse"
             ],
+            "caracterisations": [ "Normal", "Blanc", "Doublon", "Pédagogique" ],
             "print": {
                 "width": "50mm",
                 "height": "25mm"

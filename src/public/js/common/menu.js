@@ -158,6 +158,8 @@ async function loadRangeLine(index) {
         if (isContextMode(["aliquote","selectionaliquote"])) showAliquote(_STORE.datas[index]);
     } else {
         Object.keys(_STORE.columns).forEach(column => {
+            console.log(column);
+            
             loadValue(column, _STORE.datas[index][_STORE.columns[column]]);
             getElement("identification").value = createIdentification(index);
             if (isContextMode(["aliquote","selectionaliquote"])) showAliquote(column, _STORE.datas[index][_STORE.columns[column]]);
@@ -193,7 +195,7 @@ function updateReadOnly(ctx) {
         let show = element.name ? false : true;
         if (element.hasAttribute("json")) return;
         if (element.name) { 
-            if (element.getAttribute("canedit")) {
+            if (element.getAttribute("canedit")) {                
                 switch (element.getAttribute("canedit")) {
                     // never so it's never editable
                     case "never":
@@ -202,6 +204,10 @@ function updateReadOnly(ctx) {
                     // always editable
                     case "always":
                         show = true;                        
+                        break;
+                    // editable if no value
+                    case "Null":                        
+                        show = (!element.value || element.value === "");                   
                         break;
                     // editable if no value
                     case "notNull":
@@ -215,6 +221,10 @@ function updateReadOnly(ctx) {
                     case "etat:Crée":
                         show = getElement('etat').value === 'Crée';                     
                         break;
+                    // only if type rhyzo donc sol
+                    case "rhyzo":
+                        show = !(_CONFIGURATION.passeports.includes(getElement('type').value));                     
+                        break;                        
                 }
             // in new mode editable is true
             }  else  show = (ctx.mode ===  'new');

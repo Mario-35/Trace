@@ -9,12 +9,13 @@
 import { Router } from "express"
 import { deleteId, readAll, readAlSearch, readId, verifyBody } from "../../controller"
 import { addSite, updateSite } from "./controller"
-import { executeSql, executeSqlValues } from "../../db"
+import { executeSql, executeSqlValues, getListColumns } from "../../db"
 import { asyncForEach } from "../../helpers/asyncForEach"
 import { dataBase } from "../../db/base"
 import { escapeSimpleQuotes } from "../../helpers/escapeSimpleQuotes"
 
 export const sitesRoutes = Router()
+
 
 // Get all sites
 sitesRoutes.get("/sites", async (req, res) => {
@@ -133,3 +134,15 @@ sitesRoutes.get("/" + dataBase.sites.name + "/filter/:name", async (req, res) =>
     return res.status(201).json(sites.map((e: any) => e[0]))
   })
 })
+
+
+// Get search list for UI
+sitesRoutes.get("/list/" + dataBase.sites.name + "/search/:search", async (req, res) => {
+  await executeSql( `SELECT id, ${getListColumns(dataBase.sites.name)} FROM ${dataBase.sites.name} WHERE to_tsvector(${dataBase.sites.name} ::text) @@ to_tsquery('simple', quote_literal('${req.params.search}') || ':*')` )
+    .then((site: any) => {
+      return res.status(200).json(site)
+    })
+    .catch((error) => {
+      return res.status(404).json({ error: error.detail })
+    })
+});

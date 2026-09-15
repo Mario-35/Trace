@@ -84,7 +84,7 @@ function validateStep2() {
         removeReadOnly("stockageSite");
     }
     
-    if (type.value.startsWith("Sol ")) {
+    if (_CONFIGURATION.passeports.includes(type.value)) {
         if (isContextMode(["id", "selection", "after"])) return isValid;
         // If not historical cultural get it and out without valid
         if (notNull("cultures") === false) {

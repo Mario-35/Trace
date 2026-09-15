@@ -100,10 +100,16 @@ export const dataBase: Idb = {
       },
       stockages: {
         type: "text[]",
-        title: "Région",
+        title: "Stockage",
         create: "text[] NOT NULL",
         list: true
       },
+      caracterisations: {
+        type: "text[]",
+        title: "Caracterisations",
+        create: "text[] NOT NULL",
+        list: true
+      },      
       print: {
         type: "json",
         title: "Paramètres Imprimante",
@@ -362,6 +368,38 @@ export const dataBase: Idb = {
         excel: true,
         etiquette: "Nom du site"
       },
+      pays: {
+        type: "text",
+        title: "Pays",
+        create: "varchar(25) NOT NULL",
+        list: false,
+        excel: true,
+        etiquette: "France"
+      },
+      region: {
+        type: "text",
+        title: "Région",
+        create: "varchar(30) NOT NULL",
+        list: false,
+        excel: true,
+        etiquette: "Bretagne"
+      },
+      latitude: {
+        type: "text",
+        title: "Site Point X",
+        create: "varchar(20) NOT NULL",
+        list: false,
+        excel: true,
+        etiquette: "2.549023"
+      },
+      longitude: {
+        type: "text",
+        title: "Site Point Y",
+        create: "varchar(20) NOT NULL",
+        list: false,
+        excel: true,
+        etiquette: "49.9967718"
+      },     
       responsable: {
         type: "text",
         title: "Résponsable",
@@ -421,6 +459,7 @@ export const dataBase: Idb = {
         title: "Date de prélèvement",
         create: "date NOT NULL",
         list: false,
+        etiquette: '2026-03-04',
         excel: true
       },
       peremption: {
@@ -428,45 +467,15 @@ export const dataBase: Idb = {
         title: "Date de péremption",
         create: "date NOT NULL",
         list: false,
+        etiquette: '2031-03-04',
         excel: true
-      },
-      pays: {
-        type: "text",
-        title: "Pays",
-        create: "varchar(25) NOT NULL",
-        list: false,
-        excel: true,
-        etiquette: "France"
-      },
-      region: {
-        type: "text",
-        title: "Région",
-        create: "varchar(30) NOT NULL",
-        list: false,
-        excel: true,
-        etiquette: "Bretagne"
-      },
-      latitude: {
-        type: "text",
-        title: "Point X",
-        create: "varchar(20) NOT NULL",
-        list: false,
-        excel: true,
-        etiquette: "2.549023"
-      },
-      longitude: {
-        type: "text",
-        title: "Point Y",
-        create: "varchar(20) NOT NULL",
-        list: false,
-        excel: true,
-        etiquette: "49.9967718"
       },
       // ATTENTION Not passeport id but passeport tracabilite
       passeport: {
         type: "number",
         title: "Passeport",
         create: "int2 NULL",
+        etiquette: '2026-0003',
         list: true
       },
       cultures: {
@@ -510,7 +519,23 @@ export const dataBase: Idb = {
         create: "",
         calculate: "(SELECT COUNT(*) FROM evenements WHERE identification=echantillons.identification)::int > 0",
         list: true
-      },
+      },  
+      // numero: {
+      //   type: "number",
+      //   title: "",
+      //   create: "",
+      //   calculate: "SUBSTRING ( identification FROM 13 FOR 4 ):: int ",
+      //   list: false,
+      //   etiquette: "0002"
+      // },  
+      'dossier-numero': {
+        type: "text",
+        title: "",
+        create: "",
+        calculate: "CONCAT ( dossier, '-', SUBSTRING ( identification FROM 13 FOR 4 ):: int)",
+        list: false,
+        etiquette: "0429-0002"
+      },          
     },
     constraints: ["CONSTRAINT echantillons_pkey UNIQUE NULLS NOT DISTINCT (type, identification)"]
   },

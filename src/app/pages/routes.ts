@@ -215,7 +215,7 @@ pagesRoutes.post("/SaveConfig", async (req, res) => {
 
 // configuration page
 pagesRoutes.get("/configuration.html", async (req, res) => {
-  const conf = await readId(dataBase.configuration.name, 1)
+  await readId(dataBase.configuration.name, 1)
     .then((configuration: any) => {
       res.send(new Configuration(configuration[0]).toString())
     })

@@ -19,7 +19,7 @@ export function getListColumns(tableName: string) {
     .filter((column) => dataBase[tableName].columns[column].list === true)
     .map((column) =>
       dataBase[tableName].columns[column].calculate
-        ? `${dataBase[tableName].columns[column].calculate} AS ${column}`
+        ? `${dataBase[tableName].columns[column].calculate} AS "${column}"`
         : `"${column}"`
     )
     .filter((e) => e !== "")

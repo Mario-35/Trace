@@ -24,13 +24,8 @@ export function createConfig(configuration?: any) {
   configuration["excelColumns"] = Object.keys(dataBase.echantillons.columns).filter(
     (e) => dataBase.echantillons.columns[e].excel
   )
-  configuration["stickerElements"] = JSON.parse(
-    `{"echantillon": "1902202617320002", "dossier":"0429", "numero":"0002", "prelevement":"2026-03-04", "peremption":"2031-03-04", "passeport":"2026-0003", "dossier-numero":"0429-0002", ${Object.keys(
-      dataBase.echantillons.columns
-    )
-      .filter((e) => dataBase.echantillons.columns[e].etiquette)
-      .map((e) => `"${e}" : "${dataBase.echantillons.columns[e].etiquette}"`)}}`
-  )
+  configuration["stickerElements"] = 
+  Object.keys(dataBase.echantillons.columns).filter(e => dataBase.echantillons.columns[e].etiquette). reduce((acc, item) => ({ ...acc, [item]: String(dataBase.echantillons.columns[item].etiquette) }), {} as Record<string, string>);
   return configuration
 }
 
@@ -38,23 +33,14 @@ export function createConfig(configuration?: any) {
 function writeConfigurationFile(configuration: any) {
   configuration["excelColumns"] = Object.keys(dataBase.echantillons.columns).filter(
     (e) => dataBase.echantillons.columns[e].excel
-  )
-  ;["etats", "types", "caracterisations", "sizes"].forEach((e) => {
-    configuration[e] = configuration[e][0].split(",")
+  );
+  console.log(configuration);
+  
+  ["etats", "types", "passeports", "caracterisations", "sizes"].forEach((e) => {
+    configuration[e] = configuration[e].split(",")
   })
   configuration["stickerElements"] =
-    JSON.parse(`{"echantillon": "1902202617320002", "dossier":"0429", "numero":"0002", "prelevement":"2026-03-04", "peremption":"2031-03-04", "passeport":"2026-0003", "dossier-numero":"0429-0002",
-                                                      ${Object.keys(dataBase.echantillons.columns)
-                                                        .filter(
-                                                          (e) =>
-                                                            dataBase.echantillons.columns[e]
-                                                              .etiquette
-                                                        )
-                                                        .map(
-                                                          (e) =>
-                                                            `"${e}" : "${dataBase.echantillons.columns[e].etiquette}"`
-                                                        )}}`)
-
+    Object.keys(dataBase.echantillons.columns).filter(e => dataBase.echantillons.columns[e].etiquette). reduce((acc, item) => ({ ...acc, [item]: String(dataBase.echantillons.columns[item].etiquette) }), {} as Record<string, string>);
   fs.writeFile(
     path.resolve(__dirname, "../../public/js/", "configuration.js"),
     `_CONFIGURATION = ${util.inspect(configuration, { showHidden: false, depth: null, colors: false })};`,

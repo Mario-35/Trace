@@ -76,32 +76,42 @@ async function createSite() {
 // get information site
 async function setSite() {
     head("setSite");
-    const temp = await getDatas(`${window.location.origin}/sites/search/${site.value}`);
-    if (temp) {
-        if (temp.length === 1) {
-            nomSite.value = temp[0].nom;
-            site.value = temp[0].nom;
-            pays.value = temp[0].pays;
-            region.value = temp[0].region;
-            latitude.value = temp[0].latitude;
-            longitude.value = temp[0].longitude;
-            setReadOnly(["nomSite", "pays", "region", "latitude","longitude"]);
-            hideParentClass("btnAddSite",'form-group'); 
-            removeDisabled("next-2");
-            if (type.value.startsWith("Sol ")) {
-                showParentClass("btnApiRpg",'form-group'); 
-                refreshCultures();
-                if ( _CONFIGURATION.passeport === true) setPasseport();
-            } else hideParentClass("btnApiRpg",'form-group'); 
-        }
+    // if Sol        
+    if ((_CONFIGURATION.passeports.includes(getElement('type').value))) {
+        const temp = await getDatas(`${window.location.origin}/sites/search/${site.value}`);        
+        if (temp) {
+            if (temp.length === 1) {
+                nomSite.value = temp[0].nom;
+                site.value = temp[0].nom;
+                pays.value = temp[0].pays;
+                region.value = temp[0].region;
+                latitude.value = temp[0].latitude;
+                longitude.value = temp[0].longitude;
+                setReadOnly(["nomSite", "pays", "region", "latitude","longitude"]);
+                hideParentClass("btnAddSite",'form-group'); 
+                removeDisabled("next-2");
+                if (_CONFIGURATION.passeports.includes(type.value)) {
+                    showParentClass("btnApiRpg",'form-group'); 
+                    refreshCultures();
+                    if ( _CONFIGURATION.passeport === true) setPasseport();
+                } else hideParentClass("btnApiRpg",'form-group'); 
+            }
+        } else {
+            nomSite.value = site.value;
+            removeReadOnly(["nomSite", "pays", "region", "latitude", "longitude"]);
+            hideParentClass("btnApiRpg",'form-group'); 
+            showParentClass("btnAddSite",'form-group');
+            setDisabled("next-2");
+         }
+    // autre type de prlevement
     } else {
-        // Create site
-        nomSite.value = site.value;
-        removeReadOnly(["nomSite", "pays", "region", "latitude", "longitude"]);
-        hideParentClass("btnApiRpg",'form-group'); 
-        showParentClass("btnAddSite",'form-group');
-        setDisabled("next-2");
-     }
+            nomSite.value = site.value;
+            removeReadOnly(["nomSite", "pays", "region", "latitude", "longitude"]);
+            hideParentClass("btnApiRpg",'form-group'); 
+            hideParentClass("btnAddSite",'form-group');
+         }
+
+        
 
     
 };
@@ -145,7 +155,7 @@ async function start() {
     addToOption(getElement('element'), Object.keys(_CONFIGURATION.stickerElements));
     // init select for etats keys       
     addToOption(getElement('etat'), _CONFIGURATION.etats, "Crée");
-    addToOption(getElement('type'), _CONFIGURATION.types, _AUCUN);
+    addToOption(getElement('type'), [..._CONFIGURATION.passeports, ..._CONFIGURATION.types ], _AUCUN);
     addToOption(getElement('caracterisation'), _CONFIGURATION.caracterisations, "Normal");
     addToOption(getElement('textSize'), _CONFIGURATION.sizes, "10px");
     // set and get context

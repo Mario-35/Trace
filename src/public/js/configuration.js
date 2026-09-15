@@ -15,11 +15,14 @@ const _CONFIGURATION = {
     'Boues',
     'Eau',
     'Invertébrés',
-    'Sol Cultivé',
-    'Sol Forestier',
     'Prairie',
     'Plante',
-    'Sol'
+    'Végétal'
+  ],  
+  passeports : [
+    'Sol',
+    'Sol Cultivé',
+    'Sol Forestier',
   ],
   sizes: [ '8px', '10px', '12px', '14px', '16px', '18px' ],
   print: { width: '50mm', height: '25mm' },
@@ -62,6 +65,7 @@ const _CONFIGURATION = {
     latitude: '2.549023',
     longitude: '49.9967718',
     analyses: 'Matière org, Physico-chimi ADNe 1',
-    etat: 'Crée'
+    etat: 'Crée',
+    precison: "Position précise"
   }
 };

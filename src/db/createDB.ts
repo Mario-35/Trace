@@ -58,7 +58,6 @@ export async function createDB(adminPass: string): Promise<Record<string, string
             })
             .catch((error) => {
               console.log(error);
-
               result["CREATE DATABASE"] = "Error"
               return false
             })

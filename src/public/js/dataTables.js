@@ -45,7 +45,9 @@ class JsonTable {
 	// remove all filters on the page
 	cleanFilter() {
 		delete this.localSave[getElementText("nameType")];
-		localStorage.setItem('filters', JSON.stringify(this.localSave));
+		localStorage.setItem('filters', '{}');
+		getElement("globalSearch").value = "";
+		this.jsonUrl = window.location.origin + `/list/${getElementText("nameType")}`;
 	}
 	// remove one filter
 	removeToFilter(key) {
@@ -265,12 +267,12 @@ class JsonTable {
 		return 'white-space: nowrap; width: 1%; font-weight: lighter;font-size: 14px;';
 	};
 
-	async site(element) {
-		const colName = element.value.split('|')[0];
-		const uniqueValues = [...new Set(this.data.map((row) => row[colName]))];
-		const temp = await postDatas(`${window.location.origin}/site/rapprochement`, {unique: uniqueValues});
-		if (temp) showModalList("Fichier Excel", "Base de données", temp, 'Trouvé');
-	};
+	// async site(element) {
+	// 	const colName = element.value.split('|')[0];
+	// 	const uniqueValues = [...new Set(this.data.map((row) => row[colName]))];
+	// 	const temp = await postDatas(`${window.location.origin}/site/rapprochement`, {unique: uniqueValues});
+	// 	if (temp) showModalList("Fichier Excel", "Base de données", temp, 'Trouvé');
+	// };
 
 	renderHeader() {
 		const nameType = getElementText("nameType");
@@ -337,14 +339,14 @@ class JsonTable {
 						th.appendChild(selectExcel);
 
 						selectExcel.addEventListener("change", async (e) => {
-							if (e.target.value.split('|')[1] === "site") {
-								await this.site(e.target);
-							}
+							// if (e.target.value.split('|')[1] === "site") {
+							// 	await this.site(e.target);
+							// }
 							if (e.target.value)
 								e.target.classList.add("something");
 							else
 								e.target.classList.remove("something");
-							this.filterBlankColumn();
+							// this.filterBlankColumn();
 						});
 						break;
 					}
@@ -368,7 +370,6 @@ class JsonTable {
 						const input = document.createElement("input");
 						input.type = "text";
 						input.style.cssText = 'font-size: 14px;';
-
 						if (this.localSave[nameType] && this.localSave[nameType][column.key])
 							input.value = this.localSave[nameType][column.key];
 						input.className = "form-control filter";
@@ -404,13 +405,17 @@ class JsonTable {
 
 	renderRows() {
 		// test if global
-		const disabled = getElement("globalSearch") && globalSearch.value.trim().length > 0;
-		Array.prototype.forEach.call(document.getElementsByClassName("filter"), function(el) {
-			if (disabled)
-				el.setAttribute("disabled", "");
-			else
-				el.removeAttribute("disabled");
-		});	
+		// const disabled = getElement("globalSearch") && globalSearch.value.trim().length > 0;
+		// if (disabled) {
+		// 	console.log("###################################################################");
+			
+		// }
+		// Array.prototype.forEach.call(document.getElementsByClassName("filter"), function(el) {
+		// 	if (disabled)
+		// 		el.setAttribute("disabled", "");
+		// 	else
+		// 		el.removeAttribute("disabled");
+		// });	
 		const tableBody = this.container.querySelector("tbody");
 		tableBody.innerHTML = "";
 		const start = (this.currentPage - 1) * this.rowsPerPage;
@@ -625,17 +630,33 @@ class JsonTable {
 	// create filters listeners
 	addGlobalSearchListener() {
 		if (this.globalSearchInput) {
-			this.globalSearchInput.addEventListener("input", (e) =>
-				this.filterDatas(e.target.value)
-			);
+			this.globalSearchInput.addEventListener("input", async (e) => {
+				const search = e.target.value.trim();
+				if (search === "") {
+					this.cleanFilter();
+					console.log();
+					
+					try {
+						const response = await fetch(this.jsonUrl);
+						this.data = await response.json();
+						this.filteredData = [...this.data];
+					} catch (error) {
+						console.error("Error fetching JSON data:", error);
+					}
+					this.renderTable("rows");					
+				} else if (search && search.length > 2) {
+					this.jsonUrl = window.location.origin + `/list/${getElementText("nameType")}/search/` + search;
+					this.addToFilter("global", search);
+					await this.fetchData();
+					this.renderTable("rows");
+				}
+			});
 		}
 	};
 
 	// get row by his id
 	getRow(id) {
-		this.filteredData = this.data.filter((row) =>
-			row.id === id
-		);
+		this.filteredData = this.data.filter((row) => row.id === id );
 		this.currentPage = 1;
 		this.renderTable();
 	};
@@ -651,7 +672,8 @@ class JsonTable {
 		const listCols = [];
 		const elems = document.querySelectorAll('.excel-control');
 		elems.forEach(elem => {
-			if (elem.value !== "") listCols.push(elem.value);
+			listCols.push(elem.value);
+			// if (elem.value !== "") listCols.push(elem.value);
 		});
 		this.filteredData = 
 		this.data.filter((item) => {
@@ -680,6 +702,10 @@ class JsonTable {
 				this.filteredData = this.data.filter((row) =>
 					Object.values(row).some((field) => String(field).toLowerCase().includes(this.localSave[nameType]["global"]))
 				);
+
+				const elem = getElement("globalSearch");
+				if (elem) elem.value = this.localSave[nameType]["global"];
+				
 			} else if (this.localSave && Object.keys(this.localSave).length > 0) {
 
 				this.filteredData = this.data;

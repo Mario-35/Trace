@@ -7,7 +7,7 @@
  */
 
 
-export const _TYPES = ["Boues", "Eau", "Invertébrés", "Sol cultivé", "Sol forestier", "Prairie", "Sol"];
+export const _TYPES = ["Boues", "Eau", "Invertébrés", "Sol cultivé", "Sol forestier", "Prairie", "Sol", "Végétal"];
 
 export const EConstant = Object.freeze({
     appName: "Trace",
