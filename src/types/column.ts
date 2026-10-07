@@ -13,6 +13,7 @@ export interface Icolumn {
     create: String; // postgresSql format column create
     searchType?: String; // serachType
     list : boolean; // is the column visible in list UI
+    infos? : boolean; // is the column visible in list UI
     excel? : boolean; // can be import in sxcel importation
     etiquette? : String; // can be printed in sticker
     calculate? : String; // is a calculate column instead of real coulmn in postgresSql

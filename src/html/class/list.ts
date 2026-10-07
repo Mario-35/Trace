@@ -20,7 +20,7 @@ export class List extends CoreHtmlView {
 		const listCols:any = [];
 		const src = dataBase[name as keyof object];
 		
-		Object.keys(src.columns).filter((e: any) => src.columns[e].list === true).forEach(e => {
+		Object.keys(src.columns).filter((e: any) => src.columns[e].list === true || src.columns[e].infos === true).forEach(e => {
 			listCols.push({
 				key: e,
 				title: src.columns[e].title,
@@ -41,6 +41,7 @@ export class List extends CoreHtmlView {
     <link rel="stylesheet" href="/css/modal.css">
     <link rel="stylesheet" href="/css/splitter.css">
     <link rel="stylesheet" href="/css/menu.css">
+    <link rel="stylesheet" href="/css/infos.css">
 </head>
 
 <body>

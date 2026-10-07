@@ -1,8 +1,15 @@
-import { executeSql, getColumns } from "."
-import { asyncForEach } from "../helpers/asyncForEach"
-import { dataBase } from "./base"
-import fs from "fs"
-import path from "path"
+import { executeSql, getColumns } from ".";
+import { asyncForEach } from "../helpers/asyncForEach";
+import { dataBase } from "./base";
+import fs from "fs";
+import path from "path";
+import { promisify } from "util";
+import {exec} from "node:child_process";
+import util from "node:util";
+
+// promisify exec
+const execPromise = util.promisify(exec);
+
 
 async function asJson(tableName: string) {
   return executeSql(
@@ -14,7 +21,32 @@ async function asJson(tableName: string) {
     })
 }
 
+function isStdError(err: any): err is { stderr: string } {
+    return !!err.stderr
+}
+
+
+export async function dumpDB(fileName: string) {
+  try {
+    await execPromise(`pg_dump --dbname=postgresql://postgres:postgres@localhost:5432/trace -F tar -f ./uploads/${fileName}`);
+    return true;
+  } catch (e) {
+      if (isStdError(e)) {
+          console.log(e.stderr);
+          return false;
+      } else {
+          throw e
+      }
+  } 
+
+
+}
+
+
+
 export async function writeDB() {
+
+
   const result: any = {}
 
   asyncForEach(

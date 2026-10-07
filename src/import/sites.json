@@ -402,7 +402,7 @@
         {
             "nom": "Bramans [1608]",
             "pays": "France",
-            "region": "Auvergne-Rhône-Alpes",
+            "region": "Auvergne-rhône-alpes",
             "latitude": "45.16199",
             "longitude": "6.81400"
         },
@@ -416,42 +416,42 @@
         {
             "nom": "Winnezeele [12]",
             "pays": "France",
-            "region": "Hauts-de-France",
+            "region": "Hauts-de-france",
             "latitude": "50.86118",
             "longitude": "2.54968"
         },
         {
             "nom": "Saint-andre-les-alpes [1947]",
             "pays": "France",
-            "region": "Provence-Alpes-Côte d'Azur",
+            "region": "Provence-alpes-côte D'azur",
             "latitude": "44.02108",
             "longitude": "6.51251"
         },
         {
             "nom": "Saint-martin-boulogne [16]",
             "pays": "France",
-            "region": "Hauts-de-France",
+            "region": "Hauts-de-france",
             "latitude": "50.71192",
             "longitude": "1.65712"
         },
         {
             "nom": "Laberliere [162]",
             "pays": "France",
-            "region": "Hauts-de-France",
+            "region": "Hauts-de-france",
             "latitude": "49.56871",
             "longitude": "2.76462"
         },
         {
             "nom": "Jossigny [393]",
             "pays": "France",
-            "region": "Ile-de-France",
+            "region": "Ile-de-france",
             "latitude": "48.84780",
             "longitude": "2.75973"
         },
         {
             "nom": "Lamargelle [915]",
             "pays": "France",
-            "region": "Bourgogne-Franche-Comté",
+            "region": "Bourgogne-franche-comté",
             "latitude": "47.52741",
             "longitude": "4.87384"
         },
@@ -472,49 +472,49 @@
         {
             "nom": "Clavieres [1673]",
             "pays": "France",
-            "region": "Auvergne-Rhône-Alpes",
+            "region": "Auvergne-rhône-alpes",
             "latitude": "44.96006",
             "longitude": "3.33753"
         },
         {
             "nom": "Bouvignies [41]",
             "pays": "France",
-            "region": "Hauts-de-France",
+            "region": "Hauts-de-france",
             "latitude": "50.42749",
             "longitude": "3.22130"
         },
         {
             "nom": "Marcelcave [104]",
             "pays": "France",
-            "region": "Hauts-de-France",
+            "region": "Hauts-de-france",
             "latitude": "49.85574",
             "longitude": "2.54489"
         },
         {
             "nom": "Touillon [861]",
             "pays": "France",
-            "region": "Bourgogne-Franche-Comté",
+            "region": "Bourgogne-franche-comté",
             "latitude": "47.68034",
             "longitude": "4.45473"
         },
         {
             "nom": "Bernos-beaulac [1824]",
             "pays": "France",
-            "region": "Nouvelle-Aquitaine",
+            "region": "Nouvelle-aquitaine",
             "latitude": "44.35818",
             "longitude": "-0.28255"
         },
         {
             "nom": "Arzembouy [1004]",
             "pays": "France",
-            "region": "Bourgogne-Franche-Comté",
+            "region": "Bourgogne-franche-comté",
             "latitude": "47.26281",
             "longitude": "3.38085"
         },
         {
             "nom": "Tour-d'auvergne [1504]",
             "pays": "France",
-            "region": "Auvergne-Rhône-Alpes",
+            "region": "Auvergne-rhône-alpes",
             "latitude": "45.53866",
             "longitude": "2.73463"
         },
@@ -528,21 +528,21 @@
         {
             "nom": "Ronno [11390]",
             "pays": "France",
-            "region": "Auvergne-Rhône-Alpes",
+            "region": "Auvergne-rhône-alpes",
             "latitude": "45.95380",
             "longitude": "4.38754"
         },
         {
             "nom": "Vallangoujard [280]",
             "pays": "France",
-            "region": "Ile-de-France",
+            "region": "Ile-de-france",
             "latitude": "49.13785",
             "longitude": "2.10433"
         },
         {
             "nom": "Teissieres-de-cornet [1668]",
             "pays": "France",
-            "region": "Auvergne-Rhône-Alpes",
+            "region": "Auvergne-rhône-alpes",
             "latitude": "44.96460",
             "longitude": "2.32438"
         },
@@ -556,49 +556,49 @@
         {
             "nom": "Roussillon [1988]",
             "pays": "France",
-            "region": "Provence-Alpes-Côte d'Azur",
+            "region": "Provence-alpes-côte D'azur",
             "latitude": "43.91690",
             "longitude": "5.30942"
         },
         {
             "nom": "Saint-pierre-d'irube [2092]",
             "pays": "France",
-            "region": "Nouvelle-Aquitaine",
+            "region": "Nouvelle-aquitaine",
             "latitude": "43.45987",
             "longitude": "-1.42916"
         },
         {
             "nom": "Larrau [2213]",
             "pays": "France",
-            "region": "Nouvelle-Aquitaine",
+            "region": "Nouvelle-aquitaine",
             "latitude": "43.04288",
             "longitude": "-1.00755"
         },
         {
             "nom": "Hyeres [2238]",
             "pays": "France",
-            "region": "Provence-Alpes-Côte d'Azur",
+            "region": "Provence-alpes-côte D'azur",
             "latitude": "43.02248",
             "longitude": "6.44485"
         },
         {
             "nom": "Onnion [11317]",
             "pays": "France",
-            "region": "Auvergne-Rhône-Alpes",
+            "region": "Auvergne-rhône-alpes",
             "latitude": "46.18570",
             "longitude": "6.46829"
         },
         {
             "nom": "Chalagnac [1619]",
             "pays": "France",
-            "region": "Nouvelle-Aquitaine",
+            "region": "Nouvelle-aquitaine",
             "latitude": "45.09670",
             "longitude": "0.69529"
         },
         {
             "nom": "Seez [1483]",
             "pays": "France",
-            "region": "Auvergne-Rhône-Alpes",
+            "region": "Auvergne-rhône-alpes",
             "latitude": "45.59379",
             "longitude": "6.83709"
         },
@@ -857,7 +857,7 @@
         {
             "nom": "Courcelles [959]",
             "pays": "France",
-            "region": "Bourgogne-Franche-Comté",
+            "region": "Bourgogne-franche-comté",
             "latitude": "47.40449",
             "longitude": "3.38711"
         },
@@ -906,21 +906,21 @@
         {
             "nom": "Germigney [969]",
             "pays": "France",
-            "region": "Bourgogne-Franche-Comté",
+            "region": "Bourgogne-franche-comté",
             "latitude": "47.37097",
             "longitude": "5.50235"
         },
         {
             "nom": "Ruffigne [781]",
             "pays": "France",
-            "region": "Pays de la Loire",
+            "region": "Pays De La Loire",
             "latitude": "47.79157",
             "longitude": "-1.52557"
         },
         {
             "nom": "Sarrance [2215]",
             "pays": "France",
-            "region": "Nouvelle-Aquitaine",
+            "region": "Nouvelle-aquitaine",
             "latitude": "43.05386",
             "longitude": "-0.61644"
         },
@@ -934,7 +934,7 @@
         {
             "nom": "Port-saint-louis-du-rhone [2166]",
             "pays": "France",
-            "region": "Provence-Alpes-Côte d'Azur",
+            "region": "Provence-alpes-côte D'azur",
             "latitude": "43.35459",
             "longitude": "4.88169"
         }

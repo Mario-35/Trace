@@ -22,6 +22,7 @@ import { Documentation } from "../../html/class/documentation"
 import { download } from "../../helpers/download"
 import { clean } from "../../helpers/clean"
 import { log } from "console"
+import { dumpDB } from "../../db/writeDB"
 
 export const pagesRoutes = Router()
 
@@ -226,14 +227,9 @@ pagesRoutes.get("/configuration.html", async (req, res) => {
 
 // download export datas
 pagesRoutes.get("/download", async (req, res) => {
-  writeDB().then(() => {
-    const data = download()
-    res.set("Content-Type", "application/octet-stream")
-    res.set(
-      "Content-Disposition",
-      `attachment; filename=download_${new Date().toJSON().slice(0, 16).replaceAll("-", "").replace(":", "")}.zip`
-    )
-    res.set("Content-Length", data.length)
-    res.send(data)
+  const fileName = `dump${new Date().toJSON().slice(0, 16).replaceAll("-", "").replace(":", "")}.tar`;
+  dumpDB(fileName).then(() => {
+    const file = `./uploads/${fileName}`;
+    res.download(file); // Set disposition and send it.
   })
 })

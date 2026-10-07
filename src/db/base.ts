@@ -488,7 +488,8 @@ export const dataBase: Idb = {
         type: "json",
         title: "Informations de stockage",
         create: "jsonb NULL",
-        list: false
+        list: false,
+        infos: true
       },
       etiquette: {
         type: "json",
@@ -519,15 +520,7 @@ export const dataBase: Idb = {
         create: "",
         calculate: "(SELECT COUNT(*) FROM evenements WHERE identification=echantillons.identification)::int > 0",
         list: true
-      },  
-      // numero: {
-      //   type: "number",
-      //   title: "",
-      //   create: "",
-      //   calculate: "SUBSTRING ( identification FROM 13 FOR 4 ):: int ",
-      //   list: false,
-      //   etiquette: "0002"
-      // },  
+      },
       'dossier-numero': {
         type: "text",
         title: "",

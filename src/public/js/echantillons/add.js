@@ -83,6 +83,10 @@ function validateStep2() {
     } else if (["Expédié", "Détruit"].includes(etat.value)) {
         removeReadOnly("stockageSite");
     }
+
+    if (validateStr('latitude') === false) isValid = false;
+    if (validateStr('longitude') === false) isValid = false;
+
     
     if (_CONFIGURATION.passeports.includes(type.value)) {
         if (isContextMode(["id", "selection", "after"])) return isValid;

@@ -286,7 +286,11 @@ class JsonTable {
 			headerRow.insertAdjacentHTML("afterbegin", `<th style="${this.headerAttribute()}"><label>Filter</label><select id="id-select" class="form-control excel-control"> <option value="">tout</option> <option value="true">✔️️</option> <option value="false">❌</option> </select></th>`);
 
 		this.columns.filter(e => e.key.toUpperCase() !== 'ID').forEach((column) => {
-			if(column.searchType !== "hidden") {
+			console.log(column);
+			if (column.infos === true) {
+				console.log(column);
+				
+			} else if(column.searchType !== "hidden") {
 				const th = document.createElement("th");				
 				th.style.cssText = 'font-size: 12px;';
 				const label = document.createElement("label");
