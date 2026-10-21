@@ -19,7 +19,7 @@ export async function writeDB() {
       await asJson(tableName).then(datas => {
         fs.writeFile(
           path.join(__dirname, "../import", tableName + ".json"),
-          JSON.stringify(datas, null, 4),
+          JSON.stringify(String(datas), null, 4),
           "utf8",
           () => console.log(`Data written to ${tableName}'.json' as JSON.`)
         );
