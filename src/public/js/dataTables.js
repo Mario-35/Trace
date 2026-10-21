@@ -35,9 +35,10 @@ class JsonTable {
 		this.menu = document.querySelector(".context-menu");
 		this.menuOption = document.querySelector(".context-menu-option");
 		this.menuVisible = false;		
-		this.selectedId = 0;	
+		this.selectedId = 0;
 		this.init();
 	}
+
 	// is datas filtered ?
 	filtered() {
 		return ( this.filteredData.length !== this.data.length)
@@ -154,7 +155,9 @@ class JsonTable {
 			window.location.href = ajouter.getAttribute("href");
 		});
 		
-		this.filterDatas();		
+		this.filterDatas();
+		this.modal = document.querySelector(".modal");
+		this.overlay = document.querySelector(".overlay");
 	};
 
 	// calling filter
@@ -286,11 +289,12 @@ class JsonTable {
 			headerRow.insertAdjacentHTML("afterbegin", `<th style="${this.headerAttribute()}"><label>Filter</label><select id="id-select" class="form-control excel-control"> <option value="">tout</option> <option value="true">✔️️</option> <option value="false">❌</option> </select></th>`);
 
 		this.columns.filter(e => e.key.toUpperCase() !== 'ID').forEach((column) => {
-			console.log(column);
-			if (column.infos === true) {
-				console.log(column);
+			// if (column.infos === true) {
+			// 	console.log("#######################");
+			// 	console.log(column);
 				
-			} else if(column.searchType !== "hidden") {
+			// } else 
+				if (column.searchType !== "hidden") {
 				const th = document.createElement("th");				
 				th.style.cssText = 'font-size: 12px;';
 				const label = document.createElement("label");
@@ -464,6 +468,19 @@ class JsonTable {
 					const tmp = this.columns.find((col) => col.key === key);
 					if (tmp) {
 						switch (tmp.searchType) {
+							case 'infos':
+
+								td.classList.add("infos");
+								if(Object.keys(row[key]).length > 0) {
+									const ctn = ['<p>Infos</p> <div class="popup"> <ul>'];
+									Object.keys(row[key]).forEach(e => {
+										ctn.push(`<li><strong>${e}</strong> ${row[key][e]}</li>`);
+									});
+									ctn.push('</ul> </div>');
+									td.innerHTML = ctn.join("");
+								} else td.innerHTML = '<p class="noInfos">pas d\'infos</p>';
+								// td.innerHTML = `<td"><button class="btn btn-primary btn-sm icon_infos infos-btn" infos="${JSON.stringify(row[key])}"></button></td>`;								
+								break;							
 							case 'button':
 								td.innerHTML = `<a href="${tmp.url + row.id}" class="btn btn-primary btn-sm ${tmp.icon}" role="button"></a> `;
 								break;								
@@ -509,6 +526,10 @@ class JsonTable {
 				)
 			);
 		} 
+		this.container.querySelectorAll(".infos-btn")
+			.forEach((btn) =>
+				btn.addEventListener("click", (e) => this.openModal(e))
+			);		
 		
 		if (this.printUrl) this.container
 			.querySelectorAll(".print-btn")

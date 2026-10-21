@@ -489,6 +489,7 @@ export const dataBase: Idb = {
         title: "Informations de stockage",
         create: "jsonb NULL",
         list: false,
+        searchType: "infos",
         infos: true
       },
       etiquette: {

@@ -18,15 +18,10 @@ export class List extends CoreHtmlView {
     
     createIndexHtmlString(name: String, excel?: boolean) {
 		const listCols:any = [];
-		const src = dataBase[name as keyof object];
-		
+		const src = dataBase[name as keyof object];		
 		Object.keys(src.columns).filter((e: any) => src.columns[e].list === true || src.columns[e].infos === true).forEach(e => {
-			listCols.push({
-				key: e,
-				title: src.columns[e].title,
-				searchType: src.columns[e].searchType || "text"
-			});
-		});
+			listCols.push(this.createCol(src.columns[e], e));
+		});		
         this._HTMLResult =`
 <!DOCTYPE html>
 <html lang="en">

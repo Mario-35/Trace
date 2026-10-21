@@ -16,7 +16,7 @@ import { dataBase } from "./base"
  */
 export function getListColumns(tableName: string) {
   return getColumns(tableName)
-    .filter((column) => dataBase[tableName].columns[column].list === true)
+    .filter((column) => dataBase[tableName].columns[column].list === true || dataBase[tableName].columns[column].infos === true)
     .map((column) =>
       dataBase[tableName].columns[column].calculate
         ? `${dataBase[tableName].columns[column].calculate} AS "${column}"`

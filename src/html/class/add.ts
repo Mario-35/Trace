@@ -10,6 +10,7 @@ import { createConfig } from "@app/configuration/controller";
 import { EConstant } from "../../constant";
 import { dataBase } from "../../db/base";
 import { CoreHtmlView } from "./core";
+import { Icolumn } from "../../types";
 
 export class Add extends CoreHtmlView {
 	config: any;
@@ -46,11 +47,7 @@ export class Add extends CoreHtmlView {
 		const listCols:any = [];
 		const src = dataBase[this.plural as keyof object].columns;
 		Object.keys(src).filter((e: any) => src[e].list === true).forEach(e => {
-			listCols.push({
-				key: e,
-				title: src[e].title,
-				searchType: src[e].searchType || "text"
-			});
+			listCols.push(this.createCol(src[e], e));
 		});		
         this._HTMLResult =`
 			<!DOCTYPE html>
@@ -175,11 +172,7 @@ export class Add extends CoreHtmlView {
 		const listCols:any = [];
 		const src = dataBase[this.plural as keyof object].columns;
 		Object.keys(src).filter((e: any) => src[e].list === true).forEach(e => {
-			listCols.push({
-				key: e,
-				title: src[e].title,
-				searchType: src[e].searchType || "text"
-			});
+			listCols.push(this.createCol(src[e], e));
 		});
         this._HTMLResult =`
 			<!DOCTYPE html>
@@ -307,11 +300,7 @@ export class Add extends CoreHtmlView {
 		const listCols:any = [];
 		const src = dataBase[this.plural as keyof object].columns;
 		Object.keys(src).filter((e: any) => src[e].list === true).forEach(e => {
-			listCols.push({
-				key: e,
-				title: src[e].title,
-				searchType: src[e].searchType || "text"
-			});
+			listCols.push(this.createCol(src[e], e));
 		});
         this._HTMLResult =`
 			<!DOCTYPE html>

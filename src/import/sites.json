@@ -334,15 +334,6 @@
     ],
     [
         {
-            "nom": "Etangs Du Rheu",
-            "pays": "France",
-            "region": "Bretagne",
-            "latitude": "2.549023",
-            "longitude": "50.861302"
-        }
-    ],
-    [
-        {
             "nom": "Parcelle F001",
             "pays": "France",
             "region": "Bretagne",
@@ -1203,6 +1194,33 @@
             "region": "Provence-alpes-côte D'azur",
             "latitude": "43.35459",
             "longitude": "4.88169"
+        }
+    ],
+    [
+        {
+            "nom": "Fox-amphou [2084]",
+            "pays": "France",
+            "region": "Provence-alpes-côte D'azur",
+            "latitude": "43.6046705635388",
+            "longitude": "6.084097014580789"
+        }
+    ],
+    [
+        {
+            "nom": "Cussac [1671]",
+            "pays": "France",
+            "region": "Auvergne-rhône-alpes",
+            "latitude": "44.96452200365461",
+            "longitude": "2.931262321207676"
+        }
+    ],
+    [
+        {
+            "nom": "Etangs Du Rheu",
+            "pays": "France",
+            "region": "Bretagne",
+            "latitude": "2.549023",
+            "longitude": "50.861302"
         }
     ]
 ]

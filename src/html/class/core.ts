@@ -8,7 +8,7 @@ import { removeAllQuotes } from "../../helpers/removeAllQuotes";
 import fs from "fs";
 import path from "path";
 import { removeComments } from "../../helpers/removeComments";
-import { IHTMLOptions } from "../../types";
+import { Icolumn, IHTMLOptions } from "../../types";
 
 export class CoreHtmlView {
     _HTMLResult: string[];
@@ -28,6 +28,15 @@ export class CoreHtmlView {
           ${css.map(e => `<link rel="stylesheet" href="${e[0] === "." ? '' : './css/'}${e}">`).join("")}				
         </head>`;
     }
+
+      createCol(input: Icolumn, name: string) {
+        return {
+            key: name,
+            title: input.title,
+            infos:  input.infos,
+            searchType: input.searchType || "text"
+          };
+      }
 
     loadFile(name: string): string {
       return removeComments(fs.readFileSync(path.join(__dirname, "../../public/", name), "utf-8"));
