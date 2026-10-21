@@ -17,6 +17,11 @@ export async function writeDB() {
     Object.keys(dataBase).filter((e) => dataBase[e].create === true),
     async (tableName: string) => {
       await asJson(tableName).then(datas => {
+        console.log("########################################################################");
+        console.log(typeof datas);
+        console.log(datas);
+        
+        
         fs.writeFile(
           path.join(__dirname, "../import", tableName + ".json"),
           JSON.stringify(String(datas), null, 4),
