@@ -5,8 +5,6 @@ import fs from "fs"
 import path from "path"
 
 async function asJson(tableName: string) {
-  console.log(`SELECT COALESCE( ROW_TO_JSON(t), '[]') AS ${tableName} FROM ( SELECT ${getColumns(tableName).filter((column) => dataBase[tableName].columns[column].create !== "")} FROM "${tableName}" ) AS t`);
-
   return executeSqlValues( `SELECT COALESCE( ROW_TO_JSON(t), '[]') AS ${tableName} FROM ( SELECT ${getColumns(tableName).filter((column) => dataBase[tableName].columns[column].create !== "")} FROM "${tableName}" ) AS t` )
     .then((res: any) => res)
     .catch((error: Error) => {
