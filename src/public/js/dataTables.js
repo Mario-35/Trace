@@ -474,7 +474,8 @@ class JsonTable {
 								if(Object.keys(row[key]).length > 0) {
 									const ctn = ['<p>Infos</p> <div class="popup"> <ul>'];
 									Object.keys(row[key]).forEach(e => {
-										ctn.push(`<li><strong>${e}</strong> ${row[key][e]}</li>`);
+										if (String(row[key][e]).trim() !== "")
+											ctn.push(`<li><strong>${e}</strong> ${row[key][e]}</li>`);
 									});
 									ctn.push('</ul> </div>');
 									td.innerHTML = ctn.join("");
