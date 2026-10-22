@@ -41,15 +41,13 @@ export async function createDB(adminPass: string): Promise<Record<string, string
               return true
             })
             .catch((error) => {
-              console.log(error);
-              
+              console.log(error);              
               result["CREATE DATABASE"] = "Error"
               return false
             })
         })
         .catch(async (error) => {
               console.log(error);
-
           return await admin(adminPass)
             .unsafe("CREATE DATABASE trace")
             .then(async (res) => {
@@ -104,11 +102,11 @@ export async function createDB(adminPass: string): Promise<Record<string, string
   // Execute queries
   await executeSql(queries)
     .then(async (res) => {
-      result["CREATE Tables"] = "Ok"
+      result["CREATE Tables"] = "Ok";
     })
     .catch((error) => {
-      console.error(error)
-      result["CREATE Tables"] = "Error"
+      console.error(error);
+      result["CREATE Tables"] = "Error";
     })
 
   // Loop to create partition tables

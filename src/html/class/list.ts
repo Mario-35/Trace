@@ -19,7 +19,7 @@ export class List extends CoreHtmlView {
     createIndexHtmlString(name: String, excel?: boolean) {
 		const listCols:any = [];
 		const src = dataBase[name as keyof object];		
-		Object.keys(src.columns).filter((e: any) => src.columns[e].list === true || src.columns[e].infos === true).forEach(e => {
+		Object.keys(src.columns).filter((e: any) => src.columns[e].list === true || src.columns[e].infos).forEach(e => {
 			listCols.push(this.createCol(src.columns[e], e));
 		});		
         this._HTMLResult =`

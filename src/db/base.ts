@@ -490,7 +490,7 @@ export const dataBase: Idb = {
         create: "jsonb NULL",
         list: false,
         searchType: "infos",
-        infos: true
+        infos: "etat"
       },
       etiquette: {
         type: "json",

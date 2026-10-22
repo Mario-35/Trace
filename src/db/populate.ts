@@ -22,8 +22,9 @@ export async function populate() {
         const file = readFileSync(path.join(__dirname, "../import", tableName + ".json"), "utf-8");
         const datas = JSON.parse(file);
         const queries: string[] = [];
-        if (Object(datas[tableName]).length > 0) {
-          Object(datas[tableName]).forEach((data: any) => {
+        if (datas.length > 0) {
+         Object(datas).forEach((data: any) => {
+            data = data[0];
             delete data["id"];
             queries.push( `INSERT INTO ${tableName} (${createPgColumns(tableName, data)}) VALUES (${createPgValues(tableName, data)})` );
           })

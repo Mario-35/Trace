@@ -36,6 +36,7 @@ class JsonTable {
 		this.menuOption = document.querySelector(".context-menu-option");
 		this.menuVisible = false;		
 		this.selectedId = 0;
+		this.specInfos = {}; // get infos key
 		this.init();
 	}
 
@@ -289,12 +290,10 @@ class JsonTable {
 			headerRow.insertAdjacentHTML("afterbegin", `<th style="${this.headerAttribute()}"><label>Filter</label><select id="id-select" class="form-control excel-control"> <option value="">tout</option> <option value="true">✔️️</option> <option value="false">❌</option> </select></th>`);
 
 		this.columns.filter(e => e.key.toUpperCase() !== 'ID').forEach((column) => {
-			// if (column.infos === true) {
-			// 	console.log("#######################");
-			// 	console.log(column);
-				
-			// } else 
-				if (column.searchType !== "hidden") {
+			if (column.infos && column.infos !== "") {
+				this.specInfos[column.infos] = column.key;
+			} 
+			if (column.searchType !== "hidden" && !column.infos) {
 				const th = document.createElement("th");				
 				th.style.cssText = 'font-size: 12px;';
 				const label = document.createElement("label");
@@ -460,8 +459,8 @@ class JsonTable {
 			tr.insertAdjacentHTML(
 				"afterbegin",
 				`<td><input class="select-btn" type="checkbox" ${String(row.selected) == 'true' ? 'checked' : ''} data-row="${row.id}"></td>`
-			);
-			Object(this.columns.filter(e => e.key.toUpperCase() !== 'ID' && e.searchType !== "hidden")).forEach((column) => {	
+			);			
+			Object(this.columns.filter(e => e.key.toUpperCase() !== 'ID' && e.searchType !== "hidden"  && !e.infos)).forEach((column) => {	
 				const key = column.key;
 				if (!["selected"].includes(key)) {
 					const td = document.createElement("td");
@@ -492,7 +491,22 @@ class JsonTable {
 								td.textContent = row[key] === true ? '✔️️' : '❌';
 								break;						
 							default:
-								td.textContent = row[key];
+								if(Object.keys(this.specInfos).includes(key)) {
+									td.classList.add("infos");									
+									if (row[this.specInfos[key]] && Object.keys(row[this.specInfos[key]]).length > 0) {
+										const ctn = [`<p>${row[key]}</p> <div class="popup"> <ul>`];
+										Object.keys(row[this.specInfos[key]]).forEach(e => {											
+											if (String(row[this.specInfos[key]][e]).trim() !== "")
+												ctn.push(`<li><strong>${e}</strong> ${row[this.specInfos[key]][e]}</li>`);
+										});
+										ctn.push('</ul> </div>');
+										if (ctn.length > 2)
+											td.innerHTML = ctn.join("");
+										else
+											td.textContent = row[key];
+									} else td.textContent = row[key];
+									// } else td.innerHTML = '<p class="noInfos">pas d\'infos</p>';
+								} else td.textContent = row[key];
 								break;
 						}
 					} else td.textContent = row[key];

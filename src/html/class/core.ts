@@ -281,7 +281,7 @@ export class CoreHtmlView {
   inputFormStockage() {
     return `<div class="form-row">
               ${this.inputFormGroupText({
-                max: 50,
+                max: 100,
                 name: "stockageSite",
                 label: "Site / Adresse",
                 tooltip: "Site de stockage de l'échantillon",
@@ -337,7 +337,7 @@ export class CoreHtmlView {
             </div>
             <div class="form-row">								
               ${this.inputFormGroupText({
-                max: 50,
+                max: 150,
                 name: "stockageInfos",
                 label: "Infos",
                 tooltip: "Infos supplementaire",
