@@ -3,19 +3,16 @@ var map, marker;
 function addMap() {
     var curLocation = [latitude.value, longitude.value];
 
-    map = L.map("map").setView(curLocation, 8);
+    const map = L.map("map").setView(curLocation, 8);
 
-    L.tileLayer("https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png", {
-    minZoom: 1,
-    maxZoom: 20,
-    attribution: 'données © <a href="//osm.org/copyright">OpenStreetMap</a>/ODbL - rendu <a href="//openstreetmap.fr">OSM France</a>'
-}).addTo(map);
+    L.tileLayer("https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png",{
+        maxZoom: 18,
+        attribution: 'données © <a href="//osm.org/copyright">OpenStreetMap</a>/ODbL - rendu <a href="//openstreetmap.fr">OSM France</a>'
+    }).addTo(map);
 
     map.attributionControl.setPrefix(false);
 
-    marker = new L.marker(curLocation, {
-        draggable: 'true'
-    });
+    marker = new L.marker(curLocation, { draggable: 'true' });
 
     marker.addTo(map);
 
@@ -65,9 +62,3 @@ async function start() {
 }
 
 start();
-
-
-
-
-
-
