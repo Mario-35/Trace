@@ -6,6 +6,7 @@ document.getElementById("left-pane").innerHTML = `
       <a class="menu__span">Echantillons</a>
       <ul class="menu" aria-hidden="true" id="collapsible-0">
         <li class="item"><a href="${testWhere('documentation') ? '..' : '.'}/echantillons.html" class="link">Liste des échantillons</a></li>
+        <li class="item"><a href="${testWhere('documentation') ? '..' : '.'}/echantillons.html" class="link">Echantillons à traiter</a></li>
         <li class="item"><a href="${testWhere('documentation') ? '..' : '.'}/echantillon-add.html" class="link">Ajouter</a></li>
         <li class="item"><a href="/documentation/echantillons" class="link">Documentation</a></li>
       </ul>

@@ -71,7 +71,8 @@ sitesRoutes.get("/" + dataBase.sites.name + "/search/:name", async (req, res) =>
 
 // Create one site
 sitesRoutes.post("/" + dataBase.sites.singular, async (req, res) => {
-  const values = verifyBody(req.body)
+  const values = verifyBody(req.body);
+  res.set('User-Agent', 'Trace');
   if (values) {
     return await addSite(values)
       .then((site: any) => {

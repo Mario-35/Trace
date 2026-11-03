@@ -39,7 +39,7 @@ pagesRoutes.get("/documentation/:page", async (req, res) => {
 
 // add sample
 pagesRoutes.get("/" + dataBase.echantillons.singular + "-add.html", async (req, res) => {
-  const html = new Add(dataBase.echantillons.singular, _CONFIG)
+  const html = new Add(dataBase.echantillons.singular, _CONFIG);
   res.send(html.toString())
 })
 

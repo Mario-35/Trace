@@ -25,7 +25,8 @@ export class CoreHtmlView {
           <title>
             ${title}
           </title>
-          ${css.map(e => `<link rel="stylesheet" href="${e[0] === "." ? '' : './css/'}${e}">`).join("")}				
+          ${css.filter(e => !e.includes('http')).map(e => `<link rel="stylesheet" href="${e[0] === "." ? '' : './css/'}${e}">`).join("")}				
+          ${css.filter(e => e.includes('http')).map(e => `<link rel="stylesheet" href="${e}">`).join("")}				
         </head>`;
     }
 

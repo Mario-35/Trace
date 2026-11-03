@@ -10,7 +10,6 @@ import { createConfig } from "@app/configuration/controller";
 import { EConstant } from "../../constant";
 import { dataBase } from "../../db/base";
 import { CoreHtmlView } from "./core";
-import { Icolumn } from "../../types";
 
 export class Add extends CoreHtmlView {
 	config: any;

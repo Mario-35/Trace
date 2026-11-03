@@ -749,8 +749,10 @@ class JsonTable {
 			} else if (this.localSave && Object.keys(this.localSave).length > 0) {
 
 				this.filteredData = this.data;
+				console.log(this.localSave[nameType][key]);
 				if (this.localSave[nameType])
 					Object.keys(this.localSave[nameType]).forEach(key => {
+				
 						if (this.localSave[nameType][key] !== "")
 							this.filteredData = this.filteredData.filter(row => {
 								// test data type
