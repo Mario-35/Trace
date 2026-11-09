@@ -7,7 +7,7 @@ function addMap() {
 
     L.tileLayer("https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png",{
         maxZoom: 18,
-        attribution: 'données © <a href="//osm.org/copyright">OpenStreetMap</a>/ODbL - rendu <a href="//openstreetmap.fr">OSM France</a>'
+        attribution: 'données © <a href="//osm.org/copyright">OpenStreetMap</a>/ ODbL - rendu <a href="//openstreetmap.fr">OSM France</a>'
     }).addTo(map);
 
     map.attributionControl.setPrefix(false);

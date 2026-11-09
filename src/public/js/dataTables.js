@@ -673,9 +673,7 @@ class JsonTable {
 			this.globalSearchInput.addEventListener("input", async (e) => {
 				const search = e.target.value.trim();
 				if (search === "") {
-					this.cleanFilter();
-					console.log();
-					
+					this.cleanFilter();					
 					try {
 						const response = await fetch(this.jsonUrl);
 						this.data = await response.json();
@@ -749,7 +747,6 @@ class JsonTable {
 			} else if (this.localSave && Object.keys(this.localSave).length > 0) {
 
 				this.filteredData = this.data;
-				console.log(this.localSave[nameType][key]);
 				if (this.localSave[nameType])
 					Object.keys(this.localSave[nameType]).forEach(key => {
 				
