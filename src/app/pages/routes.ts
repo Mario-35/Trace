@@ -74,11 +74,19 @@ pagesRoutes.get("/" + dataBase.evenements.name + ".html", async (req, res) => {
 })
 
 // passeports page
+pagesRoutes.get("/" + dataBase.passeports.name, async (req, res) => {
+  setFilter(undefined);
+  const html = new List(dataBase.echantillons.name, true)
+  res.send(html.toString())
+})
+
+// passeports page
 pagesRoutes.get("/" + dataBase.passeports.name + "-traiter.html", async (req, res) => {
   setFilter("etat = 'Crée' AND passeport NOTNULL");
   const html = new List(dataBase.echantillons.name, true)
   res.send(html.toString())
 })
+
 
 // campagnes page
 pagesRoutes.get("/" + dataBase.campagnes.name + ".html", async (req, res) => {
