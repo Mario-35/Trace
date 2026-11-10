@@ -44,13 +44,13 @@ function validateStep1() {
     if (validateNumber('numero', 998) === false) isValid = false;
     if (validateNumber('nombre', 999) === false) isValid = false;    
     if (validateDate('prelevement') === false) isValid = false;    
-    if ( _CONFIGURATION.passeports.includes(getElement('type').value) && isContextMode("new")) {
-        const ToDate = new Date();
-        if (new Date(getElement('prelevement').value).getTime() < ToDate.getTime()) {
-            showModalError("La date ne peut être inferieur a celle du jour");
-            return false;
-        }
-    }
+    // if ( _CONFIGURATION.passeports.includes(getElement('type').value) && isContextMode("new")) {
+    //     const ToDate = new Date();
+    //     if (new Date(getElement('prelevement').value).getTime() < ToDate.getTime()) {
+    //         showModalError("La date ne peut être inferieur a celle du jour");
+    //         return false;
+    //     }
+    // }
 
     if (validateSelect('type') === false) isValid = false;    
     if (validateDate('peremption') === false) {
