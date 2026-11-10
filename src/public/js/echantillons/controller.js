@@ -178,7 +178,8 @@ async function start() {
         }
         // change somes
         showParentClass('etat', 'form-group'); 
-        showParentClass('caracterisation', 'form-group'); 
+        removeReadOnly("analyses");
+        removeReadOnly("libre");
         
         hideParentClass( "btnApiRpg", "row-1");
         if (!["Crée", "Importé"].includes(datas.etat)) removeDisabled("btn-aliquote");
@@ -197,7 +198,10 @@ async function start() {
         }
         // read only on all columns
         setReadOnly(Object.keys(_STORE.datas[0]).filter(e => e !== "etat"));
-        showParentClass("etat",'form-group'); 
+        // showParentClass("etat",'form-group'); 
+        // showParentClass('caracterisation', 'form-group'); 
+        removeReadOnly("analyses");
+        removeReadOnly("libre");
         if (!["Crée", "Importé"].includes(_STORE.datas[0].etat)) removeDisabled("btn-aliquote");
         // get the range lines
         setRange();

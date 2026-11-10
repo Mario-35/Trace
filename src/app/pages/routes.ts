@@ -76,7 +76,7 @@ pagesRoutes.get("/" + dataBase.evenements.name + ".html", async (req, res) => {
 // passeports page
 pagesRoutes.get("/" + dataBase.passeports.name, async (req, res) => {
   setFilter(undefined);
-  const html = new List(dataBase.echantillons.name, true)
+  const html = new List(dataBase.passeports.name, true)
   res.send(html.toString())
 })
 

@@ -126,6 +126,14 @@ getElement("etat").addEventListener("change", (event) => {
     modifiedValue("etat");
 });
 
+getElement("analyses").addEventListener("change", (event) => {
+    modifiedValue("analyses");
+});
+
+getElement("libre").addEventListener("change", (event) => {
+    modifiedValue("libre");
+});
+
 getElement("caracterisation").addEventListener("change", (event) => {
     modifiedValue("caracterisation");
 });
