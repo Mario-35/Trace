@@ -33,3 +33,10 @@ export let _CONFIG = {};
 export function setConfig(input: any) {
     _CONFIG = input;
 }
+
+export let _FILTER:string | undefined = undefined;
+
+export function setFilter(input: string | undefined) {
+    _FILTER = input;
+}
+

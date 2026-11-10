@@ -6,7 +6,7 @@
  *
  */
 
-import { EConstant } from "../../constant";
+import { _FILTER, EConstant } from "../../constant";
 import { dataBase } from "../../db/base";
 import { CoreHtmlView } from "./core";
 
@@ -108,6 +108,7 @@ export class List extends CoreHtmlView {
     </main>
 </body> 
 <script src="/js/api.js"></script>
+// global values
 <script>const structure = ${JSON.stringify(listCols)}</script>
 <script src="/js/configuration.js"></script>
 <script src="/js/constants.js"></script>

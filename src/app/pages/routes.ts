@@ -14,7 +14,7 @@ import { List } from "../../html/class/list"
 import { Configuration } from "../../html/class/configuration"
 import { executeSql, writeDB } from "../../db"
 import { Add } from "../../html/class/add"
-import { _CONFIG, EConstant, setConfig } from "../../constant"
+import { _CONFIG, setConfig, setFilter } from "../../constant"
 import { dataBase } from "../../db/base"
 import { update } from "../../helpers/update"
 import { Export } from "../../html/class/export"
@@ -74,8 +74,9 @@ pagesRoutes.get("/" + dataBase.evenements.name + ".html", async (req, res) => {
 })
 
 // passeports page
-pagesRoutes.get("/" + dataBase.passeports.name + ".html", async (req, res) => {
-  const html = new List(dataBase.passeports.name)
+pagesRoutes.get("/" + dataBase.passeports.name + "-traiter.html", async (req, res) => {
+  setFilter("etat = 'Crée' AND passeport NOTNULL");
+  const html = new List(dataBase.echantillons.name, true)
   res.send(html.toString())
 })
 
@@ -87,6 +88,14 @@ pagesRoutes.get("/" + dataBase.campagnes.name + ".html", async (req, res) => {
 
 // echantillons page
 pagesRoutes.get("/" + dataBase.echantillons.name + ".html", async (req, res) => {
+  setFilter(undefined);
+  const html = new List(dataBase.echantillons.name, true);
+  res.send(html.toString())
+});
+
+// echantillons page
+pagesRoutes.get("/" + dataBase.echantillons.name + "-traiter.html", async (req, res) => {
+  setFilter("etat = 'Crée'");
   const html = new List(dataBase.echantillons.name, true)
   res.send(html.toString())
 })

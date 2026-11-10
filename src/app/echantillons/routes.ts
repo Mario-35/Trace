@@ -11,12 +11,13 @@ import { deleteId, readId } from "../../controller"
 import { getListColumns, createPgUpdates, executeSql, executeSqlValues, createEventSql } from "../../db"
 import { addEchantillon, updateEchantillon } from "./controller"
 import { dataBase } from "../../db/base"
+import { _FILTER } from "../../constant"
 
 export const echantillonsRoutes = Router()
 
 // Get search list for UI
 echantillonsRoutes.get("/list/" + dataBase.echantillons.name + "/search/:search", async (req, res) => {
-  await executeSql( `SELECT id, ${getListColumns(dataBase.echantillons.name)} FROM ${dataBase.echantillons.name} WHERE to_tsvector(${dataBase.echantillons.name} ::text) @@ to_tsquery('simple', quote_literal('${req.params.search}') || ':*') ORDER BY creation` )
+  await executeSql( `SELECT id, ${getListColumns(dataBase.echantillons.name)} FROM ${dataBase.echantillons.name} WHERE ${_FILTER ? `${_FILTER} AND` : ''} to_tsvector(${dataBase.echantillons.name}::text) @@ to_tsquery('simple', quote_literal('${req.params.search}') || ':*') ORDER BY creation` )
     .then((site: any) => {
       return res.status(200).json(site)
     })
@@ -26,8 +27,8 @@ echantillonsRoutes.get("/list/" + dataBase.echantillons.name + "/search/:search"
 });
 
 // Get samples list for UI
-echantillonsRoutes.get("/list/" + dataBase.echantillons.name, async (req, res) => {
-  await executeSql( `SELECT id, ${getListColumns(dataBase.echantillons.name)} FROM ${dataBase.echantillons.name} ORDER BY creation` )
+echantillonsRoutes.get("/list/" + dataBase.echantillons.name, async (req, res) => {  
+  await executeSql( `SELECT id, ${getListColumns(dataBase.echantillons.name)} FROM ${dataBase.echantillons.name} ${_FILTER ? `WHERE ${_FILTER}` : ''} ORDER BY creation` )
     .then((site: any) => {
       return res.status(200).json(site)
     })
@@ -143,7 +144,7 @@ echantillonsRoutes.get(
 )
 
 // Create one sample
-echantillonsRoutes.post("/" + dataBase.echantillons.singular + "", async (req, res) => {
+echantillonsRoutes.post("/" + dataBase.echantillons.singular, async (req, res) => {
   await addEchantillon(req.body)
     .then((echantillon: any) => {
       return res.status(201).json(echantillon)
