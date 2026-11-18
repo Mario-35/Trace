@@ -3,6 +3,10 @@ var path = require("path");
 var fs = require("graceful-fs");
 
 const FINAL = "dist/";
+const index = fs.readFileSync(path.join("./src/public/", "index.html"), "utf-8");
+
+console.log(index);
+
 
 function zipDirectory(source, out) {
   const archive = archiver("zip", { zlib: { level: 9 }});

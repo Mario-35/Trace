@@ -41,13 +41,13 @@ export async function createDB(adminPass: string): Promise<Record<string, string
               return true
             })
             .catch((error) => {
-              console.log(error);              
+              console.error(error);              
               result["CREATE DATABASE"] = "Error"
               return false
             })
         })
         .catch(async (error) => {
-              console.log(error);
+              console.error(error);
           return await admin(adminPass)
             .unsafe("CREATE DATABASE trace")
             .then(async (res) => {
@@ -55,7 +55,7 @@ export async function createDB(adminPass: string): Promise<Record<string, string
               return true
             })
             .catch((error) => {
-              console.log(error);
+              console.error(error);
               result["CREATE DATABASE"] = "Error"
               return false
             })

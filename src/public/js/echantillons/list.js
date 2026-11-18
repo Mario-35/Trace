@@ -62,7 +62,7 @@ class ExcelToJSON {
             });
     
         };
-        reader.onerror = (ex) => console.log(ex);
+        reader.onerror = (ex) => console.error(ex);
         reader.readAsBinaryString(file);
     }
 };
@@ -77,7 +77,7 @@ if (document.getElementById("fileone")) {
                 fileName = e.target.value.split("\\").pop();
             ["globalSearchIcon", "globalSearch", 'exportExcel', 'blockImporter', 'raz'].forEach(elem => document.getElementById(elem).remove());
         } catch (err) {
-            console.log(err);
+            console.error(err);
         }
         var im = document.createElement('button');
         im.className ="btn btn-primary icon_plus btn-sm";

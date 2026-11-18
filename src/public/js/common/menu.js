@@ -113,7 +113,7 @@ function loadValue(elementName, value) {
             case "checkbox":
                 elem.checked = value === true;
                 break;
-                
+
             case "select-one":
                 elem.value = value;
                 break;
@@ -160,8 +160,6 @@ async function loadRangeLine(index) {
         if (isContextMode(["aliquote","selectionaliquote"])) showAliquote(_STORE.datas[index]);
     } else {
         Object.keys(_STORE.columns).forEach(column => {
-            console.log(column);
-            
             loadValue(column, _STORE.datas[index][_STORE.columns[column]]);
             getElement("identification").value = createIdentification(index);
             if (isContextMode(["aliquote","selectionaliquote"])) showAliquote(column, _STORE.datas[index][_STORE.columns[column]]);
@@ -186,13 +184,14 @@ function updateButtonCreer(ctx) {
             name= "Importer";
             break;
     }
-    
+
     setElementText("btn-creer", `✔️ ${name}`);
 }
 
 function updateReadOnly(ctx) {
     updateButtonCreer(ctx);
 
+    // if excel mode 
     if (ctx.mode === 'excel') return;
     
     // loop on form element
@@ -263,11 +262,8 @@ function toggleSubmenu() {
     this.classList.toggle('item--opened');
 }
 
-function passeport_mode(input) {
-    console.log("############ passeport_mode #################");
-    console.log(_CONFIGURATION.passeports.includes(input));
-    
- return _CONFIGURATION.passeports.includes(input);
+function passeport_mode(input) {    
+    return _CONFIGURATION.passeports.includes(input);
 }
 
 function start() {

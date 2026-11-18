@@ -1,9 +1,9 @@
-head =(title) => {
-    if (_CONFIGURATION.debug === true) console.log('='.repeat(15) + ' ' + title + ' ' + '='.repeat(15));
+log =(title) => {
+    if (_debug === true) console.log(title);
 }
 
-log =(title) => {
-    console.log(title);
+head = (title) => {
+    log ('='.repeat(15) + ' ' + title + ' ' + '='.repeat(15));
 }
 
 const doubleQuotes = (input) => `"${input}"`;

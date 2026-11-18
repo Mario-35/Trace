@@ -11,9 +11,7 @@ getElement('btn-creer').addEventListener('click', async (event) => {
             },
             body: JSON.stringify(filterModified(_DATAS)),
         }).then(async response => {
-            const resJson =  await response.json();
-            console.log(resJson);
-            
+            const resJson =  await response.json();            
             if (response.status === 201) {                      
                 if (isChrome) 
                     showModalPrint(isContextMode(["id"]) ? {echantillon: +ctx.id} : {selection: +ctx.id});

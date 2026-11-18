@@ -1,6 +1,6 @@
 // global form datas
 let _COLUMNS = [];
-const _debug = true;
+const _debug = false;
 
 function testWhere(test) {
     return window.location.href.includes(test);
@@ -12,7 +12,7 @@ function getElement(name) {
   if (typeof name === "string") {
     element = document.getElementById(name);
     if (element) return element;
-    if (_debug === true) console.log("element not found 🡺 " + name);
+    log("element not found 🡺 " + name);
   } else return name;
 };
 
@@ -179,11 +179,9 @@ function setIfNull(element, value) {
   }
 };
 
-// version date
-setElementText("version", "version : 10/11/2026");
 
 
-
+console.log(new Date().toLocaleDateString());
 
 
 

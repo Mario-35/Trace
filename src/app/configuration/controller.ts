@@ -34,7 +34,6 @@ function writeConfigurationFile(configuration: any) {
   configuration["excelColumns"] = Object.keys(dataBase.echantillons.columns).filter(
     (e) => dataBase.echantillons.columns[e].excel
   );
-  console.log(configuration);
   
   ["etats", "types", "passeports", "caracterisations", "sizes"].forEach((e) => {
     configuration[e] = configuration[e].split(",")

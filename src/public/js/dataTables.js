@@ -413,9 +413,7 @@ class JsonTable {
 	renderRows() {
 		// test if global
 		// const disabled = getElement("globalSearch") && globalSearch.value.trim().length > 0;
-		// if (disabled) {
-		// 	console.log("###################################################################");
-			
+		// if (disabled) {			
 		// }
 		// Array.prototype.forEach.call(document.getElementsByClassName("filter"), function(el) {
 		// 	if (disabled)

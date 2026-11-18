@@ -142,7 +142,6 @@ const formToJSON = elements => [].reduce.call(elements, (data, element) => {
       log(`${element.name} error type`);
     }
   }
-  // console.log(data);
   data["identity"] = identity.innerText;  
   return data;
 }, {});

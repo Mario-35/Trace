@@ -13,9 +13,6 @@ import { asyncForEach } from "../../helpers/asyncForEach"
 
 // add echantillon(s)
 export async function addEchantillon(values: any) {
-  console.log(values)
-  console.log(values["nombre" as keyof object])
-
   // store all queries
   const queries: string[] = []
   // store analyzes case nombreOuAnalyses is true

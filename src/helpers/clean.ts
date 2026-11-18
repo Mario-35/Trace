@@ -26,7 +26,7 @@ export async function clean() {
           queries.push(`UPDATE echantillons SET etat = '${e}' WHERE UPPER(unaccent(etat)) LIKE '${accentsTidy(e).toLocaleUpperCase().slice(0, -1)}%'`);          
         });
         queries.push(`UPDATE echantillons SET Region = (SELECT Region FROM sites WHERE sites.latitude = latitude AND sites.longitude = longitude limit 1) WHERE Region = 'Region'`);
-        console.log(queries);
+        // console.log(queries);
         
         return await executeSql(queries).then(() => { return true;});
       })

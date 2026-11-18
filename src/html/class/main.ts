@@ -17,25 +17,30 @@ import path from "path";
 
 export class Index extends CoreHtmlView {
     constructor() {
+console.log(`dddd`);
         super();
         this.createIndexHtmlString();
     }
     
     createIndexHtmlString() {
-        // Split files for better search and replace
-        this._HTMLResult = fs
-            .readFileSync(path.resolve(__dirname, "../../public/", "index.html"))
-            .toString()
-            .split(EConstant.newline)
-            .map((e: string) => e.trim())
-            .filter((e) => e.trim() != "");
 
-        this.replacer('"@DATAS@"', 'console.log("15-02-2026")');
-        this.replaceFile("css/splitter.css");
-        this.replaceFile("css/bootstrap.css");
-        this.replaceFile("js/constants.js");        
-        this.replaceFile("js/common/splitter.js");        
-        this.replaceFile("js/common/menu.js");        
+const { birthtime } = fs.statSync(".main.js");
+console.log(`date => ${birthtime}`);
+
+        // Split files for better search and replace
+        // this._HTMLResult = fs
+        //     .readFileSync(path.resolve(__dirname, "../../public/", "index.html"))
+        //     .toString()
+        //     .split(EConstant.newline)
+        //     .map((e: string) => e.trim())
+        //     .filter((e) => e.trim() != "");
+
+        // this.replacer('"@DATAS@"', 'console.log("15-02-2026")');
+        // this.replaceFile("css/splitter.css");
+        // this.replaceFile("css/bootstrap.css");
+        // this.replaceFile("js/constants.js");        
+        // this.replaceFile("js/common/splitter.js");        
+        // this.replaceFile("js/common/menu.js");        
     }
 
     toString() {

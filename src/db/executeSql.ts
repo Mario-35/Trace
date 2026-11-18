@@ -9,7 +9,7 @@
 import { sql } from "."
 
 const executeSqlOne = async (query: string): Promise<object> => {
-  console.log(query)
+  // console.log(query)
   return new Promise(async function (resolve, reject) {
     await sql
       .unsafe(query)
