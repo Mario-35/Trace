@@ -69,7 +69,7 @@ copyFolderRecursiveSync("./src/import", FINAL);
 copyFolderRecursiveSync("./src/public", FINAL);
 copyFolderRecursiveSync("./src/keys", FINAL);
 copyFileSync( "./package.json", FINAL );
-fs.writeFile(path.join(FINAL, "/src/public/", "index.html"), index.replace('_VERSION', new Date().toLocaleDateString()), "utf-8");
+fs.writeFile(path.join(FINAL, "/public/", "index.html"), index.replace('_VERSION', new Date().toLocaleDateString()), "utf-8");
 
 zipDirectory(FINAL, `./dist.zip`).then(function (e) {
     console.log(`\x1b[34m ${FINAL} \x1b[36m zip to ==> \x1b[37m dist.zip \x1b[0m`);
