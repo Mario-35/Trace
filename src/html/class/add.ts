@@ -365,7 +365,7 @@ export class Add extends CoreHtmlView {
 												label: "Site du prélèvement",
 												tooltip: "Site du prélévement",
 												error: true,
-												canedit: "rhyzo",
+												canedit: "passport",
 												tooltipFlow: "right",
 											})}
 
@@ -525,7 +525,7 @@ export class Add extends CoreHtmlView {
 									label: "Nom du site",
 									tooltip: "Nom du site géographique",
 									tooltipFlow: "right",
-									canedit: "rhyzo",
+									canedit: "passport",
 									error: true,
 
 								})}
@@ -537,7 +537,7 @@ export class Add extends CoreHtmlView {
 									label: "Pays",
 									tooltip: "Pays du site géographique",
 									tooltipFlow: "right",
-									canedit: "rhyzo",
+									canedit: "passport",
 									error: true,
 								})}
 								${this.inputFormGroupText({
@@ -545,21 +545,21 @@ export class Add extends CoreHtmlView {
 									name: "region",
 									label: "Région",
 									tooltip: "Saisissez le code postal sur 2 ou 5 chiffres pour effectuer une recherche",
-									canedit: "rhyzo",
+									canedit: "passport",
 									error: true,
 								})}
 								${this.inputFormGroupText({
 									name: "latitude",
 									label: "Latitude du site",
 									tooltip: "Latitude en degré décimal au format WGS84",
-									canedit: "rhyzo",
+									canedit: "passport",
 									error: true,
 								})}
 								${this.inputFormGroupText({
 									name: "longitude",
 									label: "Longitude du site",
 									tooltip: "Longitude en degré décimal au format WGS84",
-									canedit: "rhyzo",
+									canedit: "passport",
 									error: true,
 								})}							
 								${this.inputBtn({

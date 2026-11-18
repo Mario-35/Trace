@@ -80,6 +80,12 @@ pagesRoutes.get("/" + dataBase.passeports.name, async (req, res) => {
   res.send(html.toString())
 })
 
+// sites page
+pagesRoutes.get("/" + dataBase.passeports.name + ".html", async (req, res) => {
+  const html = new List(dataBase.passeports.name)
+  res.send(html.toString())
+})
+
 // passeports page
 pagesRoutes.get("/" + dataBase.passeports.name + "-traiter.html", async (req, res) => {
   setFilter("etat = 'Crée' AND passeport NOTNULL");

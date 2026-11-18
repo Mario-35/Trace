@@ -529,7 +529,7 @@ export const dataBase: Idb = {
         calculate: "CONCAT ( dossier, '-', SUBSTRING ( identification FROM 13 FOR 4 ):: int)",
         list: false,
         etiquette: "0429-0002"
-      },          
+      },            
     },
     constraints: ["CONSTRAINT echantillons_pkey UNIQUE NULLS NOT DISTINCT (type, identification)"]
   },

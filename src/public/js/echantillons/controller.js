@@ -76,40 +76,37 @@ async function createSite() {
 // get information site
 async function setSite() {
     head("setSite");
-    // if Sol        
-    if ((_CONFIGURATION.passeports.includes(getElement('type').value))) {
-        const temp = await getDatas(`${window.location.origin}/sites/search/${site.value}`);        
-        if (temp) {
-            if (temp.length === 1) {
-                nomSite.value = temp[0].nom;
-                site.value = temp[0].nom;
-                pays.value = temp[0].pays;
-                region.value = temp[0].region;
-                latitude.value = temp[0].latitude;
-                longitude.value = temp[0].longitude;
-                setReadOnly(["nomSite", "pays", "region", "latitude","longitude"]);
-                hideParentClass("btnAddSite",'form-group'); 
-                removeDisabled("next-2");
-                if (_CONFIGURATION.passeports.includes(type.value)) {
-                    showParentClass("btnApiRpg",'form-group'); 
-                    refreshCultures();
-                    if ( _CONFIGURATION.passeport === true) setPasseport();
-                } else hideParentClass("btnApiRpg",'form-group'); 
-            }
-        } else {
-            nomSite.value = site.value;
-            removeReadOnly(["nomSite", "pays", "region", "latitude", "longitude"]);
-            hideParentClass("btnApiRpg",'form-group'); 
-            showParentClass("btnAddSite",'form-group');
-            setDisabled("next-2");
-         }
-    // autre type de prlevement
+    const temp = await getDatas(`${window.location.origin}/sites/search/${site.value}`);        
+    if (temp) {
+        if (temp.length === 1) {
+            nomSite.value = temp[0].nom;
+            site.value = temp[0].nom;
+            pays.value = temp[0].pays;
+            region.value = temp[0].region;
+            latitude.value = temp[0].latitude;
+            longitude.value = temp[0].longitude;
+            setReadOnly(["nomSite", "pays", "region", "latitude","longitude"]);
+            hideParentClass("btnAddSite",'form-group'); 
+            removeDisabled("next-2");
+            if (passeport_mode(type.value)) {
+                showParentClass("btnApiRpg",'form-group'); 
+                refreshCultures();
+                if ( _CONFIGURATION.passeport === true) setPasseport();
+            } else hideParentClass("btnApiRpg",'form-group'); 
+        }
+    }
+    if ((passeport_mode(getElement('type').value))) {
+        nomSite.value = site.value;
+        removeReadOnly(["nomSite", "pays", "region", "latitude", "longitude"]);
+        hideParentClass("btnApiRpg",'form-group'); 
+        showParentClass("btnAddSite",'form-group');
+        setDisabled("next-2");
     } else {
-            nomSite.value = site.value;
-            removeReadOnly(["nomSite", "pays", "region", "latitude", "longitude"]);
-            hideParentClass("btnApiRpg",'form-group'); 
-            hideParentClass("btnAddSite",'form-group');
-         }
+        nomSite.value = site.value;
+        removeReadOnly(["nomSite", "pays", "region", "latitude", "longitude"]);
+        hideParentClass("btnApiRpg",'form-group'); 
+        hideParentClass("btnAddSite",'form-group');
+    }
 
         
 
@@ -123,7 +120,7 @@ async function showAliquote(input) {
     hideParentClass( "btnApiRpg", "form-group row-1 visible");
     showParentClass( "parent", "form-group");
     multipleremoveInvisible(["numero",  "nombre", "btn-analyses", "btn-libre"]); 
-    removeReadOnly(["nombre","numero","libre","analyses","condition","responsable"]); 
+    removeReadOnly(["nombre", "numero", "libre", "analyses", "condition", "responsable"]); 
     identification.value = createIdentification();
 }
 
@@ -136,7 +133,6 @@ function restoreDatas() {
         localStorage.removeItem('_DATAS');
     }
 }
-
 
 function fillEditsFromJson(name, datas) {
     Object.keys(datas).forEach(data => {
@@ -174,12 +170,11 @@ async function start() {
             // load datas
             loadDatas(datas);
             updateReadOnly(ctx);
-            visible("btn-events", datas["evenements"] == true);
+            // visible("btn-events", datas["evenements"] == true);
         }
         // change somes
         showParentClass('etat', 'form-group'); 
-        removeReadOnly("analyses");
-        removeReadOnly("libre");
+        removeReadOnly(["analyses", "libre"]);
         
         hideParentClass( "btnApiRpg", "row-1");
         if (!["Crée", "Importé"].includes(datas.etat)) removeDisabled("btn-aliquote");

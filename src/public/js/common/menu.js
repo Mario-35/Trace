@@ -113,7 +113,7 @@ function loadValue(elementName, value) {
             case "checkbox":
                 elem.checked = value === true;
                 break;
-            case "text":
+                
             case "select-one":
                 elem.value = value;
                 break;
@@ -171,7 +171,10 @@ async function loadRangeLine(index) {
 };
 
 function updateButtonCreer(ctx) {
+    // default value
     let name = "Créer";
+
+    // update with context mode
     switch (ctx.mode) {
         case 'id':  
             name = "Modifier";
@@ -183,9 +186,10 @@ function updateButtonCreer(ctx) {
             name= "Importer";
             break;
     }
+    
     setElementText("btn-creer", `✔️ ${name}`);
 }
-// show elements with context test
+
 function updateReadOnly(ctx) {
     updateButtonCreer(ctx);
 
@@ -223,9 +227,9 @@ function updateReadOnly(ctx) {
                     case "etat:Crée":
                         show = getElement('etat').value === 'Crée';                     
                         break;
-                    // only if type rhyzo donc sol
-                    case "rhyzo":
-                        show = !(_CONFIGURATION.passeports.includes(getElement('type').value));                     
+                    // only if type passport d
+                    case "passport":
+                        show = !(passeport_mode(getElement('type').value));                     
                         break;                        
                 }
             // in new mode editable is true
@@ -259,6 +263,13 @@ function toggleSubmenu() {
     this.classList.toggle('item--opened');
 }
 
+function passeport_mode(input) {
+    console.log("############ passeport_mode #################");
+    console.log(_CONFIGURATION.passeports.includes(input));
+    
+ return _CONFIGURATION.passeports.includes(input);
+}
+
 function start() {
     const parentItems = document.querySelectorAll('.item--parent');
     
@@ -283,5 +294,8 @@ function start() {
     });
 
 }
+
+
+
 
 start();
