@@ -1,11 +1,3 @@
-log =(title) => {
-    if (_debug === true) console.log(title);
-}
-
-head = (title) => {
-    log ('='.repeat(15) + ' ' + title + ' ' + '='.repeat(15));
-}
-
 const doubleQuotes = (input) => `"${input}"`;
 const simpleQuotes = (input) => `'${input}'`;
 const getYear = (input) => input.value.split('-')[0];

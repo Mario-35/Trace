@@ -2,6 +2,14 @@
 let _COLUMNS = [];
 const _debug = false;
 
+log = (title) => {
+    if (_debug === true) console.log(title);
+}
+
+head = (title) => {
+    log ('='.repeat(15) + ' ' + title + ' ' + '='.repeat(15));
+}
+
 function testWhere(test) {
     return window.location.href.includes(test);
 }
