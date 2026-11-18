@@ -181,10 +181,4 @@ function setIfNull(element, value) {
 
 
 
-console.log(new Date().toLocaleDateString());
-
-
-
-
-
 

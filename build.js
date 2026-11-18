@@ -5,6 +5,7 @@ var fs = require("graceful-fs");
 const FINAL = "dist/";
 const index = fs.readFileSync(path.join("./src/public/", "index.html"), "utf-8");
 
+console.log(new Date().toLocaleDateString());
 console.log(index);
 
 
